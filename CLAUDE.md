@@ -21,6 +21,9 @@ Főoldal (`/`, `src/pages/Landing.jsx`: legfrissebb 3 elemzés), Elemzések (`/e
 - Képek: `public/elemzesek/<url-azonosító>/…` és `![leírás](/elemzesek/<url-azonosító>/kep.webp)`; WebP-re optimalizálva.
 - Az oldal SEO-ja (`src/utils/useSeo.js`) a fejlécből jön; fix oldalaké a `src/data/seo.js`-ben.
 
+## Megjelent elemzések
+- `4-napos-munkahet` (2026-09-29): a `C:\Users\salamon.edit\Documents\4napos munkahét` megvalósíthatósági tanulmány (forrás: `content/*.md`, ábrák: `abrak/`) rövidített webes változata. A teljes PDF-et a felhasználó kérésére egyelőre NEM tesszük letölthetővé (a „Jóváhagyó” mező még kitöltetlen lehet).
+
 ## Tanulságok (a sedith.art-ból átvéve)
 - Ne használj opacity-crossfade animációt (Chrome fehér villanás), csak transform (slide/scale).
 - Globális `box-sizing: border-box` az index.css-ben kell (sticky header miatt); ne tegyél `overflow-x: hidden`-t html/body-ra.
