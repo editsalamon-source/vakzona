@@ -10,7 +10,6 @@ const pages = [
   { path: "/", freq: "weekly", priority: "1.0" },
   { path: "/elemzesek", freq: "weekly", priority: "0.9" },
   { path: "/rolunk", freq: "yearly", priority: "0.5" },
-  { path: "/kapcsolat", freq: "yearly", priority: "0.4" },
 ];
 
 for (const file of readdirSync(dir).filter((f) => f.endsWith(".md"))) {

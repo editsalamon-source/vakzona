@@ -9,7 +9,6 @@ const Landing = lazy(() => import("./pages/Landing"));
 const Analyses = lazy(() => import("./pages/Analyses"));
 const Analysis = lazy(() => import("./pages/Analysis"));
 const About = lazy(() => import("./pages/About"));
-const Contact = lazy(() => import("./pages/Contact"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
 function SeoManager() {
@@ -30,7 +29,6 @@ const App = () => (
           <Route path="/elemzesek" element={<Analyses />} />
           <Route path="/elemzesek/:slug" element={<Analysis />} />
           <Route path="/rolunk" element={<About />} />
-          <Route path="/kapcsolat" element={<Contact />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </Suspense>

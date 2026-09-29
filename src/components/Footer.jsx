@@ -8,8 +8,7 @@ function Footer() {
       <div className={`wrap ${FooterCSS.inner}`}>
         <span>© {new Date().getFullYear()} Vakzóna · vakzona.com</span>
         <span>
-          <Link to="/elemzesek">Elemzések</Link> · <Link to="/rolunk">Rólunk</Link> ·{" "}
-          <Link to="/kapcsolat">Kapcsolat</Link>
+          <Link to="/elemzesek">Elemzések</Link> · <Link to="/rolunk">Rólunk</Link>
         </span>
       </div>
     </footer>

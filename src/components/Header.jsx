@@ -7,7 +7,6 @@ const NAV = [
   { to: "/", label: "Főoldal", end: true },
   { to: "/elemzesek", label: "Elemzések" },
   { to: "/rolunk", label: "Rólunk" },
-  { to: "/kapcsolat", label: "Kapcsolat" },
 ];
 
 function Header() {

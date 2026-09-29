@@ -17,10 +17,6 @@ const seo = {
     title: "Rólunk – Vakzóna",
     description: "Kik állnak a Vakzóna mögött, és hogyan készülnek az elemzések.",
   },
-  "/kapcsolat": {
-    title: "Kapcsolat – Vakzóna",
-    description: "Kérdés, észrevétel vagy témajavaslat? Írj a Vakzónának.",
-  },
   notFound: {
     title: "Az oldal nem található – Vakzóna",
     description: "A keresett oldal nem létezik, vagy elköltözött.",
