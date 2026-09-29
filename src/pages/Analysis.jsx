@@ -10,6 +10,10 @@ function Analysis() {
 
   if (!analysis) return <NotFound />;
 
+  const lead = analysis.html.match(/^\s*<blockquote>[\s\S]*?<\/blockquote>\s*/);
+  const summaryHtml = lead ? lead[0] : "";
+  const bodyHtml = analysis.html.slice(summaryHtml.length);
+
   return (
     <article>
       <header className={ArticleCSS.head}>
@@ -27,6 +31,11 @@ function Analysis() {
       </header>
 
       <div className={`wrap read ${ArticleCSS.article}`}>
+        {/* a kezdő összefoglaló doboz a tartalomjegyzék elé kerül */}
+        {summaryHtml && (
+          <div className={ArticleCSS.body} dangerouslySetInnerHTML={{ __html: summaryHtml }} />
+        )}
+
         {analysis.toc.length > 2 && (
           <nav className={ArticleCSS.toc} aria-label="Tartalomjegyzék">
             <strong>Tartalom</strong>
@@ -41,7 +50,7 @@ function Analysis() {
         )}
 
         {/* a tartalom a saját, repóban lévő Markdown fájlokból jön */}
-        <div className={ArticleCSS.body} dangerouslySetInnerHTML={{ __html: analysis.html }} />
+        <div className={ArticleCSS.body} dangerouslySetInnerHTML={{ __html: bodyHtml }} />
 
         <p className={ArticleCSS.back}>
           <Link to="/elemzesek">← Vissza az elemzésekhez</Link>

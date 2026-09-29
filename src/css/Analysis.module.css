@@ -48,7 +48,21 @@
 .body th { font-weight: 600; color: var(--ink); text-align: left; }
 .body td { font-variant-numeric: tabular-nums; }
 
-.body img { border-radius: var(--radius); }
+/* ábra: kép + alatta dőlt ábrafelirat ugyanabban a bekezdésben */
+.body img {
+  display: block;
+  border-radius: var(--radius);
+  border: 1px solid var(--line);
+  background: #fff; /* az ábrák fehér hátterűek, sötét módban is */
+  margin: 24px 0 8px;
+}
+.body p:has(> img) em {
+  display: block;
+  font-size: .85rem;
+  color: var(--muted);
+  font-style: normal;
+  margin-bottom: 24px;
+}
 
 @media (max-width: 560px) {
   .head { padding-top: 36px; }
