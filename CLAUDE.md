@@ -8,7 +8,8 @@ A felépítés a sedith.art (`C:\SedithArt`) mintáját követi.
 React 18 + Vite, React Router v6, Framer Motion, CSS Modules, `marked` (Markdown → HTML). Nincs Next.js.
 - Fejlesztői szerver: `npm start` (nem `dev`), port 5173. Build: `npm run build` (előtte a `scripts/sitemap.mjs` legenerálja a `public/sitemap.xml`-t).
 - Deploy: `git add -A && git commit && git push`, majd `vercel --prod --yes` (átmeneti hiba esetén futtasd újra).
-- GitHub / Vercel projekt: még nincs beállítva.
+- GitHub: editsalamon-source/vakzona (publikus); Vercel projekt: vakzona (sedith csapat), a push nem deployol automatikusan.
+- Domain: vakzona.com + www.vakzona.com a projekthez adva; a DNS a regisztrátornál (registrar-servers.com / Namecheap) van.
 
 ## Oldalak
 Főoldal (`/`, `src/pages/Landing.jsx`: legfrissebb 3 elemzés), Elemzések (`/elemzesek`, témaszűrő `?tema=<téma-azonosító>`), egy elemzés (`/elemzesek/:slug`, `src/pages/Analysis.jsx`), Rólunk (`/rolunk`), Kapcsolat (`/kapcsolat`, e-mail: info@vakzona.com), 404.
