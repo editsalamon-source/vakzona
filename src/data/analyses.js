@@ -2,7 +2,8 @@ import { Marked } from "marked";
 import slugify from "../utils/slugify";
 
 // Minden elemzés egy Markdown fájl: src/content/elemzesek/<url-azonosító>.md
-// Az elején `kulcs: érték` fejléc --- sorok között (cím, alcím, dátum, téma, piszkozat).
+// Az elején `kulcs: érték` fejléc --- sorok között (cím, alcím, dátum, téma, piszkozat,
+// kiemelés + kiemelés szöveg = a kártyák nagy száma, szám: érték | felirat = számsor, ismételhető).
 const files = import.meta.glob("../content/elemzesek/*.md", {
   query: "?raw",
   import: "default",
@@ -17,10 +18,18 @@ const MONTHS = [
 function parseFrontmatter(raw) {
   const match = raw.match(/^---\r?\n([\s\S]*?)\r?\n---\r?\n?/);
   if (!match) return { meta: {}, body: raw };
-  const meta = {};
+  const meta = { stats: [] };
   match[1].split(/\r?\n/).forEach((line) => {
     const i = line.indexOf(":");
-    if (i > 0) meta[line.slice(0, i).trim().toLowerCase()] = line.slice(i + 1).trim();
+    if (i <= 0) return;
+    const key = line.slice(0, i).trim().toLowerCase();
+    const value = line.slice(i + 1).trim();
+    if (key === "szám") {
+      const [stat, label = ""] = value.split("|").map((s) => s.trim());
+      meta.stats.push({ value: stat, label });
+    } else {
+      meta[key] = value;
+    }
   });
   return { meta, body: raw.slice(match[0].length) };
 }
@@ -64,6 +73,9 @@ const analyses = Object.entries(files)
       topic: meta["téma"] || "Egyéb",
       topicSlug: slugify(meta["téma"] || "Egyéb"),
       draft: /^(igen|true)$/i.test(meta["piszkozat"] || ""),
+      highlight: meta["kiemelés"] || "",
+      highlightText: meta["kiemelés szöveg"] || "",
+      stats: meta.stats || [],
       readingMinutes: Math.max(1, Math.round(words / 200)),
       body,
     };

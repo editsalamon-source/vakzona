@@ -1,0 +1,64 @@
+/* a rendszerkurzort csak akkor rejtjük el, ha az egyedi kurzor él */
+:global(html).hideNative,
+:global(html).hideNative * { cursor: none !important; }
+
+.dot,
+.ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 10000;
+  visibility: hidden;
+  will-change: transform;
+}
+.visible { visibility: visible; }
+
+.dot {
+  width: 0;
+  height: 0;
+}
+.dot::after {
+  content: "";
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  left: -3.5px;
+  top: -3.5px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+.ring {
+  width: 0;
+  height: 0;
+  color: var(--muted);
+}
+.ring svg {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  left: -20px;
+  top: -20px;
+  overflow: visible;
+  animation: spin 9s linear infinite;
+  transition: width .4s cubic-bezier(.19, 1, .22, 1), height .4s cubic-bezier(.19, 1, .22, 1),
+    left .4s cubic-bezier(.19, 1, .22, 1), top .4s cubic-bezier(.19, 1, .22, 1), color .3s;
+}
+
+/* kattintható elem fölött: nagyobb, narancs, gyorsabban forgó kör */
+.hover { color: var(--accent); }
+.hover svg {
+  width: 72px;
+  height: 72px;
+  left: -36px;
+  top: -36px;
+  animation-duration: 3s;
+}
+.pressed svg { width: 30px; height: 30px; left: -15px; top: -15px; }
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
+@media (prefers-reduced-motion: reduce) {
+  .ring svg { animation: none; }
+}

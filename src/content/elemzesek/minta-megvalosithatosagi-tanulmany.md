@@ -4,6 +4,11 @@ alcím: Egy mondatos alcím: mi a vizsgált kérdés, és miért fontos most.
 dátum: 2026-09-29
 téma: Megvalósíthatóság
 piszkozat: igen
+kiemelés: [00%]
+kiemelés szöveg: [Egy mondat arról, mit jelent ez a szám – ez a főoldali lebegő kártyán jelenik meg.]
+szám: [00] | [felirat]
+szám: [00] | [felirat]
+szám: [00] | [felirat]
 ---
 
 > **Összefoglaló**

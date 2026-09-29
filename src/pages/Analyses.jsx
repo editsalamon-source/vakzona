@@ -2,6 +2,7 @@ import React from "react";
 import { useSearchParams } from "react-router-dom";
 import analyses, { getTopics } from "../data/analyses";
 import AnalysisCard from "../components/AnalysisCard";
+import Reveal from "../components/Reveal";
 import CardCSS from "../css/AnalysisCard.module.css";
 import PageCSS from "../css/Page.module.css";
 
@@ -16,7 +17,14 @@ function Analyses() {
 
   return (
     <div className={`wrap ${PageCSS.page}`}>
-      <h1>Elemzések</h1>
+      <Reveal className={PageCSS.centerHead}>
+        <span className="tag">Elemzések</span>
+        <h1>Minden elemzés</h1>
+        <p className="lead">
+          Saját megvalósíthatósági tanulmányokra és nyilvános adatokra épülő elemzések, a
+          legfrissebbel kezdve.
+        </p>
+      </Reveal>
 
       {topics.length > 1 && (
         <div className={PageCSS.filters} role="group" aria-label="Téma szűrő">
@@ -37,9 +45,9 @@ function Analyses() {
       )}
 
       {shown.length > 0 ? (
-        <div className={CardCSS.grid}>
-          {shown.map((a) => (
-            <AnalysisCard key={a.slug} analysis={a} />
+        <div className={CardCSS.list}>
+          {shown.map((a, i) => (
+            <AnalysisCard key={a.slug} analysis={a} featured={i === 0} />
           ))}
         </div>
       ) : (

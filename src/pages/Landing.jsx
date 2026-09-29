@@ -1,14 +1,19 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 import analyses from "../data/analyses";
 import AnalysisCard from "../components/AnalysisCard";
+import HeroCanvas from "../components/HeroCanvas";
+import Reveal from "../components/Reveal";
+import Arrow from "../components/Arrow";
+import { INTRO_DELAY } from "../utils/intro";
 import CardCSS from "../css/AnalysisCard.module.css";
 import LandingCSS from "../css/Landing.module.css";
 
 const PILLARS = [
   {
     title: "Saját kutatás",
-    text: "Az elemzések alapja a saját magunk által készített tanulmányok és számítások.",
+    text: "Az elemzések alapja a saját magunk által készített megvalósíthatósági tanulmányok és számítások.",
   },
   {
     title: "Átlátható módszertan",
@@ -20,53 +25,138 @@ const PILLARS = [
   },
 ];
 
+// a nyitóképernyő után induló, soronként felcsúszó címsor (csak transform)
+const line = (i) => ({
+  initial: { y: "110%" },
+  animate: { y: 0 },
+  transition: { duration: 1, delay: INTRO_DELAY + 0.1 + i * 0.1, ease: [0.22, 1, 0.36, 1] },
+});
+
 function Landing() {
-  const latest = analyses.slice(0, 3);
+  const [latest, ...earlier] = analyses;
 
   return (
     <>
+      {/* ---------- Hero ---------- */}
       <section className={LandingCSS.hero}>
-        <div className="wrap">
-          <div className={LandingCSS.eyebrow}>Elemzések · Tanulmányok</div>
-          <h1>Ami kimarad a látómezőből.</h1>
-          <p className={`lead ${LandingCSS.lead}`}>
-            A Vakzóna elemzéseket közöl különböző témákban – saját megvalósíthatósági
-            tanulmányokra, adatokra és átlátható módszertanra építve.
-          </p>
-          <div className={LandingCSS.actions}>
-            <Link className="btn" to="/elemzesek">Elemzések böngészése</Link>
-            <Link className="btn btnGhost" to="/rolunk">Hogyan dolgozunk?</Link>
+        <div className={LandingCSS.heroText}>
+          <div className={LandingCSS.heroInner}>
+            <h1 className={LandingCSS.title}>
+              <span className={LandingCSS.mask}>
+                <motion.span {...line(0)}>Ami kimarad</motion.span>
+              </span>
+              <span className={LandingCSS.mask}>
+                <motion.span {...line(1)}>a látómezőből.</motion.span>
+              </span>
+            </h1>
+            <Reveal delay={INTRO_DELAY + 0.35}>
+              <p className={`lead ${LandingCSS.lead}`}>
+                A Vakzóna elemzéseket közöl különböző témákban – saját megvalósíthatósági
+                tanulmányokra, adatokra és átlátható módszertanra építve.
+              </p>
+              <div className={LandingCSS.actions}>
+                <Link className="btn" to="/elemzesek">
+                  Elemzések <Arrow size={12} />
+                </Link>
+                <Link className="btn btnGhost" to="/rolunk">Hogyan dolgozunk?</Link>
+              </div>
+            </Reveal>
           </div>
         </div>
-      </section>
 
-      <section className={LandingCSS.section}>
-        <div className="wrap">
-          <div className={LandingCSS.sectionHead}>
-            <h2>Legfrissebb elemzések</h2>
-            {latest.length > 0 && <Link to="/elemzesek">Összes elemzés →</Link>}
-          </div>
-          {latest.length > 0 ? (
-            <div className={CardCSS.grid}>
-              {latest.map((a) => (
-                <AnalysisCard key={a.slug} analysis={a} />
-              ))}
-            </div>
-          ) : (
-            <p className={CardCSS.empty}>Az első elemzések hamarosan érkeznek.</p>
+        <div className={LandingCSS.heroVisual}>
+          <div className={LandingCSS.gridPattern} />
+          <HeroCanvas className={LandingCSS.canvas} />
+          {latest?.highlight && (
+            <motion.div
+              className={LandingCSS.floatCard}
+              initial={{ y: 40 }}
+              animate={{ y: 0 }}
+              transition={{ duration: 1, delay: INTRO_DELAY + 0.5, ease: [0.22, 1, 0.36, 1] }}
+            >
+              <Link to={`/elemzesek/${latest.slug}`}>
+                <div className={LandingCSS.floatTop}>
+                  <span className={LandingCSS.floatNumber}>{latest.highlight}</span>
+                  <span className="eyebrow">{latest.topic}</span>
+                </div>
+                <p>{latest.highlightText}</p>
+              </Link>
+            </motion.div>
           )}
         </div>
       </section>
 
+      {/* ---------- Kiemelt elemzés (sötét sáv) ---------- */}
+      {latest && (
+        <section className={LandingCSS.dark}>
+          <div className={LandingCSS.darkLine} />
+          <div className={LandingCSS.darkGrid} />
+          <div className={`wrap ${LandingCSS.darkInner}`}>
+            <Reveal>
+              <span className={LandingCSS.darkTag}>Kiemelt elemzés · {latest.topic}</span>
+              <h2 className={LandingCSS.darkTitle}>{latest.title}</h2>
+              {latest.subtitle && <p className={LandingCSS.darkLead}>{latest.subtitle}</p>}
+              <div className={LandingCSS.darkActions}>
+                <Link to={`/elemzesek/${latest.slug}`} className={LandingCSS.whiteBtn}>
+                  <span className={LandingCSS.whiteBtnIcon}><Arrow size={11} /></span>
+                  Elolvasom
+                </Link>
+                <Link to="/elemzesek" className={LandingCSS.outlineBtn}>Összes elemzés</Link>
+              </div>
+              {latest.stats.length > 0 && (
+                <div className={LandingCSS.stats}>
+                  {latest.stats.map((s) => (
+                    <div key={s.label}>
+                      <div className={LandingCSS.statValue}>{s.value}</div>
+                      <p className={LandingCSS.statLabel}>{s.label}</p>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </Reveal>
+          </div>
+        </section>
+      )}
+
+      {/* ---------- Korábbi elemzések ---------- */}
+      {earlier.length > 0 && (
+        <section className={LandingCSS.section}>
+          <div className="wrap">
+            <Reveal className={LandingCSS.sectionHead}>
+              <div>
+                <span className="tag">Elemzések</span>
+                <h2>Korábbi elemzések</h2>
+              </div>
+              <Link to="/elemzesek" className={LandingCSS.underlineLink}>
+                Összes elemzés <Arrow size={12} />
+              </Link>
+            </Reveal>
+            <div className={CardCSS.list}>
+              {earlier.slice(0, 3).map((a) => (
+                <AnalysisCard key={a.slug} analysis={a} />
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* ---------- Amire építünk ---------- */}
       <section className={`${LandingCSS.section} ${LandingCSS.bordered}`}>
         <div className="wrap">
-          <h2 className={LandingCSS.flush}>Amire építünk</h2>
+          <Reveal className={LandingCSS.centerHead}>
+            <h2>Amire építünk</h2>
+            <p className="lead">
+              Minden elemzés ugyanarra a három alapelvre épül, hogy a számok mögötti gondolatmenet
+              is követhető legyen.
+            </p>
+          </Reveal>
           <div className={LandingCSS.pillars}>
-            {PILLARS.map(({ title, text }) => (
-              <div key={title}>
+            {PILLARS.map(({ title, text }, i) => (
+              <Reveal key={title} delay={i * 0.08} className={LandingCSS.pillar}>
+                <span className="eyebrow">0{i + 1}</span>
                 <h3>{title}</h3>
                 <p>{text}</p>
-              </div>
+              </Reveal>
             ))}
           </div>
         </div>

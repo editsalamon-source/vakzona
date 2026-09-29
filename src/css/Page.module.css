@@ -1,34 +1,37 @@
-.page { padding-top: 56px; padding-bottom: 72px; }
+.page { padding-top: 168px; padding-bottom: 128px; }
 
-.filters { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 24px; }
+.centerHead { text-align: center; max-width: 760px; margin: 0 auto 56px; }
+.centerHead h1 { margin: 18px 0 22px; }
+.centerHead p { margin: 0; }
+
+.filters { display: flex; justify-content: center; gap: 8px; flex-wrap: wrap; margin-bottom: 40px; }
 
 .filters button {
   font: inherit;
-  font-size: .9rem;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .14em;
+  text-transform: uppercase;
   cursor: pointer;
-  background: var(--surface);
+  background: var(--bg-soft);
   color: var(--muted);
   border: 1px solid var(--line);
   border-radius: 999px;
-  padding: 6px 14px;
+  padding: 10px 20px;
+  transition: color .3s, background-color .3s, border-color .3s;
 }
-.filters button[aria-pressed="true"] {
-  background: var(--ink);
-  color: var(--bg);
-  border-color: var(--ink);
-}
+.filters button:hover { color: var(--ink); background: #fff; }
+.filters button[aria-pressed="true"] { background: var(--ink); color: #fff; border-color: var(--ink); }
 
-.box {
-  background: var(--surface);
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  padding: 28px;
-}
-.box p:first-child { margin-top: 0; }
-.box p:last-child { margin-bottom: 0; }
+/* szöveges oldalak (Rólunk, 404) */
+.prose { max-width: var(--readw); }
+.prose h1 { margin: 18px 0 28px; }
+.prose h2 { font-size: clamp(1.5rem, 3vw, 2.1rem); margin: 64px 0 16px; }
+.prose p, .prose li { color: #334155; }
+.prose ul { padding-left: 22px; }
 
-.center { text-align: center; }
+.actions { margin-top: 36px; }
 
-@media (max-width: 560px) {
-  .page { padding-top: 36px; }
+@media (max-width: 640px) {
+  .page { padding-top: 120px; padding-bottom: 88px; }
 }

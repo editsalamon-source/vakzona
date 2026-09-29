@@ -3,6 +3,12 @@ cím: Bevezethető-e a 4 napos munkahét Magyarországon?
 alcím: Megvalósíthatósági elemzés az uniós irányokról, a hazai helyzetről és egy lépcsőzetes, bizonyítékalapú bevezetési programról.
 dátum: 2026-09-29
 téma: Munkaerőpiac
+kiemelés: 70,4%
+kiemelés szöveg: Ennyi a magyar óránkénti termelékenység az uniós átlaghoz képest, miközben hetente 39,5 órát dolgozunk (EU: 37,3).
+szám: 39,5 óra | heti munkaidő (EU: 37,3)
+szám: 63% | támogatná változatlan bérrel
+szám: 75 | szervezet a javasolt pilotban
+szám: 3,2 Mrd Ft | program 2027–2029
 ---
 
 > **Összefoglaló**
