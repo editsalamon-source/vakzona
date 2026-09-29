@@ -1,0 +1,55 @@
+.head { padding: 56px 0 28px; border-bottom: 1px solid var(--line); }
+
+.meta { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; margin-bottom: 18px; }
+.meta a { text-decoration: none; }
+
+.lead { margin: 0; }
+
+.article { padding-top: 32px; padding-bottom: 64px; }
+
+.toc { font-size: .95rem; margin-bottom: 8px; }
+.toc strong {
+  font-size: .8rem;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  color: var(--muted);
+}
+.toc ol { padding-left: 20px; margin: 6px 0 0; }
+
+.back { margin-top: 48px; }
+
+/* ---- a Markdownból renderelt tartalom ---- */
+.body h2 { scroll-margin-top: 80px; }
+
+/* az első idézetblokk = összefoglaló doboz */
+.body blockquote {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--accent);
+  border-radius: var(--radius);
+  padding: 20px 24px;
+  margin: 8px 0 32px;
+}
+.body blockquote p:first-child { margin-top: 0; }
+.body blockquote > :last-child { margin-bottom: 0; }
+.body blockquote ul { padding-left: 20px; }
+
+.body code {
+  font-size: .9em;
+  background: var(--accent-soft);
+  padding: 1px 5px;
+  border-radius: 4px;
+}
+
+.body :global(.tableWrap) { overflow-x: auto; margin: 16px 0; }
+.body table { border-collapse: collapse; width: 100%; font-size: .95rem; }
+.body th,
+.body td { padding: 10px 12px; border-bottom: 1px solid var(--line); }
+.body th { font-weight: 600; color: var(--ink); text-align: left; }
+.body td { font-variant-numeric: tabular-nums; }
+
+.body img { border-radius: var(--radius); }
+
+@media (max-width: 560px) {
+  .head { padding-top: 36px; }
+}

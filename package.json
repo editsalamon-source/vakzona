@@ -1,0 +1,27 @@
+{
+  "name": "vakzona",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "vite",
+    "start:host": "vite --host 0.0.0.0",
+    "build": "node scripts/sitemap.mjs && vite build",
+    "preview": "vite preview",
+    "preview:host": "vite preview --host 0.0.0.0"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "framer-motion": "^13.4.5",
+    "marked": "^18.0.14",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.30.6"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^6.1.1",
+    "vite": "^8.3.1"
+  }
+}

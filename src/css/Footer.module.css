@@ -1,0 +1,10 @@
+.footer {
+  border-top: 1px solid var(--line);
+  padding: 28px 0 40px;
+  color: var(--muted);
+  font-size: .9rem;
+}
+
+.inner { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+
+.footer a { color: var(--muted); }
