@@ -155,6 +155,7 @@
 .next { background: var(--bg-soft); border-top: 1px solid var(--line); padding: 88px 0; }
 .nextInner { display: flex; justify-content: space-between; align-items: center; gap: 24px; flex-wrap: wrap; }
 .nextInner h2 { margin: 0; }
+.nextActions { display: flex; gap: 12px; flex-wrap: wrap; }
 
 @media (max-width: 1024px) {
   .layout { grid-template-columns: minmax(0, 1fr); gap: 0; padding-top: 48px; }

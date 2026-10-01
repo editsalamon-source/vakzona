@@ -82,6 +82,11 @@
 .cta svg { transition: transform .3s; }
 .cta:hover svg { transform: translateX(4px); }
 
+.nav a.category { padding: 10px 14px; }
+
+@media (max-width: 1180px) {
+  .nav a.category { display: none; }
+}
 @media (max-width: 640px) {
   .header { top: 12px; }
   .brand { padding: 0 8px 0 10px; }

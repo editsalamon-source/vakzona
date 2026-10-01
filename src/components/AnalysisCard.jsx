@@ -44,7 +44,8 @@ function AnalysisCard({ analysis, featured = false }) {
         <div className={CardCSS.body}>
           <div>
             <div className={CardCSS.metaRow}>
-              <span className="tag tagAccent">{analysis.topic}</span>
+              <span className="tag tagAccent">{analysis.category.name}</span>
+              <span className="meta">{analysis.topic}</span>
               <span className="meta">{formatDate(analysis.date)}</span>
               {draft}
             </div>
@@ -68,7 +69,7 @@ function AnalysisCard({ analysis, featured = false }) {
         </span>
         <h4 className={CardCSS.smallTitle}>{analysis.title}</h4>
         <span className={CardCSS.topic}>
-          {analysis.topic} <Arrow size={11} />
+          {analysis.category.name} · {analysis.topic} <Arrow size={11} />
           {draft}
         </span>
       </div>

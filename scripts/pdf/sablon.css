@@ -1,0 +1,632 @@
+/* Vakzóna PDF-sablon (A4) – a portál arculata nyomtatásban.
+   A scripts/pdf.mjs tölti be; a futó fejléc/lábléc szövegeit (cím, URL, verzió) ő fűzi hozzá. */
+
+:root {
+  --bg-soft: #f8fafc;
+  --bg-dark: #050505;
+  --surface-dark: #171717;
+  --ink: #0f172a;
+  --text: #334155;
+  --muted: #64748b;
+  --faint: #94a3b8;
+  --line: #e2e8f0;
+  --accent: #ea580c;
+  --accent-dark: #c2410c;
+  --accent-soft: #ffedd5;
+  --sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+
+body {
+  margin: 0;
+  font-family: var(--sans);
+  font-size: 10pt;
+  line-height: 1.62;
+  color: var(--text);
+  font-feature-settings: "cv11", "ss01";
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: var(--accent-dark); text-decoration: none; }
+
+h1, h2, h3, h4 { color: var(--ink); font-weight: 600; letter-spacing: -0.03em; line-height: 1.1; }
+
+.eyebrow {
+  margin: 0 0 4mm;
+  font-size: 7pt;
+  font-weight: 700;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+/* ================= Oldalak ================= */
+@page {
+  size: A4;
+  margin: 0;
+}
+
+@page body {
+  margin: 24mm 20mm 22mm;
+
+  @top-left {
+    font: 700 6.5pt var(--sans);
+    letter-spacing: .16em;
+    color: #0f172a;
+    vertical-align: bottom;
+    padding-bottom: 5mm;
+    border-bottom: .3mm solid #e2e8f0;
+  }
+  @top-right {
+    font: 500 7pt var(--sans);
+    color: #94a3b8;
+    vertical-align: bottom;
+    padding-bottom: 5mm;
+    border-bottom: .3mm solid #e2e8f0;
+    white-space: nowrap;
+  }
+  @bottom-left {
+    font: 500 7pt var(--sans);
+    color: #94a3b8;
+    vertical-align: top;
+    padding-top: 5mm;
+  }
+  @bottom-center {
+    font: 500 7pt var(--sans);
+    color: #94a3b8;
+    vertical-align: top;
+    padding-top: 5mm;
+  }
+  @bottom-right {
+    content: counter(page, decimal-leading-zero);
+    font: 700 9pt var(--sans);
+    color: #ea580c;
+    vertical-align: top;
+    padding-top: 4.4mm;
+  }
+}
+
+@page cover { margin: 0; }
+@page front { margin: 0; }
+@page back { margin: 0; }
+
+.cover { page: cover; }
+.front { page: front; }
+.body { page: body; }
+.back { page: back; }
+
+/* ================= Borító ================= */
+.cover, .back {
+  position: relative;
+  width: 210mm;
+  height: 297mm;
+  overflow: hidden;
+  background: var(--bg-dark);
+  color: #fff;
+  break-after: page;
+}
+
+.coverGrid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(to right, rgba(255,255,255,.07) .25mm, transparent .25mm),
+    linear-gradient(to bottom, rgba(255,255,255,.07) .25mm, transparent .25mm);
+  background-size: 14mm 14mm;
+  background-position: -1mm -1mm;
+  -webkit-mask-image: radial-gradient(ellipse 70% 55% at 78% 34%, #000 30%, transparent 100%);
+  mask-image: radial-gradient(ellipse 70% 55% at 78% 34%, #000 30%, transparent 100%);
+}
+/* narancs izzás a vakfolt körül */
+.cover::before, .back::before {
+  content: "";
+  position: absolute;
+  width: 170mm;
+  height: 170mm;
+  right: -50mm;
+  top: 10mm;
+  background: radial-gradient(circle, rgba(234,88,12,.20) 0%, rgba(234,88,12,.06) 38%, transparent 68%);
+}
+
+.coverArt {
+  position: absolute;
+  width: 164mm;
+  height: 164mm;
+  right: -32mm;
+  top: -4mm;
+}
+.coverArt svg, .backArt svg { width: 100%; height: 100%; display: block; }
+
+.coverTop {
+  position: absolute;
+  top: 16mm;
+  left: 20mm;
+  right: 20mm;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 3mm;
+  color: #fff;
+  font-size: 14pt;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+.brand span::after { content: "."; color: var(--accent); }
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 2.4mm;
+  padding: 1.8mm 4.2mm;
+  border-radius: 99px;
+  border: .3mm solid rgba(255,255,255,.18);
+  background: rgba(255,255,255,.06);
+  font-size: 6.5pt;
+  font-weight: 700;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: #e2e8f0;
+}
+.pill i { width: 1.4mm; height: 1.4mm; border-radius: 50%; background: var(--accent); }
+
+.coverMain {
+  position: absolute;
+  left: 20mm;
+  right: 20mm;
+  top: 164mm;
+}
+.coverMain h1 {
+  margin: 0 0 7mm;
+  max-width: 158mm;
+  font-size: 40pt;
+  line-height: .98;
+  letter-spacing: -0.05em;
+  color: #fff;
+}
+.coverLead {
+  margin: 0;
+  max-width: 130mm;
+  font-size: 11.5pt;
+  font-weight: 300;
+  line-height: 1.5;
+  color: #94a3b8;
+}
+
+/* lebegő szám-kártya, mint a főoldali heróban */
+.floatCard {
+  position: absolute;
+  top: 92mm;
+  left: 20mm;
+  width: 72mm;
+  padding: 6mm 6.5mm 6.5mm;
+  border-radius: 7mm;
+  background: rgba(255,255,255,.96);
+  color: var(--ink);
+  box-shadow: 0 10mm 24mm rgba(0,0,0,.45), 0 0 0 .3mm rgba(255,255,255,.4);
+}
+.floatDot {
+  position: absolute;
+  top: 6.5mm;
+  right: 6.5mm;
+  width: 2.4mm;
+  height: 2.4mm;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 1.4mm var(--accent-soft);
+}
+.floatCard strong {
+  display: block;
+  font-size: 30pt;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.05em;
+  color: var(--accent);
+}
+.floatCard p { margin: 3mm 0 0; font-size: 8pt; line-height: 1.45; color: var(--muted); }
+
+.metaStrip {
+  position: absolute;
+  left: 20mm;
+  right: 20mm;
+  bottom: 16mm;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr .7fr 2fr;
+  border-top: .3mm solid rgba(255,255,255,.16);
+}
+.metaStrip > div { padding: 5mm 4mm 0 0; }
+.metaStrip dt {
+  font-size: 6pt;
+  font-weight: 700;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: #64748b;
+}
+.metaStrip dd { margin: 1.4mm 0 0; font-size: 8.5pt; font-weight: 500; color: #fff; }
+.backStrip { grid-template-columns: 2fr .5fr 1.4fr 2fr; }
+.metaStrip a { color: #fff; border-bottom: .3mm solid var(--accent); }
+
+/* ================= Tartalom + impresszum ================= */
+.front {
+  position: relative;
+  width: 210mm;
+  height: 297mm;
+  padding: 26mm 20mm 20mm;
+  break-after: page;
+  background:
+    linear-gradient(to right, var(--line) .25mm, transparent .25mm) 0 0 / 14mm 14mm,
+    linear-gradient(to bottom, var(--line) .25mm, transparent .25mm) 0 0 / 14mm 14mm,
+    #fff;
+}
+/* a rácsot csak a jobb felső sarokban hagyjuk meg */
+.front::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 60% 40% at 100% 0%, transparent 0%, #fff 75%);
+}
+.front > * { position: relative; }
+
+.frontTitle {
+  margin: 0 0 14mm;
+  max-width: 150mm;
+  font-size: 24pt;
+  letter-spacing: -0.045em;
+  line-height: 1.02;
+}
+
+.toc { list-style: none; margin: 0; padding: 0; border-top: .3mm solid var(--ink); }
+.toc li { border-bottom: .3mm solid var(--line); }
+.toc a {
+  display: flex;
+  align-items: baseline;
+  gap: 5mm;
+  padding: 4.2mm 0;
+  color: var(--ink);
+}
+.tocNo {
+  width: 10mm;
+  flex: none;
+  font-size: 8pt;
+  font-weight: 700;
+  letter-spacing: .08em;
+  color: var(--accent);
+  font-variant-numeric: tabular-nums;
+}
+.tocTitle { font-size: 12pt; font-weight: 500; letter-spacing: -0.02em; }
+.tocDots { flex: 1; border-bottom: .35mm dotted #cbd5e1; transform: translateY(-1mm); }
+.tocPage { font-size: 9pt; font-weight: 600; color: var(--muted); font-variant-numeric: tabular-nums; }
+.tocAppendix .tocTitle { color: var(--muted); }
+
+.colophon {
+  position: absolute !important;
+  left: 20mm;
+  right: 20mm;
+  bottom: 18mm;
+  display: flex;
+  gap: 6mm;
+  padding: 7mm;
+  border-radius: 6mm;
+  background: var(--bg-soft);
+  border: .3mm solid var(--line);
+  font-size: 8pt;
+  color: var(--muted);
+}
+.colophonLogo { color: var(--ink); }
+.colophon p { margin: 0 0 1.2mm; }
+.colophon strong { color: var(--ink); font-weight: 600; }
+.colophonNote { margin-top: 3mm !important; font-size: 7.5pt; color: var(--faint); }
+
+/* ================= Összefoglaló oldal ================= */
+.opening { break-after: page; }
+.openingTitle { margin: 0 0 8mm; font-size: 30pt; letter-spacing: -0.05em; }
+
+.summary blockquote {
+  position: relative;
+  margin: 0 0 8mm;
+  padding: 8mm 9mm 8mm 11mm;
+  border-radius: 6mm;
+  background: var(--bg-soft);
+  border: .3mm solid var(--line);
+  overflow: hidden;
+  break-inside: avoid;
+}
+.summary blockquote::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 2mm;
+  background: var(--accent);
+}
+.summary blockquote p:first-child strong {
+  font-size: 7pt;
+  font-weight: 700;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.summary blockquote > :first-child { margin-top: 0; }
+.summary blockquote > :last-child { margin-bottom: 0; }
+.summary ul { margin: 0; padding: 0; list-style: none; }
+.summary li {
+  position: relative;
+  margin: 0 0 2.6mm;
+  padding-left: 6mm;
+  font-size: 9.6pt;
+  color: #334155;
+}
+.summary li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 1.9mm;
+  width: 2mm;
+  height: 2mm;
+  border-radius: 50%;
+  border: .5mm solid var(--accent);
+}
+.summary strong { color: var(--ink); font-weight: 600; }
+
+/* sötét számsor, mint a főoldali kiemelt sáv */
+.statsBand {
+  position: relative;
+  overflow: hidden;
+  margin: 0 0 8mm;
+  padding: 8mm 9mm 9mm;
+  border-radius: 6mm;
+  background: var(--bg-dark);
+  color: #fff;
+  break-inside: avoid;
+}
+.statsGrid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(to right, rgba(255,255,255,.07) .25mm, transparent .25mm),
+    linear-gradient(to bottom, rgba(255,255,255,.07) .25mm, transparent .25mm);
+  background-size: 8mm 8mm;
+  -webkit-mask-image: linear-gradient(to left, #000, transparent 70%);
+  mask-image: linear-gradient(to left, #000, transparent 70%);
+}
+.statsBand > * { position: relative; }
+.stats { display: grid; grid-template-columns: repeat(var(--cols), 1fr); gap: 6mm; }
+.stats > div { border-top: .3mm solid rgba(255,255,255,.18); padding-top: 4mm; }
+.stats strong {
+  display: block;
+  font-size: 19pt;
+  font-weight: 600;
+  line-height: 1.05;
+  letter-spacing: -0.045em;
+}
+.stats > div:first-child strong { color: var(--accent); }
+.stats span {
+  display: block;
+  margin-top: 2mm;
+  font-size: 6.5pt;
+  font-weight: 600;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: #94a3b8;
+  line-height: 1.4;
+}
+
+.intro { font-size: 9.2pt; color: var(--muted); }
+
+/* ================= Fejezetek ================= */
+.chapter { break-before: page; }
+.chapter + .chapter { break-before: page; }
+
+.chapterHead {
+  position: relative;
+  overflow: hidden;
+  margin: 0 0 9mm;
+  padding: 10mm 9mm 9mm;
+  min-height: 52mm;
+  border-radius: 6mm;
+  background: var(--bg-soft);
+  border: .3mm solid var(--line);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  break-inside: avoid;
+}
+.chapterGrid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(to right, var(--line) .25mm, transparent .25mm),
+    linear-gradient(to bottom, var(--line) .25mm, transparent .25mm);
+  background-size: 8mm 8mm;
+  -webkit-mask-image: radial-gradient(ellipse 60% 90% at 100% 0%, #000 30%, transparent 100%);
+  mask-image: radial-gradient(ellipse 60% 90% at 100% 0%, #000 30%, transparent 100%);
+}
+.chapterNo {
+  position: absolute;
+  top: 2mm;
+  right: 7mm;
+  font-size: 64pt;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.06em;
+  color: var(--accent);
+  font-variant-numeric: tabular-nums;
+}
+.chapterHead .eyebrow, .chapterHead h2 { position: relative; }
+.chapterHead h2 {
+  margin: 0;
+  max-width: 130mm;
+  font-size: 22pt;
+  line-height: 1.04;
+  letter-spacing: -0.045em;
+}
+
+/* ================= Folyó szöveg ================= */
+.prose > :first-child { margin-top: 0; }
+.prose p { margin: 0 0 3.2mm; orphans: 3; widows: 3; }
+.prose strong { color: var(--ink); font-weight: 600; }
+.prose h3 {
+  display: flex;
+  align-items: baseline;
+  gap: 2.6mm;
+  margin: 8mm 0 3mm;
+  font-size: 12.5pt;
+  letter-spacing: -0.025em;
+  break-after: avoid;
+}
+.prose h3::before {
+  content: "";
+  flex: none;
+  width: 2.2mm;
+  height: 2.2mm;
+  border-radius: .6mm;
+  background: var(--accent);
+  transform: translateY(-.4mm);
+}
+.prose h4 { margin: 6mm 0 2mm; font-size: 10.5pt; break-after: avoid; }
+.prose ul, .prose ol { margin: 0 0 3.6mm; padding-left: 6mm; }
+.prose li { margin-bottom: 1.6mm; }
+.prose li::marker { color: var(--accent); font-weight: 600; }
+.prose a { border-bottom: .25mm solid rgba(234,88,12,.35); }
+.prose code {
+  font-size: .9em;
+  background: #f1f5f9;
+  padding: .3mm 1.4mm;
+  border-radius: 1.2mm;
+}
+.prose hr { border: 0; border-top: .3mm solid var(--line); margin: 8mm 0; }
+
+.prose blockquote {
+  margin: 5mm 0;
+  padding: 4mm 6mm;
+  border-left: 1mm solid var(--accent);
+  background: var(--bg-soft);
+  border-radius: 0 3mm 3mm 0;
+  color: var(--ink);
+  break-inside: avoid;
+}
+.prose blockquote > :last-child { margin-bottom: 0; }
+
+/* táblázat */
+.tableWrap {
+  margin: 5mm 0 6mm;
+  border: .3mm solid var(--line);
+  border-radius: 4mm;
+  overflow: hidden;
+  break-inside: avoid;
+}
+.prose table { width: 100%; border-collapse: collapse; font-size: 8.3pt; line-height: 1.4; }
+.prose thead th {
+  background: var(--ink);
+  color: #fff;
+  font-size: 6.5pt;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  text-align: left;
+  padding: 3mm 3.4mm;
+}
+.prose td { padding: 2.6mm 3.4mm; border-top: .25mm solid var(--line); vertical-align: top; font-variant-numeric: tabular-nums; }
+.prose tbody tr:nth-child(even) td { background: var(--bg-soft); }
+.prose th[align="right"], .prose td[align="right"] { text-align: right; }
+.prose th[align="center"], .prose td[align="center"] { text-align: center; }
+.prose td:first-child { color: var(--ink); }
+
+/* ábra */
+figure { margin: 6mm 0 7mm; break-inside: avoid; }
+.figFrame {
+  border: .3mm solid var(--line);
+  border-radius: 4mm;
+  overflow: hidden;
+  background: #fff;
+}
+figure img { display: block; width: 100%; height: auto; }
+figcaption {
+  display: flex;
+  gap: 2.4mm;
+  margin-top: 2.4mm;
+  font-size: 7.3pt;
+  line-height: 1.45;
+  color: var(--faint);
+}
+figcaption::before {
+  content: "";
+  flex: none;
+  width: 4mm;
+  height: .5mm;
+  margin-top: 1.9mm;
+  background: var(--accent);
+}
+
+/* forrás-melléklet: tömörebb, a linkek teljes URL-lel */
+.appendix .prose { font-size: 8.8pt; }
+.appendix .prose ul { list-style: none; padding: 0; counter-reset: src; }
+.appendix .prose li {
+  counter-increment: src;
+  position: relative;
+  padding: 2.4mm 0 2.4mm 10mm;
+  margin: 0;
+  border-bottom: .25mm solid var(--line);
+  break-inside: avoid;
+}
+.appendix .prose li::before {
+  content: counter(src, decimal-leading-zero);
+  position: absolute;
+  left: 0;
+  top: 2.6mm;
+  font-size: 7pt;
+  font-weight: 700;
+  color: var(--accent);
+}
+.appendix .prose li a::after {
+  content: " " attr(href);
+  display: block;
+  font-size: 6.8pt;
+  color: var(--faint);
+  word-break: break-all;
+}
+.appendix .prose li a { border: 0; color: var(--ink); }
+
+/* ================= Hátsó borító ================= */
+.back { break-before: page; break-after: auto; }
+.back::before { top: 40mm; right: auto; left: 20mm; }
+.backArt {
+  position: absolute;
+  width: 170mm;
+  height: 170mm;
+  left: 20mm;
+  top: 30mm;
+  opacity: .9;
+}
+.back .coverGrid {
+  -webkit-mask-image: radial-gradient(ellipse 70% 50% at 50% 38%, #000 30%, transparent 100%);
+  mask-image: radial-gradient(ellipse 70% 50% at 50% 38%, #000 30%, transparent 100%);
+}
+.backMain {
+  position: absolute;
+  left: 20mm;
+  right: 20mm;
+  top: 206mm;
+}
+.backClaim {
+  margin: 0 0 6mm;
+  font-size: 26pt;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.05em;
+}
+.backSite {
+  font-size: 13pt;
+  font-weight: 600;
+  color: #fff;
+  border-bottom: .5mm solid var(--accent);
+  letter-spacing: -0.02em;
+}

@@ -2,6 +2,7 @@
 cím: Kell-e erősebb szakszervezet Magyarországon?
 alcím: Összehasonlító elemzés európai mintákról, a hazai szakszervezeti helyzetről és egy fokozatos, bizonyítékalapú javaslatról a kollektív tárgyalások erősítésére.
 dátum: 2026-10-01
+kategória: Gazdaság
 téma: Munkaerőpiac
 kiemelés: 7,4%
 kiemelés szöveg: a magyar munkavállalók ekkora része volt szakszervezeti tag 2020-ban (1993-ban 44%).

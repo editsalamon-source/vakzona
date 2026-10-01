@@ -1,8 +1,9 @@
 import { Marked } from "marked";
 import slugify from "../utils/slugify";
+import KATEGORIAK, { getKategoria } from "./kategoriak";
 
 // Minden elemzés egy Markdown fájl: src/content/elemzesek/<url-azonosító>.md
-// Az elején `kulcs: érték` fejléc --- sorok között (cím, alcím, dátum, téma, piszkozat,
+// Az elején `kulcs: érték` fejléc --- sorok között (cím, alcím, dátum, kategória, téma, piszkozat,
 // kiemelés + kiemelés szöveg = a kártyák nagy száma, szám: érték | felirat = számsor, ismételhető).
 const files = import.meta.glob("../content/elemzesek/*.md", {
   query: "?raw",
@@ -65,13 +66,15 @@ const analyses = Object.entries(files)
     const slug = path.split("/").pop().replace(/\.md$/, "");
     const { meta, body } = parseFrontmatter(raw);
     const words = body.split(/\s+/).filter(Boolean).length;
+    const category = getKategoria(meta["kategória"]);
+    if (!category) console.warn(`Ismeretlen vagy hiányzó kategória: ${slug}.md („${meta["kategória"] || ""}”)`);
     return {
       slug,
       title: meta["cím"] || slug,
       subtitle: meta["alcím"] || "",
       date: meta["dátum"] || "",
+      category: category || { slug: "", name: "Egyéb" },
       topic: meta["téma"] || "Egyéb",
-      topicSlug: slugify(meta["téma"] || "Egyéb"),
       draft: /^(igen|true)$/i.test(meta["piszkozat"] || ""),
       highlight: meta["kiemelés"] || "",
       highlightText: meta["kiemelés szöveg"] || "",
@@ -89,10 +92,12 @@ export function getAnalysis(slug) {
   return analysis ? { ...analysis, ...render(analysis.body) } : null;
 }
 
-export function getTopics() {
-  const seen = new Map();
-  analyses.forEach((a) => seen.set(a.topicSlug, a.topic));
-  return [...seen].map(([slug, name]) => ({ slug, name }));
+// a kategóriák a hozzájuk tartozó elemzések számával (az üresek is, „hamarosan” jelzéshez)
+export function getCategories() {
+  return KATEGORIAK.map((k) => ({
+    ...k,
+    count: analyses.filter((a) => a.category.slug === k.slug).length,
+  }));
 }
 
 export default analyses;

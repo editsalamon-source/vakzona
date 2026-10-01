@@ -12,11 +12,14 @@ React 18 + Vite, React Router v6, Framer Motion, CSS Modules, `marked` (Markdown
 - Domain: vakzona.com + www.vakzona.com a projekthez adva; a DNS a regisztrátornál (registrar-servers.com / Namecheap) van.
 
 ## Oldalak
-Főoldal (`/`, `src/pages/Landing.jsx`: legfrissebb 3 elemzés), Elemzések (`/elemzesek`, témaszűrő `?tema=<téma-azonosító>`), egy elemzés (`/elemzesek/:slug`, `src/pages/Analysis.jsx`), Rólunk (`/rolunk`), 404. Kapcsolat oldal nincs: még nincs vakzona.com-os e-mail cím, ne írj be kitalált címet.
+Főoldal (`/`, `src/pages/Landing.jsx`: legfrissebb elemzések + kategóriakártyák), Elemzések (`/elemzesek`, felül kategóriagombok), kategóriaoldalak (`/gazdasag`, `/tarsadalom`, `/kultura`, `/tortenelem`; ugyanaz a `src/pages/Analyses.jsx` `category` proppal; az üres kategória is látszik „hamarosan” jelzéssel), egy elemzés (`/elemzesek/:slug`, `src/pages/Analysis.jsx`), Rólunk (`/rolunk`), 404. Kapcsolat oldal nincs: még nincs vakzona.com-os e-mail cím, ne írj be kitalált címet.
+
+## Kategóriák
+Négy fix kategória (2026-10-01): Gazdaság, Társadalom, Kultúra, Történelem. Egyetlen forrásuk a `src/data/kategoriak.js` (azonosító = URL, név, leírás = a kategóriaoldal bevezetője és SEO-leírása); ebből épül az útvonal, a menü (a pirula-menüben csak 1180 px fölött látszanak), a lábléc, a SEO és a sitemap. Új kategóriát csak ott kell felvenni. Az oldal független: pártpolitikai téma és állásfoglalás kizárt.
 
 ## Új elemzés
 - Egy Markdown fájl: `src/content/elemzesek/<url-azonosító>.md` (ékezet nélküli, kötőjeles fájlnév = URL).
-- Fejléc `---` sorok között, `kulcs: érték`: `cím`, `alcím` (ez a keresőknek szóló leírás is), `dátum` (ÉÉÉÉ-HH-NN, ez szerint rendez), `téma` (ebből lesz a szűrőgomb), `piszkozat: igen` (csak helyben látszik, élesben és a sitemapben nem), `kiemelés` (nagy szám a kártyán és a főoldali lebegő kártyán; ha nincs, a logó látszik), `kiemelés szöveg` (a lebegő kártya szövege), `szám: érték | felirat` (ismételhető; számsor a főoldali sötét sávban és az elemzés fejlécében). Számot csak a tanulmányból vegyél.
+- Fejléc `---` sorok között, `kulcs: érték`: `cím`, `alcím` (ez a keresőknek szóló leírás is), `dátum` (ÉÉÉÉ-HH-NN, ez szerint rendez), `kategória` (kötelező; a négy kategórianév egyike, pl. `kategória: Gazdaság`), `téma` (finomabb címke a kategórián belül, pl. Munkaerőpiac; csak kiírjuk, nem szűrünk rá), `piszkozat: igen` (csak helyben látszik, élesben és a sitemapben nem), `kiemelés` (nagy szám a kártyán és a főoldali lebegő kártyán; ha nincs, a logó látszik), `kiemelés szöveg` (a lebegő kártya szövege), `szám: érték | felirat` (ismételhető; számsor a főoldali sötét sávban és az elemzés fejlécében). Számot csak a tanulmányból vegyél.
 - A törzs elején lévő `>` idézetblokk = Összefoglaló doboz. A `##` címsorokból tartalomjegyzék lesz (3-tól). Táblázat: sima Markdown-táblázat, a `--:` jobbra igazít.
 - Képek: `public/elemzesek/<url-azonosító>/…` és `![leírás](/elemzesek/<url-azonosító>/kep.webp)`; WebP-re optimalizálva.
 - Az oldal SEO-ja (`src/utils/useSeo.js`) a fejlécből jön; fix oldalaké a `src/data/seo.js`-ben.
@@ -30,8 +33,14 @@ Főoldal (`/`, `src/pages/Landing.jsx`: legfrissebb 3 elemzés), Elemzések (`/e
 - Minden elemzés utolsó melléklete (és a webes változat végén a `## Forrásanyagok` szakasz) kizárólag külső forrást tartalmaz, a három kör szerint csoportosítva, az eredeti internetes URL-re mutató linkkel.
 - Az `Elemzés/` tartalma gitignore-olt (publikus repó), csak a README verziózott.
 
+## Letölthető PDF
+- `npm run pdf -- <url-azonosító> [--verzio 1.0] [--forras <fájl|fejezet-mappa>] [--ki <út.pdf>]`: `scripts/pdf.mjs` + sablon `scripts/pdf/sablon.css` (A4, headless Chrome, két menet; PyMuPDF kell a TOC-oldalszámokhoz, a könyvjelzőkhöz és a metaadatokhoz).
+- Metaadat a webes .md fejlécéből (+ opcionális `verzió:`). Szerző mindig „Vakzóna”; a PDF-ben csak vakzona.com, dátum, verzió és az elemzés URL-je szerepel, személyes/kapcsolati adat nem.
+- Kimenet alapból `Elemzés/<url-azonosító>/pdf/` (gitignore-olt); nyilvánossá tenni csak a felhasználó kérésére (`public/elemzesek/<url-azonosító>/`).
+
 ## Megjelent elemzések
 - `4-napos-munkahet` (2026-09-29): szakpolitikai elemzés (2026-10-01-én átírva a régi megvalósíthatósági tanulmányból, 25 hivatalos forrással). Munkaanyag: `Elemzés/4-napos-munkahet/` (fejezetek: `fejezetek/`, a régi tanulmány: `archiv-mvt/`). A teljes PDF-et a felhasználó kérésére egyelőre NEM tesszük letölthetővé.
+- `szakszervezetek` (2026-10-01): „Kell-e erősebb szakszervezet Magyarországon?” – összehasonlító szakpolitikai elemzés javaslattal, 26 hivatalos forrás, forrásterv + kivonatok alapján, lezáró tényellenőrzéssel. Munkaanyag: `Elemzés/szakszervezetek/`. PDF nélkül élesítve (a felhasználó kérésére).
 
 ## Dizájn
 A https://sustainabl-finance-44.aura.build/ sablon mintájára (2026-09-29): fehér alap, Inter, nagy szoros címek, üveghatású lebegő pirula-menü, kettéosztott hero (bal: soronként felcsúszó cím, jobb: rácsminta + keringő részecskék `HeroCanvas`, egy szeletük „vakfolt”, + lebegő szám-kártya), sötét (#050505) kiemelt sáv számsorral, hírszoba-kártyák (fénykép helyett rácsmintán a kiemelt szám), slate-50 lábléc. Akcentszín a Vakzóna-narancs (#ea580c).

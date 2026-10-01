@@ -1,12 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Logo from "./Logo";
-import { getTopics } from "../data/analyses";
+import KATEGORIAK from "../data/kategoriak";
 import FooterCSS from "../css/Footer.module.css";
 
 function Footer() {
-  const topics = getTopics();
-
   return (
     <footer className={FooterCSS.footer}>
       <div className="wrap">
@@ -26,16 +24,14 @@ function Footer() {
             <Link to="/elemzesek">Elemzések</Link>
             <Link to="/rolunk">Rólunk</Link>
           </div>
-          {topics.length > 0 && (
-            <div className={FooterCSS.col}>
-              <span className={FooterCSS.label}>Témák</span>
-              {topics.map((t) => (
-                <Link key={t.slug} to={`/elemzesek?tema=${t.slug}`}>
-                  {t.name}
-                </Link>
-              ))}
-            </div>
-          )}
+          <div className={FooterCSS.col}>
+            <span className={FooterCSS.label}>Kategóriák</span>
+            {KATEGORIAK.map((k) => (
+              <Link key={k.slug} to={`/${k.slug}`}>
+                {k.name}
+              </Link>
+            ))}
+          </div>
         </div>
         <div className={FooterCSS.bottom}>
           <span>© {new Date().getFullYear()} Vakzóna</span>

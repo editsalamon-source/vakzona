@@ -31,9 +31,14 @@ function Analysis() {
         <div className={`wrap ${ArticleCSS.headInner}`}>
           <motion.div {...rise()}>
             <div className={ArticleCSS.meta}>
-              <Link to={`/elemzesek?tema=${analysis.topicSlug}`} className="tag tagAccent">
-                {analysis.topic}
-              </Link>
+              {analysis.category.slug ? (
+                <Link to={`/${analysis.category.slug}`} className="tag tagAccent">
+                  {analysis.category.name}
+                </Link>
+              ) : (
+                <span className="tag tagAccent">{analysis.category.name}</span>
+              )}
+              <span className="meta">{analysis.topic}</span>
               <span className="meta">{formatDate(analysis.date)}</span>
               <span className="meta">{analysis.readingMinutes} perc olvasás</span>
             </div>
@@ -84,9 +89,16 @@ function Analysis() {
       <section className={ArticleCSS.next}>
         <div className={`wrap ${ArticleCSS.nextInner}`}>
           <h2>További elemzések</h2>
-          <Link to="/elemzesek" className="btn">
-            Összes elemzés <Arrow size={12} />
-          </Link>
+          <div className={ArticleCSS.nextActions}>
+            {analysis.category.slug && (
+              <Link to={`/${analysis.category.slug}`} className="btn btnGhost">
+                {analysis.category.name}
+              </Link>
+            )}
+            <Link to="/elemzesek" className="btn">
+              Összes elemzés <Arrow size={12} />
+            </Link>
+          </div>
         </div>
       </section>
     </article>

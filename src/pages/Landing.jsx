@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import analyses from "../data/analyses";
+import analyses, { getCategories } from "../data/analyses";
 import AnalysisCard from "../components/AnalysisCard";
 import HeroCanvas from "../components/HeroCanvas";
 import Reveal from "../components/Reveal";
@@ -34,6 +34,7 @@ const line = (i) => ({
 
 function Landing() {
   const [latest, ...earlier] = analyses;
+  const categories = getCategories();
 
   return (
     <>
@@ -51,8 +52,9 @@ function Landing() {
             </h1>
             <Reveal delay={INTRO_DELAY + 0.35}>
               <p className={`lead ${LandingCSS.lead}`}>
-                A Vakzóna elemzéseket közöl különböző témákban – saját megvalósíthatósági
-                tanulmányokra, adatokra és átlátható módszertanra építve.
+                A Vakzóna független elemzéseket közöl gazdasági, társadalmi, kulturális és
+                történelmi témákban – hivatalos forrásokra, adatokra és átlátható módszertanra
+                építve.
               </p>
               <div className={LandingCSS.actions}>
                 <Link className="btn" to="/elemzesek">
@@ -77,7 +79,7 @@ function Landing() {
               <Link to={`/elemzesek/${latest.slug}`}>
                 <div className={LandingCSS.floatTop}>
                   <span className={LandingCSS.floatNumber}>{latest.highlight}</span>
-                  <span className="eyebrow">{latest.topic}</span>
+                  <span className="eyebrow">{latest.category.name}</span>
                 </div>
                 <p>{latest.highlightText}</p>
               </Link>
@@ -93,7 +95,7 @@ function Landing() {
           <div className={LandingCSS.darkGrid} />
           <div className={`wrap ${LandingCSS.darkInner}`}>
             <Reveal>
-              <span className={LandingCSS.darkTag}>Kiemelt elemzés · {latest.topic}</span>
+              <span className={LandingCSS.darkTag}>Kiemelt elemzés · {latest.category.name}</span>
               <h2 className={LandingCSS.darkTitle}>{latest.title}</h2>
               {latest.subtitle && <p className={LandingCSS.darkLead}>{latest.subtitle}</p>}
               <div className={LandingCSS.darkActions}>
@@ -139,6 +141,35 @@ function Landing() {
           </div>
         </section>
       )}
+
+      {/* ---------- Kategóriák ---------- */}
+      <section className={`${LandingCSS.section} ${LandingCSS.bordered}`}>
+        <div className="wrap">
+          <Reveal className={LandingCSS.sectionHead}>
+            <div>
+              <span className="tag">Kategóriák</span>
+              <h2>Négy terület, egy módszer</h2>
+            </div>
+            <Link to="/elemzesek" className={LandingCSS.underlineLink}>
+              Összes elemzés <Arrow size={12} />
+            </Link>
+          </Reveal>
+          <div className={LandingCSS.categories}>
+            {categories.map((k, i) => (
+              <Reveal key={k.slug} delay={i * 0.08}>
+                <Link to={`/${k.slug}`} className={LandingCSS.category}>
+                  <span className="eyebrow">0{i + 1}</span>
+                  <h3>{k.name}</h3>
+                  <p>{k.description}</p>
+                  <span className={LandingCSS.categoryMore}>
+                    {k.count > 0 ? `${k.count} elemzés` : "Hamarosan"} <Arrow size={11} />
+                  </span>
+                </Link>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* ---------- Amire építünk ---------- */}
       <section className={`${LandingCSS.section} ${LandingCSS.bordered}`}>

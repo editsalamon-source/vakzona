@@ -8,7 +8,8 @@
     "start:host": "vite --host 0.0.0.0",
     "build": "node scripts/sitemap.mjs && vite build",
     "preview": "vite preview",
-    "preview:host": "vite preview --host 0.0.0.0"
+    "preview:host": "vite preview --host 0.0.0.0",
+    "pdf": "node scripts/pdf.mjs"
   },
   "engines": {
     "node": ">=18"

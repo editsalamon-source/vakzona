@@ -11,6 +11,26 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://vakzona.com/gazdasag</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://vakzona.com/tarsadalom</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://vakzona.com/kultura</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://vakzona.com/tortenelem</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://vakzona.com/rolunk</loc>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
@@ -18,6 +38,12 @@
   <url>
     <loc>https://vakzona.com/elemzesek/4-napos-munkahet</loc>
     <lastmod>2026-09-29</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://vakzona.com/elemzesek/szakszervezetek</loc>
+    <lastmod>2026-10-01</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.8</priority>
   </url>
