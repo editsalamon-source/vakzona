@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import analyses, { getCategories } from "../data/analyses";
 import AnalysisCard from "../components/AnalysisCard";
+import CategoryTiles from "../components/CategoryTiles";
 import HeroCanvas from "../components/HeroCanvas";
 import Reveal from "../components/Reveal";
 import Arrow from "../components/Arrow";
@@ -12,8 +13,12 @@ import LandingCSS from "../css/Landing.module.css";
 
 const PILLARS = [
   {
-    title: "Saját kutatás",
-    text: "Az elemzések alapja a saját magunk által készített megvalósíthatósági tanulmányok és számítások.",
+    title: "Hivatalos források",
+    text: "Csak ellenőrizhető, hivatalos forrásból dolgozunk – hazai, uniós és nemzetközi körben –, és minden forrást az eredeti helyére linkelünk.",
+  },
+  {
+    title: "MI-eszközök, emberi kontrollal",
+    text: "A források feldolgozásában és a szöveg előkészítésében mesterséges intelligenciát használunk. A forrásokat mi választjuk ki, és minden számot az eredeti forrással vetünk össze.",
   },
   {
     title: "Átlátható módszertan",
@@ -54,7 +59,8 @@ function Landing() {
               <p className={`lead ${LandingCSS.lead}`}>
                 A Vakzóna független elemzéseket közöl gazdasági, társadalmi, kulturális és
                 történelmi témákban – hivatalos forrásokra, adatokra és átlátható módszertanra
-                építve.
+                építve. A munkában mesterséges intelligenciát is használunk, de minden állítást
+                az eredeti forrással ellenőrzünk.
               </p>
               <div className={LandingCSS.actions}>
                 <Link className="btn" to="/elemzesek">
@@ -134,8 +140,8 @@ function Landing() {
               </Link>
             </Reveal>
             <div className={CardCSS.list}>
-              {earlier.slice(0, 3).map((a) => (
-                <AnalysisCard key={a.slug} analysis={a} />
+              {earlier.slice(0, 3).map((a, i) => (
+                <AnalysisCard key={a.slug} analysis={a} featured={i === 0} />
               ))}
             </div>
           </div>
@@ -143,7 +149,7 @@ function Landing() {
       )}
 
       {/* ---------- Kategóriák ---------- */}
-      <section className={`${LandingCSS.section} ${LandingCSS.bordered}`}>
+      <section className={`${LandingCSS.section} ${LandingCSS.bordered} ${LandingCSS.tilesSection}`}>
         <div className="wrap">
           <Reveal className={LandingCSS.sectionHead}>
             <div>
@@ -154,21 +160,8 @@ function Landing() {
               Összes elemzés <Arrow size={12} />
             </Link>
           </Reveal>
-          <div className={LandingCSS.categories}>
-            {categories.map((k, i) => (
-              <Reveal key={k.slug} delay={i * 0.08}>
-                <Link to={`/${k.slug}`} className={LandingCSS.category}>
-                  <span className="eyebrow">0{i + 1}</span>
-                  <h3>{k.name}</h3>
-                  <p>{k.description}</p>
-                  <span className={LandingCSS.categoryMore}>
-                    {k.count > 0 ? `${k.count} elemzés` : "Hamarosan"} <Arrow size={11} />
-                  </span>
-                </Link>
-              </Reveal>
-            ))}
-          </div>
         </div>
+        <CategoryTiles categories={categories} />
       </section>
 
       {/* ---------- Amire építünk ---------- */}
@@ -177,7 +170,7 @@ function Landing() {
           <Reveal className={LandingCSS.centerHead}>
             <h2>Amire építünk</h2>
             <p className="lead">
-              Minden elemzés ugyanarra a három alapelvre épül, hogy a számok mögötti gondolatmenet
+              Minden elemzés ugyanarra a négy alapelvre épül, hogy a számok mögötti gondolatmenet
               is követhető legyen.
             </p>
           </Reveal>

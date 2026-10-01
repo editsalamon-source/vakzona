@@ -44,6 +44,9 @@ Négy fix kategória (2026-10-01): Gazdaság, Társadalom, Kultúra, Történele
 
 ## Dizájn
 A https://sustainabl-finance-44.aura.build/ sablon mintájára (2026-09-29): fehér alap, Inter, nagy szoros címek, üveghatású lebegő pirula-menü, kettéosztott hero (bal: soronként felcsúszó cím, jobb: rácsminta + keringő részecskék `HeroCanvas`, egy szeletük „vakfolt”, + lebegő szám-kártya), sötét (#050505) kiemelt sáv számsorral, hírszoba-kártyák (fénykép helyett rácsmintán a kiemelt szám), slate-50 lábléc. Akcentszín a Vakzóna-narancs (#ea580c).
+- Kategóriacsempék a főoldalon (`CategoryTiles.jsx`, 2026-10-01): az obsidian.aura.build „Shop by Category” blokkja mintájára teljes szélességű oszlopsor; hoverre a kurzorhoz közelebbi szélről sötét réteg csúszik be futó felirattal (csak transform; érintőképernyőn nincs).
+- Ábrák: fénykép helyett saját vonalas SVG-illusztrációk kategóriánként (`CategoryArt.jsx`: oszlopdiagram, népességrács, oszlopcsarnok, évgyűrűk), egy narancs „vakfolt” elemmel; a csempéken és az elemzéskártyák borítóján is.
+- Az oldal szövegeiben (főoldal, Rólunk) jelezzük, hogy az elemzésekhez MI-eszközöket használunk, emberi forrásellenőrzéssel.
 - Egyedi kurzor (`Cursor.jsx`): narancs pont + késve követő, forgó nyitott logókör; link fölött megnő és narancs lesz. Csak `pointer: fine` esetén.
 - Nyitóképernyő (`Loader.jsx`, `utils/intro.js`): látogatásonként egyszer; a főoldali belépő animációk `INTRO_DELAY`-jel várnak rá. `prefers-reduced-motion` esetén nincs loader, részecske-mozgás és kurzorkésés.
 - A beépített böngészőpanel erősen lassítja az animációkat; valós idejű ellenőrzéshez headless Chrome CDP-képernyőkép kell (lásd sedith.art memória).
