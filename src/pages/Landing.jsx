@@ -94,6 +94,22 @@ function Landing() {
         </div>
       </section>
 
+      {/* ---------- Kategóriák ---------- */}
+      <section className={`${LandingCSS.section} ${LandingCSS.tilesSection}`}>
+        <div className="wrap">
+          <Reveal className={LandingCSS.sectionHead}>
+            <div>
+              <span className="tag">Kategóriák</span>
+              <h2>Négy terület, egy módszer</h2>
+            </div>
+            <Link to="/elemzesek" className={LandingCSS.underlineLink}>
+              Összes elemzés <Arrow size={12} />
+            </Link>
+          </Reveal>
+        </div>
+        <CategoryTiles categories={categories} />
+      </section>
+
       {/* ---------- Kiemelt elemzés (sötét sáv) ---------- */}
       {latest && (
         <section className={LandingCSS.dark}>
@@ -147,22 +163,6 @@ function Landing() {
           </div>
         </section>
       )}
-
-      {/* ---------- Kategóriák ---------- */}
-      <section className={`${LandingCSS.section} ${LandingCSS.bordered} ${LandingCSS.tilesSection}`}>
-        <div className="wrap">
-          <Reveal className={LandingCSS.sectionHead}>
-            <div>
-              <span className="tag">Kategóriák</span>
-              <h2>Négy terület, egy módszer</h2>
-            </div>
-            <Link to="/elemzesek" className={LandingCSS.underlineLink}>
-              Összes elemzés <Arrow size={12} />
-            </Link>
-          </Reveal>
-        </div>
-        <CategoryTiles categories={categories} />
-      </section>
 
       {/* ---------- Amire építünk ---------- */}
       <section className={`${LandingCSS.section} ${LandingCSS.bordered}`}>
