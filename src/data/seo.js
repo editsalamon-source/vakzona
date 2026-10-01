@@ -9,7 +9,7 @@ const seo = {
   "/": {
     title: "Vakzóna – független elemzések",
     description:
-      "Független elemzések gazdasági, társadalmi, kulturális és történelmi témákban, hivatalos forrásokra, adatokra és átlátható módszertanra építve.",
+      "Független elemzések gazdasági, társadalmi, kulturális és tudományos témákban, hivatalos forrásokra, adatokra és átlátható módszertanra építve.",
   },
   "/elemzesek": {
     title: "Elemzések – Vakzóna",

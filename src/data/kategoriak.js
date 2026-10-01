@@ -18,9 +18,9 @@ const KATEGORIAK = [
     description: "Művészet, irodalom, film, kulturális örökség és intézmények – közelről és összehasonlítva.",
   },
   {
-    slug: "tortenelem",
-    name: "Történelem",
-    description: "Korszakok, események és történeti háttér – forrásokra építve, a mai kérdésekhez kötve.",
+    slug: "tudomany",
+    name: "Tudomány",
+    description: "Kutatás, technológia, környezet és innováció – az eredmények mögötti bizonyítékokkal, közérthetően.",
   },
 ];
 

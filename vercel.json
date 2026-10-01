@@ -1,13 +1,26 @@
 {
   "redirects": [
     {
+      "source": "/tortenelem",
+      "destination": "/tudomany",
+      "permanent": true
+    },
+    {
       "source": "/(.*)",
-      "has": [{ "type": "host", "value": "www.vakzona.com" }],
+      "has": [
+        {
+          "type": "host",
+          "value": "www.vakzona.com"
+        }
+      ],
       "destination": "https://vakzona.com/$1",
       "permanent": true
     }
   ],
   "rewrites": [
-    { "source": "/(.*)", "destination": "/index.html" }
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
   ]
 }

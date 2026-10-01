@@ -82,31 +82,29 @@ function Kultura() {
   );
 }
 
-// Történelem: évgyűrűk (az idő rétegei) és alatta idővonal; egy „esemény” narancs.
-function Tortenelem() {
-  const rings = [14, 28, 42, 57, 71, 86, 100, 114];
+// Tudomány: atom három elektronpályával; a mag narancs, körülötte halvány mérési pontrács.
+function Tudomany() {
+  const cx = 200;
+  const cy = 148;
   return (
     <>
-      {rings.map((r, i) => (
-        <ellipse
-          key={r} cx={200 + i * 0.8} cy={140 - i * 0.6} rx={r * 1.18} ry={r}
-          fill="none" strokeWidth={i === rings.length - 1 ? 1.5 : 1.2}
-          opacity={0.35 + (i / rings.length) * 0.65}
-        />
+      {[36, 58, 342, 364].flatMap((x) =>
+        [60, 150, 240].map((y) => <circle key={`${x}-${y}`} cx={x} cy={y} r="1.8" fill="currentColor" stroke="none" opacity="0.5" />)
+      )}
+      {[0, 60, 120].map((deg) => (
+        <ellipse key={deg} cx={cx} cy={cy} rx="128" ry="44" fill="none" strokeWidth="1.5"
+          transform={`rotate(${deg} ${cx} ${cy})`} />
       ))}
-      <path d="M200 140 L300 82" strokeWidth="1" opacity="0.5" strokeDasharray="3 4" />
-      <circle cx="200" cy="140" r="4" fill="currentColor" stroke="none" />
-      <circle cx="262" cy="104" r="7" fill={A} stroke="none" />
-      <line x1="30" y1="275" x2="370" y2="275" strokeWidth="1.5" />
-      {Array.from({ length: 18 }, (_, i) => (
-        <line key={i} x1={40 + i * 19} y1="275" x2={40 + i * 19} y2={i % 5 === 0 ? 263 : 269} strokeWidth="1.2" />
-      ))}
-      <circle cx="268" cy="275" r="5" fill={A} stroke="none" />
+      <circle cx={cx} cy={cy} r="64" fill="currentColor" fillOpacity="0.04" strokeWidth="1" strokeDasharray="3 5" opacity="0.6" />
+      <circle cx={cx} cy={cy} r="14" fill={A} stroke="none" />
+      <circle cx={cx + 128} cy={cy} r="6" fill="var(--art-bg, #fff)" strokeWidth="1.5" />
+      <circle cx={cx - 64} cy={cy - 110.9} r="6" fill="var(--art-bg, #fff)" strokeWidth="1.5" />
+      <circle cx={cx - 64} cy={cy + 110.9} r="6" fill={A} stroke="none" />
     </>
   );
 }
 
-const ART = { gazdasag: Gazdasag, tarsadalom: Tarsadalom, kultura: Kultura, tortenelem: Tortenelem };
+const ART = { gazdasag: Gazdasag, tarsadalom: Tarsadalom, kultura: Kultura, tudomany: Tudomany };
 
 function CategoryArt({ slug, className }) {
   const Art = ART[slug];

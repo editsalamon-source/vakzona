@@ -58,7 +58,7 @@ function Landing() {
             <Reveal delay={INTRO_DELAY + 0.35}>
               <p className={`lead ${LandingCSS.lead}`}>
                 A Vakzóna független elemzéseket közöl gazdasági, társadalmi, kulturális és
-                történelmi témákban – hivatalos forrásokra, adatokra és átlátható módszertanra
+                tudományos témákban – hivatalos forrásokra, adatokra és átlátható módszertanra
                 építve. A munkában mesterséges intelligenciát is használunk, de minden állítást
                 az eredeti forrással ellenőrzünk.
               </p>

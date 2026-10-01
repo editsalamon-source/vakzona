@@ -12,10 +12,10 @@ React 18 + Vite, React Router v6, Framer Motion, CSS Modules, `marked` (Markdown
 - Domain: vakzona.com + www.vakzona.com a projekthez adva; a DNS a regisztrátornál (registrar-servers.com / Namecheap) van.
 
 ## Oldalak
-Főoldal (`/`, `src/pages/Landing.jsx`: legfrissebb elemzések + kategóriakártyák), Elemzések (`/elemzesek`, felül kategóriagombok), kategóriaoldalak (`/gazdasag`, `/tarsadalom`, `/kultura`, `/tortenelem`; ugyanaz a `src/pages/Analyses.jsx` `category` proppal; az üres kategória is látszik „hamarosan” jelzéssel), egy elemzés (`/elemzesek/:slug`, `src/pages/Analysis.jsx`), Rólunk (`/rolunk`), 404. Kapcsolat oldal nincs: még nincs vakzona.com-os e-mail cím, ne írj be kitalált címet.
+Főoldal (`/`, `src/pages/Landing.jsx`: legfrissebb elemzések + kategóriakártyák), Elemzések (`/elemzesek`, felül kategóriagombok), kategóriaoldalak (`/gazdasag`, `/tarsadalom`, `/kultura`, `/tudomany`; ugyanaz a `src/pages/Analyses.jsx` `category` proppal; az üres kategória is látszik „hamarosan” jelzéssel), egy elemzés (`/elemzesek/:slug`, `src/pages/Analysis.jsx`), Rólunk (`/rolunk`), 404. Kapcsolat oldal nincs: még nincs vakzona.com-os e-mail cím, ne írj be kitalált címet.
 
 ## Kategóriák
-Négy fix kategória (2026-10-01): Gazdaság, Társadalom, Kultúra, Történelem. Egyetlen forrásuk a `src/data/kategoriak.js` (azonosító = URL, név, leírás = a kategóriaoldal bevezetője és SEO-leírása); ebből épül az útvonal, a menü (a pirula-menüben csak 1180 px fölött látszanak), a lábléc, a SEO és a sitemap. Új kategóriát csak ott kell felvenni. Az oldal független: pártpolitikai téma és állásfoglalás kizárt.
+Négy fix kategória (2026-10-01): Gazdaság, Társadalom, Kultúra, Tudomány (a Történelem helyett, 2026-10-01; a régi `/tortenelem` cím a `vercel.json`-ban átirányít). Egyetlen forrásuk a `src/data/kategoriak.js` (azonosító = URL, név, leírás = a kategóriaoldal bevezetője és SEO-leírása); ebből épül az útvonal, a menü (a pirula-menüben csak 1180 px fölött látszanak), a lábléc, a SEO és a sitemap. Új kategóriát csak ott kell felvenni. Az oldal független: pártpolitikai téma és állásfoglalás kizárt.
 
 ## Új elemzés
 - Egy Markdown fájl: `src/content/elemzesek/<url-azonosító>.md` (ékezet nélküli, kötőjeles fájlnév = URL).
@@ -45,7 +45,7 @@ Négy fix kategória (2026-10-01): Gazdaság, Társadalom, Kultúra, Történele
 ## Dizájn
 A https://sustainabl-finance-44.aura.build/ sablon mintájára (2026-09-29): fehér alap, Inter, nagy szoros címek, üveghatású lebegő pirula-menü, kettéosztott hero (bal: soronként felcsúszó cím, jobb: rácsminta + keringő részecskék `HeroCanvas`, egy szeletük „vakfolt”, + lebegő szám-kártya), sötét (#050505) kiemelt sáv számsorral, hírszoba-kártyák (fénykép helyett rácsmintán a kiemelt szám), slate-50 lábléc. Akcentszín a Vakzóna-narancs (#ea580c).
 - Kategóriacsempék a főoldalon (`CategoryTiles.jsx`, 2026-10-01): az obsidian.aura.build „Shop by Category” blokkja mintájára teljes szélességű oszlopsor; hoverre a kurzorhoz közelebbi szélről sötét réteg csúszik be futó felirattal (csak transform; érintőképernyőn nincs).
-- Ábrák: fénykép helyett saját vonalas SVG-illusztrációk kategóriánként (`CategoryArt.jsx`: oszlopdiagram, népességrács, oszlopcsarnok, évgyűrűk), egy narancs „vakfolt” elemmel; a csempéken és az elemzéskártyák borítóján is.
+- Ábrák: fénykép helyett saját vonalas SVG-illusztrációk kategóriánként (`CategoryArt.jsx`: oszlopdiagram, népességrács, oszlopcsarnok, atom), egy narancs „vakfolt” elemmel; a csempéken és az elemzéskártyák borítóján is.
 - Az oldal szövegeiben (főoldal, Rólunk) jelezzük, hogy az elemzésekhez MI-eszközöket használunk, emberi forrásellenőrzéssel.
 - Egyedi kurzor (`Cursor.jsx`): narancs pont + késve követő, forgó nyitott logókör; link fölött megnő és narancs lesz. Csak `pointer: fine` esetén.
 - Nyitóképernyő (`Loader.jsx`, `utils/intro.js`): látogatásonként egyszer; a főoldali belépő animációk `INTRO_DELAY`-jel várnak rá. `prefers-reduced-motion` esetén nincs loader, részecske-mozgás és kurzorkésés.
