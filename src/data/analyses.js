@@ -4,7 +4,8 @@ import KATEGORIAK, { getKategoria } from "./kategoriak";
 
 // Minden elemzés egy Markdown fájl: src/content/elemzesek/<url-azonosító>.md
 // Az elején `kulcs: érték` fejléc --- sorok között (cím, alcím, dátum, kategória, téma, piszkozat,
-// kiemelés + kiemelés szöveg = a kártyák nagy száma, szám: érték | felirat = számsor, ismételhető).
+// kiemelés + kiemelés szöveg = a kártyák nagy száma, szám: érték | felirat = számsor, ismételhető,
+// pdf: fájlnév | felirat = a teljes tanulmány PDF-je a public/elemzesek/<url-azonosító>/ mappában).
 const files = import.meta.glob("../content/elemzesek/*.md", {
   query: "?raw",
   import: "default",
@@ -39,6 +40,13 @@ export function formatDate(iso) {
   const [y, m, d] = iso.split("-").map(Number);
   if (!y || !m) return iso;
   return d ? `${y}. ${MONTHS[m - 1]} ${d}.` : `${y}. ${MONTHS[m - 1]}`;
+}
+
+// pdf: fájlnév | felirat → { href, label }; a „/”-rel kezdődő út változatlan marad
+function parsePdf(value, slug) {
+  if (!value) return null;
+  const [file, label = ""] = value.split("|").map((s) => s.trim());
+  return { href: file.startsWith("/") ? file : `/elemzesek/${slug}/${file}`, label };
 }
 
 // Markdown → HTML; a ## címsorok horgonyt kapnak a tartalomjegyzékhez.
@@ -79,6 +87,7 @@ const analyses = Object.entries(files)
       highlight: meta["kiemelés"] || "",
       highlightText: meta["kiemelés szöveg"] || "",
       stats: meta.stats || [],
+      pdf: parsePdf(meta.pdf, slug),
       readingMinutes: Math.max(1, Math.round(words / 200)),
       body,
     };

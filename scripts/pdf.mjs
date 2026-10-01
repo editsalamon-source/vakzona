@@ -166,7 +166,9 @@ for (const token of tokens) {
 let n = 0;
 chapters.forEach((c) => {
   c.appendix = /forrás|melléklet|irodalom/i.test(c.title);
-  c.label = c.appendix ? "Melléklet" : String(++n).padStart(2, "0");
+  // az „Alapok” nyitó fejezet számozatlan, így a szövegbeli „N. fejezet” hivatkozások stimmelnek
+  c.unnumbered = /^Alapok/i.test(c.title);
+  c.label = c.appendix ? "Melléklet" : c.unnumbered ? "—" : String(++n).padStart(2, "0");
   c.html = renderTokens(c.tokens);
 });
 
@@ -325,8 +327,8 @@ const chapterHtml = chapters
 <section class="chapter${c.appendix ? " appendix" : ""}" id="${c.id}">
   <header class="chapterHead">
     <div class="chapterGrid"></div>
-    ${c.appendix ? "" : `<span class="chapterNo">${esc(c.label)}</span>`}
-    <p class="eyebrow">${c.appendix ? "Melléklet" : `${c.label}. fejezet`}</p>
+    ${c.appendix || c.unnumbered ? "" : `<span class="chapterNo">${esc(c.label)}</span>`}
+    <p class="eyebrow">${c.appendix ? "Melléklet" : c.unnumbered ? "Bevezető" : `${c.label}. fejezet`}</p>
     <h2>${esc(c.title)}</h2>
   </header>
   <div class="prose">${c.html}</div>

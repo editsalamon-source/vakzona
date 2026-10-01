@@ -10,6 +10,7 @@ szám: 256× | a Nap sugara a vörös óriás ág csúcsán
 szám: 2602 K | a Nap felszíni hőmérséklete ekkor
 szám: 7,59 mrd év | múlva éri el a Nap ezt a csúcsot
 szám: 7 | hivatalos forrás
+pdf: miert-tagul-ki-a-voros-orias-v1.0.pdf | 20 oldal
 ---
 
 > **Összefoglaló**
@@ -20,7 +21,7 @@ szám: 7 | hivatalos forrás
 > - **A legújabb javaslat (2024)** szerint a burok nem közvetlenül a magra, hanem az égő héj külső szélére „reagál”. Ez a munka azonban egyelőre preprint, vagyis még nem esett át szakmai lektoráláson.
 > - **A Nap is vörös óriás lesz.** Egy 2008-as modell szerint a vörös óriás ág csúcsán a sugara a mainak 256-szorosára nő, és ezt közvetlenül megelőzően elnyeli a Földet.
 
-Ez az írás a Vakzóna vörös óriásokról szóló elemzésének rövidített, webes változata. Az elemzés kizárólag nyilvánosan hozzáférhető, ellenőrizhető forrásokra épül: lektorált asztrofizikai szakcikkekre, a NASA ismeretterjesztő anyagára és egy nyílt egyetemi tankönyvre. Egy forrás, a 2024-es tanulmány, még nem lektorált kézirat, ezt a szövegben mindenhol jelezzük.
+Ez az írás a Vakzóna vörös óriásokról szóló elemzésének rövidített, webes változata, a teljes tanulmány PDF-ben letölthető. Az elemzés kizárólag nyilvánosan hozzáférhető, ellenőrizhető forrásokra épül: lektorált asztrofizikai szakcikkekre, a NASA ismeretterjesztő anyagára és egy nyílt egyetemi tankönyvre. Egy forrás, a 2024-es tanulmány, még nem lektorált kézirat, ezt a szövegben mindenhol jelezzük.
 
 ## Alapok: miről van szó?
 

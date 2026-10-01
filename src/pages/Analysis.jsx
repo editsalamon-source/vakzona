@@ -12,6 +12,17 @@ const rise = (delay = 0) => ({
   transition: { duration: 0.9, delay, ease: [0.22, 1, 0.36, 1] },
 });
 
+// dokumentum ikon a PDF-letöltéshez
+function DocIcon({ size = 14 }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z" />
+      <path d="M14 3v5h5M12 11v6M9 14l3 3 3-3" />
+    </svg>
+  );
+}
+
 function Analysis() {
   const { slug } = useParams();
   const analysis = useMemo(() => getAnalysis(slug), [slug]);
@@ -44,6 +55,11 @@ function Analysis() {
             </div>
             <h1 className={ArticleCSS.title}>{analysis.title}</h1>
             {analysis.subtitle && <p className={`lead ${ArticleCSS.lead}`}>{analysis.subtitle}</p>}
+            {analysis.pdf && (
+              <a href={analysis.pdf.href} target="_blank" rel="noopener" className={`btn ${ArticleCSS.headPdf}`}>
+                <DocIcon /> A teljes tanulmány letöltése (PDF)
+              </a>
+            )}
           </motion.div>
           {analysis.stats.length > 0 && (
             <motion.div className={ArticleCSS.stats} {...rise(0.15)}>
@@ -80,6 +96,23 @@ function Analysis() {
               className={`${ArticleCSS.body} ${ArticleCSS.summary}`}
               dangerouslySetInnerHTML={{ __html: summaryHtml }}
             />
+          )}
+          {analysis.pdf && (
+            <a href={analysis.pdf.href} target="_blank" rel="noopener" className={ArticleCSS.pdfBox}>
+              <span className={ArticleCSS.pdfIcon}>
+                <DocIcon size={26} />
+              </span>
+              <span className={ArticleCSS.pdfText}>
+                <span className={ArticleCSS.pdfEyebrow}>Teljes tanulmány</span>
+                <strong>A teljes tanulmány letöltése</strong>
+                <span className={ArticleCSS.pdfMeta}>
+                  Bővebb, forrásokkal hivatkozott változat · PDF{analysis.pdf.label ? ` · ${analysis.pdf.label}` : ""}
+                </span>
+              </span>
+              <span className={ArticleCSS.pdfGo}>
+                Megnyitás <Arrow size={12} />
+              </span>
+            </a>
           )}
           {/* a tartalom a saját, repóban lévő Markdown fájlokból jön */}
           <div className={ArticleCSS.body} dangerouslySetInnerHTML={{ __html: bodyHtml }} />
