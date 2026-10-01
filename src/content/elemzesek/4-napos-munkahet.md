@@ -49,9 +49,13 @@ Két további fogalom segít eligazodni az elemzésben. Az **óránkénti munkat
 
 A nemzetközi gyakorlatban három út különíthető el: a törvényi út (jog a kérelmezésre, vagy a törvényes munkaidő csökkentése), az állami támogatású pilot (a kormány anyagilag támogat egy önként jelentkező vállalati kört, és független kutatók mérik az eredményt) és az önkéntes vállalati kísérlet (külső szervezetek koordinálják, egyetemi kutatók értékelik). Magyarországon a Munka törvénykönyve a versenyszférában ma sem tiltja a bércsökkentés nélküli rövidebb munkaidőt, a közszférában viszont jogi akadály is van.
 
-### Gyakori tévhitek
+### Amit könnyű összekeverni
 
-„A 4 napos munkahét mindig azt jelenti, hogy 4×10 órát kell dolgozni” – ez csak a sűrített munkahétre igaz, a valódi csökkentésnél a heti óraszám is kevesebb lesz. „Az uniós jog előírja vagy tiltja a modellt” – egyik sem igaz, a bevezetés tagállami hatáskörben marad. „A kísérletek mindenhol beváltak, tehát biztosan működik” – a legtöbb eredmény kedvező, de a résztvevők önként jelentkeznek, kontrollcsoport ritkán van, ezért a teljes, kötelező bevezetés hatása bizonytalan.
+**A 4 napos munkahét 4×10 óra munkát jelent?** Nem feltétlenül: ez csak a sűrített munkahétre igaz, a valódi csökkentésnél a heti óraszám is kevesebb lesz.
+
+**Az uniós jog előírja vagy tiltja?** Egyiket sem teszi: a bevezetés tagállami hatáskörben marad.
+
+**A kedvező kísérleti eredmények azt jelentik, hogy biztosan működik?** Nem: a legtöbb eredmény kedvező, de a résztvevők önként jelentkeznek, kontrollcsoport ritkán van, ezért a teljes, kötelező bevezetés hatása bizonytalan.
 
 ## Uniós és nemzetközi irányok
 

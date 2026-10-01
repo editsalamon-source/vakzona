@@ -38,7 +38,7 @@ a megvalósíthatósági tanulmány csak az egyik lehetséges fajtája.
 8. **Minden elemzés közérthető nyitó fejezettel kezdődik**: „Alapok: miről van
    szó?” (`fejezetek/00a_alapok.md`, a webes változatban az Összefoglaló
    utáni első szakasz), amely a fogalmakat, a kontextust és a gyakori
-   tévhiteket ismeretterjesztő stílusban mutatja be
+   könnyen összemosható fogalmakat ismeretterjesztő stílusban mutatja be
    (`reference/kozertheto_stilus.md`, `elemzes-explainer` agent).
 
 ## Könyvtárszerkezet

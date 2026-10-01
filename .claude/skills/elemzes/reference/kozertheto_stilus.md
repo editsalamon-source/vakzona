@@ -16,8 +16,14 @@ négy állandó blokkal (kérdés formájú `##` alcímekkel):
    fogalom, amely a későbbi fejezetekben ténylegesen előfordul.
 3. **Hogyan működik?** – a mechanizmus röviden, lépésenként (ki, kivel, mit,
    minek a hatására, kire vonatkozik az eredmény).
-4. **Gyakori tévhitek** – 2–4 közkeletű állítás és a helyreigazítás, az
-   elemzés megállapításai alapján.
+4. **Amit könnyű összekeverni** – 2–4 fogalmi félreértés vagy gyakori
+   összemosás és a tisztázásuk, az elemzés megállapításai alapján, tárgyszerű
+   állításként (pl. „Ahol erős a kollektív szerződés, ott sok a tag is –
+   nem feltétlenül: …”). Ne tulajdoníts nézetet a közvéleménynek („sokan
+   mondják”, „közismert”, „gyakran hallani”), és ne idézz a felhasználótól
+   vagy ismerőstől hallott mondatot; „tévhitként” csak olyan nézet
+   szerepelhet, amelynek elterjedtségét hivatalos forrás (pl. felmérés)
+   igazolja, forráskóddal.
 
 A végén egy mondat: „→ *A részletes elemzés az 1. fejezettől következik.*”
 

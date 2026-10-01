@@ -9,12 +9,12 @@ kiemelés szöveg: a magyar munkavállalók ekkora része volt szakszervezeti ta
 szám: 7,4% | szakszervezeti tagság (2020)
 szám: 20,4% | kollektívszerződés-lefedettség (2022)
 szám: 80% | uniós lefedettségi küszöb
-szám: 26 | hivatalos forrás
+szám: 24 | hivatalos forrás
 ---
 
 > **Összefoglaló**
 >
-> - **A közismert svéd állítás csak félig igaz.** A magas arány, a dolgozók mintegy 88 százaléka, a kollektív szerződések lefedettségére vonatkozik, nem a tagságra, ami inkább 66–70 százalék körül mozog. A betegállomány menete pedig állami, társadalombiztosítási szabály, amelyben a szakszervezetnek nincs önálló, kötelező szerepe.
+> - **A tagság és a kollektívszerződés-lefedettség nem ugyanaz.** Svédországban például a tagság 66–70 százalék körül mozog, miközben a kollektív szerződések lefedettsége 88 százalék; Ausztriában a tagság 20,2 százalék, a lefedettség mégis 98 százalék.
 > - **A tagság és a kollektív szerződések lefedettsége nemzetközileg is két külön dolog.** Van, ahol alacsony tagság mellett is majdnem teljes a lefedettség, mert a munkáltatói oldal erősen szervezett, vagy mert a szerződéseket törvény kiterjeszti más munkáltatókra is. Ahol egyik mechanizmus sincs, a lefedettség a tagsággal együtt zuhan.
 > - **A hazai szakszervezeti tagság tartósan csökken:** a kilencvenes évek eleji, 40 százalék körüli szintről 2020-ra 7,4 százalékra esett, a kollektív szerződéses lefedettség pedig a kilencvenes évek végi 35–38 százalékról 2022-re 20,4 százalékra, messze a 80 százalékos uniós célérték alatt. A tárgyalás döntően vállalati szinten zajlik.
 > - **2025-ben az ILO Alkalmazási Bizottsága külön tárgyalta Magyarország esetét**, és felszólította a kormányt, hogy a munkavállalói véleménynyilvánítás korlátai, a szakszervezetek nyilvántartásba vétele és a tagdíjlevonás tilalma ügyében egyeztessen a szociális partnerekkel.
@@ -26,7 +26,7 @@ Ez az írás a Vakzóna szakszervezetekről és munkavállalói érdekképvisele
 
 ### Miért fontos ez most?
 
-Képzeljünk el egy munkavállalót, aki új munkahelyén azon gondolkodik, belépjen-e a szakszervezetbe. A kollégái vegyesen nyilatkoznak: van, aki szerint ez ma már semmit nem ér, van, aki szerint pont azért gyenge a szakszervezet, mert kevesen lépnek be. Ugyanez a kérdés nagyobb léptékben is felmerül: vajon miért hallani annyit arról, hogy Svédországban „szinte mindenki” szakszervezeti tag, és miért csökken itthon évtizedek óta a tagság. A kérdés azért időszerű, mert az Európai Unió olyan irányelvet fogadott el, amely azoknak a tagállamoknak ír elő kötelező cselekvési tervet, ahol a kollektív szerződések nem érik el a munkavállalók 80 százalékát, Magyarország pedig messze e küszöb alatt van.
+Képzeljünk el egy munkavállalót, aki új munkahelyén azon gondolkodik, belépjen-e a szakszervezetbe. A kollégái vegyesen nyilatkoznak: van, aki szerint ez ma már semmit nem ér, van, aki szerint pont azért gyenge a szakszervezet, mert kevesen lépnek be. Ugyanez a kérdés nagyobb léptékben is felmerül: miért csökken itthon évtizedek óta a tagság. A kérdés azért időszerű, mert az Európai Unió olyan irányelvet fogadott el, amely azoknak a tagállamoknak ír elő kötelező cselekvési tervet, ahol a kollektív szerződések nem érik el a munkavállalók 80 százalékát, Magyarország pedig messze e küszöb alatt van.
 
 ### Néhány fogalom, amit érdemes tisztázni
 
@@ -36,17 +36,13 @@ A **szakszervezet** a munkavállalók olyan szervezete, amelynek elsődleges cé
 
 A munkavállalók egy munkahelyen szakszervezetet alapíthatnak vagy csatlakozhatnak egy meglévőhöz. Ha a szakszervezet tagjainak száma eléri a munkavállalói létszám tíz százalékát, jogosulttá válik arra, hogy a munkáltatóval kollektív szerződést tárgyaljon, amely aztán valamennyi munkavállalóra kiterjed. Ahol a tárgyalás ágazati szinten zajlik, ott egy hatóság a szerződést a tárgyalásban részt nem vevő munkáltatókra is kiterjesztheti, így a lefedettség a tagságnál jóval szélesebb is lehet. A munkahelyi képviseletet a szakszervezet mellett az üzemi tanács is elláthatja. Ha a tárgyalás megreked, a felek végső eszközként sztrájkhoz folyamodhatnak, bizonyos korlátok és az elégséges szolgáltatás fenntartásának kötelezettsége mellett.
 
-### Gyakori tévhitek
+### Amit könnyű összekeverni
 
-„Svédországban szinte mindenki szakszervezeti tag” – valójában a svéd tagsági arány 66–70 százalék körül mozog, ami a kollektívszerződés-lefedettséggel (88 százalék) keveredik össze a köznyelvben. „A svéd betegállományi védelem a szakszervezet érdeme” – a betegállomány szabályai állami, társadalombiztosítási eredetűek, a szakszervezeti képviselő csak egy egyeztetésen jelenhet meg, és az is opcionális. „Az erősebb szakszervezet automatikusan merevebb munkaerőpiacot jelent” – a kutatás szerint ez csak a koordinálatlan vagy teljesen centralizált rendszerekre igaz, a koordinált rendszerek éppen magasabb foglalkoztatással járnak együtt. „A kollektív szerződés csak a szakszervezeti tagokra vonatkozik” – a magyar szabályozás szerint a szerződés munkaviszonyra vonatkozó rendelkezései a munkáltató valamennyi munkavállalójára kiterjednek.
+**Ahol erős a kollektív szerződés, ott sok a szakszervezeti tag is** – nem feltétlenül: Svédországban a tagság kb. 66–70 százalék, a lefedettség 88 százalék; Ausztriában a tagság 20,2 százalék (2024), a lefedettség 98 százalék (2024). „Az erősebb szakszervezet automatikusan merevebb munkaerőpiacot jelent” – a kutatás szerint ez csak a koordinálatlan vagy teljesen centralizált rendszerekre igaz, a koordinált rendszerek éppen magasabb foglalkoztatással járnak együtt. „A kollektív szerződés csak a szakszervezeti tagokra vonatkozik” – a magyar szabályozás szerint a szerződés munkaviszonyra vonatkozó rendelkezései a munkáltató valamennyi munkavállalójára kiterjednek.
 
 ## Tagság vagy lefedettség?
 
-A szakszervezetekről szóló vitát gyakran egy Svédországról szóló mondat indítja el: ott „szinte mindenki” szakszervezeti tag, és a dolgozókat még betegállományban sem zavarják. Az alábbi ellenőrzés ezt az állítást veti össze a forrásokkal.
-
-A svéd állítás ellenőrzése pontosan a tagság és a lefedettség különbségét igazolja vissza. A svéd állami közvetítő hivatal (Medlingsinstitutet) szerint a szervezettségi arány az elmúlt években valamivel 70 százalék alatt volt, a fizikai dolgozóknál körülbelül 50, a szellemi dolgozóknál valamivel 70 százalék felett. Az OECD ennél valamivel alacsonyabb, 65,9 százalékos (2024) tagsági arányt közöl. A kollektívszerződés-lefedettség ellenben valóban igen magas: a Medlingsinstitutet szerint 2025-ben a svédországi alkalmazottak 88 százalékára terjedt ki kollektív szerződés, ezt az OECD 2024-es, szintén 88,0 százalékos adata is megerősíti. Vagyis az állítás a lefedettségre igaz, a tagságra nem: a svéd munkavállalók túlnyomó többségére vonatkozik kollektív szerződés, de körülbelül minden harmadik munkavállaló nem tagja szakszervezetnek.
-
-A betegállomány szabálya pedig a svéd Társadalombiztosítási Hivatal (Försäkringskassan) szerint állami, nem szakszervezeti kérdés. A munkáltatónak az első beteg naptól kezdve kötelessége a visszatérést segítő intézkedéseket tennie, az első 14 napra betegszabadság-díjat fizet, orvosi igazolás a 8. naptól kell, és ha a táppénzes állomány várhatóan 60 napnál hosszabb lesz, a 30. napra visszatérési tervet kell készíteni. Ezek a szabályok társadalombiztosítási jogosultsági feltételek: a leírásukban szakszervezetről vagy kollektív szerződésről nincs szó. Az egyetlen pont, ahol szakszervezeti szereplő egyáltalán megjelenik, egy egyeztető megbeszélés, ahol egy szakszervezeti képviselő „részt vehet”, vagyis opcionális, nem kötelező résztvevő. A konklúzió tehát az, hogy a lefedettség valóban szinte teljes körű, de ez elsősorban a kollektív szerződések hatályára vonatkozik, a betegállomány menete pedig a forrás szerint önálló szakszervezeti szereppel nem jár.
+A szakszervezeti tagság és a kollektív szerződések lefedettsége két külön mutató, és Svédország jól mutatja a különbséget. A svéd állami közvetítő hivatal (Medlingsinstitutet) szerint a szervezettségi arány az elmúlt években valamivel 70 százalék alatt volt, a fizikai dolgozóknál körülbelül 50, a szellemi dolgozóknál valamivel 70 százalék felett. Az OECD ennél valamivel alacsonyabb, 65,9 százalékos (2024) tagsági arányt közöl. A kollektívszerződés-lefedettség ellenben igen magas: a Medlingsinstitutet szerint 2025-ben a svédországi alkalmazottak 88 százalékára terjedt ki kollektív szerződés, ezt az OECD 2024-es, szintén 88,0 százalékos adata is megerősíti. A svéd munkavállalók túlnyomó többségére vonatkozik tehát kollektív szerződés, miközben körülbelül minden harmadik munkavállaló nem tagja szakszervezetnek.
 
 ## Európai minták
 
@@ -172,6 +168,4 @@ Az elemzésnek vannak korlátai is. Több ponton hivatalos forrásból nem volt 
 - [OECD Data Explorer – Collective Bargaining Coverage (OECD, 2026)](https://data-explorer.oecd.org/)
 - [OECD Data Explorer – Trade Union Density (OECD, 2026)](https://data-explorer.oecd.org/)
 - [Negotiating Our Way Up: Collective Bargaining in a Changing World of Work (OECD, 2019)](https://www.oecd.org/en/publications/negotiating-our-way-up_1fd2da34-en/full-report.html)
-- [Om din medarbetare är sjuk i mer än 14 dagar (munkáltatói tájékoztató) (Försäkringskassan)](https://www.forsakringskassan.se/arbetsgivare/sjukdom-och-skada/om-din-medarbetare-ar-sjuk-i-mer-an-14-dagar)
-- [Rehabiliteringskedjan (Försäkringskassan)](https://www.forsakringskassan.se/privatperson/sjuk-eller-skadad/rehabiliteringskedjan)
 - [Kollektivavtalstäckning och organisationsgrad (Medlingsinstitutet, 2026)](https://www.mi.se/forhandling-avtal/kollektivavtalstackning-och-organisationsgrad/)
