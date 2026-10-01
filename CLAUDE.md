@@ -21,8 +21,17 @@ Főoldal (`/`, `src/pages/Landing.jsx`: legfrissebb 3 elemzés), Elemzések (`/e
 - Képek: `public/elemzesek/<url-azonosító>/…` és `![leírás](/elemzesek/<url-azonosító>/kep.webp)`; WebP-re optimalizálva.
 - Az oldal SEO-ja (`src/utils/useSeo.js`) a fejlécből jön; fix oldalaké a `src/data/seo.js`-ben.
 
+## Elemzések készítése (munkaanyag)
+- Az elemzések munkakönyvtára `Elemzés/<url-azonosító>/` (`belso-forrasanyagok/`: csak a felhasználó tölti; `kulso-forrasanyagok/` + `FORRASJEGYZEK.md`; `fejezetek/*.md`; `abrak/`; `ELEMZES_STATE.md`). A munkafolyamat: `.claude/skills/elemzes/` skill és `.claude/agents/elemzes-*.md` agentek.
+- „Elemzés”, nem megvalósíthatósági tanulmány (az csak egy lehetséges fajtája). Kimenet: Markdown, fejezetenként.
+- Csak ellenőrizhető, hivatalos forrásból dolgozunk; ami letölthető, azt az eredeti hivatalos URL-ről letöltjük (`.claude/skills/elemzes/reference/forrasszabalyok.md`).
+- Csak a legfontosabb forrásokat használjuk: egy állítás, egy (a leghivatalosabb) forrás, fő dokumentum és nem közlemény; irányérték kb. 15–20 hivatkozott forrás elemzésenként. A forrásokat kutatás előtt forrástervben (`FORRASTERV.md`) választjuk ki a felhasználóval; csak azt töltjük le, csak a szükséges részt, és forrásonként egyszer kivonat készül (`kulso-forrasanyagok/kivonatok/<KÓD>.md`), amelyből az agentek dolgoznak.
+- A külső forrásokat legalább három körben vizsgáljuk: hazai, uniós, nemzetközi (mappák: `1_hazai/`, `2_eu/`, `3_nemzetkozi/`; a `FORRASJEGYZEK.md` „Kör” oszlopa).
+- Minden elemzés utolsó melléklete (és a webes változat végén a `## Forrásanyagok` szakasz) kizárólag külső forrást tartalmaz, a három kör szerint csoportosítva, az eredeti internetes URL-re mutató linkkel.
+- Az `Elemzés/` tartalma gitignore-olt (publikus repó), csak a README verziózott.
+
 ## Megjelent elemzések
-- `4-napos-munkahet` (2026-09-29): a `C:\Users\salamon.edit\Documents\4napos munkahét` megvalósíthatósági tanulmány (forrás: `content/*.md`, ábrák: `abrak/`) rövidített webes változata. A teljes PDF-et a felhasználó kérésére egyelőre NEM tesszük letölthetővé (a „Jóváhagyó” mező még kitöltetlen lehet).
+- `4-napos-munkahet` (2026-09-29): szakpolitikai elemzés (2026-10-01-én átírva a régi megvalósíthatósági tanulmányból, 25 hivatalos forrással). Munkaanyag: `Elemzés/4-napos-munkahet/` (fejezetek: `fejezetek/`, a régi tanulmány: `archiv-mvt/`). A teljes PDF-et a felhasználó kérésére egyelőre NEM tesszük letölthetővé.
 
 ## Dizájn
 A https://sustainabl-finance-44.aura.build/ sablon mintájára (2026-09-29): fehér alap, Inter, nagy szoros címek, üveghatású lebegő pirula-menü, kettéosztott hero (bal: soronként felcsúszó cím, jobb: rácsminta + keringő részecskék `HeroCanvas`, egy szeletük „vakfolt”, + lebegő szám-kártya), sötét (#050505) kiemelt sáv számsorral, hírszoba-kártyák (fénykép helyett rácsmintán a kiemelt szám), slate-50 lábléc. Akcentszín a Vakzóna-narancs (#ea580c).

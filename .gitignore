@@ -13,3 +13,7 @@ npm-debug.log*
 
 .vercel
 .env*
+
+# elemzések munkaanyagai (belső és letöltött külső források) – nem publikus
+/Elemzés/*
+!/Elemzés/README.md
