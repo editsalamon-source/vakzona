@@ -42,6 +42,7 @@ Négy fix kategória (2026-10-01): Gazdaság, Társadalom, Kultúra, Tudomány (
 ## Megjelent elemzések
 - `4-napos-munkahet` (2026-09-29): szakpolitikai elemzés (2026-10-01-én átírva a régi megvalósíthatósági tanulmányból, 25 hivatalos forrással). Munkaanyag: `Elemzés/4-napos-munkahet/` (fejezetek: `fejezetek/`, a régi tanulmány: `archiv-mvt/`). A teljes PDF-et a felhasználó kérésére egyelőre NEM tesszük letölthetővé.
 - `szakszervezetek` (2026-10-01): „Kell-e erősebb szakszervezet Magyarországon?” – összehasonlító szakpolitikai elemzés javaslattal, 24 hivatalos forrás, forrásterv + kivonatok alapján, lezáró tényellenőrzéssel. Munkaanyag: `Elemzés/szakszervezetek/`. PDF nélkül élesítve (a felhasználó kérésére).
+- `miert-tagul-ki-a-voros-orias` (2026-10-01, élesítve 2026-10-02): „Miért tágul ki a vörös óriás?” – első Tudomány-elemzés, ismeretterjesztő magyarázat (javaslat nélkül), 7 nemzetközi forrás (hazai és uniós kör indoklással üres, a felhasználó jóváhagyásával); a 2024-es Ou–Chen-cikk preprint, a szövegben így jelölve. Munkaanyag: `Elemzés/miert-tagul-ki-a-voros-orias/`. PDF nélkül.
 
 ## Dizájn
 A https://sustainabl-finance-44.aura.build/ sablon mintájára (2026-09-29): fehér alap, Inter, nagy szoros címek, üveghatású lebegő pirula-menü, kettéosztott hero (bal: soronként felcsúszó cím, jobb: rácsminta + keringő részecskék `HeroCanvas`, egy szeletük „vakfolt”, + lebegő szám-kártya), sötét (#050505) kiemelt sáv számsorral, hírszoba-kártyák (fénykép helyett rácsmintán a kiemelt szám), slate-50 lábléc. Akcentszín a Vakzóna-narancs (#ea580c).
