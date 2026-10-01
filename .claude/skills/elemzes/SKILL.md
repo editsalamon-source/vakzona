@@ -35,6 +35,11 @@ a megvalósíthatósági tanulmány csak az egyik lehetséges fajtája.
    kivonat készül (`kulso-forrasanyagok/kivonatok/<KÓD>.md`); az író és az
    ellenőrző agent ezt olvassa, nem a teljes PDF-et/HTML-t.
 7. **Formátum: Markdown**, fejezetenként külön fájlban.
+8. **Minden elemzés közérthető nyitó fejezettel kezdődik**: „Alapok: miről van
+   szó?” (`fejezetek/00a_alapok.md`, a webes változatban az Összefoglaló
+   utáni első szakasz), amely a fogalmakat, a kontextust és a gyakori
+   tévhiteket ismeretterjesztő stílusban mutatja be
+   (`reference/kozertheto_stilus.md`, `elemzes-explainer` agent).
 
 ## Könyvtárszerkezet
 
@@ -57,6 +62,7 @@ Elemzés/<url-azonosító>/
     KEZI_LETOLTES.md          amit a felhasználónak kell kézzel letöltenie
   fejezetek/
     00_osszefoglalo.md
+    00a_alapok.md             közérthető nyitó fejezet (számozatlan)
     01_<nev>.md …             törzsfejezetek
     M01_<nev>.md …            mellékletek
     Mnn_forrasanyagok.md      mindig az utolsó melléklet
@@ -156,7 +162,8 @@ van-e (vagy lesz-e) belső forrásanyag. Írd a briefbe, és kérj rá jóváhag
 
 A `reference/szerkezet_sablon.md` menüjéből a felhasználóval közösen
 állítsátok össze a fejezet- és melléklet-listát (az elemzés fajtájához
-igazítva). A Forrásanyagok melléklet mindig benne van, mindig utolsóként.
+igazítva). Az „Alapok” fejezet (`00a_alapok`) és a Forrásanyagok melléklet
+mindig benne van, utóbbi mindig utolsóként.
 Írd az állapotfájlba checklistként; ez a 3–4. fázis backlogja.
 
 ### 3–4. fázis: tartalmi kidolgozás
@@ -183,9 +190,12 @@ Minden szövegváltozás után futtasd újra.
 
 ### 4. fázis vége: összegzés
 
-Ha minden elemző fejezet kész, hívd meg az **`elemzes-synthesizer`** agentet:
-előbb a következtetések (és ha az elemzés fajtája ezt kívánja, javaslat)
-fejezet, majd az Összefoglaló. A javaslatot mutasd be a felhasználónak,
+Ha minden elemző fejezet kész, sorrendben:
+1. **`elemzes-explainer`**: az „Alapok” fejezet (`00a_alapok.md`), a kész
+   fejezetekből.
+2. **`elemzes-synthesizer`**: előbb a következtetések (és ha az elemzés
+   fajtája ezt kívánja, javaslat) fejezet, majd az Összefoglaló, amely az
+   „Alapok” fogalmaira épít, és nem ismétli őket. A javaslatot mutasd be a felhasználónak,
 mielőtt továbblépnél.
 
 ### 5. fázis: ellenőrzés
@@ -204,6 +214,8 @@ szöveget. Lezárás előtt kötelező egy teljes kör („lezáró” mód), be
 Az elemzésből rövidített webes változat készül a honlapra:
 `src/content/elemzesek/<url-azonosító>.md`, a projekt CLAUDE.md-jében leírt
 fejléc- és formai szabályok szerint (előbb `piszkozat: igen`). Szabályok:
+- az Összefoglaló doboz utáni első szakasz: „## Alapok: miről van szó?”, az
+  `00a_alapok.md` rövidített változata (`reference/kozertheto_stilus.md`),
 - számot, tényt csak az elemzésből vegyél át,
 - belső forrásból származó tartalom csak a felhasználó engedélyével,
 - a végén `## Forrásanyagok` szakasz, kizárólag külső forrásokkal, az eredeti

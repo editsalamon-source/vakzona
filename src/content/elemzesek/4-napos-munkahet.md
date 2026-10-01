@@ -22,9 +22,17 @@ szám: 25 | hivatalos forrás
 
 Ez az írás a Vakzóna *„A 4 napos munkahét Magyarországon”* című szakpolitikai elemzésének rövidített, webes változata. Az elemzés kizárólag nyilvános, hivatalos vagy elsődleges forrásokra épül: jogszabályokra, uniós és nemzetközi intézmények kiadványaira, statisztikai hivatalok adatbázisaira, lektorált kutatásokra és pilotprogramok jelentéseire. Hírportálra nem épül. Az adatok 2026 szeptemberi lekérdezésből származnak.
 
-## Mit jelent a „4 napos munkahét”?
+## Alapok: miről van szó?
 
-A közbeszédben a kifejezés több, egymástól lényegesen eltérő modellt takar.
+### Miért fontos ez most?
+
+Néhány éve még elméleti vitának számított, hogy valaki ugyanannyi fizetésért egy nappal kevesebbet dolgozzon hetente. Mára több európai kormány és száznál is több munkáltató (cég és szervezet) kipróbálta. Belgium 2022-ben törvénybe foglalta, hogy a munkavállaló kérheti munkaidejének négy napra sűrítését, Portugália és Lengyelország pedig állami támogatású kísérleti programot indított. Az Eurofound, az Európai Unió munkaügyi kutatóintézete 2026-ban külön összehasonlító anyagot adott ki a témában.
+
+Magyarországon a kérdés két okból kerül most elő: szűkül a munkaerő-kínálat (a népesség 2022 és 2026 eleje között több mint 120 ezer fővel csökkent), és nemzetközileg is terjed a modell. A kiinduló helyzet nem egyszerű: a magyar foglalkoztatottak heti munkaideje hosszabb, a termelékenysége viszont alacsonyabb az uniós átlagnál. A kormány 2022-ben a kérdést „nem időszerűnek” nevezte.
+
+### Néhány fogalom
+
+A közbeszédben a „4 napos munkahét” több, egymástól eltérő dolgot takar:
 
 | Modell | Tartalom | Heti munkaidő |
 |---|---|---|
@@ -33,7 +41,17 @@ A közbeszédben a kifejezés több, egymástól lényegesen eltérő modellt ta
 | **Mérsékelt munkaidő-csökkentés** | a heti munkaidő csökkentése bércsökkentés nélkül, nem feltétlenül négy napon | a példákban 34 és 37,5 óra között |
 | **Arányos csökkentés** | rövidebb munkaidő arányosan csökkentett bérrel | a megállapodás szerint |
 
-Az elemzés a „4 napos munkahét” kifejezést elsősorban az első és a harmadik modellre, azaz a **bércsökkentés nélküli munkaidő-csökkentésre** érti. A sűrített hét nem csökkenti a munkaidőt, ezért rugalmassági eszköz, az arányos csökkentés pedig lényegében a részmunkaidő, amely csak viszonyítási pont.
+Az elemzés a „4 napos munkahét” kifejezést elsősorban az első és a harmadik modellre, azaz a **bércsökkentés nélküli munkaidő-csökkentésre** érti. A sűrített hét nem csökkenti a munkaidőt, csak átosztja, ezért rugalmassági eszköz. Az arányos csökkentés lényegében a részmunkaidő, ez csak viszonyítási pont.
+
+Két további fogalom segít eligazodni az elemzésben. Az **óránkénti munkatermelékenység** azt mutatja, mennyi gazdasági érték jut egy ledolgozott munkaórára, az uniós átlaghoz viszonyítva. A kísérleteknél fontos a **kontrollcsoport**: azok köre, akik nem vesznek részt a programban, csak összehasonlításra szolgálnak. Kontrollcsoport nélkül nehéz megállapítani, hogy a mért javulást valóban a rövidebb munkaidő okozta-e.
+
+### Hogyan vezetik be?
+
+A nemzetközi gyakorlatban három út különíthető el: a törvényi út (jog a kérelmezésre, vagy a törvényes munkaidő csökkentése), az állami támogatású pilot (a kormány anyagilag támogat egy önként jelentkező vállalati kört, és független kutatók mérik az eredményt) és az önkéntes vállalati kísérlet (külső szervezetek koordinálják, egyetemi kutatók értékelik). Magyarországon a Munka törvénykönyve a versenyszférában ma sem tiltja a bércsökkentés nélküli rövidebb munkaidőt, a közszférában viszont jogi akadály is van.
+
+### Gyakori tévhitek
+
+„A 4 napos munkahét mindig azt jelenti, hogy 4×10 órát kell dolgozni” – ez csak a sűrített munkahétre igaz, a valódi csökkentésnél a heti óraszám is kevesebb lesz. „Az uniós jog előírja vagy tiltja a modellt” – egyik sem igaz, a bevezetés tagállami hatáskörben marad. „A kísérletek mindenhol beváltak, tehát biztosan működik” – a legtöbb eredmény kedvező, de a résztvevők önként jelentkeznek, kontrollcsoport ritkán van, ezért a teljes, kötelező bevezetés hatása bizonytalan.
 
 ## Uniós és nemzetközi irányok
 

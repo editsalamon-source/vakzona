@@ -68,6 +68,13 @@ kereszthivatkozás, nyelv) fordítsd a figyelmet.
 7. **Stílus**: a/az, mondatközi pontosvessző, félkövér+dőlt együtt, hiányzó
    „→ Bővebben” mondat, `[helykitöltő]` előfordulások listája.
 8. **Elavult szerkezetleírás**: „X fejezetből áll” típusú mondatok egyeznek-e.
+9. **Közérthetőség („Alapok”)**: létezik-e a `fejezetek/00a_alapok.md` (és a
+   webes változatban az Összefoglaló utáni „## Alapok: miről van szó?”
+   szakasz); követi-e a `reference/kozertheto_stilus.md` négy blokkját; a
+   későbbi fejezetek kulcsszavai (szakszó, rövidítés) magyarázva vannak-e
+   az „Alapok”-ban vagy a fogalomjegyzékben – a magyarázatlanokat
+   listázd; az „Alapok” nem állít-e mást vagy többet, mint a fejezetek
+   (számok egyeznek, a szemléltető példák jelöltek).
 
 # Amit SOHA nem teszel meg
 

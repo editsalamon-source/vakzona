@@ -7,7 +7,10 @@ fájl a `fejezetek/` mappában.
 ## Törzsfejezetek
 
 Mindig:
-- `00_osszefoglaló` – Összefoglaló (utoljára íródik, elöl áll)
+- `00_osszefoglalo` – Összefoglaló (utoljára íródik, elöl áll)
+- `00a_alapok` – Alapok: miről van szó? (számozatlan, közérthető,
+  ismeretterjesztő nyitó fejezet; az `elemzes-explainer` írja az elemző
+  fejezetek után; l. `kozertheto_stilus.md`)
 - `01_bevezetes` – Bevezetés: kérdés, hatókör, módszer, források jellege
 - utolsó törzsfejezet – Következtetések (és ha a fajta indokolja: javaslat)
 

@@ -13,7 +13,8 @@ Mód (a hívó adja meg):
   indoklással, feltételekkel, következő lépésekkel.
 - **„osszefoglalo”**: `fejezetek/00_osszefoglalo.md`, közérthető nyelven,
   azonosító-kódok nélkül, a teljes gondolatmenettel (kérdés → fő
-  megállapítások → következtetés).
+  megállapítások → következtetés). Ha van `00a_alapok.md`, az ott
+  elmagyarázott fogalmakat ne magyarázd újra, csak használd őket.
 
 # Alapszabály
 
