@@ -117,8 +117,10 @@ function Landing() {
           <div className={LandingCSS.darkGrid} />
           <div className={`wrap ${LandingCSS.darkInner}`}>
             <Reveal>
-              <span className={LandingCSS.darkTag}>Kiemelt elemzés</span>
-              <h2 className={LandingCSS.darkTitle}>{latest.title}</h2>
+              <span className="tag">Legfrissebb</span>
+              <h2 className={LandingCSS.darkHeading}>Kiemelt elemzés</h2>
+              <span className={LandingCSS.darkMeta}>{latest.category.name} · {latest.topic}</span>
+              <h3 className={LandingCSS.darkTitle}>{latest.title}</h3>
               {latest.subtitle && <p className={LandingCSS.darkLead}>{latest.subtitle}</p>}
               <div className={LandingCSS.darkActions}>
                 <Link to={`/elemzesek/${latest.slug}`} className={LandingCSS.whiteBtn}>
