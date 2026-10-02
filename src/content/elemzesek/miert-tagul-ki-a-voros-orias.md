@@ -10,7 +10,7 @@ szám: 256× | a Nap sugara a vörös óriás ág csúcsán
 szám: 2602 K | a Nap felszíni hőmérséklete ekkor
 szám: 7,59 mrd év | múlva éri el a Nap ezt a csúcsot
 szám: 7 | hivatalos forrás
-pdf: miert-tagul-ki-a-voros-orias-v1.0.pdf | 20 oldal
+pdf: miert-tagul-ki-a-voros-orias-v1.1.pdf | 36 oldal
 ---
 
 > **Összefoglaló**
