@@ -13,31 +13,47 @@ function About() {
           területekre fókuszál.
         </p>
 
-        <h2>Kik vagyunk?</h2>
-        <p>[Rövid bemutatkozás: kik állnak az oldal mögött, milyen háttérrel és szakterülettel.]</p>
-
-        <h2>Hogyan készülnek az elemzések?</h2>
+        <h2>Miről írunk?</h2>
         <p>
-          Elemzéseink kizárólag ellenőrizhető, hivatalos forrásokra épülnek: jogszabályokra,
-          statisztikákra, hazai, uniós és nemzetközi intézmények kiadványaira. Minden írásnál
-          feltüntetjük:
+          Nem a híreket meséljük újra. Kérdéseket teszünk fel, és utánajárunk: adatokat keresünk,
+          országokat és megoldásokat vetünk össze, és megnézzük, mi áll egy-egy gyakran hallott
+          állítás mögött.
         </p>
+        <p>Három kérdés vezet minket:</p>
         <ul>
-          <li>a felhasznált forrásokat, az eredeti helyükre mutató linkkel,</li>
-          <li>a számítások mögötti feltételezéseket,</li>
-          <li>és az eredmények korlátait.</li>
+          <li>Mi történik máshol Európában, amiről itthon alig esik szó?</li>
+          <li>Mit veszünk természetesnek, ami talán egyáltalán nem az?</li>
+          <li>Mi az, ami ott van előttünk, csak éppen nem vesszük észre?</li>
         </ul>
-
-        <h2>Mesterséges intelligencia</h2>
         <p>
-          A munkában mesterséges intelligencián alapuló eszközöket használunk: a források
-          feldolgozásához, kivonatolásához és a szöveg előkészítéséhez. A forrásokat mi választjuk
-          ki, és minden számot, állítást az eredeti forrással vetünk össze, mielőtt egy elemzés
-          megjelenik.
+          Írunk gazdaságról, társadalomról, kultúráról és tudományról. A témák különböznek, a
+          kiindulópont ugyanaz: egy kérdés, amelyre érdemes alaposabb választ keresni, mint amit
+          egy hír vagy egy vita adni tud.
         </p>
 
-        <h2>Függetlenség</h2>
-        <p>[Finanszírozás, esetleges együttműködések és összeférhetetlenségek bemutatása.]</p>
+        <h2>Hogyan írunk?</h2>
+        <p>
+          Minden elemzés egy közérthető bevezetővel kezdődik, hogy szakmai előismeret nélkül is
+          követhető legyen. Ezután jönnek az adatok és az összehasonlítások, ellenőrizhető
+          forrásokból, az eredeti helyükre mutató linkkel. Ahol egy kérdésre nincs biztos válasz,
+          azt is megmondjuk.
+        </p>
+        <p>
+          Nem állunk egyik politikai oldal mellé sem. Nem azért írunk, hogy megmondjuk, mit kell
+          gondolni, hanem hogy legyen miről gondolkodni.
+        </p>
+
+        <h2>Mesterséges intelligencia és szerzői jog</h2>
+        <p>
+          A munkához mesterséges intelligencián alapuló eszközöket is használunk, a forrásokat
+          azonban mi választjuk ki, és minden számot, állítást az eredetivel vetünk össze.
+        </p>
+        <p>
+          Tiszteletben tartjuk a felhasznált művek szerzőinek jogait. A forrásokat nem közöljük
+          újra, hanem összefoglaljuk és az eredeti helyükre hivatkozunk; szó szerint csak rövid,
+          megjelölt idézetet veszünk át, a forrás megnevezésével. Ábráinkat magunk készítjük,
+          szabadon felhasználható adatokból, a licenc által előírt feltüntetéssel.
+        </p>
       </Reveal>
     </div>
   );

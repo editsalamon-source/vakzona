@@ -20,7 +20,7 @@ const seo = {
   ),
   "/rolunk": {
     title: "Rólunk – Vakzóna",
-    description: "Kik állnak a Vakzóna mögött, és hogyan készülnek az elemzések.",
+    description: "Miről és hogyan ír a Vakzóna: kérdések, adatok és összehasonlítások a hírek helyett.",
   },
   notFound: {
     title: "Az oldal nem található – Vakzóna",
