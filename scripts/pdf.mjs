@@ -167,7 +167,7 @@ let n = 0;
 chapters.forEach((c) => {
   c.appendix = /forrás|melléklet|irodalom/i.test(c.title);
   // az „Alapok” nyitó fejezet számozatlan, így a szövegbeli „N. fejezet” hivatkozások stimmelnek
-  c.unnumbered = /^Alapok/i.test(c.title);
+  c.unnumbered = /^(Alapok|(Részletes )?összefoglaló)/i.test(c.title);
   c.label = c.appendix ? "Melléklet" : c.unnumbered ? "—" : String(++n).padStart(2, "0");
   c.html = renderTokens(c.tokens);
 });
@@ -288,7 +288,7 @@ const tocPage = (pages = {}) => `
 <section class="front">
   <p class="eyebrow">Tartalom</p>
   <h2 class="frontTitle">${esc(doc.title)}</h2>
-  <ol class="toc">
+  <ol class="toc${tocEntries.length > 10 ? " tocCompact" : ""}">
     ${tocEntries
       .map(
         (e) => `<li class="${e.appendix ? "tocAppendix" : ""}"><a href="#${e.id}">
@@ -328,7 +328,7 @@ const chapterHtml = chapters
   <header class="chapterHead">
     <div class="chapterGrid"></div>
     ${c.appendix || c.unnumbered ? "" : `<span class="chapterNo">${esc(c.label)}</span>`}
-    <p class="eyebrow">${c.appendix ? "Melléklet" : c.unnumbered ? "Bevezető" : `${c.label}. fejezet`}</p>
+    <p class="eyebrow">${c.appendix ? "Melléklet" : c.unnumbered ? (/összefoglaló/i.test(c.title) ? "Összefoglaló" : "Bevezető") : `${c.label}. fejezet`}</p>
     <h2>${esc(c.title)}</h2>
   </header>
   <div class="prose">${c.html}</div>

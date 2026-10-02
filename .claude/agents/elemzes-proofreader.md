@@ -75,6 +75,10 @@ kereszthivatkozás, nyelv) fordítsd a figyelmet.
    az „Alapok”-ban vagy a fogalomjegyzékben – a magyarázatlanokat
    listázd; az „Alapok” nem állít-e mást vagy többet, mint a fejezetek
    (számok egyeznek, a szemléltető példák jelöltek).
+10. **PDF-terjedelem** (lezáró módban): a `fejezetek/*.md` (Összefoglaló
+   és Forrásanyagok nélkül) szószáma legalább a webes változat
+   (`src/content/elemzesek/<url-azonosító>.md`) 2–3-szorosa-e; ha nem,
+   jelezd, mely fejezetek vékonyak a kivonatokhoz képest (te ne bővíts).
 
 # Amit SOHA nem teszel meg
 

@@ -223,6 +223,24 @@ fejléc- és formai szabályok szerint (előbb `piszkozat: igen`). Szabályok:
 - ábrák: `public/elemzesek/<url-azonosító>/…`, WebP-ben.
 Élesítés (a `piszkozat` sor törlése, deploy) csak a felhasználó kérésére.
 
+### 7. fázis: teljes PDF (minden elemzéshez, 2026-10-02)
+
+Minden elemzéshez letölthető PDF készül, és a PDF a TELJES kutatási és
+elemzési anyag:
+- **Terjedelem: a webes (összefoglaló) változat legalább 2–3-szorosa**
+  (szószámban mérve). Ezért a `fejezetek/*.md` eleve részletesek (teljes
+  kutatástörténet, forráskritika, ellentmondások, mellékletek), a webes
+  változat ezekből RÖVIDÍT. Ha a fejezetek összesen nem érik el a 2×-t,
+  bővíteni kell – a kivonatokból, új tény kitalálása nélkül.
+- Összeállítás: a CLAUDE.md „Letölthető PDF” része szerint
+  (`pdf/teljes-elemzes.md` a fejezetekből, `npm run pdf -- <url-azonosító>
+  --forras …`). Ábrák a PDF-be is kerülnek.
+- Ellenőrzés szedés előtt: `teljes-elemzes.md` és a webes .md szószáma
+  (pl. `wc -w`), az arány bekerül az `ELEMZES_STATE.md`-be.
+- **Közzététel: a PDF alapértelmezésben a webes változattal együtt
+  nyilvános** (`public/elemzesek/<url-azonosító>/` + `pdf:` fejlécsor),
+  hacsak a felhasználó az adott elemzésnél másként nem kéri.
+
 ## Környezeti emlékeztető (Windows)
 
 - Letöltéshez `curl -L --fail -o <fájl> "<URL>"` a Bash eszközben; utána

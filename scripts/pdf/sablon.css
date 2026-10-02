@@ -304,6 +304,9 @@ h1, h2, h3, h4 { color: var(--ink); font-weight: 600; letter-spacing: -0.03em; l
 .tocDots { flex: 1; border-bottom: .35mm dotted #cbd5e1; transform: translateY(-1mm); }
 .tocPage { font-size: 9pt; font-weight: 600; color: var(--muted); font-variant-numeric: tabular-nums; }
 .tocAppendix .tocTitle { color: var(--muted); }
+/* sok fejezetnél (10+) tömörebb tartalomjegyzék, hogy ne csússzon a kolofon alá */
+.tocCompact a { padding: 2.3mm 0; }
+.tocCompact .tocTitle { font-size: 10.5pt; }
 
 .colophon {
   position: absolute !important;

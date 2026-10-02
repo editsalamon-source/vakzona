@@ -60,14 +60,24 @@ def clean_title(t):
     return t.strip()
 
 out = [f"# {NUM}. melléklet: Forrásanyagok", "",
-       f"A források lezárásának dátuma: {DATE}. Minden hivatkozás az",
+       f"A források lezárásának dátuma: {DATE.rstrip('.')}. Minden hivatkozás az",
        "eredeti, hivatalos lelőhelyre mutat. A melléklet kizárólag külső, nyilvános",
        "forrásokat tartalmaz. Megbízhatóság: **M** = magas (hivatalos, lektorált vagy",
-       "elsődleges intézményi forrás), **K** = közepes (érdekelt fél, például",
-       "pilotszervező, párt vagy érdekképviselet saját közlése).", ""]
+       "elsődleges intézményi forrás), **K** = közepes (érdekelt fél saját közlése).", ""]
+# üres forráskör indoklása: kulso-forrasanyagok/ures_korok.txt, soronként "uniós: indoklás"
+ures = {}
+up = os.path.join(E, "kulso-forrasanyagok", "ures_korok.txt")
+if os.path.exists(up):
+    for line in open(up, encoding="utf-8"):
+        if ":" in line:
+            k, v = line.split(":", 1); ures[k.strip()] = v.strip()
 for kor, title in (("hazai", "Hazai források"), ("uniós", "Uniós források"), ("nemzetközi", "Nemzetközi források")):
+    codes = sorted(c for c in used if c in reg and reg[c][0]["kor"] == kor)
+    if not codes:
+        out += [f"## {title}", "", ures.get(kor, "Ebben a forráskörben nincs hivatkozott forrás. [helykitöltő: indoklás]"), ""]
+        continue
     out += [f"## {title}", "", "| Kód | Forrás | Kiadó | Dátum | Megb. |", "|---|---|---|---|---|"]
-    for code in sorted(c for c in used if c in reg and reg[c][0]["kor"] == kor):
+    for code in codes:
         for r in reg[code]:
             cim = clean_title(r["cim"]).replace("[", "(").replace("]", ")")
             out.append(f"| {code} | [{cim}]({clean_url(r['url'])}) | {r['kiado']} | {r['datum']} | {r['megb']} |")

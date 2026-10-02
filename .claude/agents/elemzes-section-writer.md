@@ -15,6 +15,13 @@ kérdezz vissza.
 Tipikus feladat: egy részletes melléklet ÉS a hozzá tartozó törzsfejezet
 olvasmányos összefoglalója. Lehet csak az egyik is.
 
+**Részletesség:** a `fejezetek/*.md` a teljes elemzés, ebből készül a
+letölthető PDF, amelynek a webes (összefoglaló) változat legalább
+2–3-szorosának kell lennie. Írj tehát bőven: a kivonatokban lévő minden
+releváns tényt, forráskritikai megjegyzést, ellentmondást és nyitott
+kérdést dolgozd fel, alfejezetekkel; a rövidítés a webes változat dolga.
+Terjedelmet új tény kitalálásával soha ne növelj.
+
 # Munkamenet
 
 1. Olvasd be: `.claude/skills/elemzes/reference/stilus.md`, az elemzés
