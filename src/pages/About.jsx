@@ -26,7 +26,8 @@ function About() {
           <li>Mi az, ami ott van előttünk, csak éppen nem vesszük észre?</li>
         </ul>
         <p>
-          Írunk gazdaságról, társadalomról, kultúráról és tudományról. A témák különböznek, a
+          Írunk gazdaságról, társadalomról, kultúráról, tudományról és mesterséges
+          intelligenciáról. A témák különböznek, a
           kiindulópont ugyanaz: egy kérdés, amelyre érdemes alaposabb választ keresni, mint amit
           egy hír vagy egy vita adni tud.
         </p>

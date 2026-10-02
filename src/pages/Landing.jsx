@@ -57,8 +57,8 @@ function Landing() {
             </h1>
             <Reveal delay={INTRO_DELAY + 0.35}>
               <p className={`lead ${LandingCSS.lead}`}>
-                A Vakzóna független elemzéseket közöl gazdasági, társadalmi, kulturális és
-                tudományos témákban – hivatalos forrásokra, adatokra és átlátható módszertanra
+                A Vakzóna független elemzéseket közöl gazdasági, társadalmi, kulturális,
+                tudományos és MI-témákban – hivatalos forrásokra, adatokra és átlátható módszertanra
                 építve. A munkában mesterséges intelligenciát is használunk, de minden állítást
                 az eredeti forrással ellenőrzünk.
               </p>
@@ -100,7 +100,7 @@ function Landing() {
           <Reveal className={LandingCSS.sectionHead}>
             <div>
               <span className="tag">Kategóriák</span>
-              <h2>Négy terület, egy módszer</h2>
+              <h2>Öt terület, egy módszer</h2>
             </div>
             <Link to="/elemzesek" className={LandingCSS.underlineLink}>
               Összes elemzés <Arrow size={12} />

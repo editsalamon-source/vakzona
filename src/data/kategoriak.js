@@ -22,6 +22,11 @@ const KATEGORIAK = [
     name: "Tudomány",
     description: "Kutatás, technológia, környezet és innováció – az eredmények mögötti bizonyítékokkal, közérthetően.",
   },
+  {
+    slug: "mi",
+    name: "MI",
+    description: "Mesterséges intelligencia: hogyan működik, mire használják, hogyan szabályozzák, és mit változtat meg a munkában, a tanulásban és a mindennapokban.",
+  },
 ];
 
 export function getKategoria(slugOrName) {

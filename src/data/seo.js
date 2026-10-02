@@ -9,11 +9,11 @@ const seo = {
   "/": {
     title: "Vakzóna – független elemzések",
     description:
-      "Független elemzések gazdasági, társadalmi, kulturális és tudományos témákban, hivatalos forrásokra, adatokra és átlátható módszertanra építve.",
+      "Független elemzések gazdasági, társadalmi, kulturális, tudományos és MI-témákban, hivatalos forrásokra, adatokra és átlátható módszertanra építve.",
   },
   "/elemzesek": {
     title: "Elemzések – Vakzóna",
-    description: "A Vakzóna összes elemzése kategóriák szerint: gazdaság, társadalom, kultúra, történelem.",
+    description: "A Vakzóna összes elemzése kategóriák szerint: gazdaság, társadalom, kultúra, tudomány és mesterséges intelligencia.",
   },
   ...Object.fromEntries(
     KATEGORIAK.map((k) => [`/${k.slug}`, { title: `${k.name} – ${SITE_NAME}`, description: k.description }]),

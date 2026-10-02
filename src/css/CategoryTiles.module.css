@@ -1,7 +1,7 @@
 /* Kategóriacsempék a főoldalon (obsidian „Shop by Category” mintára, Vakzóna-stílusban) */
 .row {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   border-top: 1px solid var(--line);
   height: min(78vh, 720px);
   min-height: 560px;
@@ -153,6 +153,9 @@
   .tile { height: 520px; border-bottom: 1px solid var(--line); }
   .tile:nth-child(2n) { border-right: 0; }
   .tile:nth-last-child(-n + 2) { border-bottom: 0; }
+  /* páratlan számú csempénél az utolsó kitölti a sort */
+  .tile:last-child:nth-child(odd) { grid-column: 1 / -1; border-right: 0; }
+  .tile:nth-last-child(2):nth-child(even) { border-bottom: 1px solid var(--line); }
 }
 @media (max-width: 640px) {
   .row { grid-template-columns: 1fr; }

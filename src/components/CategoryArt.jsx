@@ -104,7 +104,41 @@ function Tudomany() {
   );
 }
 
-const ART = { gazdasag: Gazdasag, tarsadalom: Tarsadalom, kultura: Kultura, tudomany: Tudomany };
+// MI: neurális háló négy réteggel; az egyik rejtett csomópont és a belőle induló élek narancsok.
+function Mi() {
+  const layers = [3, 5, 5, 2].map((n, l) =>
+    Array.from({ length: n }, (_, i) => [64 + l * 90, 150 + (i - (n - 1) / 2) * 50])
+  );
+  const hot = "1-3";
+  const edges = [];
+  for (let l = 0; l < layers.length - 1; l++) {
+    layers[l].forEach(([x1, y1], i) =>
+      layers[l + 1].forEach(([x2, y2], j) => {
+        const on = `${l}-${i}` === hot || `${l + 1}-${j}` === hot;
+        edges.push(
+          <line key={`${l}-${i}-${j}`} x1={x1} y1={y1} x2={x2} y2={y2}
+            stroke={on ? A : "currentColor"} strokeWidth={on ? 1.5 : 1} opacity={on ? 1 : 0.35} />
+        );
+      })
+    );
+  }
+  return (
+    <>
+      {edges}
+      {layers.flatMap((nodes, l) =>
+        nodes.map(([x, y], i) => {
+          const on = `${l}-${i}` === hot;
+          return (
+            <circle key={`${l}-${i}`} cx={x} cy={y} r={on ? 11 : 9}
+              fill={on ? A : "var(--art-bg, #fff)"} stroke={on ? A : "currentColor"} strokeWidth="1.5" />
+          );
+        })
+      )}
+    </>
+  );
+}
+
+const ART = { gazdasag: Gazdasag, tarsadalom: Tarsadalom, kultura: Kultura, tudomany: Tudomany, mi: Mi };
 
 function CategoryArt({ slug, className }) {
   const Art = ART[slug];
