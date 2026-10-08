@@ -160,7 +160,7 @@
 
 .stats {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 24px;
   border-top: 1px solid rgba(255, 255, 255, .1);
   padding-top: 32px;
@@ -172,6 +172,8 @@
   font-weight: 500;
   letter-spacing: .06em;
   text-transform: uppercase;
+  hyphens: auto;
+  overflow-wrap: break-word;
   color: rgba(255, 255, 255, .55);
 }
 
@@ -207,7 +209,7 @@
 .centerHead h2 { margin: 0 0 20px; }
 .centerHead p { margin: 0; }
 
-.pillars { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.pillars { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px; }
 .pillar {
   background: var(--bg-soft);
   border: 1px solid var(--line);
@@ -228,7 +230,7 @@
   .heroVisual { order: -1; height: 52vh; min-height: 340px; }
   .heroText { padding: 56px 40px 88px; }
   .title { font-size: clamp(2.8rem, 11vw, 5rem); }
-  .stats { grid-template-columns: repeat(2, 1fr); row-gap: 32px; }
+  .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 32px; }
   .pillars { grid-template-columns: 1fr 1fr; }
 }
 @media (max-width: 640px) {

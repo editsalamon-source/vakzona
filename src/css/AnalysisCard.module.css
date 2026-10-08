@@ -136,6 +136,7 @@
 .stat {
   display: flex;
   flex-direction: column;
+  min-width: 0;
   gap: 4px;
   padding: 12px 14px;
   border-radius: 1rem;
@@ -143,7 +144,7 @@
   border: 1px solid var(--line);
 }
 .statValue { font-size: 1.15rem; font-weight: 700; letter-spacing: -0.03em; color: var(--ink); line-height: 1.1; }
-.statLabel { font-size: .72rem; color: var(--muted); line-height: 1.35; }
+.statLabel { font-size: .72rem; color: var(--muted); line-height: 1.35; hyphens: auto; overflow-wrap: break-word; }
 
 .more {
   display: inline-flex;
