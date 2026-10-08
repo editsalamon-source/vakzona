@@ -11,17 +11,7 @@
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://vakzona.com/gazdasag</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://vakzona.com/tarsadalom</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://vakzona.com/kultura</loc>
+    <loc>https://vakzona.com/mi</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -31,7 +21,17 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://vakzona.com/mi</loc>
+    <loc>https://vakzona.com/kultura</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://vakzona.com/tarsadalom</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://vakzona.com/gazdasag</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -67,6 +67,12 @@
   <url>
     <loc>https://vakzona.com/elemzesek/szakszervezetek</loc>
     <lastmod>2026-10-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://vakzona.com/elemzesek/vallalati-ai-platform</loc>
+    <lastmod>2026-10-08</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.8</priority>
   </url>
