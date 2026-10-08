@@ -6,12 +6,7 @@ import analyses from "../data/analyses";
 import KATEGORIAK from "../data/kategoriak";
 import HeaderCSS from "../css/Header.module.css";
 
-// a kategóriák csak széles képernyőn férnek ki a menübe (keskenyen az Elemzések oldalon vannak)
-const NAV = [
-  { to: "/elemzesek", label: "Elemzések", end: true },
-  ...KATEGORIAK.map((k) => ({ to: `/${k.slug}`, label: k.name, category: true })),
-  { to: "/rolunk", label: "Rólunk" },
-];
+const active = (base) => ({ isActive }) => [base, isActive && HeaderCSS.active].filter(Boolean).join(" ");
 
 // Lebegő, üveghatású pirula-menü a lap tetején.
 function Header() {
@@ -25,18 +20,20 @@ function Header() {
           <span>Vakzóna</span>
         </Link>
         <nav className={HeaderCSS.nav} aria-label="Fő navigáció">
-          {NAV.map(({ to, label, end, category }) => (
-            <NavLink
-              key={to}
-              to={to}
-              end={end}
-              className={({ isActive }) =>
-                [category && HeaderCSS.category, isActive && HeaderCSS.active].filter(Boolean).join(" ") || undefined
-              }
-            >
-              {label}
-            </NavLink>
-          ))}
+          {/* a kategóriák csak széles képernyőn férnek ki a menübe (keskenyen az Elemzések oldalon vannak) */}
+          <div className={HeaderCSS.categories}>
+            {KATEGORIAK.map((k) => (
+              <NavLink key={k.slug} to={`/${k.slug}`} className={active(HeaderCSS.category)}>
+                {k.name}
+              </NavLink>
+            ))}
+          </div>
+          <NavLink to="/elemzesek" end className={active(HeaderCSS.analyses)}>
+            Elemzések
+          </NavLink>
+          <NavLink to="/rolunk" className={active(HeaderCSS.about)}>
+            Rólunk
+          </NavLink>
         </nav>
         {latest && (
           <Link to={`/elemzesek/${latest.slug}`} className={HeaderCSS.cta}>

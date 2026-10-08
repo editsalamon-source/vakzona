@@ -43,10 +43,7 @@
 .nav {
   display: flex;
   align-items: center;
-  gap: 2px;
-  padding: 4px;
-  border-radius: 999px;
-  background: rgba(248, 250, 252, .6);
+  gap: 6px;
 }
 .nav a {
   text-decoration: none;
@@ -57,10 +54,61 @@
   text-transform: uppercase;
   padding: 10px 22px;
   border-radius: 999px;
-  transition: color .3s, background-color .3s;
+  transition: color .3s, background-color .3s, border-color .3s;
 }
-.nav a:hover,
-.nav a.active { color: var(--ink); background: #fff; }
+
+/* kategóriák: saját szürke kapszulában */
+.categories {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  padding: 4px;
+  border-radius: 999px;
+  background: rgba(248, 250, 252, .6);
+}
+.nav a.category { padding: 10px 14px; }
+.nav a.category:hover,
+.nav a.category.active { color: var(--ink); background: #fff; }
+
+/* Elemzések: körvonalas pirula narancs ponttal, külön a kategóriáktól */
+.nav a.analyses {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--ink);
+  font-weight: 700;
+  border: 1px solid rgba(0, 0, 0, .12);
+  background: #fff;
+  padding: 9px 18px;
+}
+.nav a.analyses::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+.nav a.analyses:hover,
+.nav a.analyses.active { border-color: var(--accent); color: var(--accent); }
+
+/* Rólunk: függőleges elválasztó után, sima szöveges link */
+.nav a.about {
+  position: relative;
+  margin-left: 6px;
+  padding: 10px 14px 10px 20px;
+}
+.nav a.about::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 1px;
+  height: 18px;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, .12);
+}
+.nav a.about:hover,
+.nav a.about.active { color: var(--ink); }
 
 .cta {
   margin-left: 6px;
@@ -82,14 +130,15 @@
 .cta svg { transition: transform .3s; }
 .cta:hover svg { transform: translateX(4px); }
 
-.nav a.category { padding: 10px 14px; }
-
 @media (max-width: 1180px) {
-  .nav a.category { display: none; }
+  .categories { display: none; }
 }
 @media (max-width: 640px) {
   .header { top: 12px; }
   .brand { padding: 0 8px 0 10px; }
-  .nav a { padding: 9px 12px; letter-spacing: .1em; }
+  .nav { gap: 2px; }
+  .nav a { letter-spacing: .1em; }
+  .nav a.analyses { padding: 8px 12px; gap: 6px; }
+  .nav a.about { margin-left: 4px; padding: 9px 10px 9px 14px; }
   .cta { display: none; }
 }

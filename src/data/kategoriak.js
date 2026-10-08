@@ -3,19 +3,9 @@
 // Ezt a fájlt a scripts/sitemap.mjs is beolvassa, ezért maradjon sima JS (nincs Vite-import).
 const KATEGORIAK = [
   {
-    slug: "gazdasag",
-    name: "Gazdaság",
-    description: "Munka, pénz, vállalkozás, foglalkoztatás, adózás és lakhatás – adatokkal és hivatalos forrásokkal.",
-  },
-  {
-    slug: "tarsadalom",
-    name: "Társadalom",
-    description: "Oktatás, egészség, demográfia, család és életmód – a számok mögötti összefüggésekkel.",
-  },
-  {
-    slug: "kultura",
-    name: "Kultúra",
-    description: "Művészet, irodalom, film, kulturális örökség és intézmények – közelről és összehasonlítva.",
+    slug: "mi",
+    name: "MI",
+    description: "Mesterséges intelligencia: hogyan működik, mire használják, hogyan szabályozzák, és mit változtat meg a munkában, a tanulásban és a mindennapokban.",
   },
   {
     slug: "tudomany",
@@ -23,9 +13,19 @@ const KATEGORIAK = [
     description: "Kutatás, technológia, környezet és innováció – az eredmények mögötti bizonyítékokkal, közérthetően.",
   },
   {
-    slug: "mi",
-    name: "MI",
-    description: "Mesterséges intelligencia: hogyan működik, mire használják, hogyan szabályozzák, és mit változtat meg a munkában, a tanulásban és a mindennapokban.",
+    slug: "kultura",
+    name: "Kultúra",
+    description: "Művészet, irodalom, film, kulturális örökség és intézmények – közelről és összehasonlítva.",
+  },
+  {
+    slug: "tarsadalom",
+    name: "Társadalom",
+    description: "Oktatás, egészség, demográfia, család és életmód – a számok mögötti összefüggésekkel.",
+  },
+  {
+    slug: "gazdasag",
+    name: "Gazdaság",
+    description: "Munka, pénz, vállalkozás, foglalkoztatás, adózás és lakhatás – adatokkal és hivatalos forrásokkal.",
   },
 ];
 
