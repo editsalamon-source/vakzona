@@ -10,7 +10,7 @@ szám: 10,37% | a legalább 10 fős magyar vállalkozások MI-használata 2025-b
 szám: 66,3% | a legjobb modell eredménye az OSWorld számítógép-kezelési tesztben (emberi alapvonal: kb. 72%, számítástechnikai hallgatók)
 szám: 5 | autonómiaszint
 szám: 16 | ellenőrzött forrás
-pdf: mi-agensek-v1.0.pdf | 60 oldal
+pdf: mi-agensek-v1.1.pdf | 61 oldal
 ---
 
 > **Összefoglaló**
@@ -109,6 +109,8 @@ A külső forrás számít. A szerzők kézzel címkézett mintáján (200 péld
 
 Kata esetében (kitalált lépéssor): az ágens megnézi a menetrendet, látja, hogy a péntek esti járat nem közlekedik, szombat reggelre vált, szállást keres; a találatok többsége meghaladja a keretet, ezért olcsóbbat vagy másik időpontot próbál. Nincs előre megírt sorrend: minden lépés az előző eredményére épül.
 
+![Az MI-ágens működési ciklusa: az ember megadja a célt, a nyelvi modell gondol és dönt a következő lépésről, az ágens eszközt hív, megfigyeli az eredményt, majd újra gondol; a ciklus addig ismétlődik, amíg kész a feladat, vagy megállási feltételt ér el. Alul a kitalált utazásszervezési példa négy lépése.](/elemzesek/mi-agensek/mukodesi-ciklus.webp)
+
 ### Eszközhívás, visszajelzés, megállás
 
 Az eszközhívás azt jelenti, hogy a modell nem csak szöveget ír, hanem kér valamit, amit egy másik program elvégez, majd az eredményt visszakapja. A kulcs a visszajelzés: az Anthropic leírása szerint az ágensnek lépésenként „valós” visszajelzést kell kapnia a környezetétől, hogy megítélhesse, halad-e. Ugyanilyen fontosak a megállási feltételek, például a lépések maximális száma, mert a modell beleragadhat egy ismétlődő hurokba. Ezek a gyártó gyakorlatából levezetett irányelvek, nem mérések. A memóriáról a források keveset mondanak: annyi biztos, hogy az ágensnek adott eszközök egyike; hogy hogyan épül fel és meddig őriz adatot, azt nem állítjuk.
@@ -187,6 +189,8 @@ A szerzők öt szintet különböztetnek meg aszerint, milyen szerepet vállal a
 | 5. Megfigyelő (observer) | Nem kell és nem is tud beleavatkozni, csak leállíthatja az egészet. | Az ágens magától kezel és küld minden levelet; az ember legfeljebb kikapcsolhatja a rendszert. |
 
 Az ötödik szinten az ember egyetlen eszköze a vészleállító. A mi olvasatunkban a harmadik és negyedik szinten van a legtöbb mozgástér a kényelem és az ellenőrzés között. A szerzők hangsúlyozzák, hogy a nagyobb autonómia nem egyszerűen jobb ágenst jelent, mert a haszon, az elszámoltathatóság és a költség között kompromisszumot kell kötni. Javasolják, hogy a fejlesztő „autonómiatanúsítványban” közölje a választott szintet; ez javaslat, nem bevezetett gyakorlat.
+
+![Az öt autonómiaszint a felhasználó szerepe szerint: irányító, munkatárs, tanácsadó, jóváhagyó, megfigyelő; balról jobbra az ágens önállósága nő, az ember bevonása csökken. Mindegyik szintnél egy kitalált e-mailes példa.](/elemzesek/mi-agensek/autonomiaszintek.webp)
 
 ### Mit ír elő a jog?
 
