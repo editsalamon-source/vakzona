@@ -47,6 +47,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://vakzona.com/elemzesek/mi-agensek</loc>
+    <lastmod>2026-10-13</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://vakzona.com/elemzesek/mi-es-a-palyakezdok</loc>
     <lastmod>2026-10-04</lastmod>
     <changefreq>yearly</changefreq>
