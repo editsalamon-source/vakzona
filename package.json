@@ -6,7 +6,7 @@
   "scripts": {
     "start": "vite",
     "start:host": "vite --host 0.0.0.0",
-    "build": "node scripts/sitemap.mjs && vite build",
+    "build": "node scripts/sitemap.mjs && vite build && node scripts/prerender.mjs",
     "preview": "vite preview",
     "preview:host": "vite preview --host 0.0.0.0",
     "pdf": "node scripts/pdf.mjs"

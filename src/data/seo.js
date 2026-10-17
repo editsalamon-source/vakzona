@@ -1,4 +1,4 @@
-import KATEGORIAK from "./kategoriak";
+import KATEGORIAK from "./kategoriak.js";
 
 export const SITE_URL = "https://vakzona.com";
 export const SITE_NAME = "Vakzóna";
