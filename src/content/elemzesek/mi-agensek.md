@@ -11,6 +11,7 @@ szám: 66,3% | a legjobb modell eredménye az OSWorld számítógép-kezelési t
 szám: 5 | autonómiaszint
 szám: 16 | ellenőrzött forrás
 pdf: mi-agensek-v1.1.pdf | 61 oldal
+pdf védett: llm-agensek-tanulmany-v2.0.pdf.enc | 191 oldal | LLM-alapú ágensek – megvalósíthatósági tanulmány
 ---
 
 > **Összefoglaló**

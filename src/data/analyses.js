@@ -5,7 +5,8 @@ import KATEGORIAK, { getKategoria } from "./kategoriak";
 // Minden elemzés egy Markdown fájl: src/content/elemzesek/<url-azonosító>.md
 // Az elején `kulcs: érték` fejléc --- sorok között (cím, alcím, dátum, kategória, téma, piszkozat,
 // kiemelés + kiemelés szöveg = a kártyák nagy száma, szám: érték | felirat = számsor, ismételhető,
-// pdf: fájlnév | felirat = a teljes tanulmány PDF-je a public/elemzesek/<url-azonosító>/ mappában).
+// pdf: fájlnév | felirat = a teljes tanulmány PDF-je a public/elemzesek/<url-azonosító>/ mappában,
+// pdf védett: fájlnév.enc | felirat | cím = második, jelszóval védett letölthető dokumentum).
 const files = import.meta.glob("../content/elemzesek/*.md", {
   query: "?raw",
   import: "default",
@@ -49,6 +50,14 @@ function parsePdf(value, slug) {
   return { href: file.startsWith("/") ? file : `/elemzesek/${slug}/${file}`, label };
 }
 
+// pdf védett: fájlnév.enc | felirat | cím → jelszóval védett, titkosított PDF (scripts/vedett-pdf.mjs)
+function parseProtectedPdf(value, slug) {
+  if (!value) return null;
+  const [file, label = "", title = ""] = value.split("|").map((s) => s.trim());
+  const href = file.startsWith("/") ? file : `/elemzesek/${slug}/${file}`;
+  return { href, label, title, filename: href.split("/").pop().replace(/\.enc$/, "") };
+}
+
 // Markdown → HTML; a ## címsorok horgonyt kapnak a tartalomjegyzékhez.
 function render(body) {
   const toc = [];
@@ -88,6 +97,7 @@ const analyses = Object.entries(files)
       highlightText: meta["kiemelés szöveg"] || "",
       stats: meta.stats || [],
       pdf: parsePdf(meta.pdf, slug),
+      pdfProtected: parseProtectedPdf(meta["pdf védett"], slug),
       readingMinutes: Math.max(1, Math.round(words / 200)),
       body,
     };

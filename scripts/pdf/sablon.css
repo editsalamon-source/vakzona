@@ -307,6 +307,8 @@ h1, h2, h3, h4 { color: var(--ink); font-weight: 600; letter-spacing: -0.03em; l
 /* sok fejezetnél (10+) tömörebb tartalomjegyzék, hogy ne csússzon a kolofon alá */
 .tocCompact a { padding: 2.3mm 0; }
 .tocCompact .tocTitle { font-size: 10.5pt; }
+.tocDense a { padding: 1.5mm 0; }
+.tocDense .tocTitle { font-size: 9.6pt; }
 
 .colophon {
   position: absolute !important;
@@ -633,3 +635,6 @@ figcaption::before {
   border-bottom: .5mm solid var(--accent);
   letter-spacing: -0.02em;
 }
+
+/* középre zárt képlet (a Word-forrású tanulmányokban) */
+.prose p.keplet { text-align: center; margin: 4mm 0 4.6mm; font-variant-numeric: tabular-nums; color: var(--ink); }

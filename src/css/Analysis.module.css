@@ -109,6 +109,11 @@
 .summary blockquote ul { padding-left: 20px; margin: 0; }
 .summary blockquote li { margin-bottom: 10px; }
 .summary:has(+ .pdfBox) blockquote { margin-bottom: 20px; }
+.summary:has(+ .pdfs) blockquote { margin-bottom: 20px; }
+.pdfs { display: grid; gap: 16px; margin: 0 0 56px; }
+.pdfs .pdfBox { margin: 0; }
+.headPdfs { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
+.headPdfs .headPdf { margin-top: 0; }
 
 /* ---------- Teljes tanulmány (PDF) ---------- */
 .headPdf { margin-top: 32px; }

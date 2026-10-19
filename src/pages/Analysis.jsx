@@ -3,6 +3,7 @@ import { Link, useParams } from "react-router-dom";
 import { motion } from "framer-motion";
 import { getAnalysis, formatDate } from "../data/analyses";
 import Arrow from "../components/Arrow";
+import ProtectedPdf from "../components/ProtectedPdf";
 import NotFound from "./NotFound";
 import ArticleCSS from "../css/Analysis.module.css";
 
@@ -55,10 +56,15 @@ function Analysis() {
             </div>
             <h1 className={ArticleCSS.title}>{analysis.title}</h1>
             {analysis.subtitle && <p className={`lead ${ArticleCSS.lead}`}>{analysis.subtitle}</p>}
-            {analysis.pdf && (
-              <a href={analysis.pdf.href} target="_blank" rel="noopener" className={`btn ${ArticleCSS.headPdf}`}>
-                <DocIcon /> A teljes tanulmány letöltése (PDF)
-              </a>
+            {(analysis.pdf || analysis.pdfProtected) && (
+              <div className={ArticleCSS.headPdfs}>
+                {analysis.pdf && (
+                  <a href={analysis.pdf.href} target="_blank" rel="noopener" className={`btn ${ArticleCSS.headPdf}`}>
+                    <DocIcon /> A teljes tanulmány letöltése (PDF)
+                  </a>
+                )}
+                {analysis.pdfProtected && <ProtectedPdf pdf={analysis.pdfProtected} variant="button" />}
+              </div>
             )}
           </motion.div>
           {analysis.stats.length > 0 && (
@@ -97,6 +103,8 @@ function Analysis() {
               dangerouslySetInnerHTML={{ __html: summaryHtml }}
             />
           )}
+          {(analysis.pdf || analysis.pdfProtected) && (
+          <div className={ArticleCSS.pdfs}>
           {analysis.pdf && (
             <a href={analysis.pdf.href} target="_blank" rel="noopener" className={ArticleCSS.pdfBox}>
               <span className={ArticleCSS.pdfIcon}>
@@ -113,6 +121,9 @@ function Analysis() {
                 Megnyitás <Arrow size={12} />
               </span>
             </a>
+          )}
+          {analysis.pdfProtected && <ProtectedPdf pdf={analysis.pdfProtected} />}
+          </div>
           )}
           {/* a tartalom a saját, repóban lévő Markdown fájlokból jön */}
           <div className={ArticleCSS.body} dangerouslySetInnerHTML={{ __html: bodyHtml }} />
