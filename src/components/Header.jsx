@@ -4,6 +4,7 @@ import Logo from "./Logo";
 import Arrow from "./Arrow";
 import analyses from "../data/analyses";
 import KATEGORIAK from "../data/kategoriak";
+import AKADEMIA from "../data/akademiaNev";
 import HeaderCSS from "../css/Header.module.css";
 
 const active = (base) => ({ isActive }) => [base, isActive && HeaderCSS.active].filter(Boolean).join(" ");
@@ -30,6 +31,9 @@ function Header() {
           </div>
           <NavLink to="/elemzesek" end className={active(HeaderCSS.analyses)}>
             Elemzések
+          </NavLink>
+          <NavLink to="/akademia" className={active(HeaderCSS.academy)}>
+            {AKADEMIA.menu}
           </NavLink>
           <NavLink to="/rolunk" className={active(HeaderCSS.about)}>
             Rólunk

@@ -1,6 +1,6 @@
 // public/sitemap.xml generálása a fix oldalakból és a nem piszkozat elemzésekből.
 // A `npm run build` automatikusan futtatja.
-import { readdirSync, readFileSync, writeFileSync } from "node:fs";
+import { existsSync, readdirSync, readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import KATEGORIAK from "../src/data/kategoriak.js";
 
@@ -11,8 +11,22 @@ const pages = [
   { path: "/", freq: "weekly", priority: "1.0" },
   { path: "/elemzesek", freq: "weekly", priority: "0.9" },
   ...KATEGORIAK.map((k) => ({ path: `/${k.slug}`, freq: "weekly", priority: "0.8" })),
+  { path: "/akademia", freq: "weekly", priority: "0.8" },
   { path: "/rolunk", freq: "yearly", priority: "0.5" },
 ];
+
+// az Akadémia tanfolyamainak nyilvános oldala (az oklevél oldala nem)
+const courseDir = join(import.meta.dirname, "..", "src", "content", "akademia");
+for (const file of existsSync(courseDir) ? readdirSync(courseDir).filter((f) => f.endsWith(".md")) : []) {
+  const raw = readFileSync(join(courseDir, file), "utf8");
+  if (/^piszkozat:\s*(igen|true)\s*$/im.test(raw)) continue;
+  pages.push({
+    path: `/akademia/${file.replace(/\.md$/, "")}`,
+    freq: "monthly",
+    priority: "0.7",
+    lastmod: raw.match(/^dátum:\s*(\S+)/im)?.[1],
+  });
+}
 
 for (const file of readdirSync(dir).filter((f) => f.endsWith(".md"))) {
   const raw = readFileSync(join(dir, file), "utf8");

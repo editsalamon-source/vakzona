@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import seo, { SITE_URL, SITE_NAME } from "../data/seo";
 import analyses from "../data/analyses";
+import courses, { AKADEMIA } from "../data/akademia";
 
 function setMeta(selector, attribute, value, createWith) {
   let element = document.head.querySelector(selector);
@@ -23,6 +24,16 @@ function entryFor(pathname) {
     return {
       title: `${analysis.title} – ${SITE_NAME}`,
       description: analysis.subtitle || seo["/elemzesek"].description,
+    };
+  }
+  const [, courseSlug, certificate] = pathname.match(/^\/akademia\/([^/]+)(\/oklevel)?$/) || [];
+  const course = courseSlug && courses.find((c) => c.slug === courseSlug);
+  if (course) {
+    return {
+      title: `${certificate ? "Oklevél – " : ""}${course.title} – ${AKADEMIA.name}`,
+      description: course.subtitle || seo["/akademia"].description,
+      // az oklevél oldala személyes, ne kerüljön keresőbe
+      noindex: Boolean(certificate),
     };
   }
   return null;
@@ -53,7 +64,7 @@ function useSeo() {
       attrs: { rel: "canonical" },
     });
     // nem létező oldalt ne indexeljenek a keresők
-    setMeta('meta[name="robots"]', "content", known ? "index, follow, max-image-preview:large" : "noindex");
+    setMeta('meta[name="robots"]', "content", known && !known.noindex ? "index, follow, max-image-preview:large" : "noindex");
   }, [pathname]);
 }
 

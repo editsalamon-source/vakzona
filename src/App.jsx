@@ -11,6 +11,9 @@ import KATEGORIAK from "./data/kategoriak";
 const Landing = lazy(() => import("./pages/Landing"));
 const Analyses = lazy(() => import("./pages/Analyses"));
 const Analysis = lazy(() => import("./pages/Analysis"));
+const Academy = lazy(() => import("./pages/Academy"));
+const Course = lazy(() => import("./pages/Course"));
+const Certificate = lazy(() => import("./pages/Certificate"));
 const About = lazy(() => import("./pages/About"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
@@ -36,6 +39,9 @@ const App = () => (
           {KATEGORIAK.map((k) => (
             <Route key={k.slug} path={`/${k.slug}`} element={<Analyses category={k} />} />
           ))}
+          <Route path="/akademia" element={<Academy />} />
+          <Route path="/akademia/:slug" element={<Course />} />
+          <Route path="/akademia/:slug/oklevel" element={<Certificate />} />
           <Route path="/rolunk" element={<About />} />
           <Route path="*" element={<NotFound />} />
         </Routes>

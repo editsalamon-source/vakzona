@@ -1,0 +1,164 @@
+.page { padding-top: 148px; padding-bottom: 128px; }
+.layout { display: grid; grid-template-columns: 340px minmax(0, 1fr); gap: 48px; align-items: start; }
+
+/* ---------- névmegadás ---------- */
+.form { display: flex; flex-direction: column; align-items: flex-start; position: sticky; top: 120px; }
+.form :global(.tag) { text-decoration: none; }
+.form :global(.tag:hover) { color: var(--ink); }
+.title { font-size: clamp(2.2rem, 4vw, 3.2rem); margin: 22px 0 14px; }
+.text { margin: 0 0 24px; color: var(--muted); font-size: .98rem; }
+.label { font-size: .75rem; font-weight: 600; color: var(--muted); margin-bottom: 6px; }
+.input {
+  width: 100%;
+  margin-bottom: 16px;
+  padding: 14px 16px;
+  font: inherit;
+  font-size: 1.05rem;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--bg-soft);
+  color: var(--ink);
+}
+.input:focus { outline: 2px solid var(--accent); outline-offset: 1px; background: #fff; }
+.form :global(.btn:disabled) { opacity: .5; cursor: default; transform: none; box-shadow: none; background: var(--ink); }
+.buttons { display: flex; flex-wrap: wrap; gap: 10px; }
+.hint { margin: 14px 0 0; font-size: .8rem; color: var(--faint); }
+
+/* ---------- előnézet ---------- */
+.preview { width: 100%; aspect-ratio: 297 / 210; position: relative; }
+.scaler { position: absolute; top: 0; left: 0; transform: scale(var(--scale, 1)); transform-origin: 0 0; }
+
+/* ---------- az oklevél lapja (A4 fekvő, 1123 × 794 px) ---------- */
+.sheet {
+  position: relative;
+  display: grid;
+  grid-template-columns: 330px 1fr;
+  width: 1123px;
+  height: 794px;
+  overflow: hidden;
+  background: #fff;
+  color: var(--ink);
+  border-radius: 18px;
+  box-shadow: 0 40px 80px -36px rgba(15, 23, 42, .35), 0 0 0 1px var(--line);
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+.band {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 56px 44px;
+  background: var(--bg-dark);
+  color: #fff;
+  overflow: hidden;
+}
+.bandGrid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, .07) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, .07) 1px, transparent 1px);
+  background-size: 2.5rem 2.5rem;
+  -webkit-mask-image: radial-gradient(ellipse 90% 70% at 40% 55%, #000 30%, transparent 100%);
+  mask-image: radial-gradient(ellipse 90% 70% at 40% 55%, #000 30%, transparent 100%);
+}
+.bandGlow {
+  position: absolute;
+  width: 520px;
+  height: 520px;
+  left: -200px;
+  bottom: -260px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(234, 88, 12, .45), rgba(234, 88, 12, 0) 65%);
+}
+.bandRing {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  display: flex;
+  transform: translate(-50%, -50%);
+  color: rgba(255, 255, 255, .16);
+  opacity: .55;
+}
+.brand { position: relative; display: flex; align-items: center; gap: 14px; }
+.brand span { display: flex; flex-direction: column; line-height: 1.05; }
+.brand strong { font-size: 24px; font-weight: 700; letter-spacing: -0.04em; }
+.brand em { font-style: normal; font-size: 11px; font-weight: 700; letter-spacing: .22em; text-transform: uppercase; color: var(--accent); margin-top: 4px; }
+
+.courseLogo {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 18px;
+  border: 1px solid rgba(255, 255, 255, .14);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, .04);
+}
+.courseLogo img { width: 58px; height: 58px; flex: none; }
+.courseLogo span { font-size: 22px; font-weight: 700; letter-spacing: -0.03em; line-height: 1.15; }
+
+.content { position: relative; display: flex; flex-direction: column; padding: 64px 72px 48px; }
+.content::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 220px;
+  height: 6px;
+  background: var(--accent);
+}
+.eyebrow { font-size: 13px; font-weight: 700; letter-spacing: .3em; text-transform: uppercase; color: var(--accent); }
+.intro { margin: 0; font-size: 18px; font-weight: 300; color: var(--muted); }
+.eyebrow + .intro { margin-top: 44px; }
+.name {
+  margin: 10px 0 22px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--line);
+  font-size: 60px;
+  font-weight: 600;
+  letter-spacing: -0.045em;
+  line-height: 1.05;
+  overflow-wrap: anywhere;
+}
+.namePlaceholder { color: #cbd5e1; }
+.course { margin: 8px 0 6px; font-size: 34px; font-weight: 600; letter-spacing: -0.035em; line-height: 1.12; }
+
+.facts { display: grid; grid-template-columns: repeat(3, auto); justify-content: start; gap: 44px; margin-top: auto; }
+.facts div { display: flex; flex-direction: column; gap: 4px; }
+.facts span { font-size: 10.5px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: var(--faint); }
+.facts strong { font-size: 16px; font-weight: 600; letter-spacing: -0.01em; }
+
+.foot {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  margin-top: 36px;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+  font-size: 11.5px;
+  color: var(--faint);
+}
+
+@media (max-width: 1080px) {
+  .layout { grid-template-columns: 1fr; }
+  .form { position: static; max-width: 520px; }
+}
+@media (max-width: 640px) {
+  .page { padding-top: 112px; padding-bottom: 88px; }
+}
+
+/* ---------- nyomtatás: csak a lap, egyetlen A4 fekvő oldalon ---------- */
+@media print {
+  @page { size: A4 landscape; margin: 0; }
+  :global(html), :global(body) { background: #fff !important; height: 210mm; overflow: hidden; }
+  :global(body) * { visibility: hidden; }
+  :global(header), :global(footer), .form { display: none !important; }
+  .sheet, .sheet * { visibility: visible; }
+  .page { padding: 0; }
+  .preview { position: static; aspect-ratio: auto; height: 0; }
+  .scaler { position: fixed; inset: 0; transform: none; }
+  .sheet { width: 297mm; height: 210mm; border-radius: 0; box-shadow: none; }
+}

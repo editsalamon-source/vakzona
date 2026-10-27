@@ -2,9 +2,10 @@
 // címmel, leírással és canonical címmel, hogy a keresők már a nyers HTML-ben is ezt lássák
 // (a közös index.html canonicalja különben minden aloldalon a főoldalra mutatna).
 // A `npm run build` automatikusan futtatja.
-import { mkdirSync, readdirSync, readFileSync, writeFileSync } from "node:fs";
+import { existsSync, mkdirSync, readdirSync, readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import seo, { SITE_URL, SITE_NAME } from "../src/data/seo.js";
+import AKADEMIA from "../src/data/akademiaNev.js";
 
 const root = join(import.meta.dirname, "..");
 const dist = join(root, "dist");
@@ -26,6 +27,19 @@ for (const file of readdirSync(dir).filter((f) => f.endsWith(".md"))) {
     path: `/elemzesek/${file.replace(/\.md$/, "")}`,
     title: `${title} – ${SITE_NAME}`,
     description: subtitle || seo["/elemzesek"].description,
+  });
+}
+
+const courseDir = join(root, "src", "content", "akademia");
+for (const file of existsSync(courseDir) ? readdirSync(courseDir).filter((f) => f.endsWith(".md")) : []) {
+  const raw = readFileSync(join(courseDir, file), "utf8");
+  if (/^piszkozat:\s*(igen|true)\s*$/im.test(raw)) continue;
+  const title = raw.match(/^cím:\s*(.+)$/im)?.[1].trim();
+  const subtitle = raw.match(/^alcím:\s*(.+)$/im)?.[1].trim();
+  pages.push({
+    path: `/akademia/${file.replace(/\.md$/, "")}`,
+    title: `${title} – ${AKADEMIA.name}`,
+    description: subtitle || AKADEMIA.description,
   });
 }
 

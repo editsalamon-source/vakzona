@@ -1,26 +1,13 @@
 import React, { useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import Arrow from "./Arrow";
+import { deriveKey, exportKey, fetchSealed, importKey, open as unseal } from "../utils/titkositas";
 import CSS from "../css/ProtectedPdf.module.css";
 
 // Jelszóval védett PDF (ügyféloldali, a Védőnői napló mintájára). A fájl a public/ mappában titkosítva
 // van (scripts/vedett-pdf.mjs); a jelszóból PBKDF2-vel képzett kulcs fejti vissza, a jelszó a kódban nem szerepel.
 // Sikeres belépés után a kulcs a munkamenet végéig a sessionStorage-ban marad, így újra nem kell beírni.
 const KEY = "vz_pdf_kulcs";
-
-async function deriveKey(password, salt) {
-  const base = await crypto.subtle.importKey("raw", new TextEncoder().encode(password.trim()), "PBKDF2", false, ["deriveKey"]);
-  return crypto.subtle.deriveKey(
-    { name: "PBKDF2", salt, iterations: 250000, hash: "SHA-256" },
-    base,
-    { name: "AES-GCM", length: 256 },
-    true,
-    ["decrypt"]
-  );
-}
-
-const toB64 = (buf) => btoa(String.fromCharCode(...new Uint8Array(buf)));
-const fromB64 = (s) => Uint8Array.from(atob(s), (c) => c.charCodeAt(0));
 
 function savedKey(href) {
   try {
@@ -42,23 +29,13 @@ function saveKey(href, raw) {
 
 // a titkosított fájl letöltése és visszafejtése; rossz jelszónál null
 async function decrypt(href, password) {
-  const res = await fetch(href);
-  if (!res.ok) throw new Error("A fájl nem érhető el.");
-  const buf = new Uint8Array(await res.arrayBuffer());
-  if (new TextDecoder().decode(buf.slice(0, 4)) !== "VZP1") throw new Error("Ismeretlen fájlformátum.");
-  const salt = buf.slice(4, 20);
-  const iv = buf.slice(20, 32);
+  const sealed = await fetchSealed(href);
   const stored = password == null ? savedKey(href) : null;
-  const key = stored
-    ? await crypto.subtle.importKey("raw", fromB64(stored), "AES-GCM", true, ["decrypt"])
-    : await deriveKey(password || "", salt);
-  try {
-    const pdf = await crypto.subtle.decrypt({ name: "AES-GCM", iv }, key, buf.slice(32));
-    if (!stored) saveKey(href, toB64(await crypto.subtle.exportKey("raw", key)));
-    return new Blob([pdf], { type: "application/pdf" });
-  } catch (e) {
-    return null;
-  }
+  const key = stored ? await importKey(stored) : await deriveKey(password || "", sealed.salt);
+  const pdf = await unseal(key, sealed);
+  if (!pdf) return null;
+  if (!stored) saveKey(href, await exportKey(key));
+  return new Blob([pdf], { type: "application/pdf" });
 }
 
 function LockIcon({ size = 14 }) {

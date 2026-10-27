@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Logo from "./Logo";
 import KATEGORIAK from "../data/kategoriak";
+import AKADEMIA from "../data/akademiaNev";
 import FooterCSS from "../css/Footer.module.css";
 
 function Footer() {
@@ -22,6 +23,7 @@ function Footer() {
             <span className={FooterCSS.label}>Oldalak</span>
             <Link to="/">Főoldal</Link>
             <Link to="/elemzesek">Elemzések</Link>
+            <Link to="/akademia">{AKADEMIA.menu}</Link>
             <Link to="/rolunk">Rólunk</Link>
           </div>
           <div className={FooterCSS.col}>

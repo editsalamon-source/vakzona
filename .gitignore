@@ -17,3 +17,8 @@ npm-debug.log*
 # elemzések munkaanyagai (belső és letöltött külső források) – nem publikus
 /Elemzés/*
 !/Elemzés/README.md
+
+# Akadémia munkaanyagai (videók, a védett tartalom forrása, anyagok) – nem publikus;
+# a public/akademia/ mappába csak titkosított fájl kerül (scripts/akademia.mjs)
+/Akadémia/*
+!/Akadémia/README.md

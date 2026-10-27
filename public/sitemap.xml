@@ -36,9 +36,20 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://vakzona.com/akademia</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://vakzona.com/rolunk</loc>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://vakzona.com/akademia/ai-strategia</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://vakzona.com/elemzesek/4-napos-munkahet</loc>

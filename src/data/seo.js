@@ -1,4 +1,5 @@
 import KATEGORIAK from "./kategoriak.js";
+import AKADEMIA from "./akademiaNev.js";
 
 export const SITE_URL = "https://vakzona.com";
 export const SITE_NAME = "Vakzóna";
@@ -18,6 +19,10 @@ const seo = {
   ...Object.fromEntries(
     KATEGORIAK.map((k) => [`/${k.slug}`, { title: `${k.name} – ${SITE_NAME}`, description: k.description }]),
   ),
+  "/akademia": {
+    title: `${AKADEMIA.name} – videós tanfolyamok`,
+    description: AKADEMIA.description,
+  },
   "/rolunk": {
     title: "Rólunk – Vakzóna",
     description: "Miről és hogyan ír a Vakzóna: kérdések, adatok és összehasonlítások a hírek helyett.",
