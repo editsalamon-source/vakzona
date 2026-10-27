@@ -3,7 +3,7 @@ cím: AI stratégia a gyakorlatban
 alcím: Módszertan a kezdeményezéstől a jóváhagyott stratégiáig
 dátum: 2026-10-27
 kategória: MI
-bemutató: https://youtu.be/nCqQbSbmMTY
+bemutató: https://youtu.be/r-jFzytEmtg
 logó: logo.svg
 logó felirat: AI stratégia
 modul: 1. rész · Alapok
