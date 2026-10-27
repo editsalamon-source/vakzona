@@ -119,6 +119,7 @@ function CertificateFor({ course }) {
   const progress = useProgress(course);
   const [name, setName] = useState(progress.name || "");
   const [busy, setBusy] = useState(false);
+  const [confirm, setConfirm] = useState(null); // az első kiállítás előtt: "pdf" | "print"
   const sheet = useRef(null);
   useEffect(() => setName(progress.name || ""), [progress.name]);
 
@@ -142,7 +143,9 @@ function CertificateFor({ course }) {
     );
   }
 
-  const trimmed = name.trim();
+  // kiállítás után a név rögzített; addig a beírt név
+  const issued = progress.issuedName || "";
+  const trimmed = issued || name.trim();
 
   async function download() {
     setBusy(true);
@@ -156,6 +159,22 @@ function CertificateFor({ course }) {
     }
   }
 
+  const run = (action) => (action === "print" ? window.print() : download());
+
+  // első alkalommal megerősítést kér, utána a rögzített névvel azonnal letölt / nyomtat
+  function request(action) {
+    if (!trimmed) return;
+    if (issued) run(action);
+    else setConfirm(action);
+  }
+
+  function issueAndRun() {
+    progress.issue(trimmed);
+    const action = confirm;
+    setConfirm(null);
+    run(action);
+  }
+
   return (
     <div className={`wrap ${CSS.page}`}>
       <div className={CSS.layout}>
@@ -163,36 +182,60 @@ function CertificateFor({ course }) {
           className={CSS.form}
           onSubmit={(e) => {
             e.preventDefault();
-            if (!trimmed) return;
-            progress.setName(trimmed);
-            download();
+            request("pdf");
           }}
         >
           <Link to={`/akademia/${course.slug}`} className="tag">← {course.title}</Link>
           <h1 className={CSS.title}>Gratulálunk!</h1>
           <p className={CSS.text}>
-            Minden leckét megnézett. Adja meg a nevet, amelyre az oklevelet kiállítjuk, és töltse le PDF-ként.
+            {issued
+              ? "Az oklevelét már kiállítottuk; bármikor újra letöltheti vagy kinyomtathatja."
+              : "Minden leckét megnézett. Adja meg a nevet, amelyre az oklevelet kiállítjuk, és töltse le PDF-ként."}
           </p>
           <label className={CSS.label} htmlFor="oklevelNev">Név az oklevélen</label>
           <input
             id="oklevelNev"
             className={CSS.input}
-            value={name}
+            value={issued || name}
+            readOnly={Boolean(issued)}
             maxLength={80}
             autoComplete="name"
             placeholder="pl. Kovács Anna"
-            onChange={(e) => setName(e.target.value)}
-            onBlur={() => trimmed && progress.setName(trimmed)}
+            onChange={(e) => {
+              setName(e.target.value);
+              setConfirm(null);
+            }}
+            onBlur={() => !issued && name.trim() && progress.setName(name.trim())}
           />
-          <div className={CSS.buttons}>
-            <button type="submit" className="btn" disabled={!trimmed || busy}>
-              {busy ? "Készül…" : "Oklevél letöltése (PDF)"} <Arrow size={12} />
-            </button>
-            <button type="button" className="btn btnGhost" disabled={!trimmed} onClick={() => window.print()}>
-              Nyomtatás
-            </button>
-          </div>
-          <p className={CSS.hint}>A név csak ebben a böngészőben tárolódik, nem küldjük el sehova.</p>
+          {confirm ? (
+            <div className={CSS.confirm} role="alertdialog" aria-labelledby="oklevelMegerosites">
+              <p id="oklevelMegerosites">
+                Az oklevél csak egyszer, egy névre állítható ki: <strong>{trimmed}</strong>. A név utána nem módosítható.
+              </p>
+              <div className={CSS.buttons}>
+                <button type="button" className="btn" onClick={issueAndRun}>
+                  Igen, erre a névre <Arrow size={12} />
+                </button>
+                <button type="button" className="btn btnGhost" onClick={() => setConfirm(null)}>
+                  Javítom
+                </button>
+              </div>
+            </div>
+          ) : (
+            <div className={CSS.buttons}>
+              <button type="submit" className="btn" disabled={!trimmed || busy}>
+                {busy ? "Készül…" : "Oklevél letöltése (PDF)"} <Arrow size={12} />
+              </button>
+              <button type="button" className="btn btnGhost" disabled={!trimmed} onClick={() => request("print")}>
+                Nyomtatás
+              </button>
+            </div>
+          )}
+          <p className={CSS.hint}>
+            {issued
+              ? "Az oklevél erre a névre szól, a név nem módosítható."
+              : "Az oklevél egyszer, egy névre állítható ki. A név csak ebben a böngészőben tárolódik, nem küldjük el sehova."}
+          </p>
         </form>
 
         <Preview>

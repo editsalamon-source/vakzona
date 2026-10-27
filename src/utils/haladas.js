@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useState } from "react";
 
 // Tanfolyamonkénti haladás a látogató böngészőjében (localStorage): megnézett leckék, utolsó lecke,
-// a befejezés napja és az oklevélre írt név. Privát ablakban nincs tárolás: ilyenkor csak az oldal
+// a befejezés napja, az oklevélre írt név és az a név, amelyre az oklevelet kiállítottuk (issuedName). Privát ablakban nincs tárolás: ilyenkor csak az oldal
 // megnyitásáig él.
 const KEY = (slug) => `vz_akademia_${slug}`;
 
@@ -60,6 +60,8 @@ export function useProgress(course) {
     setDone,
     setLast: (id) => update((p) => ({ ...p, last: id })),
     setName: (name) => update((p) => ({ ...p, name })),
+    // az oklevél egyszer, egy névre állítható ki: az első kiállítás után a név nem változik
+    issue: (name) => update((p) => ({ ...p, name: p.issuedName || name, issuedName: p.issuedName || name })),
   };
 }
 
