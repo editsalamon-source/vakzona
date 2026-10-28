@@ -18,6 +18,16 @@ modul: 2. rész · A folyamat
 lecke: 06 | A folyamat áttekintése | 6:01
 lecke: 07a | M1 · Projektindítás, érintettek és döntési jogok | 7:55
 lecke: 07a-plusz | M1 · Projektindítás a gyakorlatban | 7:44
+lecke: 07b | M2 · Vezetői ambíció, AI-charta és értéklogika-keret | 7:42
+lecke: 07b-plusz | M2 · Ambíció és AI-charta a gyakorlatban | 7:40
+lecke: 08a | M3 · Képesség- és érettségfelmérés | 7:37
+lecke: 08a-plusz | M3 · Érettségfelmérés a gyakorlatban | 6:40
+lecke: 08b | M4 · Folyamatfeltárás és újratervezési lehetőségek | 6:54
+lecke: 08b-plusz | M4 · Folyamatfeltárás a gyakorlatban | 6:54
+lecke: 09a | M5 · Esetportfólió és értéklogika-kártyák | 7:50
+lecke: 09a-plusz | M5 · Esetportfólió a gyakorlatban | 7:18
+lecke: 09b | M6 · Megoldásminta, ágens-indokoltság és autonómia | 7:48
+lecke: 09b-plusz | M6 · Megoldásminta és autonómia a gyakorlatban | 5:46
 ---
 Gyakorlati módszertan arról, hogyan készül el egy szervezet AI stratégiája úgy, hogy az AI ne kísérlet maradjon, hanem kézzelfogható üzleti értéket hozzon. A videóleckék a miértektől és az alapfogalmaktól a folyamat lépéseiig vezetnek, a leckékhez sablonok, kidolgozott példák és a módszertan kézikönyve tartozik; a végén oklevél.
 
@@ -36,9 +46,9 @@ Nem feltételez mély technológiai tudást: ahol szakkifejezést használunk, r
 A tanfolyam folyamatosan bővül; jelenleg két egységből áll:
 
 - **Alapok:** miért nem hoz értéket a legtöbb AI-kezdeményezés, mi az AI stratégia ma, a fogalmak és a fogalommodell, valamint a vezérelvek.
-- **A folyamat:** a teljes folyamat áttekintése, majd az első modul – M1 Projektindítás, érintettek és döntési jogok – egy gyakorlati példával. A további modulok folyamatosan érkeznek.
+- **A folyamat:** a teljes folyamat áttekintése, majd modulonként egy-egy lecke és egy gyakorlati példa: M1 Projektindítás, érintettek és döntési jogok; M2 Vezetői ambíció, AI-charta és értéklogika-keret; M3 Képesség- és érettségfelmérés; M4 Folyamatfeltárás és újratervezési lehetőségek; M5 Esetportfólió és értéklogika-kártyák; M6 Megoldásminta, ágens-indokoltság és autonómia. A további modulok folyamatosan érkeznek.
 
-A leckékhez letölthető anyag tartozik: a módszertan kézikönyve, valamint az M1 modul sablonjai és magyarázó példája.
+A leckékhez letölthető anyag tartozik: a módszertan kézikönyve, valamint az M1–M6 modul sablonjai és magyarázó példái.
 
 ## Hogyan működik?
 
