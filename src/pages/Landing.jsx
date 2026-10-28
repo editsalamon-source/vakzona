@@ -160,7 +160,7 @@ function Landing() {
         <div className="wrap">
           <Reveal className={LandingCSS.sectionHead}>
             <div>
-              <span className="tag">Kategóriák</span>
+              <span className="tag">Elemzések</span>
               <h2>Öt terület, egy módszer</h2>
             </div>
             <Link to="/elemzesek" className={LandingCSS.underlineLink}>
