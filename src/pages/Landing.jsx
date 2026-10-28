@@ -6,6 +6,7 @@ import courses, { AKADEMIA, formatLength } from "../data/akademia";
 import AnalysisCard from "../components/AnalysisCard";
 import CourseTile from "../components/CourseTile";
 import CategoryTiles from "../components/CategoryTiles";
+import CategoryArt from "../components/CategoryArt";
 import HeroCanvas from "../components/HeroCanvas";
 import Reveal from "../components/Reveal";
 import Arrow from "../components/Arrow";
@@ -182,6 +183,10 @@ function Landing() {
                   ))}
                 </div>
               )}
+            </Reveal>
+            {/* a kiemelt elemzés kategóriájának ábrája (széles képernyőn) */}
+            <Reveal delay={0.15} className={LandingCSS.darkArt}>
+              <CategoryArt slug={latest.category.slug} />
             </Reveal>
           </div>
         </section>

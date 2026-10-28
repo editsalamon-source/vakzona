@@ -182,10 +182,13 @@
 .nav .panel a.feature { width: 240px; flex-shrink: 0; background: var(--bg-soft); justify-content: flex-end; }
 .nav .panel a.feature:hover { background: var(--accent-soft); }
 .feature .itemTitle { font-size: 1.05rem; line-height: 1.25; }
+.featureArt { --art-bg: var(--bg-soft); color: var(--faint); width: 100%; height: auto; margin: auto 0 12px; }
+.nav .panel a.feature:hover .featureArt { --art-bg: var(--accent-soft); }
 
 @media (hover: hover) and (min-width: 960px) {
+  /* billentyűzettel (focus-visible) is nyílik; egérkattintás utáni fókusznál nem marad nyitva */
   .drop:hover .panel,
-  .drop:focus-within .panel {
+  .drop:has(:focus-visible) .panel {
     visibility: visible;
     transform: translate(-50%, 0) scale(1);
     transition: transform .35s cubic-bezier(.19, 1, .22, 1), visibility 0s;
