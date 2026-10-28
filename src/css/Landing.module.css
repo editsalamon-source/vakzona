@@ -141,95 +141,22 @@
   -webkit-mask-image: radial-gradient(ellipse 70% 60% at 80% 40%, #000 40%, transparent 100%);
   mask-image: radial-gradient(ellipse 70% 60% at 80% 40%, #000 40%, transparent 100%);
 }
-.darkInner { position: relative; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 340px); gap: 64px; align-items: center; }
-.darkInner > div:first-child { max-width: 820px; }
-/* az ábra a szöveg magasságához igazodik, keret nélkül, halványan */
-.darkArt { --art-bg: var(--bg-dark); color: rgba(255, 255, 255, .4); }
-.darkArt svg { display: block; width: 100%; height: auto; }
+.darkInner { position: relative; }
 
-/* a szekció címsora (.tag + h2) ugyanaz, mint a világos szekcióké; alatta az elemzés címe */
-.darkHeading { color: #fff; margin: 12px 0 32px; font-size: clamp(1.5rem, 2.6vw, 2rem); }
-.darkMeta {
-  display: block;
-  font-size: .72rem;
-  font-weight: 700;
-  letter-spacing: .16em;
-  text-transform: uppercase;
-  color: var(--accent);
-}
-.darkTitle {
-  color: #fff;
-  font-size: clamp(1.6rem, 2.8vw, 2.3rem);
-  letter-spacing: -0.04em;
-  line-height: 1.08;
-  margin: 10px 0 16px;
-}
-.darkLead {
-  font-size: clamp(1rem, 1.4vw, 1.15rem);
-  font-weight: 300;
-  line-height: 1.6;
-  color: rgba(255, 255, 255, .7);
-  max-width: 640px;
-  margin: 0 0 28px;
-}
-.darkActions { display: flex; flex-wrap: wrap; gap: 14px; margin-bottom: 40px; }
-
-.whiteBtn {
+.darkHeading { color: #fff; }
+.darkLink {
   display: inline-flex;
   align-items: center;
-  gap: 12px;
-  padding: 12px 26px 12px 12px;
-  border-radius: 999px;
-  background: #fff;
-  color: var(--ink);
+  gap: 8px;
   font-size: .88rem;
-  font-weight: 700;
-  text-decoration: none;
-  transition: background-color .3s;
-}
-.whiteBtn:hover { background: #e2e8f0; }
-.whiteBtnIcon {
-  width: 28px;
-  height: 28px;
-  border-radius: 50%;
-  background: var(--accent);
+  font-weight: 600;
   color: #fff;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-}
-.outlineBtn {
-  display: inline-flex;
-  align-items: center;
-  padding: 12px 32px;
-  border-radius: 999px;
-  border: 1px solid rgba(255, 255, 255, .2);
-  color: #fff;
-  font-size: .88rem;
-  font-weight: 500;
   text-decoration: none;
-  transition: background-color .3s;
+  border-bottom: 1px solid rgba(255, 255, 255, .2);
+  padding-bottom: 4px;
+  transition: border-color .3s;
 }
-.outlineBtn:hover { background: rgba(255, 255, 255, .1); }
-
-.stats {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 24px;
-  border-top: 1px solid rgba(255, 255, 255, .1);
-  padding-top: 24px;
-}
-.statValue { font-size: clamp(1.4rem, 2.2vw, 1.8rem); font-weight: 600; letter-spacing: -0.04em; margin-bottom: 4px; }
-.statLabel {
-  margin: 0;
-  font-size: .72rem;
-  font-weight: 500;
-  letter-spacing: .06em;
-  text-transform: uppercase;
-  hyphens: auto;
-  overflow-wrap: break-word;
-  color: rgba(255, 255, 255, .55);
-}
+.darkLink:hover { border-color: var(--accent); }
 
 /* ---------- Szekciók ---------- */
 .section { padding: 128px 0; }
@@ -279,16 +206,11 @@
 .tilesSection { padding-bottom: 0; }
 .tilesSection .sectionHead { margin-bottom: 48px; }
 
-@media (max-width: 1100px) {
-  .darkInner { grid-template-columns: minmax(0, 1fr); }
-  .darkArt { display: none; }
-}
 @media (max-width: 1024px) {
   .hero { grid-template-columns: 1fr; min-height: 0; }
   .heroVisual { order: -1; height: 52vh; min-height: 340px; }
   .heroText { padding: 56px 40px 88px; }
   .title { font-size: clamp(2.8rem, 11vw, 5rem); }
-  .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 32px; }
   .pillars { grid-template-columns: 1fr 1fr; }
   .paths { padding: 72px 0; }
 }

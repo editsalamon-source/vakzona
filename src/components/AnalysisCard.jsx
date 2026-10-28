@@ -47,9 +47,9 @@ function Stats({ stats, max }) {
   );
 }
 
-// `featured` = széles kiemelt kártya, egyébként kis kártya.
+// `featured` = széles kiemelt kártya, egyébként kis kártya; `dark` = sötét változat (a főoldali sötét sávban).
 // Csak transform-animáció (opacity-áttűnés Chrome-ban fehéren villanhat).
-function AnalysisCard({ analysis, featured = false }) {
+function AnalysisCard({ analysis, featured = false, dark = false }) {
   const motionProps = {
     initial: { y: 40 },
     whileInView: { y: 0 },
@@ -62,7 +62,7 @@ function AnalysisCard({ analysis, featured = false }) {
     return (
       <MotionLink
         to={`/elemzesek/${analysis.slug}`}
-        className={`${CardCSS.card} ${CardCSS.featured}`}
+        className={[CardCSS.card, CardCSS.featured, dark && CardCSS.dark].filter(Boolean).join(" ")}
         {...motionProps}
       >
         <Cover analysis={analysis} big />

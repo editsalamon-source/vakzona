@@ -6,7 +6,6 @@ import courses, { AKADEMIA, formatLength } from "../data/akademia";
 import AnalysisCard from "../components/AnalysisCard";
 import CourseTile from "../components/CourseTile";
 import CategoryTiles from "../components/CategoryTiles";
-import CategoryArt from "../components/CategoryArt";
 import HeroCanvas from "../components/HeroCanvas";
 import Reveal from "../components/Reveal";
 import Arrow from "../components/Arrow";
@@ -160,34 +159,16 @@ function Landing() {
           <div className={LandingCSS.darkLine} />
           <div className={LandingCSS.darkGrid} />
           <div className={`wrap ${LandingCSS.darkInner}`}>
-            <Reveal>
-              <span className="tag">Legfrissebb</span>
-              <h2 className={LandingCSS.darkHeading}>Kiemelt elemzés</h2>
-              <span className={LandingCSS.darkMeta}>{latest.category.name} · {latest.topic}</span>
-              <h3 className={LandingCSS.darkTitle}>{latest.title}</h3>
-              {latest.subtitle && <p className={LandingCSS.darkLead}>{latest.subtitle}</p>}
-              <div className={LandingCSS.darkActions}>
-                <Link to={`/elemzesek/${latest.slug}`} className={LandingCSS.whiteBtn}>
-                  <span className={LandingCSS.whiteBtnIcon}><Arrow size={11} /></span>
-                  Elolvasom
-                </Link>
-                <Link to="/elemzesek" className={LandingCSS.outlineBtn}>Összes elemzés</Link>
+            <Reveal className={LandingCSS.sectionHead}>
+              <div>
+                <span className="tag">Legfrissebb</span>
+                <h2 className={LandingCSS.darkHeading}>Kiemelt elemzés</h2>
               </div>
-              {latest.stats.length > 0 && (
-                <div className={LandingCSS.stats}>
-                  {latest.stats.map((s) => (
-                    <div key={s.label}>
-                      <div className={LandingCSS.statValue}>{s.value}</div>
-                      <p className={LandingCSS.statLabel}>{s.label}</p>
-                    </div>
-                  ))}
-                </div>
-              )}
+              <Link to="/elemzesek" className={LandingCSS.darkLink}>
+                Összes elemzés <Arrow size={12} />
+              </Link>
             </Reveal>
-            {/* a kiemelt elemzés kategóriájának ábrája (széles képernyőn) */}
-            <Reveal delay={0.15} className={LandingCSS.darkArt}>
-              <CategoryArt slug={latest.category.slug} />
-            </Reveal>
+            <AnalysisCard analysis={latest} featured dark />
           </div>
         </section>
       )}
