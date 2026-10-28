@@ -1,15 +1,76 @@
 import React from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import Logo from "./Logo";
 import Arrow from "./Arrow";
-import analyses from "../data/analyses";
-import KATEGORIAK from "../data/kategoriak";
-import AKADEMIA from "../data/akademiaNev";
+import analyses, { getCategories } from "../data/analyses";
+import courses, { AKADEMIA, formatLength } from "../data/akademia";
+import { readProgress } from "../utils/haladas";
 import HeaderCSS from "../css/Header.module.css";
 
 const active = (base) => ({ isActive }) => [base, isActive && HeaderCSS.active].filter(Boolean).join(" ");
 
-// Lebegő, üveghatású pirula-menü a lap tetején.
+// Elemzések: a kategóriák (leírással és darabszámmal), az összes elemzés és a legfrissebb.
+function AnalysesPanel() {
+  const latest = analyses[0];
+  return (
+    <div className={`${HeaderCSS.panel} ${HeaderCSS.panelWide}`}>
+      <div className={HeaderCSS.panelGrid}>
+        {getCategories().map((k) => (
+          <Link key={k.slug} to={`/${k.slug}`} className={HeaderCSS.item}>
+            <span className={HeaderCSS.itemTitle}>{k.name}</span>
+            <span className={HeaderCSS.itemText}>{k.description}</span>
+            <span className={HeaderCSS.itemMeta}>{k.count ? `${k.count} elemzés` : "hamarosan"}</span>
+          </Link>
+        ))}
+        <Link to="/elemzesek" className={`${HeaderCSS.item} ${HeaderCSS.itemAll}`}>
+          <span className={HeaderCSS.itemTitle}>Összes elemzés <Arrow size={11} /></span>
+          <span className={HeaderCSS.itemMeta}>{analyses.length} elemzés</span>
+        </Link>
+      </div>
+      {latest && (
+        <Link to={`/elemzesek/${latest.slug}`} className={HeaderCSS.feature}>
+          <span className={HeaderCSS.itemMeta}>Legfrissebb</span>
+          <span className={HeaderCSS.itemTitle}>{latest.title}</span>
+          <span className={HeaderCSS.itemText}>{latest.category.name}{latest.topic && ` · ${latest.topic}`}</span>
+        </Link>
+      )}
+    </div>
+  );
+}
+
+// Akadémia: a tanfolyamok; ha a látogató már elkezdte, a haladása (localStorage) is.
+function AcademyPanel() {
+  useLocation(); // navigáláskor újraolvassa a haladást
+  return (
+    <div className={HeaderCSS.panel}>
+      {courses.map((c) => {
+        const done = readProgress(c);
+        const total = c.lessons.length;
+        return (
+          <Link key={c.slug} to={`/akademia/${c.slug}`} className={HeaderCSS.item}>
+            <span className={HeaderCSS.itemTitle}>{c.title}</span>
+            {c.subtitle && <span className={HeaderCSS.itemText}>{c.subtitle}</span>}
+            <span className={HeaderCSS.itemMeta}>
+              {total} lecke{c.seconds > 0 && ` · ${formatLength(c.seconds)}`}
+            </span>
+            {done > 0 && (
+              <span className={HeaderCSS.resume}>
+                {done === total ? "Kész – oklevél" : `Folytatom: ${done} / ${total} lecke kész`} <Arrow size={11} />
+              </span>
+            )}
+          </Link>
+        );
+      })}
+      <Link to="/akademia" className={`${HeaderCSS.item} ${HeaderCSS.itemAll}`}>
+        <span className={HeaderCSS.itemTitle}>{AKADEMIA.name} <Arrow size={11} /></span>
+        <span className={HeaderCSS.itemMeta}>{courses.length} tanfolyam</span>
+      </Link>
+    </div>
+  );
+}
+
+// Lebegő, üveghatású pirula-menü a lap tetején. Széles képernyőn (egérrel) az Elemzések és az
+// Akadémia fölé víve legördülő panel nyílik; keskenyen és érintőképernyőn sima link marad.
 function Header() {
   const latest = analyses[0];
 
@@ -21,20 +82,18 @@ function Header() {
           <span>Vakzóna</span>
         </Link>
         <nav className={HeaderCSS.nav} aria-label="Fő navigáció">
-          {/* a kategóriák csak széles képernyőn férnek ki a menübe (keskenyen az Elemzések oldalon vannak) */}
-          <div className={HeaderCSS.categories}>
-            {KATEGORIAK.map((k) => (
-              <NavLink key={k.slug} to={`/${k.slug}`} className={active(HeaderCSS.category)}>
-                {k.name}
-              </NavLink>
-            ))}
+          <div className={`${HeaderCSS.drop} ${HeaderCSS.dropWide}`}>
+            <NavLink to="/elemzesek" className={active(HeaderCSS.analyses)}>
+              Elemzések
+            </NavLink>
+            <AnalysesPanel />
           </div>
-          <NavLink to="/elemzesek" end className={active(HeaderCSS.analyses)}>
-            Elemzések
-          </NavLink>
-          <NavLink to="/akademia" className={active(HeaderCSS.academy)}>
-            {AKADEMIA.menu}
-          </NavLink>
+          <div className={HeaderCSS.drop}>
+            <NavLink to="/akademia" className={active(HeaderCSS.academy)}>
+              {AKADEMIA.menu}
+            </NavLink>
+            <AcademyPanel />
+          </div>
           <NavLink to="/rolunk" className={active(HeaderCSS.about)}>
             Rólunk
           </NavLink>

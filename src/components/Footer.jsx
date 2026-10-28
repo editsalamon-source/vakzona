@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Logo from "./Logo";
 import KATEGORIAK from "../data/kategoriak";
-import AKADEMIA from "../data/akademiaNev";
+import courses, { AKADEMIA } from "../data/akademia";
 import FooterCSS from "../css/Footer.module.css";
 
 function Footer() {
@@ -20,19 +20,27 @@ function Footer() {
             </p>
           </div>
           <div className={FooterCSS.col}>
-            <span className={FooterCSS.label}>Oldalak</span>
-            <Link to="/">Főoldal</Link>
-            <Link to="/elemzesek">Elemzések</Link>
-            <Link to="/akademia">{AKADEMIA.menu}</Link>
-            <Link to="/rolunk">Rólunk</Link>
-          </div>
-          <div className={FooterCSS.col}>
-            <span className={FooterCSS.label}>Kategóriák</span>
+            <span className={FooterCSS.label}>Elemzések</span>
+            <Link to="/elemzesek">Összes elemzés</Link>
             {KATEGORIAK.map((k) => (
               <Link key={k.slug} to={`/${k.slug}`}>
                 {k.name}
               </Link>
             ))}
+          </div>
+          <div className={FooterCSS.col}>
+            <span className={FooterCSS.label}>{AKADEMIA.menu}</span>
+            <Link to="/akademia">Minden tanfolyam</Link>
+            {courses.map((c) => (
+              <Link key={c.slug} to={`/akademia/${c.slug}`}>
+                {c.title}
+              </Link>
+            ))}
+          </div>
+          <div className={FooterCSS.col}>
+            <span className={FooterCSS.label}>Vakzóna</span>
+            <Link to="/">Főoldal</Link>
+            <Link to="/rolunk">Rólunk</Link>
           </div>
         </div>
         <div className={FooterCSS.bottom}>

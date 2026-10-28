@@ -11,6 +11,7 @@
 }
 
 .pill {
+  position: relative;
   pointer-events: auto;
   display: flex;
   align-items: center;
@@ -56,19 +57,6 @@
   border-radius: 999px;
   transition: color .3s, background-color .3s, border-color .3s;
 }
-
-/* kategóriák: saját szürke kapszulában */
-.categories {
-  display: flex;
-  align-items: center;
-  gap: 2px;
-  padding: 4px;
-  border-radius: 999px;
-  background: rgba(248, 250, 252, .6);
-}
-.nav a.category { padding: 10px 14px; }
-.nav a.category:hover,
-.nav a.category.active { color: var(--ink); background: #fff; }
 
 /* Elemzések: körvonalas pirula narancs ponttal, külön a kategóriáktól */
 .nav a.analyses {
@@ -135,8 +123,76 @@
 .cta svg { transition: transform .3s; }
 .cta:hover svg { transform: translateX(4px); }
 
-@media (max-width: 1180px) {
-  .categories { display: none; }
+/* ---------- Legördülő panelek (Elemzések, Akadémia) ---------- */
+/* a panel csak egérrel, széles képernyőn nyílik; keskenyen és érintőképernyőn a link sima link
+   (a kategóriák ott az Elemzések oldal gombjaiban vannak). Csak transform + visibility (nincs opacity-áttűnés). */
+.drop { position: relative; }
+/* a széles (Elemzések) panel a pirula közepéhez igazodik, hogy keskenyebb ablakban se lógjon ki */
+.dropWide { position: static; }
+.panel {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  width: 340px;
+  margin-top: 14px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, .08);
+  border-radius: 1.5rem;
+  box-shadow: 0 30px 60px -24px rgba(15, 23, 42, .25);
+  visibility: hidden;
+  transform: translate(-50%, 8px) scale(.98);
+  transform-origin: 50% 0;
+  transition: transform .35s cubic-bezier(.19, 1, .22, 1), visibility 0s .35s;
+}
+/* láthatatlan híd a menüpont és a panel között, hogy egérmozgás közben ne csukódjon be */
+.panel::before { content: ""; position: absolute; left: 0; right: 0; top: -16px; height: 16px; }
+.panelWide { width: 760px; flex-direction: row; gap: 10px; }
+.panelGrid { flex: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 2px; }
+
+.nav .panel a {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 14px 16px;
+  border-radius: 1rem;
+  color: var(--ink);
+  font-size: .85rem;
+  font-weight: 400;
+  letter-spacing: 0;
+  text-transform: none;
+  line-height: 1.45;
+}
+.nav .panel a:hover { background: var(--bg-soft); }
+.itemTitle { display: inline-flex; align-items: center; gap: 8px; font-weight: 600; letter-spacing: -0.01em; }
+.itemText {
+  color: var(--muted);
+  font-size: .78rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.itemMeta { font-size: .66rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--faint); }
+.nav .panel a.itemAll .itemTitle { color: var(--accent); }
+.resume { display: inline-flex; align-items: center; gap: 6px; color: var(--accent); font-size: .78rem; font-weight: 600; }
+.nav .panel a.feature { width: 240px; flex-shrink: 0; background: var(--bg-soft); justify-content: flex-end; }
+.nav .panel a.feature:hover { background: var(--accent-soft); }
+.feature .itemTitle { font-size: 1.05rem; line-height: 1.25; }
+
+@media (hover: hover) and (min-width: 960px) {
+  .drop:hover .panel,
+  .drop:focus-within .panel {
+    visibility: visible;
+    transform: translate(-50%, 0) scale(1);
+    transition: transform .35s cubic-bezier(.19, 1, .22, 1), visibility 0s;
+  }
+}
+@media (max-width: 959px), (hover: none) {
+  .panel { display: none; }
 }
 @media (max-width: 640px) {
   .header { top: 12px; }

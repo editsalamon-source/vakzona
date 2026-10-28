@@ -2,13 +2,16 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import analyses, { getCategories } from "../data/analyses";
+import courses, { AKADEMIA, formatLength } from "../data/akademia";
 import AnalysisCard from "../components/AnalysisCard";
+import CourseTile from "../components/CourseTile";
 import CategoryTiles from "../components/CategoryTiles";
 import HeroCanvas from "../components/HeroCanvas";
 import Reveal from "../components/Reveal";
 import Arrow from "../components/Arrow";
 import { INTRO_DELAY } from "../utils/intro";
 import CardCSS from "../css/AnalysisCard.module.css";
+import AcademyCSS from "../css/Academy.module.css";
 import LandingCSS from "../css/Landing.module.css";
 
 const PILLARS = [
@@ -40,6 +43,29 @@ const line = (i) => ({
 function Landing() {
   const [latest, ...earlier] = analyses;
   const categories = getCategories();
+  const lessons = courses.reduce((sum, c) => sum + c.lessons.length, 0);
+  const seconds = courses.reduce((sum, c) => sum + c.seconds, 0);
+  const pdfs = analyses.filter((a) => a.pdf).length;
+
+  // a két pillér: elemzések és Akadémia (a számok a tartalomból jönnek)
+  const paths = [
+    {
+      to: "/elemzesek",
+      tag: "Elemzések",
+      number: analyses.length,
+      unit: "elemzés",
+      text: "Független elemzések öt területen, hivatalos forrásokra építve, közérthető összefoglalóval.",
+      meta: [`${categories.length} kategória`, pdfs > 0 && `${pdfs} letölthető teljes PDF`],
+    },
+    {
+      to: "/akademia",
+      tag: AKADEMIA.menu,
+      number: lessons,
+      unit: "videólecke",
+      text: AKADEMIA.description,
+      meta: [`${courses.length} tanfolyam`, seconds > 0 && formatLength(seconds)],
+    },
+  ];
 
   return (
     <>
@@ -59,14 +85,14 @@ function Landing() {
               <p className={`lead ${LandingCSS.lead}`}>
                 A Vakzóna független elemzéseket közöl gazdasági, társadalmi, kulturális,
                 tudományos és MI-témákban – hivatalos forrásokra, adatokra és átlátható módszertanra
-                építve. A munkában mesterséges intelligenciát is használunk, de minden állítást
-                az eredeti forrással ellenőrzünk.
+                építve –, az Akadémián pedig videós tanfolyamokat kínál. A munkában mesterséges
+                intelligenciát is használunk, de minden állítást az eredeti forrással ellenőrzünk.
               </p>
               <div className={LandingCSS.actions}>
                 <Link className="btn" to="/elemzesek">
                   Elemzések <Arrow size={12} />
                 </Link>
-                <Link className="btn btnGhost" to="/rolunk">Hogyan dolgozunk?</Link>
+                <Link className="btn btnGhost" to="/akademia">{AKADEMIA.menu}</Link>
               </div>
             </Reveal>
           </div>
@@ -94,20 +120,26 @@ function Landing() {
         </div>
       </section>
 
-      {/* ---------- Kategóriák ---------- */}
-      <section className={`${LandingCSS.section} ${LandingCSS.tilesSection}`}>
-        <div className="wrap">
-          <Reveal className={LandingCSS.sectionHead}>
-            <div>
-              <span className="tag">Kategóriák</span>
-              <h2>Öt terület, egy módszer</h2>
-            </div>
-            <Link to="/elemzesek" className={LandingCSS.underlineLink}>
-              Összes elemzés <Arrow size={12} />
-            </Link>
-          </Reveal>
+      {/* ---------- Két út: Elemzések és Akadémia ---------- */}
+      <section className={LandingCSS.paths}>
+        <div className={`wrap ${LandingCSS.pathGrid}`}>
+          {paths.map((p, i) => (
+            <Reveal key={p.to} delay={i * 0.08}>
+              <Link to={p.to} className={LandingCSS.path}>
+                <span className="tag">{p.tag}</span>
+                <span className={LandingCSS.pathNumber}>
+                  {p.number}
+                  <span>{p.unit}</span>
+                </span>
+                <p>{p.text}</p>
+                <span className={LandingCSS.pathFoot}>
+                  <span className="meta">{p.meta.filter(Boolean).join(" · ")}</span>
+                  <span className={LandingCSS.pathArrow}><Arrow size={12} /></span>
+                </span>
+              </Link>
+            </Reveal>
+          ))}
         </div>
-        <CategoryTiles categories={categories} />
       </section>
 
       {/* ---------- Kiemelt elemzés (sötét sáv) ---------- */}
@@ -144,6 +176,22 @@ function Landing() {
         </section>
       )}
 
+      {/* ---------- Kategóriák ---------- */}
+      <section className={`${LandingCSS.section} ${LandingCSS.tilesSection}`}>
+        <div className="wrap">
+          <Reveal className={LandingCSS.sectionHead}>
+            <div>
+              <span className="tag">Kategóriák</span>
+              <h2>Öt terület, egy módszer</h2>
+            </div>
+            <Link to="/elemzesek" className={LandingCSS.underlineLink}>
+              Összes elemzés <Arrow size={12} />
+            </Link>
+          </Reveal>
+        </div>
+        <CategoryTiles categories={categories} />
+      </section>
+
       {/* ---------- Korábbi elemzések ---------- */}
       {earlier.length > 0 && (
         <section className={LandingCSS.section}>
@@ -160,6 +208,28 @@ function Landing() {
             <div className={CardCSS.list}>
               {earlier.slice(0, 3).map((a, i) => (
                 <AnalysisCard key={a.slug} analysis={a} featured={i === 0} />
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* ---------- Akadémia ---------- */}
+      {courses.length > 0 && (
+        <section className={`${LandingCSS.section} ${LandingCSS.bordered}`}>
+          <div className="wrap">
+            <Reveal className={LandingCSS.sectionHead}>
+              <div>
+                <span className="tag">{AKADEMIA.menu}</span>
+                <h2>{AKADEMIA.name}</h2>
+              </div>
+              <Link to="/akademia" className={LandingCSS.underlineLink}>
+                Minden tanfolyam <Arrow size={12} />
+              </Link>
+            </Reveal>
+            <div className={AcademyCSS.tiles}>
+              {courses.slice(0, 2).map((c) => (
+                <CourseTile key={c.slug} course={c} />
               ))}
             </div>
           </div>
