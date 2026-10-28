@@ -204,29 +204,6 @@
 .card:hover .featuredTitle,
 .card:hover .smallTitle { color: var(--accent-dark); }
 
-/* ---- sötét változat (a főoldal sötét sávjában) ---- */
-.dark { background: #0d0d0d; border-color: rgba(255, 255, 255, .1); }
-.dark:hover { border-color: rgba(255, 255, 255, .22); box-shadow: none; }
-.dark .cover { --art-bg: #141414; background: #141414; border-color: rgba(255, 255, 255, .08); }
-.dark .grid {
-  background-image:
-    linear-gradient(to right, rgba(255, 255, 255, .06) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, .06) 1px, transparent 1px);
-}
-.dark .art { color: rgba(255, 255, 255, .45); }
-.dark .chip { color: #fff; background: rgba(255, 255, 255, .08); border-color: rgba(255, 255, 255, .14); box-shadow: none; }
-.dark .number, .dark .logo { color: #fff; }
-.dark .highlightText { color: rgba(255, 255, 255, .85); background: rgba(13, 13, 13, .6); border-color: rgba(255, 255, 255, .14); }
-.dark .featuredTitle { color: #fff; }
-.dark:hover .featuredTitle { color: var(--accent); }
-.dark .text { color: rgba(255, 255, 255, .65); }
-.dark .stat { background: rgba(255, 255, 255, .04); border-color: rgba(255, 255, 255, .1); }
-.dark .statValue { color: #fff; }
-.dark .statLabel { color: rgba(255, 255, 255, .55); }
-.dark .more { color: #fff; }
-.dark .moreIcon { background: #fff; color: var(--ink); }
-.dark:hover .moreIcon { background: var(--accent); color: #fff; }
-
 .empty {
   border: 1px dashed var(--line);
   border-radius: var(--radius);
@@ -239,7 +216,6 @@
   .list { grid-template-columns: 1fr 1fr; }
   .featured { grid-template-columns: 1fr; }
   .featured .cover { height: 380px; border-right: 0; border-bottom: 1px solid var(--line); }
-  .dark .cover { border-color: rgba(255, 255, 255, .08); }
 }
 @media (max-width: 640px) {
   .list { grid-template-columns: 1fr; }

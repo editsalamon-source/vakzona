@@ -41,7 +41,7 @@ const line = (i) => ({
 });
 
 function Landing() {
-  const [latest, ...earlier] = analyses;
+  const latest = analyses[0];
   const categories = getCategories();
   const lessons = courses.reduce((sum, c) => sum + c.lessons.length, 0);
   const seconds = courses.reduce((sum, c) => sum + c.seconds, 0);
@@ -122,8 +122,10 @@ function Landing() {
       </section>
 
       {/* ---------- Két út: Elemzések és Akadémia ---------- */}
-      <section className={LandingCSS.paths}>
-        <div className={`wrap ${LandingCSS.pathGrid}`}>
+      <section className={LandingCSS.dark}>
+        <div className={LandingCSS.darkLine} />
+        <div className={LandingCSS.darkGrid} />
+        <div className={`wrap ${LandingCSS.darkInner} ${LandingCSS.pathGrid}`}>
           {paths.map((p, i) => (
             <Reveal key={p.to} delay={i * 0.08}>
               <Link to={p.to} className={LandingCSS.path}>
@@ -153,26 +155,6 @@ function Landing() {
         </div>
       </section>
 
-      {/* ---------- Kiemelt elemzés (sötét sáv) ---------- */}
-      {latest && (
-        <section className={LandingCSS.dark}>
-          <div className={LandingCSS.darkLine} />
-          <div className={LandingCSS.darkGrid} />
-          <div className={`wrap ${LandingCSS.darkInner}`}>
-            <Reveal className={LandingCSS.sectionHead}>
-              <div>
-                <span className="tag">Legfrissebb</span>
-                <h2 className={LandingCSS.darkHeading}>Kiemelt elemzés</h2>
-              </div>
-              <Link to="/elemzesek" className={LandingCSS.darkLink}>
-                Összes elemzés <Arrow size={12} />
-              </Link>
-            </Reveal>
-            <AnalysisCard analysis={latest} featured dark />
-          </div>
-        </section>
-      )}
-
       {/* ---------- Kategóriák ---------- */}
       <section className={`${LandingCSS.section} ${LandingCSS.tilesSection}`}>
         <div className="wrap">
@@ -189,21 +171,21 @@ function Landing() {
         <CategoryTiles categories={categories} />
       </section>
 
-      {/* ---------- Korábbi elemzések ---------- */}
-      {earlier.length > 0 && (
+      {/* ---------- Legfrissebb elemzések (az első a nagy kártya) ---------- */}
+      {analyses.length > 0 && (
         <section className={LandingCSS.section}>
           <div className="wrap">
             <Reveal className={LandingCSS.sectionHead}>
               <div>
                 <span className="tag">Elemzések</span>
-                <h2>Korábbi elemzések</h2>
+                <h2>Legfrissebb elemzések</h2>
               </div>
               <Link to="/elemzesek" className={LandingCSS.underlineLink}>
                 Összes elemzés <Arrow size={12} />
               </Link>
             </Reveal>
             <div className={CardCSS.list}>
-              {earlier.slice(0, 3).map((a, i) => (
+              {analyses.slice(0, 4).map((a, i) => (
                 <AnalysisCard key={a.slug} analysis={a} featured={i === 0} />
               ))}
             </div>
