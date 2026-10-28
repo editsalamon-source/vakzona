@@ -60,10 +60,11 @@ function Landing() {
     {
       to: "/akademia",
       tag: AKADEMIA.menu,
-      number: lessons,
-      unit: "videólecke",
-      text: AKADEMIA.description,
-      meta: [`${courses.length} tanfolyam`, seconds > 0 && formatLength(seconds)],
+      number: courses.length,
+      unit: "tanfolyam",
+      // a tanfolyamok címe; ha csak egy van, az alcíme is
+      courses: courses.slice(0, 3),
+      meta: [`${lessons} videólecke`, seconds > 0 && formatLength(seconds)],
     },
   ];
 
@@ -131,7 +132,17 @@ function Landing() {
                   {p.number}
                   <span>{p.unit}</span>
                 </span>
-                <p>{p.text}</p>
+                {p.text && <p>{p.text}</p>}
+                {p.courses && (
+                  <span className={LandingCSS.pathCourses}>
+                    {p.courses.map((c) => (
+                      <span key={c.slug}>
+                        <strong>{c.title}</strong>
+                        {p.courses.length === 1 && c.subtitle && <span>{c.subtitle}</span>}
+                      </span>
+                    ))}
+                  </span>
+                )}
                 <span className={LandingCSS.pathFoot}>
                   <span className="meta">{p.meta.filter(Boolean).join(" · ")}</span>
                   <span className={LandingCSS.pathArrow}><Arrow size={12} /></span>
