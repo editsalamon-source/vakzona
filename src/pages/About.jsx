@@ -14,8 +14,10 @@ function About() {
         <span className="tag">Rólunk</span>
         <h1>A vakfolt, amit nem látunk.</h1>
         <p className="lead">
-          A vakfolt az, ami a szemünk előtt van, mégsem látjuk. A Vakzóna ezekre irányítja a
-          figyelmet: független <Link to="/elemzesek">elemzésekben</Link> és
+          A szemünkben van egy pont, ahonnan nem érkezik kép, mégsem vesszük észre, mert az agy
+          kitölti a hiányt. A gondolkodásunkban is vannak ilyen vakfoltok: dolgok, amelyek ott
+          vannak előttünk, csak nem látjuk őket. A Vakzóna ezekre irányítja a figyelmet:
+          független <Link to="/elemzesek">elemzésekben</Link> és
           a <Link to="/akademia">{AKADEMIA.name}</Link> videós tanfolyamain.
         </p>
 

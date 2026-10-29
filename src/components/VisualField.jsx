@@ -66,8 +66,8 @@ function VisualField() {
         </div>
       </div>
       <figcaption className={CSS.caption}>
-        A látómezőben mindenkinek van egy pontja, ahonnan nem érkezik kép: ide esik a látóidegfő,
-        ahol a látóideg kilép a szemgolyóból. Az agy kitölti a hiányt, ezért nem vesszük észre.
+        Látómező-vizsgálat: a vakfolt oda esik, ahol a látóideg kilép a szemgolyóból (látóidegfő).
+        Ezen a helyen nincsenek fényérzékelő sejtek.
       </figcaption>
     </figure>
   );
