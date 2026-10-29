@@ -44,6 +44,14 @@
 .prose p, .prose li { color: #334155; }
 .prose ul { padding-left: 22px; }
 
+/* szöveg + jobb oldali illusztráció (Rólunk) */
+.split { display: grid; grid-template-columns: minmax(0, var(--readw)) minmax(0, 1fr); gap: 88px; align-items: start; }
+.aside { position: sticky; top: 140px; padding-top: 72px; }
+@media (max-width: 1200px) {
+  .split { grid-template-columns: minmax(0, 1fr); }
+  .aside { display: none; }
+}
+
 .actions { margin-top: 36px; }
 .actionRow { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 64px; }
 

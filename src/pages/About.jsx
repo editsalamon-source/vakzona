@@ -3,12 +3,13 @@ import { Link } from "react-router-dom";
 import { AKADEMIA } from "../data/akademia";
 import Arrow from "../components/Arrow";
 import Reveal from "../components/Reveal";
+import VisualField from "../components/VisualField";
 import PageCSS from "../css/Page.module.css";
 
 // Az oldal saját részeire mutató hivatkozás mindig az első említésnél van, belső linkként (Link).
 function About() {
   return (
-    <div className={`wrap ${PageCSS.page}`}>
+    <div className={`wrap ${PageCSS.page} ${PageCSS.split}`}>
       <Reveal className={PageCSS.prose}>
         <span className="tag">Rólunk</span>
         <h1>A vakfolt, amit nem látunk.</h1>
@@ -81,6 +82,13 @@ function About() {
           <Link className="btn btnGhost" to="/akademia">{AKADEMIA.menu}</Link>
         </div>
       </Reveal>
+
+      {/* jobb oldali illusztráció: a görgetés alatt helyben marad (széles képernyőn) */}
+      <aside className={PageCSS.aside}>
+        <Reveal delay={0.2}>
+          <VisualField />
+        </Reveal>
+      </aside>
     </div>
   );
 }

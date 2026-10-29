@@ -1,6 +1,8 @@
 /* A kategóriaábrák mozgása (CategoryArt `animated`): lassú, folyamatos, csak transform és
    stroke-dashoffset. A `--i` a lépcsőzetes késleltetés. Mozgáscsökkentésnél nincs animáció. */
-.animated * { transform-box: fill-box; transform-origin: center; }
+/* csak a mozgó elemek forognak/skálázódnak a saját közepük körül; általános (*) szabály nem lehet,
+   mert az a ferde pályák transform attribútumát is elcsúsztatná */
+.animated .bar, .animated .pulse, .animated .glint, .animated .node { transform-box: fill-box; transform-origin: center; }
 
 /* Gazdaság: az oszlopok hullámoznak, a trendvonal fut */
 .animated .bar { transform-origin: 50% 100%; animation: grow 4.8s cubic-bezier(.45, 0, .55, 1) infinite; animation-delay: calc(var(--i) * -.6s); }
@@ -18,13 +20,11 @@
 .animated .signal { stroke-dasharray: 6 8; animation: flow 1.2s linear infinite; }
 .animated .node { animation: pulse 3.6s ease-in-out infinite; animation-delay: calc(var(--i) * -.45s); }
 
-/* Tudomány: csak az ellipszisek forognak a mag körül, a kép többi része áll */
-.animated .spin { transform-box: view-box; transform-origin: 200px 148px; animation: spin 36s linear infinite; }
-@keyframes spin { to { transform: rotate(360deg); } }
+/* Tudomány: az elektronok keringése SVG animateMotion (CategoryArt.jsx), itt nincs teendő */
 
 /* Társadalom: csak a színezés vált, színátmenettel */
 .animated .person, .animated .person * { transition: stroke .8s ease, fill .8s ease; }
 
 @media (prefers-reduced-motion: reduce) {
-  .animated * { animation: none !important; }
+  .animated .bar, .animated .flow, .animated .pulse, .animated .glint, .animated .signal, .animated .node { animation: none; }
 }

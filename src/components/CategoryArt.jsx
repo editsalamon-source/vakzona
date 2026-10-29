@@ -108,25 +108,45 @@ function Kultura() {
 }
 
 // Tudomány: atom három elektronpályával; a mag narancs, körülötte halvány mérési pontrács.
-function Tudomany() {
+// Mozgó változatban az ábra áll, csak az elektronok keringenek a saját pályájukon.
+const ORBITS = [
+  { deg: 0, from: 1, dur: 11, accent: false },
+  { deg: 60, from: -1, dur: 14, accent: false },
+  { deg: 120, from: 1, dur: 17, accent: true },
+];
+
+function Tudomany({ animated }) {
   const cx = 200;
   const cy = 148;
+  const move = animated && !(typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches);
   return (
     <>
       {[36, 58, 342, 364].flatMap((x) =>
         [60, 150, 240].map((y) => <circle key={`${x}-${y}`} cx={x} cy={y} r="1.8" fill="currentColor" stroke="none" opacity="0.5" />)
       )}
-      <g className={M.spin}>
-      {[0, 60, 120].map((deg) => (
+      {ORBITS.map(({ deg }) => (
         <ellipse key={deg} cx={cx} cy={cy} rx="128" ry="44" fill="none" strokeWidth="1.5"
           transform={`rotate(${deg} ${cx} ${cy})`} />
       ))}
-      </g>
-      <circle cx={cx + 128} cy={cy} r="6" fill="var(--art-bg, #fff)" strokeWidth="1.5" />
-      <circle cx={cx - 64} cy={cy - 110.9} r="6" fill="var(--art-bg, #fff)" strokeWidth="1.5" />
-      <circle cx={cx - 64} cy={cy + 110.9} r="6" fill={A} stroke="none" />
       <circle cx={cx} cy={cy} r="64" fill="currentColor" fillOpacity="0.04" strokeWidth="1" strokeDasharray="3 5" opacity="0.6" />
       <circle cx={cx} cy={cy} r="14" fill={A} stroke="none" />
+      {/* elektronok: a pálya csúcsáról indulnak, onnan keringenek (pályánként más sebességgel) */}
+      {ORBITS.map(({ deg, from, dur, accent }) => {
+        const x0 = cx + from * 128;
+        const fill = accent ? A : "var(--art-bg, #fff)";
+        return (
+          <g key={deg} transform={`rotate(${deg} ${cx} ${cy})`}>
+            {move ? (
+              <circle r="6" fill={fill} stroke={accent ? "none" : "currentColor"} strokeWidth="1.5">
+                <animateMotion dur={`${dur}s`} repeatCount="indefinite"
+                  path={`M${x0} ${cy} a128 44 0 1 1 ${-from * 256} 0 a128 44 0 1 1 ${from * 256} 0`} />
+              </circle>
+            ) : (
+              <circle cx={x0} cy={cy} r="6" fill={fill} stroke={accent ? "none" : "currentColor"} strokeWidth="1.5" />
+            )}
+          </g>
+        );
+      })}
     </>
   );
 }
