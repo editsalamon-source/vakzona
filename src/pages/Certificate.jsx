@@ -189,7 +189,7 @@ function CertificateFor({ course }) {
           <h1 className={CSS.title}>Gratulálunk!</h1>
           <p className={CSS.text}>
             {issued
-              ? "Az oklevelét már kiállítottuk; bármikor újra letöltheti vagy kinyomtathatja."
+              ? "Az oklevelét már kiállítottuk, bármikor újra letöltheti vagy kinyomtathatja."
               : "Minden leckét megnézett. Adja meg a nevet, amelyre az oklevelet kiállítjuk, és töltse le PDF-ként."}
           </p>
           <label className={CSS.label} htmlFor="oklevelNev">Név az oklevélen</label>

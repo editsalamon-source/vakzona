@@ -1,6 +1,6 @@
 # VAKZÓNA – elemző weboldal
 
-Leendő élő oldal: https://vakzona.com (a www átirányít ide). Elemzések különböző témákban, jellemzően saját megvalósíthatósági tanulmányokra építve. A felhasználó magyarul kommunikál. Az oldal egyelőre csak magyar nyelvű. Az elemzésekben tényt, számot ne találj ki: ami hiányzik, maradjon `[helykitöltő]`.
+Leendő élő oldal: https://vakzona.com (a www átirányít ide). Elemzések különböző témákban, jellemzően saját megvalósíthatósági tanulmányokra építve. A felhasználó magyarul kommunikál. Az oldal egyelőre csak magyar nyelvű. A látható szövegekben pontosvesszőt nem használunk, helyette vesszőt (vagy új mondatot, felsorolást), 2026-10-29. Az elemzésekben tényt, számot ne találj ki: ami hiányzik, maradjon `[helykitöltő]`.
 
 A felépítés a sedith.art (`C:\SedithArt`) mintáját követi.
 

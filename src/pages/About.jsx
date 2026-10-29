@@ -69,7 +69,7 @@ function About() {
         <h2>Hogyan bánunk a forrásokkal?</h2>
         <p>
           Tiszteletben tartjuk a felhasznált művek szerzőinek jogait. A forrásokat nem közöljük
-          újra, hanem összefoglaljuk és az eredeti helyükre hivatkozunk; szó szerint csak rövid,
+          újra, hanem összefoglaljuk és az eredeti helyükre hivatkozunk, szó szerint csak rövid,
           megjelölt idézetet veszünk át, a forrás megnevezésével. Ábráinkat magunk készítjük,
           szabadon felhasználható adatokból, a licenc által előírt feltüntetéssel.
         </p>

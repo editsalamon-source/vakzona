@@ -38,7 +38,7 @@ lecke: 10b | M10 · AI-irányítás, megfelelés és kockázatkezelés (1. rész
 lecke: 10c | M10 · AI-irányítás, megfelelés és kockázatkezelés (2. rész) | 5:08
 lecke: 10c-plusz | M10 · AI-irányítás a gyakorlatban | 5:15
 ---
-Gyakorlati módszertan arról, hogyan készül el egy szervezet AI stratégiája úgy, hogy az AI ne kísérlet maradjon, hanem kézzelfogható üzleti értéket hozzon. A videóleckék a miértektől és az alapfogalmaktól a folyamat lépéseiig vezetnek, a leckékhez sablonok, kidolgozott példák és a módszertan kézikönyve tartozik; a végén oklevél.
+Gyakorlati módszertan arról, hogyan készül el egy szervezet AI stratégiája úgy, hogy az AI ne kísérlet maradjon, hanem kézzelfogható üzleti értéket hozzon. A videóleckék a miértektől és az alapfogalmaktól a folyamat lépéseiig vezetnek, a leckékhez sablonok, kidolgozott példák és a módszertan kézikönyve tartozik, a végén pedig oklevél.
 
 ## Kinek szól?
 
@@ -52,10 +52,22 @@ Nem feltételez mély technológiai tudást: ahol szakkifejezést használunk, r
 
 ## Mit tartalmaz?
 
-A tanfolyam folyamatosan bővül; jelenleg két egységből áll:
+A tanfolyam folyamatosan bővül, jelenleg két egységből áll:
 
 - **Alapok:** miért nem hoz értéket a legtöbb AI-kezdeményezés, mi az AI stratégia ma, a fogalmak és a fogalommodell, valamint a vezérelvek.
-- **A folyamat:** a teljes folyamat áttekintése, majd modulonként egy-egy lecke és egy gyakorlati példa: M1 Projektindítás, érintettek és döntési jogok; M2 Vezetői ambíció, AI-charta és értéklogika-keret; M3 Képesség- és érettségfelmérés; M4 Folyamatfeltárás és újratervezési lehetőségek; M5 Esetportfólió és értéklogika-kártyák; M6 Megoldásminta, ágens-indokoltság és autonómia; M7 Esetvezérelt adatkészség; M8 Priorizálás és portfóliódöntés; M9 Technológiai, platform- és beszerzési stratégia; M10 AI-irányítás, megfelelés és kockázatkezelés. A további modulok folyamatosan érkeznek.
+- **A folyamat:** a teljes folyamat áttekintése, majd modulonként egy-egy lecke és egy gyakorlati példa:
+  - M1 Projektindítás, érintettek és döntési jogok
+  - M2 Vezetői ambíció, AI-charta és értéklogika-keret
+  - M3 Képesség- és érettségfelmérés
+  - M4 Folyamatfeltárás és újratervezési lehetőségek
+  - M5 Esetportfólió és értéklogika-kártyák
+  - M6 Megoldásminta, ágens-indokoltság és autonómia
+  - M7 Esetvezérelt adatkészség
+  - M8 Priorizálás és portfóliódöntés
+  - M9 Technológiai, platform- és beszerzési stratégia
+  - M10 AI-irányítás, megfelelés és kockázatkezelés
+
+A további modulok folyamatosan érkeznek.
 
 A leckékhez letölthető anyag tartozik: a módszertan kézikönyve, valamint az M1–M10 modul sablonjai és magyarázó példái.
 
