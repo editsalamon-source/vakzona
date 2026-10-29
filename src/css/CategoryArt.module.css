@@ -1,12 +1,30 @@
-/* A kategóriaábrák mozgása (CategoryArt `animated`). Mozgáscsökkentésnél nincs animáció. */
+/* A kategóriaábrák mozgása (CategoryArt `animated`): lassú, folyamatos, csak transform és
+   stroke-dashoffset. A `--i` a lépcsőzetes késleltetés. Mozgáscsökkentésnél nincs animáció. */
+.animated * { transform-box: fill-box; transform-origin: center; }
 
-/* Tudomány: az elektronpályák (a rajtuk ülő elektronokkal) lassan forognak a mag körül */
-.animated .spin { transform-origin: 200px 148px; animation: spin 36s linear infinite; }
+/* Gazdaság: az oszlopok hullámoznak, a trendvonal fut */
+.animated .bar { transform-origin: 50% 100%; animation: grow 4.8s cubic-bezier(.45, 0, .55, 1) infinite; animation-delay: calc(var(--i) * -.6s); }
+@keyframes grow { 0%, 100% { transform: scaleY(1); } 50% { transform: scaleY(.82); } }
+.animated .flow { animation: flow 2.4s linear infinite; }
+@keyframes flow { to { stroke-dashoffset: -18; } }
+
+/* Kultúra és MI: a narancs elem lüktet, az oszlopok egymás után megemelkednek */
+.animated .pulse { animation: pulse 2.6s ease-in-out infinite; }
+@keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.22); } }
+.animated .glint { animation: glint 6s ease-in-out infinite; animation-delay: calc(var(--i) * .25s); }
+@keyframes glint { 0%, 70%, 100% { transform: translateY(0); } 80% { transform: translateY(-6px); } }
+
+/* MI: a narancs élek mentén jel fut, a csomópontok lüktetnek */
+.animated .signal { stroke-dasharray: 6 8; animation: flow 1.2s linear infinite; }
+.animated .node { animation: pulse 3.6s ease-in-out infinite; animation-delay: calc(var(--i) * -.45s); }
+
+/* Tudomány: csak az elektronpályák (a rajtuk ülő elektronokkal) forognak a mag körül */
+.animated .spin { transform-box: view-box; transform-origin: 200px 148px; animation: spin 36s linear infinite; }
 @keyframes spin { to { transform: rotate(360deg); } }
 
-/* Társadalom: a színezés áttűnés nélkül, színátmenettel vált */
+/* Társadalom: csak a színezés vált, színátmenettel */
 .animated .person, .animated .person * { transition: stroke .8s ease, fill .8s ease; }
 
 @media (prefers-reduced-motion: reduce) {
-  .animated .spin { animation: none; }
+  .animated * { animation: none !important; }
 }

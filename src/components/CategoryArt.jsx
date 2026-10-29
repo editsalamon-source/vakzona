@@ -4,8 +4,9 @@ import M from "../css/CategoryArt.module.css";
 // Kategóriánként egy vonalas ábra az oldal stílusában: vékony currentColor-vonalak,
 // egyetlen narancs „vakfolt” elem (.accent). A színt a szülő `color`-ja adja,
 // így sötét háttéren (pl. a csempék futó feliratában) fehéren is használható.
-// `animated` (a főoldali kategóriacsempéken): a Tudomány elektronpályái lassan forognak,
-// a Társadalom narancs csoportja időnként máshová kerül; a többi ábra áll.
+// `animated` (a főoldali kategóriacsempéken): lassú, folyamatos mozgás, csak transform és
+// stroke-dashoffset (a `--i` CSS-változó a lépcsőzetes késleltetés). A Tudomány elektronpályái
+// forognak, a Társadalom narancs csoportja időnként máshová kerül.
 
 const A = "var(--accent)";
 
@@ -18,12 +19,13 @@ function Gazdasag() {
       <line x1="20" y1="250" x2="380" y2="250" strokeWidth="1.5" />
       {bars.map((h, i) => (
         <rect
-          key={i} x={36 + i * 44} y={250 - h} width="28" height={h} rx="3"
+          key={i} className={M.bar} style={{ "--i": i }} x={36 + i * 44} y={250 - h} width="28" height={h} rx="3"
           fill={i === 5 ? A : "currentColor"} fillOpacity={i === 5 ? 1 : 0.06}
           stroke={i === 5 ? A : "currentColor"} strokeWidth="1.5"
         />
       ))}
       <polyline
+        className={M.flow}
         points={pts.map((p) => `${p[0]},${p[1] - 26}`).join(" ")}
         fill="none" strokeWidth="1.5" strokeDasharray="4 5"
       />
@@ -84,12 +86,12 @@ function Kultura() {
   return (
     <>
       <path d="M60 104 L200 40 L340 104 Z" fill="currentColor" fillOpacity="0.05" strokeWidth="1.5" strokeLinejoin="round" />
-      <circle cx="200" cy="82" r="9" fill={A} stroke="none" />
+      <circle className={M.pulse} cx="200" cy="82" r="9" fill={A} stroke="none" />
       <rect x="54" y="104" width="292" height="16" rx="2" fill="none" strokeWidth="1.5" />
       {cols.map((i) => {
         const x = 76 + i * 48;
         return (
-          <g key={i}>
+          <g key={i} className={M.glint} style={{ "--i": i }}>
             <rect x={x} y="120" width="24" height="10" fill="none" strokeWidth="1.5" />
             <rect x={x + 3} y="130" width="18" height="96" fill="currentColor" fillOpacity="0.04" strokeWidth="1.5" />
             <line x1={x + 9} y1="134" x2={x + 9} y2="222" strokeWidth="1" opacity="0.5" />
@@ -141,7 +143,7 @@ function Mi() {
       layers[l + 1].forEach(([x2, y2], j) => {
         const on = `${l}-${i}` === hot || `${l + 1}-${j}` === hot;
         edges.push(
-          <line key={`${l}-${i}-${j}`} x1={x1} y1={y1} x2={x2} y2={y2}
+          <line key={`${l}-${i}-${j}`} className={on ? M.signal : undefined} x1={x1} y1={y1} x2={x2} y2={y2}
             stroke={on ? A : "currentColor"} strokeWidth={on ? 1.5 : 1} opacity={on ? 1 : 0.35} />
         );
       })
@@ -154,7 +156,7 @@ function Mi() {
         nodes.map(([x, y], i) => {
           const on = `${l}-${i}` === hot;
           return (
-            <circle key={`${l}-${i}`} cx={x} cy={y} r={on ? 11 : 9}
+            <circle key={`${l}-${i}`} className={on ? M.pulse : M.node} style={{ "--i": l * 2 + i }} cx={x} cy={y} r={on ? 11 : 9}
               fill={on ? A : "var(--art-bg, #fff)"} stroke={on ? A : "currentColor"} strokeWidth="1.5" />
           );
         })
