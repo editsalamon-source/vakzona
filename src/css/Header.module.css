@@ -58,30 +58,12 @@
   transition: color .3s, background-color .3s, border-color .3s;
 }
 
-/* Elemzések: körvonalas pirula narancs ponttal, külön a kategóriáktól */
-.nav a.analyses {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  color: var(--ink);
-  font-weight: 700;
-  border: 1px solid rgba(0, 0, 0, .12);
-  background: #fff;
-  padding: 9px 18px;
-}
-.nav a.analyses::before {
-  content: "";
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: var(--accent);
-}
-.nav a.analyses:hover,
-.nav a.analyses.active { border-color: var(--accent); color: var(--accent); }
-
-/* Akadémia: sima szöveges link az Elemzések után; aktívan narancs */
+/* Elemzések és Akadémia: egyforma szöveges linkek, aktívan narancsok */
+.nav a.analyses,
 .nav a.academy { padding: 10px 14px 10px 18px; }
+.nav a.analyses:hover,
 .nav a.academy:hover { color: var(--ink); }
+.nav a.analyses.active,
 .nav a.academy.active { color: var(--accent); }
 
 /* Rólunk: függőleges elválasztó után, sima szöveges link */
@@ -202,7 +184,7 @@
   .brand { padding: 0 8px 0 10px; }
   .nav { gap: 2px; }
   .nav a { letter-spacing: .1em; }
-  .nav a.analyses { padding: 8px 12px; gap: 6px; }
+  .nav a.analyses,
   .nav a.academy { padding: 9px 8px 9px 12px; }
   .nav a.about { margin-left: 4px; padding: 9px 10px 9px 14px; }
   .cta { display: none; }
@@ -211,7 +193,7 @@
 @media (max-width: 420px) {
   .brand { padding: 0 4px 0 8px; font-size: 1rem; }
   .nav a { font-size: 10px; letter-spacing: .06em; }
-  .nav a.analyses { padding: 8px 10px; }
+  .nav a.analyses,
   .nav a.academy { padding: 9px 6px 9px 10px; }
   .nav a.about { margin-left: 2px; padding: 9px 8px 9px 10px; }
 }
