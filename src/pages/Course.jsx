@@ -43,13 +43,13 @@ function DownloadIcon({ size = 16 }) {
 const lessonCount = (course) =>
   `${course.lessons.length} lecke${course.seconds > 0 ? ` · ${formatLength(course.seconds)}` : ""}`;
 
-function Meta({ course }) {
+function Meta({ course, count = true }) {
   return (
     <div className={CSS.meta}>
       <Link to="/akademia" className="tag">{AKADEMIA.menu}</Link>
       {course.category && <span className="tag tagAccent">{course.category.name}</span>}
       {course.level && <span className="meta">{course.level}</span>}
-      <span className="meta">{lessonCount(course)}</span>
+      {count && <span className="meta">{lessonCount(course)}</span>}
     </div>
   );
 }
@@ -155,21 +155,39 @@ function Curriculum({ course, progress = null, current = null, onPick = null }) 
   );
 }
 
+// Felül a cím teljes szélességben; alatta bal oldalt a bemutató és a bevezető, jobb oldalt
+// (széles képernyőn ragadósan) a tanfolyam adatai és a belépés.
 function CourseLanding({ course, access }) {
+  const facts = [
+    { value: course.lessons.length, label: "videólecke" },
+    course.seconds > 0 && { value: formatLength(course.seconds), label: "videó összesen" },
+    course.modules.length > 1 && { value: course.modules.length, label: "rész" },
+  ].filter(Boolean);
+
   return (
     <div className={`wrap ${CSS.page}`}>
-      <header className={CSS.hero}>
-        <div className={CSS.heroText}>
-          <Meta course={course} />
-          <h1 className={CSS.title}>{course.title}</h1>
-          {course.subtitle && <p className="lead">{course.subtitle}</p>}
-          {course.introHtml && <div className={CSS.intro} dangerouslySetInnerHTML={{ __html: course.introHtml }} />}
-          {access.status === "checking" ? <div className={CSS.loginPlaceholder} /> : <PasswordForm access={access} />}
-        </div>
-        <div className={CSS.heroVideo}>
-          <VideoPlayer url={course.intro} subtitles={course.introSubtitles} title="Bemutató" poster category={course.category} />
-        </div>
+      <header className={CSS.heroHead}>
+        <Meta course={course} count={false} />
+        <h1 className={CSS.title}>{course.title}</h1>
+        {course.subtitle && <p className="lead">{course.subtitle}</p>}
       </header>
+      <div className={CSS.hero}>
+        <div className={CSS.heroMain}>
+          <VideoPlayer url={course.intro} subtitles={course.introSubtitles} title="Bemutató" poster category={course.category} />
+          {course.introHtml && <div className={CSS.intro} dangerouslySetInnerHTML={{ __html: course.introHtml }} />}
+        </div>
+        <aside className={CSS.heroSide}>
+          <dl className={CSS.facts}>
+            {facts.map((f) => (
+              <div key={f.label}>
+                <dt>{f.label}</dt>
+                <dd>{f.value}</dd>
+              </div>
+            ))}
+          </dl>
+          {access.status === "checking" ? <div className={CSS.loginPlaceholder} /> : <PasswordForm access={access} />}
+        </aside>
+      </div>
     </div>
   );
 }

@@ -4,11 +4,13 @@
 .meta a.tag:hover { color: var(--ink); background: #fff; }
 
 /* ---------- belépés előtt ---------- */
-.hero { display: grid; grid-template-columns: 5fr 6fr; gap: 56px; align-items: center; }
-.heroText { min-width: 0; }
-.title { font-size: clamp(2.2rem, 4.6vw, 3.8rem); margin: 22px 0 18px; }
-.heroText :global(.lead) { margin: 0 0 32px; }
-.intro { margin: -12px 0 32px; color: #334155; font-size: .98rem; line-height: 1.7; }
+.heroHead { max-width: 900px; margin-bottom: 48px; }
+.title { font-size: clamp(2.2rem, 4.4vw, 3.6rem); margin: 22px 0 16px; }
+.heroHead :global(.lead) { margin: 0; }
+.hero { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 4fr); gap: 40px; align-items: start; }
+.heroMain { min-width: 0; }
+.heroSide { position: sticky; top: 120px; display: flex; flex-direction: column; gap: 16px; }
+.intro { margin: 32px 0 0; max-width: 720px; color: #334155; font-size: 1rem; line-height: 1.75; }
 .intro > :first-child { margin-top: 0; }
 .intro > :last-child { margin-bottom: 0; }
 
@@ -37,6 +39,22 @@
 .loginRow :global(.btn:disabled) { opacity: .5; cursor: default; transform: none; box-shadow: none; background: var(--ink); }
 .login > p { margin: 12px 0 0; }
 .loginPlaceholder { height: 150px; }
+/* a login-dobozban keskeny oszlopban is egymás alatt a mező és a gomb */
+.heroSide .loginRow { flex-direction: column; }
+.heroSide .loginRow :global(.btn) { justify-content: center; }
+
+.facts {
+  display: flex;
+  gap: 1px;
+  margin: 0;
+  background: var(--line);
+  border: 1px solid var(--line);
+  border-radius: 1.5rem;
+  overflow: hidden;
+}
+.facts > div { flex: 1 1 auto; display: flex; flex-direction: column-reverse; gap: 4px; padding: 18px 20px; background: #fff; }
+.facts dd { margin: 0; white-space: nowrap; font-size: 1.3rem; font-weight: 700; letter-spacing: -0.04em; line-height: 1.1; color: var(--ink); }
+.facts dt { font-size: .66rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--faint); }
 
 .sectionTitle { margin: 0 0 20px !important; }
 
@@ -203,8 +221,8 @@ button.lessonBtn { cursor: pointer; }
   .room { grid-template-columns: minmax(0, 1fr) 320px; gap: 24px; }
 }
 @media (max-width: 960px) {
-  .hero { grid-template-columns: 1fr; gap: 40px; }
-  .heroVideo { order: -1; }
+  .hero { grid-template-columns: 1fr; gap: 32px; }
+  .heroSide { position: static; }
   .room { grid-template-columns: 1fr; }
   .side { position: static; max-height: none; }
 }
