@@ -22,7 +22,7 @@ pdf: mi-es-a-palyakezdok-v1.0.pdf | 55 oldal
 > - **Magyarországra nincs közvetlen bizonyíték, és az összesített hazai adat nem mutat országos pályakezdő-válságot** – de ennek legfőbb oka, hogy a jelenlegi hazai statisztika egyszerűen nem alkalmas a kérdés megválaszolására, mert hiányzik a korcsoportra bontott foglalkozási adat.
 > - **A javaslatok három csoportba rendezhetők**: jobb mérés, oktatási és állami lépések, valamint vállalati gyakorlat – ezek jó része saját, elemzői javaslat, nem a forrásokban külön dokumentált gyakorlat.
 
-Ez az írás a Vakzóna arról szóló elemzésének rövidített, webes változata, hogy a generatív mesterséges intelligencia hogyan hat a pályakezdők munkaerőpiaci helyzetére; a teljes elemzés PDF-ben letölthető. Az elemzés kizárólag nyilvánosan hozzáférhető, hivatalos és tudományos forrásokra épül – hazai, uniós és nemzetközi körben –, és MI-eszközök segítségével készült, emberi forrásellenőrzéssel.
+Ez az írás a Vakzóna arról szóló elemzésének rövidített, webes változata, hogy a generatív mesterséges intelligencia hogyan hat a pályakezdők munkaerőpiaci helyzetére, a teljes elemzés PDF-ben letölthető. Az elemzés kizárólag nyilvánosan hozzáférhető, hivatalos és tudományos forrásokra épül – hazai, uniós és nemzetközi körben –, és MI-eszközök segítségével készült, emberi forrásellenőrzéssel.
 
 ## Alapok: miről van szó?
 
@@ -68,7 +68,7 @@ Mindezekhez tartozik egy közös, nehezen kezelhető probléma: a 2022–2026 k�
 |---|---|---|
 | Stanford (ADP-adat) | USA | 19%-os foglalkoztatási rés a kitett szakmák 22–25 éveseinél, felvételen keresztül |
 | Yale Budget Lab | USA | Összesített szinten nincs egyértelmű MI-lábnyom |
-| NBER (Humlum–Vestergaard) | Dánia | Kereset/munkaidő hatása ~0; pályakezdői rés létezik, de nem a cégi MI-bevezetésnek tulajdonítható |
+| NBER (Humlum–Vestergaard) | Dánia | Kereset/munkaidő hatása ~0, pályakezdői rés létezik, de nem a cégi MI-bevezetésnek tulajdonítható |
 | ILO | globális | A dolgozók 24%-a valamilyen fokú MI-kitettségű foglalkozásban |
 
 ## A tapasztalati létra: gyorsítja vagy akadályozza az MI a tanulást?
@@ -113,7 +113,7 @@ Ebből az következik, hogy a két mechanizmus – a tanulás kiürülése vagy 
 
 Összességében a kockázat nem bizonyított tény, de nem is alaptalan feltételezés. A rendelkezésre álló, túlnyomórészt friss és amerikai vagy dán eredetű bizonyítékok egy valószínű, figyelmet igénylő mintázatot rajzolnak ki, amelynek oka és tartóssága még nyitott kérdés, és amelyet a hazai mérés jelenleg nem tud önállóan igazolni vagy elvetni.
 
-Ebből három javaslati irány adódik; a következők jó része **saját, elemzői javaslat**, nem a felsorolt forrásokban külön dokumentált gyakorlat.
+Ebből három javaslati irány adódik, a következők jó része **saját, elemzői javaslat**, nem a felsorolt forrásokban külön dokumentált gyakorlat.
 
 **A méréshez.** A KSH munkaerő-felmérése közzétehetne egy rendszeresen frissített, korcsoport és foglalkozás szerinti bontású táblát. A Diplomás Pályakövetési Rendszer adatkapcsolását nyilvános, letölthető, országos összesítésben is elérhetővé lehetne tenni. Érdemes lenne létrehozni egy önálló, junior álláshirdetési és felvételi adatsort, például a Nemzeti Foglalkoztatási Szolgálat vagy állásportálok adataiból. És össze lehetne kapcsolni a vállalati MI-használati adatokat a felvételi gyakorlattal, hasonlóan ahhoz, ahogyan a dán kutatás tette a saját adminisztratív regiszterével.
 

@@ -14,7 +14,7 @@ szám: 24 | hivatalos forrás
 
 > **Összefoglaló**
 >
-> - **A tagság és a kollektívszerződés-lefedettség nem ugyanaz.** Svédországban például a tagság 66–70 százalék körül mozog, miközben a kollektív szerződések lefedettsége 88 százalék; Ausztriában a tagság 20,2 százalék, a lefedettség mégis 98 százalék.
+> - **A tagság és a kollektívszerződés-lefedettség nem ugyanaz.** Svédországban például a tagság 66–70 százalék körül mozog, miközben a kollektív szerződések lefedettsége 88 százalék, Ausztriában a tagság 20,2 százalék, a lefedettség mégis 98 százalék.
 > - **A tagság és a kollektív szerződések lefedettsége nemzetközileg is két külön dolog.** Van, ahol alacsony tagság mellett is majdnem teljes a lefedettség, mert a munkáltatói oldal erősen szervezett, vagy mert a szerződéseket törvény kiterjeszti más munkáltatókra is. Ahol egyik mechanizmus sincs, a lefedettség a tagsággal együtt zuhan.
 > - **A hazai szakszervezeti tagság tartósan csökken:** a kilencvenes évek eleji, 40 százalék körüli szintről 2020-ra 7,4 százalékra esett, a kollektív szerződéses lefedettség pedig a kilencvenes évek végi 35–38 százalékról 2022-re 20,4 százalékra, messze a 80 százalékos uniós célérték alatt. A tárgyalás döntően vállalati szinten zajlik.
 > - **2025-ben az ILO Alkalmazási Bizottsága külön tárgyalta Magyarország esetét**, és felszólította a kormányt, hogy a munkavállalói véleménynyilvánítás korlátai, a szakszervezetek nyilvántartásba vétele és a tagdíjlevonás tilalma ügyében egyeztessen a szociális partnerekkel.
@@ -38,7 +38,7 @@ A munkavállalók egy munkahelyen szakszervezetet alapíthatnak vagy csatlakozha
 
 ### Amit könnyű összekeverni
 
-**Ahol erős a kollektív szerződés, ott sok a szakszervezeti tag is** – nem feltétlenül: Svédországban a tagság kb. 66–70 százalék, a lefedettség 88 százalék; Ausztriában a tagság 20,2 százalék (2024), a lefedettség 98 százalék (2024). „Az erősebb szakszervezet automatikusan merevebb munkaerőpiacot jelent” – a kutatás szerint ez csak a koordinálatlan vagy teljesen centralizált rendszerekre igaz, a koordinált rendszerek éppen magasabb foglalkoztatással járnak együtt. „A kollektív szerződés csak a szakszervezeti tagokra vonatkozik” – a magyar szabályozás szerint a szerződés munkaviszonyra vonatkozó rendelkezései a munkáltató valamennyi munkavállalójára kiterjednek.
+**Ahol erős a kollektív szerződés, ott sok a szakszervezeti tag is** – nem feltétlenül: Svédországban a tagság kb. 66–70 százalék, a lefedettség 88 százalék, Ausztriában a tagság 20,2 százalék (2024), a lefedettség 98 százalék (2024). „Az erősebb szakszervezet automatikusan merevebb munkaerőpiacot jelent” – a kutatás szerint ez csak a koordinálatlan vagy teljesen centralizált rendszerekre igaz, a koordinált rendszerek éppen magasabb foglalkoztatással járnak együtt. „A kollektív szerződés csak a szakszervezeti tagokra vonatkozik” – a magyar szabályozás szerint a szerződés munkaviszonyra vonatkozó rendelkezései a munkáltató valamennyi munkavállalójára kiterjednek.
 
 ## Tagság vagy lefedettség?
 
