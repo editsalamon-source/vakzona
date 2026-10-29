@@ -48,14 +48,13 @@ function About() {
 
         <h2>Tanfolyamok</h2>
         <p>
-          A <Link to="/akademia">{AKADEMIA.name}</Link> tanfolyamai átgondolt, kidolgozott
-          anyagok, amelyek a gyakorlati életből merítenek.
+          A <Link to="/akademia">{AKADEMIA.name}</Link> tanfolyamai átgondolt, gondosan
+          kidolgozott anyagok, amelyek a gyakorlati tapasztalatból merítenek.
         </p>
         <p>
-          A tanfolyamok mesterséges intelligencia támogatásával készültek: a videók és a szövegük
-          is MI-eszközökkel készült. Ennek oka, hogy ezek a témák gyorsan elavulnak, így az
-          anyagokat gyorsabban el tudjuk készíteni, és könnyebben naprakészen tudjuk tartani. Ha
-          ez valakinek gondot okoz, elnézést kérünk.
+          A videók és a szöveg mesterséges intelligencia segítségével születtek. Ez tudatos
+          döntés: ezek a témák gyorsan változnak, így az anyag hamar elkészülhet, és a
+          változásokkal együtt könnyen frissíthető. Ha ez valakit zavar, elnézését kérjük.
         </p>
 
         <h2>Mesterséges intelligencia és szerzői jog</h2>
