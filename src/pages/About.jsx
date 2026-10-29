@@ -52,9 +52,11 @@ function About() {
           kidolgozott anyagok, amelyek a gyakorlati tapasztalatból merítenek.
         </p>
         <p>
-          A videók és a szöveg mesterséges intelligencia segítségével születtek. Ez tudatos
-          döntés: ezek a témák gyorsan változnak, így az anyag hamar elkészülhet, és a
-          változásokkal együtt könnyen frissíthető. Ha ez valakit zavar, elnézését kérjük.
+          A videók és a szöveg mesterséges intelligencia segítségével születtek, a narráció is
+          gépi hang. Ez tudatos döntés: ezek a témák gyorsan változnak, így az anyag hamar
+          elkészülhet, és a változásokkal együtt könnyen frissíthető. A gépi narráció nem mindig
+          szól természetesen, és a kiejtésben is előfordulhatnak hibák; ha ez zavaró, elnézést
+          kérünk.
         </p>
 
         <h2>Mesterséges intelligencia és szerzői jog</h2>
