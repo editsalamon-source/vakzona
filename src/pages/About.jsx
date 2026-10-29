@@ -85,9 +85,7 @@ function About() {
 
       {/* jobb oldali illusztráció: a görgetés alatt helyben marad (széles képernyőn) */}
       <aside className={PageCSS.aside}>
-        <Reveal delay={0.2}>
-          <VisualField />
-        </Reveal>
+        <VisualField />
       </aside>
     </div>
   );

@@ -2,8 +2,9 @@ import React from "react";
 import CSS from "../css/VisualField.module.css";
 
 // A Rólunk oldal illusztrációja: látómező-vizsgálat (perimetria) ábrája a vakfolttal.
-// Vékony vonalas ábra az oldal stílusában, egyetlen narancs elemmel (a vakfolt); a pásztázó
-// sugár lassan körbefordul (csak transform).
+// Vékony vonalas ábra az oldal stílusában, egyetlen narancs elemmel (a vakfolt). A pásztázó
+// sugár külön, saját rétegű SVG-ben forog (csak transform), így a sok mérési pontot a böngészőnek
+// nem kell minden képkockán újrarajzolnia.
 const C = 200; // középpont (fixációs pont)
 const R = 180; // a látómező széle (30°)
 const SPOT = { x: 290, y: 214, rx: 24, ry: 32 }; // a vakfolt: kb. 15°-kal kifelé, kissé lejjebb
@@ -26,6 +27,12 @@ function VisualField() {
     <figure className={CSS.figure}>
       <div className={CSS.panel}>
         <span className={CSS.label}>Látómező</span>
+        <div className={CSS.stage}>
+        <svg className={CSS.sweepLayer} viewBox="0 0 400 400" fill="none" stroke="currentColor" aria-hidden="true">
+          <path d={`M${C} ${C} L${C + R} ${C} A${R} ${R} 0 0 0 ${C + R * Math.cos(-0.5)} ${C + R * Math.sin(-0.5)} Z`}
+            fill="currentColor" fillOpacity="0.05" stroke="none" />
+          <line x1={C} y1={C} x2={C + R} y2={C} strokeWidth="1.5" />
+        </svg>
         <svg className={CSS.svg} viewBox="0 0 400 400" fill="none" stroke="currentColor" aria-hidden="true">
           {/* fokgyűrűk és tengelyek */}
           {[60, 120, 180].map((r) => (
@@ -38,13 +45,6 @@ function VisualField() {
               {deg}°
             </text>
           ))}
-
-          {/* pásztázó sugár */}
-          <g className={CSS.sweep}>
-            <path d={`M${C} ${C} L${C + R} ${C} A${R} ${R} 0 0 0 ${C + R * Math.cos(-0.5)} ${C + R * Math.sin(-0.5)} Z`}
-              fill="currentColor" fillOpacity="0.05" stroke="none" />
-            <line x1={C} y1={C} x2={C + R} y2={C} strokeWidth="1.5" />
-          </g>
 
           {/* mérési pontok */}
           {DOTS.map(({ x, y, r }) => (
@@ -63,6 +63,7 @@ function VisualField() {
           <circle cx={C} cy={C} r="9" strokeWidth="1.5" fill="var(--bg-soft)" />
           <circle cx={C} cy={C} r="3" fill="var(--ink)" stroke="none" />
         </svg>
+        </div>
       </div>
       <figcaption className={CSS.caption}>
         A látómezőben mindenkinek van egy pontja, ahonnan nem érkezik kép: ide esik a látóidegfő,

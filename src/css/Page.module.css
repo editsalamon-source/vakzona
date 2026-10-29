@@ -46,7 +46,8 @@
 
 /* szöveg + jobb oldali illusztráció (Rólunk) */
 .split { display: grid; grid-template-columns: minmax(0, var(--readw)) minmax(0, 1fr); gap: 88px; align-items: start; }
-.aside { position: sticky; top: 140px; padding-top: 72px; }
+/* a ragadós ábra a cím magasságában indul, és a menü alatt áll meg */
+.aside { position: sticky; top: 120px; margin-top: 48px; }
 @media (max-width: 1200px) {
   .split { grid-template-columns: minmax(0, 1fr); }
   .aside { display: none; }
