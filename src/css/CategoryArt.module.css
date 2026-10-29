@@ -1,29 +1,12 @@
-/* A kategóriaábrák mozgása (CategoryArt `animated`): lassú, folyamatos, csak transform és
-   stroke-dashoffset. A `--i` a lépcsőzetes késleltetés. Mozgáscsökkentésnél nincs animáció. */
-.animated * { transform-box: fill-box; transform-origin: center; }
+/* A kategóriaábrák mozgása (CategoryArt `animated`). Mozgáscsökkentésnél nincs animáció. */
 
-.animated .bar { transform-origin: 50% 100%; animation: grow 4.8s cubic-bezier(.45, 0, .55, 1) infinite; animation-delay: calc(var(--i) * -.6s); }
-@keyframes grow { 0%, 100% { transform: scaleY(1); } 50% { transform: scaleY(.82); } }
-
-.animated .flow { animation: flow 2.4s linear infinite; }
-@keyframes flow { to { stroke-dashoffset: -18; } }
-
-.animated .bob { animation: bob 4s ease-in-out infinite; animation-delay: calc(var(--i) * -.37s); }
-@keyframes bob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-5px); } }
-
-.animated .pulse { animation: pulse 2.6s ease-in-out infinite; }
-@keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.22); } }
-
-.animated .glint { animation: glint 6s ease-in-out infinite; animation-delay: calc(var(--i) * .25s); }
-@keyframes glint { 0%, 70%, 100% { transform: translateY(0); } 80% { transform: translateY(-6px); } }
-
-.animated .spin { transform-box: view-box; transform-origin: 200px 148px; animation: spin 36s linear infinite; }
-.animated .spinBack { animation: spin 48s linear infinite reverse; }
+/* Tudomány: az elektronpályák (a rajtuk ülő elektronokkal) lassan forognak a mag körül */
+.animated .spin { transform-origin: 200px 148px; animation: spin 36s linear infinite; }
 @keyframes spin { to { transform: rotate(360deg); } }
 
-.animated .signal { stroke-dasharray: 6 8; animation: flow 1.2s linear infinite; }
-.animated .node { animation: pulse 3.6s ease-in-out infinite; animation-delay: calc(var(--i) * -.45s); }
+/* Társadalom: a színezés áttűnés nélkül, színátmenettel vált */
+.animated .person, .animated .person * { transition: stroke .8s ease, fill .8s ease; }
 
 @media (prefers-reduced-motion: reduce) {
-  .animated * { animation: none !important; }
+  .animated .spin { animation: none; }
 }
