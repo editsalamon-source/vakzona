@@ -1,9 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { AKADEMIA } from "../data/akademia";
+import Arrow from "../components/Arrow";
 import Reveal from "../components/Reveal";
 import PageCSS from "../css/Page.module.css";
 
+// Az oldal saját részeire mutató hivatkozás mindig az első említésnél van, belső linkként (Link).
 function About() {
   return (
     <div className={`wrap ${PageCSS.page}`}>
@@ -11,8 +13,9 @@ function About() {
         <span className="tag">Rólunk</span>
         <h1>A vakfolt, amit nem látunk.</h1>
         <p className="lead">
-          A vakfolt az a terület, ami a szemünk előtt van, mégsem látjuk. A Vakzóna ezekre a
-          területekre fókuszál.
+          A vakfolt az, ami a szemünk előtt van, mégsem látjuk. A Vakzóna ezekre irányítja a
+          figyelmet: független <Link to="/elemzesek">elemzésekben</Link> és
+          a <Link to="/akademia">{AKADEMIA.name}</Link> videós tanfolyamain.
         </p>
 
         <h2>Miről írunk?</h2>
@@ -28,28 +31,33 @@ function About() {
           <li>Mi az, ami ott van előttünk, csak éppen nem vesszük észre?</li>
         </ul>
         <p>
-          Írunk gazdaságról, társadalomról, kultúráról, tudományról és mesterséges
-          intelligenciáról. A témák különböznek, a
-          kiindulópont ugyanaz: egy kérdés, amelyre érdemes alaposabb választ keresni, mint amit
-          egy hír vagy egy vita adni tud.
+          Öt területről írunk: <Link to="/mi">mesterséges intelligenciáról</Link>,{" "}
+          <Link to="/tudomany">tudományról</Link>, <Link to="/kultura">kultúráról</Link>,{" "}
+          <Link to="/tarsadalom">társadalomról</Link> és <Link to="/gazdasag">gazdaságról</Link>. A
+          témák különböznek, a kiindulópont ugyanaz: egy kérdés, amelyre érdemes alaposabb választ
+          keresni, mint amit egy hír vagy egy vita adni tud.
         </p>
 
         <h2>Hogyan írunk?</h2>
         <p>
-          Minden elemzés egy közérthető bevezetővel kezdődik, hogy szakmai előismeret nélkül is
+          Minden elemzés közérthető bevezetővel kezdődik, hogy szakmai előismeret nélkül is
           követhető legyen. Ezután jönnek az adatok és az összehasonlítások, ellenőrizhető
           forrásokból, az eredeti helyükre mutató linkkel. Ahol egy kérdésre nincs biztos válasz,
           azt is megmondjuk.
+        </p>
+        <p>
+          A munkához mesterséges intelligencián alapuló eszközöket is használunk, a forrásokat
+          azonban mi választjuk ki, és minden számot, állítást az eredetivel vetünk össze.
         </p>
         <p>
           Nem állunk egyik politikai oldal mellé sem. Nem azért írunk, hogy megmondjuk, mit kell
           gondolni, hanem hogy legyen miről gondolkodni.
         </p>
 
-        <h2>Tanfolyamok</h2>
+        <h2>Mit kínál az Akadémia?</h2>
         <p>
-          A <Link to="/akademia">{AKADEMIA.name}</Link> tanfolyamai átgondolt, gondosan
-          kidolgozott anyagok, amelyek a gyakorlati tapasztalatból merítenek.
+          Az Akadémia tanfolyamai átgondolt, gondosan kidolgozott anyagok, amelyek a gyakorlati
+          tapasztalatból merítenek.
         </p>
         <p>
           A videók és a szöveg mesterséges intelligencia segítségével születtek. Ez tudatos
@@ -58,17 +66,20 @@ function About() {
           valakit zavar, elnézését kérjük.
         </p>
 
-        <h2>Mesterséges intelligencia és szerzői jog</h2>
-        <p>
-          A munkához mesterséges intelligencián alapuló eszközöket is használunk, a forrásokat
-          azonban mi választjuk ki, és minden számot, állítást az eredetivel vetünk össze.
-        </p>
+        <h2>Hogyan bánunk a forrásokkal?</h2>
         <p>
           Tiszteletben tartjuk a felhasznált művek szerzőinek jogait. A forrásokat nem közöljük
           újra, hanem összefoglaljuk és az eredeti helyükre hivatkozunk; szó szerint csak rövid,
           megjelölt idézetet veszünk át, a forrás megnevezésével. Ábráinkat magunk készítjük,
           szabadon felhasználható adatokból, a licenc által előírt feltüntetéssel.
         </p>
+
+        <div className={`${PageCSS.actions} ${PageCSS.actionRow}`}>
+          <Link className="btn" to="/elemzesek">
+            Elemzések <Arrow size={12} />
+          </Link>
+          <Link className="btn btnGhost" to="/akademia">{AKADEMIA.menu}</Link>
+        </div>
       </Reveal>
     </div>
   );

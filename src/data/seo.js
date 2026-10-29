@@ -25,7 +25,7 @@ const seo = {
   },
   "/rolunk": {
     title: "Rólunk – Vakzóna",
-    description: "Miről és hogyan ír a Vakzóna: kérdések, adatok és összehasonlítások a hírek helyett.",
+    description: "Miről és hogyan ír a Vakzóna, és mit kínál az Akadémia: kérdések, adatok és összehasonlítások a hírek helyett, gyakorlati videós tanfolyamok.",
   },
   notFound: {
     title: "Az oldal nem található – Vakzóna",

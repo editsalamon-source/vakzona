@@ -45,6 +45,7 @@
 .prose ul { padding-left: 22px; }
 
 .actions { margin-top: 36px; }
+.actionRow { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 64px; }
 
 @media (max-width: 640px) {
   .page { padding-top: 120px; padding-bottom: 88px; }
