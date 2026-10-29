@@ -65,8 +65,8 @@ function VisualField() {
         </svg>
       </div>
       <figcaption className={CSS.caption}>
-        A látómezőben mindenkinek van egy pontja, ahonnan nem érkezik kép: itt lép ki a szemből a
-        látóideg. Az agy kitölti a hiányt, ezért nem vesszük észre.
+        A látómezőben mindenkinek van egy pontja, ahonnan nem érkezik kép: ide esik a látóidegfő,
+        ahol a látóideg kilép a szemgolyóból. Az agy kitölti a hiányt, ezért nem vesszük észre.
       </figcaption>
     </figure>
   );
