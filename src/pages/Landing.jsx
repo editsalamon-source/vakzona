@@ -93,7 +93,9 @@ function Landing() {
                 <Link className="btn" to="/elemzesek">
                   Elemzések <Arrow size={12} />
                 </Link>
-                <Link className="btn btnGhost" to="/akademia">{AKADEMIA.menu}</Link>
+                <Link className="btn" to="/akademia">
+                  {AKADEMIA.menu} <Arrow size={12} />
+                </Link>
               </div>
             </Reveal>
           </div>
