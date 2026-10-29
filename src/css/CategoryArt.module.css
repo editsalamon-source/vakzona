@@ -18,10 +18,8 @@
 .animated .signal { stroke-dasharray: 6 8; animation: flow 1.2s linear infinite; }
 .animated .node { animation: pulse 3.6s ease-in-out infinite; animation-delay: calc(var(--i) * -.45s); }
 
-/* Tudomány: az elektronpályák (a rajtuk ülő elektronokkal) forognak, a szaggatott kör
-   lassan visszafelé fordul, a mag lüktet */
+/* Tudomány: csak az ellipszisek forognak a mag körül, a kép többi része áll */
 .animated .spin { transform-box: view-box; transform-origin: 200px 148px; animation: spin 36s linear infinite; }
-.animated .spinBack { animation: spin 48s linear infinite reverse; }
 @keyframes spin { to { transform: rotate(360deg); } }
 
 /* Társadalom: csak a színezés vált, színátmenettel */
