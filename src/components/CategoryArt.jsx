@@ -1,8 +1,11 @@
 import React from "react";
+import M from "../css/CategoryArt.module.css";
 
 // Kategóriánként egy vonalas ábra az oldal stílusában: vékony currentColor-vonalak,
 // egyetlen narancs „vakfolt” elem (.accent). A színt a szülő `color`-ja adja,
 // így sötét háttéren (pl. a csempék futó feliratában) fehéren is használható.
+// `animated`: lassú, folyamatos mozgás (a főoldali kategóriacsempéken); csak transform és
+// stroke-dashoffset, a `--i` CSS-változó a lépcsőzetes késleltetés.
 
 const A = "var(--accent)";
 
@@ -15,12 +18,13 @@ function Gazdasag() {
       <line x1="20" y1="250" x2="380" y2="250" strokeWidth="1.5" />
       {bars.map((h, i) => (
         <rect
-          key={i} x={36 + i * 44} y={250 - h} width="28" height={h} rx="3"
+          key={i} className={M.bar} style={{ "--i": i }} x={36 + i * 44} y={250 - h} width="28" height={h} rx="3"
           fill={i === 5 ? A : "currentColor"} fillOpacity={i === 5 ? 1 : 0.06}
           stroke={i === 5 ? A : "currentColor"} strokeWidth="1.5"
         />
       ))}
       <polyline
+        className={M.flow}
         points={pts.map((p) => `${p[0]},${p[1] - 26}`).join(" ")}
         fill="none" strokeWidth="1.5" strokeDasharray="4 5"
       />
@@ -45,7 +49,7 @@ function Tarsadalom() {
       const on = accent.has(`${c}-${r}`);
       const fade = 0.35 + 0.65 * (1 - Math.abs(c - 3.5) / 4.5) * (0.6 + 0.4 * ((r + c) % 3) / 2);
       people.push(
-        <g key={`${c}-${r}`} opacity={on ? 1 : fade} stroke={on ? A : "currentColor"}>
+        <g key={`${c}-${r}`} className={on ? M.pulse : M.bob} style={{ "--i": c + r * 3 }} opacity={on ? 1 : fade} stroke={on ? A : "currentColor"}>
           <circle cx={x} cy={y} r="7" fill={on ? A : "none"} strokeWidth="1.5" />
           <path d={`M${x - 13} ${y + 31} a13 13 0 0 1 26 0`} fill={on ? A : "none"} strokeWidth="1.5" />
         </g>
@@ -61,12 +65,12 @@ function Kultura() {
   return (
     <>
       <path d="M60 104 L200 40 L340 104 Z" fill="currentColor" fillOpacity="0.05" strokeWidth="1.5" strokeLinejoin="round" />
-      <circle cx="200" cy="82" r="9" fill={A} stroke="none" />
+      <circle className={M.pulse} cx="200" cy="82" r="9" fill={A} stroke="none" />
       <rect x="54" y="104" width="292" height="16" rx="2" fill="none" strokeWidth="1.5" />
       {cols.map((i) => {
         const x = 76 + i * 48;
         return (
-          <g key={i}>
+          <g key={i} className={M.glint} style={{ "--i": i }}>
             <rect x={x} y="120" width="24" height="10" fill="none" strokeWidth="1.5" />
             <rect x={x + 3} y="130" width="18" height="96" fill="currentColor" fillOpacity="0.04" strokeWidth="1.5" />
             <line x1={x + 9} y1="134" x2={x + 9} y2="222" strokeWidth="1" opacity="0.5" />
@@ -91,15 +95,17 @@ function Tudomany() {
       {[36, 58, 342, 364].flatMap((x) =>
         [60, 150, 240].map((y) => <circle key={`${x}-${y}`} cx={x} cy={y} r="1.8" fill="currentColor" stroke="none" opacity="0.5" />)
       )}
+      <g className={M.spin}>
       {[0, 60, 120].map((deg) => (
         <ellipse key={deg} cx={cx} cy={cy} rx="128" ry="44" fill="none" strokeWidth="1.5"
           transform={`rotate(${deg} ${cx} ${cy})`} />
       ))}
-      <circle cx={cx} cy={cy} r="64" fill="currentColor" fillOpacity="0.04" strokeWidth="1" strokeDasharray="3 5" opacity="0.6" />
-      <circle cx={cx} cy={cy} r="14" fill={A} stroke="none" />
       <circle cx={cx + 128} cy={cy} r="6" fill="var(--art-bg, #fff)" strokeWidth="1.5" />
       <circle cx={cx - 64} cy={cy - 110.9} r="6" fill="var(--art-bg, #fff)" strokeWidth="1.5" />
       <circle cx={cx - 64} cy={cy + 110.9} r="6" fill={A} stroke="none" />
+      </g>
+      <circle className={M.spinBack} cx={cx} cy={cy} r="64" fill="currentColor" fillOpacity="0.04" strokeWidth="1" strokeDasharray="3 5" opacity="0.6" />
+      <circle className={M.pulse} cx={cx} cy={cy} r="14" fill={A} stroke="none" />
     </>
   );
 }
@@ -116,7 +122,7 @@ function Mi() {
       layers[l + 1].forEach(([x2, y2], j) => {
         const on = `${l}-${i}` === hot || `${l + 1}-${j}` === hot;
         edges.push(
-          <line key={`${l}-${i}-${j}`} x1={x1} y1={y1} x2={x2} y2={y2}
+          <line key={`${l}-${i}-${j}`} className={on ? M.signal : undefined} x1={x1} y1={y1} x2={x2} y2={y2}
             stroke={on ? A : "currentColor"} strokeWidth={on ? 1.5 : 1} opacity={on ? 1 : 0.35} />
         );
       })
@@ -129,7 +135,7 @@ function Mi() {
         nodes.map(([x, y], i) => {
           const on = `${l}-${i}` === hot;
           return (
-            <circle key={`${l}-${i}`} cx={x} cy={y} r={on ? 11 : 9}
+            <circle key={`${l}-${i}`} className={on ? M.pulse : M.node} style={{ "--i": l * 2 + i }} cx={x} cy={y} r={on ? 11 : 9}
               fill={on ? A : "var(--art-bg, #fff)"} stroke={on ? A : "currentColor"} strokeWidth="1.5" />
           );
         })
@@ -140,12 +146,12 @@ function Mi() {
 
 const ART = { gazdasag: Gazdasag, tarsadalom: Tarsadalom, kultura: Kultura, tudomany: Tudomany, mi: Mi };
 
-function CategoryArt({ slug, className }) {
+function CategoryArt({ slug, className, animated = false }) {
   const Art = ART[slug];
   if (!Art) return null;
   return (
     <svg
-      className={className} viewBox="0 0 400 300" fill="none" stroke="currentColor"
+      className={[className, animated && M.animated].filter(Boolean).join(" ") || undefined} viewBox="0 0 400 300" fill="none" stroke="currentColor"
       strokeLinecap="round" aria-hidden="true" preserveAspectRatio="xMidYMid meet"
     >
       <Art />

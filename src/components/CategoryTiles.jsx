@@ -38,7 +38,7 @@ function Tile({ category, index }) {
   return (
     <Link to={`/${category.slug}`} className={TilesCSS.tile} onMouseEnter={enter} onMouseLeave={leave}>
       <div className={TilesCSS.grid} />
-      <CategoryArt slug={category.slug} className={TilesCSS.art} />
+      <CategoryArt slug={category.slug} className={TilesCSS.art} animated />
       <div className={TilesCSS.fade} />
 
       <div className={TilesCSS.content}>

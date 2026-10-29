@@ -192,28 +192,6 @@ function Landing() {
         </section>
       )}
 
-      {/* ---------- Akadémia ---------- */}
-      {courses.length > 0 && (
-        <section className={`${LandingCSS.section} ${LandingCSS.bordered}`}>
-          <div className="wrap">
-            <Reveal className={LandingCSS.sectionHead}>
-              <div>
-                <span className="tag">{AKADEMIA.menu}</span>
-                <h2>{AKADEMIA.name}</h2>
-              </div>
-              <Link to="/akademia" className={LandingCSS.underlineLink}>
-                Minden tanfolyam <Arrow size={12} />
-              </Link>
-            </Reveal>
-            <div className={AcademyCSS.tiles}>
-              {courses.slice(0, 2).map((c) => (
-                <CourseTile key={c.slug} course={c} />
-              ))}
-            </div>
-          </div>
-        </section>
-      )}
-
       {/* ---------- Amire építünk ---------- */}
       <section className={`${LandingCSS.section} ${LandingCSS.bordered}`}>
         <div className="wrap">
@@ -235,6 +213,28 @@ function Landing() {
           </div>
         </div>
       </section>
+      {/* ---------- Akadémia ---------- */}
+      {courses.length > 0 && (
+        <section className={`${LandingCSS.section} ${LandingCSS.academy}`}>
+          <div className="wrap">
+            <Reveal className={LandingCSS.sectionHead}>
+              <div>
+                <span className="tag">{AKADEMIA.menu}</span>
+                <h2>{AKADEMIA.name}</h2>
+              </div>
+              <Link to="/akademia" className={LandingCSS.underlineLink}>
+                Minden tanfolyam <Arrow size={12} />
+              </Link>
+            </Reveal>
+            <div className={AcademyCSS.tiles}>
+              {courses.slice(0, 2).map((c) => (
+                <CourseTile key={c.slug} course={c} />
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
     </>
   );
 }
