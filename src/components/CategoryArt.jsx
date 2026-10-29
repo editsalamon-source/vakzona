@@ -125,8 +125,8 @@ function Tudomany() {
       <circle cx={cx - 64} cy={cy - 110.9} r="6" fill="var(--art-bg, #fff)" strokeWidth="1.5" />
       <circle cx={cx - 64} cy={cy + 110.9} r="6" fill={A} stroke="none" />
       </g>
-      <circle cx={cx} cy={cy} r="64" fill="currentColor" fillOpacity="0.04" strokeWidth="1" strokeDasharray="3 5" opacity="0.6" />
-      <circle cx={cx} cy={cy} r="14" fill={A} stroke="none" />
+      <circle className={M.spinBack} cx={cx} cy={cy} r="64" fill="currentColor" fillOpacity="0.04" strokeWidth="1" strokeDasharray="3 5" opacity="0.6" />
+      <circle className={M.pulse} cx={cx} cy={cy} r="14" fill={A} stroke="none" />
     </>
   );
 }
