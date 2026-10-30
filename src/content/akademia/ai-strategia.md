@@ -44,8 +44,8 @@ Gyakorlati módszertan arról, hogyan készül el egy szervezet AI stratégiája
 
 A tanfolyam azoknak szól, akik egy szervezet mesterséges intelligencia stratégiáját dolgozzák ki, vagy felelnek a megvalósításáért:
 
-- **tanácsadóknak**, akik a stratégiaalkotási projektet vezetik és a munkát végzik;
-- **a megrendelői oldal projektvezetőinek és kulcsszereplőinek**, akik a szervezet tudását, adatait és döntéseit adják a munkához;
+- **tanácsadóknak**, akik a stratégiaalkotási projektet vezetik és a munkát végzik,
+- **a megrendelői oldal projektvezetőinek és kulcsszereplőinek**, akik a szervezet tudását, adatait és döntéseit adják a munkához,
 - **vezetőknek**, akik a stratégiát jóváhagyják, és később számon kérik az eredményeit.
 
 Nem feltételez mély technológiai tudást: ahol szakkifejezést használunk, röviden megmagyarázzuk.
