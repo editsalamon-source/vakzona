@@ -37,6 +37,17 @@ lecke: 10a-plusz | M9 · Technológiai stratégia a gyakorlatban | 5:02
 lecke: 10b | M10 · AI-irányítás, megfelelés és kockázatkezelés (1. rész) | 5:31
 lecke: 10c | M10 · AI-irányítás, megfelelés és kockázatkezelés (2. rész) | 5:08
 lecke: 10c-plusz | M10 · AI-irányítás a gyakorlatban | 5:15
+lecke: 10d | M11 · Működési modell, változásmenedzsment és AI-jártasság | 7:06
+lecke: 10d-plusz | M11 · Szervezet és AI-jártasság a gyakorlatban | 4:49
+lecke: 10e | M12 · Költség, TCO és értékmodell | 6:52
+lecke: 10e-plusz | M12 · Költség és érték a gyakorlatban | 5:29
+lecke: 11a | M13 · Ütemterv, mérési keretrendszer és vezetői jóváhagyás (1. rész) | 6:56
+lecke: 11b | M13 · Ütemterv, mérési keretrendszer és vezetői jóváhagyás (2. rész) | 5:54
+lecke: 11b-plusz | M13 · Ütemterv és jóváhagyás a gyakorlatban | 7:26
+lecke: 12a | M14 · Portfóliómenedzsment és gördülő felülvizsgálat | 6:49
+lecke: 12a-plusz | M14 · Az első működési év a gyakorlatban | 6:15
+modul: 3. rész · Projekteredmények
+lecke: 13 | A végdokumentum felépítése | 7:22
 ---
 Gyakorlati módszertan arról, hogyan készül el egy szervezet AI stratégiája úgy, hogy az AI ne kísérlet maradjon, hanem kézzelfogható üzleti értéket hozzon. A videóleckék a miértektől és az alapfogalmaktól a folyamat lépéseiig vezetnek, a leckékhez sablonok, kidolgozott példák és a módszertan kézikönyve tartozik, a végén pedig oklevél.
 
@@ -52,7 +63,7 @@ Nem feltételez mély technológiai tudást: ahol szakkifejezést használunk, r
 
 ## Mit tartalmaz?
 
-A tanfolyam folyamatosan bővül, jelenleg két egységből áll:
+A tanfolyam folyamatosan bővül, jelenleg három egységből áll:
 
 - **Alapok:** miért nem hoz értéket a legtöbb AI-kezdeményezés, mi az AI stratégia ma, a fogalmak és a fogalommodell, valamint a vezérelvek.
 - **A folyamat:** a teljes folyamat áttekintése, majd modulonként egy-egy lecke és egy gyakorlati példa:
@@ -66,10 +77,15 @@ A tanfolyam folyamatosan bővül, jelenleg két egységből áll:
   - M8 Priorizálás és portfóliódöntés
   - M9 Technológiai, platform- és beszerzési stratégia
   - M10 AI-irányítás, megfelelés és kockázatkezelés
+  - M11 Működési modell, változásmenedzsment és AI-jártasság
+  - M12 Költség, TCO és értékmodell
+  - M13 Ütemterv, mérési keretrendszer és vezetői jóváhagyás
+  - M14 Portfóliómenedzsment és gördülő felülvizsgálat
+- **Projekteredmények:** milyen dokumentumok készülnek a végén, kezdve a végdokumentum felépítésével.
 
-A további modulok folyamatosan érkeznek.
+A további leckék folyamatosan érkeznek.
 
-A leckékhez letölthető anyag tartozik: a módszertan kézikönyve, valamint az M1–M10 modul sablonjai és magyarázó példái.
+A leckékhez letölthető anyag tartozik: a módszertan kézikönyve, valamint az M1–M14 modul sablonjai és magyarázó példái.
 
 ## Hogyan működik?
 
