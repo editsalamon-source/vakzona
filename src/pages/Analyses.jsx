@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import analyses, { getCategories } from "../data/analyses";
 import AnalysisCard from "../components/AnalysisCard";
+import Pillars from "../components/Pillars";
 import Reveal from "../components/Reveal";
 import CardCSS from "../css/AnalysisCard.module.css";
 import PageCSS from "../css/Page.module.css";
@@ -48,6 +49,8 @@ function Analyses({ category = null }) {
             : "Az első elemzések hamarosan érkeznek."}
         </p>
       )}
+
+      {!category && <Pillars />}
     </div>
   );
 }

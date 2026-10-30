@@ -14,25 +14,6 @@ import CardCSS from "../css/AnalysisCard.module.css";
 import AcademyCSS from "../css/Academy.module.css";
 import LandingCSS from "../css/Landing.module.css";
 
-const PILLARS = [
-  {
-    title: "Hivatalos források",
-    text: "Csak ellenőrizhető, hivatalos forrásból dolgozunk – hazai, uniós és nemzetközi körben –, és minden forrást az eredeti helyére linkelünk.",
-  },
-  {
-    title: "MI-eszközök, emberi kontrollal",
-    text: "A források feldolgozásában és a szöveg előkészítésében mesterséges intelligenciát használunk. A forrásokat mi választjuk ki, és minden számot az eredeti forrással vetünk össze.",
-  },
-  {
-    title: "Átlátható módszertan",
-    text: "Minden elemzésnél leírjuk, milyen adatokból és feltételezésekből indultunk ki.",
-  },
-  {
-    title: "Közérthető összefoglaló",
-    text: "A lényeg néhány pontban, a részletek azoknak, akik mélyebbre ásnának.",
-  },
-];
-
 // a nyitóképernyő után induló, soronként felcsúszó címsor (csak transform)
 const line = (i) => ({
   initial: { y: "110%" },
@@ -194,27 +175,6 @@ function Landing() {
         </section>
       )}
 
-      {/* ---------- Amire építünk ---------- */}
-      <section className={`${LandingCSS.section} ${LandingCSS.bordered}`}>
-        <div className="wrap">
-          <Reveal className={LandingCSS.centerHead}>
-            <h2>Amire építünk</h2>
-            <p className="lead">
-              Minden elemzés ugyanarra a négy alapelvre épül, hogy a számok mögötti gondolatmenet
-              is követhető legyen.
-            </p>
-          </Reveal>
-          <div className={LandingCSS.pillars}>
-            {PILLARS.map(({ title, text }, i) => (
-              <Reveal key={title} delay={i * 0.08} className={LandingCSS.pillar}>
-                <span className="eyebrow">0{i + 1}</span>
-                <h3>{title}</h3>
-                <p>{text}</p>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
       {/* ---------- Akadémia ---------- */}
       {courses.length > 0 && (
         <section className={`${LandingCSS.section} ${LandingCSS.academy}`}>
