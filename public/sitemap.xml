@@ -58,6 +58,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://vakzona.com/elemzesek/mi-adatvedelmi-garanciak</loc>
+    <lastmod>2026-10-31</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://vakzona.com/elemzesek/mi-agensek</loc>
     <lastmod>2026-10-13</lastmod>
     <changefreq>yearly</changefreq>
