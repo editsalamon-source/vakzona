@@ -21,7 +21,7 @@ function embedSrc(video, autoplay) {
     const origin = encodeURIComponent(window.location.origin);
     return `https://www.youtube-nocookie.com/embed/${video.id}?enablejsapi=1&rel=0&modestbranding=1&playsinline=1&autoplay=${ap}&origin=${origin}`;
   }
-  return `https://player.vimeo.com/video/${video.id}?${video.hash ? `h=${video.hash}&` : ""}dnt=1&autoplay=${ap}`;
+  return `https://player.vimeo.com/video/${video.id}?${video.hash ? `h=${video.hash}&` : ""}dnt=1&color=ea580c&title=0&byline=0&portrait=0&autoplay=${ap}`;
 }
 
 function PlayIcon() {

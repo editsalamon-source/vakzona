@@ -3,7 +3,7 @@ cím: AI stratégia a gyakorlatban
 alcím: Módszertan a kezdeményezéstől a jóváhagyott stratégiáig
 dátum: 2026-10-27
 kategória: MI
-bemutató: https://youtu.be/r-jFzytEmtg
+bemutató: https://vimeo.com/1241804992
 logó: logo.svg
 logó felirat: AI stratégia
 modul: 1. rész · Alapok
@@ -58,6 +58,9 @@ lecke: 18a | Pontozási és értékelési modellek (1. rész) | 5:54
 lecke: 18b | Pontozási és értékelési modellek (2. rész) | 6:38
 lecke: 20 | Kérdőívek, interjú-útmutatók és műhelymunkák | 5:57
 lecke: 21 | Ellenőrzőlisták | 6:03
+modul: 5. rész · Függelékek
+lecke: C | C · A közszféra-változat | 6:46
+lecke: D | D · PoC-útmutató | 7:28
 ---
 Gyakorlati módszertan arról, hogyan készül el egy szervezet AI stratégiája úgy, hogy az AI ne kísérlet maradjon, hanem kézzelfogható üzleti értéket hozzon. A videóleckék a miértektől és az alapfogalmaktól a folyamat lépéseiig vezetnek, a leckékhez sablonok, kidolgozott példák és a módszertan kézikönyve tartozik, a végén pedig oklevél.
 
@@ -73,7 +76,7 @@ Nem feltételez mély technológiai tudást: ahol szakkifejezést használunk, r
 
 ## Mit tartalmaz?
 
-A tanfolyam négy egységből áll:
+A tanfolyam öt egységből áll:
 
 - **Alapok:** miért nem hoz értéket a legtöbb AI-kezdeményezés, mi az AI stratégia ma, a fogalmak és a fogalommodell, valamint a vezérelvek.
 - **A folyamat:** a teljes folyamat áttekintése, majd modulonként egy-egy lecke és egy gyakorlati példa:
@@ -93,6 +96,7 @@ A tanfolyam négy egységből áll:
   - M14 Portfóliómenedzsment és gördülő felülvizsgálat
 - **Projekteredmények:** a végén elkészülő dokumentumok, vagyis a végdokumentum felépítése, a Stratégiai terv, a mellékletek és a minőségi követelmények.
 - **Eszköztár:** a munkaeszközök használata, a pontozási és értékelési modellek, a kérdőívek, interjú-útmutatók és műhelymunkák, valamint az ellenőrzőlisták.
+- **Függelékek:** a módszertan közszféra-változata, valamint a koncepcióigazolás (PoC) útmutatója.
 
 A tanfolyam tovább bővülhet, az új leckék ide kerülnek.
 
