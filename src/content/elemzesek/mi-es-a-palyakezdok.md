@@ -4,6 +4,7 @@ alcím: Az MI hatása a pályakezdőkre – elmaradó felvétel, a tapasztalati 
 dátum: 2026-10-04
 kategória: MI
 téma: Munkaerőpiac
+borító: letra
 kiemelés: 19%
 kiemelés szöveg: ekkora a foglalkoztatási rés a 22–25 évesek körében az MI-nek leginkább kitett amerikai szakmákban a kevésbé kitett korosztálytársaikhoz képest (2026. jún.), és ez a rés egy éven belül 15 százalékról nőtt.
 szám: 19% | pályakezdői foglalkoztatási rés a legkitettebb szakmákban (USA, 2026)

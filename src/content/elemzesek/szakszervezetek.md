@@ -4,6 +4,7 @@ alcím: Összehasonlító elemzés európai mintákról, a hazai szakszervezeti 
 dátum: 2026-10-01
 kategória: Gazdaság
 téma: Munkaerőpiac
+borító: osszefogas
 kiemelés: 7,4%
 kiemelés szöveg: a magyar munkavállalók ekkora része volt szakszervezeti tag 2020-ban (1993-ban 44%).
 szám: 7,4% | szakszervezeti tagság (2020)

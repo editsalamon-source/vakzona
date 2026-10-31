@@ -4,6 +4,7 @@ alcím: Ismeretterjesztő elemzés Petőfi Sándor 1849-es eltűnéséről, a s�
 dátum: 2026-10-02
 kategória: Kultúra
 téma: Történelem és emlékezet
+borító: terkep
 kiemelés: 11
 kiemelés szöveg: feltételezett sírhelyet tart számon a szakirodalom Fehéregyháza környékén, de egyiket sem igazolta ásatás.
 szám: 1849. júl. 31. | Petőfi eltűnése a segesvári ütközetben

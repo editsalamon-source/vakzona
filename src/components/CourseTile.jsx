@@ -13,7 +13,8 @@ function CourseTile({ course }) {
   const total = course.lessons.length;
   return (
     <Reveal as="article" className={CSS.tile}>
-      <VideoPlayer url={course.intro} subtitles={course.introSubtitles} title="Bemutató" poster category={course.category} />
+      <VideoPlayer url={course.intro} subtitles={course.introSubtitles} title="Bemutató" poster category={course.category}
+        cover={course.cover} badge={{ src: course.logo, text: course.logoText }} />
       <div className={CSS.tileBody}>
         <div className={CSS.metaRow}>
           {course.category && <span className="tag tagAccent">{course.category.name}</span>}

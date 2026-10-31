@@ -4,6 +4,7 @@ alcím: Szakpolitikai elemzés az uniós és nemzetközi irányokról, a hazai j
 dátum: 2026-09-29
 kategória: Gazdaság
 téma: Munkaerőpiac
+borító: naptar
 kiemelés: 70,4%
 kiemelés szöveg: Ennyi a magyar óránkénti termelékenység az uniós átlaghoz képest, miközben hetente 39,5 órát dolgozunk (EU: 37,3).
 szám: 39,5 óra | heti munkaidő (EU: 37,3)

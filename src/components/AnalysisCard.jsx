@@ -3,20 +3,20 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import Arrow from "./Arrow";
 import Logo from "./Logo";
-import CategoryArt from "./CategoryArt";
+import CoverArt from "./CoverArt";
 import { formatDate } from "../data/analyses";
 import CardCSS from "../css/AnalysisCard.module.css";
 
 const MotionLink = motion.create(Link);
 
-// Az elemzés „borítója” (fénykép helyett): rácsminta, narancs fényudvar, a kategória ábrája
-// és a kiemelt szám. Ha nincs kiemelt szám, a logó látszik.
+// Az elemzés „borítója” (fénykép helyett): rácsminta, narancs fényudvar, a borítóábra
+// (elemzésenként saját, lásd CoverArt) és a kiemelt szám. Ha nincs kiemelt szám, a logó látszik.
 function Cover({ analysis, big }) {
   return (
     <div className={`${CardCSS.cover} ${big ? CardCSS.coverBig : ""}`}>
       <div className={CardCSS.grid} />
       <div className={CardCSS.glow} />
-      <CategoryArt slug={analysis.category.slug} className={CardCSS.art} />
+      <CoverArt motif={analysis.cover} category={analysis.category.slug} className={CardCSS.art} />
       <div className={CardCSS.coverTop}>
         <span className={CardCSS.chip}>{analysis.category.name}</span>
         <span className={CardCSS.chip}>{analysis.readingMinutes} perc</span>

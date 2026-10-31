@@ -4,6 +4,7 @@ alcím: Ismeretterjesztő elemzés arról, mi történik egy csillagban, amikor 
 dátum: 2026-10-01
 kategória: Tudomány
 téma: Csillagászat
+borító: csillag
 kiemelés: 256×
 kiemelés szöveg: a Nap mai sugarának ennyiszeresére nő a vörös óriás ág csúcsán egy 2008-as napfejlődési modell szerint.
 szám: 256× | a Nap sugara a vörös óriás ág csúcsán

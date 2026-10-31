@@ -94,6 +94,7 @@ const analyses = Object.entries(files)
       category: category || { slug: "", name: "Egyéb" },
       topic: meta["téma"] || "Egyéb",
       draft: /^(igen|true)$/i.test(meta["piszkozat"] || ""),
+      cover: meta["borító"] || "",
       highlight: meta["kiemelés"] || "",
       highlightText: meta["kiemelés szöveg"] || "",
       stats: meta.stats || [],

@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import CategoryArt from "./CategoryArt";
+import CoverArt from "./CoverArt";
 import Logo from "./Logo";
 import CSS from "../css/VideoPlayer.module.css";
 
@@ -7,6 +7,7 @@ import CSS from "../css/VideoPlayer.module.css";
 // `subtitles` = WebVTT-felirat URL-je (csak videófájlnál; YouTube/Vimeo a sajátját mutatja).
 // `onEnded` a videó végén fut (YouTube/Vimeo esetén a lejátszó postMessage-eseményéből).
 // `poster` módban előbb csak a saját borító látszik lejátszógombbal; a külső lejátszó csak kattintásra töltődik be.
+// A borítón a `cover` motívum (CoverArt, ha nincs: a kategória ábrája) és, ha van, a tanfolyam logója (`badge`).
 export function parseVideo(url = "") {
   const yt = url.match(/(?:youtube(?:-nocookie)?\.com\/(?:watch\?(?:.*&)?v=|embed\/|shorts\/|live\/)|youtu\.be\/)([\w-]{11})/);
   if (yt) return { type: "youtube", id: yt[1] };
@@ -79,7 +80,7 @@ function Embed({ video, autoplay, title, onEnded }) {
   );
 }
 
-function VideoPlayer({ url, title = "Videó", poster = false, category = null, autoplay = false, subtitles = null, onEnded }) {
+function VideoPlayer({ url, title = "Videó", poster = false, category = null, cover = "", badge = null, autoplay = false, subtitles = null, onEnded }) {
   const [started, setStarted] = useState(!poster);
   const video = parseVideo(url);
   useEffect(() => setStarted(!poster), [url, poster]);
@@ -98,7 +99,13 @@ function VideoPlayer({ url, title = "Videó", poster = false, category = null, a
       <button type="button" className={`${CSS.frame} ${CSS.poster}`} onClick={() => setStarted(true)}>
         <span className={CSS.grid} />
         <span className={CSS.glow} />
-        {category && <CategoryArt slug={category.slug} className={CSS.art} />}
+        <CoverArt motif={cover} category={category?.slug} className={CSS.art} />
+        {badge?.src && (
+          <span className={CSS.badge}>
+            <img src={badge.src} alt="" />
+            {badge.text}
+          </span>
+        )}
         <span className={CSS.play}><PlayIcon /></span>
         <span className={CSS.posterLabel}>{title}</span>
       </button>

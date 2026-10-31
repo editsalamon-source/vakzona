@@ -4,6 +4,7 @@ alcím: Mit vállalnak az MI-szolgáltatók az átadott adatokról, hol sziváro
 dátum: 2026-10-31
 kategória: MI
 téma: MI és adatvédelem
+borító: pajzs
 kiemelés: 48 óra
 kiemelés szöveg: Ennyi időn belül ígér értesítést adatvédelmi incidensről az Anthropic, a tíz vizsgált MI-szolgáltató közül az egyetlen, amely órában vállal határidőt. A többiek szerződése csak annyit mond: „indokolatlan késedelem nélkül”.
 szám: 0 | szolgáltató vállal kártalanítást adatvédelmi incidensre

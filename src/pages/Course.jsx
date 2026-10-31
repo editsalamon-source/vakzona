@@ -205,7 +205,8 @@ function CourseLanding({ course, access, account = {} }) {
       </header>
       <div className={CSS.hero}>
         <div className={CSS.heroMain}>
-          <VideoPlayer url={course.intro} subtitles={course.introSubtitles} title="Bemutató" poster category={course.category} />
+          <VideoPlayer url={course.intro} subtitles={course.introSubtitles} title="Bemutató" poster category={course.category}
+        cover={course.cover} badge={{ src: course.logo, text: course.logoText }} />
           {course.introHtml && <div className={CSS.intro} dangerouslySetInnerHTML={{ __html: course.introHtml }} />}
         </div>
         <aside className={CSS.heroSide}>

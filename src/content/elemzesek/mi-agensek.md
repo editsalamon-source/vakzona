@@ -4,6 +4,7 @@ alcím: Mi az MI-ágens, miben más, mint a csevegőrobot, mire képes ma, milye
 dátum: 2026-10-13
 kategória: MI
 téma: MI-ágensek
+borító: hurok
 kiemelés: 89 nap
 kiemelés szöveg: a 2024 óta megjelent modelleknél ennyi idő alatt duplázódott az önállóan megoldható feladat hossza (50%-os küszöb) – rövid időszakra és kevés modellre illesztett érték (METR).
 szám: 10,37% | a legalább 10 fős magyar vállalkozások MI-használata 2025-ben, pénzügyi szervezetek nélkül (EU: 19,95%)

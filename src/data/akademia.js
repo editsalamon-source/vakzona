@@ -80,6 +80,7 @@ const courses = Object.entries(files)
       level: meta["szint"] || "",
       intro: meta["bemutató"] || "",
       introSubtitles: asset(meta["bemutató felirat"], slug),
+      cover: meta["borító"] || "",
       logo: asset(meta["logó"], slug),
       logoText: meta["logó felirat"] || "",
       draft: /^(igen|true)$/i.test(meta["piszkozat"] || ""),

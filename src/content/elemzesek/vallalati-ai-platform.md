@@ -4,6 +4,7 @@ alcím: Mit kap egy cég egy MI-gyártó vállalati előfizetésével, és mit t
 dátum: 2026-10-08
 kategória: MI
 téma: Vállalati MI
+borító: retegek
 kiemelés: 10,37%
 kiemelés szöveg: a magyar 10+ fős vállalkozások ennyi százaléka használt MI-technológiát 2025-ben, az uniós átlag 19,95% (Eurostat).
 szám: 10,37% | a magyar vállalatok MI-használati aránya 2025-ben (EU: 19,95%)

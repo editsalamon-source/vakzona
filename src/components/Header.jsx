@@ -2,7 +2,7 @@ import React from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import Logo from "./Logo";
 import Arrow from "./Arrow";
-import CategoryArt from "./CategoryArt";
+import CoverArt from "./CoverArt";
 import analyses, { getCategories } from "../data/analyses";
 import courses, { AKADEMIA, formatLength } from "../data/akademia";
 import { readProgress } from "../utils/haladas";
@@ -31,7 +31,7 @@ function AnalysesPanel() {
       </div>
       {latest && (
         <Link to={`/elemzesek/${latest.slug}`} className={HeaderCSS.feature}>
-          <CategoryArt slug={latest.category.slug} className={HeaderCSS.featureArt} />
+          <CoverArt motif={latest.cover} category={latest.category.slug} className={HeaderCSS.featureArt} />
           <span className={HeaderCSS.itemMeta}>Legfrissebb</span>
           <span className={HeaderCSS.itemTitle}>{latest.title}</span>
           <span className={HeaderCSS.itemText}>{latest.category.name}{latest.topic && ` · ${latest.topic}`}</span>
