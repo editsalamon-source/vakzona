@@ -41,7 +41,7 @@ function Footer() {
           <div className={FooterCSS.col}>
             <span className={FooterCSS.label}>Vakzóna</span>
             <Link to="/">Főoldal</Link>
-            <Link to="/rolunk">Rólunk</Link>
+            <Link to="/rolunk">Rólam</Link>
             {FIOK && <Link to="/fiok">Fiók</Link>}
             {FIOK && <Link to="/adatkezeles">Adatkezelés</Link>}
           </div>

@@ -114,7 +114,7 @@ function Header() {
             <AcademyPanel />
           </div>
           <NavLink to="/rolunk" className={active(HeaderCSS.about)}>
-            Rólunk
+            Rólam
           </NavLink>
           {FIOK && <AccountLink />}
         </nav>

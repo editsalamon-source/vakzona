@@ -24,8 +24,8 @@ const seo = {
     description: AKADEMIA.description,
   },
   "/rolunk": {
-    title: "Rólunk – Vakzóna",
-    description: "Miről és hogyan ír a Vakzóna, és mit kínál az Akadémia: kérdések, adatok és összehasonlítások a hírek helyett, gyakorlati videós tanfolyamok.",
+    title: "Rólam – Vakzóna",
+    description: "Salamon Edit, a Vakzóna szerzője: miről és hogyan írok, és mit kínál az Akadémia. Kérdések, adatok és összehasonlítások a hírek helyett, gyakorlati videós tanfolyamok.",
   },
   "/fiok": {
     title: "Fiók – Vakzóna",
