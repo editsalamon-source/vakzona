@@ -48,6 +48,16 @@ lecke: 12a | M14 · Portfóliómenedzsment és gördülő felülvizsgálat | 6:4
 lecke: 12a-plusz | M14 · Az első működési év a gyakorlatban | 6:15
 modul: 3. rész · Projekteredmények
 lecke: 13 | A végdokumentum felépítése | 7:22
+lecke: 14 | A Stratégiai terv | 6:12
+lecke: 15a | A mellékletek (1. rész) | 7:55
+lecke: 15b | A mellékletek (2. rész) | 7:46
+lecke: 16 | Minőségi követelmények | 6:06
+modul: 4. rész · Eszköztár
+lecke: 17 | Az eszköztár használata | 5:45
+lecke: 18a | Pontozási és értékelési modellek (1. rész) | 5:54
+lecke: 18b | Pontozási és értékelési modellek (2. rész) | 6:38
+lecke: 20 | Kérdőívek, interjú-útmutatók és műhelymunkák | 5:57
+lecke: 21 | Ellenőrzőlisták | 6:03
 ---
 Gyakorlati módszertan arról, hogyan készül el egy szervezet AI stratégiája úgy, hogy az AI ne kísérlet maradjon, hanem kézzelfogható üzleti értéket hozzon. A videóleckék a miértektől és az alapfogalmaktól a folyamat lépéseiig vezetnek, a leckékhez sablonok, kidolgozott példák és a módszertan kézikönyve tartozik, a végén pedig oklevél.
 
@@ -63,7 +73,7 @@ Nem feltételez mély technológiai tudást: ahol szakkifejezést használunk, r
 
 ## Mit tartalmaz?
 
-A tanfolyam folyamatosan bővül, jelenleg három egységből áll:
+A tanfolyam négy egységből áll:
 
 - **Alapok:** miért nem hoz értéket a legtöbb AI-kezdeményezés, mi az AI stratégia ma, a fogalmak és a fogalommodell, valamint a vezérelvek.
 - **A folyamat:** a teljes folyamat áttekintése, majd modulonként egy-egy lecke és egy gyakorlati példa:
@@ -81,9 +91,10 @@ A tanfolyam folyamatosan bővül, jelenleg három egységből áll:
   - M12 Költség, TCO és értékmodell
   - M13 Ütemterv, mérési keretrendszer és vezetői jóváhagyás
   - M14 Portfóliómenedzsment és gördülő felülvizsgálat
-- **Projekteredmények:** milyen dokumentumok készülnek a végén, kezdve a végdokumentum felépítésével.
+- **Projekteredmények:** a végén elkészülő dokumentumok, vagyis a végdokumentum felépítése, a Stratégiai terv, a mellékletek és a minőségi követelmények.
+- **Eszköztár:** a munkaeszközök használata, a pontozási és értékelési modellek, a kérdőívek, interjú-útmutatók és műhelymunkák, valamint az ellenőrzőlisták.
 
-A további leckék folyamatosan érkeznek.
+A tanfolyam tovább bővülhet, az új leckék ide kerülnek.
 
 A leckékhez letölthető anyag tartozik: a módszertan kézikönyve, valamint az M1–M14 modul sablonjai és magyarázó példái.
 
