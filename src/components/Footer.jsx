@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import Logo from "./Logo";
 import KATEGORIAK from "../data/kategoriak";
 import courses, { AKADEMIA } from "../data/akademia";
+import { FIOK } from "../utils/fiok";
 import FooterCSS from "../css/Footer.module.css";
 
 function Footer() {
@@ -41,6 +42,8 @@ function Footer() {
             <span className={FooterCSS.label}>Vakzóna</span>
             <Link to="/">Főoldal</Link>
             <Link to="/rolunk">Rólunk</Link>
+            {FIOK && <Link to="/fiok">Fiók</Link>}
+            {FIOK && <Link to="/adatkezeles">Adatkezelés</Link>}
           </div>
         </div>
         <div className={FooterCSS.bottom}>

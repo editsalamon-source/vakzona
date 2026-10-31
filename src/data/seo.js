@@ -27,6 +27,14 @@ const seo = {
     title: "Rólunk – Vakzóna",
     description: "Miről és hogyan ír a Vakzóna, és mit kínál az Akadémia: kérdések, adatok és összehasonlítások a hírek helyett, gyakorlati videós tanfolyamok.",
   },
+  "/fiok": {
+    title: "Fiók – Vakzóna",
+    description: "Belépés, regisztráció és elfelejtett jelszó a Vakzóna-fiókhoz, amellyel a tanfolyamok és a zárolt dokumentumok felhasználónként nyílnak meg.",
+  },
+  "/adatkezeles": {
+    title: "Adatkezelési tájékoztató – Vakzóna",
+    description: "Milyen adatot kezel a Vakzóna a fiókokhoz, miért, meddig, és milyen jogai vannak.",
+  },
   notFound: {
     title: "Az oldal nem található – Vakzóna",
     description: "A keresett oldal nem létezik, vagy elköltözött.",

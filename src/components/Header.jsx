@@ -6,6 +6,7 @@ import CategoryArt from "./CategoryArt";
 import analyses, { getCategories } from "../data/analyses";
 import courses, { AKADEMIA, formatLength } from "../data/akademia";
 import { readProgress } from "../utils/haladas";
+import { FIOK, useAccount } from "../utils/fiok";
 import HeaderCSS from "../css/Header.module.css";
 
 const active = (base) => ({ isActive }) => [base, isActive && HeaderCSS.active].filter(Boolean).join(" ");
@@ -71,6 +72,22 @@ function AcademyPanel() {
   );
 }
 
+// Fiók ikon (csak bekapcsolt fióknál); bejelentkezve narancs pötty jelzi
+function AccountLink() {
+  const { user } = useAccount();
+  const label = user ? `Fiók: ${user.email}` : "Fiók: belépés vagy regisztráció";
+  return (
+    <NavLink to="/fiok" className={active(HeaderCSS.account)} aria-label={label} title={label}>
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+        strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+        <circle cx="12" cy="8.5" r="3.75" />
+        <path d="M4.75 20c.9-3.6 3.8-5.75 7.25-5.75s6.35 2.15 7.25 5.75" />
+      </svg>
+      {user && <span className={HeaderCSS.accountDot} />}
+    </NavLink>
+  );
+}
+
 // Lebegő, üveghatású pirula-menü a lap tetején. Széles képernyőn (egérrel) az Elemzések és az
 // Akadémia fölé víve legördülő panel nyílik; keskenyen és érintőképernyőn sima link marad.
 function Header() {
@@ -99,6 +116,7 @@ function Header() {
           <NavLink to="/rolunk" className={active(HeaderCSS.about)}>
             Rólunk
           </NavLink>
+          {FIOK && <AccountLink />}
         </nav>
         {latest && (
           <Link to={`/elemzesek/${latest.slug}`} className={HeaderCSS.cta}>

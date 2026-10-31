@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useState } from "react";
 import { deriveKey, exportKey, fetchSealed, importKey, open, toB64 } from "./titkositas";
+import { contentKey } from "./fiok";
 
 // A tanfolyam védett tartalma (leckék videói, leírásai, anyagai) a public/akademia/<url-azonosító>/tartalom.enc
 // fájlban van titkosítva (scripts/akademia.mjs). A jelszóból képzett kulcsot a látogató böngészője
@@ -26,12 +27,35 @@ function store(slug, value) {
   }
 }
 
-// status: checking | locked | busy | wrong | error | open
+// status: checking | locked | busy | wrong | error | open; fiókos belépésnél még: noaccess | stale
+// via: "password" | "account" – mivel nyílt meg
 export function useCourseContent(course) {
   const [status, setStatus] = useState("checking");
   const [content, setContent] = useState(null);
   const [key, setKey] = useState(null);
   const [message, setMessage] = useState("");
+  const [via, setVia] = useState(null);
+
+  // megnyitás a fiókhoz rendelt kulccsal (src/utils/fiok.js); ezt nem jegyezzük meg, a fiók minden
+  // látogatáskor újra adja, így a hozzáférés visszavonása is érvényesül
+  const unlockAccount = useCallback(async () => {
+    setStatus("checking");
+    try {
+      const [sealed, granted] = await Promise.all([fetchSealed(course.sealed), contentKey(`akademia/${course.slug}`)]);
+      if (!granted) return setStatus("noaccess");
+      if (granted.so !== toB64(sealed.salt)) return setStatus("stale");
+      const k = await importKey(granted.kulcs);
+      const plain = await open(k, sealed);
+      if (!plain) return setStatus("stale");
+      setContent(JSON.parse(new TextDecoder().decode(plain)));
+      setKey(k);
+      setVia("account");
+      setStatus("open");
+    } catch (e) {
+      setMessage(e.message);
+      setStatus("noaccess");
+    }
+  }, [course]);
 
   const unlock = useCallback(
     async (password) => {
@@ -54,6 +78,7 @@ export function useCourseContent(course) {
         if (!saved) store(course.slug, { salt: toB64(sealed.salt), key: await exportKey(k) });
         setContent(JSON.parse(new TextDecoder().decode(plain)));
         setKey(k);
+        setVia("password");
         setStatus("open");
       } catch (e) {
         setMessage(e.message);
@@ -73,6 +98,7 @@ export function useCourseContent(course) {
     store(course.slug, null);
     setContent(null);
     setKey(null);
+    setVia(null);
     setStatus("locked");
   }, [course]);
 
@@ -106,5 +132,5 @@ export function useCourseContent(course) {
     [unseal]
   );
 
-  return { status, content, message, unlock, lock, download, subtitle };
+  return { status, content, message, via, unlock, unlockAccount, lock, download, subtitle };
 }

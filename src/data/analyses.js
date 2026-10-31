@@ -55,7 +55,8 @@ function parseProtectedPdf(value, slug) {
   if (!value) return null;
   const [file, label = "", title = ""] = value.split("|").map((s) => s.trim());
   const href = file.startsWith("/") ? file : `/elemzesek/${slug}/${file}`;
-  return { href, label, title, filename: href.split("/").pop().replace(/\.enc$/, "") };
+  // id: a fiókos hozzáférés azonosítója (supabase/schema.sql)
+  return { id: `pdf/${slug}`, href, label, title, filename: href.split("/").pop().replace(/\.enc$/, "") };
 }
 
 // Markdown → HTML; a ## címsorok horgonyt kapnak a tartalomjegyzékhez.

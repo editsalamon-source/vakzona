@@ -15,6 +15,8 @@ const Academy = lazy(() => import("./pages/Academy"));
 const Course = lazy(() => import("./pages/Course"));
 const Certificate = lazy(() => import("./pages/Certificate"));
 const About = lazy(() => import("./pages/About"));
+const Account = lazy(() => import("./pages/Account"));
+const Privacy = lazy(() => import("./pages/Privacy"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
 function SeoManager() {
@@ -43,6 +45,8 @@ const App = () => (
           <Route path="/akademia/:slug" element={<Course />} />
           <Route path="/akademia/:slug/oklevel" element={<Certificate />} />
           <Route path="/rolunk" element={<About />} />
+          <Route path="/fiok" element={<Account />} />
+          <Route path="/adatkezeles" element={<Privacy />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </Suspense>

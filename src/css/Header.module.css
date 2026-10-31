@@ -85,6 +85,30 @@
 .nav a.about:hover,
 .nav a.about.active { color: var(--ink); }
 
+/* Fiók: kerek ikon a Rólunk után */
+.nav a.account {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  padding: 0;
+  border: 1px solid rgba(0, 0, 0, .08);
+  color: var(--ink);
+}
+.nav a.account:hover { background: var(--bg-soft); }
+.nav a.account.active { color: var(--accent); border-color: #fdba74; }
+.accountDot {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 2px #fff;
+}
+
 .cta {
   margin-left: 6px;
   display: inline-flex;
@@ -196,4 +220,7 @@
   .nav a.analyses,
   .nav a.academy { padding: 9px 6px 9px 10px; }
   .nav a.about { margin-left: 2px; padding: 9px 8px 9px 10px; }
+  /* a fiók ikon miatt itt csak a logó marad a márkanévből */
+  .brand span { display: none; }
+  .nav a.account { width: 32px; height: 32px; }
 }

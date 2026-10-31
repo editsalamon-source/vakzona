@@ -1,7 +1,9 @@
 import React, { useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import Arrow from "./Arrow";
-import { deriveKey, exportKey, fetchSealed, importKey, open as unseal } from "../utils/titkositas";
+import { Link } from "react-router-dom";
+import { deriveKey, exportKey, fetchSealed, importKey, open as unseal, toB64 } from "../utils/titkositas";
+import { FIOK, contentKey, useAccount } from "../utils/fiok";
 import CSS from "../css/ProtectedPdf.module.css";
 
 // Jelszóval védett PDF (ügyféloldali, a Védőnői napló mintájára). A fájl a public/ mappában titkosítva
@@ -38,6 +40,14 @@ async function decrypt(href, password) {
   return new Blob([pdf], { type: "application/pdf" });
 }
 
+// visszafejtés a bejelentkezett felhasználó fiókjához rendelt kulccsal (src/utils/fiok.js); hozzáférés nélkül null
+async function decryptWithAccount(pdf) {
+  const [sealed, granted] = await Promise.all([fetchSealed(pdf.href), contentKey(pdf.id)]);
+  if (!granted || granted.so !== toB64(sealed.salt)) return null;
+  const data = await unseal(await importKey(granted.kulcs), sealed);
+  return data ? new Blob([data], { type: "application/pdf" }) : null;
+}
+
 function LockIcon({ size = 14 }) {
   return (
     <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -56,6 +66,8 @@ function Dialog({ pdf, onClose }) {
   const [url, setUrl] = useState(null);
   const [shake, setShake] = useState(0);
   const input = useRef(null);
+  const account = useAccount();
+  const tried = useRef(false);
 
   useEffect(() => {
     const onKey = (e) => e.key === "Escape" && onClose();
@@ -79,21 +91,36 @@ function Dialog({ pdf, onClose }) {
         input.current?.select();
         return;
       }
-      const u = URL.createObjectURL(blob);
-      setUrl(u);
-      setState("ready");
-      // letöltés indítása; a megnyitás gomb új lapon mutatja
-      const a = document.createElement("a");
-      a.href = u;
-      a.download = pdf.filename;
-      document.body.appendChild(a);
-      a.click();
-      a.remove();
+      ready(blob);
     } catch (e) {
       setMessage(e.message);
       setState("error");
     }
   }
+
+  function ready(blob) {
+    const u = URL.createObjectURL(blob);
+    setUrl(u);
+    setState("ready");
+    // letöltés indítása; a megnyitás gomb új lapon mutatja
+    const a = document.createElement("a");
+    a.href = u;
+    a.download = pdf.filename;
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+  }
+
+  // bejelentkezett felhasználónál előbb a fiókjához rendelt kulccsal próbáljuk; hozzáférés nélkül marad a jelszó
+  useEffect(() => {
+    if (tried.current || !account.user || savedKey(pdf.href)) return;
+    tried.current = true;
+    setState("busy");
+    decryptWithAccount(pdf)
+      .then((blob) => (blob ? ready(blob) : setState("idle")))
+      .catch(() => setState("idle"));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [account.user]);
 
   return createPortal(
     <div className={CSS.backdrop} onMouseDown={(e) => e.target === e.currentTarget && onClose()}>
@@ -135,6 +162,15 @@ function Dialog({ pdf, onClose }) {
             <button type="submit" className="btn" disabled={state === "busy" || !password.trim()}>
               {state === "busy" ? "Feloldás…" : "Feloldás és letöltés"}
             </button>
+            {FIOK && account.ready && (
+              <p className={CSS.hint}>
+                {account.user ? (
+                  <>A fiókjához ({account.user.email}) nincs hozzáférés ehhez a dokumentumhoz.</>
+                ) : (
+                  <>Fiókja van? <Link to="/fiok" onClick={onClose}>Belépés</Link></>
+                )}
+              </p>
+            )}
           </form>
         )}
       </div>

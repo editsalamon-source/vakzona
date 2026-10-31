@@ -124,6 +124,8 @@
   color: var(--ink);
 }
 .input:focus { outline: 2px solid var(--accent); outline-offset: 1px; background: #fff; }
+.hint { margin: 16px 0 0; color: var(--muted); font-size: .85rem; overflow-wrap: anywhere; }
+.hint a { color: var(--accent); font-weight: 600; }
 .error { margin: -6px 0 14px; color: #b91c1c; font-size: .85rem; font-weight: 500; }
 .shake { animation: shake .4s; }
 @keyframes shake {

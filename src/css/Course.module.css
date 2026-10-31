@@ -39,6 +39,13 @@
 .loginRow :global(.btn:disabled) { opacity: .5; cursor: default; transform: none; box-shadow: none; background: var(--ink); }
 .login > p { margin: 12px 0 0; }
 .loginPlaceholder { height: 150px; }
+.login > .loginText { margin: 0 0 16px; color: var(--muted); font-size: .92rem; line-height: 1.55; overflow-wrap: anywhere; }
+.login > .loginText:last-child { margin-bottom: 0; }
+.loginBtn { justify-content: center; }
+/* a közös jelszó a fiókos belépés alatt, halványabb dobozban */
+.loginAlt { margin-top: 12px; background: #fff; }
+.loginAlt .loginHead { font-size: .9rem; }
+.loginAlt .loginRow .loginInput { background: var(--bg-soft); }
 /* a login-dobozban keskeny oszlopban is egymás alatt a mező és a gomb */
 .heroSide .loginRow { flex-direction: column; }
 .heroSide .loginRow :global(.btn) { justify-content: center; }

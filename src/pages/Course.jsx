@@ -4,6 +4,7 @@ import { Marked } from "marked";
 import { getCourse, AKADEMIA, formatLength } from "../data/akademia";
 import { useCourseContent } from "../utils/tanfolyam";
 import { useProgress } from "../utils/haladas";
+import { FIOK, useAccount } from "../utils/fiok";
 import Arrow from "../components/Arrow";
 import VideoPlayer from "../components/VideoPlayer";
 import NotFound from "./NotFound";
@@ -56,7 +57,38 @@ function Meta({ course, count = true }) {
 
 // ---------- Belépés előtt: cím, rövid bevezető, bemutató és jelszó (a részletes leírás és a tananyag belépés után) ----------
 
-function PasswordForm({ access }) {
+// fiókos belépés: kijelentkezve link a fiókoldalra, bejelentkezve a hozzáférés állapota
+function AccountBox({ course, access, user }) {
+  const back = `/fiok?vissza=${encodeURIComponent(`/akademia/${course.slug}`)}`;
+  return (
+    <div className={CSS.login}>
+      <span className={CSS.loginHead}>
+        <span className={CSS.loginIcon}><LockIcon size={18} /></span>
+        {user ? "Bejelentkezve" : "Belépés fiókkal"}
+      </span>
+      {!user && (
+        <>
+          <p className={CSS.loginText}>Ha a fiókjához hozzáférést kapott, belépés után a tanfolyam azonnal megnyílik.</p>
+          <Link to={back} className={`btn ${CSS.loginBtn}`}>
+            Belépés vagy regisztráció <Arrow size={12} />
+          </Link>
+        </>
+      )}
+      {user && (
+        <p className={CSS.loginText}>
+          {user.email}
+          <br />
+          {access.status === "stale"
+            ? "A tanfolyam frissítése miatt a hozzáférés átmenetileg nem érhető el. Kérjük, nézzen vissza később."
+            : "A fiókjához még nincs hozzáférés ehhez a tanfolyamhoz."}{" "}
+          <Link to="/fiok">Fiók</Link>
+        </p>
+      )}
+    </div>
+  );
+}
+
+function PasswordForm({ access, alt = false }) {
   const [password, setPassword] = useState("");
   const [shake, setShake] = useState(0);
   const busy = access.status === "busy";
@@ -67,7 +99,7 @@ function PasswordForm({ access }) {
   return (
     <form
       key={shake}
-      className={`${CSS.login} ${shake ? FormCSS.shake : ""}`}
+      className={`${CSS.login} ${alt ? CSS.loginAlt : ""} ${shake ? FormCSS.shake : ""}`}
       onSubmit={(e) => {
         e.preventDefault();
         access.unlock(password);
@@ -75,7 +107,7 @@ function PasswordForm({ access }) {
     >
       <span className={CSS.loginHead}>
         <span className={CSS.loginIcon}><LockIcon size={18} /></span>
-        A tanfolyam jelszóval nyílik
+        {alt ? "Vagy közös jelszóval" : "A tanfolyam jelszóval nyílik"}
       </span>
       <label className={FormCSS.label} htmlFor="tanfolyamJelszo">Jelszó</label>
       <div className={CSS.loginRow}>
@@ -157,7 +189,7 @@ function Curriculum({ course, progress = null, current = null, onPick = null }) 
 
 // Felül a cím teljes szélességben; alatta bal oldalt a bemutató és a bevezető, jobb oldalt
 // (széles képernyőn ragadósan) a tanfolyam adatai és a belépés.
-function CourseLanding({ course, access }) {
+function CourseLanding({ course, access, account = {} }) {
   const facts = [
     { value: course.lessons.length, label: "videólecke" },
     course.seconds > 0 && { value: formatLength(course.seconds), label: "videó összesen" },
@@ -185,7 +217,14 @@ function CourseLanding({ course, access }) {
               </div>
             ))}
           </dl>
-          {access.status === "checking" ? <div className={CSS.loginPlaceholder} /> : <PasswordForm access={access} />}
+          {access.status === "checking" || (FIOK && !account.ready) ? (
+            <div className={CSS.loginPlaceholder} />
+          ) : (
+            <>
+              {FIOK && <AccountBox course={course} access={access} user={account.user} />}
+              <PasswordForm access={access} alt={FIOK} />
+            </>
+          )}
         </aside>
       </div>
     </div>
@@ -300,7 +339,10 @@ function Classroom({ course, access }) {
           <Meta course={course} />
           <h1 className={CSS.classTitle}>{course.title}</h1>
         </div>
-        <button type="button" className="btn btnGhost" onClick={access.lock}>Kilépés</button>
+        {/* fiókkal megnyitva a menü fiók ikonja visz a fiókhoz, itt nincs gomb */}
+        {access.via !== "account" && (
+          <button type="button" className="btn btnGhost" onClick={access.lock}>Kilépés</button>
+        )}
       </div>
 
       <div className={CSS.room}>
@@ -386,7 +428,20 @@ function Course() {
 
 function CourseAccess({ course }) {
   const access = useCourseContent(course);
-  return access.status === "open" ? <Classroom course={course} access={access} /> : <CourseLanding course={course} access={access} />;
+  const account = useAccount();
+
+  // bejelentkezett felhasználónál a fiókhoz rendelt kulccsal nyitunk (ha a megjegyzett jelszó nem nyitotta meg)
+  useEffect(() => {
+    if (account.user && access.status === "locked") access.unlockAccount();
+    if (!account.user && access.via === "account") access.lock();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [account.user, access.status]);
+
+  return access.status === "open" ? (
+    <Classroom course={course} access={access} />
+  ) : (
+    <CourseLanding course={course} access={access} account={account} />
+  );
 }
 
 export default Course;
