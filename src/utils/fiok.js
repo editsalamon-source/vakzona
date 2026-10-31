@@ -107,6 +107,23 @@ export async function accesses() {
   return rows.map((r) => r.tartalom);
 }
 
+// ---------- Admin (supabase/schema.sql: adminok, meghivasok; az adatbázis minden hívásnál ellenőrzi a jogot) ----------
+
+export const isAdmin = () => call((c) => c.rpc("admin_e"));
+
+// [{ id, email, megerositve, utolso_belepes, letrehozva, tartalmak: [] }]
+export const adminUsers = () => call((c) => c.rpc("admin_felhasznalok"));
+
+export const setAccess = (userId, id, on) =>
+  call((c) => c.rpc("admin_hozzaferes", { p_user: userId, p_tartalom: id, p_van: on }));
+
+// [{ email, tartalom, letrehozva }]
+export const adminInvites = () => call((c) => c.rpc("admin_meghivasok"));
+
+// "hozzaferes" (már van megerősített fiók, rögtön kiosztva) | "meghivas" | "torolve"
+export const setInvite = (email, id, on) =>
+  call((c) => c.rpc("admin_meghivas", { p_email: email, p_tartalom: id, p_van: on }));
+
 // egy védett tartalom kulcsa ({ so, kulcs }), ha a felhasználónak van hozzáférése; különben null
 export const contentKey = (id) =>
   call((c) => c.from("kulcsok").select("so, kulcs").eq("tartalom", id).maybeSingle());

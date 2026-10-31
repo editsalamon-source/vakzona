@@ -34,6 +34,11 @@ function Privacy() {
             <strong>Hozzáférések:</strong> melyik tanfolyamot vagy zárolt dokumentumot nyithatja meg a fiók.
           </li>
           <li>
+            <strong>Meghívás:</strong> ha a Vakzóna egy még nem regisztrált e-mail-címre előre hozzáférést ad,
+            a címet és a tartalom megnevezését a regisztráció megerősítéséig tároljuk. Megerősítéskor a meghívás
+            hozzáféréssé alakul és törlődik. A be nem váltott meghívást a Vakzóna bármikor visszavonhatja.
+          </li>
+          <li>
             <strong>Technikai adatok:</strong> a regisztráció és az utolsó belépés időpontja, valamint a
             szolgáltató biztonsági naplójában rövid ideig a belépéshez használt IP-cím.
           </li>
@@ -62,6 +67,10 @@ function Privacy() {
           <li>
             <strong>[helykitöltő: levélküldő szolgáltató]:</strong> a megerősítő és a jelszó-visszaállító levelek
             kézbesítése.
+          </li>
+          <li>
+            <strong>A Vakzóna adminisztrátora:</strong> a hozzáférések kezeléséhez látja a fiókok e-mail-címét,
+            a regisztráció, a megerősítés és az utolsó belépés időpontját, valamint a hozzáféréseket.
           </li>
           <li>
             <strong>Vercel Inc.:</strong> a weboldal kiszolgálása.

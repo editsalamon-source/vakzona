@@ -15,7 +15,7 @@ const template = readFileSync(join(dist, "index.html"), "utf8");
 const esc = (s) => s.replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 
 const pages = Object.entries(seo)
-  .filter(([path]) => path.startsWith("/"))
+  .filter(([path, entry]) => path.startsWith("/") && !entry.noindex)
   .map(([path, entry]) => ({ path, ...entry }));
 
 for (const file of readdirSync(dir).filter((f) => f.endsWith(".md"))) {

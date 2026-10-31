@@ -1,0 +1,33 @@
+.page { max-width: 880px; }
+
+.picks { display: flex; flex-direction: column; gap: 2px; margin: 4px 0 6px; }
+.picks label { margin-bottom: 8px; }
+
+.list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+.row,
+.user {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 14px 18px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+}
+.user { align-items: flex-start; }
+.who { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 3px; }
+.who strong { font-weight: 600; overflow-wrap: anywhere; }
+.grants { flex: none; width: 300px; display: flex; flex-direction: column; }
+.grants label { margin: 0 0 6px; font-size: .85rem; }
+.grants label:last-child { margin-bottom: 0; }
+
+.usersHead { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin-bottom: 14px; }
+.usersHead h2 { margin: 0; }
+.search { width: min(280px, 100%); margin: 0; }
+.note { margin: 18px 0 0; color: var(--muted); font-size: .82rem; line-height: 1.55; }
+
+@media (max-width: 720px) {
+  .row,
+  .user { flex-direction: column; align-items: stretch; gap: 10px; }
+  .grants { width: auto; }
+}

@@ -3,7 +3,7 @@ import { createPortal } from "react-dom";
 import Arrow from "./Arrow";
 import { Link } from "react-router-dom";
 import { deriveKey, exportKey, fetchSealed, importKey, open as unseal, toB64 } from "../utils/titkositas";
-import { FIOK, contentKey, useAccount } from "../utils/fiok";
+import { FIOK, accesses, contentKey, useAccount } from "../utils/fiok";
 import CSS from "../css/ProtectedPdf.module.css";
 
 // Jelszóval védett PDF (ügyféloldali, a Védőnői napló mintájára). A fájl a public/ mappában titkosítva
@@ -55,6 +55,15 @@ function LockIcon({ size = 14 }) {
       <rect x="4.5" y="10.5" width="15" height="10" rx="2.5" />
       <path d="M8 10.5V7.5a4 4 0 0 1 8 0v3" />
       <circle cx="12" cy="15.5" r="1.2" />
+    </svg>
+  );
+}
+
+function DownloadIcon({ size = 14 }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M12 4v11M7.5 10.5 12 15l4.5-4.5M5 19.5h14" />
     </svg>
   );
 }
@@ -179,25 +188,41 @@ function Dialog({ pdf, onClose }) {
   );
 }
 
+// bejelentkezett felhasználónál: van-e a fiókjához hozzáférés ehhez a dokumentumhoz
+function useGranted(id) {
+  const { user } = useAccount();
+  const [granted, setGranted] = useState(false);
+  useEffect(() => {
+    let live = true;
+    setGranted(false);
+    if (user) accesses().then((list) => live && setGranted(list.includes(id))).catch(() => {});
+    return () => {
+      live = false;
+    };
+  }, [user, id]);
+  return granted;
+}
+
 // variant: "box" = nagy doboz az Összefoglaló után, "button" = gomb a fejlécben
 function ProtectedPdf({ pdf, variant = "box", className = "" }) {
   const [open, setOpen] = useState(false);
+  const granted = useGranted(pdf.id);
   return (
     <>
       {variant === "button" ? (
         <button type="button" className={`btn btnGhost ${className}`} onClick={() => setOpen(true)}>
-          <LockIcon /> {pdf.button || "Szakmai tanulmány (jelszóval)"}
+          {granted ? <DownloadIcon /> : <LockIcon />} {granted ? "Szakmai tanulmány" : pdf.button || "Szakmai tanulmány (jelszóval)"}
         </button>
       ) : (
         <button type="button" className={`${CSS.box} ${className}`} onClick={() => setOpen(true)}>
-          <span className={CSS.boxIcon}><LockIcon size={26} /></span>
+          <span className={CSS.boxIcon}>{granted ? <DownloadIcon size={26} /> : <LockIcon size={26} />}</span>
           <span className={CSS.boxText}>
-            <span className={CSS.eyebrow}>Szakmai tanulmány · jelszóval</span>
+            <span className={CSS.eyebrow}>Szakmai tanulmány · {granted ? "fiókjával elérhető" : "jelszóval"}</span>
             <strong>{pdf.title || "Szakmai tanulmány"}</strong>
-            <span className={CSS.boxMeta}>Jelszóval védett PDF{pdf.label ? ` · ${pdf.label}` : ""}</span>
+            <span className={CSS.boxMeta}>{granted ? "PDF" : "Jelszóval védett PDF"}{pdf.label ? ` · ${pdf.label}` : ""}</span>
           </span>
           <span className={CSS.boxGo}>
-            Feloldás <Arrow size={12} />
+            {granted ? "Letöltés" : "Feloldás"} <Arrow size={12} />
           </span>
         </button>
       )}

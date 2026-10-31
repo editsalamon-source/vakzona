@@ -69,7 +69,20 @@ beállítva, a fiók ki van kapcsolva, és az oldal úgy működik, mint eddig.
    ```
    Ha ez fut, a tájékoztatóban a „[helykitöltő] nap” helyére 7 kerül.
 
-## Hozzáférés kezelése (SQL Editor)
+## Hozzáférés kezelése
+
+**Adminoldal:** `vakzona.com/fiok/admin` (a Fiók oldalon a „Hozzáférések kezelése” gomb, csak adminnak látszik).
+Itt pipákkal adható és vonható vissza a hozzáférés, és e-mail-címre előre is kiadható (meghívás): ha a címmel
+még nincs megerősített fiók, a hozzáférés a regisztráció megerősítésekor lép életbe (`meghivas_bevaltasa` trigger).
+Az új tanfolyamok és `pdf védett:` dokumentumok maguktól megjelennek (`src/data/vedett.js`).
+
+**Admin felvétele** (csak az SQL Editorból):
+
+```sql
+insert into public.adminok (user_id) select id from auth.users where email = 'valaki@example.com';
+```
+
+**Ugyanez SQL-lel** (ha az oldal nem érhető el):
 
 ```sql
 -- hozzáférés adása

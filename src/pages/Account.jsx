@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate, useSearchParams } from "react-router-dom";
-import courses from "../data/akademia";
-import analyses from "../data/analyses";
+import { describe } from "../data/vedett";
 import Arrow from "../components/Arrow";
 import {
-  FIOK, useAccount, errorText, signIn, signUp, signOut, resetPassword, updatePassword, deleteAccount, accesses,
+  FIOK, useAccount, errorText, signIn, signUp, signOut, resetPassword, updatePassword, deleteAccount, accesses, isAdmin,
 } from "../utils/fiok";
 import PageCSS from "../css/Page.module.css";
 import FormCSS from "../css/ProtectedPdf.module.css";
@@ -13,20 +12,6 @@ import CSS from "../css/Account.module.css";
 const MIN = 8;
 // a felület saját hibaüzenete (a Supabase hibái errorText-tel kapnak magyar szöveget)
 const own = (message) => Object.assign(new Error(message), { own: true });
-
-// a hozzáférés-azonosító (supabase/schema.sql) címe és linkje
-function describe(id) {
-  const [kind, slug] = id.split("/");
-  if (kind === "akademia") {
-    const c = courses.find((x) => x.slug === slug);
-    return c && { title: c.title, kind: "Tanfolyam", to: `/akademia/${slug}` };
-  }
-  if (kind === "pdf") {
-    const a = analyses.find((x) => x.slug === slug);
-    return a?.pdfProtected && { title: a.pdfProtected.title || a.title, kind: "Védett dokumentum", to: `/elemzesek/${slug}` };
-  }
-  return null;
-}
 
 function Field({ id, label, ...props }) {
   return (
@@ -194,8 +179,10 @@ function Delete() {
 
 function Dashboard({ user }) {
   const [list, setList] = useState(null);
+  const [admin, setAdmin] = useState(false);
   useEffect(() => {
     accesses().then(setList).catch(() => setList([]));
+    isAdmin().then(setAdmin).catch(() => setAdmin(false));
   }, [user.id]);
   const items = (list || []).map(describe).filter(Boolean);
 
@@ -204,7 +191,14 @@ function Dashboard({ user }) {
       <div className={CSS.card}>
         <span className="eyebrow">Bejelentkezve</span>
         <p className={CSS.email}>{user.email}</p>
-        <button type="button" className="btn btnGhost" onClick={() => signOut().catch(() => {})}>Kijelentkezés</button>
+        <div className={CSS.row}>
+          {admin && (
+            <Link to="/fiok/admin" className="btn">
+              Hozzáférések kezelése <Arrow size={12} />
+            </Link>
+          )}
+          <button type="button" className="btn btnGhost" onClick={() => signOut().catch(() => {})}>Kijelentkezés</button>
+        </div>
       </div>
 
       <div className={CSS.card}>
