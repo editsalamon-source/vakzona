@@ -77,7 +77,7 @@ function About() {
               írom és állítom össze.
             </p>
             <p>
-              Több mint huszonöt éve dolgozom az informatikában, voltam IT-üzleti tanácsadó és vezető
+              Több mint huszonöt éve dolgozom az informatikában, voltam IT-üzleti tanácsadó és
               projektmenedzser, ma vezető IT-tanácsadó és üzleti elemző vagyok. A munkám középpontjában
               a mesterséges intelligencia üzleti alkalmazása áll: azon dolgozom, hogy egy
               szervezet igényeiből valóban használható MI-megoldás legyen.
