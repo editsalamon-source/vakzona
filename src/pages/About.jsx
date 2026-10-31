@@ -76,9 +76,14 @@ function About() {
               Szeretek a kérdések mögé nézni. A Vakzóna elemzéseit és az Akadémia tanfolyamait én
               írom és állítom össze.
             </p>
-            <p>[helykitöltő: szakmai háttér, végzettség, tapasztalat két-három mondatban]</p>
             <p>
-              Leginkább a mesterséges intelligencia foglalkoztat: hogyan érdemes bevezetni egy
+              Több mint huszonöt éve dolgozom az informatikában, voltam IT-üzleti tanácsadó és vezető
+              projektmenedzser, ma vezető IT-tanácsadó és üzleti elemző vagyok. A munkám középpontjában
+              a mesterséges intelligencia üzleti alkalmazása áll: azon dolgozom, hogy egy
+              szervezet igényeiből valóban használható MI-megoldás legyen.
+            </p>
+            <p>
+              Ezért írok a legtöbbet az MI-ről: hogyan érdemes bevezetni egy
               szervezetben, mit kezd vele a munkaerőpiac, és mire kell figyelni, ha adatot bízunk
               rá. De ugyanilyen kíváncsisággal írok egy csillag életéről vagy Petőfi sírjáról is.
             </p>
