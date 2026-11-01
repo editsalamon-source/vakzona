@@ -32,7 +32,7 @@ function About() {
         <div className={CSS.heroText}>
           <span className="tag">Rólam</span>
           <h1>
-            {["Ott keresek,", "ahová kevesen", "néznek."].map((t, i) => (
+            {["Kérdezek,", "utánajárok,", "elmagyarázom."].map((t, i) => (
               <span key={t} className={CSS.line}>
                 <motion.span {...line(i)} className={i === 2 ? CSS.accent : undefined}>
                   {t}
