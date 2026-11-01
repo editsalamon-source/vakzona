@@ -1,0 +1,3 @@
+# a gitignore-olt munkamappák (videók, forrásanyagok) nem kellenek a buildhez, és túl nagyok a feltöltéshez
+/Akadémia
+/Elemzés
