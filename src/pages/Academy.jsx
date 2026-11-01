@@ -1,8 +1,7 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import courses, { AKADEMIA, getAcademyCategories } from "../data/akademia";
+import courses, { AKADEMIA, formatLength, getAcademyCategories } from "../data/akademia";
 import CourseTile from "../components/CourseTile";
-import Reveal from "../components/Reveal";
+import ListHead from "../components/ListHead";
 import TagFilter, { useTagFilter } from "../components/TagFilter";
 import CSS from "../css/Academy.module.css";
 import PageCSS from "../css/Page.module.css";
@@ -14,26 +13,27 @@ function Academy({ category = null }) {
   const inCategory = category ? courses.filter((c) => c.category?.slug === category.slug) : courses;
   const { selected, shown } = useTagFilter(inCategory);
   const lead = category ? categories.find((k) => k.slug === category.slug)?.lead : AKADEMIA.description;
+  const lessons = inCategory.reduce((n, c) => n + c.lessons.length, 0);
+  const seconds = inCategory.reduce((n, c) => n + c.seconds, 0);
 
   return (
-    <div className={`wrap ${PageCSS.page}`}>
-      <Reveal className={PageCSS.centerHead}>
-        <span className="tag">{AKADEMIA.menu}</span>
-        <h1>{category ? category.name : AKADEMIA.name}</h1>
-        <p className="lead">{lead}</p>
-      </Reveal>
-
-      <nav className={PageCSS.filters} aria-label="Témakörök">
-        <Link to="/akademia" aria-current={category ? undefined : "page"}>
-          Összes
-        </Link>
-        {categories.map((k) => (
-          <Link key={k.slug} to={`/akademia/${k.slug}`} aria-current={category?.slug === k.slug ? "page" : undefined}>
-            {k.name}
-            {k.count > 0 && <span className={PageCSS.count}>{k.count}</span>}
-          </Link>
-        ))}
-      </nav>
+    <div className={`wrap ${PageCSS.page} ${PageCSS.listPage}`}>
+      <ListHead
+        label="Témakörök"
+        links={[
+          { to: "/akademia", label: "Összes", count: courses.length, current: !category },
+          ...categories.map((k) => ({ to: `/akademia/${k.slug}`, label: k.name, count: k.count, current: category?.slug === k.slug })),
+        ]}
+        eyebrow={category ? `${AKADEMIA.name} · témakör` : AKADEMIA.menu}
+        title={category ? category.name : AKADEMIA.name}
+        lead={lead}
+        art={category?.slug}
+        stat={
+          inCategory.length
+            ? { value: inCategory.length, label: "tanfolyam", note: `${lessons} lecke · ${formatLength(seconds)}` }
+            : { value: "–", label: "hamarosan" }
+        }
+      />
       <TagFilter items={inCategory} selected={selected} />
 
       {shown.length > 0 ? (

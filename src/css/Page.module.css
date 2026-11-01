@@ -1,4 +1,6 @@
 .page { padding-top: 168px; padding-bottom: 128px; }
+/* lista-oldalak (Elemzések, Akadémia): a szakasz szűrősora közvetlenül a menü alatt kezdődik */
+.listPage { padding-top: 116px; }
 
 .centerHead { text-align: center; max-width: 760px; margin: 0 auto 56px; }
 .centerHead h1 { margin: 18px 0 22px; }
@@ -79,4 +81,8 @@
 
 @media (max-width: 640px) {
   .page { padding-top: 120px; padding-bottom: 88px; }
+  /* telefonon a címkék egy oldalra görgethető sorban, hogy ne foglaljanak sok helyet */
+  .tagFilters { flex-wrap: nowrap; justify-content: flex-start; overflow-x: auto; scrollbar-width: none; margin-bottom: 28px; padding-bottom: 2px; }
+  .tagFilters::-webkit-scrollbar { display: none; }
+  .tagFilters button { flex: none; }
 }

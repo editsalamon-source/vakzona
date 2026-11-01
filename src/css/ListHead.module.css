@@ -1,0 +1,136 @@
+/* ---------- Szakasz szűrősora: szegmentált pirula, fix helyen a menü alatt ---------- */
+.sections { display: flex; justify-content: center; margin-bottom: 20px; }
+.track {
+  display: flex;
+  gap: 4px;
+  padding: 5px;
+  border-radius: 999px;
+  background: var(--bg-soft);
+  border: 1px solid var(--line);
+  max-width: 100%;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.track::-webkit-scrollbar { display: none; }
+.track a {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 18px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  transition: color .3s, background-color .3s, box-shadow .3s;
+}
+.track a:hover { color: var(--ink); background: #fff; }
+.track a[aria-current="page"] { color: #fff; background: var(--ink); box-shadow: 0 8px 18px -10px rgba(15, 23, 42, .6); }
+.count {
+  font-size: 10px;
+  letter-spacing: 0;
+  min-width: 18px;
+  padding: 1px 6px;
+  border-radius: 999px;
+  background: var(--line);
+  color: var(--ink);
+  text-align: center;
+}
+.track a[aria-current="page"] .count { background: var(--accent); color: #fff; }
+
+/* ---------- Fejsáv: fix magasság, rácsminta, narancs fény, ábra és nagy szám ---------- */
+.band {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 6fr) minmax(0, 5fr);
+  align-items: center;
+  gap: 32px;
+  height: 320px;
+  margin-bottom: 40px;
+  padding: 0 56px;
+  overflow: hidden;
+  border-radius: 2.5rem;
+  background: var(--bg-soft);
+  border: 1px solid var(--line);
+  --art-bg: var(--bg-soft);
+}
+.grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(to right, var(--line) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--line) 1px, transparent 1px);
+  background-size: 2.5rem 2.5rem;
+  -webkit-mask-image: radial-gradient(ellipse 70% 90% at 78% 50%, #000 35%, transparent 100%);
+  mask-image: radial-gradient(ellipse 70% 90% at 78% 50%, #000 35%, transparent 100%);
+}
+.glow {
+  position: absolute;
+  width: 520px;
+  height: 520px;
+  right: -140px;
+  bottom: -300px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(234, 88, 12, .2), rgba(234, 88, 12, 0) 65%);
+}
+
+.text { position: relative; min-width: 0; }
+.eyebrow { font-size: .72rem; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: var(--accent); }
+.title {
+  margin: 12px 0 14px;
+  font-size: clamp(2.4rem, 5vw, 4rem);
+  letter-spacing: -0.045em;
+  line-height: .98;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.lead {
+  margin: 0;
+  max-width: 560px;
+  font-size: 1.05rem;
+  font-weight: 300;
+  line-height: 1.6;
+  color: var(--muted);
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.visual { position: relative; height: 100%; display: flex; align-items: center; justify-content: center; }
+.art { width: 100%; height: 78%; color: #94a3b8; }
+.logo { display: flex; color: rgba(15, 23, 42, .12); }
+.stat {
+  position: absolute;
+  left: 0;
+  bottom: 34px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 14px 20px;
+  border-radius: 1.25rem;
+  background: rgba(255, 255, 255, .78);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  border: 1px solid #fff;
+  box-shadow: 0 18px 36px -22px rgba(15, 23, 42, .35);
+}
+.stat strong { font-size: 2.4rem; font-weight: 700; letter-spacing: -0.05em; line-height: 1; color: var(--ink); }
+.stat span { font-size: .66rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--muted); }
+.stat em { font-style: normal; font-size: .8rem; color: var(--faint); margin-top: 2px; }
+
+@media (max-width: 960px) {
+  .band { grid-template-columns: 1fr; height: auto; min-height: 0; padding: 36px 32px; }
+  .visual { position: absolute; inset: 0 0 0 auto; width: 48%; opacity: .45; }
+  .stat { display: none; }
+  .title { white-space: normal; }
+}
+@media (max-width: 640px) {
+  .sections { justify-content: flex-start; }
+  .band { padding: 28px 22px; border-radius: 1.75rem; margin-bottom: 28px; }
+  .visual { width: 60%; opacity: .3; }
+}

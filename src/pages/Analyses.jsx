@@ -1,9 +1,8 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import analyses, { getCategories } from "../data/analyses";
 import AnalysisCard from "../components/AnalysisCard";
 import Pillars from "../components/Pillars";
-import Reveal from "../components/Reveal";
+import ListHead from "../components/ListHead";
 import TagFilter, { useTagFilter } from "../components/TagFilter";
 import CardCSS from "../css/AnalysisCard.module.css";
 import PageCSS from "../css/Page.module.css";
@@ -16,28 +15,23 @@ function Analyses({ category = null }) {
   const { selected, shown } = useTagFilter(inCategory);
 
   return (
-    <div className={`wrap ${PageCSS.page}`}>
-      <Reveal className={PageCSS.centerHead}>
-        <span className="tag">{category ? "Kategória" : "Elemzések"}</span>
-        <h1>{category ? category.name : "Minden elemzés"}</h1>
-        <p className="lead">
-          {category
+    <div className={`wrap ${PageCSS.page} ${PageCSS.listPage}`}>
+      <ListHead
+        label="Kategóriák"
+        links={[
+          { to: "/elemzesek", label: "Összes", count: analyses.length, current: !category },
+          ...categories.map((k) => ({ to: `/${k.slug}`, label: k.name, count: k.count, current: category?.slug === k.slug })),
+        ]}
+        eyebrow={category ? "Elemzések · kategória" : "Elemzések"}
+        title={category ? category.name : "Minden elemzés"}
+        lead={
+          category
             ? category.description
-            : "Független, hivatalos forrásokra és nyilvános adatokra épülő elemzések, a legfrissebbel kezdve."}
-        </p>
-      </Reveal>
-
-      <nav className={PageCSS.filters} aria-label="Kategóriák">
-        <Link to="/elemzesek" aria-current={category ? undefined : "page"}>
-          Összes
-        </Link>
-        {categories.map((k) => (
-          <Link key={k.slug} to={`/${k.slug}`} aria-current={category?.slug === k.slug ? "page" : undefined}>
-            {k.name}
-            {k.count > 0 && <span className={PageCSS.count}>{k.count}</span>}
-          </Link>
-        ))}
-      </nav>
+            : "Független, hivatalos forrásokra és nyilvános adatokra épülő elemzések, a legfrissebbel kezdve."
+        }
+        art={category?.slug}
+        stat={inCategory.length ? { value: inCategory.length, label: "elemzés" } : { value: "–", label: "hamarosan" }}
+      />
       <TagFilter items={inCategory} selected={selected} />
 
       {shown.length > 0 ? (
