@@ -298,6 +298,29 @@ function Cselekves() {
   );
 }
 
+// AI-jártasság tanfolyam: az AI által írt dokumentum, rajta nagyító; a nagyító alatt
+// az egyetlen narancs sor (a magabiztos tévedés, amelyet az ellenőrzés kiszúr).
+function Jartassag() {
+  const rows = [96, 120, 144, 168, 192, 216];
+  return (
+    <>
+      <rect x="64" y="40" width="190" height="230" rx="10" fill="currentColor" fillOpacity="0.03" strokeWidth="1.5" />
+      <line x1="84" y1="66" x2="180" y2="66" strokeWidth="2" opacity="0.7" />
+      {rows.map((y, i) => (
+        <line key={y} x1="84" y1={y} x2={[234, 220, 230, 206, 228, 170][i]} y2={y} strokeWidth="1.5"
+          stroke={i === 3 ? A : "currentColor"} opacity={i === 3 ? 1 : 0.45} />
+      ))}
+      <circle cx="226" cy="168" r="50" fill={BG} fillOpacity="0.55" strokeWidth="1.5" />
+      <line x1="122" y1="168" x2="206" y2="168" stroke={A} strokeWidth="3" />
+      <circle cx="226" cy="168" r="50" strokeWidth="1.5" />
+      <line x1="262" y1="204" x2="312" y2="254" strokeWidth="9" />
+      <line x1="262" y1="204" x2="312" y2="254" stroke={BG} strokeWidth="5" />
+      <circle cx="226" cy="168" r="60" strokeWidth="1" strokeDasharray="3 5" opacity="0.5" />
+      <path d="M300 64 l10 10 l20 -22" strokeWidth="2" opacity="0.55" strokeLinejoin="round" />
+    </>
+  );
+}
+
 const MOTIFS = {
   naptar: Naptar,
   osszefogas: Osszefogas,
@@ -309,6 +332,7 @@ const MOTIFS = {
   pajzs: Pajzs,
   utiterv: Utiterv,
   cselekves: Cselekves,
+  jartassag: Jartassag,
 };
 
 function CoverArt({ motif, category, className }) {
