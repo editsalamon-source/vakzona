@@ -22,6 +22,18 @@
 .tileTitle a:hover { color: var(--accent-dark); }
 .tileText { margin: 0; color: var(--muted); font-size: .95rem; line-height: 1.7; }
 .tileBtn { align-self: flex-start; margin-top: auto; }
+.tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 4px; }
+.tags a {
+  font-size: .76rem;
+  color: var(--muted);
+  text-decoration: none;
+  border: 1px dashed #cbd5e1;
+  border-radius: 999px;
+  padding: 3px 10px;
+  transition: color .3s, border-color .3s;
+}
+.tags a:hover { color: #9a3412; border-color: var(--accent); }
+.tags + .tileBtn { margin-top: 18px; }
 .tileText + .tileBtn, .progress + .tileBtn { margin-top: 18px; }
 
 .draft {

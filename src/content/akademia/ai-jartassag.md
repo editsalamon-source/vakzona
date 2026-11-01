@@ -3,6 +3,7 @@ cím: AI-jártasság
 alcím: Jól és biztonságosan a mesterséges intelligenciával a munkában
 dátum: 2026-11-01
 kategória: MI
+címkék: Alapok, Biztonság és kockázat
 borító: jartassag
 bemutató: https://vimeo.com/1241965649
 logó: logo.svg

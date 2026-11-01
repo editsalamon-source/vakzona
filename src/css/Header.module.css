@@ -158,6 +158,9 @@
 .panel::before { content: ""; position: absolute; left: 0; right: 0; top: -16px; height: 16px; }
 .panelWide { width: 760px; flex-direction: row; gap: 10px; }
 .panelGrid { flex: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 2px; }
+/* Akadémia: a témakörök (MI, Tudomány) egymás mellett, a tanfolyamok fölött, vékony elválasztóval */
+.panelCats { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; padding-bottom: 8px; margin-bottom: 6px; border-bottom: 1px solid var(--line); }
+.nav .panel .panelCats a { padding: 10px 14px; }
 
 .nav .panel a {
   display: flex;

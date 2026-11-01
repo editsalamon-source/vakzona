@@ -3,6 +3,7 @@ cím: AI stratégia a gyakorlatban
 alcím: Módszertan a kezdeményezéstől a jóváhagyott stratégiáig
 dátum: 2026-10-27
 kategória: MI
+címkék: Módszertan, Vállalati bevezetés
 borító: utiterv
 bemutató: https://vimeo.com/1241804992
 logó: logo.svg

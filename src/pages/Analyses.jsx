@@ -4,13 +4,16 @@ import analyses, { getCategories } from "../data/analyses";
 import AnalysisCard from "../components/AnalysisCard";
 import Pillars from "../components/Pillars";
 import Reveal from "../components/Reveal";
+import TagFilter, { useTagFilter } from "../components/TagFilter";
 import CardCSS from "../css/AnalysisCard.module.css";
 import PageCSS from "../css/Page.module.css";
 
 // Az összes elemzés (/elemzesek), vagy egy kategória saját oldala (/gazdasag stb.).
 function Analyses({ category = null }) {
   const categories = getCategories();
-  const shown = category ? analyses.filter((a) => a.category.slug === category.slug) : analyses;
+  const inCategory = category ? analyses.filter((a) => a.category.slug === category.slug) : analyses;
+  // témacímke-szűrő (?cimke=…): csak ahol a tartalmaknak van címkéje, pl. az MI-oldalon
+  const { selected, shown } = useTagFilter(inCategory);
 
   return (
     <div className={`wrap ${PageCSS.page}`}>
@@ -35,16 +38,19 @@ function Analyses({ category = null }) {
           </Link>
         ))}
       </nav>
+      <TagFilter items={inCategory} selected={selected} />
 
       {shown.length > 0 ? (
         <div className={CardCSS.list}>
           {shown.map((a, i) => (
-            <AnalysisCard key={a.slug} analysis={a} featured={i === 0} />
+            <AnalysisCard key={a.slug} analysis={a} featured={i === 0 && !selected} />
           ))}
         </div>
       ) : (
         <p className={CardCSS.empty}>
-          {category
+          {selected
+            ? "Ehhez a témához ebben a kategóriában még nincs elemzés."
+            : category
             ? "Ebben a kategóriában hamarosan érkeznek az első elemzések."
             : "Az első elemzések hamarosan érkeznek."}
         </p>

@@ -23,6 +23,12 @@ const seo = {
     title: `${AKADEMIA.name} – videós tanfolyamok`,
     description: AKADEMIA.description,
   },
+  ...Object.fromEntries(
+    KATEGORIAK.filter((k) => AKADEMIA.kategoriak.includes(k.slug)).map((k) => [
+      `/akademia/${k.slug}`,
+      { title: `${k.name} tanfolyamok – ${AKADEMIA.name}`, description: AKADEMIA.leirasok[k.slug] },
+    ]),
+  ),
   "/rolunk": {
     title: "Rólam – Vakzóna",
     description: "Salamon Edit, a Vakzóna szerzője: miről és hogyan írok, és mit kínál az Akadémia. Kérdések, adatok és összehasonlítások a hírek helyett, gyakorlati videós tanfolyamok.",

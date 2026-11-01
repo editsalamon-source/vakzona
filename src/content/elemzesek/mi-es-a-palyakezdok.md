@@ -3,6 +3,7 @@ cím: Ki lesz a senior, ha nincs junior?
 alcím: Az MI hatása a pályakezdőkre – elmaradó felvétel, a tapasztalati létra kockázata, a magyar mérési rés és javaslatok.
 dátum: 2026-10-04
 kategória: MI
+címkék: Munka és társadalom
 téma: Munkaerőpiac
 borító: letra
 kiemelés: 19%

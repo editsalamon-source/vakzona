@@ -3,6 +3,7 @@ cím: Előfizetés vagy platform?
 alcím: Mit kap egy cég egy MI-gyártó vállalati előfizetésével, és mit tesz hozzá egy saját MI-platform – döntéshozóknak és munkavállalóknak közérthetően.
 dátum: 2026-10-08
 kategória: MI
+címkék: Vállalati bevezetés, Ágensek és technológia
 téma: Vállalati MI
 borító: retegek
 kiemelés: 10,37%

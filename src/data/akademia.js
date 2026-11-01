@@ -1,11 +1,14 @@
 import { Marked } from "marked";
-import { getKategoria } from "./kategoriak.js";
+import KATEGORIAK, { getKategoria } from "./kategoriak.js";
+import { parseCimkek } from "./cimkek.js";
 
-export { default as AKADEMIA } from "./akademiaNev.js";
+import AKADEMIA_NEV from "./akademiaNev.js";
+
+export { AKADEMIA_NEV as AKADEMIA };
 
 // Minden tanfolyam egy Markdown fájl: src/content/akademia/<url-azonosító>.md
 // Fejléc `kulcs: érték` sorokkal --- között: cím, alcím (rövid leírás, a keresőknek is), dátum, kategória
-// (opcionális, a borító ábrája), szint, bemutató (a nyilvános bemutatóvideó URL-je), bemutató felirat (WebVTT),
+// (opcionális, a borító ábrája és az Akadémia témaköre), címkék (lásd cimkek.js), szint, bemutató (a nyilvános bemutatóvideó URL-je), bemutató felirat (WebVTT),
 // logó + logó felirat (a tanfolyam logója a public/akademia/<url-azonosító>/ mappában; az oklevélen), piszkozat, valamint a
 // tananyag sorrendben: `modul: Név`, alatta `lecke: azonosító | Cím | időtartam (pp:mm)`. A törzs a tanfolyam leírása:
 // az első `##` előtti rész a nyilvános bevezető (belépés előtt is látszik), a többi csak belépés után.
@@ -78,6 +81,7 @@ const courses = Object.entries(files)
       date: meta["dátum"] || "",
       category: getKategoria(meta["kategória"]),
       level: meta["szint"] || "",
+      tags: parseCimkek(meta["címkék"], `${slug}.md`),
       intro: meta["bemutató"] || "",
       introSubtitles: asset(meta["bemutató felirat"], slug),
       cover: meta["borító"] || "",
@@ -94,6 +98,14 @@ const courses = Object.entries(files)
   // a piszkozatok csak a helyi fejlesztői szerveren látszanak, élesben nem
   .filter((c) => import.meta.env.DEV || !c.draft)
   .sort((a, b) => b.date.localeCompare(a.date));
+
+// az Akadémia témakörei (AKADEMIA.kategoriak) a hozzájuk tartozó tanfolyamok számával; az üres is („hamarosan”)
+export function getAcademyCategories() {
+  return AKADEMIA_NEV.kategoriak
+    .map((slug) => KATEGORIAK.find((k) => k.slug === slug))
+    .filter(Boolean)
+    .map((k) => ({ ...k, count: courses.filter((c) => c.category?.slug === k.slug).length, lead: AKADEMIA_NEV.leirasok[k.slug] }));
+}
 
 export function getCourse(slug) {
   return courses.find((c) => c.slug === slug) || null;

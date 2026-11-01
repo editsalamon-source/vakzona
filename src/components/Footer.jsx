@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Logo from "./Logo";
 import KATEGORIAK from "../data/kategoriak";
-import courses, { AKADEMIA } from "../data/akademia";
+import courses, { AKADEMIA, getAcademyCategories } from "../data/akademia";
 import { FIOK } from "../utils/fiok";
 import FooterCSS from "../css/Footer.module.css";
 
@@ -32,6 +32,11 @@ function Footer() {
           <div className={FooterCSS.col}>
             <span className={FooterCSS.label}>{AKADEMIA.menu}</span>
             <Link to="/akademia">Minden tanfolyam</Link>
+            {getAcademyCategories().map((k) => (
+              <Link key={k.slug} to={`/akademia/${k.slug}`}>
+                {k.name}
+              </Link>
+            ))}
             {courses.map((c) => (
               <Link key={c.slug} to={`/akademia/${c.slug}`}>
                 {c.title}

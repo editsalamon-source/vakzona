@@ -3,6 +3,7 @@ cím: AI-ágensek
 alcím: Az MI-től a cselekvésig: működés, építés, biztonság, üzlet
 dátum: 2026-10-31
 kategória: MI
+címkék: Ágensek és technológia, Biztonság és kockázat, Vállalati bevezetés
 borító: cselekves
 bemutató: https://vimeo.com/1241811719
 logó: logo.svg

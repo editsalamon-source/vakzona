@@ -3,6 +3,7 @@ cím: Odaadjuk, de mi lesz vele?
 alcím: Mit vállalnak az MI-szolgáltatók az átadott adatokról, hol szivároghat az adat, mit vár el a jog, és mit tehet egy szervezet, ha baj van – adatkörönkénti döntési javaslattal, tíz szolgáltató nyilvános feltételei alapján.
 dátum: 2026-10-31
 kategória: MI
+címkék: Jog és adatvédelem, Vállalati bevezetés
 téma: MI és adatvédelem
 borító: pajzs
 kiemelés: 48 óra

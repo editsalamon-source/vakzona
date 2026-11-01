@@ -4,7 +4,7 @@ import Logo from "./Logo";
 import Arrow from "./Arrow";
 import CoverArt from "./CoverArt";
 import analyses, { getCategories } from "../data/analyses";
-import courses, { AKADEMIA, formatLength } from "../data/akademia";
+import courses, { AKADEMIA, formatLength, getAcademyCategories } from "../data/akademia";
 import { readProgress } from "../utils/haladas";
 import { FIOK, useAccount } from "../utils/fiok";
 import HeaderCSS from "../css/Header.module.css";
@@ -41,11 +41,19 @@ function AnalysesPanel() {
   );
 }
 
-// Akadémia: a tanfolyamok; ha a látogató már elkezdte, a haladása (localStorage) is.
+// Akadémia: felül a témakörök (MI, Tudomány), alatta a tanfolyamok; ha a látogató már elkezdte, a haladása is.
 function AcademyPanel() {
   useLocation(); // navigáláskor újraolvassa a haladást
   return (
     <div className={HeaderCSS.panel}>
+      <div className={HeaderCSS.panelCats}>
+        {getAcademyCategories().map((k) => (
+          <Link key={k.slug} to={`/akademia/${k.slug}`} className={HeaderCSS.item}>
+            <span className={HeaderCSS.itemTitle}>{k.name}</span>
+            <span className={HeaderCSS.itemMeta}>{k.count ? `${k.count} tanfolyam` : "hamarosan"}</span>
+          </Link>
+        ))}
+      </div>
       {courses.map((c) => {
         const done = readProgress(c);
         const total = c.lessons.length;

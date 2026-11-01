@@ -28,6 +28,15 @@ function CourseTile({ course }) {
           <Link to={`/akademia/${course.slug}`}>{course.title}</Link>
         </h2>
         {course.subtitle && <p className={CSS.tileText}>{course.subtitle}</p>}
+        {course.tags.length > 0 && (
+          <div className={CSS.tags} aria-label="Témák">
+            {course.tags.map((t) => (
+              <Link key={t.slug} to={`/akademia${course.category ? `/${course.category.slug}` : ""}?cimke=${t.slug}`} title={t.description}>
+                {t.name}
+              </Link>
+            ))}
+          </div>
+        )}
         {done > 0 && (
           <div className={CSS.progress} aria-label={`Haladás: ${done} / ${total} lecke`}>
             <span className={CSS.bar}><span style={{ transform: `scaleX(${done / total})` }} /></span>

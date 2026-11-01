@@ -3,6 +3,7 @@
 import { existsSync, readdirSync, readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import KATEGORIAK from "../src/data/kategoriak.js";
+import AKADEMIA from "../src/data/akademiaNev.js";
 
 const SITE_URL = "https://vakzona.com";
 const dir = join(import.meta.dirname, "..", "src", "content", "elemzesek");
@@ -12,6 +13,7 @@ const pages = [
   { path: "/elemzesek", freq: "weekly", priority: "0.9" },
   ...KATEGORIAK.map((k) => ({ path: `/${k.slug}`, freq: "weekly", priority: "0.8" })),
   { path: "/akademia", freq: "weekly", priority: "0.8" },
+  ...AKADEMIA.kategoriak.map((slug) => ({ path: `/akademia/${slug}`, freq: "weekly", priority: "0.7" })),
   { path: "/rolunk", freq: "yearly", priority: "0.5" },
 ];
 

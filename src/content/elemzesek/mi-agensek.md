@@ -3,6 +3,7 @@ cím: Válaszol vagy cselekszik?
 alcím: Mi az MI-ágens, miben más, mint a csevegőrobot, mire képes ma, milyen kockázatokkal jár, ki felel érte, és hol tart Magyarország – közérthetően, ellenőrizhető források alapján.
 dátum: 2026-10-13
 kategória: MI
+címkék: Alapok, Ágensek és technológia, Biztonság és kockázat
 téma: MI-ágensek
 borító: hurok
 kiemelés: 89 nap

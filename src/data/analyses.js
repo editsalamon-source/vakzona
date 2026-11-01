@@ -1,6 +1,7 @@
 import { Marked } from "marked";
 import slugify from "../utils/slugify";
 import KATEGORIAK, { getKategoria } from "./kategoriak";
+import { parseCimkek } from "./cimkek";
 
 // Minden elemzés egy Markdown fájl: src/content/elemzesek/<url-azonosító>.md
 // Az elején `kulcs: érték` fejléc --- sorok között (cím, alcím, dátum, kategória, téma, piszkozat,
@@ -93,6 +94,7 @@ const analyses = Object.entries(files)
       date: meta["dátum"] || "",
       category: category || { slug: "", name: "Egyéb" },
       topic: meta["téma"] || "Egyéb",
+      tags: parseCimkek(meta["címkék"], `${slug}.md`),
       draft: /^(igen|true)$/i.test(meta["piszkozat"] || ""),
       cover: meta["borító"] || "",
       highlight: meta["kiemelés"] || "",
