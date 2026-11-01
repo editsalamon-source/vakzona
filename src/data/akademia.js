@@ -14,11 +14,14 @@ export { AKADEMIA_NEV as AKADEMIA };
 // az első `##` előtti rész a nyilvános bevezető (belépés előtt is látszik), a többi csak belépés után.
 // A leckék videói és letölthető anyagai titkosítva vannak: public/akademia/<url-azonosító>/tartalom.enc
 // (scripts/akademia.mjs), a jelszó nélkül csak a fenti nyilvános adatok látszanak.
+// `szabad hozzáférés: igen`: a tanfolyam belépés nélkül nyílik, a tartalom titkosítatlanul a
+// src/content/akademia/<url-azonosító>.json fájlban van (ugyanaz a szkript írja).
 const files = import.meta.glob("../content/akademia/*.md", {
   query: "?raw",
   import: "default",
   eager: true,
 });
+const freeFiles = import.meta.glob("../content/akademia/*.json", { import: "default", eager: true });
 
 // "6:30" vagy "1:02:30" → másodperc
 export function toSeconds(value = "") {
@@ -89,6 +92,8 @@ const courses = Object.entries(files)
       logoText: meta["logó felirat"] || "",
       draft: /^(igen|true)$/i.test(meta["piszkozat"] || ""),
       sealed: `/akademia/${slug}/tartalom.enc`,
+      free: /^(igen|true)$/i.test(meta["szabad hozzáférés"] || ""),
+      content: freeFiles[path.replace(/\.md$/, ".json")] || null,
       modules,
       lessons,
       seconds: lessons.reduce((sum, l) => sum + l.seconds, 0),

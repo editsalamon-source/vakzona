@@ -5,6 +5,7 @@ import { readProgress } from "../utils/haladas";
 import Arrow from "./Arrow";
 import Reveal from "./Reveal";
 import VideoPlayer from "./VideoPlayer";
+import FreeBadge from "./FreeBadge";
 import CSS from "../css/Academy.module.css";
 
 // A tanfolyam csempéje: bemutatóvideó (kattintásra indul), leírás, tananyag-adatok, haladás.
@@ -17,6 +18,7 @@ function CourseTile({ course }) {
         cover={course.cover} badge={{ src: course.logo, text: course.logoText }} />
       <div className={CSS.tileBody}>
         <div className={CSS.metaRow}>
+          {course.free && <FreeBadge />}
           {course.category && <span className="tag tagAccent">{course.category.name}</span>}
           {course.level && <span className="meta">{course.level}</span>}
           <span className="meta">
@@ -44,7 +46,7 @@ function CourseTile({ course }) {
           </div>
         )}
         <Link to={`/akademia/${course.slug}`} className={`btn ${CSS.tileBtn}`}>
-          {done > 0 ? "Folytatom" : "Részletek és belépés"} <Arrow size={12} />
+          {done > 0 ? "Folytatom" : course.free ? "Megnézem" : "Részletek és belépés"} <Arrow size={12} />
         </Link>
       </div>
     </Reveal>

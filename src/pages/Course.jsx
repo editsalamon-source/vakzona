@@ -7,6 +7,7 @@ import { useProgress } from "../utils/haladas";
 import { FIOK, useAccount } from "../utils/fiok";
 import Arrow from "../components/Arrow";
 import VideoPlayer from "../components/VideoPlayer";
+import FreeBadge from "../components/FreeBadge";
 import NotFound from "./NotFound";
 import CSS from "../css/Course.module.css";
 import FormCSS from "../css/ProtectedPdf.module.css";
@@ -49,6 +50,7 @@ function Meta({ course, count = true }) {
     <div className={CSS.meta}>
       <Link to="/akademia" className="tag">{AKADEMIA.menu}</Link>
       {course.category && <span className="tag tagAccent">{course.category.name}</span>}
+      {course.free && <FreeBadge />}
       {course.level && <span className="meta">{course.level}</span>}
       {count && <span className="meta">{lessonCount(course)}</span>}
     </div>
@@ -340,8 +342,8 @@ function Classroom({ course, access }) {
           <Meta course={course} />
           <h1 className={CSS.classTitle}>{course.title}</h1>
         </div>
-        {/* fiókkal megnyitva a menü fiók ikonja visz a fiókhoz, itt nincs gomb */}
-        {access.via !== "account" && (
+        {/* fiókkal megnyitva a menü fiók ikonja visz a fiókhoz, szabad tanfolyamnál nincs miből kilépni */}
+        {access.via === "password" && (
           <button type="button" className="btn btnGhost" onClick={access.lock}>Kilépés</button>
         )}
       </div>
@@ -433,6 +435,7 @@ function CourseAccess({ course }) {
 
   // bejelentkezett felhasználónál a fiókhoz rendelt kulccsal nyitunk (ha a megjegyzett jelszó nem nyitotta meg)
   useEffect(() => {
+    if (course.free) return;
     if (account.user && access.status === "locked") access.unlockAccount();
     if (!account.user && access.via === "account") access.lock();
     // eslint-disable-next-line react-hooks/exhaustive-deps

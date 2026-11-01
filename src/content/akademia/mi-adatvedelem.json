@@ -1,0 +1,39 @@
+{
+  "leckek": {
+    "01": {
+      "video": "https://vimeo.com/1242150959",
+      "felirat": "01.vtt",
+      "leiras": "Tegyük fel, hogy holnap kiderül: egy MI-szolgáltatónak átadott adatunk kiszivárgott. Ki felel érte, és mennyit tudunk behajtani a szolgáltatón? Ez az első lecke bemutatja, miről szól a sorozat, és kik azok a szereplők, akik egy MI-szolgáltatás használatakor az adat sorsát meghatározzák.\n\n**Ebben a leckében:**\n- a sorozat négy kérdése, amelyet egy vezető feltesz, mielőtt MI-szolgáltatásról dönt\n- három gyakori feltételezés (üzleti előfizetésnél biztonságban vagyunk, ha a szolgáltató hibázik, ő fizet, ha európai, rendben vagyunk), amelyre a sorozat végén visszatérünk\n- a szereplők: adatkezelő, adatfeldolgozó, alfeldolgozó, érintett, adatgazda és felügyeleti hatóság\n- miért marad nálunk a felelősség akkor is, ha a szolgáltató adatfeldolgozóként jár el"
+    },
+    "02": {
+      "video": "https://vimeo.com/1242151052",
+      "felirat": "02.vtt",
+      "leiras": "A nagy szolgáltatók üzleti ajánlatainál van egy közös alapszint, de ez csak kiindulópont. Ez a lecke megmutatja, hol olvashatók a vállalások, miben egységes ma a piac, hol válnak el a vállalások, és mennyit érnek.\n\n**Ebben a leckében:**\n- négy dokumentumtípus és a jogi erejük: szolgáltatási feltételek, adatfeldolgozói szerződés (DPA), súgóoldalak, tanúsítványok\n- öt dolog, amelyben a piac ma lényegében egységes, például hogy az ügyfél adatán nem tanítanak modellt\n- négy fogalom: adatmegőrzés nélküli feldolgozás (ZDR), felelősségkorlátozás, kártalanítás, incidens-értesítés, és a hozzájuk tartozó négy szám\n- miért számít, hol áll egy vállalás: a súgóoldal nem szerződés\n- a fogyasztói és az üzleti feltételek különbsége, és mi következik ebből a vezetőnek"
+    },
+    "03": {
+      "video": "https://vimeo.com/1242151143",
+      "felirat": "03.vtt",
+      "leiras": "Ha MI-szolgáltatást használunk, az adat több úton is kiszivároghat, és a szerződés ezek közül nem mindegyik ellen véd. Ez a lecke áttekinti a kockázati forrásokat, és megmutatja, mi egészíti ki a szerződést.\n\n**Ebben a leckében:**\n- négy kockázati forrás: a szolgáltató működése, a helyszín és a joghatóság, a támadás és a hiba, a saját szervezetünk\n- a súlyosság szerint kiemelkedő hét kockázat\n- három kevésbé ismert kockázat közelebbről: rejtett utasítás (prompt injection) egy szerződéstervezet példáján, az ügyfelek elkülönítésének hibája és az árnyék-MI (shadow AI)\n- mi ellen véd a szerződés, és mi ellen nem, valamint négy kontroll, amely kiegészíti"
+    },
+    "04": {
+      "video": "https://vimeo.com/1242151222",
+      "felirat": "04.vtt",
+      "leiras": "Ez a lecke a jogi keretet mutatja be: mit követel meg a jog mindenkitől, hogyan szigorítja az adat fajtája a feltételeket, és mi történik, ha az adat elhagyja az Európai Uniót. Szakértői áttekintés, nem jogi tanácsadás.\n\n**Ebben a leckében:**\n- a közös jogi minimum négy eleme: adatfeldolgozói szerződés, megfelelő biztonság, incidens-értesítés, adattovábbítási jogalap\n- négy adatkör: személyes adat, üzleti titok, hivatásbeli titok (ügyvédi, orvosi, banktitok), közszféra-adat és minősített adat\n- adattovábbítás az Európai Gazdasági Térségen kívülre: standard szerződéses kikötések (SCC), a Schrems II ítélet és az uniós és amerikai adatvédelmi keret (DPF)\n- miért kell tartalék jogalap, és mit kérjünk a külföldi hatósági megkeresésekről"
+    },
+    "05": {
+      "video": "https://vimeo.com/1242151299",
+      "felirat": "05.vtt",
+      "leiras": "A szabályozás mozgásban van, de a legsúlyosabb hiányokat nem zárja be. Ez a lecke megmutatja, mi változik, milyen utak állnak nyitva, ha mégis baj történik, és mi következik ebből a szerződéskötésre.\n\n**Ebben a leckében:**\n- öt várható változás: az uniós MI-rendelet, az új termékfelelősségi irányelv, a szolgáltatói feltételek egyoldalú változása, a Data Act és az adatvédelmi keret elleni fellebbezés\n- három jogérvényesítési út és a korlátaik: szerződéses igény, az érintett kártérítési igénye, hatósági eljárás\n- egy példa a hatósági út bizonytalanságára\n- három dolog, amelyet minden MI-szerződésnél érdemes kérni, mert a jogérvényesítés hatékonysága az aláíráskor dől el"
+    },
+    "06": {
+      "video": "https://vimeo.com/1242151371",
+      "felirat": "06.vtt",
+      "leiras": "Ez a lecke az eddigieket egy döntési térképpé rakja össze: melyik adatot milyen megoldással lehet MI-szolgáltatásnak átadni. A térkép szakértői értékelés, a 2026. októberi állapot szerint.\n\n**Ebben a leckében:**\n- öt konstrukció: fogyasztói szolgáltatás, közvetlen üzleti szolgáltatás, nagy felhőszolgáltatók MI-platformja, EU-s szuverén felhő, helyben futtatott nyílt súlyú modell\n- a döntési térkép a konstrukciók és az adatkörök szerint, egyetlen feltétel nélküli igennel\n- mit jelent a „feltétellel” jelölés, és miért ez a leggyakrabban félreértett pont\n- öt szerződéses és három szervezeti kulcsfeltétel"
+    },
+    "07": {
+      "video": "https://vimeo.com/1242151452",
+      "felirat": "07.vtt",
+      "leiras": "A sorozat utolsó leckéje a teendőket veszi sorra, és visszatér az első leckében feltett három mondatra: mennyi igaz belőlük.\n\n**Ebben a leckében:**\n- hat dolog, amelyet a szerződés előtt be kell kérni\n- hat pont, amelyet a tárgyaláson érdemes elérni, és mi a teendő azzal, amit nem kapunk meg\n- hat belső kontroll, az adatosztályozástól az éves felülvizsgálatig\n- mérleg a három gyakori feltételezésről, és a sorozat három fő üzenete"
+    }
+  }
+}

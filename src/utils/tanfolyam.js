@@ -28,13 +28,14 @@ function store(slug, value) {
 }
 
 // status: checking | locked | busy | wrong | error | open; fiókos belépésnél még: noaccess | stale
-// via: "password" | "account" – mivel nyílt meg
+// via: "password" | "account" | "free" – mivel nyílt meg
+// A szabad hozzáférésű tanfolyam (course.free) tartalma titkosítatlan, azonnal nyitva van.
 export function useCourseContent(course) {
-  const [status, setStatus] = useState("checking");
-  const [content, setContent] = useState(null);
+  const [status, setStatus] = useState(course.free ? "open" : "checking");
+  const [content, setContent] = useState(course.free ? course.content || { leckek: {} } : null);
   const [key, setKey] = useState(null);
   const [message, setMessage] = useState("");
-  const [via, setVia] = useState(null);
+  const [via, setVia] = useState(course.free ? "free" : null);
 
   // megnyitás a fiókhoz rendelt kulccsal (src/utils/fiok.js); ezt nem jegyezzük meg, a fiók minden
   // látogatáskor újra adja, így a hozzáférés visszavonása is érvényesül
@@ -89,10 +90,11 @@ export function useCourseContent(course) {
   );
 
   useEffect(() => {
+    if (course.free) return;
     setContent(null);
     setKey(null);
     unlock(null);
-  }, [unlock]);
+  }, [unlock, course]);
 
   const lock = useCallback(() => {
     store(course.slug, null);
@@ -102,9 +104,14 @@ export function useCourseContent(course) {
     setStatus("locked");
   }, [course]);
 
-  // egy titkosított fájl (anyag, felirat) visszafejtése a tanfolyam kulcsával
+  // egy titkosított fájl (anyag, felirat) visszafejtése a tanfolyam kulcsával (szabad tanfolyamnál sima letöltés)
   const unseal = useCallback(
     async (dir, file) => {
+      if (course.free) {
+        const res = await fetch(`/akademia/${course.slug}/${dir}/${encodeURIComponent(file)}`);
+        if (!res.ok) throw new Error("A fájl nem nyitható meg.");
+        return new Uint8Array(await res.arrayBuffer());
+      }
       const plain = await open(key, await fetchSealed(`/akademia/${course.slug}/${dir}/${encodeURIComponent(file)}.enc`));
       if (!plain) throw new Error("A fájl nem nyitható meg.");
       return plain;

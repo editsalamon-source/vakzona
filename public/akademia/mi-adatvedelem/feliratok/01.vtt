@@ -1,0 +1,296 @@
+WEBVTT
+
+00:00:01.400 --> 00:00:06.263
+Üdvözöljük az MI-szolgáltatások és
+adatvédelem sorozat első részében!
+
+00:00:06.583 --> 00:00:11.923
+Ebben a részben áttekintjük, miről szól
+a sorozat, és megismerjük a szereplőket,
+
+00:00:11.923 --> 00:00:16.161
+akik egy MI-szolgáltatás használatakor
+az adat sorsát meghatározzák.
+
+00:00:17.661 --> 00:00:24.040
+Tegyük fel, hogy holnap kiderül: egy
+MI-szolgáltatónak átadott adatunk kiszivárgott.
+
+00:00:24.040 --> 00:00:28.046
+Ki felel érte, és mennyit tudunk
+behajtani a szolgáltatón?
+
+00:00:28.366 --> 00:00:33.080
+Erről szól ez a sorozat. A
+kérdés ugyanis ma már nem az,
+
+00:00:33.080 --> 00:00:35.957
+hogy használjunk-e
+mesterséges intelligenciát,
+
+00:00:36.277 --> 00:00:39.836
+hanem hogy milyen feltételekkel
+tehetjük meg biztonságosan.
+
+00:00:41.336 --> 00:00:44.429
+Ebben az első részben
+három dolgot nézünk meg.
+
+00:00:44.749 --> 00:00:47.100
+Először a sorozat négy kérdését,
+
+00:00:47.420 --> 00:00:52.395
+aztán három gyakori feltételezést,
+amelyre a sorozat végén visszatérünk,
+
+00:00:52.715 --> 00:00:56.626
+végül a szereplőket: ki
+kicsoda, és ki miért felel.
+
+00:00:58.026 --> 00:01:00.292
+Kezdjük a sorozat felépítésével.
+
+00:01:01.992 --> 00:01:06.968
+A sorozat négy kérdésre épül.
+Ezeket teszi fel egy vezető,
+
+00:01:06.968 --> 00:01:09.280
+mielőtt MI-szolgáltatásról dönt.
+
+00:01:09.600 --> 00:01:14.849
+Az első: mit vállalnak ma
+a szolgáltatók? Megnézzük,
+
+00:01:14.849 --> 00:01:18.581
+miben egységes a piac, és
+hol válnak el a vállalások.
+
+00:01:18.901 --> 00:01:25.011
+A második: hol szivároghat az adat?
+Áttekintjük a kockázatok forrásait,
+
+00:01:25.011 --> 00:01:28.134
+és azt, hogy mennyire
+véd ellenük a szerződés.
+
+00:01:28.454 --> 00:01:33.631
+A harmadik: mi van, ha baj
+van? Itt a jogi keretről,
+
+00:01:33.631 --> 00:01:38.037
+a várható változásokról és a
+jogérvényesítés korlátairól lesz szó.
+
+00:01:38.357 --> 00:01:44.783
+A negyedik: mit döntsünk, és mit tegyünk?
+Egy döntési térképen megmutatjuk,
+
+00:01:44.783 --> 00:01:48.808
+melyik adatot milyen megoldással
+lehet MI-szolgáltatásnak átadni,
+
+00:01:48.808 --> 00:01:51.422
+és mire kell figyelni a szerződéskötésnél.
+
+00:01:51.742 --> 00:01:56.989
+Fontos tudni, hogy a bemutatott kép
+a 2026. októberi állapotot tükrözi,
+
+00:01:56.989 --> 00:02:00.214
+mert a szolgáltatói feltételek változnak.
+
+00:02:00.214 --> 00:02:04.231
+Az anyag szakértői áttekintés,
+nem jogi tanácsadás.
+
+00:02:05.631 --> 00:02:10.460
+Mielőtt belekezdünk, nézzünk meg három
+mondatot, amely gyakran elhangzik,
+
+00:02:10.460 --> 00:02:14.013
+amikor egy szervezet
+MI-szolgáltatás bevezetéséről dönt.
+
+00:02:15.713 --> 00:02:17.931
+Mindhárom mondatban van igazság,
+
+00:02:17.931 --> 00:02:21.879
+és mindhárom elég meggyőző ahhoz,
+hogy egy döntés rá épüljön.
+
+00:02:22.199 --> 00:02:27.098
+Az első: üzleti előfizetésnél
+biztonságban vagyunk.
+
+00:02:27.098 --> 00:02:33.009
+Az üzleti csomag valóban szerződéses
+garanciákat ad. De vajon mindenre?
+
+00:02:33.329 --> 00:02:38.223
+A második: ha a szolgáltató
+hibázik, akkor ő fizet.
+
+00:02:38.223 --> 00:02:44.175
+A szerződés valóban felelősséget
+telepít a szolgáltatóra. De mekkorát?
+
+00:02:44.495 --> 00:02:49.690
+A harmadik: ha a szolgáltató
+európai, akkor rendben vagyunk.
+
+00:02:49.690 --> 00:02:53.969
+Az európai székhely
+sokat számít. De elég-e?
+
+00:02:54.289 --> 00:02:57.683
+A sorozat végén visszatérünk
+erre a három mondatra,
+
+00:02:57.683 --> 00:03:00.199
+és megnézzük, mennyi igaz belőlük.
+
+00:03:01.599 --> 00:03:06.451
+Most tisztázzuk, ki kicsoda, mert a
+felelősség a szerepekből következik.
+
+00:03:08.151 --> 00:03:13.272
+Egy MI-szolgáltatás használatakor három
+szereplő dolgozik közvetlenül az adattal.
+
+00:03:13.592 --> 00:03:16.215
+Az adatkezelő az, aki eldönti,
+
+00:03:16.215 --> 00:03:20.165
+milyen célra és milyen eszközzel
+kezel személyes adatot.
+
+00:03:20.165 --> 00:03:24.015
+Ha MI-szolgáltatást használunk,
+ez a mi szervezetünk,
+
+00:03:24.015 --> 00:03:26.724
+és mi felelünk az adatkezelés egészéért.
+
+00:03:27.044 --> 00:03:33.028
+Az adatfeldolgozó a mi nevünkben és a mi
+utasításaink szerint dolgozik az adattal.
+
+00:03:33.028 --> 00:03:38.138
+Üzleti szerződés esetén az MI-szolgáltató
+jellemzően ebben a szerepben van.
+
+00:03:38.458 --> 00:03:44.217
+Saját célra, például a modell
+tanítására, nem használhatja az adatot.
+
+00:03:44.217 --> 00:03:49.454
+Ha mégis saját célra használja, abban a
+körben már maga is adatkezelővé válik.
+
+00:03:49.774 --> 00:03:53.211
+Az alfeldolgozó az, akit
+a szolgáltató von be,
+
+00:03:53.211 --> 00:03:57.636
+például egy felhő-üzemeltető vagy
+egy ügyfélszolgálati partner.
+
+00:03:57.636 --> 00:04:02.337
+Értük a szolgáltató felel felénk, de
+az adatunk így több kézen megy át.
+
+00:04:03.837 --> 00:04:07.175
+Rajtuk kívül még három
+szereplőt érdemes ismerni.
+
+00:04:07.495 --> 00:04:09.854
+Az érintett az a természetes személy,
+
+00:04:09.854 --> 00:04:15.041
+akinek az adatáról szó van:
+ügyfél, munkatárs vagy partner.
+
+00:04:15.041 --> 00:04:18.179
+Tájékoztatást kérhet
+az adatai kezeléséről,
+
+00:04:18.179 --> 00:04:21.041
+panaszt tehet, és kártérítést követelhet.
+
+00:04:21.361 --> 00:04:26.220
+Az adatgazda nem jogszabályi
+fogalom, hanem belső szerep.
+
+00:04:26.220 --> 00:04:28.932
+A szervezeten belül az
+a vezető vagy egység,
+
+00:04:28.932 --> 00:04:34.270
+aki egy adatkörért, például az ügyféladatokért
+vagy a munkavállalói adatokért felel,
+
+00:04:34.270 --> 00:04:36.684
+és dönt arról, mire használható.
+
+00:04:37.004 --> 00:04:41.925
+Amikor arról kell dönteni, hogy egy adatot
+átadhatunk-e egy MI-szolgáltatásnak,
+
+00:04:41.925 --> 00:04:43.784
+az adatgazda a kulcsszereplő.
+
+00:04:44.104 --> 00:04:46.335
+Végül a felügyeleti hatóság,
+
+00:04:46.335 --> 00:04:51.710
+Magyarországon a Nemzeti Adatvédelmi
+és Információszabadság Hatóság.
+
+00:04:51.710 --> 00:04:54.735
+Vizsgálhat, kötelezhet és bírságolhat,
+
+00:04:54.735 --> 00:04:59.994
+de az érintettnek kártérítést nem
+ítél meg. Arra bírósági út van.
+
+00:05:01.494 --> 00:05:04.839
+Ebből következik a sorozat
+egyik legfontosabb gondolata.
+
+00:05:05.159 --> 00:05:10.129
+Ha a szolgáltató adatfeldolgozóként
+jár el, a felelősség nem száll át rá,
+
+00:05:10.449 --> 00:05:16.995
+hanem nálunk marad. Adatkezelőként a nevünkben
+eljáró adatfeldolgozóért is felelünk,
+
+00:05:16.995 --> 00:05:21.057
+és a kárt nem háríthatjuk át azzal,
+hogy a szolgáltató mulasztott.
+
+00:05:22.557 --> 00:05:25.541
+Röviden összefoglalva: a kérdés nem az,
+
+00:05:25.541 --> 00:05:30.979
+hogy használjunk-e mesterséges intelligenciát,
+hanem hogy milyen feltételekkel.
+
+00:05:30.979 --> 00:05:35.866
+Adatkezelőként a felelősség nálunk
+marad, és az adatgazda dönt arról,
+
+00:05:35.866 --> 00:05:39.094
+hogy egy adatkör átadható-e
+egy MI-szolgáltatásnak.
+
+00:05:39.414 --> 00:05:43.518
+A következő részben megnézzük,
+mit vállalnak ma a szolgáltatók:
+
+00:05:43.518 --> 00:05:48.469
+hol olvashatók a vállalások, miben
+egységes a piac, és hol válnak el.
+
+00:05:48.789 --> 00:05:51.335
+Viszontlátásra a következő részben!

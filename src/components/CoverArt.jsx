@@ -321,6 +321,43 @@ function Jartassag() {
   );
 }
 
+// MI-szolgáltatások és adatvédelem tanfolyam: döntési térkép (sorok: konstrukciók, oszlopok: adatkörök).
+// A felső sor csupa „nem” (áthúzott), a többi cella szaggatott („feltétellel”), egyetlen narancs
+// cella a feltétel nélküli igen.
+function Dontesiterkep() {
+  const cols = [0, 1, 2, 3, 4];
+  const rows = [0, 1, 2, 3, 4];
+  return (
+    <>
+      <rect x="60" y="40" width="280" height="230" rx="12" fill="currentColor" fillOpacity="0.03" strokeWidth="1.5" />
+      {cols.map((c) => (
+        <line key={c} x1={112 + c * 48} y1="56" x2={136 + c * 48} y2="56" strokeWidth="2" opacity="0.5" />
+      ))}
+      {rows.map((r) => (
+        <line key={r} x1="74" y1={90 + r * 38} x2="94" y2={90 + r * 38} strokeWidth="2" opacity="0.5" />
+      ))}
+      {rows.map((r) =>
+        cols.map((c) => {
+          const x = 104 + c * 48;
+          const y = 74 + r * 38;
+          const yes = r === 4 && c === 1;
+          const no = r === 0 || (c === 4 && r < 4);
+          return (
+            <g key={`${r}-${c}`}>
+              <rect x={x} y={y} width="40" height="30" rx="5"
+                fill={yes ? A : "currentColor"} fillOpacity={yes ? 0.18 : no ? 0.06 : 0.02}
+                stroke={yes ? A : "currentColor"} strokeWidth="1.5" strokeDasharray={yes || no ? undefined : "3 3"} />
+              {no && <path d={`M${x + 14} ${y + 9} l12 12 M${x + 26} ${y + 9} l-12 12`} strokeWidth="1.5" opacity="0.6" />}
+              {!yes && !no && <circle cx={x + 20} cy={y + 15} r="3" fill="currentColor" stroke="none" opacity="0.45" />}
+              {yes && <path d={`M${x + 12} ${y + 15} l6 6 l11 -12`} stroke={A} strokeWidth="2.5" strokeLinejoin="round" />}
+            </g>
+          );
+        })
+      )}
+    </>
+  );
+}
+
 const MOTIFS = {
   naptar: Naptar,
   osszefogas: Osszefogas,
@@ -333,6 +370,7 @@ const MOTIFS = {
   utiterv: Utiterv,
   cselekves: Cselekves,
   jartassag: Jartassag,
+  dontesiterkep: Dontesiterkep,
 };
 
 function CoverArt({ motif, category, className }) {

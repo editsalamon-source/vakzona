@@ -63,6 +63,7 @@ function AcademyPanel() {
             {c.subtitle && <span className={HeaderCSS.itemText}>{c.subtitle}</span>}
             <span className={HeaderCSS.itemMeta}>
               {total} lecke{c.seconds > 0 && ` · ${formatLength(c.seconds)}`}
+              {c.free && " · szabadon hozzáférhető"}
             </span>
             {done > 0 && (
               <span className={HeaderCSS.resume}>

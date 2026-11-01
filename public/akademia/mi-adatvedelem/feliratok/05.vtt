@@ -1,0 +1,265 @@
+WEBVTT
+
+00:00:01.400 --> 00:00:06.204
+Üdvözöljük az MI-szolgáltatások és
+adatvédelem sorozat ötödik részében!
+
+00:00:06.524 --> 00:00:10.229
+Ebben a részben megnézzük, mi
+változik a szabályozásban,
+
+00:00:10.229 --> 00:00:13.554
+és milyen utak állnak nyitva,
+ha mégis baj történik.
+
+00:00:15.054 --> 00:00:19.230
+Ez a rész is szakértői
+áttekintés, nem jogi tanácsadás,
+
+00:00:19.230 --> 00:00:21.766
+és nem jósolja meg egy
+jogvita kimenetelét.
+
+00:00:22.086 --> 00:00:25.687
+Először a szabályozás várható
+változásait nézzük meg,
+
+00:00:26.007 --> 00:00:29.841
+aztán a három jogérvényesítési
+utat és a korlátaikat,
+
+00:00:30.161 --> 00:00:34.322
+végül azt, hogy mi következik
+mindebből a szerződéskötésre.
+
+00:00:35.722 --> 00:00:42.417
+A szabályozás mozgásban van. Nézzük meg,
+mi változik, és ez mit jelent nekünk.
+
+00:00:44.117 --> 00:00:46.264
+Öt változást érdemes ismerni.
+
+00:00:46.584 --> 00:00:54.168
+Az uniós MI-rendelet, az AI Act általános
+alkalmazása 2026 augusztusában kezdődött.
+
+00:00:54.168 --> 00:00:58.006
+Ez főleg dokumentációs és
+kiberbiztonsági kötelezettséget
+
+00:00:58.006 --> 00:01:01.351
+jelent a modellszolgáltatóknak,
+ránk közvetetten hat.
+
+00:01:01.671 --> 00:01:05.270
+A 2026 decemberétől
+forgalomba hozott termékekre
+
+00:01:05.270 --> 00:01:08.307
+az új termékfelelősségi
+irányelv vonatkozik,
+
+00:01:08.307 --> 00:01:11.282
+amely a szoftvert is terméknek tekinti.
+
+00:01:11.282 --> 00:01:16.256
+Hogy ez hogyan hat a szerződéses felelősségi
+plafonra, ma még nyitott kérdés.
+
+00:01:16.576 --> 00:01:23.153
+2026 végén lejár az AWS programszintű
+ZDR-je. Ez jól mutatja,
+
+00:01:23.153 --> 00:01:26.730
+hogy a szolgáltatói feltételek
+egyoldalúan változhatnak.
+
+00:01:27.050 --> 00:01:34.077
+2027 januárjától a Data Act alapján nem
+lehet szolgáltatóváltási díjat felszámítani.
+
+00:01:34.077 --> 00:01:38.505
+Ez megkönnyíti a kilépést, ha a
+szolgáltató feltételei romlanak.
+
+00:01:38.825 --> 00:01:44.650
+Végül az uniós és amerikai adatvédelmi
+keret ellen fellebbezés van folyamatban.
+
+00:01:44.650 --> 00:01:48.396
+A jogalap ezért bizonytalan,
+és tartalék jogalap kell.
+
+00:01:49.896 --> 00:01:53.324
+Vezetői szemmel a legfontosabb
+tanulság a következő.
+
+00:01:53.644 --> 00:01:57.109
+Nincs olyan hatályos vagy
+közelgő kötelező változás,
+
+00:01:57.109 --> 00:01:59.508
+amely a legsúlyosabb hiányokat megoldaná.
+
+00:01:59.828 --> 00:02:03.241
+A felelősségi plafont és az
+adatvédelmi kártalanítás
+
+00:02:03.241 --> 00:02:05.873
+hiányát csak a saját szerződésünk kezeli.
+
+00:02:07.273 --> 00:02:13.380
+Mi történik, ha mégis baj van? Három
+jogérvényesítési út áll nyitva,
+
+00:02:13.380 --> 00:02:15.448
+és mindegyiknek megvan a korlátja.
+
+00:02:17.148 --> 00:02:21.894
+Az első a szerződéses igény.
+Ez a legközvetlenebb út,
+
+00:02:21.894 --> 00:02:23.834
+mert mi vagyunk a szerződő fél.
+
+00:02:24.154 --> 00:02:28.416
+A felelősség viszont jellemzően
+12 havi díjra korlátozott,
+
+00:02:28.416 --> 00:02:33.666
+adatvédelmi kártalanítás nincs, és hogy hol,
+melyik ország joga szerint perelhetünk,
+
+00:02:33.666 --> 00:02:37.128
+az a standard feltételekből
+gyakran nem derül ki.
+
+00:02:37.128 --> 00:02:41.426
+Üzleti ügyfélként a fogyasztókat
+védő szabályokra sem hivatkozhatunk.
+
+00:02:41.746 --> 00:02:45.995
+A második az érintett
+kártérítési igénye a GDPR 82.
+
+00:02:45.995 --> 00:02:50.208
+cikke alapján, amelyet velünk
+szemben is érvényesíthet.
+
+00:02:50.208 --> 00:02:55.145
+Az uniós bírósági gyakorlat az
+érintettnek kedvez: a kár fogalma tág,
+
+00:02:55.145 --> 00:02:59.986
+és nekünk kell bizonyítanunk, hogy a
+biztonsági intézkedéseink megfelelők voltak.
+
+00:03:00.305 --> 00:03:04.052
+Egy külső támadás önmagában nem mentesít.
+
+00:03:04.052 --> 00:03:07.852
+A bizonyításhoz pedig a
+szolgáltató dokumentációja kell,
+
+00:03:07.852 --> 00:03:11.001
+miközben az ügyfél-audit
+lehetősége korlátozott.
+
+00:03:11.321 --> 00:03:17.459
+A harmadik a hatósági eljárás. A hatóság
+bírságot szabhat ki és kötelezhet,
+
+00:03:17.459 --> 00:03:21.121
+de kártérítést nem ítél meg,
+és a kimenetel bizonytalan.
+
+00:03:22.621 --> 00:03:25.741
+Egy példa a hatósági út bizonytalanságára.
+
+00:03:26.061 --> 00:03:32.470
+Az olasz adatvédelmi hatóság 15 millió
+eurós bírságot szabott ki az OpenAI-ra.
+
+00:03:32.470 --> 00:03:38.320
+Egy római bíróság 2026 márciusában
+ezt hatásköri okból megsemmisítette,
+
+00:03:38.320 --> 00:03:43.708
+mert az OpenAI ír leányvállalata miatt
+az ír hatóság lett volna illetékes.
+
+00:03:43.708 --> 00:03:46.800
+Az érdemi kérdésekben
+nem született döntés.
+
+00:03:47.120 --> 00:03:51.657
+És ha a bírság meg is marad: a
+hatósági bírság büntető célú,
+
+00:03:51.657 --> 00:03:57.221
+nem kártérítés. Abból sem az
+érintett, sem a megrendelő nem kap.
+
+00:03:58.621 --> 00:04:00.438
+Mi következik mindebből?
+
+00:04:02.138 --> 00:04:07.422
+A jogérvényesítés hatékonysága a
+szerződés megkötésekor dől el.
+
+00:04:07.422 --> 00:04:10.685
+Incidens után már csak
+azt tudjuk érvényesíteni,
+
+00:04:10.685 --> 00:04:15.514
+ami a szerződésben áll. Ezért három dolgot
+érdemes minden MI-szerződésnél kérni.
+
+00:04:15.834 --> 00:04:22.152
+Az első: órában mért incidens-értesítési
+határidő, a „késedelem nélkül” helyett.
+
+00:04:22.472 --> 00:04:28.411
+A második: olyan felelősségkorlátozás,
+amely az adatvédelmi károkat nem zárja ki,
+
+00:04:28.411 --> 00:04:31.935
+vagy rájuk külön, a várható
+kárral arányos plafont ad.
+
+00:04:32.255 --> 00:04:38.739
+A harmadik: adatvédelmi kártalanítás, a
+szellemi tulajdoni kártalanítás mellett.
+
+00:04:38.739 --> 00:04:43.689
+Az utóbbi kettőt ma egyik nagy szolgáltató
+sem adja meg standard feltételekben,
+
+00:04:43.689 --> 00:04:45.298
+tehát tárgyalni kell róla.
+
+00:04:46.798 --> 00:04:50.219
+Röviden összefoglalva:
+a szabályozás változik,
+
+00:04:50.219 --> 00:04:54.557
+de a legsúlyosabb hiányokat
+nem zárja be. Ha baj van,
+
+00:04:54.557 --> 00:04:57.669
+mindhárom jogérvényesítési út korlátozott,
+
+00:04:57.669 --> 00:05:01.219
+ezért a védelmet a szerződés
+aláírásakor kell kialakítani.
+
+00:05:01.539 --> 00:05:04.928
+A következő részben a
+döntési térképet nézzük meg:
+
+00:05:04.928 --> 00:05:08.840
+melyik adatot milyen megoldással
+lehet MI-szolgáltatásnak átadni.
+
+00:05:09.160 --> 00:05:11.706
+Viszontlátásra a következő részben!

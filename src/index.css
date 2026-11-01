@@ -66,6 +66,20 @@ h3 { font-size: 1.3rem; margin: 1.6em 0 .4em; letter-spacing: -0.02em; }
   text-decoration: none;
 }
 .tagAccent { color: #9a3412; background: var(--accent-soft); border-color: transparent; }
+.badgeFree {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .02em;
+  color: #fff;
+  background: var(--ink);
+  border-radius: 999px;
+  padding: 5px 11px 5px 9px;
+  white-space: nowrap;
+}
+.badgeFree svg { color: var(--accent); }
 
 .eyebrow {
   font-size: .72rem;

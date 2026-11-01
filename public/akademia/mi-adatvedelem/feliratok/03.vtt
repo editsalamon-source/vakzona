@@ -1,0 +1,294 @@
+WEBVTT
+
+00:00:01.400 --> 00:00:06.253
+Üdvözöljük az MI-szolgáltatások és
+adatvédelem sorozat harmadik részében!
+
+00:00:06.573 --> 00:00:10.262
+Ebben a részben azt nézzük meg,
+hol szivároghat ki az adat,
+
+00:00:10.262 --> 00:00:14.811
+ha MI-szolgáltatást használunk, és
+ezek ellen mennyire véd a szerződés.
+
+00:00:16.311 --> 00:00:18.162
+Három lépésben haladunk.
+
+00:00:18.482 --> 00:00:21.642
+Először áttekintjük a
+négy kockázati forrást,
+
+00:00:21.962 --> 00:00:25.946
+aztán három kevésbé ismert
+kockázatot nézünk meg közelebbről,
+
+00:00:26.266 --> 00:00:31.312
+végül azt, hogy ezek közül mi ellen
+véd a szerződés, és mi ellen nem.
+
+00:00:32.712 --> 00:00:36.947
+Honnan szivároghat ki az adat,
+ha MI-szolgáltatást használunk?
+
+00:00:38.647 --> 00:00:41.861
+Négy kockázati forrást
+érdemes megkülönböztetni,
+
+00:00:41.861 --> 00:00:45.689
+és mindegyiknél megnézzük,
+mennyire véd ellene a szerződés.
+
+00:00:46.009 --> 00:00:50.396
+Az első a szolgáltató saját
+működése: a modelltanítás,
+
+00:00:50.396 --> 00:00:54.283
+az adatok megőrzése és
+az alfeldolgozói lánc.
+
+00:00:54.283 --> 00:00:59.483
+Ezek a szolgáltató tervezett adathasználatai,
+és ellenük a szerződés jól véd.
+
+00:00:59.803 --> 00:01:02.327
+A második a helyszín és a joghatóság:
+
+00:01:02.327 --> 00:01:05.752
+ha az adatot az Európai
+Unión kívül dolgozzák fel,
+
+00:01:05.752 --> 00:01:09.377
+vagy egy külföldi hatóság
+hozzáférést kér hozzá.
+
+00:01:09.377 --> 00:01:14.281
+Ez ellen a szerződés csak részben véd,
+mert a külföldi jogot nem írhatja felül.
+
+00:01:14.601 --> 00:01:19.027
+A harmadik a támadás és a hiba,
+például a rejtett utasítás vagy az,
+
+00:01:19.027 --> 00:01:22.777
+hogy a szolgáltató hibásan
+különíti el az ügyfeleit.
+
+00:01:22.777 --> 00:01:28.687
+Ezek ellen a szerződés alig véd: legfeljebb
+kártérítést ad, korlátozott összegben.
+
+00:01:29.007 --> 00:01:34.904
+A negyedik a saját szervezetünk: a nem
+jóváhagyott eszközök és az egyéni fiókok.
+
+00:01:34.904 --> 00:01:40.003
+Ez ellen a szerződés egyáltalán nem véd,
+hiszen ilyenkor nincs is szerződésünk.
+
+00:01:41.503 --> 00:01:46.052
+Ha a kockázatokat súlyosság szerint
+rangsoroljuk, hét emelkedik ki.
+
+00:01:46.372 --> 00:01:51.818
+A fogyasztói szolgáltatások használata,
+az Európai Unión kívüli feldolgozás,
+
+00:01:51.818 --> 00:01:55.732
+a rejtett utasítás és az ügyfelek
+közötti elkülönítés hibája,
+
+00:01:56.052 --> 00:01:58.239
+valamint az alfeldolgozói lánc,
+
+00:01:58.239 --> 00:02:01.614
+a harmadik országbeli
+hatóságok hozzáférése és a nem
+
+00:02:01.614 --> 00:02:04.480
+jóváhagyott eszközök használata
+a szervezeten belül.
+
+00:02:05.880 --> 00:02:08.532
+Három kockázatot nézünk meg közelebbről,
+
+00:02:08.532 --> 00:02:12.865
+mert ezek kevésbé ismertek, és a
+szerződés sem véd ellenük igazán.
+
+00:02:14.565 --> 00:02:18.662
+Az első a rejtett utasítás,
+angolul prompt injection.
+
+00:02:18.982 --> 00:02:24.304
+Tegyük fel, hogy egy beszállító
+szerződéstervezetét az MI-vel foglaltatjuk össze.
+
+00:02:24.624 --> 00:02:29.471
+A dokumentumban azonban van egy fehér
+betűvel írt sor, amelyet mi nem látunk,
+
+00:02:29.471 --> 00:02:35.185
+de a modell elolvas: azt írja, hogy a
+kötbér és a fizetési feltétel elfogadható.
+
+00:02:35.505 --> 00:02:38.544
+A modell pedig ezt bele is
+írja az összefoglalóba.
+
+00:02:38.864 --> 00:02:42.501
+A nyelvi modell ugyanis nem tud
+megbízhatóan különbséget tenni a mi
+
+00:02:42.501 --> 00:02:47.426
+utasításunk és a feldolgozott
+tartalomba rejtett utasítás között.
+
+00:02:47.426 --> 00:02:51.526
+Ez különösen ott veszélyes, ahol a
+modell eszközöket is használhat,
+
+00:02:51.526 --> 00:02:54.330
+például leveleket küldhet
+vagy fájlokat érhet el.
+
+00:02:55.830 --> 00:03:00.303
+A második kockázat az ügyfelek
+elkülönítésének hibája.
+
+00:03:00.303 --> 00:03:03.628
+A felhős MI-szolgáltatások
+egyszerre sok ügyfelet
+
+00:03:03.628 --> 00:03:06.202
+szolgálnak ki ugyanazon
+az infrastruktúrán.
+
+00:03:06.522 --> 00:03:10.421
+Ha az elkülönítésben hiba
+van, az egyik ügyfél adata,
+
+00:03:10.421 --> 00:03:15.358
+például egy korábbi beszélgetés,
+egy másik ügyfélnél bukkanhat fel.
+
+00:03:15.358 --> 00:03:19.621
+Ez ritka, de ha megtörténik,
+a szerződés nem előzi meg,
+
+00:03:19.621 --> 00:03:22.089
+legfeljebb korlátozott kártérítést ad.
+
+00:03:22.409 --> 00:03:27.607
+A harmadik az árnyék-MI, angolul
+shadow AI: a munkatársak a saját,
+
+00:03:27.607 --> 00:03:31.691
+gyakran ingyenes fiókjukkal használnak
+MI-eszközt munkahelyi adatokon.
+
+00:03:32.011 --> 00:03:35.645
+Ilyenkor a szervezetnek nincs
+szerződése a szolgáltatóval,
+
+00:03:35.645 --> 00:03:40.395
+a fogyasztói feltételek pedig akár
+modellfejlesztést is engedhetnek.
+
+00:03:40.395 --> 00:03:44.032
+Ez szervezeti kockázat:
+jóváhagyott eszközökkel,
+
+00:03:44.032 --> 00:03:46.605
+szabályzattal és oktatással kezelhető.
+
+00:03:48.005 --> 00:03:50.619
+Mit jelent mindez a szerződésre nézve?
+
+00:03:52.319 --> 00:03:55.579
+Ebből következik a sorozat
+harmadik fontos gondolata.
+
+00:03:55.899 --> 00:04:01.078
+Gyakori, hogy a szervezetek a jogi
+átvilágítással lezártnak tekintik a kérdést,
+
+00:04:01.078 --> 00:04:03.242
+mintha a szerződés mindenre védene.
+
+00:04:03.562 --> 00:04:06.913
+A szerződés valójában a
+szolgáltató szándékos,
+
+00:04:06.913 --> 00:04:10.988
+tervezett adathasználata
+ellen véd. A hibák,
+
+00:04:10.988 --> 00:04:14.176
+a támadások és a saját
+munkatársaink ellen alig,
+
+00:04:14.176 --> 00:04:16.846
+azokra technikai és
+szervezeti kontroll kell.
+
+00:04:18.346 --> 00:04:20.846
+Négy dolog egészíti ki a szerződést.
+
+00:04:21.166 --> 00:04:26.183
+Egy jóváhagyott eszközlista, hogy a
+munkatársak tudják, mit használhatnak.
+
+00:04:26.503 --> 00:04:32.000
+Az adatosztályozás, hogy tudjuk,
+melyik adat melyik eszközbe kerülhet.
+
+00:04:32.000 --> 00:04:35.066
+Erről az adatkörért
+felelős adatgazda dönt.
+
+00:04:35.386 --> 00:04:39.338
+Az oktatás, hogy a munkatársak
+felismerjék a kockázatokat,
+
+00:04:39.338 --> 00:04:41.317
+például a rejtett utasítást.
+
+00:04:41.637 --> 00:04:46.364
+És ahol lehet, naplózás és
+technikai korlátozás, például az,
+
+00:04:46.364 --> 00:04:49.761
+hogy a modell emberi jóváhagyás
+nélkül ne küldhessen levelet.
+
+00:04:51.261 --> 00:04:55.182
+Röviden összefoglalva: az adat
+négy úton szivároghat ki,
+
+00:04:55.182 --> 00:04:57.557
+és a szerződés ezek
+közül csak a szolgáltató
+
+00:04:57.557 --> 00:05:01.157
+tervezett adathasználata
+ellen ad jó védelmet.
+
+00:05:01.157 --> 00:05:04.242
+A többire technikai és
+szervezeti kontroll kell.
+
+00:05:04.562 --> 00:05:09.737
+A következő részben a jogi keretet nézzük
+meg: milyen jogi minimum vonatkozik ránk,
+
+00:05:09.737 --> 00:05:12.724
+hogyan szigorítja az adat
+fajtája a feltételeket,
+
+00:05:12.724 --> 00:05:16.518
+és mi történik, ha az adat
+elhagyja az Európai Uniót.
+
+00:05:16.838 --> 00:05:19.384
+Viszontlátásra a következő részben!

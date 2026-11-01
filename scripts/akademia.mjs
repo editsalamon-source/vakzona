@@ -12,21 +12,26 @@
 //
 // A formátum a scripts/vedett-pdf.mjs-é ("VZP1" + só + IV + AES-256-GCM); egy tanfolyam minden fájlja ugyanazt
 // a sót és kulcsot kapja, így a böngésző egyetlen jelszóval mindet megnyitja. A jelszó sehol nem szerepel a repóban.
-import { existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
+//
+// Szabad hozzáférésű tanfolyam (a .md fejlécében `szabad hozzáférés: igen`): jelszó nem kell, nincs titkosítás.
+// Kimenet: src/content/akademia/<url-azonosító>.json (a tartalom), public/akademia/<url-azonosító>/anyagok/<fájl>,
+// …/feliratok/<fájl> (változatlanul).
+import { copyFileSync, existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { webcrypto as crypto } from "node:crypto";
 
 const slug = process.argv[2];
 const password = process.env.VZ_JELSZO;
-if (!slug || !password) {
+const root = join(import.meta.dirname, "..");
+const md = slug && join(root, "src", "content", "akademia", `${slug}.md`);
+const free = !!md && existsSync(md) && /^szabad hozzáférés:\s*(igen|true)\s*$/im.test(readFileSync(md, "utf8"));
+if (!slug || (!password && !free)) {
   console.error("Használat: VZ_JELSZO=… node scripts/akademia.mjs <url-azonosító>");
   process.exit(1);
 }
 
-const root = join(import.meta.dirname, "..");
 const src = join(root, "Akadémia", slug);
 const out = join(root, "public", "akademia", slug);
-const md = join(root, "src", "content", "akademia", `${slug}.md`);
 
 const content = JSON.parse(readFileSync(join(src, "tartalom.json"), "utf8"));
 const lessons = content.leckek || {};
@@ -37,6 +42,29 @@ const missing = ids.filter((id) => !lessons[id]);
 const extra = Object.keys(lessons).filter((id) => !ids.includes(id));
 if (missing.length) console.warn(`Figyelem: nincs védett tartalom ezekhez a leckékhez: ${missing.join(", ")}`);
 if (extra.length) console.warn(`Figyelem: a .md-ben nem szereplő leckék: ${extra.join(", ")}`);
+
+if (free) {
+  for (const dir of ["anyagok", "feliratok"]) {
+    rmSync(join(out, dir), { recursive: true, force: true });
+    mkdirSync(join(out, dir), { recursive: true });
+  }
+  rmSync(join(out, "tartalom.enc"), { force: true });
+  const copy = (dir, file, id) => {
+    const path = join(src, dir, file);
+    if (!existsSync(path)) {
+      console.error(`Hiányzó fájl (${id}): Akadémia/${slug}/${dir}/${file}`);
+      process.exit(1);
+    }
+    copyFileSync(path, join(out, dir, file));
+  };
+  for (const [id, lesson] of Object.entries(lessons)) {
+    for (const item of lesson.anyagok || []) if (!/^https?:\/\//.test(item.fajl)) copy("anyagok", item.fajl, id);
+    if (lesson.felirat) copy("feliratok", lesson.felirat, id);
+  }
+  writeFileSync(join(root, "src", "content", "akademia", `${slug}.json`), JSON.stringify(content, null, 2) + "\n");
+  console.log(`Kész (szabad hozzáférés, titkosítás nélkül): src/content/akademia/${slug}.json, public/akademia/${slug}/`);
+  process.exit(0);
+}
 
 const salt = crypto.getRandomValues(new Uint8Array(16));
 const base = await crypto.subtle.importKey("raw", new TextEncoder().encode(password.trim()), "PBKDF2", false, ["deriveKey"]);
