@@ -127,180 +127,194 @@ szükséges ésszerű intézkedéseket.
 Ha ezt nem tudjuk igazolni,
 gyengül a titok jogi védelme.
 
-00:02:33.240 --> 00:02:36.375
+00:02:33.240 --> 00:02:36.379
 A hivatásbeli titoknál, vagyis az ügyvédi,
 
-00:02:36.375 --> 00:02:40.925
+00:02:36.379 --> 00:02:40.929
 az orvosi és a banktitoknál
 ágazati szabályok is vonatkoznak.
 
-00:02:40.925 --> 00:02:44.162
-Banknál például a felügyeleti
-hatóság ellenőrzési
+00:02:40.929 --> 00:02:44.517
+Banknál a kiszervezési szabályok
+és a DORA-rendelet szerint
 
-00:02:44.162 --> 00:02:46.937
-jogának a szolgáltatóra
-is ki kell terjednie,
+00:02:44.517 --> 00:02:47.617
+a felügyeletnek a külső
+szolgáltatót is ellenőriznie kell.
 
-00:02:46.937 --> 00:02:49.561
-és ezt ma egyik nagy
-szolgáltató sem vállalja.
+00:02:47.617 --> 00:02:51.117
+Ez a nagy szolgáltatók nyilvános,
 
-00:02:49.881 --> 00:02:53.619
+00:02:51.117 --> 00:02:57.279
+standard feltételeiben nincs benne. A
+nagy felhőszolgáltatók, a Microsoft,
+
+00:02:57.279 --> 00:03:03.354
+a Google és az AWS, erre külön, a pénzügyi
+szektorra szóló kiegészítést kínálnak,
+
+00:03:03.354 --> 00:03:06.242
+amelyet a banknak külön kell megkötnie.
+
+00:03:06.242 --> 00:03:11.121
+A közvetlen modellszolgáltatóknál ilyen
+nyilvános kiegészítést nem találtunk.
+
+00:03:11.441 --> 00:03:15.179
 Nyitott kérdés az is, hogy az
 MI-szolgáltatás igénybevétele
 
-00:02:53.619 --> 00:02:56.868
+00:03:15.179 --> 00:03:18.428
 kiszervezésnek minősül-e a
 banki szabályozás szerint.
 
-00:02:57.188 --> 00:03:02.985
+00:03:18.748 --> 00:03:24.545
 A közszféra-adatnál a 24 órás
 incidens-értesítést kell tudni teljesíteni.
 
-00:03:02.985 --> 00:03:08.222
+00:03:24.545 --> 00:03:29.783
 A minősített adatnál a Nemzeti
 Biztonsági Felügyelet engedélye kell.
 
-00:03:08.222 --> 00:03:12.222
+00:03:29.783 --> 00:03:33.783
 A jogszabály az MI-használatot
 itt kifejezetten nem tiltja,
 
-00:03:12.222 --> 00:03:16.248
+00:03:33.783 --> 00:03:37.809
 de a szükséges feltételeket ma egyik
 külső szolgáltató sem vállalja.
 
-00:03:16.568 --> 00:03:22.025
+00:03:38.129 --> 00:03:43.585
 A gyakorlati következmény: minden MI-használati
 esetnél először azt kell tisztázni,
 
-00:03:22.025 --> 00:03:28.014
+00:03:43.585 --> 00:03:49.574
 melyik adatkörbe esik az adat. Ezt az
 adatkörért felelős adatgazda tudja megmondani.
 
-00:03:29.414 --> 00:03:33.623
+00:03:50.974 --> 00:03:55.183
 Az MI-szolgáltatók jelentős
 része amerikai, ezért fontos,
 
-00:03:33.623 --> 00:03:37.972
+00:03:55.183 --> 00:03:59.532
 mi történik, ha az adat elhagyja
 az Európai Gazdasági Térséget.
 
-00:03:39.672 --> 00:03:43.201
+00:04:01.232 --> 00:04:04.761
 Az Európai Gazdasági Térség
 az uniós tagállamokat,
 
-00:03:43.201 --> 00:03:47.513
+00:04:04.761 --> 00:04:09.074
 valamint Norvégiát, Izlandot
 és Liechtensteint jelenti.
 
-00:03:47.513 --> 00:03:51.863
+00:04:09.074 --> 00:04:13.424
 Az ezen kívüli országokat a
 GDPR harmadik országnak hívja,
 
-00:03:51.863 --> 00:03:55.767
+00:04:13.424 --> 00:04:17.328
 és oda csak megfelelő jogalappal
 lehet személyes adatot továbbítani.
 
-00:03:56.087 --> 00:04:02.323
+00:04:17.648 --> 00:04:23.884
 Az első jellemző jogalap az SCC, vagyis
 a standard szerződéses kikötések.
 
-00:04:02.323 --> 00:04:06.198
+00:04:23.884 --> 00:04:27.759
 Ez az Európai Bizottság által
 jóváhagyott mintaszerződés,
 
-00:04:06.198 --> 00:04:09.748
+00:04:27.759 --> 00:04:31.308
 amelyet az adatot küldő és
 az adatot fogadó fél aláír.
 
-00:04:10.067 --> 00:04:13.544
+00:04:31.628 --> 00:04:35.104
 Önmagában azonban nem elég:
 azt is vizsgálni kell,
 
-00:04:13.544 --> 00:04:18.332
+00:04:35.104 --> 00:04:39.892
 hogy a célország joga, például a
 hatóságok hozzáférési lehetőségei,
 
-00:04:18.332 --> 00:04:24.419
+00:04:39.892 --> 00:04:45.979
 nem üresíti-e ki a védelmet. Ezt
 az Európai Unió Bírósága 2020-ban,
 
-00:04:24.419 --> 00:04:27.368
+00:04:45.979 --> 00:04:48.929
 az úgynevezett Schrems
 II ítéletben mondta ki.
 
-00:04:27.688 --> 00:04:33.735
+00:04:49.249 --> 00:04:55.295
 A második jogalap a DPF, vagyis az
 uniós és amerikai adatvédelmi keret.
 
-00:04:33.735 --> 00:04:36.147
+00:04:55.295 --> 00:04:57.708
 Ez a Bizottság határozata arról,
 
-00:04:36.147 --> 00:04:40.997
+00:04:57.708 --> 00:05:02.558
 hogy a keretben tanúsított amerikai
 cégek megfelelő védelmet nyújtanak.
 
-00:04:40.997 --> 00:04:45.960
+00:05:02.558 --> 00:05:07.520
 Az Európai Unió Törvényszéke 2025
 szeptemberében fenntartotta,
 
-00:04:45.960 --> 00:04:48.783
+00:05:07.520 --> 00:05:10.343
 de az ítélet ellen
 fellebbezés van folyamatban.
 
-00:04:49.103 --> 00:04:55.009
+00:05:10.663 --> 00:05:16.569
 Miért kell tartalék jogalap? Mert az
 előző keretet, a Privacy Shieldet,
 
-00:04:55.009 --> 00:05:00.159
+00:05:16.569 --> 00:05:21.719
 éppen a Schrems II ítélet semmisítette
 meg, egyik napról a másikra.
 
-00:05:00.159 --> 00:05:06.346
+00:05:21.719 --> 00:05:27.907
 Ha a DPF is megdől, a csak arra épülő
 adattovábbítás jogalap nélkül marad.
 
-00:05:06.346 --> 00:05:10.420
+00:05:27.907 --> 00:05:31.981
 Ezért a szerződésben legyen
 SCC is, tartalékként.
 
-00:05:10.740 --> 00:05:12.440
+00:05:32.301 --> 00:05:34.001
 Egy további kockázat:
 
-00:05:12.440 --> 00:05:17.678
+00:05:34.001 --> 00:05:39.238
 a harmadik országbeli hatóság az
 ottani szolgáltatótól adatot kérhet.
 
-00:05:17.678 --> 00:05:19.778
+00:05:39.238 --> 00:05:41.338
 Ezért kérjük a szerződésben,
 
-00:05:19.778 --> 00:05:23.453
+00:05:41.338 --> 00:05:45.014
 hogy a szolgáltató jelezze,
 ha ilyen megkeresés érkezik.
 
-00:05:24.953 --> 00:05:26.638
+00:05:46.514 --> 00:05:48.198
 Röviden összefoglalva:
 
-00:05:26.638 --> 00:05:31.350
+00:05:48.198 --> 00:05:52.911
 a közös jogi minimumot adatkezelőként
 nekünk kell biztosítanunk.
 
-00:05:31.350 --> 00:05:34.513
+00:05:52.911 --> 00:05:56.073
 Az adat fajtája szerint a
 feltételek szigorodnak,
 
-00:05:34.513 --> 00:05:39.606
+00:05:56.073 --> 00:06:01.167
 és ha az adat az Európai Unión kívülre
 kerül, a jogalap mellé tartalék is kell.
 
-00:05:39.926 --> 00:05:43.910
+00:06:01.487 --> 00:06:05.471
 A következő részben megnézzük,
 mi változik a szabályozásban,
 
-00:05:43.910 --> 00:05:47.210
+00:06:05.471 --> 00:06:08.771
 és milyen utak állnak nyitva,
 ha mégis baj történik.
 
-00:05:47.530 --> 00:05:50.076
+00:06:09.091 --> 00:06:11.637
 Viszontlátásra a következő részben!

@@ -1,6 +1,6 @@
 // Egy Akadémia-tanfolyam videóinak feltöltése a Vimeóra (Vimeo API, tus), a lejátszás a vakzona.com-ra szűkítve.
 //
-//   node scripts/vimeo.mjs <url-azonosító> [--csak 01,02] [--domain vakzona.com] [--csere]
+//   node scripts/vimeo.mjs <url-azonosító> [--csak 01,02] [--domain vakzona.com] [--csere] [--uj-verzio]
 //
 // A Vimeo személyes hozzáférési tokenjét a VIMEO_TOKEN környezeti változó adja
 // (developer.vimeo.com/apps → Generate access token; jogosultság: Private, Create, Edit, Upload).
@@ -16,6 +16,8 @@
 // Beállítás videónként: rejtve a Vimeón (view: disable), beágyazás csak a megadott domainen, letöltés tiltva,
 // nyelv magyar, magyar felirat, narancs lejátszószín.
 // --csere: a tartalom.json videólinkjeit a Vimeo-linkekre cseréli (az eredetit egyszer tartalom.youtube.json-ba menti).
+// --uj-verzio: a már feltöltött videók helyére új videófájlt tölt fel (Vimeo-verzió, a link nem változik), és a feliratot
+//   és az indexképet is újra feltölti. Csak a --csak listában szereplő leckéknél, és csak ha a helyi fájl változott.
 // Utána: VZ_JELSZO=… node scripts/akademia.mjs <url-azonosító>, majd scripts/kulcs.mjs és az SQL a Supabase-ben.
 import { closeSync, copyFileSync, existsSync, openSync, readFileSync, readSync, readdirSync, statSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
@@ -25,9 +27,14 @@ const opt = (name) => (args.includes(name) ? args[args.indexOf(name) + 1] : null
 const slug = args.find((a, i) => !a.startsWith("--") && !["--csak", "--domain"].includes(args[i - 1]));
 const only = opt("--csak")?.split(",").map((s) => s.trim());
 const domains = (opt("--domain") || "vakzona.com").split(",").map((s) => s.trim());
+const newVersion = args.includes("--uj-verzio");
 const token = process.env.VIMEO_TOKEN;
+if (newVersion && !only) {
+  console.error("Az --uj-verzio csak a --csak kapcsolóval együtt használható (melyik leckék videója cserélődjön).");
+  process.exit(1);
+}
 if (!slug || !token) {
-  console.error("Használat: VIMEO_TOKEN=… node scripts/vimeo.mjs <url-azonosító> [--csak 01,02] [--domain vakzona.com] [--csere]");
+  console.error("Használat: VIMEO_TOKEN=… node scripts/vimeo.mjs <url-azonosító> [--csak 01,02] [--domain vakzona.com] [--csere] [--uj-verzio]");
   process.exit(1);
 }
 
@@ -114,9 +121,20 @@ for (const id of ids) {
       Object.assign(s, { uri: v.uri, id: v.uri.split("/").pop(), upload: v.upload.upload_link });
       save();
     }
+    // a feltöltött fájl azonosítója (méret + módosítás ideje), ebből látszik, hogy a helyi fájl változott-e
+    const stat = statSync(mp4);
+    const sig = `${stat.size}-${Math.round(stat.mtimeMs)}`;
+    if (newVersion && s.feltoltve && s.fajl !== sig) {
+      const v = await api("POST", `${s.uri}/versions`, {
+        file_name: `${name}.mp4`,
+        upload: { approach: "tus", size: stat.size },
+      });
+      Object.assign(s, { upload: v.upload.upload_link, feltoltve: false, felirat: false, kep: false });
+      save();
+    }
     if (!s.feltoltve) {
       await tus(s.upload, mp4);
-      s.feltoltve = true;
+      Object.assign(s, { feltoltve: true, fajl: sig });
       save();
     }
     if (!s.domain) {
@@ -145,7 +163,7 @@ for (const id of ids) {
       // egy korábbi, félbemaradt próbálkozás üres feliratsávját töröljük (ha a tokennek nincs "delete"
       // jogosultsága, a sáv inaktív marad, a lejátszóban nem látszik)
       for (const old of (await api("GET", `${s.uri}/texttracks`)).data) {
-        await api("DELETE", old.uri).catch(() => {});
+        await api("DELETE", old.uri).catch(() => api("PATCH", old.uri, { active: false }).catch(() => {}));
       }
       const t =await api("POST", `${s.uri}/texttracks`, { type: "subtitles", language: "hu", name: "Magyar" });
       await put(t.link, vtt, "text/vtt");

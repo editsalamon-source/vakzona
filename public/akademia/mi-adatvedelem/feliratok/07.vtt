@@ -20,316 +20,335 @@ A teendők három csoportba tartoznak.
 00:00:18.002 --> 00:00:20.329
 Amit a szerződés előtt be kell kérni,
 
-00:00:20.649 --> 00:00:22.775
-amit a tárgyaláson el kell érni,
+00:00:20.649 --> 00:00:22.905
+amit a szerződésben keresnünk kell,
 
-00:00:23.095 --> 00:00:25.437
+00:00:23.225 --> 00:00:25.567
 és amit házon belül kell szabályozni.
 
-00:00:25.757 --> 00:00:29.852
+00:00:25.887 --> 00:00:29.982
 A végén pedig mérleget vonunk a
 három gyakori feltételezésről.
 
-00:00:31.252 --> 00:00:36.283
+00:00:31.382 --> 00:00:36.413
 Kezdjük a szerződés előtti
 átvilágítással. A standard,
 
-00:00:36.283 --> 00:00:39.358
+00:00:36.413 --> 00:00:39.488
 nyilvános feltételekből
 sok minden nem derül ki,
 
-00:00:39.358 --> 00:00:42.240
+00:00:39.488 --> 00:00:42.370
 ezért a konkrét ajánlatnál
 hat dolgot kérjünk be.
 
-00:00:43.940 --> 00:00:49.174
+00:00:44.070 --> 00:00:49.304
 Az első a teljes adatfeldolgozói
 szerződés, nem csak annak összefoglalója.
 
-00:00:49.494 --> 00:00:52.669
+00:00:49.624 --> 00:00:52.799
 A második az aktuális alfeldolgozói lista,
 
-00:00:52.669 --> 00:00:56.163
+00:00:52.799 --> 00:00:56.293
 hogy lássuk, kik férhetnek
 még hozzá az adatainkhoz.
 
-00:00:56.483 --> 00:00:59.067
+00:00:56.613 --> 00:00:59.197
 A harmadik a tanúsítványok hatóköre,
 
-00:00:59.067 --> 00:01:03.322
+00:00:59.197 --> 00:01:03.452
 mert egy tanúsítvány nem feltétlenül
 fedi a konkrét MI-szolgáltatást.
 
-00:01:03.642 --> 00:01:06.914
+00:01:03.772 --> 00:01:07.043
 A negyedik a legutóbbi auditjelentés.
 
-00:01:06.914 --> 00:01:10.351
+00:01:07.043 --> 00:01:10.481
 Ez gyakran csak titoktartási
 megállapodással érhető el,
 
-00:01:10.351 --> 00:01:14.576
+00:01:10.481 --> 00:01:14.706
 a szolgáltató úgynevezett trust
 portálján, vagyis azon az oldalon,
 
-00:01:14.576 --> 00:01:18.384
+00:01:14.706 --> 00:01:18.514
 ahol a biztonsági és megfelelőségi
 dokumentumait közzéteszi.
 
-00:01:18.704 --> 00:01:22.102
+00:01:18.834 --> 00:01:22.232
 Az ötödik a ZDR-jóváhagyás, írásban.
 
-00:01:22.422 --> 00:01:25.989
+00:01:22.552 --> 00:01:26.119
 A hatodik a régió- és
 útválasztási beállítások,
 
-00:01:25.989 --> 00:01:28.677
+00:01:26.119 --> 00:01:28.806
 mert egyes szolgáltatásoknál
 az alapértelmezés
 
-00:01:28.677 --> 00:01:31.902
+00:01:28.806 --> 00:01:32.031
 a régión kívüli feldolgozást is engedi.
 
-00:01:31.902 --> 00:01:35.339
+00:01:32.031 --> 00:01:35.469
 Általános szabály: ami
 csak súgóoldalon áll,
 
-00:01:35.339 --> 00:01:38.179
+00:01:35.469 --> 00:01:38.308
 azt kérjük beemelni a
 szerződés mellékletébe.
 
-00:01:39.579 --> 00:01:41.567
-A tárgyaláson hat pont van,
+00:01:39.708 --> 00:01:43.220
+Hat pont van, amelyet a
+standard feltételek ma nem,
 
-00:01:41.567 --> 00:01:45.454
-amelyet a standard feltételek ma
-nem, vagy csak részben adnak meg.
+00:01:43.220 --> 00:01:48.570
+vagy csak részben adnak meg. A legtöbb
+cég fix feltételekkel szerződik:
 
-00:01:47.154 --> 00:01:52.088
+00:01:48.570 --> 00:01:53.495
+ilyenkor ezeket a pontokat a szolgáltatók
+összehasonlításánál keressük.
+
+00:01:53.495 --> 00:01:57.973
+Nagyvállalati vagy banki szerződésnél
+pedig érdemes tárgyalni róluk.
+
+00:01:59.673 --> 00:02:04.607
 Az első az órában rögzített
 incidens-értesítési határidő.
 
-00:01:52.088 --> 00:01:56.901
+00:02:04.607 --> 00:02:09.420
 Közszféra-adatnál a 24 órás
 értesítés teljesíthetősége a cél,
 
-00:01:56.901 --> 00:02:00.035
+00:02:09.420 --> 00:02:12.554
 ehhez a szolgáltatónak ennél
 gyorsabban kell szólnia.
 
-00:02:00.355 --> 00:02:06.144
+00:02:12.874 --> 00:02:18.662
 A második a felelősség: a 12 havi díjplafon
 helyett az adatvédelmi károkra külön,
 
-00:02:06.144 --> 00:02:09.031
+00:02:18.662 --> 00:02:21.550
 a várható kárral arányos plafon.
 
-00:02:09.031 --> 00:02:13.867
+00:02:21.550 --> 00:02:26.386
 A bankoktól a Magyar Nemzeti Bank is a
 kárral arányos biztosítékot várja el.
 
-00:02:14.187 --> 00:02:17.773
+00:02:26.706 --> 00:02:30.291
 A harmadik az adatvédelmi kártalanítás.
 
-00:02:17.773 --> 00:02:22.655
-Ma csak szellemi tulajdoni igényekre van,
-adatvédelmi igényekre is kérni kell.
+00:02:30.291 --> 00:02:34.866
+A nyilvános feltételekben csak szellemi
+tulajdoni igényekre találtunk ilyet,
 
-00:02:22.975 --> 00:02:26.625
+00:02:34.866 --> 00:02:37.477
+adatvédelmi igényekre is érdemes keresni.
+
+00:02:37.797 --> 00:02:41.447
 A negyedik: a dokumentációban
 álló vállalásokat,
 
-00:02:26.625 --> 00:02:30.539
+00:02:41.447 --> 00:02:45.361
 például a ZDR-t vagy a régiót,
 emeljük be a szerződésbe.
 
-00:02:30.859 --> 00:02:34.796
-Az ötödik az auditjog
+00:02:45.681 --> 00:02:50.095
+Az ötödik az érdemi auditjog
 és az információadás.
 
-00:02:34.796 --> 00:02:37.608
-Banki környezetben a
-felügyelet ellenőrzési
+00:02:50.095 --> 00:02:53.957
+Bankként a felügyelet ellenőrzési
+jogát is biztosítani kell:
 
-00:02:37.608 --> 00:02:40.272
-jogának is ki kell
-terjednie a szolgáltatóra.
+00:02:53.957 --> 00:02:56.532
+a nagy felhőszolgáltatóknál erre külön,
 
-00:02:40.592 --> 00:02:45.367
+00:02:56.532 --> 00:03:00.771
+a pénzügyi szektorra szóló kiegészítés
+van, amelyet meg kell kötni.
+
+00:03:01.091 --> 00:03:05.866
 A hatodik a hatósági megkeresések
 jelentése: a szolgáltató jelezze,
 
-00:02:45.367 --> 00:02:48.486
+00:03:05.866 --> 00:03:08.985
 ha harmadik országbeli
 hatóság kéri az adatainkat.
 
-00:02:48.806 --> 00:02:53.053
-Reális elvárás, hogy nem
-mindent fogunk megkapni.
+00:03:09.305 --> 00:03:12.577
+Amit egyik szolgáltató
+feltételei sem tartalmaznak,
 
-00:02:53.053 --> 00:02:57.529
-Amit nem kapunk meg, azt a döntésnél
-tudatos kockázatként kell kezelni.
+00:03:12.577 --> 00:03:15.727
+azt adatkörönként tudatos
+kockázatként kell vállalni,
 
-00:02:58.929 --> 00:03:03.689
+00:03:15.727 --> 00:03:17.614
+vagy az adatot nem szabad átadni.
+
+00:03:19.014 --> 00:03:23.774
 A szerződés a hibák és a saját
 munkatársaink ellen alig véd.
 
-00:03:03.689 --> 00:03:05.875
+00:03:23.774 --> 00:03:25.959
 Ezért hat belső kontroll is kell.
 
-00:03:07.575 --> 00:03:11.229
+00:03:27.659 --> 00:03:31.314
 Az első az adatosztályozás:
 enélkül nem tudjuk,
 
-00:03:11.229 --> 00:03:14.842
+00:03:31.314 --> 00:03:34.926
 melyik cella vonatkozik
 ránk a döntési térképen.
 
-00:03:14.842 --> 00:03:17.342
+00:03:34.926 --> 00:03:37.426
 Ebben az adatgazdák döntenek arról,
 
-00:03:17.342 --> 00:03:21.519
+00:03:37.426 --> 00:03:41.604
 hogy az általuk felügyelt adatkör
 átadható-e egy MI-szolgáltatásnak.
 
-00:03:21.839 --> 00:03:27.649
+00:03:41.924 --> 00:03:47.733
 A második a jóváhagyott eszközök
 listája. Ha nincs jó üzleti alternatíva,
 
-00:03:27.649 --> 00:03:30.790
+00:03:47.733 --> 00:03:50.875
 a munkatársak a saját
 fiókjukat fogják használni.
 
-00:03:31.110 --> 00:03:36.574
+00:03:51.195 --> 00:03:56.658
 A harmadik a hatásvizsgálat, új MI-használat
 előtt, a kockázattal arányosan.
 
-00:03:36.894 --> 00:03:42.540
+00:03:56.978 --> 00:04:02.625
 A negyedik az incidens-felkészülés.
 Ha a szolgáltató incidenst jelez,
 
-00:03:42.540 --> 00:03:45.903
+00:04:02.625 --> 00:04:05.987
 nekünk is határidőre kell
 értesítenünk a hatóságot,
 
-00:03:45.903 --> 00:03:48.175
+00:04:05.987 --> 00:04:08.259
 és szükség esetén az érintetteket.
 
-00:03:48.495 --> 00:03:54.179
+00:04:08.579 --> 00:04:14.263
 Az ötödik a kilépési terv.
 A Data Act 2027-től segít,
 
-00:03:54.179 --> 00:03:57.440
+00:04:14.263 --> 00:04:17.525
 de a műszaki és szerződéses
 felkészülés a mi dolgunk.
 
-00:03:57.760 --> 00:04:00.095
+00:04:17.845 --> 00:04:20.180
 A hatodik az éves felülvizsgálat,
 
-00:04:00.095 --> 00:04:03.760
+00:04:20.180 --> 00:04:23.845
 mert a szolgáltatói feltételek
 egyoldalúan módosulhatnak.
 
-00:04:05.160 --> 00:04:08.816
+00:04:25.245 --> 00:04:28.900
 Végül térjünk vissza a sorozat
 elején feltett három mondatra.
 
-00:04:10.516 --> 00:04:16.944
+00:04:30.600 --> 00:04:37.028
 Az első: üzleti előfizetésnél biztonságban
 vagyunk. Ez csak részben igaz.
 
-00:04:17.264 --> 00:04:21.355
+00:04:37.348 --> 00:04:41.440
 Üzleti szinten a szolgáltatók
 valóban nem tanítanak az adatainkon,
 
-00:04:21.355 --> 00:04:24.355
+00:04:41.440 --> 00:04:44.440
 és adatfeldolgozóként járnak el.
 
-00:04:24.355 --> 00:04:29.893
+00:04:44.440 --> 00:04:49.977
 A felelősségük azonban korlátozott, órában
 mért incidens-határidőt alig adnak,
 
-00:04:29.893 --> 00:04:32.850
+00:04:49.977 --> 00:04:52.934
 és a vállalásaik jó része
 csak súgóoldalon áll.
 
-00:04:33.170 --> 00:04:39.273
+00:04:53.254 --> 00:04:59.358
 A második: ha a szolgáltató hibázik,
 ő fizet. Ez többnyire nem igaz.
 
-00:04:39.593 --> 00:04:44.615
+00:04:59.678 --> 00:05:04.743
 A felelőssége jellemzően az előző
 12 hónapban fizetett díjig terjed,
 
-00:04:44.615 --> 00:04:47.065
-adatvédelmi kártalanítást nem vállal,
+00:05:04.743 --> 00:05:08.655
+adatvédelmi kártalanítást a nyilvános
+feltételekben nem találtunk,
 
-00:04:47.065 --> 00:04:50.177
+00:05:08.655 --> 00:05:11.743
 az érintettek felé pedig
 adatkezelőként mi felelünk,
 
-00:04:50.177 --> 00:04:53.247
+00:05:11.743 --> 00:05:14.793
 akkor is, ha a hibát a
 szolgáltató követte el.
 
-00:04:53.567 --> 00:05:00.495
+00:05:15.113 --> 00:05:22.041
 A harmadik: ha a szolgáltató európai,
 rendben vagyunk. Ez sem igaz automatikusan.
 
-00:05:00.815 --> 00:05:04.037
+00:05:22.361 --> 00:05:25.583
 Az európai szolgáltató
 csökkenti az adattovábbítás
 
-00:05:04.037 --> 00:05:07.162
+00:05:25.583 --> 00:05:28.708
 és a külföldi hatósági
 hozzáférés kockázatát,
 
-00:05:07.162 --> 00:05:11.162
+00:05:28.708 --> 00:05:32.708
 de a szerződéses vállalásairól
 kevés a nyilvános információ,
 
-00:05:11.162 --> 00:05:15.625
+00:05:32.708 --> 00:05:37.171
 ezért ezeket a konkrét ajánlatnál
 be kell kérni és ellenőrizni.
 
-00:05:15.625 --> 00:05:18.637
+00:05:37.171 --> 00:05:40.183
 Minősített adatra pedig
 európai szolgáltatónál
 
-00:05:18.637 --> 00:05:21.261
+00:05:40.183 --> 00:05:42.807
 sem teljesülnek ma a szükséges feltételek.
 
-00:05:22.761 --> 00:05:29.680
+00:05:44.307 --> 00:05:51.227
 A sorozat három fő üzenete. Egy: minden
 MI-döntés az adatosztályozással kezdődik,
 
-00:05:29.680 --> 00:05:35.455
+00:05:51.227 --> 00:05:57.002
 mert az adat fajtája dönti el, melyik
 konstrukció vállalható. Kettő:
 
-00:05:35.455 --> 00:05:42.805
+00:05:57.002 --> 00:06:04.352
 ami nincs a szerződésben, az nincs.
 A súgóoldal nem szerződés. Három:
 
-00:05:42.805 --> 00:05:48.428
+00:06:04.352 --> 00:06:09.974
 incidens után a jogérvényesítés korlátozott,
 ezért a védelem az aláíráskor dől el.
 
-00:05:48.748 --> 00:05:51.726
+00:06:10.294 --> 00:06:13.273
 A következő lépés a saját szervezetünkben:
 
-00:05:51.726 --> 00:05:56.901
+00:06:13.273 --> 00:06:18.448
 rögzítsük az adatosztályozást, és
 jelöljük ki a jóváhagyott eszközöket.
 
-00:05:56.901 --> 00:06:01.089
+00:06:18.448 --> 00:06:22.635
 A bemutatott kép a 2026.
 októberi állapotot tükrözi,
 
-00:06:01.089 --> 00:06:06.022
+00:06:22.635 --> 00:06:27.568
 és a konkrét szerződés átvilágítását és
 a jogi tanácsadást nem helyettesíti.
 
-00:06:06.342 --> 00:06:10.857
+00:06:27.888 --> 00:06:32.403
 Köszönjük, hogy velünk
 tartott! Viszontlátásra!
