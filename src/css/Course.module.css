@@ -149,6 +149,7 @@ button.lessonBtn { cursor: pointer; }
 .progressBar > span { position: absolute; inset: 0; background: var(--accent); transform-origin: 0 50%; transition: transform .6s cubic-bezier(.22, 1, .36, 1); }
 
 .speedHint { margin: 12px 0 0; font-size: .85rem; line-height: 1.5; color: var(--muted, #64748b); }
+.speedIcon { display: inline-block; width: 1.15em; height: 1.15em; margin: 0 .3em 0 .25em; vertical-align: -0.2em; color: var(--ink); }
 .speedHint strong { color: var(--ink, #050505); font-weight: 600; }
 .lessonHead { display: flex; justify-content: space-between; align-items: flex-start; gap: 24px; margin: 24px 0 8px; }
 .lessonTitle { font-size: clamp(1.4rem, 2.4vw, 1.9rem); margin: 8px 0 6px; letter-spacing: -0.035em; }

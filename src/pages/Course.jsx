@@ -370,7 +370,12 @@ function Classroom({ course, access }) {
             }}
           />
           <p className={CSS.speedHint}>
-            <strong>Tipp:</strong> a lejátszó beállításainál (fogaskerék ikon) a lejátszás sebessége is állítható.
+            <strong>Tipp:</strong> a lejátszó sebességmérő ikonjával
+            <svg className={CSS.speedIcon} viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M4.5 18a9 9 0 1 1 15 0" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" />
+              <path d="M12 13.5l3.5-3.5" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" />
+            </svg>
+            a lejátszás sebessége is állítható.
             Válassza azt a tempót, amelyen kényelmesen tudja követni: lassabbat, ha új a téma, gyorsabbat, ha ismerős.
           </p>
           <div className={CSS.lessonHead}>
