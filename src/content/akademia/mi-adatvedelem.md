@@ -42,4 +42,4 @@ A bemutatott kép a 2026. októberi állapotot tükrözi, mert a szolgáltatói 
 
 ## Hogyan működik?
 
-A tanfolyam szabadon hozzáférhető, nem kell hozzá jelszó, fiók vagy regisztráció. A videókhoz magyar felirat tartozik. A megnézett leckék kipipálódnak, a haladás ebben a böngészőben megmarad. Ha minden leckét megnézett, a nevére kiállított oklevelet tölthet le.
+A tanfolyam szabadon hozzáférhető, nem kell hozzá jelszó, fiók vagy regisztráció. A videókhoz magyar felirat tartozik. A megnézett leckék kipipálódnak, a haladás ebben a böngészőben megmarad. A szabadon hozzáférhető tanfolyamhoz oklevél nem jár.

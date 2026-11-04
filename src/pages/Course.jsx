@@ -415,19 +415,22 @@ function Classroom({ course, access }) {
             <span style={{ transform: `scaleX(${progress.doneCount / ids.length})` }} />
           </span>
           <Curriculum course={course} progress={progress} current={currentId} onPick={pick} />
-          <div className={`${CSS.cert} ${progress.complete ? CSS.certOn : ""}`}>
-            <span className="eyebrow">Oklevél</span>
-            {progress.complete ? (
-              <>
-                <p>Minden leckét megnézett. Az oklevél a nevével kiállítható.</p>
-                <Link to={`/akademia/${course.slug}/oklevel`} className="btn">
-                  Oklevél <Arrow size={12} />
-                </Link>
-              </>
-            ) : (
-              <p>Az összes lecke megtekintése után kiállítható. Még {ids.length - progress.doneCount} lecke van hátra.</p>
-            )}
-          </div>
+          {/* szabad hozzáférésű tanfolyamhoz nem jár oklevél */}
+          {!course.free && (
+            <div className={`${CSS.cert} ${progress.complete ? CSS.certOn : ""}`}>
+              <span className="eyebrow">Oklevél</span>
+              {progress.complete ? (
+                <>
+                  <p>Minden leckét megnézett. Az oklevél a nevével kiállítható.</p>
+                  <Link to={`/akademia/${course.slug}/oklevel`} className="btn">
+                    Oklevél <Arrow size={12} />
+                  </Link>
+                </>
+              ) : (
+                <p>Az összes lecke megtekintése után kiállítható. Még {ids.length - progress.doneCount} lecke van hátra.</p>
+              )}
+            </div>
+          )}
         </aside>
       </div>
     </div>

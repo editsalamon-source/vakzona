@@ -67,7 +67,7 @@ function AcademyPanel() {
             </span>
             {done > 0 && (
               <span className={HeaderCSS.resume}>
-                {done === total ? "Kész – oklevél" : `Folytatom: ${done} / ${total} lecke kész`} <Arrow size={11} />
+                {done === total ? (c.free ? "Kész" : "Kész – oklevél") : `Folytatom: ${done} / ${total} lecke kész`} <Arrow size={11} />
               </span>
             )}
           </Link>
