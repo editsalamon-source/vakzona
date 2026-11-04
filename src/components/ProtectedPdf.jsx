@@ -3,7 +3,7 @@ import { createPortal } from "react-dom";
 import Arrow from "./Arrow";
 import { Link } from "react-router-dom";
 import { deriveKey, exportKey, fetchSealed, importKey, open as unseal, toB64 } from "../utils/titkositas";
-import { FIOK, accesses, contentKey, useAccount } from "../utils/fiok";
+import { FIOK, accesses, contentKey, useAccount, useIsAdmin } from "../utils/fiok";
 import CSS from "../css/ProtectedPdf.module.css";
 
 // Jelszóval védett PDF (ügyféloldali, a Védőnői napló mintájára). A fájl a public/ mappában titkosítva
@@ -76,6 +76,7 @@ function Dialog({ pdf, onClose }) {
   const [shake, setShake] = useState(0);
   const input = useRef(null);
   const account = useAccount();
+  const admin = useIsAdmin();
   const tried = useRef(false);
 
   useEffect(() => {
@@ -136,7 +137,7 @@ function Dialog({ pdf, onClose }) {
       <div className={CSS.dialog} role="dialog" aria-modal="true" aria-labelledby="vedettCim">
         <button type="button" className={CSS.close} onClick={onClose} aria-label="Bezárás">×</button>
         <span className={CSS.icon}><LockIcon size={22} /></span>
-        <p className={CSS.eyebrow}>Jelszóval védett dokumentum</p>
+        <p className={CSS.eyebrow}>Védett dokumentum</p>
         <h2 id="vedettCim" className={CSS.title}>{pdf.title || "Szakmai tanulmány"}</h2>
         {state === "ready" ? (
           <>
@@ -145,6 +146,24 @@ function Dialog({ pdf, onClose }) {
               Megnyitás új lapon <Arrow size={12} />
             </a>
           </>
+        ) : !admin ? (
+          // a közös jelszó mezője csak adminnak látszik, mindenki más fiókkal tölti le
+          <div className={CSS.form}>
+            {state === "busy" || admin == null || !account.ready ? (
+              <p className={CSS.text}>Ellenőrzés…</p>
+            ) : account.user ? (
+              <p className={CSS.text}>
+                A fiókjához ({account.user.email}) nincs hozzáférés ehhez a dokumentumhoz.
+              </p>
+            ) : (
+              <>
+                <p className={CSS.text}>A dokumentum fiókkal tölthető le, ha a fiókjához hozzáférést kapott.</p>
+                <Link to="/fiok" className="btn" onClick={onClose}>
+                  Belépés vagy regisztráció <Arrow size={12} />
+                </Link>
+              </>
+            )}
+          </div>
         ) : (
           <form
             key={shake}
@@ -211,15 +230,15 @@ function ProtectedPdf({ pdf, variant = "box", className = "" }) {
     <>
       {variant === "button" ? (
         <button type="button" className={`btn btnGhost ${className}`} onClick={() => setOpen(true)}>
-          {granted ? <DownloadIcon /> : <LockIcon />} {granted ? "Szakmai tanulmány" : pdf.button || "Szakmai tanulmány (jelszóval)"}
+          {granted ? <DownloadIcon /> : <LockIcon />} {granted ? "Szakmai tanulmány" : pdf.button || "Szakmai tanulmány (fiókkal)"}
         </button>
       ) : (
         <button type="button" className={`${CSS.box} ${className}`} onClick={() => setOpen(true)}>
           <span className={CSS.boxIcon}>{granted ? <DownloadIcon size={26} /> : <LockIcon size={26} />}</span>
           <span className={CSS.boxText}>
-            <span className={CSS.eyebrow}>Szakmai tanulmány · {granted ? "fiókjával elérhető" : "jelszóval"}</span>
+            <span className={CSS.eyebrow}>Szakmai tanulmány · {granted ? "fiókjával elérhető" : "fiókkal"}</span>
             <strong>{pdf.title || "Szakmai tanulmány"}</strong>
-            <span className={CSS.boxMeta}>{granted ? "PDF" : "Jelszóval védett PDF"}{pdf.label ? ` · ${pdf.label}` : ""}</span>
+            <span className={CSS.boxMeta}>{granted ? "PDF" : "Védett PDF"}{pdf.label ? ` · ${pdf.label}` : ""}</span>
           </span>
           <span className={CSS.boxGo}>
             {granted ? "Letöltés" : "Feloldás"} <Arrow size={12} />

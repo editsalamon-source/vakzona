@@ -48,4 +48,4 @@ A konkrét szabályokat (a jóváhagyott eszközöket, az adatbesorolást, a hib
 
 ## Hogyan működik?
 
-A tanfolyam jelszóval vagy fiókkal nyílik. A videókhoz magyar felirat tartozik. A megnézett leckék kipipálódnak, a haladás ebben a böngészőben megmarad. Ha minden leckét megnézett, a nevére kiállított oklevelet tölthet le.
+A tanfolyam fiókkal nyílik. A videókhoz magyar felirat tartozik. A megnézett leckék kipipálódnak, a haladás ebben a böngészőben megmarad. Ha minden leckét megnézett, a nevére kiállított oklevelet tölthet le.

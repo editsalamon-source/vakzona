@@ -1,4 +1,4 @@
-import { useEffect, useSyncExternalStore } from "react";
+import { useEffect, useState, useSyncExternalStore } from "react";
 
 // Vakzóna-fiók (Supabase Auth, supabase/README.md): e-mail + jelszó, felhasználónkénti hozzáférés a védett
 // tartalmakhoz. Csak az e-mail-címet és a jelszó hash-ét tároljuk; a haladás és az oklevél neve továbbra is
@@ -110,6 +110,24 @@ export async function accesses() {
 // ---------- Admin (supabase/schema.sql: adminok, meghivasok; az adatbázis minden hívásnál ellenőrzi a jogot) ----------
 
 export const isAdmin = () => call((c) => c.rpc("admin_e"));
+
+// a bejelentkezett felhasználó admin-e: null = még nem tudjuk, true / false. Fiók nélküli
+// üzemmódban (FIOK = false) mindenki true, mert akkor csak a közös jelszó nyit.
+export function useIsAdmin() {
+  const { ready, user } = useAccount();
+  const [admin, setAdmin] = useState(FIOK ? null : true);
+  useEffect(() => {
+    if (!FIOK || !ready) return;
+    if (!user) return setAdmin(false);
+    let live = true;
+    setAdmin(null);
+    isAdmin().then((a) => live && setAdmin(Boolean(a))).catch(() => live && setAdmin(false));
+    return () => {
+      live = false;
+    };
+  }, [ready, user]);
+  return admin;
+}
 
 // [{ id, email, megerositve, utolso_belepes, letrehozva, tartalmak: [] }]
 export const adminUsers = () => call((c) => c.rpc("admin_felhasznalok"));

@@ -4,7 +4,7 @@ import { Marked } from "marked";
 import { getCourse, AKADEMIA, formatLength } from "../data/akademia";
 import { useCourseContent } from "../utils/tanfolyam";
 import { useProgress } from "../utils/haladas";
-import { FIOK, useAccount } from "../utils/fiok";
+import { FIOK, useAccount, useIsAdmin } from "../utils/fiok";
 import Arrow from "../components/Arrow";
 import VideoPlayer from "../components/VideoPlayer";
 import FreeBadge from "../components/FreeBadge";
@@ -193,6 +193,8 @@ function Curriculum({ course, progress = null, current = null, onPick = null }) 
 // Felül a cím teljes szélességben; alatta bal oldalt a bemutató és a bevezető, jobb oldalt
 // (széles képernyőn ragadósan) a tanfolyam adatai és a belépés.
 function CourseLanding({ course, access, account = {} }) {
+  // a közös jelszó mezője csak adminnak látszik, mindenki más fiókkal lép be
+  const admin = useIsAdmin();
   const facts = [
     { value: course.lessons.length, label: "videólecke" },
     course.seconds > 0 && { value: formatLength(course.seconds), label: "videó összesen" },
@@ -227,7 +229,7 @@ function CourseLanding({ course, access, account = {} }) {
           ) : (
             <>
               {FIOK && <AccountBox course={course} access={access} user={account.user} />}
-              <PasswordForm access={access} alt={FIOK} />
+              {admin && <PasswordForm access={access} alt={FIOK} />}
             </>
           )}
         </aside>

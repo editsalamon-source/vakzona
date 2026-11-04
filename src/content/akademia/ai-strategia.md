@@ -106,4 +106,4 @@ A leckékhez letölthető anyag tartozik: a módszertan kézikönyve, valamint a
 
 ## Hogyan működik?
 
-A tanfolyam jelszóval nyílik. A megnézett leckék kipipálódnak, a haladás ebben a böngészőben megmarad. Ha minden leckét megnézett, a nevére kiállított oklevelet tölthet le.
+A tanfolyam fiókkal nyílik. A megnézett leckék kipipálódnak, a haladás ebben a böngészőben megmarad. Ha minden leckét megnézett, a nevére kiállított oklevelet tölthet le.
