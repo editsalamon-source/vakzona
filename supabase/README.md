@@ -68,10 +68,22 @@ beállítva, a fiók ki van kapcsolva, és az oldal úgy működik, mint eddig.
      $$delete from auth.users where email_confirmed_at is null and created_at < now() - interval '7 days'$$);
    ```
    Ha ez fut, a tájékoztatóban a „[helykitöltő] nap” helyére 7 kerül.
+10. **Értesítés új felhasználóról** (2026-11-04): ha valaki regisztrál és megerősíti a fiókját, minden admin
+    kap egy általános levelet az adminoldal linkjével (`vakzona.com/admin`), a felhasználó neve, e-mail-címe és
+    más adata nélkül. A `schema.sql` „Értesítés új felhasználóról” szakasza (pg_net + trigger) végzi.
+    - Brevo: SMTP & API → **API Keys** → Generate a new API key (név: `supabase-ertesites`). Ez nem azonos az
+      SMTP-kulccsal. Ha a Brevóban be van kapcsolva az *Authorised IPs* védelem, ki kell kapcsolni (a Supabase
+      kimenő címe nem fix), különben a Brevo elutasítja a hívást.
+    - Supabase: Project Settings → Vault (vagy SQL Editor) → új titok, név: `brevo_api_kulcs`, érték: az API-kulcs:
+      ```sql
+      select vault.create_secret('<API-kulcs>', 'brevo_api_kulcs');
+      ```
+      A kulcs soha ne kerüljön a repóba. Lejárat vagy csere: `select vault.update_secret(id, '<új kulcs>') from vault.secrets where name = 'brevo_api_kulcs';`
+    - Hibakeresés: `select status_code, content from net._http_response order by created desc limit 5;`
 
 ## Hozzáférés kezelése
 
-**Adminoldal:** `vakzona.com/fiok/admin` (a Fiók oldalon a „Hozzáférések kezelése” gomb, csak adminnak látszik).
+**Adminoldal:** `vakzona.com/admin` (a menüben a fiók ikon mellett pajzs ikon, csak adminnak látszik, 2026-11-04).
 Itt pipákkal adható és vonható vissza a hozzáférés, és e-mail-címre előre is kiadható (meghívás): ha a címmel
 még nincs megerősített fiók, a hozzáférés a regisztráció megerősítésekor lép életbe (`meghivas_bevaltasa` trigger).
 Az új tanfolyamok és `pdf védett:` dokumentumok maguktól megjelennek (`src/data/vedett.js`).

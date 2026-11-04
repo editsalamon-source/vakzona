@@ -1,6 +1,11 @@
 {
   "redirects": [
     {
+      "source": "/fiok/admin",
+      "destination": "/admin",
+      "permanent": true
+    },
+    {
       "source": "/tortenelem",
       "destination": "/tudomany",
       "permanent": true

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import Logo from "./Logo";
 import Arrow from "./Arrow";
@@ -6,7 +6,7 @@ import CoverArt from "./CoverArt";
 import analyses, { getCategories } from "../data/analyses";
 import courses, { AKADEMIA, formatLength, getAcademyCategories } from "../data/akademia";
 import { readProgress } from "../utils/haladas";
-import { FIOK, useAccount } from "../utils/fiok";
+import { FIOK, useAccount, isAdmin } from "../utils/fiok";
 import HeaderCSS from "../css/Header.module.css";
 
 const active = (base) => ({ isActive }) => [base, isActive && HeaderCSS.active].filter(Boolean).join(" ");
@@ -97,6 +97,26 @@ function AccountLink() {
   );
 }
 
+// Admin ikon a fiók mellett, csak adminnak (a jogot az adatbázis minden hívásnál ellenőrzi)
+function AdminLink() {
+  const { user } = useAccount();
+  const [admin, setAdmin] = useState(false);
+  useEffect(() => {
+    if (!user) return setAdmin(false);
+    isAdmin().then(setAdmin).catch(() => setAdmin(false));
+  }, [user?.id]);
+  if (!admin) return null;
+  return (
+    <NavLink to="/admin" className={active(HeaderCSS.account)} aria-label="Admin: hozzáférések kezelése" title="Admin: hozzáférések kezelése">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+        strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+        <path d="M12 3.25 5 6v5.5c0 4.35 2.95 7.9 7 9.25 4.05-1.35 7-4.9 7-9.25V6l-7-2.75Z" />
+        <path d="m9 12 2.1 2.1L15.25 10" />
+      </svg>
+    </NavLink>
+  );
+}
+
 // Lebegő, üveghatású pirula-menü a lap tetején. Széles képernyőn (egérrel) az Elemzések és az
 // Akadémia fölé víve legördülő panel nyílik; keskenyen és érintőképernyőn sima link marad.
 function Header() {
@@ -126,6 +146,7 @@ function Header() {
             Rólam
           </NavLink>
           {FIOK && <AccountLink />}
+          {FIOK && <AdminLink />}
         </nav>
         {latest && (
           <Link to={`/elemzesek/${latest.slug}`} className={HeaderCSS.cta}>

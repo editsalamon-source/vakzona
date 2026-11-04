@@ -60,7 +60,7 @@ as $$ select 1 $$;
 
 grant execute on function public.ebreszto() to anon;
 
--- ---------- Adminok és meghívások (2026-10-31; az adminoldal: /fiok/admin) ----------
+-- ---------- Adminok és meghívások (2026-10-31; az adminoldal: /admin) ----------
 
 -- adminok: csak az SQL Editorból vehető fel (insert into public.adminok select id from auth.users where email = '…')
 create table if not exists public.adminok (
@@ -203,3 +203,62 @@ drop trigger if exists meghivas_bevaltasa on auth.users;
 create trigger meghivas_bevaltasa
   after insert or update of email_confirmed_at on auth.users
   for each row execute function public.meghivas_bevaltasa();
+
+-- ---------- Értesítés új felhasználóról (2026-11-04) ----------
+-- Amikor egy új fiókot megerősítenek, minden admin kap egy általános levelet az adminoldal linkjével.
+-- A levélben nincs név, e-mail-cím vagy más adat a felhasználóról. Küldés a Brevo API-n át (pg_net, aszinkron),
+-- a Brevo API-kulcsa a Supabase Vaultban van (supabase/README.md, 10. lépés); ha nincs beállítva, nem küld semmit.
+-- Hiba esetén sem akadályozza a regisztrációt.
+
+create extension if not exists pg_net with schema extensions;
+
+create or replace function public.uj_felhasznalo_ertesites()
+returns trigger
+language plpgsql
+security definer
+set search_path = ''
+as $$
+declare
+  v_kulcs text;
+  v_admin text;
+begin
+  if new.email_confirmed_at is null or (tg_op = 'UPDATE' and old.email_confirmed_at is not null) then
+    return new;
+  end if;
+  begin
+    select decrypted_secret into v_kulcs from vault.decrypted_secrets where name = 'brevo_api_kulcs';
+    if v_kulcs is null then
+      return new;
+    end if;
+    for v_admin in
+      select u.email from public.adminok a join auth.users u on u.id = a.user_id
+      where u.email is not null and u.id <> new.id
+    loop
+      perform net.http_post(
+        url := 'https://api.brevo.com/v3/smtp/email',
+        headers := jsonb_build_object('api-key', v_kulcs, 'content-type', 'application/json', 'accept', 'application/json'),
+        body := jsonb_build_object(
+          'sender', jsonb_build_object('name', 'Vakzóna', 'email', 'noreply@vakzona.com'),
+          'to', jsonb_build_array(jsonb_build_object('email', v_admin)),
+          'subject', 'Új felhasználó regisztrált – Vakzóna',
+          'htmlContent', '<p>Új felhasználó regisztrált és megerősítette a fiókját a Vakzónán.</p>'
+            || '<p>A hozzáférései az adminoldalon állíthatók be:</p>'
+            || '<p><a href="https://vakzona.com/admin">Hozzáférések kezelése</a></p>',
+          'textContent', 'Új felhasználó regisztrált és megerősítette a fiókját a Vakzónán. '
+            || 'A hozzáférései az adminoldalon állíthatók be: https://vakzona.com/admin'
+        )
+      );
+    end loop;
+  exception when others then
+    raise warning 'uj_felhasznalo_ertesites: %', sqlerrm;
+  end;
+  return new;
+end;
+$$;
+
+revoke execute on function public.uj_felhasznalo_ertesites() from public, anon, authenticated;
+
+drop trigger if exists uj_felhasznalo_ertesites on auth.users;
+create trigger uj_felhasznalo_ertesites
+  after insert or update of email_confirmed_at on auth.users
+  for each row execute function public.uj_felhasznalo_ertesites();
