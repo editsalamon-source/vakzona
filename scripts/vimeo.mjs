@@ -84,10 +84,10 @@ async function tus(link, file) {
   process.stdout.write("\n");
 }
 
-// a lecke azonosítója a fájlnévben: "07a-plusz" → "07a+ – …"
+// a lecke azonosítója a fájlnévben: "07a-plusz" → "07a+ – …", "13-plusz-plusz" → "13++ – …"
 const find = (dir, id, ext) => {
   if (!existsSync(join(src, dir))) return null;
-  const prefix = `${id.replace(/-plusz$/, "+")} – `;
+  const prefix = `${id.replace(/-plusz/g, "+")} – `;
   const name = readdirSync(join(src, dir)).find((f) => f.startsWith(prefix) && f.endsWith(ext) && !f.includes("forgatókönyv"));
   return name ? join(src, dir, name) : null;
 };

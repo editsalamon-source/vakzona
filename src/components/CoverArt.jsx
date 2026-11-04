@@ -358,6 +358,31 @@ function Dontesiterkep() {
   );
 }
 
+// AI Act megfelelés tanfolyam: a négy kockázati szint piramisa (a csúcson a tiltott, áthúzva),
+// a narancs sáv a nagy kockázatú szint, ebből vezet a nyíl a megfelelési dossziéhoz.
+function Piramis() {
+  return (
+    <>
+      <path d="M150 56 L176 99 L124 99 Z" fill="currentColor" fillOpacity="0.08" strokeWidth="1.5" strokeLinejoin="round" />
+      <path d="M142 72 l16 16 M158 72 l-16 16" strokeWidth="1.5" opacity="0.6" />
+      <path d="M121 106 L179 106 L205 151 L95 151 Z" fill={A} fillOpacity="0.16" stroke={A} strokeWidth="1.5" strokeLinejoin="round" />
+      <path d="M92 158 L208 158 L234 203 L66 203 Z" fill="currentColor" fillOpacity="0.05" strokeWidth="1.5" strokeLinejoin="round" />
+      <path d="M63 210 L237 210 L264 256 L36 256 Z" fill="currentColor" fillOpacity="0.02" strokeWidth="1.5"
+        strokeDasharray="3 4" strokeLinejoin="round" />
+      <path d="M210 128 C 236 128 250 120 266 112" stroke={A} strokeWidth="1.5" strokeDasharray="3 4" />
+      <path d="M260 106 l7 6 l-8 4" stroke={A} strokeWidth="1.5" strokeLinejoin="round" />
+      <rect x="288" y="74" width="80" height="150" rx="8" fill={BG} strokeWidth="1.5" opacity="0.5" />
+      <rect x="280" y="84" width="80" height="150" rx="8" fill={BG} strokeWidth="1.5" opacity="0.75" />
+      <path d="M272 104 h28 l8 -10 h44 a8 8 0 0 1 8 8 v138 a8 8 0 0 1 -8 8 h-72 a8 8 0 0 1 -8 -8 Z"
+        fill={BG} strokeWidth="1.5" strokeLinejoin="round" />
+      {[132, 152, 172, 192].map((y, i) => (
+        <line key={y} x1="286" y1={y} x2={[340, 328, 344, 320][i]} y2={y} strokeWidth="1.5" opacity="0.45" />
+      ))}
+      <path d="M300 214 l8 8 l16 -18" strokeWidth="2" opacity="0.6" strokeLinejoin="round" />
+    </>
+  );
+}
+
 const MOTIFS = {
   naptar: Naptar,
   osszefogas: Osszefogas,
@@ -371,6 +396,7 @@ const MOTIFS = {
   cselekves: Cselekves,
   jartassag: Jartassag,
   dontesiterkep: Dontesiterkep,
+  piramis: Piramis,
 };
 
 function CoverArt({ motif, category, className }) {
