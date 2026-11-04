@@ -148,7 +148,9 @@ button.lessonBtn { cursor: pointer; }
 .progressBar { position: relative; display: block; height: 6px; margin: 12px 6px 0; border-radius: 999px; background: var(--line); overflow: hidden; }
 .progressBar > span { position: absolute; inset: 0; background: var(--accent); transform-origin: 0 50%; transition: transform .6s cubic-bezier(.22, 1, .36, 1); }
 
-.lessonHead { display: flex; justify-content: space-between; align-items: flex-start; gap: 24px; margin: 28px 0 8px; }
+.speedHint { margin: 12px 0 0; font-size: .85rem; line-height: 1.5; color: var(--muted, #64748b); }
+.speedHint strong { color: var(--ink, #050505); font-weight: 600; }
+.lessonHead { display: flex; justify-content: space-between; align-items: flex-start; gap: 24px; margin: 24px 0 8px; }
 .lessonTitle { font-size: clamp(1.4rem, 2.4vw, 1.9rem); margin: 8px 0 6px; letter-spacing: -0.035em; }
 .doneBtn {
   flex: none;

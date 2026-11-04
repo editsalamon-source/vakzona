@@ -369,6 +369,10 @@ function Classroom({ course, access }) {
               }
             }}
           />
+          <p className={CSS.speedHint}>
+            <strong>Tipp:</strong> a lejátszó beállításainál (fogaskerék ikon) a lejátszás sebessége is állítható.
+            Válassza azt a tempót, amelyen kényelmesen tudja követni: lassabbat, ha új a téma, gyorsabbat, ha ismerős.
+          </p>
           <div className={CSS.lessonHead}>
             <div>
               {module?.title && <span className="eyebrow">{module.title}</span>}
