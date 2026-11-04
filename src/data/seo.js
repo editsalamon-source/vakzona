@@ -37,7 +37,7 @@ const seo = {
     title: "Fiók – Vakzóna",
     description: "Belépés, regisztráció és elfelejtett jelszó a Vakzóna-fiókhoz, amellyel a tanfolyamok és a zárolt dokumentumok felhasználónként nyílnak meg.",
   },
-  "/fiok/admin": {
+  "/admin": {
     title: "Hozzáférések – Vakzóna",
     description: "A Vakzóna-fiókok hozzáféréseinek kezelése.",
     noindex: true,

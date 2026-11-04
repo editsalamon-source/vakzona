@@ -51,7 +51,7 @@ const App = () => (
           <Route path="/akademia/:slug/oklevel" element={<Certificate />} />
           <Route path="/rolunk" element={<About />} />
           <Route path="/fiok" element={<Account />} />
-          <Route path="/fiok/admin" element={<Admin />} />
+          <Route path="/admin" element={<Admin />} />
           <Route path="/adatkezeles" element={<Privacy />} />
           <Route path="*" element={<NotFound />} />
         </Routes>

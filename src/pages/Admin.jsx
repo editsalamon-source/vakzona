@@ -205,7 +205,7 @@ function Admin() {
   else if (!account.user) {
     body = (
       <p className={AccountCSS.notice}>
-        Az oldalhoz be kell jelentkezni. <Link to="/fiok?vissza=/fiok/admin">Belépés</Link>
+        Az oldalhoz be kell jelentkezni. <Link to="/fiok?vissza=/admin">Belépés</Link>
       </p>
     );
   } else if (!admin) body = <p className={AccountCSS.notice}>Ehhez az oldalhoz nincs jogosultsága.</p>;
@@ -213,7 +213,7 @@ function Admin() {
 
   return (
     <div className={`wrap ${PageCSS.page} ${CSS.page}`}>
-      <Link to="/fiok" className="tag">Fiók</Link>
+      <span className="tag">Admin</span>
       <h1 className={AccountCSS.title}>Hozzáférések</h1>
       <p className="lead">Ki melyik tanfolyamot és védett dokumentumot nyithatja meg.</p>
       <div className={AccountCSS.stack}>{body}</div>

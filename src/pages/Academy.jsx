@@ -2,6 +2,7 @@ import React from "react";
 import courses, { AKADEMIA, formatLength, getAcademyCategories } from "../data/akademia";
 import CourseTile from "../components/CourseTile";
 import ListHead from "../components/ListHead";
+import CourseNotice from "../components/CourseNotice";
 import TagFilter, { useTagFilter } from "../components/TagFilter";
 import CSS from "../css/Academy.module.css";
 import PageCSS from "../css/Page.module.css";
@@ -51,6 +52,8 @@ function Academy({ category = null }) {
               : "Az első tanfolyam hamarosan indul."}
         </p>
       )}
+
+      <CourseNotice />
     </div>
   );
 }

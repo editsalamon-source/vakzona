@@ -8,6 +8,7 @@ import { FIOK, useAccount } from "../utils/fiok";
 import Arrow from "../components/Arrow";
 import VideoPlayer from "../components/VideoPlayer";
 import FreeBadge from "../components/FreeBadge";
+import CourseNotice from "../components/CourseNotice";
 import NotFound from "./NotFound";
 import CSS from "../css/Course.module.css";
 import FormCSS from "../css/ProtectedPdf.module.css";
@@ -210,6 +211,7 @@ function CourseLanding({ course, access, account = {} }) {
           <VideoPlayer url={course.intro} subtitles={course.introSubtitles} title="Bemutató" poster category={course.category}
         cover={course.cover} badge={{ src: course.logo, text: course.logoText }} />
           {course.introHtml && <div className={CSS.intro} dangerouslySetInnerHTML={{ __html: course.introHtml }} />}
+          <CourseNotice compact title="Mielőtt elkezdi" />
         </div>
         <aside className={CSS.heroSide}>
           <dl className={CSS.facts}>
@@ -392,6 +394,7 @@ function Classroom({ course, access }) {
             <h2 className={CSS.sectionTitle}>A tanfolyamról</h2>
             <div dangerouslySetInnerHTML={{ __html: course.introHtml + course.html }} />
           </section>
+          <CourseNotice compact />
         </div>
 
         <aside className={`${CSS.card} ${CSS.side}`}>

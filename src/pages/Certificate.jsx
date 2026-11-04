@@ -66,7 +66,7 @@ const Sheet = forwardRef(function Sheet({ course, name, date }, ref) {
 
         <div className={CSS.foot}>
           <span>vakzona.com/akademia/{course.slug}</span>
-          <span>Az oklevél a tanfolyam összes leckéjének megtekintését igazolja.</span>
+          <span>Nem akkreditált képzés. Az oklevél a tanfolyam összes leckéjének megtekintését igazolja.</span>
         </div>
       </div>
     </div>

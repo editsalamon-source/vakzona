@@ -3,7 +3,7 @@ import { Link, useNavigate, useSearchParams } from "react-router-dom";
 import { describe } from "../data/vedett";
 import Arrow from "../components/Arrow";
 import {
-  FIOK, useAccount, errorText, signIn, signUp, signOut, resetPassword, updatePassword, deleteAccount, accesses, isAdmin,
+  FIOK, useAccount, errorText, signIn, signUp, signOut, resetPassword, updatePassword, deleteAccount, accesses,
 } from "../utils/fiok";
 import PageCSS from "../css/Page.module.css";
 import FormCSS from "../css/ProtectedPdf.module.css";
@@ -179,10 +179,8 @@ function Delete() {
 
 function Dashboard({ user }) {
   const [list, setList] = useState(null);
-  const [admin, setAdmin] = useState(false);
   useEffect(() => {
     accesses().then(setList).catch(() => setList([]));
-    isAdmin().then(setAdmin).catch(() => setAdmin(false));
   }, [user.id]);
   const items = (list || []).map(describe).filter(Boolean);
 
@@ -192,11 +190,6 @@ function Dashboard({ user }) {
         <span className="eyebrow">Bejelentkezve</span>
         <p className={CSS.email}>{user.email}</p>
         <div className={CSS.row}>
-          {admin && (
-            <Link to="/fiok/admin" className="btn">
-              Hozzáférések kezelése <Arrow size={12} />
-            </Link>
-          )}
           <button type="button" className="btn btnGhost" onClick={() => signOut().catch(() => {})}>Kijelentkezés</button>
         </div>
       </div>
