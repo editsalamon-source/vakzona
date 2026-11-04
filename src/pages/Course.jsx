@@ -360,7 +360,14 @@ function Classroom({ course, access }) {
             title={lesson.title}
             autoplay={picked.current}
             subtitles={subtitles}
-            onEnded={() => progress.setDone(currentId)}
+            onEnded={() => {
+              progress.setDone(currentId);
+              // a videó végén automatikusan indul a következő lecke (görgetés nélkül)
+              if (next) {
+                picked.current = true;
+                setParams({ lecke: next.id }, { replace: true });
+              }
+            }}
           />
           <div className={CSS.lessonHead}>
             <div>
