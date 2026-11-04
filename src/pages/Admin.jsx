@@ -1,6 +1,6 @@
 import React, { useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
-import VEDETT, { describe } from "../data/vedett";
+import { CSOPORTOK, describe } from "../data/vedett";
 import Arrow from "../components/Arrow";
 import {
   FIOK, useAccount, errorText, isAdmin, adminUsers, setAccess, adminInvites, setInvite,
@@ -51,15 +51,18 @@ function Invite({ onDone }) {
       <label className={FormCSS.label} htmlFor="meghivasEmail">E-mail-cím</label>
       <input id="meghivasEmail" type="email" required className={FormCSS.input} value={email}
         onChange={(e) => setEmail(e.target.value)} disabled={state.busy} />
-      <div className={CSS.picks}>
-        {VEDETT.map((v) => (
-          <label key={v.id} className={AccountCSS.check}>
-            <input type="checkbox" checked={picked.includes(v.id)} disabled={state.busy}
-              onChange={(e) => setPicked((p) => (e.target.checked ? [...p, v.id] : p.filter((x) => x !== v.id)))} />
-            <span><strong>{v.title}</strong> <span className="meta">{v.kind}</span></span>
-          </label>
-        ))}
-      </div>
+      {CSOPORTOK.map((g) => (
+        <fieldset key={g.label} className={CSS.picks}>
+          <legend className={CSS.group}>{g.label}</legend>
+          {g.items.map((v) => (
+            <label key={v.id} className={AccountCSS.check}>
+              <input type="checkbox" checked={picked.includes(v.id)} disabled={state.busy}
+                onChange={(e) => setPicked((p) => (e.target.checked ? [...p, v.id] : p.filter((x) => x !== v.id)))} />
+              <span><strong>{v.title}</strong></span>
+            </label>
+          ))}
+        </fieldset>
+      ))}
       {state.error && <p className={FormCSS.error}>{state.error}</p>}
       {state.message && <p className={AccountCSS.ok}>{state.message}</p>}
       <button type="submit" className="btn" disabled={state.busy}>
@@ -144,12 +147,17 @@ function Users({ users, setUsers }) {
               </span>
             </span>
             <span className={CSS.grants}>
-              {VEDETT.map((v) => (
-                <label key={v.id} className={AccountCSS.check}>
-                  <input type="checkbox" checked={u.tartalmak.includes(v.id)}
-                    onChange={(e) => toggle(u, v.id, e.target.checked)} />
-                  <span>{v.title}</span>
-                </label>
+              {CSOPORTOK.map((g) => (
+                <span key={g.label} className={CSS.grantGroup}>
+                  <span className={CSS.group}>{g.label}</span>
+                  {g.items.map((v) => (
+                    <label key={v.id} className={AccountCSS.check}>
+                      <input type="checkbox" checked={u.tartalmak.includes(v.id)}
+                        onChange={(e) => toggle(u, v.id, e.target.checked)} />
+                      <span>{v.title}</span>
+                    </label>
+                  ))}
+                </span>
               ))}
             </span>
           </li>
