@@ -363,10 +363,17 @@ function Classroom({ course, access }) {
             onEnded={() => {
               progress.setDone(currentId);
               // a videó végén automatikusan indul a következő lecke (görgetés nélkül)
-              if (next) {
+              if (!next) return;
+              const go = () => {
                 picked.current = true;
                 setParams({ lecke: next.id }, { replace: true });
-              }
+              };
+              // A lejátszó lecserélése előtt ki kell lépni a teljes képernyőből: ha a teljes képernyős
+              // iframe tűnik el, a böngésző teljes képernyőn ragad, és az új lejátszó kilépés gombja nem működik.
+              const fullscreen = document.fullscreenElement || document.webkitFullscreenElement;
+              const exit = document.exitFullscreen || document.webkitExitFullscreen;
+              if (fullscreen && exit) Promise.resolve(exit.call(document)).then(go, go);
+              else go();
             }}
           />
           <p className={CSS.speedHint}>
