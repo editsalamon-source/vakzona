@@ -37,6 +37,8 @@ function Embed({ video, autoplay, title, onEnded }) {
   const frame = useRef(null);
   const ended = useRef(onEnded);
   ended.current = onEnded;
+  const subscribeRef = useRef(null);
+  const lastEnd = useRef(0);
 
   useEffect(() => {
     const onMessage = (e) => {
@@ -47,8 +49,17 @@ function Embed({ video, autoplay, title, onEnded }) {
       } catch (err) {
         return;
       }
+      // A Vimeo-lejátszó a „ready” üzenettel jelzi, hogy fogadja a parancsokat. Az iframe onLoad-ja
+      // ennél korábban is lefuthat, és akkor a feliratkozás elveszne (nincs pipa, nem indul a következő lecke).
+      if (data?.event === "ready") subscribeRef.current?.();
       const yt = data?.event === "onStateChange" ? data.info : data?.info?.playerState;
-      if (yt === 0 || data?.event === "ended" || data?.event === "finish") ended.current?.();
+      if (yt === 0 || data?.event === "ended" || data?.event === "finish") {
+        // kettős feliratkozásnál (onLoad + ready) a vég kétszer is jöhet: csak egyszer lépünk tovább
+        const now = Date.now();
+        if (now - lastEnd.current < 3000) return;
+        lastEnd.current = now;
+        ended.current?.();
+      }
     };
     window.addEventListener("message", onMessage);
     return () => window.removeEventListener("message", onMessage);
@@ -66,6 +77,7 @@ function Embed({ video, autoplay, title, onEnded }) {
       win.postMessage(JSON.stringify({ method: "addEventListener", value: "finish" }), "*");
     }
   };
+  subscribeRef.current = subscribe;
 
   return (
     <iframe
