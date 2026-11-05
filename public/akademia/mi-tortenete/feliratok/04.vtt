@@ -1,0 +1,457 @@
+WEBVTT
+
+00:00:01.400 --> 00:00:05.038
+Üdvözöljük Az MI története
+sorozat negyedik részében!
+
+00:00:05.358 --> 00:00:10.063
+Ebben a részben megnézzük, hogyan lett
+az MI-ből üzlet a nyolcvanas években,
+
+00:00:10.063 --> 00:00:15.003
+miért jött utána a második tél, és melyik
+gondolat változtatott meg végül mindent.
+
+00:00:16.503 --> 00:00:19.754
+Próbáljuk ki: hogyan
+írnánk le szabályokkal,
+
+00:00:19.754 --> 00:00:22.051
+hogy mitől macska egy
+macska egy fényképen?
+
+00:00:22.371 --> 00:00:29.521
+Négy lába van? Hegyes füle?
+Bajsza? És ha csak a feje látszik,
+
+00:00:29.521 --> 00:00:32.717
+ha összegömbölyödik, vagy
+ha egy kutya is pont ilyen?
+
+00:00:33.037 --> 00:00:37.171
+Egy kisgyerek néhány példa után
+tévedés nélkül felismeri a macskát,
+
+00:00:37.171 --> 00:00:39.320
+pedig senki nem adott neki szabályokat.
+
+00:00:39.640 --> 00:00:46.074
+A nyolcvanas évek MI-je még szabályokat
+írt. Ennek a résznek a végére eljutunk oda,
+
+00:00:46.074 --> 00:00:49.021
+ahol a gépek is inkább a
+gyerek módszerét követik.
+
+00:00:50.521 --> 00:00:52.253
+Három dolgot nézünk meg.
+
+00:00:52.573 --> 00:00:57.069
+Először a szakértői rendszereket,
+az MI első üzleti sikerét,
+
+00:00:57.389 --> 00:01:00.781
+aztán azt, miért jött
+utánuk a második tél,
+
+00:01:01.101 --> 00:01:06.012
+végül a nagy fordulatot, a gépi
+tanulást, angolul machine learning.
+
+00:01:07.412 --> 00:01:10.988
+Az első tél után a kutatók
+szerényebb célt tűztek ki:
+
+00:01:10.988 --> 00:01:15.866
+ne általános gondolkodó gépet építsenek,
+hanem egy szűk terület szakértőjét.
+
+00:01:17.566 --> 00:01:24.144
+Így születtek a szakértői rendszerek,
+angolul expert systems. Két részből álltak.
+
+00:01:24.464 --> 00:01:28.191
+Az első a tudásbázis,
+angolul knowledge base:
+
+00:01:28.191 --> 00:01:32.878
+egy terület szakértőinek tudása,
+ha–akkor szabályok ezreibe foglalva,
+
+00:01:32.878 --> 00:01:37.553
+angolul if–then rules.
+Például: ha a beteg lázas,
+
+00:01:37.553 --> 00:01:42.061
+és a vérben ilyen baktérium található,
+akkor ez a fertőzés valószínű.
+
+00:01:42.381 --> 00:01:46.367
+A második a következtetőgép,
+angolul inference engine,
+
+00:01:46.367 --> 00:01:50.030
+amely a szabályokat egymás után
+alkalmazva eljut a válaszig,
+
+00:01:50.030 --> 00:01:52.593
+és meg is tudja mutatni,
+hogyan jutott oda.
+
+00:01:52.913 --> 00:01:58.126
+A korszak egyik híres rendszere vérfertőzések
+kezelésére javasolt antibiotikumot,
+
+00:01:58.126 --> 00:02:01.926
+és a tesztekben a szakorvosokhoz
+mérhető pontossággal dolgozott.
+
+00:02:02.246 --> 00:02:05.582
+A legnagyobb üzleti siker
+egy számítógépgyártóé volt,
+
+00:02:05.582 --> 00:02:07.757
+amely egy szakértői rendszerrel állíttatta
+
+00:02:07.757 --> 00:02:10.407
+össze a megrendelt gépek
+alkatrészlistáját,
+
+00:02:10.407 --> 00:02:13.707
+és ezzel évente több tízmillió
+dollárt takarított meg.
+
+00:02:14.027 --> 00:02:18.886
+A nyolcvanas évek közepére a nagyvállalatok
+tömegesen indítottak MI-részlegeket,
+
+00:02:18.886 --> 00:02:22.436
+Japán pedig hatalmas állami
+programot hirdetett.
+
+00:02:22.436 --> 00:02:25.613
+Az MI újra a figyelem
+középpontjába került.
+
+00:02:27.013 --> 00:02:29.802
+A siker azonban rövid ideig tartott.
+
+00:02:31.502 --> 00:02:35.511
+A szakértői rendszerek három gyengeség
+miatt nem tudtak tovább nőni.
+
+00:02:35.831 --> 00:02:40.794
+Az első a tudás kinyerése,
+angolul knowledge acquisition.
+
+00:02:40.794 --> 00:02:44.532
+A szakértők sokszor maguk sem
+tudják szabályokba foglalni,
+
+00:02:44.532 --> 00:02:49.632
+amit tudnak. Egy tapasztalt
+orvos ránéz a betegre, és érzi,
+
+00:02:49.632 --> 00:02:53.958
+hogy baj van, de nem tudja ha–akkor
+mondatokban leírni, miből.
+
+00:02:54.278 --> 00:03:00.626
+A második a törékenység. A rendszer
+csak azt tudta, amit beleírtak.
+
+00:03:00.626 --> 00:03:03.264
+Egy váratlan esetnél nem hibázott kicsit,
+
+00:03:03.264 --> 00:03:06.873
+hanem teljesen csődöt mondott,
+mert nem volt rá szabálya.
+
+00:03:07.193 --> 00:03:12.356
+A harmadik a karbantartás. A
+szabályok száma több ezerre nőtt,
+
+00:03:12.356 --> 00:03:14.381
+ezek egymásnak is ellentmondtak,
+
+00:03:14.381 --> 00:03:18.218
+és minden változásnál
+kézzel kellett őket átírni.
+
+00:03:18.218 --> 00:03:21.046
+A rendszer egyre drágább és lassabb lett.
+
+00:03:21.366 --> 00:03:26.465
+Lényegében ugyanaz a probléma tért
+vissza, amelyet az előző részben láttunk:
+
+00:03:26.465 --> 00:03:30.580
+a világ túl bonyolult ahhoz, hogy
+kézzel írt szabályokkal leírjuk.
+
+00:03:32.080 --> 00:03:37.772
+1987-ben összeomlott az MI-hez
+épített speciális számítógépek piaca,
+
+00:03:37.772 --> 00:03:41.185
+mert az olcsóbb asztali
+gépek utolérték őket.
+
+00:03:41.185 --> 00:03:44.460
+A vállalatok sorra zárták
+be MI-részlegeiket,
+
+00:03:44.460 --> 00:03:46.981
+és a japán program sem érte el a céljait.
+
+00:03:47.301 --> 00:03:52.713
+Így jött el a második MI-tél,
+nagyjából a kilencvenes évek közepéig.
+
+00:03:52.713 --> 00:03:56.675
+A mesterséges intelligencia
+kifejezés olyan rossz hírű lett,
+
+00:03:56.675 --> 00:03:58.639
+hogy sok kutató inkább kerülte.
+
+00:03:58.959 --> 00:04:04.062
+A tél alatt azonban csendben elindult
+valami, ami végül mindent megváltoztatott.
+
+00:04:05.462 --> 00:04:08.342
+Ez a nagy fordulat: a gépi tanulás.
+
+00:04:10.042 --> 00:04:13.155
+Nézzük meg egymás mellett
+a két megközelítést.
+
+00:04:13.475 --> 00:04:18.151
+A klasszikus programozásban a
+programozó írja meg a szabályokat.
+
+00:04:18.151 --> 00:04:20.976
+A gép megkapja az adatot és a szabályokat,
+
+00:04:20.976 --> 00:04:26.118
+és kiszámolja az eredményt. Ez
+egy számlázóprogramnál tökéletes.
+
+00:04:26.438 --> 00:04:29.901
+A gépi tanulásban megfordul a sorrend.
+
+00:04:29.901 --> 00:04:33.989
+A gép megkapja az adatot és a
+hozzá tartozó helyes eredményeket,
+
+00:04:33.989 --> 00:04:36.951
+és maga állítja elő a szabályokat.
+
+00:04:36.951 --> 00:04:41.671
+Ezt a gép által megtalált szabályrendszert
+nevezzük modellnek, angolul model.
+
+00:04:41.991 --> 00:04:47.092
+Ez a megoldás a szakértői rendszerek
+mindhárom gyengeségére választ ad.
+
+00:04:47.092 --> 00:04:49.592
+Nem kell a tudást szabályokba foglalni,
+
+00:04:49.592 --> 00:04:56.367
+elég példákat mutatni. A modell új esetekre
+is általánosít: ez az általánosítás,
+
+00:04:56.367 --> 00:05:01.129
+angolul generalization, vagyis az,
+hogy olyan esetekben is jól dönt,
+
+00:05:01.129 --> 00:05:06.092
+amelyeket a tanítás során sosem
+látott. És ha változik a világ,
+
+00:05:06.092 --> 00:05:09.383
+nem átírjuk, hanem új
+adatokon újratanítjuk.
+
+00:05:10.883 --> 00:05:14.637
+Lássuk egy hétköznapi példán,
+a levélszemét-szűrőn.
+
+00:05:14.957 --> 00:05:19.530
+Először összegyűjtünk sok ezer
+levelet, és mindegyikről megjelöljük,
+
+00:05:19.530 --> 00:05:24.816
+hogy kéretlen-e vagy sem. Ez a
+jelölés a címke, angolul label.
+
+00:05:25.136 --> 00:05:29.824
+Aztán kiválasztjuk, mit nézzen a
+gép a levélben: bizonyos szavakat,
+
+00:05:29.824 --> 00:05:35.714
+a feladót, a linkek számát. Ezek
+a jellemzők, angolul features.
+
+00:05:36.034 --> 00:05:38.485
+A tanítás során a gép megkeresi,
+
+00:05:38.485 --> 00:05:42.372
+mely jellemzők milyen erősen
+utalnak a kéretlen levélre.
+
+00:05:42.372 --> 00:05:46.719
+Ez a tanítás, angolul training,
+és az eredménye a modell.
+
+00:05:47.039 --> 00:05:52.351
+Végül a modellt munkába állítjuk: minden
+új levélnél pillanatok alatt eldönti,
+
+00:05:52.351 --> 00:05:57.940
+hová kerüljön. Ezt hívják
+következtetésnek, angolul inference-nek.
+
+00:05:58.260 --> 00:06:04.119
+Egyetlen szabályt sem írtunk. A
+gép a címkézett példákból tanult.
+
+00:06:04.119 --> 00:06:08.414
+Ezt felügyelt tanulásnak nevezzük,
+angolul supervised learning.
+
+00:06:09.914 --> 00:06:14.485
+Ez a fordulat nem egyetlen pillanat
+volt, hanem húsz év csendes munkája.
+
+00:06:14.805 --> 00:06:18.651
+1986-ban Geoffrey Hinton
+és társai népszerűvé
+
+00:06:18.651 --> 00:06:21.201
+tették a hibavisszaterjesztés módszerét,
+
+00:06:21.201 --> 00:06:24.626
+angolul backpropagation. A lényege,
+
+00:06:24.626 --> 00:06:28.751
+hogy a háló kimenetén mért hibát
+rétegről rétegre visszafelé vezetik,
+
+00:06:28.751 --> 00:06:32.838
+és közben minden súlyt egy
+kicsit a jó irányba igazítanak.
+
+00:06:32.838 --> 00:06:36.926
+Ezzel végre taníthatóvá váltak
+a több rétegű neurális hálók,
+
+00:06:36.926 --> 00:06:40.414
+és a lépcsőházi villany
+feladata megoldódott.
+
+00:06:40.414 --> 00:06:45.534
+Hinton ezért a munkásságáért
+2024-ben fizikai Nobel-díjat kapott.
+
+00:06:45.854 --> 00:06:52.683
+1989-ben egy konvolúciós neurális hálózat,
+angolul convolutional neural network,
+
+00:06:52.683 --> 00:06:56.758
+megtanulta felismerni a
+kézzel írt irányítószámokat.
+
+00:06:56.758 --> 00:07:00.096
+Ez olyan háló, amely a
+képet kis ablakokban,
+
+00:07:00.096 --> 00:07:03.683
+darabonként vizsgálja, és
+így ismeri fel a vonalakat,
+
+00:07:03.683 --> 00:07:06.858
+íveket, majd a teljes alakzatot.
+
+00:07:06.858 --> 00:07:11.268
+A kilencvenes évek végén már bankok
+használták csekkek olvasására.
+
+00:07:11.588 --> 00:07:16.215
+A kilencvenes években a beszédfelismerés,
+angolul speech recognition,
+
+00:07:16.215 --> 00:07:19.790
+és a gépi fordítás, angolul
+machine translation,
+
+00:07:19.790 --> 00:07:22.665
+is a kézzel írt nyelvtani
+szabályokról áttért a nagy
+
+00:07:22.665 --> 00:07:26.490
+szövegmennyiségekből tanuló
+statisztikai módszerekre.
+
+00:07:26.490 --> 00:07:29.127
+A kétezres évek elejére
+megjelentek a tanuló
+
+00:07:29.127 --> 00:07:32.702
+levélszemét-szűrők és a
+webáruházak ajánlórendszerei,
+
+00:07:32.702 --> 00:07:34.617
+angolul recommender systems.
+
+00:07:34.937 --> 00:07:41.426
+És 1997-ben egy gép legyőzte a
+sakkvilágbajnokot, Garri Kaszparovot.
+
+00:07:41.426 --> 00:07:44.151
+Ez azonban még a régi utat képviselte:
+
+00:07:44.151 --> 00:07:48.664
+a gép másodpercenként kétszázmillió
+állást vizsgált meg nyers erővel,
+
+00:07:48.664 --> 00:07:54.276
+angolul brute force, és szakértők által
+beállított szabályok szerint értékelt.
+
+00:07:54.276 --> 00:07:57.523
+Látványos volt, de nem a tanulás győzelme.
+
+00:07:59.023 --> 00:08:02.932
+Röviden összefoglalva: a
+szakértői rendszerek megmutatták,
+
+00:08:02.932 --> 00:08:04.644
+hogy az MI hasznot hozhat,
+
+00:08:04.644 --> 00:08:09.532
+de a kézzel írt szabályok nem
+skálázódtak, és jött a második tél.
+
+00:08:09.532 --> 00:08:14.069
+Közben megszületett a legfontosabb
+gondolat: ne programozzuk a gépet,
+
+00:08:14.069 --> 00:08:20.246
+hanem tanítsuk. Adatot és helyes válaszokat
+adunk, a szabályokat a gép találja meg.
+
+00:08:20.566 --> 00:08:22.592
+A következő részben megnézzük,
+
+00:08:22.592 --> 00:08:27.392
+miért csak 2012 körül kezdtek el
+igazán működni a neurális hálók,
+
+00:08:27.392 --> 00:08:32.642
+és mi köze ehhez az internetnek, a
+videojátékoknak és egy képfelismerő versenynek.
+
+00:08:32.962 --> 00:08:35.508
+Viszontlátásra a következő részben!

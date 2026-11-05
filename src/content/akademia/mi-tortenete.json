@@ -1,0 +1,39 @@
+{
+  "leckek": {
+    "01": {
+      "video": "https://vimeo.com/1243709652",
+      "felirat": "01.vtt",
+      "leiras": "Ha azt mondom, mesterséges intelligencia, Ön mire gondol: egy filmbeli robotra, vagy a telefonja arcfelismerőjére? Az első lecke tisztázza, mit nevezünk mesterséges intelligenciának, és felrajzolja a sorozat térképét.\n\n**Ebben a leckében:**\n- félelmek és remények: a kicsúszó gép, a munkahelyek, az orvoslás és a hétköznapi segítségek\n- mi számít MI-nek, és mi nem: a zsebszámológép nem az, a levélszemét-szűrő igen, mert tanul\n- mesterséges intelligencia, gépi tanulás, mélytanulás: a három egymásba ágyazott kör\n- gyenge (szűk) és erős (általános) MI: hol tartunk ma valójában\n- a sorozat térképe: három nagy ötlet és két MI-tél"
+    },
+    "02": {
+      "video": "https://vimeo.com/1243709762",
+      "felirat": "02.vtt",
+      "leiras": "Tud-e gondolkodni egy gép? A kérdést 1950-ben tette fel először valaki tudományos komolysággal. Ez a lecke a kezdetekhez utazik vissza, a negyvenes és ötvenes évekbe, amikor a mesterséges intelligencia még csak egy merész gondolat volt.\n\n**Ebben a leckében:**\n- az előzmények: Ada Lovelace jegyzetei, McCulloch és Pitts mesterséges neuronja (1943), Neumann János tárolt program elve (1945)\n- Alan Turing kérdése és az imitációs játék, amelyet ma Turing-tesztként ismerünk, és a teszt bírálata\n- a dartmouthi nyári konferencia (1956), ahol a terület a nevét kapta, és a Logic Theorist\n- a korai optimizmus, és miért tartott sokkal tovább a megvalósítás"
+    },
+    "03": {
+      "video": "https://vimeo.com/1243709903",
+      "felirat": "03.vtt",
+      "leiras": "1958-ban egy napilap a gondolkodó gép közeli érkezéséről írt. Alig tizenöt évvel később az MI-kutatás pénzét drasztikusan megnyirbálták. Ez a lecke azt mutatja meg, mi történt a kettő között.\n\n**Ebben a leckében:**\n- a két út: a szabályoké (szimbolikus MI) és a tanulásé (Arthur Samuel dámaprogramja)\n- Rosenblatt perceptronja (1958), az első tanuló gép, és hogyan tanul a súlyok kis javításaival\n- ELIZA (1966), az első csevegőprogram, és az ELIZA-hatás\n- a vezető kutatók bátor jóslatai, és a négy ok, amiért a kutatás elakadt (kombinatorikus robbanás, gyenge gépek, a józan ész, a perceptron korlátja)\n- a Lighthill-jelentés és az első MI-tél, valamint a hype-ciklus mint visszatérő minta"
+    },
+    "04": {
+      "video": "https://vimeo.com/1243710053",
+      "felirat": "04.vtt",
+      "leiras": "Hogyan írnánk le szabályokkal, mitől macska egy macska egy fényképen? Ez a lecke megmutatja, hogyan lett az MI-ből üzlet a nyolcvanas években, miért jött utána a második tél, és melyik gondolat változtatott meg végül mindent.\n\n**Ebben a leckében:**\n- a szakértői rendszerek: tudásbázis, ha–akkor szabályok és következtetőgép, az első üzleti sikerek\n- három gyengeség (a tudás kinyerése, a törékenység, a karbantartás) és a második MI-tél\n- a nagy fordulat: klasszikus programozás és gépi tanulás egymás mellett, modell és általánosítás\n- a levélszemét-szűrő példáján: címke, jellemzők, tanítás, következtetés, felügyelt tanulás\n- húsz év csendes munkája: a hibavisszaterjesztés (1986), a kézírás-felismerés, a statisztikai fordítás, és a Deep Blue győzelme (1997)"
+    },
+    "05": {
+      "video": "https://vimeo.com/1243710239",
+      "felirat": "05.vtt",
+      "leiras": "Az első mesterséges neuront 1943-ban írták le, a neurális hálók mégis csak 2012 körül kezdtek el igazán működni. Ez a lecke azt az évtizedet mutatja be, amikor a neurális hálók a laboratóriumokból a zsebünkbe kerültek.\n\n**Ebben a leckében:**\n- „miért most?”: a három hajtóerő, az adat, a hardver (GPU) és a nyílt forráskódú szoftver\n- mitől „mély” a mélytanulás: egymásra épülő rétegek az élektől a macskáig\n- az ImageNet-verseny és a 2012-es áttörés a képfelismerésben\n- az AlphaGo győzelme (2016) és a megerősítéses tanulás\n- a fekete doboz kérdése és a megmagyarázható MI"
+    },
+    "06": {
+      "video": "https://vimeo.com/1243710381",
+      "felirat": "06.vtt",
+      "leiras": "2012-ben az volt a szenzáció, hogy egy gép felismeri a macskát egy fényképen. Tíz évvel később bárki kérhetett tőle egy verset a macskáról. Ez a lecke megmutatja, hogyan lett a felismerő gépből alkotó gép, és mi történik valójában, amikor egy csevegőprogram válaszol.\n\n**Ebben a leckében:**\n- a Transformer (2017) és a figyelemmechanizmus\n- alapmodellek és nagy nyelvi modellek (LLM), a paraméterek szerepe\n- hogyan ír egy LLM: tokenek, a következő token előrejelzése és a hőmérséklet\n- az önfelügyelt tanulás, majd a finomhangolás és az emberi visszajelzés, amely beszélgetőtárssá teszi a modellt\n- 2022: a képgenerálók és a ChatGPT megjelenése\n- a lecke legfontosabb gondolata: a modell azt írja, ami valószínűnek hangzik, nem azt, amit ellenőrzött"
+    },
+    "07": {
+      "video": "https://vimeo.com/1243710565",
+      "felirat": "07.vtt",
+      "leiras": "A záró lecke megérkezik a jelenbe: mi történt 2022 óta, mit kell tudnunk a mai MI korlátairól és szabályairól, és mire használhatjuk okosan a mindennapi munkában.\n\n**Ebben a leckében:**\n- ami azóta történt: multimodális modellek, érvelő modellek, MI-ágensek, és az MI a tudományban\n- hat korlát, amelyet mindenkinek ismernie kell: hallucináció, tudáskorlát, torzítás, adatvédelem, az utasítás minősége, a józan ész\n- az Európai Unió MI-rendelete (AI Act) röviden: a kockázatalapú szintek és az MI-jártasság\n- mire jó ma: ötletelés, összefoglalás, szövegjavítás, első változatok, és három aranyszabály\n- visszatekintés: három nagy ötlet, két tél, és a kérdés, hogy jön-e harmadik"
+    }
+  }
+}

@@ -1,0 +1,416 @@
+WEBVTT
+
+00:00:01.400 --> 00:00:04.993
+Üdvözöljük Az MI története
+sorozat ötödik részében!
+
+00:00:05.313 --> 00:00:08.069
+Ebben a részben azt a tíz évet nézzük meg,
+
+00:00:08.069 --> 00:00:12.144
+amikor a neurális hálók a
+laboratóriumokból kikerültek a zsebünkbe.
+
+00:00:13.644 --> 00:00:18.119
+Az első mesterséges
+neuront 1943-ban írták le,
+
+00:00:18.119 --> 00:00:22.506
+a több rétegű hálók tanítását
+1986-ban oldották meg.
+
+00:00:22.826 --> 00:00:26.205
+Mégis egészen 2012-ig kellett várni,
+
+00:00:26.205 --> 00:00:30.199
+hogy a neurális hálók látványosan
+legyőzzenek minden más módszert.
+
+00:00:30.519 --> 00:00:34.252
+Miért ennyi idő? Az ötlet megvolt,
+
+00:00:34.252 --> 00:00:39.435
+de hiányzott mellőle három dolog.
+Ebben a részben ezeket nézzük meg.
+
+00:00:40.935 --> 00:00:42.667
+Három dolgot nézünk meg.
+
+00:00:42.987 --> 00:00:46.432
+Először azt, mi változott
+meg a kétezres években,
+
+00:00:46.752 --> 00:00:52.351
+aztán azt, mit jelent a mélytanulásban,
+angolul deep learning, a „mély” szó,
+
+00:00:52.671 --> 00:00:57.612
+végül két áttörést, és egy kérdést,
+amely azóta is velünk maradt.
+
+00:00:59.012 --> 00:01:02.667
+Kezdjük azzal, miért éppen
+ekkor jött el az áttörés.
+
+00:01:04.367 --> 00:01:06.966
+Három hajtóerő találkozott egyszerre.
+
+00:01:07.286 --> 00:01:12.070
+Az első az adat. A neurális
+háló példákból tanul,
+
+00:01:12.070 --> 00:01:17.282
+és minél bonyolultabb a feladat,
+annál több példa kell. Az internet,
+
+00:01:17.282 --> 00:01:20.057
+az okostelefonok és a
+közösségi média révén az
+
+00:01:20.057 --> 00:01:23.395
+emberiség addig soha nem
+látott mennyiségű képet,
+
+00:01:23.395 --> 00:01:28.446
+szöveget és hangot kezdett előállítani.
+Hirtelen lett miből tanulni.
+
+00:01:28.766 --> 00:01:33.600
+A második a hardver, és itt
+jönnek a képbe a videojátékok.
+
+00:01:33.600 --> 00:01:36.975
+A játékok látványához olyan
+grafikus processzorok,
+
+00:01:36.975 --> 00:01:39.288
+angolul graphics processing units,
+
+00:01:39.288 --> 00:01:41.275
+röviden GPU-k készültek,
+
+00:01:41.275 --> 00:01:45.988
+amelyek egyszerre ezernyi egyszerű
+számítást végeznek párhuzamosan.
+
+00:01:45.988 --> 00:01:51.014
+Kiderült, hogy a neurális hálók tanítása
+pontosan ilyen számításokból áll.
+
+00:01:51.334 --> 00:01:56.143
+Egy példa: ha egymillió kép
+mindegyikének feldolgozása öt másodperc,
+
+00:01:56.143 --> 00:02:02.139
+az egy hagyományos processzoron közel
+két hónap. Egy GPU-n ugyanez néhány óra.
+
+00:02:02.459 --> 00:02:05.669
+A harmadik a szoftver. Ingyenes,
+
+00:02:05.669 --> 00:02:10.169
+nyílt forráskódú programkönyvtárak,
+angolul open-source libraries,
+
+00:02:10.169 --> 00:02:15.607
+jelentek meg, amelyekkel egy neurális
+hálót néhány sorban fel lehet építeni.
+
+00:02:15.607 --> 00:02:20.319
+Ma már nem kell matematikusnak lenni
+ahhoz, hogy valaki ilyen modellt tanítson,
+
+00:02:20.319 --> 00:02:25.552
+a felhőben pedig a számítási kapacitás
+is bérelhető, angolul cloud computing.
+
+00:02:25.872 --> 00:02:31.680
+Az ötlet tehát régi volt. Új volt az,
+hogy végre megkapta az üzemanyagát.
+
+00:02:33.080 --> 00:02:35.196
+De mitől mély a mélytanulás?
+
+00:02:36.896 --> 00:02:43.098
+Emlékszünk az előző rész macskájára?
+Szabályokkal nem tudtuk leírni.
+
+00:02:43.098 --> 00:02:46.235
+Egy mély neurális háló
+viszont meg tudja tanulni,
+
+00:02:46.235 --> 00:02:48.563
+és ennek a módja a rétegekben rejlik.
+
+00:02:48.883 --> 00:02:54.883
+A háló neuronjai egymásra épülő
+rétegekbe rendeződnek, angolul layers.
+
+00:02:54.883 --> 00:02:59.998
+A „mély” egyszerűen azt jelenti, hogy
+sok ilyen réteg van, akár több száz is.
+
+00:03:00.318 --> 00:03:04.183
+Az első rétegek a legegyszerűbb
+dolgokat ismerik fel a képen:
+
+00:03:04.183 --> 00:03:07.002
+éleket, vonalakat, színfoltokat.
+
+00:03:07.322 --> 00:03:13.643
+A középső rétegek ezekből formákat raknak
+össze: köröket, csíkokat, szőrmintát.
+
+00:03:13.963 --> 00:03:18.489
+A felső rétegek a formákból részeket
+ismernek fel, például fület,
+
+00:03:18.489 --> 00:03:22.877
+szemet, bajuszt, a legutolsó
+pedig kimondja: ez macska.
+
+00:03:23.197 --> 00:03:27.952
+A lényeg, hogy ezeket a lépcsőfokokat
+senki nem programozta be.
+
+00:03:27.952 --> 00:03:32.302
+A háló a tanítás során
+maga alakította ki őket.
+
+00:03:32.302 --> 00:03:37.739
+2012-ben a Google egyik hálója
+tízmillió videós előnézeti képből,
+
+00:03:37.739 --> 00:03:41.352
+címkék nélkül, vagyis
+felügyelet nélküli tanulással,
+
+00:03:41.352 --> 00:03:44.102
+angolul unsupervised learning, úgy,
+
+00:03:44.102 --> 00:03:47.014
+hogy senki nem mondta meg
+neki, mi van a képeken,
+
+00:03:47.014 --> 00:03:49.108
+tanulta meg felismerni a macskákat.
+
+00:03:50.508 --> 00:03:55.910
+Most nézzük meg a két áttörést, amely a
+világ figyelmét a mélytanulásra irányította.
+
+00:03:57.610 --> 00:04:00.258
+Az első egy verseny volt.
+
+00:04:00.258 --> 00:04:05.008
+Fei-Fei Li kutatócsoportja létrehozta
+az ImageNet nevű képadatbázist:
+
+00:04:05.008 --> 00:04:10.460
+több millió fényképet, amelyekről emberek
+ezrei jelölték meg, mi látható rajtuk.
+
+00:04:10.780 --> 00:04:15.465
+Évente versenyt rendeztek: kinek a
+programja ismeri fel a legpontosabban,
+
+00:04:15.465 --> 00:04:18.803
+mi van a képen, ezer
+lehetséges kategóriából.
+
+00:04:19.123 --> 00:04:22.526
+2012-ben Geoffrey Hinton
+két tanítványa egy
+
+00:04:22.526 --> 00:04:25.576
+mély konvolúciós neurális
+hálózattal indult,
+
+00:04:25.576 --> 00:04:28.176
+angolul deep convolutional neural network,
+
+00:04:28.176 --> 00:04:32.814
+amelyet két, játékokhoz gyártott
+videokártyán tanítottak.
+
+00:04:32.814 --> 00:04:36.651
+A hibaarányuk alig több mint fele
+volt a második helyezettének.
+
+00:04:36.971 --> 00:04:40.820
+Ez a kutatók számára
+sokkoló különbség volt.
+
+00:04:40.820 --> 00:04:44.570
+Két éven belül szinte mindenki
+neurális hálókra váltott,
+
+00:04:44.570 --> 00:04:48.645
+2015-re pedig a gépek ebben a
+képosztályozási feladatban,
+
+00:04:48.645 --> 00:04:53.447
+angolul image classification, már
+pontosabbak lettek, mint az ember.
+
+00:04:53.767 --> 00:04:57.736
+Közben a beszédfelismerés
+is mély hálókra állt át.
+
+00:04:57.736 --> 00:05:00.324
+Ezért kezdtek el ezekben
+az években a telefonok
+
+00:05:00.324 --> 00:05:02.956
+hangasszisztensei valóban
+megérteni minket.
+
+00:05:04.456 --> 00:05:10.045
+A második áttörés egy ősi
+táblajáték, a go világában történt.
+
+00:05:10.045 --> 00:05:13.345
+A go lehetséges állásainak
+száma messze nagyobb,
+
+00:05:13.345 --> 00:05:17.407
+mint a sakké, ezért nyers
+erővel itt esély sincs.
+
+00:05:17.407 --> 00:05:21.864
+Sokan úgy gondolták, évtizedekig
+nem győzheti le gép az embert.
+
+00:05:22.184 --> 00:05:26.721
+2016 márciusában a DeepMind
+AlphaGo nevű programja négy–egyre
+
+00:05:26.721 --> 00:05:30.995
+legyőzte a világ egyik legjobb
+játékosát, a dél-koreai Lee Sedolt.
+
+00:05:31.315 --> 00:05:34.514
+Az AlphaGo az emberi
+játszmák tanulmányozása után
+
+00:05:34.514 --> 00:05:38.064
+milliónyi játszmát
+játszott saját maga ellen.
+
+00:05:38.064 --> 00:05:41.289
+Minden győzelem jutalom, angolul reward,
+
+00:05:41.289 --> 00:05:47.364
+minden vereség büntetés volt, és ebből
+tanulta meg, melyik lépés vezet sikerre.
+
+00:05:47.364 --> 00:05:52.410
+Ezt megerősítéses tanulásnak nevezzük,
+angolul reinforcement learning.
+
+00:05:52.730 --> 00:05:55.218
+A második játszmában tett egy lépést,
+
+00:05:55.218 --> 00:06:00.918
+amelyet a szakkommentátorok először hibának
+hittek, aztán zseniálisnak neveztek.
+
+00:06:00.918 --> 00:06:06.356
+A gép olyat talált, amire évezredek
+alatt egyetlen ember sem gondolt.
+
+00:06:06.356 --> 00:06:10.253
+A Deep Blue-val ellentétben ez
+már a tanulás győzelme volt.
+
+00:06:11.753 --> 00:06:14.191
+A sikerek mellett megjelent egy kérdés,
+
+00:06:14.191 --> 00:06:18.615
+amely azóta is velünk van: a
+fekete doboz, angolul black box.
+
+00:06:18.935 --> 00:06:24.360
+A régi szakértői rendszer meg tudta
+mutatni, melyik szabály alapján döntött.
+
+00:06:24.360 --> 00:06:27.735
+Egy mély háló döntése
+viszont milliónyi számban,
+
+00:06:27.735 --> 00:06:31.585
+a neuronok közötti kapcsolatok
+erősségében rejlik.
+
+00:06:31.585 --> 00:06:35.684
+Működik, de sokszor mi sem
+tudjuk megmondani, miért.
+
+00:06:36.004 --> 00:06:42.251
+Egy kísérletben a háló látszólag kiválóan
+megkülönböztette a farkasokat a kutyáktól.
+
+00:06:42.251 --> 00:06:47.826
+Kiderült, hogy valójában a havat figyelte:
+a farkasos képeken hó volt a háttérben.
+
+00:06:48.146 --> 00:06:51.733
+Ha egy háló hitelkérelemről
+vagy orvosi leletről dönt,
+
+00:06:51.733 --> 00:06:55.208
+nem elég, hogy általában jól működik.
+
+00:06:55.208 --> 00:07:01.895
+Tudnunk kell, mire alapozza a döntését.
+Ezzel foglalkozik a megmagyarázható MI,
+
+00:07:01.895 --> 00:07:06.570
+angolul explainable AI: olyan
+módszerek, amelyek megmutatják,
+
+00:07:06.570 --> 00:07:09.595
+mire alapozta a háló a döntését.
+
+00:07:09.595 --> 00:07:13.662
+Erre a kérdésre a sorozat utolsó
+részében még visszatérünk.
+
+00:07:15.162 --> 00:07:20.346
+Röviden összefoglalva: a mélytanulás nem
+új ötlet volt, hanem egy régi ötlet,
+
+00:07:20.346 --> 00:07:22.283
+amely végre megkapta az adatot,
+
+00:07:22.283 --> 00:07:27.508
+a számítási kapacitást és a szoftvert.
+A sok réteg lehetővé teszi,
+
+00:07:27.508 --> 00:07:31.908
+hogy a háló maga építse fel a
+tudását az élektől a macskáig.
+
+00:07:31.908 --> 00:07:34.908
+2012-ben a képfelismerésben,
+
+00:07:34.908 --> 00:07:38.583
+2016-ban a go-ban mutatta meg, mire képes,
+
+00:07:38.583 --> 00:07:41.411
+a döntései azonban
+gyakran átláthatatlanok.
+
+00:07:41.731 --> 00:07:46.496
+A következő részben megnézzük, hogyan
+lett a felismerő gépből alkotó gép:
+
+00:07:46.496 --> 00:07:48.771
+hogyan ír szöveget egy nagy nyelvi modell,
+
+00:07:48.771 --> 00:07:52.569
+és miért lett a ChatGPT néhány
+hét alatt százmilliók eszköze.
+
+00:07:52.889 --> 00:07:55.435
+Viszontlátásra a következő részben!

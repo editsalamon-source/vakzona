@@ -1,0 +1,446 @@
+WEBVTT
+
+00:00:01.400 --> 00:00:04.988
+Üdvözöljük Az MI története
+sorozat hatodik részében!
+
+00:00:05.308 --> 00:00:09.864
+Ebben a részben megnézzük, hogyan
+lett a felismerő gépből alkotó gép,
+
+00:00:09.864 --> 00:00:14.126
+és mi történik valójában, amikor
+egy csevegőprogram válaszol nekünk.
+
+00:00:15.626 --> 00:00:18.519
+2012-ben az volt a szenzáció,
+
+00:00:18.519 --> 00:00:22.433
+hogy egy gép ránéz egy fényképre,
+és kimondja: ez macska.
+
+00:00:22.753 --> 00:00:25.666
+Tíz évvel később bárki
+beírhatta egy ablakba,
+
+00:00:25.666 --> 00:00:28.066
+hogy írjon egy rövid verset egy macskáról,
+
+00:00:28.066 --> 00:00:32.691
+aki utálja a hétfőt, és a gép
+másodpercek alatt megírta.
+
+00:00:32.691 --> 00:00:35.167
+Egy másik program pedig le is rajzolta.
+
+00:00:35.487 --> 00:00:41.999
+A felismerésből alkotás lett. Ezt nevezzük
+generatív mesterséges intelligenciának,
+
+00:00:41.999 --> 00:00:49.038
+angolul generative AI. De hogyan lehetséges
+ez, és mennyire érti a gép, amit ír?
+
+00:00:50.538 --> 00:00:52.270
+Három dolgot nézünk meg.
+
+00:00:52.590 --> 00:00:57.105
+Először azt a 2017-es találmányt,
+amelyre az egész épül,
+
+00:00:57.425 --> 00:01:00.835
+aztán azt, hogyan ír szöveget
+egy nagy nyelvi modell,
+
+00:01:01.155 --> 00:01:06.460
+végül a 2022-es pillanatot, amikor
+mindez kikerült a nagyközönség elé.
+
+00:01:07.860 --> 00:01:12.555
+Kezdjük a találmánnyal, amely a mai
+csevegőprogramok mindegyikének alapja.
+
+00:01:14.255 --> 00:01:17.769
+2017-ben a Google kutatói
+egy cikkben bemutattak
+
+00:01:17.769 --> 00:01:21.218
+egy új hálózati architektúrát,
+a Transformert.
+
+00:01:21.538 --> 00:01:24.692
+Korábban a gépek a szöveget
+szóról szóra olvasták,
+
+00:01:24.692 --> 00:01:28.654
+mint aki egy hosszú mondat végére
+érve már elfelejtette az elejét.
+
+00:01:28.974 --> 00:01:34.759
+A Transformer újítása a figyelemmechanizmus,
+angolul attention mechanism.
+
+00:01:34.759 --> 00:01:38.446
+A modell minden szónál megnézi
+a szöveg összes többi szavát,
+
+00:01:38.446 --> 00:01:41.083
+és eldönti, melyik számít a legjobban.
+
+00:01:41.403 --> 00:01:45.064
+Vegyük ezt a mondatot: a macska
+nem ugrott fel az asztalra,
+
+00:01:45.064 --> 00:01:52.089
+mert túl fáradt volt. Ki volt
+fáradt? Mi tudjuk, hogy a macska.
+
+00:01:52.089 --> 00:01:56.702
+Ha azt mondjuk, mert túl
+magas volt, akkor az asztal.
+
+00:01:56.702 --> 00:02:00.618
+A figyelem segít a modellnek, hogy
+ezt a kapcsolatot megtalálja.
+
+00:02:00.938 --> 00:02:04.776
+A másik nagy előnye, hogy a
+szöveg minden részét egyszerre,
+
+00:02:04.776 --> 00:02:07.289
+párhuzamosan dolgozza fel.
+
+00:02:07.289 --> 00:02:09.714
+Így a modell rengeteg GPU-n,
+
+00:02:09.714 --> 00:02:13.225
+korábban elképzelhetetlen
+mennyiségű szövegen tanítható.
+
+00:02:14.725 --> 00:02:19.641
+Ez vezetett az alapmodellek, angolul
+foundation modellek megjelenéséhez.
+
+00:02:19.961 --> 00:02:23.258
+Korábban minden feladatra
+külön modellt tanítottak:
+
+00:02:23.258 --> 00:02:27.977
+egyet a fordításra, egyet a
+spamszűrésre, egyet az összefoglalásra.
+
+00:02:28.297 --> 00:02:32.001
+Az alapmodell egyetlen
+hatalmas, általános modell,
+
+00:02:32.001 --> 00:02:34.401
+amely könyvtárnyi szöveget dolgozott fel,
+
+00:02:34.401 --> 00:02:40.776
+és sokféle feladatra alkalmas: fordít,
+összefoglal, válaszol, programkódot ír.
+
+00:02:41.096 --> 00:02:44.594
+A szöveggel dolgozó alapmodelleket
+nagy nyelvi modellnek,
+
+00:02:44.594 --> 00:02:48.505
+angolul Large Language Modelnek,
+röviden LLM-nek nevezzük.
+
+00:02:48.825 --> 00:02:52.584
+A modell méretét a paraméterek,
+angolul parameters,
+
+00:02:52.584 --> 00:02:57.322
+számával mérik. A paraméterek
+a háló belső számai,
+
+00:02:57.322 --> 00:03:03.697
+például a súlyok, amelyeket a tanítás
+állít be. Ez a szám gyorsan nőtt.
+
+00:03:03.697 --> 00:03:10.584
+Az OpenAI GPT nevű modelljei 2018 és 2020
+között több mint ezerszeresükre nőttek,
+
+00:03:10.584 --> 00:03:13.772
+és minden lépcsőnél új
+képességek jelentek meg,
+
+00:03:13.772 --> 00:03:16.033
+amelyeket senki nem tanított nekik külön.
+
+00:03:17.433 --> 00:03:19.605
+De hogyan ír egy nagy nyelvi modell?
+
+00:03:21.305 --> 00:03:25.106
+A modell nem szavakat,
+hanem tokeneket lát.
+
+00:03:25.106 --> 00:03:28.543
+A token egy szövegdarab:
+lehet egy rövid szó,
+
+00:03:28.543 --> 00:03:30.906
+egy szótag vagy egy szóvég.
+
+00:03:30.906 --> 00:03:34.412
+A beírt szöveget a modell
+először ilyen darabokra bontja.
+
+00:03:34.732 --> 00:03:38.031
+Aztán egyetlen dolgot csinál: megjósolja,
+
+00:03:38.031 --> 00:03:41.931
+melyik token jön legvalószínűbben
+a következő helyen.
+
+00:03:41.931 --> 00:03:46.678
+Ez a következő token előrejelzése,
+angolul next-token prediction.
+
+00:03:46.998 --> 00:03:52.038
+Ha a szöveg úgy kezdődik, hogy a macska
+felugrott a, akkor a modell kiszámolja,
+
+00:03:52.038 --> 00:03:55.788
+hogy a kanapéra 45
+százalék, a kerítésre 35,
+
+00:03:55.788 --> 00:03:58.529
+a tetőre 20 százalék eséllyel következik.
+
+00:03:58.849 --> 00:04:05.004
+Választ egyet, hozzáfűzi a szöveghez,
+és kezdi elölről a következő tokennel.
+
+00:04:05.004 --> 00:04:09.664
+A hosszú, összefüggő válasz így
+áll össze, darabról darabra.
+
+00:04:09.984 --> 00:04:13.681
+A modell nem mindig a
+legvalószínűbbet választja.
+
+00:04:13.681 --> 00:04:17.543
+Egy kis véletlen teszi változatossá
+és kreatívvá a szöveget;
+
+00:04:17.543 --> 00:04:21.306
+ennek mértékét a hőmérséklet
+nevű beállítás szabályozza,
+
+00:04:21.306 --> 00:04:26.898
+angolul temperature. Ezért ad ugyanarra
+a kérdésre néha más-más választ.
+
+00:04:28.398 --> 00:04:30.426
+De honnan tanulta meg a modell ezeket a
+
+00:04:30.426 --> 00:04:34.496
+valószínűségeket? Itt
+jön a másik nagy ötlet.
+
+00:04:34.816 --> 00:04:39.788
+A spamszűrőnél emberek címkézték fel
+a leveleket: ez a felügyelt tanulás,
+
+00:04:39.788 --> 00:04:44.201
+angolul supervised learning.
+Ez lassú és drága,
+
+00:04:44.201 --> 00:04:47.083
+egy egész internetnyi
+szövegnél pedig lehetetlen.
+
+00:04:47.403 --> 00:04:51.392
+A nyelvi modellnél viszont
+maga a szöveg a helyes válasz.
+
+00:04:51.392 --> 00:04:54.854
+Letakarjuk a következő
+szót, a modell tippel,
+
+00:04:54.854 --> 00:04:59.242
+aztán felfedjük, és
+megnézi, mennyit tévedett.
+
+00:04:59.242 --> 00:05:04.103
+Ezt nevezik önfelügyelt tanulásnak,
+angolul self-supervised learning.
+
+00:05:04.423 --> 00:05:10.353
+Így bármilyen könyv, cikk vagy weboldal
+tananyaggá válik, címkézés nélkül.
+
+00:05:10.353 --> 00:05:15.041
+Milliárdnyi ilyen tipp és javítás után a
+modell nemcsak a nyelvtant tanulja meg,
+
+00:05:15.041 --> 00:05:18.230
+hanem rengeteg tényt,
+összefüggést és stílust is.
+
+00:05:19.730 --> 00:05:23.485
+Az így előtanított modell,
+angolul pre-trained model,
+
+00:05:23.485 --> 00:05:27.048
+vagyis a hatalmas szövegmennyiségen
+már betanított alapmodell,
+
+00:05:27.048 --> 00:05:31.248
+azonban még nem asszisztens, csak
+egy nagyon jó szövegfolytató.
+
+00:05:31.248 --> 00:05:36.474
+Ha kérdést kap, előfordul, hogy válasz
+helyett újabb kérdéseket ír utána.
+
+00:05:36.794 --> 00:05:42.965
+Ezért jön egy második tanítási szakasz,
+a finomhangolás, angolul fine-tuning.
+
+00:05:42.965 --> 00:05:48.612
+Emberek példákat írnak arra, hogyan néz
+ki egy jó válasz, a modell ezekből tanul.
+
+00:05:48.932 --> 00:05:54.204
+Aztán emberek értékelik a modell válaszait,
+hogy melyik hasznosabb, pontosabb,
+
+00:05:54.204 --> 00:05:58.779
+udvariasabb. A modell ebből a
+visszajelzésből tanulja meg,
+
+00:05:58.779 --> 00:06:00.967
+hogyan kövesse az utasításokat,
+
+00:06:00.967 --> 00:06:04.454
+és mit ne tegyen. Ezt
+emberi visszajelzésen
+
+00:06:04.454 --> 00:06:07.367
+alapuló megerősítéses tanulásnak nevezzük,
+
+00:06:07.367 --> 00:06:12.028
+angolul reinforcement learning
+from human feedback, röviden RLHF.
+
+00:06:12.348 --> 00:06:15.920
+Ez a lépés tette a
+szövegfolytatóból beszélgetőtársat.
+
+00:06:17.320 --> 00:06:22.299
+És ezzel elérkeztünk a pillanathoz,
+amikor mindez a nagyközönség elé került.
+
+00:06:23.999 --> 00:06:27.375
+2022 különleges év volt.
+
+00:06:27.375 --> 00:06:31.700
+Nyáron megjelentek a nagyközönség
+számára is elérhető képgenerálók:
+
+00:06:31.700 --> 00:06:35.025
+egy rövid leírásból néhány
+másodperc alatt festményt,
+
+00:06:35.025 --> 00:06:37.462
+fotót vagy illusztrációt készítettek.
+
+00:06:37.782 --> 00:06:42.248
+November 30-án pedig az OpenAI
+elindította a ChatGPT-t,
+
+00:06:42.248 --> 00:06:46.358
+egy ingyenes, egyszerű csevegőfelületet
+a nagy nyelvi modelljéhez.
+
+00:06:46.678 --> 00:06:49.639
+Öt nap alatt egymillió felhasználója lett,
+
+00:06:49.639 --> 00:06:53.152
+két hónap alatt a becslések
+szerint százmillió.
+
+00:06:53.152 --> 00:06:57.502
+Akkoriban ez volt a valaha volt
+leggyorsabban terjedő alkalmazás.
+
+00:06:57.822 --> 00:07:02.756
+A technológia nem volt teljesen
+új. Az újdonság az volt,
+
+00:07:02.756 --> 00:07:06.469
+hogy bárki kipróbálhatta,
+programozási tudás nélkül,
+
+00:07:06.469 --> 00:07:08.731
+a saját anyanyelvén.
+
+00:07:08.731 --> 00:07:13.041
+Az MI hetven év után először került
+közvetlenül az emberek kezébe.
+
+00:07:14.541 --> 00:07:17.485
+Ebből következik a rész
+legfontosabb gondolata.
+
+00:07:17.805 --> 00:07:19.955
+A nagy nyelvi modell válasza olyan,
+
+00:07:19.955 --> 00:07:24.862
+mintha egy tájékozott ember írná:
+folyékony, magabiztos és meggyőző.
+
+00:07:25.182 --> 00:07:30.107
+A modell azonban nem keres ki
+tényeket, és nem ellenőrzi őket.
+
+00:07:30.107 --> 00:07:35.082
+Azt írja le, ami a tanult minták
+alapján valószínűnek hangzik.
+
+00:07:35.082 --> 00:07:40.869
+A legtöbbször ez igaz is, de nem
+mindig. Ezt hallucinációnak nevezzük,
+
+00:07:40.869 --> 00:07:45.314
+angolul hallucination, és a következő
+részben részletesen megnézzük.
+
+00:07:46.814 --> 00:07:52.473
+Röviden összefoglalva: 2017-ben a
+Transformer és a figyelem lehetővé tette,
+
+00:07:52.473 --> 00:07:56.173
+hogy a modellek hatalmas
+szövegmennyiségen tanuljanak.
+
+00:07:56.173 --> 00:08:00.610
+A nagy nyelvi modell tokenről tokenre
+jósolja meg a következő szövegdarabot,
+
+00:08:00.610 --> 00:08:05.035
+és a tanuláshoz nem kell címke,
+mert maga a szöveg a tananyag.
+
+00:08:05.035 --> 00:08:10.934
+2022-ben a ChatGPT-vel ez a képesség
+mindenki számára elérhetővé vált.
+
+00:08:11.254 --> 00:08:13.951
+A következő, záró részben megnézzük,
+
+00:08:13.951 --> 00:08:17.351
+mi történt azóta, milyen
+korlátokat kell ismernünk,
+
+00:08:17.351 --> 00:08:21.412
+és mire használhatjuk ma a mesterséges
+intelligenciát a mindennapokban.
+
+00:08:21.732 --> 00:08:24.278
+Viszontlátásra a következő részben!

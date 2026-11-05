@@ -1,0 +1,434 @@
+WEBVTT
+
+00:00:01.400 --> 00:00:05.102
+Üdvözöljük Az MI története
+sorozat harmadik részében!
+
+00:00:05.422 --> 00:00:09.704
+Ebben a részben a dartmouthi
+konferencia utáni húsz évet nézzük meg:
+
+00:00:09.704 --> 00:00:15.228
+a nagy reményeket, az első sikereket, és
+azt, miért fagyott be utána a terület.
+
+00:00:16.728 --> 00:00:22.483
+1958-ban egy amerikai napilap arról
+írt, hogy hamarosan elkészül egy gép,
+
+00:00:22.483 --> 00:00:28.195
+amely jár, beszél, lát, ír, és
+tudatában lesz saját létezésének.
+
+00:00:28.515 --> 00:00:32.778
+Alig tizenöt évvel később az
+MI-kutatás pénzét Nagy-Britanniában
+
+00:00:32.778 --> 00:00:35.977
+és az Egyesült Államokban is
+drasztikusan megnyirbálták.
+
+00:00:36.297 --> 00:00:40.544
+Mi történt a kettő között?
+Erről szól ez a rész.
+
+00:00:42.044 --> 00:00:43.776
+Három dolgot nézünk meg.
+
+00:00:44.096 --> 00:00:47.845
+Először azt a két utat,
+amelyen a kutatók elindultak,
+
+00:00:48.165 --> 00:00:52.138
+aztán az első csevegőprogramot
+és a korszak nagy ígéreteit,
+
+00:00:52.458 --> 00:00:56.904
+végül azt, miért következett
+mindezek után az első MI-tél.
+
+00:00:58.304 --> 00:01:02.463
+Dartmouth után a kutatók két nagyon
+különböző irányba indultak el.
+
+00:01:04.163 --> 00:01:08.460
+Az egyik a szabályok útja, amelyet
+ma szimbolikus MI-nek nevezünk,
+
+00:01:08.460 --> 00:01:12.735
+angolul symbolic AI.
+Az elképzelés az volt,
+
+00:01:12.735 --> 00:01:17.172
+hogy a gondolkodás jelekkel és
+logikai szabályokkal leírható.
+
+00:01:17.172 --> 00:01:19.410
+Ha elég szabályt adunk a gépnek,
+
+00:01:19.410 --> 00:01:24.409
+és hagyjuk, hogy végigkeresse a
+lehetőségeket, intelligensen fog viselkedni.
+
+00:01:24.729 --> 00:01:29.118
+Ezen az úton születtek a tételbizonyító
+és fejtörőket megoldó programok,
+
+00:01:29.118 --> 00:01:32.843
+és ehhez készült a korszak
+MI-programnyelve, a Lisp is,
+
+00:01:32.843 --> 00:01:36.488
+amely kifejezetten jelek és
+szimbólumok kezelésére született.
+
+00:01:36.808 --> 00:01:41.642
+A másik a tanulás útja. Itt nem
+mi írjuk meg a szabályokat,
+
+00:01:41.642 --> 00:01:44.855
+hanem a gép példákból
+alakítja ki a viselkedését.
+
+00:01:45.175 --> 00:01:51.813
+1959-ben Arthur Samuel, az IBM kutatója
+egy dámajátékot játszó programról írt,
+
+00:01:51.813 --> 00:01:54.300
+amely önmaga ellen
+játszva egyre jobb lett,
+
+00:01:54.300 --> 00:01:57.063
+végül az alkotóját is legyőzte.
+
+00:01:57.063 --> 00:02:01.950
+Ő használta először a gépi tanulás
+kifejezést, angolul machine learning.
+
+00:02:02.270 --> 00:02:08.492
+Az első húsz évben a szabályok útja vitte
+a prímet. A tanulás útja csak később,
+
+00:02:08.492 --> 00:02:11.793
+a sorozat negyedik és ötödik
+részében kerekedik felül.
+
+00:02:13.293 --> 00:02:18.065
+A tanulás útjának leghíresebb korai gépe
+Frank Rosenblatt perceptronja volt,
+
+00:02:18.065 --> 00:02:23.440
+1958-ból. A perceptron
+angolul is perceptron:
+
+00:02:23.440 --> 00:02:27.402
+egyetlen mesterséges neuron,
+amely példákból megtanulja,
+
+00:02:27.402 --> 00:02:30.389
+hogyan sorolja két
+csoportba azt, amit lát.
+
+00:02:30.709 --> 00:02:35.046
+Egy négyszáz fényérzékelőből álló
+„szemmel” egyszerű ábrákat nézett,
+
+00:02:35.046 --> 00:02:38.423
+és el kellett döntenie,
+melyik csoportba tartoznak.
+
+00:02:38.743 --> 00:02:46.540
+A tanulás meglepően egyszerű volt. A
+gép tippel. Ha téved, kicsit módosítja,
+
+00:02:46.540 --> 00:02:51.053
+mennyire számítson az egyes
+bemenetekre. Ezek a súlyok,
+
+00:02:51.053 --> 00:02:55.270
+angolul weights. Aztán
+jöhet a következő példa.
+
+00:02:55.590 --> 00:03:00.102
+Sok ezer ilyen kis javítás után a
+gép magától megtanulta a feladatot,
+
+00:03:00.102 --> 00:03:06.215
+anélkül hogy bárki megírta volna a szabályt.
+Ez a lényege a mai gépi tanulásnak is.
+
+00:03:06.535 --> 00:03:11.511
+A sajtó a perceptronban a
+gondolkodó gép előfutárát látta.
+
+00:03:11.511 --> 00:03:15.718
+Ez volt az első nagy MI-hype,
+vagyis túlzott felhajtás.
+
+00:03:17.118 --> 00:03:21.031
+A hatvanas évek közepére a gépek
+már beszélgetni is látszottak.
+
+00:03:22.731 --> 00:03:28.345
+1966-ban Joseph Weizenbaum, az
+MIT kutatója bemutatta ELIZA-t,
+
+00:03:28.345 --> 00:03:31.414
+az első csevegőprogramot, angolul chatbot.
+
+00:03:31.734 --> 00:03:36.506
+ELIZA leghíresebb változata egy
+pszichoterapeutát utánzott.
+
+00:03:36.506 --> 00:03:39.206
+Kulcsszavakat keresett a beírt mondatban,
+
+00:03:39.206 --> 00:03:43.993
+és visszakérdezett. Ha valaki
+azt írta, hogy szomorú,
+
+00:03:43.993 --> 00:03:47.434
+ELIZA megkérdezte, miért
+érzi magát szomorúnak.
+
+00:03:47.754 --> 00:03:51.926
+A program semmit nem értett
+abból, amit írtak neki.
+
+00:03:51.926 --> 00:03:54.776
+A felhasználók mégis megnyíltak előtte,
+
+00:03:54.776 --> 00:03:58.452
+és volt, aki azt kérte,
+hagyják egyedül a géppel.
+
+00:03:58.772 --> 00:04:01.672
+Weizenbaumot ez annyira megdöbbentette,
+
+00:04:01.672 --> 00:04:06.234
+hogy később a terület egyik
+legélesebb kritikusa lett. Azt,
+
+00:04:06.234 --> 00:04:09.609
+hogy hajlamosak vagyunk megértést
+tulajdonítani egy gépnek,
+
+00:04:09.609 --> 00:04:14.971
+amely csak ügyesen válaszol, ma
+ELIZA-hatásnak nevezik, angolul ELIZA effect.
+
+00:04:16.471 --> 00:04:21.286
+A sikerek láttán a vezető kutatók
+nagyon bátor jóslatokba bocsátkoztak.
+
+00:04:21.606 --> 00:04:24.978
+Herbert Simon 1965-ben azt írta,
+
+00:04:24.978 --> 00:04:29.690
+hogy húsz éven belül a gépek bármilyen
+munkát el tudnak végezni, amit egy ember.
+
+00:04:30.010 --> 00:04:33.776
+Marvin Minsky 1967-ben úgy fogalmazott,
+
+00:04:33.776 --> 00:04:35.951
+hogy egy generáción belül a mesterséges
+
+00:04:35.951 --> 00:04:38.903
+intelligencia problémája
+lényegében megoldódik.
+
+00:04:39.223 --> 00:04:42.489
+Ezek a mondatok nem
+újságírók túlzásai voltak,
+
+00:04:42.489 --> 00:04:46.526
+hanem a terület legelismertebb
+tudósaitól származtak.
+
+00:04:46.526 --> 00:04:50.235
+Ez a pénzügyi támogatóknak is
+nagy elvárásokat jelentett.
+
+00:04:51.635 --> 00:04:56.679
+Az ígéretek nagyok voltak, az eredmények
+viszont megrekedtek a laboratóriumokban.
+
+00:04:58.379 --> 00:05:00.061
+Négy okból akadtak el.
+
+00:05:00.381 --> 00:05:06.202
+Az első a kombinatorikus robbanás,
+angolul combinatorial explosion.
+
+00:05:06.202 --> 00:05:10.652
+A lehetőségek száma minden
+lépéssel megsokszorozódik.
+
+00:05:10.652 --> 00:05:13.202
+A sakkban több lehetséges játszma van,
+
+00:05:13.202 --> 00:05:16.102
+mint ahány atom a
+megfigyelhető világegyetemben,
+
+00:05:16.102 --> 00:05:18.952
+ezért nem lehet mindet végigkeresni.
+
+00:05:18.952 --> 00:05:23.797
+Ami egy kis játékfeladaton működött,
+az a valódi problémákon elakadt.
+
+00:05:24.117 --> 00:05:26.868
+A második a gépek korlátja.
+
+00:05:26.868 --> 00:05:30.168
+A korszak számítógépeinek
+memóriája és sebessége
+
+00:05:30.168 --> 00:05:33.780
+parányi töredéke volt
+egy mai okostelefonénak.
+
+00:05:33.780 --> 00:05:37.089
+Egyszerűen nem volt mivel
+nagy feladatokat számolni.
+
+00:05:37.409 --> 00:05:42.330
+A harmadik a józan ész, angolul
+common sense. Kiderült,
+
+00:05:42.330 --> 00:05:44.893
+hogy egy gépnek könnyebb
+tételt bizonyítani,
+
+00:05:44.893 --> 00:05:47.843
+mint felismerni egy csészét az asztalon.
+
+00:05:47.843 --> 00:05:53.255
+Ami nekünk magától értetődő, azt a
+legnehezebb szabályokba foglalni.
+
+00:05:53.255 --> 00:05:58.282
+Ezt később Moravec-paradoxonnak
+nevezték el, angolul Moravec's paradox.
+
+00:05:58.602 --> 00:06:05.986
+A negyedik a perceptron korlátja. 1969-ben
+Minsky és Papert egy könyvben megmutatta,
+
+00:06:05.986 --> 00:06:10.187
+hogy az egyrétegű perceptron bizonyos
+egyszerű feladatokat sem tud megtanulni.
+
+00:06:10.507 --> 00:06:14.391
+A leghíresebb példa a lépcsőházi
+villany: két kapcsoló,
+
+00:06:14.391 --> 00:06:18.854
+és a lámpa akkor ég, ha pontosan
+az egyik van felkapcsolva.
+
+00:06:18.854 --> 00:06:25.329
+Ez a kizáró vagy művelet, angolul XOR,
+és egyetlen neuron nem tudja megtanulni.
+
+00:06:25.329 --> 00:06:29.404
+Egy többrétegű hálózat,
+angolul multilayer perceptron,
+
+00:06:29.404 --> 00:06:33.054
+amelyben több neuronréteg
+épül egymásra, meg tudná,
+
+00:06:33.054 --> 00:06:37.091
+de azt akkor még senki nem
+tudta, hogyan kell tanítani.
+
+00:06:37.091 --> 00:06:40.906
+A neurális hálók kutatása
+erre szinte teljesen leállt.
+
+00:06:42.406 --> 00:06:45.287
+A fordulat a hetvenes
+évek közepén jött el.
+
+00:06:45.607 --> 00:06:51.562
+1973-ban egy brit kormányjelentés, az
+úgynevezett Lighthill-jelentés kimondta,
+
+00:06:51.562 --> 00:06:55.849
+hogy az MI egyetlen területen
+sem váltotta be az ígéreteit.
+
+00:06:55.849 --> 00:07:00.836
+Nagy-Britanniában a kutatások támogatását
+szinte teljesen leállították.
+
+00:07:01.156 --> 00:07:06.005
+Az Egyesült Államokban a katonai
+kutatási ügynökség, a fő támogató,
+
+00:07:06.005 --> 00:07:10.062
+már csak gyors, gyakorlati hasznot
+hozó projekteket finanszírozott.
+
+00:07:10.382 --> 00:07:14.508
+Így kezdődött az első
+MI-tél, angolul AI winter,
+
+00:07:14.508 --> 00:07:17.411
+amely nagyjából a hetvenes
+évek végéig tartott.
+
+00:07:17.731 --> 00:07:21.730
+A görbe azóta is ismerős;
+ma hype-ciklusnak nevezik,
+
+00:07:21.730 --> 00:07:26.167
+angolul hype cycle: túlzott
+ígéretek, nagy befektetés,
+
+00:07:26.167 --> 00:07:31.480
+kiábrándulás, majd visszaesés.
+Nem az ötletek voltak rosszak,
+
+00:07:31.480 --> 00:07:34.695
+hanem az elvárások jártak
+messze a lehetőségek előtt.
+
+00:07:36.195 --> 00:07:42.892
+Röviden összefoglalva: Dartmouth után két
+út indult, a szabályoké és a tanulásé.
+
+00:07:42.892 --> 00:07:45.554
+Megszületett a perceptron és ELIZA,
+
+00:07:45.554 --> 00:07:50.029
+a vezető kutatók pedig húsz
+éven belüli áttörést jósoltak.
+
+00:07:50.029 --> 00:07:53.329
+A kombinatorikus robbanás, a gyenge gépek,
+
+00:07:53.329 --> 00:07:58.533
+a józan ész hiánya és a perceptron korlátai
+miatt azonban jött az első MI-tél.
+
+00:07:58.853 --> 00:08:02.305
+A következő részben megnézzük,
+hogyan olvadt fel a jég:
+
+00:08:02.305 --> 00:08:06.143
+a szakértői rendszerek üzleti
+sikerét, a második telet,
+
+00:08:06.143 --> 00:08:09.880
+és azt a gondolatot, amely
+végül mindent megváltoztatott:
+
+00:08:09.880 --> 00:08:12.646
+ne programozzuk a gépet, hanem tanítsuk.
+
+00:08:12.966 --> 00:08:15.512
+Viszontlátásra a következő részben!

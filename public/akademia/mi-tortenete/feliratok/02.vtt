@@ -1,0 +1,385 @@
+WEBVTT
+
+00:00:01.400 --> 00:00:05.092
+Üdvözöljük Az MI története
+sorozat második részében!
+
+00:00:05.412 --> 00:00:10.276
+Ebben a részben visszautazunk a
+kezdetekhez, a negyvenes és ötvenes évekbe,
+
+00:00:10.276 --> 00:00:14.195
+amikor a mesterséges intelligencia
+még csak egy merész gondolat volt.
+
+00:00:15.695 --> 00:00:21.474
+1950-ben egy brit matematikus feltett
+egy kérdést: tud-e gondolkodni egy gép?
+
+00:00:21.794 --> 00:00:25.291
+Akkoriban egy számítógép egy
+egész termet töltött be,
+
+00:00:25.291 --> 00:00:28.852
+és kevesebbet tudott számolni,
+mint ma egy zsebszámológép.
+
+00:00:29.172 --> 00:00:32.359
+A kérdés mégsem volt nevetséges.
+
+00:00:32.359 --> 00:00:35.996
+Néhány évvel később egy
+maroknyi kutató úgy gondolta,
+
+00:00:35.996 --> 00:00:39.035
+egyetlen nyár alatt komoly
+lépést tehetnek a válasz felé.
+
+00:00:40.535 --> 00:00:43.315
+Ebben a részben három állomást nézünk meg.
+
+00:00:43.635 --> 00:00:48.809
+Először az előzményeket: azokat a
+gondolatokat, amelyekből az MI kinőtt,
+
+00:00:49.129 --> 00:00:52.891
+aztán Alan Turing kérdését és
+a róla elnevezett tesztet,
+
+00:00:53.211 --> 00:00:58.545
+végül azt a nyári konferenciát, ahol a
+mesterséges intelligencia a nevét kapta.
+
+00:00:59.945 --> 00:01:06.643
+Kezdjük az előzményekkel. A gondolkodó gép
+ötlete régebbi, mint maga a számítógép.
+
+00:01:08.343 --> 00:01:12.598
+1843-ban Ada Lovelace angol
+matematikus jegyzeteket
+
+00:01:12.598 --> 00:01:15.860
+írt egy soha meg nem épült számológépről.
+
+00:01:15.860 --> 00:01:18.835
+Úgy látta, hogy a gép nemcsak számokkal,
+
+00:01:18.835 --> 00:01:24.735
+hanem bármilyen jelekkel, akár hangjegyekkel
+is dolgozhatna. Azt viszont tagadta,
+
+00:01:24.735 --> 00:01:30.043
+hogy valaha önállóan bármi újat alkothatna:
+csak azt teszi, amire utasítjuk.
+
+00:01:30.363 --> 00:01:35.775
+Száz évvel később, 1943-ban egy
+idegkutató és egy fiatal logikus,
+
+00:01:35.775 --> 00:01:40.038
+Warren McCulloch és Walter Pitts
+leírta az első mesterséges neuront,
+
+00:01:40.038 --> 00:01:42.625
+angolul artificial neuron.
+
+00:01:42.625 --> 00:01:46.438
+Ez egy egyszerű matematikai
+modell: összegzi a bemeneteit,
+
+00:01:46.438 --> 00:01:51.170
+és ha az összeg elér egy küszöbértéket,
+angolul threshold, jelet ad tovább.
+
+00:01:51.490 --> 00:01:54.581
+Megmutatták, hogy ilyen
+neuronokból összekötött
+
+00:01:54.581 --> 00:01:57.906
+hálózat logikai műveleteket tud végezni.
+
+00:01:57.906 --> 00:02:01.731
+Tanulni még nem tudott, de
+a mai neurális hálózatok,
+
+00:02:01.731 --> 00:02:04.881
+angolul neural networks,
+ötlete innen indul.
+
+00:02:05.201 --> 00:02:10.777
+1945-ben Neumann János leírta, hogyan
+épüljön fel egy olyan számítógép,
+
+00:02:10.777 --> 00:02:14.277
+amely a programját is a
+memóriájában tárolja.
+
+00:02:14.277 --> 00:02:18.340
+Ez a tárolt program elve,
+angolul stored-program concept;
+
+00:02:18.340 --> 00:02:21.390
+nálunk Neumann-elvként is ismerjük.
+
+00:02:21.390 --> 00:02:25.290
+A mai gépek nagy része ma
+is ezt az elvet követi.
+
+00:02:25.290 --> 00:02:28.577
+Neumann a gépet tudatosan
+az agyhoz hasonlította,
+
+00:02:28.577 --> 00:02:33.514
+és a leírásában éppen McCulloch és Pitts
+neuronjait használta építőelemként.
+
+00:02:34.914 --> 00:02:38.960
+Az előzmények megvannak.
+Most jön az ember,
+
+00:02:38.960 --> 00:02:42.494
+aki a kérdést először tette
+fel tudományos komolysággal.
+
+00:02:44.194 --> 00:02:47.541
+Alan Turing a második
+világháborúban a német Enigma
+
+00:02:47.541 --> 00:02:50.716
+rejtjelező gép üzeneteinek
+feltörésén dolgozott,
+
+00:02:50.716 --> 00:02:54.180
+és már korábban leírta a
+számítógép elméleti modelljét.
+
+00:02:54.500 --> 00:02:58.430
+1950-ben megjelent cikkét
+azzal a mondattal kezdte,
+
+00:02:58.430 --> 00:03:02.232
+hogy azt a kérdést vizsgálja:
+tudnak-e gondolkodni a gépek?
+
+00:03:02.552 --> 00:03:06.274
+Rögtön hozzá is tette, hogy
+a kérdés így túl homályos,
+
+00:03:06.274 --> 00:03:08.661
+mert senki sem tudja pontosan megmondani,
+
+00:03:08.661 --> 00:03:14.772
+mit jelent gondolkodni. Ezért egy másik,
+kipróbálható kérdést javasolt helyette.
+
+00:03:16.272 --> 00:03:20.311
+Ez az imitációs játék, amelyet
+ma Turing-tesztként ismerünk,
+
+00:03:20.311 --> 00:03:23.665
+angolul imitation game,
+illetve Turing test.
+
+00:03:23.985 --> 00:03:27.958
+A játékban egy kérdező írásban
+beszélget két partnerrel,
+
+00:03:27.958 --> 00:03:32.561
+akiket nem lát. Az egyik
+ember, a másik gép.
+
+00:03:32.881 --> 00:03:34.931
+A kérdező bármit kérdezhet,
+
+00:03:34.931 --> 00:03:38.855
+és a beszélgetés végén meg kell
+mondania, melyik partner a gép.
+
+00:03:39.175 --> 00:03:43.172
+Ha a gépet nem tudja megbízhatóan
+megkülönböztetni az embertől,
+
+00:03:43.172 --> 00:03:47.813
+akkor Turing szerint nincs okunk tagadni,
+hogy a gép a maga módján gondolkodik.
+
+00:03:48.133 --> 00:03:51.416
+Turing Ada Lovelace
+ellenvetésére is válaszolt:
+
+00:03:51.416 --> 00:03:54.222
+szerinte a gépek igenis
+meg tudnak lepni minket.
+
+00:03:54.542 --> 00:03:58.017
+A tesztet azóta sokan
+bírálták, mert azt méri,
+
+00:03:58.017 --> 00:04:00.529
+mennyire jól utánozza a gép az embert,
+
+00:04:00.529 --> 00:04:03.679
+és nem azt, hogy valóban ért-e valamit.
+
+00:04:03.679 --> 00:04:07.694
+Ez a vita a mai csevegőprogramok
+korában ismét aktuális.
+
+00:04:09.094 --> 00:04:11.834
+Hat évvel Turing cikke után egy amerikai
+
+00:04:11.834 --> 00:04:14.495
+egyetemen megszületett
+egy új tudományterület.
+
+00:04:16.195 --> 00:04:21.174
+1956 nyarán a Dartmouth College-ban,
+az Egyesült Államokban,
+
+00:04:21.174 --> 00:04:24.677
+néhány tucat kutató gyűlt össze
+egy nyári munkaértekezletre.
+
+00:04:24.997 --> 00:04:27.529
+A szervezők között volt John McCarthy,
+
+00:04:27.529 --> 00:04:31.539
+Marvin Minsky és Claude Shannon,
+az információelmélet atyja.
+
+00:04:31.859 --> 00:04:35.985
+A támogatási kérelmükben McCarthy
+egy új kifejezést használt:
+
+00:04:35.985 --> 00:04:38.097
+mesterséges intelligencia,
+
+00:04:38.097 --> 00:04:43.485
+angolul artificial intelligence.
+Szándékosan választott új nevet,
+
+00:04:43.485 --> 00:04:46.231
+hogy a terület önálló
+tudományként induljon.
+
+00:04:46.551 --> 00:04:49.175
+A kérelem kiindulópontja merész volt:
+
+00:04:49.175 --> 00:04:54.075
+a tanulás és az intelligencia minden
+vonása elvben olyan pontosan leírható,
+
+00:04:54.075 --> 00:04:55.914
+hogy egy gép utánozni tudja.
+
+00:04:57.414 --> 00:05:02.098
+Mit akartak elérni? A tervük
+ma is ismerősen hangzik.
+
+00:05:02.418 --> 00:05:06.672
+Az első cél az volt, hogy a gép
+emberi nyelven értsen és beszéljen.
+
+00:05:06.992 --> 00:05:11.685
+A második, hogy fogalmakat
+alkosson, és elvontan gondolkodjon.
+
+00:05:12.005 --> 00:05:17.346
+A harmadik, hogy olyan problémákat oldjon
+meg, amelyeket addig csak emberek tudtak.
+
+00:05:17.666 --> 00:05:21.824
+A negyedik, hogy saját magát
+fejlessze, vagyis tanuljon.
+
+00:05:22.144 --> 00:05:26.480
+A konferencián bemutattak egy
+programot is, a Logic Theorist-et,
+
+00:05:26.480 --> 00:05:32.230
+amely matematikai tételeket bizonyított.
+Ez az automatikus tételbizonyítás,
+
+00:05:32.230 --> 00:05:34.805
+angolul automated theorem proving:
+
+00:05:34.805 --> 00:05:37.543
+a gép logikai lépésekről
+lépésekre maga vezeti
+
+00:05:37.543 --> 00:05:41.018
+le egy matematikai állítás bizonyítását.
+
+00:05:41.018 --> 00:05:44.408
+Sokan ezt tartják az első
+igazi MI-programnak.
+
+00:05:45.908 --> 00:05:48.400
+A hangulat rendkívül optimista volt.
+
+00:05:48.720 --> 00:05:50.739
+A szervezők úgy gondolták,
+
+00:05:50.739 --> 00:05:55.951
+egy jól megválogatott csapat egyetlen
+nyár alatt jelentős előrelépést érhet el.
+
+00:05:55.951 --> 00:06:00.976
+Pár évvel később az egyik vezető
+kutató, Herbert Simon azt jósolta,
+
+00:06:00.976 --> 00:06:04.191
+hogy tíz éven belül számítógép
+lesz a sakkvilágbajnok.
+
+00:06:04.511 --> 00:06:08.584
+A valóság más lett. A
+sakkvilágbajnokot negyven
+
+00:06:08.584 --> 00:06:11.096
+évvel később győzte le először egy gép,
+
+00:06:11.096 --> 00:06:15.213
+a nyelvet értő és beszélő gépre pedig
+több mint hatvan évet kellett várni.
+
+00:06:15.533 --> 00:06:19.355
+Az ötletek jók voltak, de
+hiányzott hozzájuk két dolog:
+
+00:06:19.355 --> 00:06:22.830
+elég adat és elég számítási kapacitás.
+
+00:06:22.830 --> 00:06:25.909
+Erre még a sorozat során
+többször visszatérünk.
+
+00:06:27.409 --> 00:06:29.168
+Röviden összefoglalva:
+
+00:06:29.168 --> 00:06:34.106
+a mesterséges intelligencia
+gondolata egyidős a számítógéppel.
+
+00:06:34.106 --> 00:06:38.556
+1943-ban megszületett az
+első mesterséges neuron,
+
+00:06:38.556 --> 00:06:43.581
+1950-ben Turing feltette a kérdést,
+hogy tud-e gondolkodni egy gép,
+
+00:06:43.581 --> 00:06:48.405
+1956-ban Dartmouthban pedig a terület
+megkapta a nevét és a programját.
+
+00:06:48.725 --> 00:06:54.067
+A következő részben megnézzük, mi lett a
+nagy reményekből: az első tanuló gépet,
+
+00:06:54.067 --> 00:06:59.693
+az első csevegőprogramot, és azt, miért
+következett utánuk az első MI-tél.
+
+00:07:00.013 --> 00:07:02.559
+Viszontlátásra a következő részben!

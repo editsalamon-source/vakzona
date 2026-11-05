@@ -1,0 +1,434 @@
+WEBVTT
+
+00:00:01.400 --> 00:00:05.796
+Üdvözöljük Az MI története
+sorozat hetedik, záró részében!
+
+00:00:06.116 --> 00:00:11.907
+Ebben a részben megérkezünk a jelenbe:
+megnézzük, mi történt 2022 óta,
+
+00:00:11.907 --> 00:00:16.292
+mit kell tudnunk a mai MI korlátairól,
+és mire használhatjuk okosan.
+
+00:00:17.792 --> 00:00:23.576
+2022 végén a csevegőprogram még szenzáció
+volt, amelyről mindenki beszélt.
+
+00:00:23.896 --> 00:00:28.622
+Néhány évvel később ott van a
+levelezőprogramban, a szövegszerkesztőben,
+
+00:00:28.622 --> 00:00:35.075
+a telefonon és a keresőben. Sokan naponta
+használják, és már fel sem tűnik nekik.
+
+00:00:35.395 --> 00:00:39.160
+Amikor egy technológia ilyen gyorsan
+a mindennapjaink része lesz,
+
+00:00:39.160 --> 00:00:44.300
+egy kérdés különösen fontossá válik:
+mire figyeljünk, amikor használjuk?
+
+00:00:45.800 --> 00:00:47.532
+Három dolgot nézünk meg.
+
+00:00:47.852 --> 00:00:51.561
+Először azt, mit tanultak
+a gépek az utóbbi években,
+
+00:00:51.881 --> 00:00:57.113
+aztán a korlátokat és a szabályokat, amelyeket
+minden felhasználónak ismernie kell,
+
+00:00:57.433 --> 00:01:01.514
+végül azt, mire jó ma az
+MI, és mit hozhat a jövő.
+
+00:01:02.914 --> 00:01:06.852
+Kezdjük azzal, mi történt
+a ChatGPT megjelenése óta.
+
+00:01:08.552 --> 00:01:14.572
+Az első nagy lépés a több érzékszerv. A
+modellek már nemcsak szöveget olvasnak,
+
+00:01:14.572 --> 00:01:19.147
+hanem képet néznek, hangot
+hallanak, és beszélnek is.
+
+00:01:19.147 --> 00:01:24.172
+Lefényképezhetünk egy számlát vagy egy
+hibás alkatrészt, és megkérdezhetjük,
+
+00:01:24.172 --> 00:01:30.709
+mi a gond vele. Ezeket multimodális modelleknek
+nevezzük, angolul multimodal models.
+
+00:01:31.029 --> 00:01:36.090
+A második lépés az érvelő modellek,
+angolul reasoning models.
+
+00:01:36.090 --> 00:01:40.603
+Ezek válaszadás előtt lépésenként
+végigvezetik maguknak a megoldást,
+
+00:01:40.603 --> 00:01:45.015
+ellenőrzik a részeredményeket,
+és csak utána válaszolnak.
+
+00:01:45.015 --> 00:01:49.690
+Matematikai és programozási
+feladatokban ez óriási javulást hozott.
+
+00:01:50.010 --> 00:01:55.008
+A harmadik lépés az
+MI-ágensek, angolul AI agents.
+
+00:01:55.008 --> 00:01:58.245
+Ezek már nemcsak válaszolnak,
+hanem cselekednek is:
+
+00:01:58.245 --> 00:02:01.370
+weboldalakon keresnek,
+űrlapot töltenek ki,
+
+00:02:01.370 --> 00:02:05.937
+programot írnak és futtatnak, több
+lépésből álló feladatot visznek végig.
+
+00:02:06.257 --> 00:02:09.705
+A tudományban is megérkezett az áttörés.
+
+00:02:09.705 --> 00:02:15.255
+2024-ben a kémiai Nobel-díj egy részét
+egy olyan MI-rendszer alkotói kapták,
+
+00:02:15.255 --> 00:02:18.255
+amely megjósolja a fehérjék
+térbeli szerkezetét,
+
+00:02:18.255 --> 00:02:20.568
+angolul protein structure prediction,
+
+00:02:20.568 --> 00:02:23.852
+és ezzel évtizedeket gyorsít
+fel a gyógyszerkutatásban.
+
+00:02:25.252 --> 00:02:29.093
+A képességek nőnek, de a
+korlátok is velünk maradtak.
+
+00:02:30.793 --> 00:02:33.762
+Hat korlátot érdemes mindenkinek ismernie.
+
+00:02:34.082 --> 00:02:38.694
+Az első a hallucináció,
+angolul hallucination.
+
+00:02:38.694 --> 00:02:41.394
+A modell néha magabiztosan állít olyat,
+
+00:02:41.394 --> 00:02:47.069
+ami nem igaz: kitalál egy forrást, egy
+számot vagy egy bírósági ítéletet.
+
+00:02:47.069 --> 00:02:54.069
+Emlékszünk: azt írja, ami valószínűen
+hangzik, nem azt, amit ellenőrzött.
+
+00:02:54.069 --> 00:02:59.042
+Volt már ügyvéd, aki ilyen kitalált
+ítéletekre hivatkozott a bíróságon.
+
+00:02:59.362 --> 00:03:05.659
+A második a tudáskorlát, angolul knowledge
+cutoff. A modell csak azt tudja,
+
+00:03:05.659 --> 00:03:10.271
+ami a tanítóadatában
+szerepelt. Ami utána történt,
+
+00:03:10.271 --> 00:03:13.069
+arról nem tud, hacsak
+nem keres rá a weben.
+
+00:03:13.389 --> 00:03:19.891
+A harmadik a torzítás, angolul bias. A
+modell az internet szövegeiből tanult,
+
+00:03:19.891 --> 00:03:23.879
+és az internet sem semleges:
+a benne lévő előítéletek,
+
+00:03:23.879 --> 00:03:26.860
+egyoldalú nézőpontok a
+modellbe is átkerülhetnek.
+
+00:03:27.180 --> 00:03:31.502
+A negyedik az adatvédelem,
+angolul data privacy.
+
+00:03:31.502 --> 00:03:35.302
+Amit beírunk, az a szolgáltatóhoz kerül.
+
+00:03:35.302 --> 00:03:41.172
+Személyes adatot, üzleti titkot csak akkor
+adjunk meg, ha tudjuk, mi történik vele.
+
+00:03:41.492 --> 00:03:46.029
+Az ötödik az utasítás
+minősége. Az utasítás,
+
+00:03:46.029 --> 00:03:50.129
+angolul prompt, az a szöveg,
+amellyel megmondjuk a modellnek,
+
+00:03:50.129 --> 00:03:55.491
+mit kérünk tőle. Homályos
+kérdésre homályos válasz jön.
+
+00:03:55.491 --> 00:04:00.116
+Minél pontosabban írjuk le, mit
+szeretnénk, annál jobb az eredmény.
+
+00:04:00.436 --> 00:04:04.424
+A hatodik a józan ész,
+angolul common sense.
+
+00:04:04.424 --> 00:04:08.962
+A modell nyelvi mintákat
+követ, nem élettapasztalatot.
+
+00:04:08.962 --> 00:04:11.774
+Egy szokatlan helyzetben
+olyat is javasolhat,
+
+00:04:11.774 --> 00:04:14.609
+amit egy ember azonnal
+képtelenségnek tartana.
+
+00:04:16.109 --> 00:04:18.936
+Ezekre a kockázatokra a jog is reagált.
+
+00:04:19.256 --> 00:04:23.438
+2024-ben elfogadták az
+Európai Unió MI-rendeletét,
+
+00:04:23.438 --> 00:04:28.351
+angolul AI Act, a világ
+első átfogó MI-törvényét.
+
+00:04:28.351 --> 00:04:33.226
+Szabályai több lépcsőben
+lépnek életbe. Az alapelve az,
+
+00:04:33.226 --> 00:04:36.732
+hogy minél nagyobb a kockázat,
+annál szigorúbb a szabály.
+
+00:04:37.052 --> 00:04:42.411
+A legfelső szint a tiltott MI-gyakorlatoké,
+angolul prohibited AI practices,
+
+00:04:42.411 --> 00:04:46.673
+például az emberek viselkedés alapján
+történő társadalmi pontozásáé.
+
+00:04:46.993 --> 00:04:52.055
+Alatta vannak a magas kockázatú
+MI-rendszerek, angolul high-risk AI systems,
+
+00:04:52.055 --> 00:04:57.830
+például amelyek munkaerő-felvételről,
+hitelről vagy vizsgaeredményről döntenek.
+
+00:04:57.830 --> 00:05:00.530
+Ezekre szigorú követelmények vonatkoznak,
+
+00:05:00.530 --> 00:05:04.493
+többek között emberi felügyelet,
+angolul human oversight:
+
+00:05:04.493 --> 00:05:09.757
+ember ellenőrzi a rendszer működését, és
+szükség esetén felülbírálja a döntését.
+
+00:05:10.077 --> 00:05:15.443
+Aztán jönnek az átláthatósági kötelezettségek,
+angolul transparency obligations:
+
+00:05:15.443 --> 00:05:18.481
+ha egy csevegőprogrammal
+beszélünk, tudnunk kell,
+
+00:05:18.481 --> 00:05:23.856
+hogy gép, és a gépi úton készült,
+valóságosnak tűnő képeket és videókat,
+
+00:05:23.856 --> 00:05:27.391
+a mélyhamisítványokat jelölni
+kell, angolul deepfakes.
+
+00:05:27.711 --> 00:05:30.911
+A legtöbb alkalmazás, például a spamszűrő,
+
+00:05:30.911 --> 00:05:34.508
+minimális kockázatú, ezekre
+nincs külön előírás.
+
+00:05:34.828 --> 00:05:38.800
+A rendelet a munkahelyeket is
+kötelezi: aki MI-t használ,
+
+00:05:38.800 --> 00:05:44.300
+gondoskodjon róla, hogy a munkatársai
+megfelelő ismeretekkel rendelkezzenek.
+
+00:05:44.300 --> 00:05:50.376
+Ezt hívják MI-jártasságnak, angolul AI
+literacy, és ez a sorozat is ezt szolgálja.
+
+00:05:51.776 --> 00:05:56.549
+Végül nézzük meg, mire használhatjuk
+ma a mesterséges intelligenciát.
+
+00:05:58.249 --> 00:06:02.722
+A mai generatív MI kiváló
+segítőtárs a mindennapi munkában.
+
+00:06:03.042 --> 00:06:07.126
+Jó ötletelésre, angolul
+brainstorming: ha elakadunk,
+
+00:06:07.126 --> 00:06:10.671
+tíz javaslatot ad, amelyből
+kettő-három hasznos lehet.
+
+00:06:10.991 --> 00:06:15.761
+Jó összefoglalásra: egy hosszú dokumentum
+lényegét percek alatt kiemeli.
+
+00:06:16.081 --> 00:06:21.340
+Jó szövegjavításra: helyesírást,
+stílust, hangnemet igazít,
+
+00:06:21.340 --> 00:06:23.939
+vagy egyszerűbbé teszi
+a bonyolult mondatokat.
+
+00:06:24.259 --> 00:06:27.718
+Jó első változatok készítésére: levélre,
+
+00:06:27.718 --> 00:06:31.319
+bemutatóra, képre, akár
+egy egyszerű programra.
+
+00:06:31.639 --> 00:06:35.831
+Három aranyszabály
+mindegyikhez. Ellenőrizzük,
+
+00:06:35.831 --> 00:06:39.781
+amit állít, különösen a
+tényeket és a számokat.
+
+00:06:39.781 --> 00:06:44.856
+Ne adjunk meg érzékeny adatot,
+ha nem tudjuk, hová kerül.
+
+00:06:44.856 --> 00:06:49.547
+És a döntés mindig a miénk marad:
+az MI javasol, mi felelünk.
+
+00:06:51.047 --> 00:06:52.998
+Nézzünk vissza a teljes útra.
+
+00:06:53.318 --> 00:06:56.457
+Hetven év alatt három nagy
+ötlet követte egymást:
+
+00:06:56.457 --> 00:07:01.157
+először szabályokat írtunk a gépnek,
+aztán megtanítottuk adatokból tanulni,
+
+00:07:01.157 --> 00:07:07.232
+végül képessé tettük új tartalom
+létrehozására. Közben kétszer jött MI-tél,
+
+00:07:07.232 --> 00:07:10.285
+amikor az ígéretek messze
+a valóság előtt jártak.
+
+00:07:10.605 --> 00:07:15.591
+Jön-e harmadik tél? Ezt
+senki nem tudja biztosan.
+
+00:07:15.591 --> 00:07:20.929
+A különbség a korábbiakhoz képest az, hogy
+a mai MI-t már százmilliók használják,
+
+00:07:20.929 --> 00:07:25.604
+és valódi hasznot hoz. Az
+elvárások azonban ma is nagyok,
+
+00:07:25.604 --> 00:07:30.495
+és a sorozat egyik tanulsága, hogy a
+nagy ígéreteket érdemes józanul fogadni.
+
+00:07:30.815 --> 00:07:34.145
+És mi a helyzet a sorozat
+elején feltett kérdéssel:
+
+00:07:34.145 --> 00:07:37.695
+a filmbeli robot vagy a
+telefon arcfelismerője?
+
+00:07:37.695 --> 00:07:41.182
+A válasz ma már mindkettőnél árnyaltabb.
+
+00:07:41.182 --> 00:07:45.632
+Az MI nem gondolkodó lény,
+de nem is egyszerű gép.
+
+00:07:45.632 --> 00:07:50.960
+Egy rendkívül erős eszköz, amelynek a
+hatása azon múlik, hogyan használjuk.
+
+00:07:52.460 --> 00:07:59.044
+Röviden összefoglalva: a mai MI lát,
+hall, beszél, lépésenként gondolkodik,
+
+00:07:59.044 --> 00:08:02.369
+és egyre több feladatot önállóan végez el.
+
+00:08:02.369 --> 00:08:06.381
+Közben hallucinálhat,
+elavult lehet, torzíthat,
+
+00:08:06.381 --> 00:08:12.969
+és nem ismeri a józan észt. Az Európai
+Unió a kockázat szerint szabályozza.
+
+00:08:12.969 --> 00:08:16.019
+Akkor használjuk jól, ha ellenőrizzük,
+
+00:08:16.019 --> 00:08:19.735
+vigyázunk az adatainkra, és
+a döntést magunknál tartjuk.
+
+00:08:20.055 --> 00:08:25.101
+Ezzel a sorozat végére értünk. A
+legjobb folytatás a gyakorlat:
+
+00:08:25.101 --> 00:08:28.889
+próbálja ki a mesterséges
+intelligenciát a saját feladatain,
+
+00:08:28.889 --> 00:08:31.578
+és mindig ellenőrizze, amit válaszol.
+
+00:08:31.898 --> 00:08:35.547
+Köszönjük, hogy velünk
+tartott, viszontlátásra!

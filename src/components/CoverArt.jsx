@@ -383,7 +383,50 @@ function Piramis() {
   );
 }
 
+// Idővonal 1940-től napjainkig: a hype-görbe két „téllel” (szaggatott mélypontok, hópehely),
+// a három nagy ötlet jelölőivel, a végén narancs pont: itt tartunk.
+function Idovonal() {
+  const marks = [
+    { x: 70, y: "1940" },
+    { x: 138, y: "1956" },
+    { x: 232, y: "1986" },
+    { x: 300, y: "2017" },
+    { x: 344, y: "2026" },
+  ];
+  const flake = (cx, cy) => (
+    <g opacity="0.5" strokeWidth="1.2">
+      <path d={`M${cx} ${cy - 7} v14 M${cx - 6} ${cy - 3.5} l12 7 M${cx - 6} ${cy + 3.5} l12 -7`} />
+    </g>
+  );
+  return (
+    <>
+      <path d="M50 236 H360" strokeWidth="1.5" opacity="0.6" />
+      {marks.map((m) => (
+        <g key={m.y}>
+          <line x1={m.x} y1="230" x2={m.x} y2="242" strokeWidth="1.5" opacity="0.6" />
+          <text x={m.x} y="262" textAnchor="middle" fontSize="11" fill="currentColor" stroke="none" opacity="0.6"
+            fontFamily="ui-monospace, monospace">{m.y}</text>
+        </g>
+      ))}
+      <path d="M70 196 C 100 190 118 120 150 104 C 170 96 178 150 196 178" strokeWidth="2" />
+      <path d="M196 178 C 204 190 212 190 220 176" strokeWidth="2" strokeDasharray="3 4" opacity="0.7" />
+      <path d="M220 176 C 232 150 240 128 252 130 C 262 132 266 162 276 172" strokeWidth="2" />
+      <path d="M276 172 C 282 180 288 180 294 168" strokeWidth="2" strokeDasharray="3 4" opacity="0.7" />
+      <path d="M294 168 C 308 132 320 90 344 58" stroke={A} strokeWidth="2.5" />
+      {flake(208, 204)}
+      {flake(285, 196)}
+      {[150, 252].map((x, i) => (
+        <circle key={x} cx={x} cy={[104, 130][i]} r="4" fill={BG} strokeWidth="1.5" />
+      ))}
+      <circle cx="344" cy="58" r="11" fill={A} fillOpacity="0.16" stroke="none" />
+      <circle cx="344" cy="58" r="5.5" fill={A} stroke="none" />
+      <line x1="344" y1="70" x2="344" y2="230" stroke={A} strokeWidth="1.2" strokeDasharray="2 4" opacity="0.7" />
+    </>
+  );
+}
+
 const MOTIFS = {
+  idovonal: Idovonal,
   naptar: Naptar,
   osszefogas: Osszefogas,
   csillag: Csillag,
