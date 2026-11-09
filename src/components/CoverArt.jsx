@@ -425,6 +425,32 @@ function Idovonal() {
   );
 }
 
+// Ágenstervezés Claude Code-ban tanfolyam: terminálablak promptjellel, belőle vezénylő csomópont
+// és három végrehajtó (ágens-architektúra), a narancs végrehajtó a vakfolt, visszanyíllal a vezénylőhöz.
+function Tervrajz() {
+  return (
+    <>
+      <rect x="40" y="78" width="150" height="112" rx="10" fill={BG} strokeWidth="1.5" />
+      <line x1="40" y1="100" x2="190" y2="100" strokeWidth="1.5" opacity="0.5" />
+      {[54, 66, 78].map((x) => <circle key={x} cx={x} cy="89" r="3" strokeWidth="1.2" opacity="0.5" />)}
+      <path d="M58 124 l12 10 l-12 10" strokeWidth="2" strokeLinejoin="round" />
+      <line x1="80" y1="146" x2="102" y2="146" stroke={A} strokeWidth="2.5" />
+      <line x1="58" y1="166" x2="150" y2="166" strokeWidth="1.5" opacity="0.35" />
+      <path d="M190 134 C 214 134 222 134 240 134" strokeWidth="1.5" strokeDasharray="3 4" />
+      <circle cx="262" cy="134" r="20" fill={BG} strokeWidth="1.5" />
+      <circle cx="262" cy="134" r="7" fill="currentColor" fillOpacity="0.15" strokeWidth="1.2" />
+      {[70, 134, 198].map((y) => (
+        <path key={y} d={`M282 134 C 304 134 312 ${y} 330 ${y}`} strokeWidth="1.5" opacity="0.6" />
+      ))}
+      <rect x="330" y="56" width="32" height="28" rx="6" fill={BG} strokeWidth="1.5" />
+      <rect x="330" y="120" width="32" height="28" rx="6" fill={A} fillOpacity="0.16" stroke={A} strokeWidth="1.5" />
+      <rect x="330" y="184" width="32" height="28" rx="6" fill={BG} strokeWidth="1.5" />
+      <path d="M346 212 C 346 246 262 250 262 160" strokeWidth="1.2" strokeDasharray="3 4" opacity="0.5" />
+      <path d="M256 168 l6 -9 l6 9" strokeWidth="1.2" opacity="0.5" strokeLinejoin="round" />
+    </>
+  );
+}
+
 const MOTIFS = {
   idovonal: Idovonal,
   naptar: Naptar,
@@ -440,6 +466,7 @@ const MOTIFS = {
   jartassag: Jartassag,
   dontesiterkep: Dontesiterkep,
   piramis: Piramis,
+  tervrajz: Tervrajz,
 };
 
 function CoverArt({ motif, category, className }) {

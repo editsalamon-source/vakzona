@@ -22,3 +22,6 @@ npm-debug.log*
 # a public/akademia/ mappába csak titkosított fájl kerül (scripts/akademia.mjs)
 /Akadémia/*
 !/Akadémia/README.md
+
+# arculati munkafájlok (pl. LinkedIn-képek)
+/Arculat/
