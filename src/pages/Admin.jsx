@@ -43,7 +43,6 @@ function Invite({ onDone }) {
 
   return (
     <form className={FormCSS.form} onSubmit={submit}>
-      <h2 className={AccountCSS.blockTitle}>Hozzáférés e-mail-címre</h2>
       <p className={FormCSS.text}>
         Regisztrált és még nem regisztrált címre is adható. Ha még nincs fiók, a hozzáférés a regisztráció
         megerősítésekor lép életbe. Levelet nem küldünk, a meghívottnak Önnek kell szólnia.
@@ -105,13 +104,71 @@ function Invites({ list, onChange }) {
   );
 }
 
+const SZUROK = [
+  { id: "mind", label: "Mind", test: () => true },
+  { id: "van", label: "Van hozzáférése", test: (u) => u.tartalmak.length > 0 },
+  { id: "nincs", label: "Nincs hozzáférése", test: (u) => !u.tartalmak.length },
+  { id: "fuggo", label: "Nincs megerősítve", test: (u) => !u.megerositve },
+];
+const OSSZES = CSOPORTOK.reduce((n, g) => n + g.items.length, 0);
+
+// Egy felhasználó: tömör sor (cím, állapot, hozzáférések összegezve), kattintásra lenyílik a pipák listája.
+function UserRow({ user, open, onOpen, onToggle }) {
+  const titles = user.tartalmak.map((id) => describe(id)?.title || id);
+  const panelId = `fh-${user.id}`;
+  return (
+    <li className={`${CSS.user} ${open ? CSS.userOpen : ""}`}>
+      <button type="button" className={CSS.userHead} aria-expanded={open} aria-controls={panelId} onClick={onOpen}>
+        <span className={`${CSS.dot} ${user.megerositve ? CSS.dotOk : ""}`}
+          title={user.megerositve ? "Megerősítve" : "Nincs megerősítve"} />
+        <span className={CSS.who}>
+          <strong>{user.email}</strong>
+          <span className="meta">
+            {user.megerositve ? "Megerősítve" : "Nincs megerősítve"} · utolsó belépés: {date(user.utolso_belepes)}
+          </span>
+        </span>
+        <span className={CSS.chips} title={titles.join("\n")}>
+          {titles.slice(0, 2).map((t) => <span key={t} className={CSS.chip}>{t}</span>)}
+          {titles.length > 2 && <span className={CSS.chipMore}>+{titles.length - 2}</span>}
+          {!titles.length && <span className={CSS.none}>Nincs hozzáférés</span>}
+        </span>
+        <span className={CSS.count}>{user.tartalmak.length}/{OSSZES}</span>
+        <span className={CSS.chevron} aria-hidden="true" />
+      </button>
+      {open && (
+        <div id={panelId} className={CSS.userBody}>
+          <p className="meta">Regisztrált: {date(user.letrehozva)}</p>
+          <div className={CSS.grants}>
+            {CSOPORTOK.map((g) => (
+              <div key={g.label} className={CSS.grantGroup}>
+                <span className={CSS.group}>{g.label}</span>
+                {g.items.map((v) => (
+                  <label key={v.id} className={AccountCSS.check}>
+                    <input type="checkbox" checked={user.tartalmak.includes(v.id)}
+                      onChange={(e) => onToggle(user, v.id, e.target.checked)} />
+                    <span>{v.title}</span>
+                  </label>
+                ))}
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+    </li>
+  );
+}
+
 function Users({ users, setUsers }) {
   const [query, setQuery] = useState("");
+  const [filter, setFilter] = useState("mind");
+  const [content, setContent] = useState("");
+  const [open, setOpen] = useState(null);
   const [error, setError] = useState("");
-  const shown = useMemo(
-    () => users.filter((u) => u.email.toLowerCase().includes(query.trim().toLowerCase())),
-    [users, query]
-  );
+  const shown = useMemo(() => {
+    const q = query.trim().toLowerCase();
+    const f = SZUROK.find((x) => x.id === filter);
+    return users.filter((u) => u.email.toLowerCase().includes(q) && f.test(u) && (!content || u.tartalmak.includes(content)));
+  }, [users, query, filter, content]);
 
   // pipa: azonnal átállítjuk, hiba esetén visszaállítjuk
   async function toggle(user, id, on) {
@@ -136,33 +193,32 @@ function Users({ users, setUsers }) {
         <input type="search" placeholder="Keresés e-mail-címre" aria-label="Keresés e-mail-címre"
           className={`${FormCSS.input} ${CSS.search}`} value={query} onChange={(e) => setQuery(e.target.value)} />
       </div>
+      <div className={CSS.filters}>
+        <div className={CSS.seg} role="group" aria-label="Szűrés állapot szerint">
+          {SZUROK.map((f) => (
+            <button key={f.id} type="button" aria-pressed={filter === f.id}
+              className={filter === f.id ? CSS.segOn : ""} onClick={() => setFilter(f.id)}>
+              {f.label} <span>{users.filter(f.test).length}</span>
+            </button>
+          ))}
+        </div>
+        <select className={`${FormCSS.input} ${CSS.select}`} aria-label="Szűrés tartalom szerint"
+          value={content} onChange={(e) => setContent(e.target.value)}>
+          <option value="">Bármely tartalom</option>
+          {CSOPORTOK.map((g) => (
+            <optgroup key={g.label} label={g.label}>
+              {g.items.map((v) => <option key={v.id} value={v.id}>{v.title}</option>)}
+            </optgroup>
+          ))}
+        </select>
+      </div>
       {error && <p className={FormCSS.error}>{error}</p>}
-      <ul className={CSS.list}>
+      <ul className={CSS.table}>
         {shown.map((u) => (
-          <li key={u.id} className={CSS.user}>
-            <span className={CSS.who}>
-              <strong>{u.email}</strong>
-              <span className="meta">
-                {u.megerositve ? "Megerősítve" : "Nincs megerősítve"} · regisztrált: {date(u.letrehozva)} · utolsó belépés: {date(u.utolso_belepes)}
-              </span>
-            </span>
-            <span className={CSS.grants}>
-              {CSOPORTOK.map((g) => (
-                <span key={g.label} className={CSS.grantGroup}>
-                  <span className={CSS.group}>{g.label}</span>
-                  {g.items.map((v) => (
-                    <label key={v.id} className={AccountCSS.check}>
-                      <input type="checkbox" checked={u.tartalmak.includes(v.id)}
-                        onChange={(e) => toggle(u, v.id, e.target.checked)} />
-                      <span>{v.title}</span>
-                    </label>
-                  ))}
-                </span>
-              ))}
-            </span>
-          </li>
+          <UserRow key={u.id} user={u} open={open === u.id} onToggle={toggle}
+            onOpen={() => setOpen((o) => (o === u.id ? null : u.id))} />
         ))}
-        {!shown.length && <li className={FormCSS.text}>Nincs találat.</li>}
+        {!shown.length && <li className={CSS.empty}>Nincs találat.</li>}
       </ul>
       <p className={CSS.note}>
         A visszavont hozzáférés a fiókon át azonnal megszűnik, de aki a tartalmat korábban már megnyitotta,
@@ -192,7 +248,13 @@ function Panel() {
   if (!users) return <div className={AccountCSS.placeholder} />;
   return (
     <>
-      <div className={AccountCSS.card}><Invite onDone={load} /></div>
+      <details className={`${AccountCSS.card} ${CSS.invite}`}>
+        <summary className={CSS.inviteSummary}>
+          <span>Hozzáférés e-mail-címre</span>
+          <span className={CSS.chevron} aria-hidden="true" />
+        </summary>
+        <Invite onDone={load} />
+      </details>
       <Invites list={invites} onChange={load} />
       <Users users={users} setUsers={setUsers} />
     </>
