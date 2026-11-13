@@ -451,7 +451,39 @@ function Tervrajz() {
   );
 }
 
+// CADA tanfolyam: felhő, alatta adatközpont-szekrény, mellette a négy uniós megbízhatósági szint
+// lépcsője, a legfelső (4. szint) narancs.
+function Felho() {
+  const steps = [40, 72, 104, 136];
+  return (
+    <>
+      <path d="M70 150 H190 A30 30 0 0 0 194 92 A44 44 0 0 0 112 74 A44 44 0 0 0 70 150 Z"
+        fill="currentColor" fillOpacity="0.05" strokeWidth="1.5" strokeLinejoin="round" />
+      <line x1="130" y1="150" x2="130" y2="178" strokeWidth="1.5" strokeDasharray="3 4" opacity="0.6" />
+      <rect x="92" y="178" width="76" height="76" rx="8" fill={BG} strokeWidth="1.5" />
+      {[196, 218, 240].map((y) => (
+        <g key={y}>
+          <line x1="104" y1={y} x2="144" y2={y} strokeWidth="1.5" opacity="0.45" />
+          <circle cx="155" cy={y} r="2.5" fill="currentColor" stroke="none" opacity="0.5" />
+        </g>
+      ))}
+      {steps.map((h, i) => (
+        <rect key={h} x={226 + i * 34} y={254 - h} width="28" height={h} rx="5"
+          fill={i === 3 ? A : "currentColor"} fillOpacity={i === 3 ? 0.16 : 0.04 + i * 0.03}
+          stroke={i === 3 ? A : "currentColor"} strokeWidth="1.5" />
+      ))}
+      {steps.map((h, i) => (
+        <text key={i} x={240 + i * 34} y={254 - h + 20} textAnchor="middle" fontSize="12" fontWeight="600"
+          fill={i === 3 ? A : "currentColor"} stroke="none" fontFamily="Inter, sans-serif">{i + 1}</text>
+      ))}
+      <path d="M196 112 C 250 112 290 96 334 96" strokeWidth="1.2" strokeDasharray="3 4" opacity="0.5" />
+      <circle cx="342" cy="96" r="6" fill={A} stroke="none" />
+    </>
+  );
+}
+
 const MOTIFS = {
+  felho: Felho,
   idovonal: Idovonal,
   naptar: Naptar,
   osszefogas: Osszefogas,
