@@ -1,5 +1,5 @@
 ---
-cím: A CADA tíz percben – ismertető laikusoknak
+cím: A CADA tíz percben
 alcím: Az EU felhőszolgáltatásokról és MI-fejlesztésről szóló rendeletjavaslata (COM(2026) 502), közérthetően
 dátum: 2026-11-15
 kategória: MI
