@@ -1,0 +1,35 @@
+{
+  "leckek": {
+    "01": {
+      "video": "https://vimeo.com/1247053560",
+      "felirat": "01.vtt",
+      "fejezetek": [
+        {
+          "ido": "0:00",
+          "cim": "Mi az a felhő, és mi a CADA?"
+        },
+        {
+          "ido": "2:07",
+          "cim": "Miért született?"
+        },
+        {
+          "ido": "3:15",
+          "cim": "Mit tartalmaz?"
+        },
+        {
+          "ido": "4:25",
+          "cim": "A négy megbízhatósági szint"
+        },
+        {
+          "ido": "6:37",
+          "cim": "Kit érint?"
+        },
+        {
+          "ido": "8:53",
+          "cim": "Mikor jöhet, és mit lehet tenni már most?"
+        }
+      ],
+      "leiras": "Tíz percben a CADA-ról, az Európai Bizottság felhőszolgáltatásokról és mesterséges intelligencia fejlesztéséről szóló rendeletjavaslatáról (COM(2026) 502). A CADA még javaslat, nem hatályos jog, a videó a 2026. novemberi állapotot tükrözi.\n\n**Fejezetek:**\n- **0:00** Mi az a felhő, és mi a CADA? A felhőszolgáltatás, a rendelet neve, és hogy miért javaslat még\n- **2:07** Miért született? A kapacitás, a függés és a joghatóság problémája, két számmal\n- **3:15** Mit tartalmaz? Fejlesztés, adatközpontok, autonómia, és az adatközpontok négy eszköze\n- **4:25** A négy megbízhatósági szint: a lépcső, az „ellenőrzés” két jelentése, és ki vizsgálja a szolgáltatókat\n- **6:37** Kit érint? A közszféra kockázatértékelése, a vízműves példa, a beszerzés szabályai, a szolgáltatók és a cégek\n- **8:53** Mikor jöhet, és mit lehet tenni már most? Az ütemterv, négy teendő és az összefoglalás"
+    }
+  }
+}

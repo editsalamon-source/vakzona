@@ -482,7 +482,57 @@ function Felho() {
   );
 }
 
+// Stopper (a tízperces ismertető): a számlap hat fejezetcikkelyre osztva, a negyedik (a megbízhatósági
+// szintek, a javaslat „szíve”) narancs; középen kis felhő, a mutató a végén áll.
+function Stopper() {
+  const cx = 200;
+  const cy = 162;
+  const r = 96;
+  const total = 641;
+  const marks = [0, 127, 195, 265, 397, 533, total];
+  const pt = (t, rad) => {
+    const a = (t / total) * 2 * Math.PI - Math.PI / 2;
+    return [cx + rad * Math.cos(a), cy + rad * Math.sin(a)];
+  };
+  return (
+    <>
+      <rect x="188" y="40" width="24" height="16" rx="4" fill={BG} strokeWidth="1.5" />
+      <line x1="200" y1="56" x2="200" y2="66" strokeWidth="1.5" />
+      <line x1="268" y1="80" x2="278" y2="70" strokeWidth="1.5" />
+      <circle cx={cx} cy={cy} r={r + 10} fill="currentColor" fillOpacity="0.03" strokeWidth="1.5" />
+      {marks.slice(0, -1).map((t, i) => {
+        const [x1, y1] = pt(t, r);
+        const [x2, y2] = pt(marks[i + 1], r);
+        const large = marks[i + 1] - t > total / 2 ? 1 : 0;
+        const hot = i === 3;
+        return (
+          <path key={t} d={`M${cx} ${cy} L${x1} ${y1} A${r} ${r} 0 ${large} 1 ${x2} ${y2} Z`}
+            fill={hot ? A : "currentColor"} fillOpacity={hot ? 0.16 : 0.02 + (i % 2) * 0.05}
+            stroke={hot ? A : "currentColor"} strokeWidth="1.2" strokeLinejoin="round" opacity={hot ? 1 : 0.7} />
+        );
+      })}
+      {Array.from({ length: 60 }, (_, i) => {
+        const [x1, y1] = pt((i / 60) * total, r + 4);
+        const [x2, y2] = pt((i / 60) * total, r + (i % 5 ? 7 : 10));
+        return <line key={i} x1={x1} y1={y1} x2={x2} y2={y2} strokeWidth="1" opacity="0.45" />;
+      })}
+      <circle cx={cx} cy={cy} r="34" fill={BG} strokeWidth="1.5" />
+      <path d="M184 172 H214 A8 8 0 0 0 215 156 A12 12 0 0 0 193 151 A11 11 0 0 0 184 172 Z"
+        fill="currentColor" fillOpacity="0.05" strokeWidth="1.3" strokeLinejoin="round" />
+      {(() => {
+        const [x, y] = pt(total - 8, r - 14);
+        return <line x1={cx} y1={cy - 34} x2={x} y2={y} strokeWidth="1.5" opacity="0.6" strokeDasharray="3 4" />;
+      })()}
+      {(() => {
+        const [x, y] = pt((265 + 397) / 2, r + 22);
+        return <circle cx={x} cy={y} r="6" fill={A} stroke="none" />;
+      })()}
+    </>
+  );
+}
+
 const MOTIFS = {
+  stopper: Stopper,
   felho: Felho,
   idovonal: Idovonal,
   naptar: Naptar,

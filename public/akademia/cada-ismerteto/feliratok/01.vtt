@@ -1,0 +1,541 @@
+WEBVTT
+
+00:00:00.600 --> 00:00:07.334
+Szia! Salamon Edit vagyok. Tíz
+percben elmondom, mi az a CADA,
+
+00:00:07.334 --> 00:00:11.370
+és miért érdemes tudnod róla,
+akkor is, ha nem vagy jogász.
+
+00:00:11.690 --> 00:00:16.639
+Az Unió új szabályt készít arról,
+hogyan épüljön Európában több felhő,
+
+00:00:16.639 --> 00:00:21.768
+adatközpont és mesterséges intelligencia,
+és kinek a gépein legyenek az adataink.
+
+00:00:22.088 --> 00:00:26.547
+Röviden: a CADA arról szól,
+kinek a kezében van a felhő,
+
+00:00:26.547 --> 00:00:28.708
+amelyre egyre többen támaszkodunk.
+
+00:00:31.008 --> 00:00:37.700
+Megnézzük, mi a CADA, miért született,
+mit tartalmaz, kit érint, és mikor jöhet.
+
+00:00:39.100 --> 00:00:43.181
+Mielőtt a CADA-ra térünk,
+tisztázzuk: mi az a felhő?
+
+00:00:44.881 --> 00:00:49.966
+A felhőszolgáltatás, angolul cloud
+computing service, azt jelenti,
+
+00:00:49.966 --> 00:00:53.628
+hogy nem a saját gépeden tárolod az
+adatot vagy futtatod a programot,
+
+00:00:53.628 --> 00:00:56.912
+hanem valaki más gépein,
+az interneten keresztül.
+
+00:00:57.232 --> 00:01:01.456
+Ha webes levelezőt használsz, vagy
+a telefonod menti a fotóidat,
+
+00:01:01.456 --> 00:01:03.681
+már felhőt használsz.
+
+00:01:03.681 --> 00:01:07.778
+Egy hivatal ügyfélkapuja vagy
+chatbotja is gyakran felhőben fut.
+
+00:01:08.098 --> 00:01:12.191
+Olyan ez, mint a vízvezeték:
+nem fúrsz saját kutat,
+
+00:01:12.191 --> 00:01:16.725
+a vizet a vízmű adja. Itt
+a számítógépet adja más.
+
+00:01:17.045 --> 00:01:20.970
+A kérdés tehát: ki ez a
+más, hol vannak a gépei,
+
+00:01:20.970 --> 00:01:23.559
+és melyik ország törvényei vonatkoznak rá?
+
+00:01:25.059 --> 00:01:28.422
+A CADA az Európai Bizottság
+rendeletjavaslata.
+
+00:01:28.742 --> 00:01:30.329
+Hivatalos magyar neve:
+
+00:01:30.329 --> 00:01:36.317
+a felhőszolgáltatások és a mesterséges
+intelligencia fejlesztéséről szóló rendelet.
+
+00:01:36.317 --> 00:01:41.234
+Angolul Cloud and AI Development
+Act, ebből jön a CADA rövidítés.
+
+00:01:41.554 --> 00:01:46.746
+Uniós rendelet lenne: elfogadása után
+Magyarországon is közvetlenül érvényes,
+
+00:01:46.746 --> 00:01:48.530
+külön magyar törvény nélkül.
+
+00:01:50.030 --> 00:01:52.565
+Egy dolgot rögtön az elején tisztázzunk.
+
+00:01:52.885 --> 00:01:55.210
+A CADA ma nem hatályos jogszabály,
+
+00:01:55.530 --> 00:02:01.964
+hanem javaslat. A Bizottság 2026.
+június harmadikán terjesztette elő,
+
+00:02:01.964 --> 00:02:06.908
+a Parlamentnek és a Tanácsnak még el kell
+fogadnia, és a szöveg közben változhat.
+
+00:02:08.308 --> 00:02:13.427
+Miért kell egy ilyen szabály? A
+Bizottság három problémát lát.
+
+00:02:15.127 --> 00:02:21.486
+Az első a kapacitás. Európában kevés
+az adatközpont, lassan épülnek,
+
+00:02:21.486 --> 00:02:25.987
+a mesterséges intelligencia pedig
+rengeteg számítási kapacitást igényel.
+
+00:02:26.307 --> 00:02:33.393
+A második a függés. A felhőszolgáltatások
+nagy része néhány nem uniós cégtől jön.
+
+00:02:33.393 --> 00:02:36.518
+Ha egy ilyen cég
+megváltoztatja a feltételeit,
+
+00:02:36.518 --> 00:02:39.208
+az európai ügyfeleknek nincs hová menniük.
+
+00:02:39.528 --> 00:02:46.050
+A harmadik a joghatóság. Ezekre a cégekre
+a saját országuk törvényei is vonatkoznak,
+
+00:02:46.050 --> 00:02:49.878
+amelyek akár adatkiadást is
+előírhatnak egy idegen hatóságnak.
+
+00:02:51.378 --> 00:02:53.586
+Két szám jól mutatja a helyzetet.
+
+00:02:53.906 --> 00:02:58.976
+Az uniós felhőszolgáltatók
+részesedése az európai piacon 2017 és
+
+00:02:58.976 --> 00:03:03.392
+2022 között huszonkilenc százalékról
+tizenöt százalékra esett.
+
+00:03:03.712 --> 00:03:07.899
+Az európai felhőpiac több mint
+hetven százaléka pedig három nagy,
+
+00:03:07.899 --> 00:03:10.874
+nem uniós szolgáltató kezében van.
+
+00:03:10.874 --> 00:03:15.050
+Ezeket hiperskálázónak
+hívják, angolul hyperscaler.
+
+00:03:16.450 --> 00:03:19.116
+Nézzük, mit tartalmaz a javaslat.
+
+00:03:20.816 --> 00:03:23.406
+A CADA három nagy területet fog össze.
+
+00:03:23.726 --> 00:03:28.943
+Az első a fejlesztés: MI-központok
+segítenék a kis cégeket és a hivatalokat,
+
+00:03:28.943 --> 00:03:33.519
+és minden tagállam nemzeti stratégiát
+készítene a felhőről és az MI-ről.
+
+00:03:33.839 --> 00:03:36.494
+A második az adatközpontok építése.
+
+00:03:36.814 --> 00:03:38.814
+A harmadik az autonómia,
+
+00:03:38.814 --> 00:03:43.877
+vagyis hogy Európa kevésbé függjön
+más országok felhőszolgáltatóitól.
+
+00:03:43.877 --> 00:03:47.583
+Ide tartozik a nyílt forráskód
+előnyben részesítése is.
+
+00:03:47.903 --> 00:03:51.800
+A legtöbb kötelezettség ebben
+a harmadik részben van.
+
+00:03:51.800 --> 00:03:54.353
+De előbb röviden az adatközpontok.
+
+00:03:55.853 --> 00:03:59.083
+Az adatközpontoknál a
+javaslat négy eszközt ad.
+
+00:03:59.403 --> 00:04:05.190
+A tagállamok gyorsítási zónákat jelölnek
+ki, angolul data centre acceleration zone,
+
+00:04:05.190 --> 00:04:10.054
+ahol az engedélyek nagy részét előre
+elintézik, mint egy közművesített teleknél.
+
+00:04:10.374 --> 00:04:13.921
+Az építtetőt egyablakos
+információs pont segíti.
+
+00:04:14.241 --> 00:04:20.012
+Az engedélyezés legfeljebb tizenkét hónapig
+tarthat, ma ez akár évekig is elhúzódik.
+
+00:04:20.332 --> 00:04:25.066
+A kiemelkedő projekteket pedig a Bizottság
+stratégiai projektté minősítheti.
+
+00:04:26.466 --> 00:04:30.218
+Most jön a javaslat szíve:
+a megbízhatósági szintek.
+
+00:04:31.918 --> 00:04:35.816
+A javaslat négy uniós
+megbízhatósági szintet vezetne be,
+
+00:04:35.816 --> 00:04:38.641
+angolul Union assurance level.
+
+00:04:38.641 --> 00:04:44.105
+Ez azt mutatja, mennyire független egy
+felhőszolgáltatás a nem uniós országoktól.
+
+00:04:44.425 --> 00:04:47.873
+A sajtóban gyakran
+szuverenitási szintnek hívják,
+
+00:04:47.873 --> 00:04:51.448
+de a rendelet hivatalos szövegében
+megbízhatósági szint áll.
+
+00:04:51.768 --> 00:04:55.339
+A szint egy konkrét
+szolgáltatásra szól, nem a cégre:
+
+00:04:55.339 --> 00:05:00.434
+ugyanannak a szolgáltatónak az egyik felhője
+lehet első, a másik harmadik szintű.
+
+00:05:01.934 --> 00:05:06.533
+Képzeld el lépcsőként: minél
+feljebb, annál kisebb a függés,
+
+00:05:06.533 --> 00:05:09.932
+és minden szinthez az alatta
+lévők feltételei is kellenek.
+
+00:05:10.252 --> 00:05:12.936
+Az első szinten a szolgáltató székhelye,
+
+00:05:12.936 --> 00:05:17.011
+a gépei és az ügyfelek
+adatai az Unióban vannak.
+
+00:05:17.011 --> 00:05:19.687
+A tulajdonosa lehet nem uniós cég is.
+
+00:05:20.007 --> 00:05:23.579
+A második szinten a személyzet
+és a támogatás is uniós,
+
+00:05:23.579 --> 00:05:27.104
+és a szolgáltató
+átvilágítja a szoftvereit.
+
+00:05:27.104 --> 00:05:30.736
+Nem uniós tulajdonos csak
+szigorú biztosítékokkal lehet.
+
+00:05:31.056 --> 00:05:35.728
+A harmadik szinten a szolgáltató nem
+állhat nem uniós ország ellenőrzése alatt,
+
+00:05:35.728 --> 00:05:40.600
+kivéve, ha a Bizottság az országot
+társult harmadik országként elfogadja.
+
+00:05:40.920 --> 00:05:43.120
+A negyedik szinten nincs kivétel,
+
+00:05:43.120 --> 00:05:47.823
+és a szoftverek fejlesztése felett is
+uniós kézben kell lennie az irányításnak.
+
+00:05:49.323 --> 00:05:52.128
+Itt egy csapda, amire érdemes figyelni.
+
+00:05:52.448 --> 00:05:57.835
+A magyar szöveg két dolgot is
+ellenőrzésnek hív. Az egyik az audit:
+
+00:05:57.835 --> 00:06:02.905
+egy független szakértő megvizsgálja,
+teljesíti-e a szolgáltató a feltételeket.
+
+00:06:03.225 --> 00:06:09.125
+A másik a control, vagyis a befolyás:
+ki a tulajdonos, és ki dönt.
+
+00:06:09.125 --> 00:06:13.679
+Ha egy cég harmadik ország ellenőrzése
+alatt áll, erre gondolunk.
+
+00:06:15.179 --> 00:06:19.409
+És honnan tudjuk, hogy egy szolgáltató
+tényleg teljesíti a szintet?
+
+00:06:19.729 --> 00:06:23.191
+Az első szinten a szolgáltató
+maga vizsgálja meg magát,
+
+00:06:23.191 --> 00:06:25.158
+és nyilvános nyilatkozatot tesz.
+
+00:06:25.478 --> 00:06:30.372
+A második szinttől független külső
+szervezet vizsgál, évente ismételve.
+
+00:06:30.692 --> 00:06:33.664
+Az elismerés az egész Unióban érvényes,
+
+00:06:33.664 --> 00:06:36.553
+és egy nyilvános adatbázisban
+bárki megnézheti.
+
+00:06:37.953 --> 00:06:43.666
+Most nézzük a vevőket: a minisztériumokat,
+hivatalokat, önkormányzatokat.
+
+00:06:45.366 --> 00:06:49.687
+A tagállam kockázatértékelést
+készít, angolul risk assessment,
+
+00:06:49.687 --> 00:06:53.724
+és felméri, a közszféra mely
+tevékenységei használnak felhőt.
+
+00:06:54.044 --> 00:06:58.885
+Minden tevékenységnél azt nézi,
+hozzájárul-e a közrend fenntartásához,
+
+00:06:58.885 --> 00:07:02.648
+például az energia, az
+egészségügy, az ivóvíz,
+
+00:07:02.648 --> 00:07:05.030
+a védelem vagy a bűnüldözés területén.
+
+00:07:05.350 --> 00:07:11.867
+Ha nem, elég az első szintű felhő. A
+közszférában tehát ez az alapelvárás.
+
+00:07:12.187 --> 00:07:17.349
+Ha igen, a második, harmadik vagy
+negyedik szint kell, attól függően,
+
+00:07:17.349 --> 00:07:19.299
+mennyire érzékenyek az adatok,
+
+00:07:19.299 --> 00:07:22.938
+és mekkora az idegen hozzáférés
+és a leállás kockázata.
+
+00:07:24.438 --> 00:07:29.324
+Egy példa, mert itt nem a szervezetet
+soroljuk be, hanem a tevékenységet.
+
+00:07:29.644 --> 00:07:34.594
+Egy vízmű csőhálózatának távfelügyelete
+valószínűleg közrendi jelentőségű,
+
+00:07:34.594 --> 00:07:40.370
+mert ha leáll, nincs víz. Ugyanígy
+egy kórház betegdokumentációja.
+
+00:07:40.690 --> 00:07:43.674
+A vízmű ügyfél-elégedettségi
+kérdőíve vagy a
+
+00:07:43.674 --> 00:07:46.770
+kórház rendezvénynaptára
+viszont valószínűleg nem.
+
+00:07:48.270 --> 00:07:50.953
+Mit jelent ez a gyakorlatban
+egy hivatalnak?
+
+00:07:51.273 --> 00:07:56.202
+Felhőszolgáltatást csak a kijelölt szinten
+elismert szolgáltatótól szerezhet be.
+
+00:07:56.522 --> 00:08:01.837
+Eltérni csak kivételesen, indokolással
+lehet: ha nincs megfelelő szolgáltatás,
+
+00:08:01.837 --> 00:08:06.288
+ha egy korábbi eljárás eredménytelen
+volt, vagy ha aránytalanul drága lenne.
+
+00:08:06.608 --> 00:08:09.068
+Ha a mostani felhője nem megfelelő,
+
+00:08:09.068 --> 00:08:12.124
+legfeljebb tizenkét hónapja
+van átállni egy másikra.
+
+00:08:12.444 --> 00:08:17.984
+És plusz pontot érhet, ha az ajánlat
+erősíti az európai technológiát.
+
+00:08:17.984 --> 00:08:23.657
+Ez az uniós hozzáadott érték, angolul
+Union added value, de egyedül nem dönthet.
+
+00:08:25.157 --> 00:08:27.219
+És kit érint még a javaslat?
+
+00:08:27.539 --> 00:08:31.715
+A felhőszolgáltatók kérhetik
+egy szint elismerését.
+
+00:08:31.715 --> 00:08:36.685
+Egy valótlan nyilatkozat bírságot,
+visszavonást és kártérítést is hozhat.
+
+00:08:37.005 --> 00:08:41.018
+A cégeket és az IT-szállítókat
+közvetlenül alig kötelezi,
+
+00:08:41.018 --> 00:08:44.869
+de a közbeszerzéseken és az
+ügyfeleiken keresztül sokukat elér.
+
+00:08:45.189 --> 00:08:48.565
+Magánszemélyként nincs teendőd: a cél az,
+
+00:08:48.565 --> 00:08:52.767
+hogy a hivatalok által rólad kezelt
+adatok biztonságosabb felhőben legyenek.
+
+00:08:54.167 --> 00:08:58.286
+Végül: mikor jöhet mindez,
+és mit lehet tenni már most?
+
+00:08:59.986 --> 00:09:01.667
+Nézzük az ütemtervet.
+
+00:09:01.987 --> 00:09:06.952
+2026 novemberében a javaslat még a
+Parlament szakbizottságainál tart,
+
+00:09:06.952 --> 00:09:12.260
+és a Tanácsnak sincs még álláspontja.
+Utána jönnek az egyeztetések.
+
+00:09:12.580 --> 00:09:17.457
+Ha elfogadják, a rendelet a kihirdetése
+utáni huszadik napon lép hatályba.
+
+00:09:17.777 --> 00:09:24.276
+Fél év múlva jönnek a gyorsítási zónák.
+Egy év múlva kezdődik az alkalmazás:
+
+00:09:24.276 --> 00:09:30.045
+addigra kellenek a hatóságok, a nemzeti
+stratégiák és az első kockázatértékelés.
+
+00:09:30.365 --> 00:09:33.489
+Ha egy hivatal felhője
+ezután nem felel meg,
+
+00:09:33.489 --> 00:09:36.425
+legfeljebb tizenkét hónapja
+marad az átállásra.
+
+00:09:37.925 --> 00:09:42.295
+Mit tehet egy szervezet már
+most? Négy dolgot javaslok.
+
+00:09:42.615 --> 00:09:45.212
+Először készítsen felhőleltárt:
+
+00:09:45.212 --> 00:09:49.254
+melyik tevékenysége melyik felhőt
+használja, és milyen adatokkal.
+
+00:09:49.574 --> 00:09:52.206
+Másodszor nézze át a szerződéseit:
+
+00:09:52.206 --> 00:09:55.768
+hol futnak a szolgáltatások,
+és van-e kilépési terv.
+
+00:09:56.088 --> 00:10:00.824
+Harmadszor kezelje együtt a CADA-t
+és az AI Act-et: az AI Act azt nézi,
+
+00:10:00.824 --> 00:10:05.111
+mire használjuk a rendszert, a
+CADA azt, kinek a felhőjében fut.
+
+00:10:05.431 --> 00:10:09.835
+Negyedszer figyelje a végleges szöveget,
+mert még sok minden változhat.
+
+00:10:11.335 --> 00:10:15.397
+Összefoglalva: a CADA több
+európai felhőt és MI-t,
+
+00:10:15.397 --> 00:10:20.447
+és kisebb függést akar. Négy
+megbízhatósági szintet vezetne be,
+
+00:10:20.447 --> 00:10:24.522
+és a közszféra csak a kijelölt
+szintű felhőt használhatná.
+
+00:10:24.522 --> 00:10:27.158
+És ne feledd: ez még javaslat.
+
+00:10:27.478 --> 00:10:29.552
+Ha részletesebben is érdekel,
+
+00:10:29.552 --> 00:10:33.601
+a tizenkilenc részes CADA
+videósorozatban mindezt végigvesszük.
+
+00:10:33.921 --> 00:10:38.472
+Köszönöm, hogy velem
+tartottál. Viszontlátásra!

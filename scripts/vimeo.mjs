@@ -14,7 +14,8 @@
 // a szkript megszakítás után újraindítható, a kész lépéseket kihagyja, a félbemaradt feltöltést folytatja.
 //
 // Beállítás videónként: rejtve a Vimeón (view: disable), beágyazás csak a megadott domainen, letöltés tiltva,
-// nyelv magyar, magyar felirat, narancs lejátszószín.
+// nyelv magyar, magyar felirat, narancs lejátszószín, és ha a lecke tartalom.json-jában van "fejezetek" lista,
+// fejezetjelölők (ha a Vimeo még feldolgozza a videót, és ez nem sikerül, a szkript újrafuttatva pótolja).
 // --csere: a tartalom.json videólinkjeit a Vimeo-linkekre cseréli (az eredetit egyszer tartalom.youtube.json-ba menti).
 // --uj-verzio: a már feltöltött videók helyére új videófájlt tölt fel (Vimeo-verzió, a link nem változik), és a feliratot
 //   és az indexképet is újra feltölti. Csak a --csak listában szereplő leckéknél, és csak ha a helyi fájl változott.
@@ -178,6 +179,21 @@ for (const id of ids) {
       await api("PATCH", p.uri, { active: true });
       s.kep = true;
       save();
+    }
+    // fejezetjelölők a lejátszó idősávján (a lecke "fejezetek" mezője: [{ "ido": "pp:mm", "cim": "…" }])
+    const chapters = content.leckek[id].fejezetek;
+    if (chapters?.length && !s.fejezetek) {
+      try {
+        for (const old of (await api("GET", `${s.uri}/chapters`)).data || []) await api("DELETE", old.uri).catch(() => {});
+        for (const c of chapters) {
+          const timecode = c.ido.split(":").map(Number).reduce((sum, n) => sum * 60 + n, 0);
+          await api("POST", `${s.uri}/chapters`, { title: c.cim, timecode });
+        }
+        s.fejezetek = true;
+        save();
+      } catch (err) {
+        console.warn(`  a fejezetjelölők beállítása nem sikerült: ${err.message}`);
+      }
     }
     console.log(`  kész: https://vimeo.com/${s.id}`);
   } catch (err) {
