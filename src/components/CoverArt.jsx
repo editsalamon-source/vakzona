@@ -531,7 +531,31 @@ function Stopper() {
   );
 }
 
+// Spirál (AI-projektmenedzsment): vízesés helyett felfelé ívelő spirál; halványan a lépcsőzetes vízesés,
+// a spirálon a hat fázis pontja, a hatodik (az éles üzem) narancs.
+function Spiral() {
+  const pts = [];
+  for (let i = 0; i <= 180; i++) {
+    const t = (i / 180) * 3;
+    pts.push([82 + t * 74 + 52 * Math.cos(Math.PI * 2 * t + Math.PI), 244 - t * 58 + 28 * Math.sin(Math.PI * 2 * t + Math.PI)]);
+  }
+  const d = pts.map(([x, y], i) => `${i ? "L" : "M"}${x.toFixed(1)} ${y.toFixed(1)}`).join(" ");
+  const phase = [0, 36, 72, 108, 144, 180].map((i) => pts[i]);
+  return (
+    <>
+      <path d="M36 48 H88 V86 H140 V124 H192" strokeWidth="1.2" strokeDasharray="3 4" opacity="0.35" />
+      <path d={d} strokeWidth="1.8" strokeLinecap="round" opacity="0.85" />
+      <path d={`M${phase[5][0] + 6} ${phase[5][1] - 8} l26 -22 m-12 0 h12 v12`} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+      {phase.map(([x, y], i) => (
+        <circle key={i} cx={x} cy={y} r={i === 5 ? 7 : 5} fill={i === 5 ? A : BG}
+          stroke={i === 5 ? "none" : "currentColor"} strokeWidth="1.5" />
+      ))}
+    </>
+  );
+}
+
 const MOTIFS = {
+  spiral: Spiral,
   stopper: Stopper,
   felho: Felho,
   idovonal: Idovonal,
