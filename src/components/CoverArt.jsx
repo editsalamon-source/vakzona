@@ -554,7 +554,40 @@ function Spiral() {
   );
 }
 
+// Marionett (Rendeltetésszerűen működik): fölül a mozgató kereszt, róla zsinórok futnak egy
+// embersorhoz. Egy zsinór és a hozzá tartozó ember narancs: a befolyás, amit nem veszünk észre.
+function Marionett() {
+  const people = [0, 1, 2, 3, 4];
+  const on = 3;
+  return (
+    <>
+      <line x1="120" y1="60" x2="280" y2="60" strokeWidth="2" />
+      <line x1="200" y1="34" x2="200" y2="96" strokeWidth="2" />
+      <line x1="170" y1="84" x2="230" y2="84" strokeWidth="1.5" opacity="0.7" />
+      <circle cx="200" cy="34" r="4" fill={BG} strokeWidth="1.5" />
+      {people.map((i) => {
+        const x = 80 + i * 60;
+        const hot = i === on;
+        const c = hot ? A : "currentColor";
+        const sx = [120, 170, 200, 230, 280][i];
+        const sy = i === 2 ? 96 : i === 1 || i === 3 ? 84 : 60;
+        return (
+          <g key={i} stroke={c}>
+            <line x1={sx} y1={sy} x2={x} y2="186" strokeWidth={hot ? 1.5 : 1}
+              strokeDasharray={hot ? undefined : "2 4"} opacity={hot ? 1 : 0.6} />
+            <circle cx={x} cy="196" r="10" fill={hot ? A : BG} strokeWidth="1.5" />
+            <path d={`M${x - 16} 256 v-22 a16 16 0 0 1 32 0 v22`} fill={hot ? A : "none"}
+              fillOpacity={hot ? 0.15 : 0} strokeWidth="1.5" />
+          </g>
+        );
+      })}
+      <line x1="40" y1="264" x2="360" y2="264" strokeWidth="1.5" />
+    </>
+  );
+}
+
 const MOTIFS = {
+  marionett: Marionett,
   spiral: Spiral,
   stopper: Stopper,
   felho: Felho,
