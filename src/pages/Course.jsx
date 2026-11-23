@@ -6,6 +6,7 @@ import { useCourseContent } from "../utils/tanfolyam";
 import { useProgress } from "../utils/haladas";
 import { FIOK, useAccount, useIsAdmin } from "../utils/fiok";
 import Arrow from "../components/Arrow";
+import { KAPCSOLAT_EMAIL } from "../data/kapcsolat";
 import VideoPlayer from "../components/VideoPlayer";
 import FreeBadge from "../components/FreeBadge";
 import CourseNotice from "../components/CourseNotice";
@@ -71,7 +72,10 @@ function AccountBox({ course, access, user }) {
       </span>
       {!user && (
         <>
-          <p className={CSS.loginText}>Ha a fiókjához hozzáférést kapott, belépés után a tanfolyam azonnal megnyílik.</p>
+          <p className={CSS.loginText}>
+            Ha a fiókjához hozzáférést kapott, belépés után a tanfolyam azonnal megnyílik. Hozzáférést az{" "}
+            <a href={`mailto:${KAPCSOLAT_EMAIL}`}>{KAPCSOLAT_EMAIL}</a> címen kérhet.
+          </p>
           <Link to={back} className={`btn ${CSS.loginBtn}`}>
             Belépés vagy regisztráció <Arrow size={12} />
           </Link>
@@ -83,7 +87,11 @@ function AccountBox({ course, access, user }) {
           <br />
           {access.status === "stale"
             ? "A tanfolyam frissítése miatt a hozzáférés átmenetileg nem érhető el. Kérjük, nézzen vissza később."
-            : "A fiókjához még nincs hozzáférés ehhez a tanfolyamhoz."}{" "}
+            : <>
+                A fiókjához még nincs hozzáférés ehhez a tanfolyamhoz. Hozzáférést az{" "}
+                <a href={`mailto:${KAPCSOLAT_EMAIL}`}>{KAPCSOLAT_EMAIL}</a> címen kérhet, a fiókja e-mail-címének
+                megadásával.
+              </>}{" "}
           <Link to="/fiok">Fiók</Link>
         </p>
       )}

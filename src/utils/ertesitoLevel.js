@@ -1,5 +1,6 @@
 import courses, { formatLength } from "../data/akademia";
 import analyses from "../data/analyses";
+import { KAPCSOLAT_EMAIL } from "../data/kapcsolat";
 
 // Az értesítő levél (src/data/ertesito.js) tartalmai és sablonja. A {{LEIRATKOZAS}} jelölő helyére az adatbázis
 // (admin_ertesites_kuldes) írja be a címzett saját leiratkozó linkjét.
@@ -24,11 +25,15 @@ export function mailItems() {
     subtitle: x.subtitle,
     date: x.date,
     summary: plain(x.introHtml),
+    // zárt tanfolyamnál a link a belépő oldalra visz (bemutató + leírás), ezért a gomb ezt ígéri, és a levél
+    // megmondja, hogyan lehet hozzáférést kérni
     details: `${x.lessons.length} lecke, ${formatLength(x.seconds)}. ${
-      x.free ? "Szabadon, belépés nélkül nézhető." : "A megtekintéshez hozzáférés szükséges."
+      x.free
+        ? "Szabadon, belépés nélkül nézhető."
+        : `Zárt tanfolyam: a bemutató és a leírás szabadon megnézhető, hozzáférést az ${KAPCSOLAT_EMAIL} címen kérhet.`
     }`,
     url: `${SITE}/akademia/${x.slug}`,
-    cta: "Megnézem",
+    cta: x.free ? "Megnézem" : "Bemutató és részletek",
   }));
   const a = analyses.map((x) => ({
     id: `elemzes/${x.slug}`,
