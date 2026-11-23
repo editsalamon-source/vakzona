@@ -81,7 +81,7 @@ beállítva, a fiók ki van kapcsolva, és az oldal úgy működik, mint eddig.
       ```
       A kulcs soha ne kerüljön a repóba. Lejárat vagy csere: `select vault.update_secret(id, '<új kulcs>') from vault.secrets where name = 'brevo_api_kulcs';`
     - Hibakeresés: `select status_code, content from net._http_response order by created desc limit 5;`
-11. **Értesítő levél új tanfolyamról és elemzésről** (2026-11-23, egyelőre kikapcsolva): a feliratkozók e-mailt
+11. **Értesítő levél új tanfolyamról és elemzésről** (2026-11-23, bekapcsolva ugyanaznap): a feliratkozók e-mailt
     kapnak, amikor az adminoldalon kiküldjük. Csak az kap levelet, aki ehhez külön hozzájárult (regisztrációkor
     külön jelölőnégyzet, vagy később a Fiók oldalon), és bármikor leiratkozhat (Fiók oldal, vagy belépés nélkül a
     levél alján lévő link: `vakzona.com/leiratkozas?t=<token>`).
