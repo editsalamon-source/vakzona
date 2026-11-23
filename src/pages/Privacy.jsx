@@ -19,7 +19,7 @@ function Privacy() {
         <h2>Ki kezeli az adatokat?</h2>
         <p>
           Adatkezelő: Salamon Edit magánszemélyként, a Vakzóna (vakzona.com) üzemeltetője. Kapcsolat adatvédelmi
-          ügyekben: [helykitöltő: e-mail-cím].
+          ügyekben: <a href="mailto:info@vakzona.com">info@vakzona.com</a>.
         </p>
 
         <h2>Milyen adatot kezelünk, és miért?</h2>
