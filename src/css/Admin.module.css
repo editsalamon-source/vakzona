@@ -142,10 +142,20 @@
 .grants label { margin: 0 0 6px; font-size: .85rem; }
 .grants label:last-child { margin-bottom: 0; }
 
+.progressBox { margin: 14px 0 18px; }
+.progressList { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+.progressRow { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(80px, 1fr) auto; align-items: center; gap: 14px; font-size: .85rem; }
+.progressTitle { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.progressNum { white-space: nowrap; }
+.bar { position: relative; height: 6px; border-radius: 999px; background: var(--line); overflow: hidden; }
+.bar > span { position: absolute; inset: 0; background: var(--accent); transform-origin: 0 50%; }
+
 .empty { padding: 16px; color: var(--muted); font-size: .88rem; }
 .note { margin: 18px 0 0; color: var(--muted); font-size: .82rem; line-height: 1.55; }
 
 @media (max-width: 720px) {
+  .progressRow { grid-template-columns: 1fr auto; gap: 4px 12px; }
+  .progressRow .bar { grid-column: 1 / -1; grid-row: 2; }
   .row { flex-direction: column; align-items: stretch; gap: 10px; }
   .chips { display: none; }
   .userBody { padding-left: 16px; }

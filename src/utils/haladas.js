@@ -1,8 +1,11 @@
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
+import { useAccount, loadProgress, saveProgress } from "./fiok";
 
 // Tanfolyamonkénti haladás a látogató böngészőjében (localStorage): megnézett leckék, utolsó lecke,
 // a befejezés napja, az oklevélre írt név és az a név, amelyre az oklevelet kiállítottuk (issuedName). Privát ablakban nincs tárolás: ilyenkor csak az oldal
-// megnyitásáig él.
+// megnyitásáig él. Bejelentkezett felhasználónál a megnézett leckék a fiókba is mentődnek (supabase/schema.sql:
+// haladas): belépéskor a két listát egyesítjük (ami bárhol kész, az kész), utána minden változás felmegy.
+// Így a haladás gépek között is megmarad, és az adminoldal látja. Az oklevél neve csak a böngészőben marad.
 const KEY = (slug) => `vz_akademia_${slug}`;
 
 function read(slug) {
@@ -26,6 +29,48 @@ const today = () => new Date().toISOString().slice(0, 10);
 export function useProgress(course) {
   const [state, setState] = useState(() => read(course.slug));
   useEffect(() => setState(read(course.slug)), [course.slug]);
+
+  // szinkron a fiókkal: synced = a tanfolyam, amelynél a fiókbeli listát már egyesítettük; saved = ami fent van
+  const { user } = useAccount();
+  const uid = user?.id;
+  const sync = useRef({ synced: null, saved: null });
+  useEffect(() => {
+    sync.current = { synced: null, saved: null };
+    if (!uid) return;
+    let live = true;
+    loadProgress(course.slug)
+      .then((remote) => {
+        if (!live) return;
+        const local = read(course.slug);
+        const merged = [...new Set([...local.done, ...(remote || [])])];
+        sync.current = { synced: course.slug, saved: remote ? JSON.stringify([...remote].sort()) : null };
+        if (merged.length !== local.done.length) {
+          const next = { ...local, done: merged };
+          const all = course.lessons.length > 0 && course.lessons.every((l) => merged.includes(l.id));
+          if (all && !next.finished) next.finished = today();
+          write(course.slug, next);
+          setState(next);
+        } else setState(local);
+      })
+      .catch(() => {});
+    return () => {
+      live = false;
+    };
+  }, [uid, course]);
+
+  useEffect(() => {
+    if (!uid || sync.current.synced !== course.slug) return;
+    const key = JSON.stringify([...state.done].sort());
+    if (key === sync.current.saved) return;
+    const t = setTimeout(() => {
+      saveProgress(course.slug, state.done)
+        .then(() => {
+          sync.current.saved = key;
+        })
+        .catch(() => {});
+    }, 800);
+    return () => clearTimeout(t);
+  }, [uid, course.slug, state.done]);
 
   const update = useCallback(
     (fn) =>

@@ -1,8 +1,8 @@
 import { useEffect, useState, useSyncExternalStore } from "react";
 
 // Vakzóna-fiók (Supabase Auth, supabase/README.md): e-mail + jelszó, felhasználónkénti hozzáférés a védett
-// tartalmakhoz. Csak az e-mail-címet és a jelszó hash-ét tároljuk; a haladás és az oklevél neve továbbra is
-// csak a látogató böngészőjében van. Ha a VITE_SUPABASE_URL / VITE_SUPABASE_KEY nincs megadva, a fiók ki van
+// tartalmakhoz. Az e-mail-címet, a jelszó hash-ét és a tanfolyami haladást (megnézett leckék) tároljuk; az
+// oklevél neve csak a látogató böngészőjében van. Ha a VITE_SUPABASE_URL / VITE_SUPABASE_KEY nincs megadva, a fiók ki van
 // kapcsolva, és minden a közös jelszóval működik tovább.
 const URL_ = import.meta.env.VITE_SUPABASE_URL;
 const KEY = import.meta.env.VITE_SUPABASE_KEY;
@@ -112,6 +112,24 @@ export async function accesses() {
   return rows.map((r) => r.tartalom);
 }
 
+// ---------- Tanfolyami haladás (supabase/schema.sql: haladas; src/utils/haladas.js) ----------
+
+// a bejelentkezett felhasználó haladása egy tanfolyamon: a kész leckék azonosítói, vagy null, ha még nincs mentve
+export async function loadProgress(slug) {
+  const row = await call((c) => c.from("haladas").select("kesz").eq("tanfolyam", slug).maybeSingle());
+  return row ? row.kesz : null;
+}
+
+export async function saveProgress(slug, done) {
+  const c = await client();
+  const { data } = await c.auth.getSession();
+  const uid = data.session?.user?.id;
+  if (!uid) return;
+  const { error } = await c.from("haladas")
+    .upsert({ user_id: uid, tanfolyam: slug, kesz: done, frissitve: new Date().toISOString() });
+  if (error) throw error;
+}
+
 // ---------- Admin (supabase/schema.sql: adminok, meghivasok; az adatbázis minden hívásnál ellenőrzi a jogot) ----------
 
 export const isAdmin = () => call((c) => c.rpc("admin_e"));
@@ -139,6 +157,9 @@ export const adminUsers = () => call((c) => c.rpc("admin_felhasznalok"));
 
 export const setAccess = (userId, id, on) =>
   call((c) => c.rpc("admin_hozzaferes", { p_user: userId, p_tartalom: id, p_van: on }));
+
+// [{ user_id, tanfolyam, kesz: [], frissitve }]
+export const adminProgress = () => call((c) => c.rpc("admin_haladas"));
 
 // [{ email, tartalom, letrehozva }]
 export const adminInvites = () => call((c) => c.rpc("admin_meghivasok"));

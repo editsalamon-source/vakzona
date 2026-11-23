@@ -205,8 +205,8 @@ function Delete() {
     <div className={CSS.danger}>
       <h2 className={CSS.blockTitle}>Fiók törlése</h2>
       <p className={FormCSS.text}>
-        A fiók törlésével az e-mail-címe és a hozzáférései véglegesen törlődnek. A böngészőben tárolt haladás
-        és oklevélnév ezen az eszközön megmarad.
+        A fiók törlésével az e-mail-címe, a hozzáférései és a fiókhoz mentett haladás véglegesen törlődnek. A
+        böngészőben tárolt haladás és oklevélnév ezen az eszközön megmarad.
       </p>
       {state.error && <p className={FormCSS.error}>{state.error}</p>}
       {sure ? (

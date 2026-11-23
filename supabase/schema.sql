@@ -446,3 +446,46 @@ grant execute on function public.ertesites_beallit(boolean), public.admin_ertesi
 revoke execute on function public.ertesites_leiratkozas(uuid) from public;
 grant execute on function public.ertesites_leiratkozas(uuid) to anon, authenticated;
 revoke execute on function public.ertesites_feliratkozas() from public, anon, authenticated;
+
+-- ---------- Tanfolyami haladás a fiókban (2026-11-23) ----------
+
+-- bejelentkezett felhasználónál a megnézett leckék a böngésző mellett ide is mentődnek (src/utils/haladas.js),
+-- így gépek között is megmarad, és az admin látja, ki hol tart; tanfolyam = a tanfolyam url-azonosítója
+create table if not exists public.haladas (
+  user_id uuid not null references auth.users (id) on delete cascade,
+  tanfolyam text not null check (char_length(tanfolyam) <= 100),
+  kesz text[] not null default '{}' check (cardinality(kesz) <= 500),
+  frissitve timestamptz not null default now(),
+  primary key (user_id, tanfolyam)
+);
+
+alter table public.haladas enable row level security;
+
+-- mindenki csak a saját haladását olvassa és írja
+drop policy if exists "sajat haladas" on public.haladas;
+create policy "sajat haladas" on public.haladas
+  for all to authenticated
+  using (user_id = (select auth.uid()))
+  with check (user_id = (select auth.uid()));
+
+revoke all on public.haladas from anon, authenticated;
+grant select, insert, update on public.haladas to authenticated;
+
+-- minden felhasználó haladása (csak adminnak)
+create or replace function public.admin_haladas()
+returns table (user_id uuid, tanfolyam text, kesz text[], frissitve timestamptz)
+language plpgsql
+stable
+security definer
+set search_path = ''
+as $$
+begin
+  if not public.admin_e() then
+    raise exception 'Nincs jogosultság.' using errcode = '42501';
+  end if;
+  return query select h.user_id, h.tanfolyam, h.kesz, h.frissitve from public.haladas h;
+end;
+$$;
+
+revoke execute on function public.admin_haladas() from public, anon;
+grant execute on function public.admin_haladas() to authenticated;

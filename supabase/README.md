@@ -3,8 +3,9 @@
 Felhasználónkénti hozzáférés az Akadémia tanfolyamaihoz és a jelszóval védett PDF-ekhez. Belépés e-mail-címmel
 és jelszóval, megerősítő levéllel, elfelejtett jelszó funkcióval. A közös jelszó mellette tovább működik.
 
-Személyes adatként csak az e-mail-cím és a jelszó hash-e tárolódik (Supabase `auth.users`). A haladás és az
-oklevél neve továbbra is csak a látogató böngészőjében van. Amíg a `VITE_SUPABASE_*` változók nincsenek
+Személyes adatként az e-mail-cím és a jelszó hash-e tárolódik (Supabase `auth.users`), bejelentkezett
+felhasználónál pedig a tanfolyami haladás (`haladas` tábla: megnézett leckék tanfolyamonként, 2026-11-23-tól,
+az adminoldalon látszik). Az oklevél neve csak a látogató böngészőjében van. Amíg a `VITE_SUPABASE_*` változók nincsenek
 beállítva, a fiók ki van kapcsolva, és az oldal úgy működik, mint eddig.
 
 ## Hogyan működik?

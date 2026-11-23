@@ -1,11 +1,12 @@
 import React, { useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import { CSOPORTOK, describe } from "../data/vedett";
+import courses from "../data/akademia";
 import { ERTESITO } from "../data/ertesito";
 import { mailItems, defaultSubject, buildMail } from "../utils/ertesitoLevel";
 import Arrow from "../components/Arrow";
 import {
-  FIOK, useAccount, errorText, isAdmin, adminUsers, setAccess, adminInvites, setInvite,
+  FIOK, useAccount, errorText, isAdmin, adminUsers, setAccess, adminInvites, setInvite, adminProgress,
   adminNotifyCount, adminNotifyLog, adminNotifySend,
 } from "../utils/fiok";
 import PageCSS from "../css/Page.module.css";
@@ -115,8 +116,42 @@ const SZUROK = [
 ];
 const OSSZES = CSOPORTOK.reduce((n, g) => n + g.items.length, 0);
 
+// Egy felhasználó haladása tanfolyamonként (supabase/schema.sql: haladas). Csak a bejelentkezve megnézett
+// leckék látszanak: amit valaki fiók nélkül vagy a közös jelszóval nézett, az csak a böngészőjében van.
+function Progress({ rows }) {
+  const list = rows
+    .map((r) => {
+      const course = courses.find((c) => c.slug === r.tanfolyam);
+      if (!course) return null;
+      const done = course.lessons.filter((l) => r.kesz.includes(l.id)).length;
+      return { course, done, total: course.lessons.length, updated: r.frissitve };
+    })
+    .filter((x) => x && x.done > 0)
+    .sort((a, b) => b.updated.localeCompare(a.updated));
+  return (
+    <div className={CSS.progressBox}>
+      <span className={CSS.group}>Haladás a tanfolyamokon</span>
+      {list.length ? (
+        <ul className={CSS.progressList}>
+          {list.map(({ course, done, total, updated }) => (
+            <li key={course.slug} className={CSS.progressRow}>
+              <span className={CSS.progressTitle}>{course.title}</span>
+              <span className={CSS.bar} aria-label={`${done} / ${total} lecke`}>
+                <span style={{ transform: `scaleX(${done / total})` }} />
+              </span>
+              <span className={`meta ${CSS.progressNum}`}>{done} / {total}{done === total ? " · kész" : ""} · {date(updated)}</span>
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <p className="meta">Még nincs bejelentkezve megnézett lecke.</p>
+      )}
+    </div>
+  );
+}
+
 // Egy felhasználó: tömör sor (cím, állapot, hozzáférések összegezve), kattintásra lenyílik a pipák listája.
-function UserRow({ user, open, onOpen, onToggle }) {
+function UserRow({ user, progress, open, onOpen, onToggle }) {
   const titles = user.tartalmak.map((id) => describe(id)?.title || id);
   const panelId = `fh-${user.id}`;
   return (
@@ -141,6 +176,7 @@ function UserRow({ user, open, onOpen, onToggle }) {
       {open && (
         <div id={panelId} className={CSS.userBody}>
           <p className="meta">Regisztrált: {date(user.letrehozva)}</p>
+          <Progress rows={progress} />
           <div className={CSS.grants}>
             {CSOPORTOK.map((g) => (
               <div key={g.label} className={CSS.grantGroup}>
@@ -161,7 +197,7 @@ function UserRow({ user, open, onOpen, onToggle }) {
   );
 }
 
-function Users({ users, setUsers }) {
+function Users({ users, setUsers, progress }) {
   const [query, setQuery] = useState("");
   const [filter, setFilter] = useState("mind");
   const [content, setContent] = useState("");
@@ -218,7 +254,7 @@ function Users({ users, setUsers }) {
       {error && <p className={FormCSS.error}>{error}</p>}
       <ul className={CSS.table}>
         {shown.map((u) => (
-          <UserRow key={u.id} user={u} open={open === u.id} onToggle={toggle}
+          <UserRow key={u.id} user={u} progress={progress[u.id] || []} open={open === u.id} onToggle={toggle}
             onOpen={() => setOpen((o) => (o === u.id ? null : u.id))} />
         ))}
         {!shown.length && <li className={CSS.empty}>Nincs találat.</li>}
@@ -340,13 +376,18 @@ function Announce() {
 function Panel() {
   const [users, setUsers] = useState(null);
   const [invites, setInvites] = useState([]);
+  const [progress, setProgress] = useState({});
   const [error, setError] = useState("");
 
   function load() {
-    Promise.all([adminUsers(), adminInvites()])
-      .then(([u, m]) => {
+    // a haladás hiánya (pl. még nincs lefuttatva a séma új része) ne akassza meg az oldalt
+    Promise.all([adminUsers(), adminInvites(), adminProgress().catch(() => [])])
+      .then(([u, m, p]) => {
         setUsers(u.map((x) => ({ ...x, tartalmak: x.tartalmak || [] })));
         setInvites(m);
+        const byUser = {};
+        for (const r of p || []) (byUser[r.user_id] ||= []).push({ ...r, kesz: r.kesz || [] });
+        setProgress(byUser);
       })
       .catch((e) => setError(errorText(e)));
   }
@@ -373,7 +414,7 @@ function Panel() {
         </details>
       )}
       <Invites list={invites} onChange={load} />
-      <Users users={users} setUsers={setUsers} />
+      <Users users={users} setUsers={setUsers} progress={progress} />
     </>
   );
 }
@@ -402,7 +443,7 @@ function Admin() {
     <div className={`wrap ${PageCSS.page} ${CSS.page}`}>
       <span className="tag">Admin</span>
       <h1 className={AccountCSS.title}>Hozzáférések</h1>
-      <p className="lead">Ki melyik tanfolyamot és védett dokumentumot nyithatja meg.</p>
+      <p className="lead">Ki melyik tanfolyamot és védett dokumentumot nyithatja meg, és hol tart a tanfolyamokon.</p>
       <div className={AccountCSS.stack}>{body}</div>
     </div>
   );
