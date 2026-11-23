@@ -18,8 +18,8 @@ function Privacy() {
 
         <h2>Ki kezeli az adatokat?</h2>
         <p>
-          Adatkezelő: [helykitöltő: név]. Székhely vagy cím: [helykitöltő]. Kapcsolat adatvédelmi ügyekben:
-          [helykitöltő: e-mail-cím].
+          Adatkezelő: Salamon Edit magánszemélyként, a Vakzóna (vakzona.com) üzemeltetője. Kapcsolat adatvédelmi
+          ügyekben: [helykitöltő: e-mail-cím].
         </p>
 
         <h2>Milyen adatot kezelünk, és miért?</h2>
@@ -33,6 +33,10 @@ function Privacy() {
           </li>
           <li>
             <strong>Hozzáférések:</strong> melyik tanfolyamot vagy zárolt dokumentumot nyithatja meg a fiók.
+          </li>
+          <li>
+            <strong>Tanfolyami haladás:</strong> bejelentkezve megnézett leckék tanfolyamonként, és hogy mikor
+            változott utoljára. Így a haladása másik eszközön is megmarad, és látjuk, ki hol tart a tanfolyamokon.
           </li>
           <li>
             <strong>Meghívás:</strong> ha a Vakzóna egy még nem regisztrált e-mail-címre előre hozzáférést ad,
@@ -69,8 +73,9 @@ function Privacy() {
 
         <h2>Mi marad csak az Ön eszközén?</h2>
         <p>
-          A tanfolyamokon elért haladás, az oklevélre írt név és a belépési munkamenet a böngészője helyi
-          tárolójában van. Ezeket nem küldjük el, és a böngésző adatainak törlésével eltávolíthatók.
+          Az oklevélre írt név és a belépési munkamenet a böngészője helyi tárolójában van. Ezeket nem küldjük el,
+          és a böngésző adatainak törlésével eltávolíthatók. A tanfolyami haladás is itt tárolódik. Ha nincs
+          bejelentkezve, csak itt, bejelentkezve a fiókjához is mentjük.
         </p>
 
         <h2>Kik férnek hozzá az adatokhoz (adatfeldolgozók)?</h2>
@@ -85,7 +90,8 @@ function Privacy() {
           </li>
           <li>
             <strong>A Vakzóna adminisztrátora:</strong> a hozzáférések kezeléséhez látja a fiókok e-mail-címét,
-            a regisztráció, a megerősítés és az utolsó belépés időpontját, valamint a hozzáféréseket.
+            a regisztráció, a megerősítés és az utolsó belépés időpontját, a hozzáféréseket, valamint a tanfolyami
+            haladást (hány lecke kész, és mikor változott utoljára).
           </li>
           <li>
             <strong>Vercel Inc.:</strong> a weboldal kiszolgálása.
@@ -95,7 +101,7 @@ function Privacy() {
         <h2>Meddig őrizzük az adatokat?</h2>
         <p>
           A fiók adatait a fiók törléséig őrizzük. A fiókot bármikor törölheti a <Link to="/fiok">Fiók</Link> oldalon,
-          ekkor az e-mail-cím, a jelszó lenyomata és a hozzáférések véglegesen törlődnek. A meg nem erősített
+          ekkor az e-mail-cím, a jelszó lenyomata, a hozzáférések és a fiókhoz mentett haladás véglegesen törlődnek. A meg nem erősített
           regisztrációkat [helykitöltő] nap után töröljük.
         </p>
 
