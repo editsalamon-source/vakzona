@@ -88,11 +88,12 @@ function AccountBox({ course, access, user }) {
           {access.status === "stale"
             ? "A tanfolyam frissítése miatt a hozzáférés átmenetileg nem érhető el. Kérjük, nézzen vissza később."
             : <>
-                A fiókjához még nincs hozzáférés ehhez a tanfolyamhoz. Hozzáférést az{" "}
-                <a href={`mailto:${KAPCSOLAT_EMAIL}`}>{KAPCSOLAT_EMAIL}</a> címen kérhet, a fiókja e-mail-címének
-                megadásával.
-              </>}{" "}
-          <Link to="/fiok">Fiók</Link>
+                Ehhez a tanfolyamhoz még nincs hozzáférése. Hozzáférést az{" "}
+                <a href={`mailto:${KAPCSOLAT_EMAIL}`}>{KAPCSOLAT_EMAIL}</a> címen kérhet. Kérjük, írja meg a
+                levélben, melyik címmel regisztrált.
+              </>}
+          <br />
+          <Link to="/fiok">Fiókom</Link>
         </p>
       )}
     </div>
