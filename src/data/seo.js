@@ -42,6 +42,11 @@ const seo = {
     description: "A Vakzóna-fiókok hozzáféréseinek kezelése.",
     noindex: true,
   },
+  "/leiratkozas": {
+    title: "Leiratkozás – Vakzóna",
+    description: "Leiratkozás a Vakzóna értesítő leveleiről.",
+    noindex: true,
+  },
   "/adatkezeles": {
     title: "Adatkezelési tájékoztató – Vakzóna",
     description: "Milyen adatot kezel a Vakzóna a fiókokhoz, miért, meddig, és milyen jogai vannak.",

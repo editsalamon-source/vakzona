@@ -81,8 +81,13 @@ async function call(fn) {
 
 // regisztráció; a megerősítő levél linkje a fiókoldalra visz vissza. Már regisztrált címnél a Supabase
 // ugyanígy válaszol (nem árulja el, hogy a cím létezik), ezért a felület is ugyanazt az üzenetet mutatja.
-export const signUp = (email, password) =>
-  call((c) => c.auth.signUp({ email, password, options: { emailRedirectTo: back("/fiok") } }));
+// notify = külön hozzájárulás az értesítő levélhez; a fiók megerősítésekor lesz belőle feliratkozás
+export const signUp = (email, password, notify = false) =>
+  call((c) => c.auth.signUp({
+    email,
+    password,
+    options: { emailRedirectTo: back("/fiok"), ...(notify ? { data: { ertesites: true } } : {}) },
+  }));
 
 export const signIn = (email, password) => call((c) => c.auth.signInWithPassword({ email, password }));
 
@@ -145,3 +150,25 @@ export const setInvite = (email, id, on) =>
 // egy védett tartalom kulcsa ({ so, kulcs }), ha a felhasználónak van hozzáférése; különben null
 export const contentKey = (id) =>
   call((c) => c.from("kulcsok").select("so, kulcs").eq("tartalom", id).maybeSingle());
+
+// ---------- Értesítő új tartalomról (supabase/schema.sql: ertesites; kapcsoló: src/data/ertesito.js) ----------
+
+// fel van-e iratkozva a bejelentkezett felhasználó
+export async function notifyStatus() {
+  const rows = await call((c) => c.from("ertesites").select("user_id"));
+  return rows.length > 0;
+}
+
+export const setNotify = (on) => call((c) => c.rpc("ertesites_beallit", { p_be: on }));
+
+// leiratkozás belépés nélkül, a levélben kapott tokennel; true, ha volt ilyen feliratkozás
+export const unsubscribe = (token) => call((c) => c.rpc("ertesites_leiratkozas", { p_token: token }));
+
+export const adminNotifyCount = () => call((c) => c.rpc("admin_ertesites_szam"));
+
+// [{ tartalom, targy, cimzettek, kuldve }]
+export const adminNotifyLog = () => call((c) => c.rpc("admin_ertesites_naplo"));
+
+// a kiküldött levelek száma; test = csak a hívó adminnak, naplózás nélkül
+export const adminNotifySend = ({ id, subject, html, text, test }) =>
+  call((c) => c.rpc("admin_ertesites_kuldes", { p_tartalom: id, p_targy: subject, p_html: html, p_szoveg: text, p_proba: test }));

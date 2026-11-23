@@ -19,6 +19,7 @@ const About = lazy(() => import("./pages/About"));
 const Account = lazy(() => import("./pages/Account"));
 const Privacy = lazy(() => import("./pages/Privacy"));
 const Admin = lazy(() => import("./pages/Admin"));
+const Unsubscribe = lazy(() => import("./pages/Unsubscribe"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
 function SeoManager() {
@@ -52,6 +53,7 @@ const App = () => (
           <Route path="/rolunk" element={<About />} />
           <Route path="/fiok" element={<Account />} />
           <Route path="/admin" element={<Admin />} />
+          <Route path="/leiratkozas" element={<Unsubscribe />} />
           <Route path="/adatkezeles" element={<Privacy />} />
           <Route path="*" element={<NotFound />} />
         </Routes>

@@ -262,3 +262,187 @@ drop trigger if exists uj_felhasznalo_ertesites on auth.users;
 create trigger uj_felhasznalo_ertesites
   after insert or update of email_confirmed_at on auth.users
   for each row execute function public.uj_felhasznalo_ertesites();
+
+-- ---------- Értesítő új tanfolyamról és elemzésről (2026-11-23) ----------
+-- Csak annak megy levél, aki ehhez külön hozzájárult: a regisztrációkor (külön jelölőnégyzet, a fiók metaadatában
+-- ertesites = true, a megerősítéskor válik feliratkozássá) vagy később a Fiók oldalon. Sor = feliratkozott.
+-- Leiratkozás: a Fiók oldalon, vagy belépés nélkül a levél alján lévő linkkel (vakzona.com/leiratkozas?t=<token>).
+-- A levelet az adminoldal állítja össze, és ez a függvény küldi ki a Brevo API-n át (ugyanaz a Vault-kulcs, mint fent).
+
+create table if not exists public.ertesites (
+  user_id uuid primary key references auth.users (id) on delete cascade,
+  token uuid not null unique default gen_random_uuid(),
+  feliratkozva timestamptz not null default now()
+);
+
+-- kiküldött értesítők naplója (hogy látsszon, miről ment már levél)
+create table if not exists public.ertesites_kuldesek (
+  id bigserial primary key,
+  tartalom text not null,
+  targy text not null,
+  cimzettek int not null,
+  kuldve timestamptz not null default now()
+);
+
+alter table public.ertesites enable row level security;
+alter table public.ertesites_kuldesek enable row level security;
+revoke all on public.ertesites, public.ertesites_kuldesek from anon, authenticated;
+
+-- a felhasználó csak azt látja, hogy ő maga fel van-e iratkozva
+drop policy if exists "sajat ertesites" on public.ertesites;
+create policy "sajat ertesites" on public.ertesites
+  for select to authenticated
+  using (user_id = (select auth.uid()));
+grant select (user_id, feliratkozva) on public.ertesites to authenticated;
+
+-- fel- (p_be = true) vagy leiratkozás a Fiók oldalon
+create or replace function public.ertesites_beallit(p_be boolean)
+returns boolean
+language plpgsql
+security definer
+set search_path = ''
+as $$
+begin
+  if auth.uid() is null then
+    raise exception 'Nincs bejelentkezve.' using errcode = '42501';
+  end if;
+  if p_be then
+    insert into public.ertesites (user_id) values (auth.uid()) on conflict do nothing;
+  else
+    delete from public.ertesites where user_id = auth.uid();
+  end if;
+  return p_be;
+end;
+$$;
+
+-- leiratkozás belépés nélkül, a levélben kapott tokennel; true, ha volt ilyen feliratkozás
+create or replace function public.ertesites_leiratkozas(p_token uuid)
+returns boolean
+language plpgsql
+security definer
+set search_path = ''
+as $$
+declare
+  v_db int;
+begin
+  delete from public.ertesites where token = p_token;
+  get diagnostics v_db = row_count;
+  return v_db > 0;
+end;
+$$;
+
+-- a regisztrációkor kért feliratkozás a fiók megerősítésekor lép életbe
+create or replace function public.ertesites_feliratkozas()
+returns trigger
+language plpgsql
+security definer
+set search_path = ''
+as $$
+begin
+  if new.email_confirmed_at is not null and (tg_op = 'INSERT' or old.email_confirmed_at is null)
+     and coalesce(new.raw_user_meta_data ->> 'ertesites', '') = 'true' then
+    insert into public.ertesites (user_id) values (new.id) on conflict do nothing;
+  end if;
+  return new;
+end;
+$$;
+
+drop trigger if exists ertesites_feliratkozas on auth.users;
+create trigger ertesites_feliratkozas
+  after insert or update of email_confirmed_at on auth.users
+  for each row execute function public.ertesites_feliratkozas();
+
+-- a megerősített feliratkozók száma (csak adminnak)
+create or replace function public.admin_ertesites_szam()
+returns int
+language plpgsql
+stable
+security definer
+set search_path = ''
+as $$
+begin
+  if not public.admin_e() then
+    raise exception 'Nincs jogosultság.' using errcode = '42501';
+  end if;
+  return (select count(*) from public.ertesites e join auth.users u on u.id = e.user_id
+          where u.email is not null and u.email_confirmed_at is not null);
+end;
+$$;
+
+create or replace function public.admin_ertesites_naplo()
+returns table (tartalom text, targy text, cimzettek int, kuldve timestamptz)
+language plpgsql
+stable
+security definer
+set search_path = ''
+as $$
+begin
+  if not public.admin_e() then
+    raise exception 'Nincs jogosultság.' using errcode = '42501';
+  end if;
+  return query select k.tartalom, k.targy, k.cimzettek, k.kuldve from public.ertesites_kuldesek k order by k.kuldve desc;
+end;
+$$;
+
+-- Kiküldés: minden megerősített feliratkozó külön levelet kap (a címzettek nem látják egymást). A {{LEIRATKOZAS}}
+-- jelölő helyére a címzett saját leiratkozó linkje kerül. p_proba = true: csak a hívó adminnak megy, naplózás nélkül.
+-- Visszatérés: a kiküldött levelek száma. A Brevo ingyenes csomagja napi 300 levelet enged.
+create or replace function public.admin_ertesites_kuldes(p_tartalom text, p_targy text, p_html text, p_szoveg text, p_proba boolean)
+returns int
+language plpgsql
+security definer
+set search_path = ''
+as $$
+declare
+  v_kulcs text;
+  v_db int := 0;
+  v_link text;
+  r record;
+begin
+  if not public.admin_e() then
+    raise exception 'Nincs jogosultság.' using errcode = '42501';
+  end if;
+  select decrypted_secret into v_kulcs from vault.decrypted_secrets where name = 'brevo_api_kulcs';
+  if v_kulcs is null then
+    raise exception 'Nincs beállítva a Brevo API-kulcs (brevo_api_kulcs).';
+  end if;
+  if not p_proba and (select count(*) from public.ertesites) > 290 then
+    raise exception 'Több mint 290 feliratkozó: a Brevo ingyenes napi kerete (300) nem elég egy kiküldéshez.';
+  end if;
+
+  for r in
+    select u.email, e.token
+    from auth.users u left join public.ertesites e on e.user_id = u.id
+    where u.email is not null and u.email_confirmed_at is not null
+      and (case when p_proba then u.id = auth.uid() else e.user_id is not null end)
+  loop
+    v_link := 'https://vakzona.com/leiratkozas' || coalesce('?t=' || r.token::text, '');
+    perform net.http_post(
+      url := 'https://api.brevo.com/v3/smtp/email',
+      headers := jsonb_build_object('api-key', v_kulcs, 'content-type', 'application/json', 'accept', 'application/json'),
+      body := jsonb_build_object(
+        'sender', jsonb_build_object('name', 'Vakzóna', 'email', 'noreply@vakzona.com'),
+        'to', jsonb_build_array(jsonb_build_object('email', r.email)),
+        'subject', case when p_proba then '[Próba] ' else '' end || p_targy,
+        'htmlContent', replace(p_html, '{{LEIRATKOZAS}}', v_link),
+        'textContent', replace(p_szoveg, '{{LEIRATKOZAS}}', v_link),
+        'headers', jsonb_build_object('List-Unsubscribe', '<' || v_link || '>')
+      )
+    );
+    v_db := v_db + 1;
+  end loop;
+
+  if not p_proba then
+    insert into public.ertesites_kuldesek (tartalom, targy, cimzettek) values (p_tartalom, p_targy, v_db);
+  end if;
+  return v_db;
+end;
+$$;
+
+revoke execute on function public.ertesites_beallit(boolean), public.admin_ertesites_szam(), public.admin_ertesites_naplo(),
+  public.admin_ertesites_kuldes(text, text, text, text, boolean) from public, anon;
+grant execute on function public.ertesites_beallit(boolean), public.admin_ertesites_szam(), public.admin_ertesites_naplo(),
+  public.admin_ertesites_kuldes(text, text, text, text, boolean) to authenticated;
+revoke execute on function public.ertesites_leiratkozas(uuid) from public;
+grant execute on function public.ertesites_leiratkozas(uuid) to anon, authenticated;
+revoke execute on function public.ertesites_feliratkozas() from public, anon, authenticated;

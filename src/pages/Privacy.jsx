@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { ERTESITO } from "../data/ertesito";
 import PageCSS from "../css/Page.module.css";
 
 // Adatkezelési tájékoztató a Vakzóna-fiókhoz (src/utils/fiok.js, supabase/README.md).
@@ -38,6 +39,13 @@ function Privacy() {
             a címet és a tartalom megnevezését a regisztráció megerősítéséig tároljuk. Megerősítéskor a meghívás
             hozzáféréssé alakul és törlődik. A be nem váltott meghívást a Vakzóna bármikor visszavonhatja.
           </li>
+          {ERTESITO && (
+            <li>
+              <strong>Értesítő levél (csak ha kéri):</strong> ha a regisztrációkor vagy a Fiók oldalon értesítést
+              kér, a megadott e-mail-címre levelet küldünk, amikor új tanfolyam vagy elemzés jelenik meg. Ehhez
+              azt tároljuk, hogy feliratkozott, mikor, és egy véletlenszerű leiratkozó azonosítót.
+            </li>
+          )}
           <li>
             <strong>Technikai adatok:</strong> a regisztráció és az utolsó belépés időpontja, valamint a
             szolgáltató biztonsági naplójában rövid ideig a belépéshez használt IP-cím.
@@ -45,12 +53,19 @@ function Privacy() {
         </ul>
         <p>
           Nevet, telefonszámot, címet, fizetési adatot nem kérünk. Nem használunk hirdetési vagy követő sütit, és
-          az adatokat nem adjuk el, nem használjuk marketingcélra.
+          az adatokat nem adjuk el, és {ERTESITO ? "a kért értesítő levélen kívül " : ""}nem használjuk marketingcélra.
         </p>
         <p>
           Az adatkezelés jogalapja a GDPR 6. cikk (1) bekezdés b) pontja: a fiók és a hozzáférés biztosítása, amelyet
           a regisztrációval kér.
         </p>
+        {ERTESITO && (
+          <p>
+            Az értesítő levél jogalapja az Ön hozzájárulása (GDPR 6. cikk (1) bekezdés a) pont), amelyet bármikor
+            visszavonhat a <Link to="/fiok">Fiók</Link> oldalon vagy bármelyik levél alján lévő leiratkozó linkkel.
+            A visszavonás nem érinti a korábbi levelek jogszerűségét, és a fiókját sem.
+          </p>
+        )}
 
         <h2>Mi marad csak az Ön eszközén?</h2>
         <p>
@@ -65,8 +80,8 @@ function Privacy() {
             szerveren (Frankfurt, Németország) tárolódnak.
           </li>
           <li>
-            <strong>[helykitöltő: levélküldő szolgáltató]:</strong> a megerősítő és a jelszó-visszaállító levelek
-            kézbesítése.
+            <strong>Brevo (Franciaország):</strong> a megerősítő és a jelszó-visszaállító levelek
+            {ERTESITO ? ", valamint a kért értesítő levelek" : ""} kézbesítése.
           </li>
           <li>
             <strong>A Vakzóna adminisztrátora:</strong> a hozzáférések kezeléséhez látja a fiókok e-mail-címét,

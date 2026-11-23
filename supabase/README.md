@@ -80,6 +80,17 @@ beállítva, a fiók ki van kapcsolva, és az oldal úgy működik, mint eddig.
       ```
       A kulcs soha ne kerüljön a repóba. Lejárat vagy csere: `select vault.update_secret(id, '<új kulcs>') from vault.secrets where name = 'brevo_api_kulcs';`
     - Hibakeresés: `select status_code, content from net._http_response order by created desc limit 5;`
+11. **Értesítő levél új tanfolyamról és elemzésről** (2026-11-23, egyelőre kikapcsolva): a feliratkozók e-mailt
+    kapnak, amikor az adminoldalon kiküldjük. Csak az kap levelet, aki ehhez külön hozzájárult (regisztrációkor
+    külön jelölőnégyzet, vagy később a Fiók oldalon), és bármikor leiratkozhat (Fiók oldal, vagy belépés nélkül a
+    levél alján lévő link: `vakzona.com/leiratkozas?t=<token>`).
+    - Bekapcsolás: (1) a `schema.sql` „Értesítő új tanfolyamról és elemzésről” szakaszának lefuttatása az SQL
+      Editorban, (2) `src/data/ertesito.js`: `ERTESITO = true`, majd deploy. A Brevo API-kulcs a 10. lépésé.
+    - Küldés: `/admin` → „Értesítő levél új tartalomról”: tartalom kiválasztása, a tárgy és a rövid összefoglaló
+      (alapból a tanfolyam nyilvános bevezetője, illetve az elemzés alcíme) szerkeszthető, előnézet, próbalevél
+      magunknak, majd kiküldés. A kiküldések naplózva vannak (`ertesites_kuldesek`), a választóban „már kiküldve”.
+    - A Brevo ingyenes csomagja napi 300 levelet enged: 290 feliratkozó fölött a függvény nem küld.
+    - Feliratkozók SQL-lel: `select count(*) from public.ertesites;`
 
 ## Hozzáférés kezelése
 

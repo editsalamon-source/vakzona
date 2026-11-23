@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate, useSearchParams } from "react-router-dom";
 import { describe } from "../data/vedett";
+import { ERTESITO } from "../data/ertesito";
 import Arrow from "../components/Arrow";
 import {
   FIOK, useAccount, errorText, signIn, signUp, signOut, resetPassword, updatePassword, deleteAccount, accesses,
+  notifyStatus, setNotify,
 } from "../utils/fiok";
 import PageCSS from "../css/Page.module.css";
 import FormCSS from "../css/ProtectedPdf.module.css";
@@ -59,6 +61,7 @@ function SignUp() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [agree, setAgree] = useState(false);
+  const [notify, setNotifyChoice] = useState(false);
   const [state, run] = useForm();
   if (state.done) {
     return (
@@ -75,7 +78,7 @@ function SignUp() {
         e.preventDefault();
         run(async () => {
           if (password.length < MIN) throw own(`A jelszó legalább ${MIN} karakter legyen.`);
-          await signUp(email.trim(), password);
+          await signUp(email.trim(), password, ERTESITO && notify);
         });
       }}
     >
@@ -90,6 +93,15 @@ function SignUp() {
           hogy a fiókhoz az e-mail-címemet tárolják.
         </span>
       </label>
+      {ERTESITO && (
+        <label className={CSS.check}>
+          <input type="checkbox" checked={notify} onChange={(e) => setNotifyChoice(e.target.checked)} />
+          <span>
+            Kérek e-mailes értesítést, ha új tanfolyam vagy elemzés jelenik meg. (Nem kötelező, bármikor
+            leiratkozhat.)
+          </span>
+        </label>
+      )}
       {state.error && <p className={FormCSS.error}>{state.error}</p>}
       <button type="submit" className="btn" disabled={state.busy || !agree}>
         {state.busy ? "Regisztráció…" : "Regisztráció"} <Arrow size={12} />
@@ -149,6 +161,40 @@ function NewPassword({ title = "Jelszó módosítása", onDone }) {
         {state.busy ? "Mentés…" : "Új jelszó mentése"}
       </button>
     </form>
+  );
+}
+
+// értesítő levél új tanfolyamról és elemzésről (src/data/ertesito.js)
+function Notify({ user }) {
+  const [on, setOn] = useState(null);
+  const [state, run] = useForm();
+  useEffect(() => {
+    notifyStatus().then(setOn).catch(() => setOn(false));
+  }, [user.id]);
+  return (
+    <div>
+      <h2 className={CSS.blockTitle}>Értesítések</h2>
+      <p className={FormCSS.text}>
+        Ha bekapcsolja, e-mailt küldünk, amikor új tanfolyam vagy elemzés jelenik meg a Vakzónán. Más célra
+        nem használjuk a címét, és bármikor kikapcsolhatja itt vagy a levelek alján lévő linkkel.
+      </p>
+      {on == null ? (
+        <p className={FormCSS.text}>Betöltés…</p>
+      ) : (
+        <label className={CSS.check}>
+          <input type="checkbox" checked={on} disabled={state.busy}
+            onChange={(e) => {
+              const next = e.target.checked;
+              run(async () => {
+                await setNotify(next);
+                setOn(next);
+              });
+            }} />
+          <span>Kérek értesítést az új tanfolyamokról és elemzésekről.</span>
+        </label>
+      )}
+      {state.error && <p className={FormCSS.error}>{state.error}</p>}
+    </div>
   );
 }
 
@@ -217,6 +263,7 @@ function Dashboard({ user }) {
         )}
       </div>
 
+      {ERTESITO && <div className={CSS.card}><Notify user={user} /></div>}
       <div className={CSS.card}><NewPassword /></div>
       <div className={CSS.card}><Delete /></div>
     </>

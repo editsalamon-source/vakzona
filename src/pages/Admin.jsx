@@ -1,9 +1,12 @@
 import React, { useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import { CSOPORTOK, describe } from "../data/vedett";
+import { ERTESITO } from "../data/ertesito";
+import { mailItems, defaultSubject, buildMail } from "../utils/ertesitoLevel";
 import Arrow from "../components/Arrow";
 import {
   FIOK, useAccount, errorText, isAdmin, adminUsers, setAccess, adminInvites, setInvite,
+  adminNotifyCount, adminNotifyLog, adminNotifySend,
 } from "../utils/fiok";
 import PageCSS from "../css/Page.module.css";
 import FormCSS from "../css/ProtectedPdf.module.css";
@@ -229,6 +232,111 @@ function Users({ users, setUsers }) {
   );
 }
 
+// Értesítő levél a feliratkozóknak (src/data/ertesito.js, supabase/schema.sql „Értesítő” szakasz)
+function Announce() {
+  const items = useMemo(mailItems, []);
+  const [id, setId] = useState(items[0]?.id || "");
+  const item = items.find((i) => i.id === id);
+  const [subject, setSubject] = useState(item ? defaultSubject(item) : "");
+  const [summary, setSummary] = useState(item?.summary || "");
+  const [count, setCount] = useState(null);
+  const [log, setLog] = useState([]);
+  const [sure, setSure] = useState(false);
+  const [state, setState] = useState({ busy: false, error: "", message: "" });
+
+  function load() {
+    Promise.all([adminNotifyCount(), adminNotifyLog()])
+      .then(([n, l]) => {
+        setCount(n);
+        setLog(l);
+      })
+      .catch((e) => setState((s) => ({ ...s, error: errorText(e) })));
+  }
+  useEffect(load, []);
+
+  function pick(next) {
+    const it = items.find((i) => i.id === next);
+    setId(next);
+    setSubject(it ? defaultSubject(it) : "");
+    setSummary(it?.summary || "");
+    setSure(false);
+    setState({ busy: false, error: "", message: "" });
+  }
+
+  const mail = item ? buildMail(item, summary) : null;
+  const sent = log.filter((l) => l.tartalom === id);
+
+  async function send(test) {
+    if (!mail || !subject.trim()) return;
+    setState({ busy: true, error: "", message: "" });
+    try {
+      const n = await adminNotifySend({ id, subject: subject.trim(), html: mail.html, text: mail.text, test });
+      setSure(false);
+      setState({
+        busy: false,
+        error: "",
+        message: test
+          ? (n ? "A próbalevél elindult az Ön címére." : "Nem ment próbalevél: az Ön fiókja nincs megerősítve.")
+          : `Elküldve ${n} feliratkozónak.`,
+      });
+      if (!test) load();
+    } catch (e) {
+      setState({ busy: false, error: e?.message || errorText(e), message: "" });
+    }
+  }
+
+  return (
+    <div className={FormCSS.form}>
+      <p className={FormCSS.text}>
+        Csak azok kapják meg, akik a regisztrációkor vagy a Fiók oldalon értesítést kértek, és megerősítették a
+        fiókjukat. Mindenki külön levelet kap, a levél alján saját leiratkozó linkkel.
+        {count != null && <> Feliratkozók most: <strong>{count}</strong>.</>}
+      </p>
+      <label className={FormCSS.label} htmlFor="ertesitoTartalom">Tartalom</label>
+      <select id="ertesitoTartalom" className={FormCSS.input} value={id} disabled={state.busy}
+        onChange={(e) => pick(e.target.value)}>
+        {items.map((i) => (
+          <option key={i.id} value={i.id}>
+            {i.date} · {i.kind} · {i.title}{log.some((l) => l.tartalom === i.id) ? " (már kiküldve)" : ""}
+          </option>
+        ))}
+      </select>
+      {sent.length > 0 && (
+        <p className={CSS.sent}>
+          Erről már ment értesítő: {sent.map((l) => `${date(l.kuldve)} (${l.cimzettek} címzett)`).join(", ")}.
+        </p>
+      )}
+      <label className={FormCSS.label} htmlFor="ertesitoTargy">Tárgy</label>
+      <input id="ertesitoTargy" className={FormCSS.input} value={subject} disabled={state.busy}
+        onChange={(e) => setSubject(e.target.value)} />
+      <label className={FormCSS.label} htmlFor="ertesitoOsszefoglalo">Rövid összefoglaló (üres sor = új bekezdés)</label>
+      <textarea id="ertesitoOsszefoglalo" className={`${FormCSS.input} ${CSS.textarea}`} value={summary}
+        disabled={state.busy} onChange={(e) => setSummary(e.target.value)} />
+      <span className={FormCSS.label}>Előnézet</span>
+      {mail && <iframe title="A levél előnézete" className={CSS.preview} srcDoc={mail.html.replace("{{LEIRATKOZAS}}", "#")} />}
+      {state.error && <p className={FormCSS.error}>{state.error}</p>}
+      {state.message && <p className={AccountCSS.ok}>{state.message}</p>}
+      <div className={AccountCSS.row}>
+        <button type="button" className="btn btnGhost" disabled={state.busy || !mail} onClick={() => send(true)}>
+          Próbalevél magamnak
+        </button>
+        {sure ? (
+          <>
+            <button type="button" className="btn" disabled={state.busy} onClick={() => send(false)}>
+              {state.busy ? "Küldés…" : `Igen, küldés ${count ?? "?"} címzettnek`} <Arrow size={12} />
+            </button>
+            <button type="button" className="btn btnGhost" disabled={state.busy} onClick={() => setSure(false)}>Mégse</button>
+          </>
+        ) : (
+          <button type="button" className="btn" disabled={state.busy || !mail || !count} onClick={() => setSure(true)}>
+            Küldés a feliratkozóknak <Arrow size={12} />
+          </button>
+        )}
+      </div>
+    </div>
+  );
+}
+
 function Panel() {
   const [users, setUsers] = useState(null);
   const [invites, setInvites] = useState([]);
@@ -255,6 +363,15 @@ function Panel() {
         </summary>
         <Invite onDone={load} />
       </details>
+      {ERTESITO && (
+        <details className={`${AccountCSS.card} ${CSS.invite}`}>
+          <summary className={CSS.inviteSummary}>
+            <span>Értesítő levél új tartalomról</span>
+            <span className={CSS.chevron} aria-hidden="true" />
+          </summary>
+          <Announce />
+        </details>
+      )}
       <Invites list={invites} onChange={load} />
       <Users users={users} setUsers={setUsers} />
     </>
