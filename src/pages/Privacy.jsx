@@ -121,7 +121,7 @@ function Privacy() {
           tehet, vagy bírósághoz fordulhat.
         </p>
 
-        <p className="meta">Hatályos: [helykitöltő: dátum]</p>
+        <p className="meta">Hatályos: 2026. november 23-tól</p>
       </div>
     </div>
   );
