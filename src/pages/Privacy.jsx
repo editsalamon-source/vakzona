@@ -63,6 +63,11 @@ function Privacy() {
           Az adatkezelés jogalapja a GDPR 6. cikk (1) bekezdés b) pontja: a fiók és a hozzáférés biztosítása, amelyet
           a regisztrációval kér.
         </p>
+        <p>
+          Az, hogy az adminisztrátor látja, ki hol tart a tanfolyamokon, a Vakzóna jogos érdekén alapul (GDPR 6. cikk
+          (1) bekezdés f) pont): így látjuk, mely tanfolyamokat és leckéket használják, és hol érdemes a tananyagon
+          javítani. Ez ellen bármikor tiltakozhat az <a href="mailto:info@vakzona.com">info@vakzona.com</a> címen.
+        </p>
         {ERTESITO && (
           <p>
             Az értesítő levél jogalapja az Ön hozzájárulása (GDPR 6. cikk (1) bekezdés a) pont), amelyet bármikor
