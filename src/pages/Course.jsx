@@ -73,7 +73,7 @@ function AccountBox({ course, access, user }) {
       {!user && (
         <>
           <p className={CSS.loginText}>
-            Ha a fiókjához hozzáférést kapott, belépés után a tanfolyam azonnal megnyílik. Hozzáférést az{" "}
+            Ha a fiókjához hozzáférést kapott, belépés után a tanfolyam azonnal megnyílik. Hozzáférést regisztráció után az{" "}
             <a href={`mailto:${KAPCSOLAT_EMAIL}`}>{KAPCSOLAT_EMAIL}</a> címen kérhet.
           </p>
           <Link to={back} className={`btn ${CSS.loginBtn}`}>
