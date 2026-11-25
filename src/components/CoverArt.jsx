@@ -586,7 +586,44 @@ function Marionett() {
   );
 }
 
+// Mérőműszer (AI-felkészültség): félköríves skála öt szakasszal (az öt érettségi szint), a mutató
+// a negyedik szakaszra áll, az a szakasz narancs. Alatta halványan az alapok sora.
+function Mero() {
+  const cx = 200, cy = 220, r = 130;
+  const pt = (deg, rr) => [cx + rr * Math.cos((deg * Math.PI) / 180), cy - rr * Math.sin((deg * Math.PI) / 180)];
+  const arc = (a1, a2, rr) => {
+    const [x1, y1] = pt(a1, rr);
+    const [x2, y2] = pt(a2, rr);
+    return `M${x1.toFixed(1)} ${y1.toFixed(1)} A${rr} ${rr} 0 0 1 ${x2.toFixed(1)} ${y2.toFixed(1)}`;
+  };
+  const segs = [0, 1, 2, 3, 4].map((i) => [180 - i * 36 - 3, 180 - (i + 1) * 36 + 3]);
+  const needle = 180 - 3.5 * 36;
+  const [nx, ny] = pt(needle, r - 34);
+  return (
+    <>
+      {segs.map(([a1, a2], i) => (
+        <path key={i} d={arc(a1, a2, r)} stroke={i === 3 ? A : "currentColor"}
+          strokeWidth={i === 3 ? 7 : 5} opacity={i === 3 ? 1 : 0.35 + i * 0.12} />
+      ))}
+      <path d={arc(180, 0, r - 22)} strokeWidth="1" strokeDasharray="2 5" opacity="0.5" />
+      {[0, 1, 2, 3, 4, 5].map((i) => {
+        const [x1, y1] = pt(180 - i * 36, r + 10);
+        const [x2, y2] = pt(180 - i * 36, r + 20);
+        return <line key={i} x1={x1} y1={y1} x2={x2} y2={y2} strokeWidth="1.3" opacity="0.6" />;
+      })}
+      <line x1={cx} y1={cy} x2={nx} y2={ny} strokeWidth="2.2" />
+      <circle cx={cx} cy={cy} r="9" fill={BG} strokeWidth="1.8" />
+      <circle cx={cx} cy={cy} r="3" fill="currentColor" stroke="none" />
+      <line x1="40" y1="262" x2="360" y2="262" strokeWidth="1.5" />
+      {[0, 1, 2, 3].map((i) => (
+        <rect key={i} x={70 + i * 70} y="270" width="50" height="10" rx="2" strokeWidth="1" opacity="0.45" />
+      ))}
+    </>
+  );
+}
+
 const MOTIFS = {
+  mero: Mero,
   marionett: Marionett,
   spiral: Spiral,
   stopper: Stopper,
