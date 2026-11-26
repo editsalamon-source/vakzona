@@ -69,7 +69,7 @@ A tanfolyam 27 leckéből és nyolc részből áll, összesen több mint három 
 - **AI-irányítás:** döntési struktúrák, etikai bizottságok és auditok, összhang az üzleti célokkal.
 - **Gyakorlati esetek és zárás:** záró felkészültségi ellenőrzőlista, egy kiskereskedelmi kkv, egy ipari nagyvállalat és egy elrontott felkészülés története, végül az esetek összehasonlítása.
 
-Az első leckéhez letölthető a tanfolyam kísérő tananyaga (PDF): a videók írott párja teljes listákkal, táblázatokkal, ellenőrzőlistákkal és angol–magyar fogalomtárral.
+Az első leckéhez letölthető a tanfolyam kísérő tananyaga (PDF): a videók írott párja teljes listákkal, táblázatokkal, ellenőrzőlistákkal és angol–magyar fogalomtárral. Tíz kitölthető sablon is tartozik hozzá (PDF-ben és képletekkel Excelben): érettségi mátrix, segítő tényezők és akadályok, fejlesztési terv, felelős AI ellenőrzőlista, felhasználásieset-választó, kísérleti projekt vászon, értékelés és skálázási kapu, megtérülési mérési terv, felelősségi mátrix (RACI) és záró ellenőrzőlista. A sablonok az első leckénél és azoknál a leckéknél tölthetők le, amelyekhez tartoznak. Mellette a sablontár: tíz kitölthető sablon (érettségi mátrix, RACI, megtérülési terv stb.) PDF-ben és Excelben, az utóbbi képletekkel és diagramokkal.
 
 ## Hogyan működik?
 
