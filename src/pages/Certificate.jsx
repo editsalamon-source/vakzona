@@ -111,8 +111,7 @@ function Preview({ children }) {
 function Certificate() {
   const { slug } = useParams();
   const course = useMemo(() => getCourse(slug), [slug]);
-  // szabad hozzáférésű tanfolyamhoz nem jár oklevél
-  if (!course || course.free) return <NotFound />;
+  if (!course) return <NotFound />;
   return <CertificateFor course={course} />;
 }
 

@@ -28,8 +28,7 @@ function entryFor(pathname) {
   }
   const [, courseSlug, certificate] = pathname.match(/^\/akademia\/([^/]+)(\/oklevel)?$/) || [];
   const course = courseSlug && courses.find((c) => c.slug === courseSlug);
-  // szabad hozzáférésű tanfolyamnak nincs oklevél-oldala (404)
-  if (course && !(certificate && course.free)) {
+  if (course) {
     return {
       title: `${certificate ? "Oklevél – " : ""}${course.title} – ${AKADEMIA.name}`,
       description: course.subtitle || seo["/akademia"].description,
