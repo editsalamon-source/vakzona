@@ -15,7 +15,7 @@ szám: 74 | nyilvános forrás
 pdf: rendeltetesszeruen-mukodik-v1.0.pdf | 89 oldal
 ---
 
-> **Összefoglaló**
+> **A gép azt adja, amit megdicsérünk**
 >
 > Valaki megkérdez egy MI-csevegőt, jó-e az üzleti terve, vagy igaza volt-e egy családi vitában. A válasz barátságos, megértő, és nagy eséllyel egyetért vele. Kellemes pillanat. Csakhogy egy kutatócsoport vizsgálatában az egyik MI-asszisztens a kérdések 98%-ában tévesen beismerte a hibáját, ha a felhasználó megkérdőjelezte a helyes választ.
 >

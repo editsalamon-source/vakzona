@@ -14,7 +14,7 @@ szám: 7 | hivatalos forrás
 pdf: miert-tagul-ki-a-voros-orias-v1.1.pdf | 36 oldal
 ---
 
-> **Összefoglaló**
+> **Hogy kitágul, biztos. Hogy miért, arról ma is vita folyik**
 >
 > Egy 2008-as napfejlődési modell szerint körülbelül 7,59 milliárd év múlva a Nap a mai sugarának 256-szorosára dagad. A felszíne ekkor mindössze 2602 kelvin lesz, a fényessége viszont a mai 2730-szorosára nő. A Földnek ebben a jövőben nem jut hely: **a modell szerint a Nap közvetlenül azelőtt nyeli el bolygónkat, hogy a tágulás csúcsára érne.**
 >

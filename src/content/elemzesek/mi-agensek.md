@@ -16,7 +16,7 @@ pdf: mi-agensek-v1.1.pdf | 61 oldal
 pdf védett: llm-agensek-tanulmany-v2.0.pdf.enc | 191 oldal | LLM-alapú ágensek – megvalósíthatósági tanulmány
 ---
 
-> **Összefoglaló**
+> **Már nem egy rossz mondat, hanem egy rossz lépés**
 >
 > Ha egy csevegőrobotot megkérdezünk, mit érdemes megnézni Pécsen, kapunk egy listát. A menetrendet és a szállást viszont nekünk kell kikeresnünk. Egy MI-ágensnek azt is mondhatjuk: „Szervezd meg a hétvégémet Pécsen, 40 000 forintból.” Ő maga nézi meg a vonatot, és ha a péntek esti járat nem közlekedik, szombat reggelre vált. A példa kitalált, nem valós eset és nem egy konkrét termék, de jól mutatja, miről szól ez az elemzés.
 >

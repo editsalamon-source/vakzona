@@ -13,7 +13,7 @@ szám: 72 017 | születés 2025-ben
 szám: 25 | hivatalos forrás
 ---
 
-> **Összefoglaló**
+> **Nem a törvény áll az útjában, hanem a bizonyítékhiány**
 >
 > Ugyanannyi fizetés, egy nappal kevesebb munka. Néhány éve ez még elméleti vitának számított. Mára több európai kormány és száznál is több munkáltató kipróbálta, Belgium törvénybe foglalta, hogy a munkavállaló kérheti munkaidejének négy napra sűrítését, Portugália és Lengyelország pedig állami támogatású kísérleti programot indított. Magyarországon a kormány 2022-ben „nem időszerűnek” nevezte a kérdést.
 >

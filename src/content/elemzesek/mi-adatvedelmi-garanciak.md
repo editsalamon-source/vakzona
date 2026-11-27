@@ -16,7 +16,7 @@ pdf: mi-adatvedelmi-garanciak-v1.0.pdf | 100 oldal
 pdf védett: mi-adatvedelmi-garanciak-teljes-v1.0.pdf.enc | 515 oldal | Adatvédelmi garanciák és jogérvényesítés – teljes tanulmány
 ---
 
-> **Összefoglaló**
+> **A védelem az aláírásnál dől el**
 >
 > Egy munkatárs bemásol egy hosszú szerződést egy MI-csevegőbe, hogy az néhány bekezdésben összefoglalja. Pár másodperc, és kész. Csakhogy a szöveg közben elhagyta a gépét, és egy szolgáltató rendszerébe került. Onnantól már nem a szervezet dönti el, hol tárolják, ki látja, és mire használják.
 >

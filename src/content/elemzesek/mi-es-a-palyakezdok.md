@@ -15,7 +15,7 @@ szám: 17 | hivatalos forrás
 pdf: mi-es-a-palyakezdok-v1.0.pdf | 55 oldal
 ---
 
-> **Összefoglaló**
+> **A pályakezdők, akiket egyetlen statisztika sem lát**
 >
 > Van egy pályakezdő, akiről semmilyen statisztika nem szól. Nem bocsátották el, nem lett munkanélküli, egyszerűen nem vették fel, mert azt a pozíciót, amelyre korábban jelentkezhetett volna, idén már meg sem hirdették. Ő a mesterséges intelligencia (MI) korának egyik legnehezebben látható szereplője.
 >

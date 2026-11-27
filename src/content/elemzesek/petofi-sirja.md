@@ -14,9 +14,9 @@ szám: 17 | hivatalos és lektorált forrás
 pdf: petofi-sirja-v1.0.pdf | 72 oldal
 ---
 
-> **Összefoglaló**
+> **Tizenegy feltételezett sír, egyik sem igazolt**
 >
-> 1849. július 31-én, egy nyári délután a segesvári csatamezőn felbomlott Bem József serege. A katonák Keresztúr felé menekültek, nyomukban az üldöző kozákokkal és lengyel dzsidásokkal. Valahol ebben a zűrzavarban eltűnt Petőfi Sándor, és azóta sem tudjuk biztosan, mi történt vele.
+> 1849\. július 31-én, egy nyári délután a segesvári csatamezőn felbomlott Bem József serege. A katonák Keresztúr felé menekültek, nyomukban az üldöző kozákokkal és lengyel dzsidásokkal. Valahol ebben a zűrzavarban eltűnt Petőfi Sándor, és azóta sem tudjuk biztosan, mi történt vele.
 >
 > A neve nem szerepel sem az elesettek, sem a sebesültek, sem a fogságba esettek hivatalos listáján. **Ez a hiány 177 éve táplálja a találgatásokat.** Hol van eltemetve? És biztos-e egyáltalán, hogy a csatatéren halt meg? Ez az elemzés azt mutatja be, hol tart ma a kutatás, és mi kellene ahhoz, hogy a kérdés egyszer lezáruljon.
 >

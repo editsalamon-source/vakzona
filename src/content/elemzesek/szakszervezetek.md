@@ -13,7 +13,7 @@ szám: 80% | uniós lefedettségi küszöb
 szám: 24 | hivatalos forrás
 ---
 
-> **Összefoglaló**
+> **44 százalékból 7,4: mi maradt a magyar szakszervezetekből?**
 >
 > 1993-ban a magyar munkavállalók 44 százaléka volt szakszervezeti tag. 2020-ban, a legfrissebb elérhető adat szerint, már csak 7,4 százalék. Ennél frissebb hivatalos hazai idősor nincs is, így azt sem tudjuk pontosan, hol tart ma a lejtő.
 >
@@ -35,7 +35,7 @@ szám: 24 | hivatalos forrás
 >
 > Mindez nem csupán belügy. A megfelelő minimálbérekről szóló uniós irányelv azoknak a tagállamoknak ír elő cselekvési tervet a kollektív tárgyalások előmozdítására, ahol a lefedettség nem éri el a 80 százalékot. **Magyarországot az irányelv szerint már most terheli ez a kötelezettség**, konkrét intézkedésekkel és ütemtervvel. Az Európai Unió Bírósága 2025 novemberében az irányelv más, a törvényi minimálbérre vonatkozó részeit részben megsemmisítette, ezt a kötelezettséget azonban nem érintette. Hogy a terv elkészült-e, hivatalos forrásból nem lehetett megerősíteni.
 >
-> 2025. június 9-én az ILO, a Nemzetközi Munkaügyi Szervezet Alkalmazási Bizottsága Magyarország esetét is tárgyalta az egyesülési szabadságról szóló 87. egyezmény kapcsán. Felszólította a kormányt, hogy a szociális partnerekkel egyeztessen többek között a munkavállalói véleménynyilvánítás korlátairól, a szakszervezetek nyilvántartásba vételéről és a tagdíjlevonás tilalmáról. Ez vitajegyzőkönyv, nem ítélet: felszólítás, nem szankció.
+> 2025\. június 9-én az ILO, a Nemzetközi Munkaügyi Szervezet Alkalmazási Bizottsága Magyarország esetét is tárgyalta az egyesülési szabadságról szóló 87. egyezmény kapcsán. Felszólította a kormányt, hogy a szociális partnerekkel egyeztessen többek között a munkavállalói véleménynyilvánítás korlátairól, a szakszervezetek nyilvántartásba vételéről és a tagdíjlevonás tilalmáról. Ez vitajegyzőkönyv, nem ítélet: felszólítás, nem szankció.
 >
 > Számít-e mindez a munkaerőpiacon? Az OECD 2019-es, „Negotiating Our Way Up” című kötete szerint a magas fokú bérkoordinációval jellemezhető rendszerek magasabb foglalkoztatással és alacsonyabb munkanélküliséggel járnak együtt a teljesen decentralizáltakhoz képest, a fiatalok, a nők és az alacsony képzettségűek esetében is. **A legjobb eredményt az hozza, ha az ágazati megállapodás tág kereteket szab, a részleteket pedig a vállalati tárgyalásokra hagyja.** Ezt hívják szervezett decentralizációnak.
 >

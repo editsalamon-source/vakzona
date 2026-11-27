@@ -15,7 +15,7 @@ szám: 21 | hivatalos forrás
 pdf: vallalati-ai-platform-v1.0.pdf | 94 oldal
 ---
 
-> **Összefoglaló**
+> **Az MI örökli a rosszul beállított jogosultságokat**
 >
 > Egy régi projekt miatt egy munkatársnak még mindig hozzáférése van egy mappához, amelyhez már nem kellene. Senki sem figyel rá. Aztán a cég bevezet egy MI-asszisztenst, és a gép ugyanúgy megtalálja és felhasználja azt a tartalmat, mint bármely más elérhető fájlt.
 >
