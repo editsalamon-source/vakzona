@@ -52,6 +52,7 @@
 
 .facts {
   display: flex;
+  flex-wrap: wrap; /* ha nem fér ki egy sorban (pl. „4 óra 29 perc” + „letölthető anyag”), új sorba tör, nem vágódik le */
   gap: 1px;
   margin: 0;
   background: var(--line);
