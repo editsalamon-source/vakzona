@@ -112,7 +112,7 @@ export async function accesses() {
   return rows.map((r) => r.tartalom);
 }
 
-// ---------- Fizetés (api/fizetes-inditas.js; kapcsoló: src/data/fizetes.js) ----------
+// ---------- Fizetés (functions/api/fizetes-inditas.js; kapcsoló: src/data/fizetes.js) ----------
 
 // a kosár tételeinek fizetése: a szerver ellenőrzi a belépést és az árakat, és visszaadja a Stripe fizetőoldalának
 // címét, ahová a böngésző átirányít. consent = a vásárló kérte az azonnali hozzáférést (elállási jog, Cart.jsx)

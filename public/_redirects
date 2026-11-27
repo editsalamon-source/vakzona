@@ -1,0 +1,5 @@
+# Cloudflare Pages átirányítások (a régi vercel.json redirects része).
+# A www.vakzona.com → vakzona.com átirányítás a Cloudflare-zóna Redirect Rule-ja (a _redirects nem tud domaint).
+# Az SPA-visszaesés automatikus: mivel nincs legfelső szintű 404.html, a Pages minden ismeretlen útra az index.html-t adja.
+/fiok/admin  /admin     301
+/tortenelem  /tudomany  301

@@ -10,8 +10,8 @@
 .env.*.local
 npm-debug.log*
 .vercel
+.wrangler
 
-.vercel
 .env*
 
 # elemzések munkaanyagai (belső és letöltött külső források) – nem publikus
@@ -25,3 +25,6 @@ npm-debug.log*
 
 # arculati munkafájlok (pl. LinkedIn-képek)
 /Arculat/
+
+# buildkor generált (scripts/tanfolyamok.mjs)
+/szerver/tanfolyamok.gen.js

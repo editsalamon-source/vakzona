@@ -1,0 +1,12 @@
+# Napi ébresztő: a Cloudflare Pagesnek nincs ütemezője, ezért a GitHub Actions hívja meg naponta az
+# /api/ebreszto végpontot (functions/api/ebreszto.js), hogy az ingyenes Supabase-projekt ne álljon le.
+name: Napi ébresztő
+on:
+  schedule:
+    - cron: "0 6 * * *"
+  workflow_dispatch:
+jobs:
+  ebreszto:
+    runs-on: ubuntu-latest
+    steps:
+      - run: curl -fsS --retry 3 --retry-delay 30 https://vakzona.com/api/ebreszto

@@ -32,7 +32,7 @@ beállítva, a fiók ki van kapcsolva, és az oldal úgy működik, mint eddig.
      VITE_SUPABASE_URL=https://<projekt-azonosító>.supabase.co
      VITE_SUPABASE_KEY=<publishable kulcs>
      ```
-   - Vercelen: Project → Settings → Environment Variables, ugyanez a két változó (Production, Preview, Development).
+   - A Cloudflare-függvényeknek: a `wrangler.toml` `[vars]` része, ugyanez a két változó (nyilvánosak, a repóban lehetnek).
    - Ez a kulcs nyilvános (a böngészőbe kerül), a védelmet az RLS adja. A *secret / service_role* kulcs soha ne
      kerüljön ide.
 6. **Tartalmak kulcsa** (minden újratitkosítás után is):
@@ -102,19 +102,19 @@ beállítva, a fiók ki van kapcsolva, és az oldal úgy működik, mint eddig.
       `select s.letrehozva, u.email, s.tetelek, s.osszeg from public.vasarlasi_szandekok s join auth.users u on u.id = s.user_id order by s.letrehozva desc;`
     - **Online fizetés** (`ONLINE_FIZETES = true`, MEGÉPÍTVE, KIKAPCSOLVA): több tanfolyam egy fizetésben (Stripe
       Checkout), a hozzáférést a sikeres fizetés után a Stripe webhookja automatikusan megadja. Kód: `src/data/fizetes.js`, `src/utils/kosar.js` (a kosár a böngészőben), `src/pages/Cart.jsx` (`/kosar`),
-    `api/fizetes-inditas.js` (a szerver számolja az árat, ellenőrzi a belépést), `api/fizetes-webhook.js`
-    (aláírás-ellenőrzés, rögzítés, számla, visszatérítés), `api/_fizetes.js`. Bekapcsolás lépésenként:
+    `functions/api/fizetes-inditas.js` (a szerver számolja az árat, ellenőrzi a belépést), `functions/api/fizetes-webhook.js`
+    (aláírás-ellenőrzés, rögzítés, számla, visszatérítés), `szerver/fizetes.js`. Bekapcsolás lépésenként:
     1. Stripe-fiók (a teszt mód aktiválás és cégadatok nélkül is működik).
     2. A `schema.sql` „Fizetés” szakaszának lefuttatása az SQL Editorban.
-    3. Vercel → Settings → Environment Variables: `STRIPE_SECRET_KEY` (teszteléshez `sk_test_…`),
+    3. Cloudflare → Workers & Pages → vakzona → Settings → Variables and Secrets (titkosként): `STRIPE_SECRET_KEY` (teszteléshez `sk_test_…`),
        `SUPABASE_SERVICE_ROLE_KEY` (Supabase → Project Settings → API Keys, a *secret* kulcs). Titkos, a repóba
        és a chatbe nem kerülhet.
     4. Stripe → Developers → Webhooks → új végpont: `https://vakzona.com/api/fizetes-webhook`, események:
        `checkout.session.completed`, `checkout.session.async_payment_succeeded`, `charge.refunded`. Az aláíró kulcsot
-       (`whsec_…`) `STRIPE_WEBHOOK_SECRET` néven a Vercelre.
+       (`whsec_…`) `STRIPE_WEBHOOK_SECRET` néven a Cloudflare-re.
     5. `src/data/fizetes.js`: `ONLINE_FIZETES = true`, deploy, majd próbavásárlás a Stripe tesztkártyájával. Éleshez a Stripe-fiók aktiválása és az `sk_live_…` kulcs,
        új (éles) webhook-kulccsal.
-    - Hátravan bekapcsolás előtt: a számlázó bekötése (`szamlaKiallitas` az `api/_fizetes.js`-ben, Számlázz.hu vagy
+    - Hátravan bekapcsolás előtt: a számlázó bekötése (`szamlaKiallitas` az `szerver/fizetes.js`-ben, Számlázz.hu vagy
       Billingo), az ÁSZF, a kosár és az adatkezelési tájékoztató `[helykitöltő]`-i (áfa, ÁSZF, megőrzési idő, ezek
       csak online fizetésnél látszanak), az
       elállási jogról szóló szöveg jogi átnézése, és a vállalkozási forma.
@@ -157,10 +157,10 @@ megismételni.
 
 ## Ébren tartás
 
-Az ingyenes projektet egy hét tétlenség után szüneteltetik. A `vercel.json` napi cronja (`api/ebreszto.js`)
+Az ingyenes projektet egy hét tétlenség után szüneteltetik. A GitHub Actions napi ütemezése (`.github/workflows/ebreszto.yml`) az `/api/ebreszto` végponton (`functions/api/ebreszto.js`) át
 naponta egyszer meghívja a `public.ebreszto()` függvényt, így ez nem történik meg.
 
 ## Költség és korlátok
 
-Minden elem ingyenes csomagban fut (Supabase Free, Brevo Free, Vercel). A Vercel Hobby csomagja csak nem
-kereskedelmi használatra való: fizetős tanfolyamhoz Pro csomag kell.
+Minden elem ingyenes csomagban fut (Supabase Free, Brevo Free, Cloudflare Pages Free, GitHub Actions). A Cloudflare
+Pages ingyenes csomagja kereskedelmi célra is használható (a Vercel Hobby nem, ezért költöztünk 2026-11-27-én).

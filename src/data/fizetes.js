@@ -1,17 +1,17 @@
 // Kosár és fizetés (supabase/schema.sql „Fizetés” és „Vásárlási szándék” szakasza, supabase/README.md 12. lépés).
-// Ezt a fájlt a böngésző és a Vercel-függvények is betöltik, ezért nem importálhat semmit.
+// Ezt a fájlt a böngésző és a szerverfüggvények (functions/) is betöltik, ezért nem importálhat semmit.
 
 // FIZETES: a kosár és az árak látszanak (kosár ikon a menüben és a csempéken, „Kosárba” doboz, /kosar oldal).
 // Ha false, egyik sem látszik.
 export const FIZETES = true;
 
-// ONLINE_FIZETES: a kosárból Stripe-fizetés indul (api/fizetes-inditas.js), a hozzáférést a webhook adja meg.
+// ONLINE_FIZETES: a kosárból Stripe-fizetés indul (functions/api/fizetes-inditas.js), a hozzáférést a webhook adja meg.
 // Ha false (2026-11-27-től így élesítve), a kosár csak vásárlási szándékot küld: az adminok levelet kapnak a kosár
 // tartalmáról, a vásárló visszaigazolást, a hozzáférést az admin adja meg kézzel az adminoldalon.
 export const ONLINE_FIZETES = false;
 
 // Pénznem (Stripe-kód). A Stripe a forintot is fillérben várja (100-zal osztható összeggel), ezt az
-// api/fizetes-inditas.js intézi, itt az ár egész forintban áll.
+// functions/api/fizetes-inditas.js intézi, itt az ár egész forintban áll.
 export const PENZNEM = "huf";
 
 // Minden zárt (nem szabad hozzáférésű) tanfolyam ára egységesen, forintban (a felhasználó döntése, 2026-11-27).

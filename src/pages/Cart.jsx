@@ -16,8 +16,8 @@ import CSS from "../css/Cart.module.css";
 // - ONLINE_FIZETES = false (2026-11-27-től élesben): a kosár vásárlási szándékot küld (supabase/schema.sql,
 //   vasarlasi_szandek): az adminok levelet kapnak a kosár tartalmáról, a vásárló visszaigazolást, a hozzáférést az
 //   admin adja meg kézzel.
-// - ONLINE_FIZETES = true: a fizetés a Stripe saját oldalán történik (api/fizetes-inditas.js), a hozzáférést a
-//   sikeres fizetés után a Stripe webhookja adja meg (api/fizetes-webhook.js). Ez az oldal a visszatéréskor csak
+// - ONLINE_FIZETES = true: a fizetés a Stripe saját oldalán történik (functions/api/fizetes-inditas.js), a hozzáférést a
+//   sikeres fizetés után a Stripe webhookja adja meg (functions/api/fizetes-webhook.js). Ez az oldal a visszatéréskor csak
 //   megvárja, amíg a hozzáférés megjelenik.
 const FOLYAMATBAN = "vz_fizetes_folyamatban";
 

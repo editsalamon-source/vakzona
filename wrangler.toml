@@ -1,0 +1,11 @@
+# Cloudflare Pages projekt (2026-11-27-től, a Vercel helyett). Élesítés: npm run deploy
+name = "vakzona"
+pages_build_output_dir = "dist"
+compatibility_date = "2026-11-01"
+
+# Nyilvános beállítások a függvényeknek (functions/). Ugyanezek a böngészőbe is bekerülnek, nem titkosak.
+# A titkos kulcsokat (STRIPE_SECRET_KEY, STRIPE_WEBHOOK_SECRET, SUPABASE_SERVICE_ROLE_KEY) a Cloudflare
+# felületén kell megadni: Workers & Pages → vakzona → Settings → Variables and Secrets. A repóba nem kerülhetnek.
+[vars]
+VITE_SUPABASE_URL = "https://xrbdhqvscmxvefuppvkd.supabase.co"
+VITE_SUPABASE_KEY = "sb_publishable_6NUuwUDvDe7-9bj0toJ4ow_BmR9uOcS"

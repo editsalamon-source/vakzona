@@ -1,13 +1,13 @@
-// Fizetés indítása a kosárból (src/pages/Cart.jsx → POST /api/fizetes-inditas).
+// Fizetés indítása a kosárból (src/pages/Cart.jsx → POST /api/fizetes-inditas), Cloudflare Pages Function.
 // A böngésző csak a tanfolyamok azonosítóit küldi. Az árat a src/data/fizetes.js-ből, a tétel nevét a tanfolyam .md-jéből vesszük,
 // a belépést a Supabase-token igazolja, a már meglévő hozzáférések kimaradnak. Válasz: { url } = a Stripe fizetőoldala.
-import { FIZETES, ONLINE_FIZETES, PENZNEM, ar, tetelNev, tartalomId } from "../src/data/fizetes.js";
-import { json, hiba, felhasznalo, supabase, stripe, zartTanfolyam } from "./_fizetes.js";
+import { FIZETES, ONLINE_FIZETES, PENZNEM, ar, tetelNev, tartalomId } from "../../src/data/fizetes.js";
+import { json, hiba, felhasznalo, supabase, stripe, zartTanfolyam } from "../../szerver/fizetes.js";
 
-export async function POST(request) {
-  if (!FIZETES || !ONLINE_FIZETES || !process.env.STRIPE_SECRET_KEY) return hiba(503, "kikapcsolva", "A fizetés jelenleg nem érhető el.");
+export async function onRequestPost({ request, env }) {
+  if (!FIZETES || !ONLINE_FIZETES || !env.STRIPE_SECRET_KEY) return hiba(503, "kikapcsolva", "A fizetés jelenleg nem érhető el.");
 
-  const user = await felhasznalo(request);
+  const user = await felhasznalo(env, request);
   if (!user) return hiba(401, "nincs_belepve", "A fizetéshez be kell jelentkeznie.");
 
   let body;
@@ -24,7 +24,7 @@ export async function POST(request) {
   // a felhasználó saját hozzáférései (a sor szintű védelem miatt csak a sajátjait látja)
   let have = [];
   try {
-    have = (await supabase("/rest/v1/hozzaferes?select=tartalom", { key: process.env.VITE_SUPABASE_KEY, token: user.token })).map((r) => r.tartalom);
+    have = (await supabase(env, "/rest/v1/hozzaferes?select=tartalom", { key: env.VITE_SUPABASE_KEY, token: user.token })).map((r) => r.tartalom);
   } catch (e) {
     console.error(e);
     return hiba(502, "hiba", "A fizetés most nem indítható, kérjük, próbálja újra.");
@@ -62,7 +62,7 @@ export async function POST(request) {
   });
 
   try {
-    const session = await stripe("/checkout/sessions", params);
+    const session = await stripe(env, "/checkout/sessions", params);
     return json(200, { url: session.url, megvan: owned });
   } catch (e) {
     console.error(e);

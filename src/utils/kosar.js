@@ -3,7 +3,7 @@ import { FIZETES } from "../data/fizetes";
 import { getCourse } from "../data/akademia";
 
 // Kosár: a kiválasztott tanfolyamok url-azonosítói a látogató böngészőjében (localStorage). Árat nem tárol,
-// azt mindig a src/data/fizetes.js adja, a fizetésnél pedig a szerver (api/fizetes-inditas.js) számolja újra.
+// azt mindig a src/data/fizetes.js adja, a fizetésnél pedig a szerver (functions/api/fizetes-inditas.js) számolja újra.
 
 // megvásárolható = minden létező, nem szabad hozzáférésű tanfolyam (bekapcsolt kosárnál)
 export const megveheto = (slug) => {
