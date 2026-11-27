@@ -719,6 +719,30 @@ function Eszkozadat() {
   );
 }
 
+// Üzleti elemzés tanfolyam: követelménylista pipákkal, a nagyító egy még nyitott sort vizsgál (narancs).
+function Nagyito() {
+  const rows = [0, 1, 2, 3, 4];
+  return (
+    <>
+      <rect x="62" y="44" width="200" height="220" rx="12" fill={BG} strokeWidth="1.5" />
+      <line x1="84" y1="74" x2="200" y2="74" strokeWidth="2" />
+      {rows.map((i) => {
+        const y = 108 + i * 32;
+        const open = i === 2;
+        return (
+          <g key={i} opacity={open ? 1 : 0.6}>
+            <rect x="84" y={y - 9} width="18" height="18" rx="4" strokeWidth="1.4" />
+            {!open && <path d={`M88 ${y} l4 4 l7 -8`} strokeWidth="1.6" strokeLinejoin="round" />}
+            <line x1="114" y1={y} x2={i % 2 ? 210 : 240} y2={y} strokeWidth="1.5" />
+          </g>
+        );
+      })}
+      <circle cx="250" cy="172" r="44" fill={A} fillOpacity="0.1" stroke={A} strokeWidth="2.5" />
+      <line x1="282" y1="204" x2="330" y2="252" stroke={A} strokeWidth="7" />
+    </>
+  );
+}
+
 const MOTIFS = {
   merleg: Merleg,
   lakat: Lakat,
@@ -744,6 +768,7 @@ const MOTIFS = {
   dontesiterkep: Dontesiterkep,
   piramis: Piramis,
   tervrajz: Tervrajz,
+  nagyito: Nagyito,
 };
 
 function CoverArt({ motif, category, className }) {

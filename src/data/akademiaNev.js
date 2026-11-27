@@ -8,13 +8,17 @@ const AKADEMIA = {
   slug: "akademia",
   description: "Videós tanfolyamok a Vakzóna témáiban: leckék, letölthető anyagok és oklevél a végén.",
   // az Akadémia témakörei (a menüben és a szűrőben, /akademia/<azonosító>); a tanfolyam „kategória:” sora dönti el
-  kategoriak: ["mi", "tudomany", "szabalyzat"],
+  kategoriak: ["mi", "tudomany", "szabalyzat", "uzlet"],
   // az Akadémia saját témakörei, amelyek az elemzéseknél nem kategóriák (azonosító = URL, név = a „kategória:” sor)
-  sajatKategoriak: [{ slug: "szabalyzat", name: "Szabályzat" }],
+  sajatKategoriak: [
+    { slug: "szabalyzat", name: "Szabályzat" },
+    { slug: "uzlet", name: "Üzlet" },
+  ],
   leirasok: {
     mi: "Videós tanfolyamok a mesterséges intelligenciáról: az alapoktól a módszertanon és az ágenseken át a vállalati bevezetésig.",
     tudomany: "Videós tanfolyamok tudományos témákban.",
     szabalyzat: "Videós tanfolyamok az uniós szabályozásról: mi a lényeg, kire vonatkozik, mit követel, és hogyan lehet megfelelni neki.",
+    uzlet: "Videós tanfolyamok az üzleti munka módszereiről: az igények feltárásától a követelményeken át a megoldás bevezetéséig és értékeléséig.",
   },
 };
 

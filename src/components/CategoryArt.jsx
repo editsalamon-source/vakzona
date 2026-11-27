@@ -207,7 +207,30 @@ function Szabalyzat() {
   );
 }
 
-const ART = { gazdasag: Gazdasag, tarsadalom: Tarsadalom, kultura: Kultura, tudomany: Tudomany, mi: Mi, szabalyzat: Szabalyzat };
+// Üzlet (csak az Akadémia témaköre): folyamatábra (lépések, döntési rombusz), fölötte nagyító narancs lencsével.
+function Uzlet() {
+  const boxes = [60, 150];
+  return (
+    <>
+      {boxes.map((x, i) => (
+        <rect key={x} className={M.glint} style={{ "--i": i }} x={x} y="128" width="62" height="40" rx="8" fill="var(--art-bg, #fff)" strokeWidth="1.5" />
+      ))}
+      <line x1="122" y1="148" x2="150" y2="148" strokeWidth="1.5" />
+      <line x1="212" y1="148" x2="240" y2="148" strokeWidth="1.5" />
+      <path d="M268 120 L296 148 L268 176 L240 148 Z" fill="var(--art-bg, #fff)" strokeWidth="1.5" />
+      <path d="M268 120 V84 H330" strokeWidth="1.5" strokeDasharray="3 4" opacity="0.6" />
+      <path d="M268 176 V212 H330" strokeWidth="1.5" strokeDasharray="3 4" opacity="0.6" />
+      <rect x="330" y="68" width="40" height="32" rx="7" fill="var(--art-bg, #fff)" strokeWidth="1.5" opacity="0.6" />
+      <rect x="330" y="196" width="40" height="32" rx="7" fill="var(--art-bg, #fff)" strokeWidth="1.5" opacity="0.6" />
+      <g className={M.pulse}>
+        <circle cx="181" cy="148" r="46" fill={A} fillOpacity="0.1" stroke={A} strokeWidth="2.5" />
+        <line x1="214" y1="181" x2="246" y2="213" stroke={A} strokeWidth="6" />
+      </g>
+    </>
+  );
+}
+
+const ART = { gazdasag: Gazdasag, tarsadalom: Tarsadalom, kultura: Kultura, tudomany: Tudomany, mi: Mi, szabalyzat: Szabalyzat, uzlet: Uzlet };
 
 function CategoryArt({ slug, className, animated = false }) {
   const Art = ART[slug];

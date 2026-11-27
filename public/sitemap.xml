@@ -56,6 +56,11 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://vakzona.com/akademia/uzlet</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://vakzona.com/rolunk</loc>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
@@ -147,6 +152,12 @@
   <url>
     <loc>https://vakzona.com/akademia/nis2-zero-to-hero</loc>
     <lastmod>2026-11-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://vakzona.com/akademia/uzleti-elemzes</loc>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>

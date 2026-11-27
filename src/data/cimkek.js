@@ -9,6 +9,7 @@ const CIMKEK = [
   { slug: "bevezetes", name: "Vállalati bevezetés", description: "Döntések, szervezet és értékteremtés a vállalati használatban." },
   { slug: "jog", name: "Jog és adatvédelem", description: "Szabályozás, szerződések, adatvédelem és jogérvényesítés." },
   { slug: "biztonsag", name: "Biztonság és kockázat", description: "Kockázatok, kontrollok és biztonságos használat." },
+  { slug: "uzleti-elemzes", name: "Üzleti elemzés", description: "Igények, követelmények és megoldások elemzése a szervezeti változásokban." },
   { slug: "munka", name: "Munka és társadalom", description: "Az MI hatása a munkára, a pályákra és a társadalomra." },
 ];
 

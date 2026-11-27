@@ -96,7 +96,7 @@ async function tus(link, file) {
 const find = (dir, id, ext) => {
   if (!existsSync(join(src, dir))) return null;
   const prefix = `${id.replace(/-plusz/g, "+")} – `;
-  const name = readdirSync(join(src, dir)).find((f) => f.startsWith(prefix) && f.endsWith(ext) && !f.includes("forgatókönyv"));
+  const name = readdirSync(join(src, dir)).find((f) => f.startsWith(prefix) && f.endsWith(ext) && !f.endsWith(` – forgatókönyv${ext}`));
   return name ? join(src, dir, name) : null;
 };
 
