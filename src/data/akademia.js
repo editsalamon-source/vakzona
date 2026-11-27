@@ -21,6 +21,8 @@ const files = import.meta.glob("../content/akademia/*.md", {
   eager: true,
 });
 const freeFiles = import.meta.glob("../content/akademia/*.json", { import: "default", eager: true });
+// a letölthető anyagok nyilvános listája (csak név és típus; scripts/anyaglista.mjs): { "<lecke>": [{ felirat, tipus }] }
+const materialFiles = import.meta.glob("../content/akademia/anyagok/*.json", { import: "default", eager: true });
 
 // "6:30" vagy "1:02:30" → másodperc
 export function toSeconds(value = "") {
@@ -75,6 +77,8 @@ const courses = Object.entries(files)
   .map(([path, raw]) => {
     const slug = path.split("/").pop().replace(/\.md$/, "");
     const { meta, modules, body } = parse(raw);
+    const materials = materialFiles[`../content/akademia/anyagok/${slug}.json`] || {};
+    modules.forEach((m) => m.lessons.forEach((l) => (l.materials = materials[l.id] || [])));
     const lessons = modules.flatMap((m) => m.lessons);
     return {
       slug,
@@ -96,6 +100,7 @@ const courses = Object.entries(files)
       modules,
       lessons,
       seconds: lessons.reduce((sum, l) => sum + l.seconds, 0),
+      materialCount: lessons.reduce((sum, l) => sum + l.materials.length, 0),
       ...splitBody(body),
     };
   })

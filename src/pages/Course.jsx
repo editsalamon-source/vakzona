@@ -237,6 +237,64 @@ function Curriculum({ course, progress = null, current = null, onPick = null }) 
   );
 }
 
+// Tematika vásárlás előtt: a részletes leírás, a leckék listája, és leckénként a letölthető anyagok neve és típusa
+// (src/content/akademia/anyagok/<url-azonosító>.json, scripts/anyaglista.mjs). Maguk az anyagok csak hozzáféréssel nyílnak.
+function Syllabus({ course }) {
+  const count = course.materialCount;
+  return (
+    <section className={CSS.syllabus} aria-labelledby="tematika">
+      <h2 id="tematika" className={CSS.syllabusTitle}>Tematika</h2>
+      {course.html && <div className={`${ArticleCSS.body} ${CSS.syllabusText}`} dangerouslySetInnerHTML={{ __html: course.html }} />}
+      <div className={CSS.syllabusHead}>
+        <h3 className={CSS.syllabusSub}>Tananyag</h3>
+        <span className="meta">
+          {lessonCount(course)}
+          {count > 0 && ` · ${count} letölthető anyag`}
+        </span>
+      </div>
+      <div className={CSS.modules}>
+        {course.modules.map((m, mi) => (
+          <section key={mi} className={CSS.module}>
+            {m.title && (
+              <h4 className={CSS.moduleTitle}>
+                <span>{m.title}</span>
+                <span className={CSS.moduleCount}>{m.lessons.length} lecke</span>
+              </h4>
+            )}
+            <ol className={CSS.lessons}>
+              {m.lessons.map((l) => (
+                <li key={l.id} className={CSS.syllabusLesson}>
+                  <div className={CSS.lesson}>
+                    <span className={CSS.lockMark}><LockIcon size={13} /></span>
+                    <span className={CSS.lessonBtn}>
+                      <span>{l.title}</span>
+                      {l.length && <span className={CSS.length}>{l.length}</span>}
+                    </span>
+                  </div>
+                  {l.materials.length > 0 && (
+                    <ul className={CSS.materials} aria-label={`${l.title}: letölthető anyagok`}>
+                      {l.materials.map((a, i) => (
+                        <li key={i}>
+                          <span className={CSS.materialIcon}><DownloadIcon size={14} /></span>
+                          <span className={CSS.materialName}>{a.felirat}</span>
+                          {a.tipus && <span className={CSS.materialType}>{a.tipus}</span>}
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </li>
+              ))}
+            </ol>
+          </section>
+        ))}
+      </div>
+      {count > 0 && !course.free && (
+        <p className={CSS.syllabusNote}>Az anyagok a tanfolyam megnyitása után, leckénként tölthetők le.</p>
+      )}
+    </section>
+  );
+}
+
 // Felül a cím teljes szélességben; alatta bal oldalt a bemutató és a bevezető, jobb oldalt
 // (széles képernyőn ragadósan) a tanfolyam adatai és a belépés.
 function CourseLanding({ course, access, account = {} }) {
@@ -246,6 +304,7 @@ function CourseLanding({ course, access, account = {} }) {
     { value: course.lessons.length, label: "videólecke" },
     course.seconds > 0 && { value: formatLength(course.seconds), label: "videó összesen" },
     course.modules.length > 1 && { value: course.modules.length, label: "rész" },
+    course.materialCount > 0 && { value: course.materialCount, label: "letölthető anyag" },
   ].filter(Boolean);
 
   return (
@@ -260,6 +319,7 @@ function CourseLanding({ course, access, account = {} }) {
           <VideoPlayer url={course.intro} subtitles={course.introSubtitles} title="Bemutató" poster category={course.category}
         cover={course.cover} badge={{ src: course.logo, text: course.logoText }} />
           {course.introHtml && <div className={CSS.intro} dangerouslySetInnerHTML={{ __html: course.introHtml }} />}
+          <Syllabus course={course} />
           <CourseNotice compact title="Mielőtt elkezdi" />
         </div>
         <aside className={CSS.heroSide}>

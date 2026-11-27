@@ -19,6 +19,7 @@
 import { copyFileSync, existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { webcrypto as crypto } from "node:crypto";
+import { anyaglista } from "./anyaglista.mjs";
 
 const slug = process.argv[2];
 const password = process.env.VZ_JELSZO;
@@ -62,6 +63,7 @@ if (free) {
     if (lesson.felirat) copy("feliratok", lesson.felirat, id);
   }
   writeFileSync(join(root, "src", "content", "akademia", `${slug}.json`), JSON.stringify(content, null, 2) + "\n");
+  anyaglista(slug); // a letölthető anyagok nyilvános listája (név és típus)
   console.log(`Kész (szabad hozzáférés, titkosítás nélkül): src/content/akademia/${slug}.json, public/akademia/${slug}/`);
   process.exit(0);
 }
@@ -113,4 +115,5 @@ for (const [id, lesson] of Object.entries(lessons)) {
   }
 }
 await seal(new TextEncoder().encode(JSON.stringify(content)), join(out, "tartalom.enc"));
+anyaglista(slug); // a letölthető anyagok nyilvános listája (név és típus)
 console.log(`Kész: public/akademia/${slug}/ (${Object.keys(lessons).length} lecke, ${files} anyag, ${subtitles} felirat)`);

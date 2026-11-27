@@ -244,3 +244,27 @@ button.lessonBtn { cursor: pointer; }
   .card { padding: 22px 16px; }
   .stepper :global(.btn) { width: 100%; justify-content: center; }
 }
+
+/* ---------- tematika vásárlás előtt (CourseLanding → Syllabus) ---------- */
+.syllabus { margin: 48px 0 8px; padding-top: 40px; border-top: 1px solid var(--line); max-width: 760px; }
+.syllabusTitle { font-size: clamp(1.5rem, 2.4vw, 1.9rem); margin: 0 0 16px; letter-spacing: -0.03em; }
+.syllabusText > :first-child { margin-top: 0; }
+.syllabusHead { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap; margin-top: 32px; }
+.syllabusSub { font-size: 1.15rem; margin: 0; letter-spacing: -0.02em; }
+.syllabusLesson + .syllabusLesson { border-top: 1px solid #f1f5f9; }
+.materials { list-style: none; margin: -2px 0 8px; padding: 0 6px 0 40px; display: flex; flex-direction: column; gap: 4px; }
+.materials li { display: flex; align-items: baseline; gap: 8px; font-size: .84rem; line-height: 1.45; color: #475569; }
+.materialIcon { flex: none; align-self: center; display: grid; color: var(--accent); }
+.materialName { flex: 1; min-width: 0; }
+.materialType {
+  flex: none;
+  padding: 1px 8px;
+  border-radius: 999px;
+  background: var(--bg-soft);
+  border: 1px solid var(--line);
+  font-size: .68rem;
+  font-weight: 600;
+  letter-spacing: .04em;
+  color: var(--muted);
+}
+.syllabusNote { margin: 16px 0 0; font-size: .85rem; color: var(--muted); }

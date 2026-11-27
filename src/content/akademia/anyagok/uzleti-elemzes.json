@@ -1,0 +1,338 @@
+{
+  "10": [
+    {
+      "felirat": "S06 Kockázatnyilvántartás: sablon (Excel)",
+      "tipus": "Excel"
+    },
+    {
+      "felirat": "S06 Kockázatnyilvántartás: kitöltött példa (Excel)",
+      "tipus": "Excel"
+    }
+  ],
+  "11": [
+    {
+      "felirat": "S07 Lehetőségek és költség-haszon elemzés (NPV, ROI): sablon (Excel)",
+      "tipus": "Excel"
+    },
+    {
+      "felirat": "S07 Lehetőségek és költség-haszon elemzés (NPV, ROI): kitöltött példa (Excel)",
+      "tipus": "Excel"
+    }
+  ],
+  "12": [
+    {
+      "felirat": "S08 Szállítóértékelés súlyozott pontozással: sablon (Excel)",
+      "tipus": "Excel"
+    },
+    {
+      "felirat": "S08 Szállítóértékelés súlyozott pontozással: kitöltött példa (Excel)",
+      "tipus": "Excel"
+    }
+  ],
+  "13": [
+    {
+      "felirat": "S09 Üzleti indoklás: sablon (Word)",
+      "tipus": "Word"
+    },
+    {
+      "felirat": "S09 Üzleti indoklás: kitöltött példa (Word)",
+      "tipus": "Word"
+    },
+    {
+      "felirat": "S10 Projektalapító okirat: sablon (Word)",
+      "tipus": "Word"
+    },
+    {
+      "felirat": "S10 Projektalapító okirat: kitöltött példa (Word)",
+      "tipus": "Word"
+    }
+  ],
+  "14": [
+    {
+      "felirat": "S11 Üzleti elemzési terv és becslés: sablon (Excel)",
+      "tipus": "Excel"
+    },
+    {
+      "felirat": "S11 Üzleti elemzési terv és becslés: kitöltött példa (Excel)",
+      "tipus": "Excel"
+    }
+  ],
+  "15": [
+    {
+      "felirat": "S12 Érintettnyilvántartás, érintetti mátrix és RACI: sablon (Excel)",
+      "tipus": "Excel"
+    },
+    {
+      "felirat": "S12 Érintettnyilvántartás, érintetti mátrix és RACI: kitöltött példa (Excel)",
+      "tipus": "Excel"
+    }
+  ],
+  "16": [
+    {
+      "felirat": "S13 Irányítási és információkezelési megállapodás: sablon (Word)",
+      "tipus": "Word"
+    },
+    {
+      "felirat": "S13 Irányítási és információkezelési megállapodás: kitöltött példa (Word)",
+      "tipus": "Word"
+    }
+  ],
+  "17": [
+    {
+      "felirat": "S14 Interjúútmutató és jegyzetlap: sablon (Word)",
+      "tipus": "Word"
+    },
+    {
+      "felirat": "S14 Interjúútmutató és jegyzetlap: kitöltött példa (Word)",
+      "tipus": "Word"
+    }
+  ],
+  "18": [
+    {
+      "felirat": "S15 Feltárási terv: sablon (Excel)",
+      "tipus": "Excel"
+    },
+    {
+      "felirat": "S15 Feltárási terv: kitöltött példa (Excel)",
+      "tipus": "Excel"
+    }
+  ],
+  "19": [
+    {
+      "felirat": "S14 Interjúútmutató és jegyzetlap: sablon (Word)",
+      "tipus": "Word"
+    },
+    {
+      "felirat": "S14 Interjúútmutató és jegyzetlap: kitöltött példa (Word)",
+      "tipus": "Word"
+    }
+  ],
+  "20": [
+    {
+      "felirat": "S16 Workshop-terv és napirend: sablon (Word)",
+      "tipus": "Word"
+    },
+    {
+      "felirat": "S16 Workshop-terv és napirend: kitöltött példa (Word)",
+      "tipus": "Word"
+    }
+  ],
+  "21": [
+    {
+      "felirat": "S17 Megfigyelési jegyzőlap: sablon (Word)",
+      "tipus": "Word"
+    },
+    {
+      "felirat": "S17 Megfigyelési jegyzőlap: kitöltött példa (Word)",
+      "tipus": "Word"
+    }
+  ],
+  "23": [
+    {
+      "felirat": "S18 Követelményspecifikáció: sablon (Word)",
+      "tipus": "Word"
+    },
+    {
+      "felirat": "S18 Követelményspecifikáció: kitöltött példa (Word)",
+      "tipus": "Word"
+    }
+  ],
+  "24": [
+    {
+      "felirat": "S19 Felhasználói történetek és elfogadási kritériumok: sablon (Excel)",
+      "tipus": "Excel"
+    },
+    {
+      "felirat": "S19 Felhasználói történetek és elfogadási kritériumok: kitöltött példa (Excel)",
+      "tipus": "Excel"
+    }
+  ],
+  "25": [
+    {
+      "felirat": "S20 Használati eset leírása: sablon (Word)",
+      "tipus": "Word"
+    },
+    {
+      "felirat": "S20 Használati eset leírása: kitöltött példa (Word)",
+      "tipus": "Word"
+    }
+  ],
+  "30": [
+    {
+      "felirat": "S21 Döntési tábla és szerep- és jogosultságmátrix: sablon (Excel)",
+      "tipus": "Excel"
+    },
+    {
+      "felirat": "S21 Döntési tábla és szerep- és jogosultságmátrix: kitöltött példa (Excel)",
+      "tipus": "Excel"
+    }
+  ],
+  "31": [
+    {
+      "felirat": "S22 Nem funkcionális követelmények ellenőrzőlistája: sablon (Excel)",
+      "tipus": "Excel"
+    },
+    {
+      "felirat": "S22 Nem funkcionális követelmények ellenőrzőlistája: kitöltött példa (Excel)",
+      "tipus": "Excel"
+    }
+  ],
+  "32": [
+    {
+      "felirat": "S18 Követelményspecifikáció: sablon (Word)",
+      "tipus": "Word"
+    },
+    {
+      "felirat": "S18 Követelményspecifikáció: kitöltött példa (Word)",
+      "tipus": "Word"
+    }
+  ],
+  "34": [
+    {
+      "felirat": "S23 Nyomonkövethetőségi mátrix: sablon (Excel)",
+      "tipus": "Excel"
+    },
+    {
+      "felirat": "S23 Nyomonkövethetőségi mátrix: kitöltött példa (Excel)",
+      "tipus": "Excel"
+    }
+  ],
+  "35": [
+    {
+      "felirat": "S24 Rangsorolás (MoSCoW, ICE): sablon (Excel)",
+      "tipus": "Excel"
+    },
+    {
+      "felirat": "S24 Rangsorolás (MoSCoW, ICE): kitöltött példa (Excel)",
+      "tipus": "Excel"
+    }
+  ],
+  "37": [
+    {
+      "felirat": "S25 Változtatási kérelem és hatáselemzés: sablon (Word)",
+      "tipus": "Word"
+    },
+    {
+      "felirat": "S25 Változtatási kérelem és hatáselemzés: kitöltött példa (Word)",
+      "tipus": "Word"
+    },
+    {
+      "felirat": "S26 Tételnapló (döntés, kockázat, feltételezés, probléma, függőség): sablon (Excel)",
+      "tipus": "Excel"
+    },
+    {
+      "felirat": "S26 Tételnapló (döntés, kockázat, feltételezés, probléma, függőség): kitöltött példa (Excel)",
+      "tipus": "Excel"
+    }
+  ],
+  "40": [
+    {
+      "felirat": "S27 Átvételi tesztterv és go/no-go ellenőrzőlista: sablon (Excel)",
+      "tipus": "Excel"
+    },
+    {
+      "felirat": "S27 Átvételi tesztterv és go/no-go ellenőrzőlista: kitöltött példa (Excel)",
+      "tipus": "Excel"
+    },
+    {
+      "felirat": "S28 Átvételi nyilatkozat: sablon (Word)",
+      "tipus": "Word"
+    },
+    {
+      "felirat": "S28 Átvételi nyilatkozat: kitöltött példa (Word)",
+      "tipus": "Word"
+    }
+  ],
+  "41": [
+    {
+      "felirat": "S29 Átállási és kivezetési ellenőrzőlista: sablon (Word)",
+      "tipus": "Word"
+    },
+    {
+      "felirat": "S29 Átállási és kivezetési ellenőrzőlista: kitöltött példa (Word)",
+      "tipus": "Word"
+    }
+  ],
+  "43": [
+    {
+      "felirat": "S30 Megvalósítás utáni értékelés és tanulságok: sablon (Word)",
+      "tipus": "Word"
+    },
+    {
+      "felirat": "S30 Megvalósítás utáni értékelés és tanulságok: kitöltött példa (Word)",
+      "tipus": "Word"
+    }
+  ],
+  "47": [
+    {
+      "felirat": "S31 Elemzési állapotfelmérés: sablon (Excel)",
+      "tipus": "Excel"
+    },
+    {
+      "felirat": "S31 Elemzési állapotfelmérés: kitöltött példa (Excel)",
+      "tipus": "Excel"
+    }
+  ],
+  "01": [
+    {
+      "felirat": "A tanfolyam kísérő tankönyve (PDF)",
+      "tipus": "PDF"
+    },
+    {
+      "felirat": "Sablontár: mind a 31 sablon egy csomagban (ZIP, Word és Excel)",
+      "tipus": "ZIP"
+    },
+    {
+      "felirat": "Mind a 31 kitöltött példa egy csomagban (ZIP)",
+      "tipus": "ZIP"
+    }
+  ],
+  "06": [
+    {
+      "felirat": "S01 Üzleti igény és problémameghatározás: sablon (Word)",
+      "tipus": "Word"
+    },
+    {
+      "felirat": "S01 Üzleti igény és problémameghatározás: kitöltött példa (Word)",
+      "tipus": "Word"
+    },
+    {
+      "felirat": "S02 Gyökérok-elemzés munkalap (öt miért, halszálka): sablon (Word)",
+      "tipus": "Word"
+    },
+    {
+      "felirat": "S02 Gyökérok-elemzés munkalap (öt miért, halszálka): kitöltött példa (Word)",
+      "tipus": "Word"
+    }
+  ],
+  "07": [
+    {
+      "felirat": "S03 SWOT és üzletimodell-vászon: sablon (Word)",
+      "tipus": "Word"
+    },
+    {
+      "felirat": "S03 SWOT és üzletimodell-vászon: kitöltött példa (Word)",
+      "tipus": "Word"
+    }
+  ],
+  "08": [
+    {
+      "felirat": "S04 Folyamatelemzés (SIPOC, átfutási idő): sablon (Excel)",
+      "tipus": "Excel"
+    },
+    {
+      "felirat": "S04 Folyamatelemzés (SIPOC, átfutási idő): kitöltött példa (Excel)",
+      "tipus": "Excel"
+    }
+  ],
+  "09": [
+    {
+      "felirat": "S05 Célok és mutatók (SMART, KPI): sablon (Excel)",
+      "tipus": "Excel"
+    },
+    {
+      "felirat": "S05 Célok és mutatók (SMART, KPI): kitöltött példa (Excel)",
+      "tipus": "Excel"
+    }
+  ]
+}

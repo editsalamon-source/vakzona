@@ -1,0 +1,190 @@
+{
+  "11": [
+    {
+      "felirat": "M08 Réselemzés és ütemterv (sablon)",
+      "tipus": "Excel"
+    }
+  ],
+  "14": [
+    {
+      "felirat": "M21 Alapvetőjogi hatásvizsgálat (FRIA) (sablon)",
+      "tipus": "Word"
+    },
+    {
+      "felirat": "M22 Alkalmazói megfelelőségi csomag (sablon)",
+      "tipus": "Word"
+    },
+    {
+      "felirat": "M25 Beszállítói MI-kérdőív és szerződéses klauzulák (sablon)",
+      "tipus": "Word"
+    }
+  ],
+  "15": [
+    {
+      "felirat": "M23 Átláthatósági csomag (50. cikk) (sablon)",
+      "tipus": "Word"
+    },
+    {
+      "felirat": "M24 Minimális kockázat – adatlap és magatartási kódex (sablon)",
+      "tipus": "Word"
+    }
+  ],
+  "16": [
+    {
+      "felirat": "M18 Megfelelőségértékelési csomag (sablon)",
+      "tipus": "Word"
+    }
+  ],
+  "17": [
+    {
+      "felirat": "M19 Forgalomba hozatal utáni nyomonkövetési terv (sablon)",
+      "tipus": "Word"
+    },
+    {
+      "felirat": "M20 Súlyos váratlan esemény – eljárás és bejelentő lap (sablon)",
+      "tipus": "Word"
+    },
+    {
+      "felirat": "M20 Súlyos váratlan események naplója (sablon)",
+      "tipus": "Excel"
+    },
+    {
+      "felirat": "M26 Belső MI-audit ellenőrzőlista (sablon)",
+      "tipus": "Word"
+    },
+    {
+      "felirat": "M26 Belső MI-audit ellenőrzőlista (munkafüzet) (sablon)",
+      "tipus": "Excel"
+    }
+  ],
+  "01": [
+    {
+      "felirat": "AI Act megfelelőségi módszertan – kézikönyv",
+      "tipus": "PDF"
+    }
+  ],
+  "06": [
+    {
+      "felirat": "M01 MI-szabályzat (sablon)",
+      "tipus": "Word"
+    },
+    {
+      "felirat": "M02 Szerepkörök és RACI-mátrix (sablon)",
+      "tipus": "Word"
+    },
+    {
+      "felirat": "M09 MI-jártassági képzési terv (sablon)",
+      "tipus": "Word"
+    },
+    {
+      "felirat": "M09 MI-képzési nyilvántartás (sablon)",
+      "tipus": "Excel"
+    }
+  ],
+  "07": [
+    {
+      "felirat": "M03 MI-leltár (sablon)",
+      "tipus": "Excel"
+    }
+  ],
+  "08": [
+    {
+      "felirat": "M04 Hatály- és szerepkör-megállapító lap (sablon)",
+      "tipus": "Word"
+    }
+  ],
+  "09-plusz": [
+    {
+      "felirat": "F3 – Magyarázó példa: kockázati besorolás",
+      "tipus": "PDF"
+    },
+    {
+      "felirat": "R1 · M05 Kockázati besorolási jegyzőkönyv (kitöltött példa)",
+      "tipus": "Word"
+    },
+    {
+      "felirat": "R2 · M05 Kockázati besorolási jegyzőkönyv (kitöltött példa)",
+      "tipus": "Word"
+    },
+    {
+      "felirat": "R4 · M05 Kockázati besorolási jegyzőkönyv (kitöltött példa)",
+      "tipus": "Word"
+    },
+    {
+      "felirat": "R4 · M06 A 6. cikk (3) bekezdés szerinti értékelés (kitöltött példa)",
+      "tipus": "Word"
+    },
+    {
+      "felirat": "R5 · M07 Tiltott gyakorlat – kivezetési terv (kitöltött példa)",
+      "tipus": "Word"
+    }
+  ],
+  "09a": [
+    {
+      "felirat": "M07 Tiltott gyakorlat – észlelési és kivezetési terv (sablon)",
+      "tipus": "Word"
+    }
+  ],
+  "09b": [
+    {
+      "felirat": "M05 Kockázati besorolási jegyzőkönyv (sablon)",
+      "tipus": "Word"
+    }
+  ],
+  "09c": [
+    {
+      "felirat": "M06 A 6. cikk (3) bekezdés szerinti értékelés (sablon)",
+      "tipus": "Word"
+    }
+  ],
+  "13a": [
+    {
+      "felirat": "M10 Kockázatkezelési terv (sablon)",
+      "tipus": "Word"
+    },
+    {
+      "felirat": "M10 Kockázati regiszter (sablon)",
+      "tipus": "Excel"
+    },
+    {
+      "felirat": "M11 Adatkormányzási dokumentáció (sablon)",
+      "tipus": "Word"
+    }
+  ],
+  "13b": [
+    {
+      "felirat": "M12 Műszaki dokumentáció (IV. melléklet) (sablon)",
+      "tipus": "Word"
+    },
+    {
+      "felirat": "M13 Naplózási koncepció (sablon)",
+      "tipus": "Word"
+    },
+    {
+      "felirat": "M14 Használati utasítás (sablon)",
+      "tipus": "Word"
+    }
+  ],
+  "13c": [
+    {
+      "felirat": "M15 Emberi felügyeleti terv (sablon)",
+      "tipus": "Word"
+    },
+    {
+      "felirat": "M16 Teszt- és validációs jelentés (sablon)",
+      "tipus": "Word"
+    }
+  ],
+  "13d": [
+    {
+      "felirat": "M17 Minőségirányítási rendszer – kézikönyv (sablon)",
+      "tipus": "Word"
+    }
+  ],
+  "C": [
+    {
+      "felirat": "M25 Beszállítói MI-kérdőív és szerződéses klauzulák (sablon)",
+      "tipus": "Word"
+    }
+  ]
+}

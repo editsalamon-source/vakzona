@@ -1,0 +1,380 @@
+{
+  "01": [
+    {
+      "felirat": "AI stratégia módszertan – kézikönyv (v2)",
+      "tipus": "PDF"
+    }
+  ],
+  "07a": [
+    {
+      "felirat": "M1-01 Projektalapító okirat (sablon)",
+      "tipus": "Word"
+    },
+    {
+      "felirat": "M1-02 Dokumentumbekérő lista (sablon)",
+      "tipus": "Excel"
+    },
+    {
+      "felirat": "M1-03 Érintetti térkép (sablon)",
+      "tipus": "Excel"
+    },
+    {
+      "felirat": "M1-04 RACI-mátrix (sablon)",
+      "tipus": "Excel"
+    },
+    {
+      "felirat": "M1-05 Szponzori indító interjú (sablon)",
+      "tipus": "Word"
+    },
+    {
+      "felirat": "M1-06 Projektindító műhelymunka (sablon)",
+      "tipus": "Word"
+    },
+    {
+      "felirat": "M1-07 SM melléklet (sablon)",
+      "tipus": "Word"
+    }
+  ],
+  "07a-plusz": [
+    {
+      "felirat": "M1 – Magyarázó példa",
+      "tipus": "PDF"
+    }
+  ],
+  "07b": [
+    {
+      "felirat": "M2-01 Vezetői interjú-útmutató (sablon)",
+      "tipus": "Word"
+    },
+    {
+      "felirat": "M2-02 Interjú-összesítő (sablon)",
+      "tipus": "Excel"
+    },
+    {
+      "felirat": "M2-03 Ambíció-műhelymunka (sablon)",
+      "tipus": "Word"
+    },
+    {
+      "felirat": "M2-04 Ambíció-munkalap (sablon)",
+      "tipus": "Excel"
+    },
+    {
+      "felirat": "M2-05 AI-charta (sablon)",
+      "tipus": "Word"
+    },
+    {
+      "felirat": "M2-06 Értéklogika-keret (sablon)",
+      "tipus": "Word"
+    },
+    {
+      "felirat": "M2-07 Külső keretek (sablon)",
+      "tipus": "Excel"
+    }
+  ],
+  "07b-plusz": [
+    {
+      "felirat": "M2 – Magyarázó példa",
+      "tipus": "PDF"
+    }
+  ],
+  "08a": [
+    {
+      "felirat": "M3-01 Technológiai adatbekérő (sablon)",
+      "tipus": "Excel"
+    },
+    {
+      "felirat": "M3-02 AI-használati leltár (sablon)",
+      "tipus": "Excel"
+    },
+    {
+      "felirat": "M3-03 Árnyék-AI kérdőív (sablon)",
+      "tipus": "Word"
+    },
+    {
+      "felirat": "M3-04 Árnyék-AI kiértékelő (sablon)",
+      "tipus": "Excel"
+    },
+    {
+      "felirat": "M3-05 Adatvagyon-térkép (sablon)",
+      "tipus": "Excel"
+    },
+    {
+      "felirat": "M3-06 AI-érettségi kérdőív és értékelő (sablon)",
+      "tipus": "Excel"
+    },
+    {
+      "felirat": "M3-07 CSA melléklet (sablon)",
+      "tipus": "Word"
+    }
+  ],
+  "08a-plusz": [
+    {
+      "felirat": "M3 – Magyarázó példa",
+      "tipus": "PDF"
+    }
+  ],
+  "08b": [
+    {
+      "felirat": "M4-01 Előzetes folyamatkérdőív (sablon)",
+      "tipus": "Word"
+    },
+    {
+      "felirat": "M4-02 Folyamatlista és kiválasztás (sablon)",
+      "tipus": "Excel"
+    },
+    {
+      "felirat": "M4-03 Folyamatgazdai interjú-útmutató (sablon)",
+      "tipus": "Word"
+    },
+    {
+      "felirat": "M4-04 Feltáró műhelymunka (sablon)",
+      "tipus": "Word"
+    },
+    {
+      "felirat": "M4-05 Folyamattérkép AI-jelöltekkel (sablon)",
+      "tipus": "Excel"
+    },
+    {
+      "felirat": "M4-06 Kezdeményezések listája (sablon)",
+      "tipus": "Excel"
+    },
+    {
+      "felirat": "M4-07 Újratervező műhelymunka (sablon)",
+      "tipus": "Word"
+    },
+    {
+      "felirat": "M4-08 Célfolyamat-vázlat és hatáselemzés (sablon)",
+      "tipus": "Excel"
+    }
+  ],
+  "08b-plusz": [
+    {
+      "felirat": "M4 – Magyarázó példa",
+      "tipus": "PDF"
+    }
+  ],
+  "09a": [
+    {
+      "felirat": "M5-01 Esetportfólió-munkafüzet (sablon)",
+      "tipus": "Excel"
+    },
+    {
+      "felirat": "M5-02 Esetkártya és értéklogika-kártya (sablon)",
+      "tipus": "Word"
+    },
+    {
+      "felirat": "M5-03 Értékfelelősi egyeztetés (sablon)",
+      "tipus": "Word"
+    },
+    {
+      "felirat": "M5-04 SOD melléklet (sablon)",
+      "tipus": "Word"
+    }
+  ],
+  "09a-plusz": [
+    {
+      "felirat": "M5 – Magyarázó példa",
+      "tipus": "PDF"
+    }
+  ],
+  "09b": [
+    {
+      "felirat": "M6-01 Megoldásminta- és autonómia-munkalap (sablon)",
+      "tipus": "Word"
+    },
+    {
+      "felirat": "M6-02 Ágens-adatlap (előzetes) (sablon)",
+      "tipus": "Word"
+    },
+    {
+      "felirat": "M6-03 Véleményezési lap (sablon)",
+      "tipus": "Word"
+    }
+  ],
+  "09b-plusz": [
+    {
+      "felirat": "M6 – Magyarázó példa",
+      "tipus": "PDF"
+    }
+  ],
+  "09c": [
+    {
+      "felirat": "M7-01 Adatkészségi kártya (sablon)",
+      "tipus": "Word"
+    },
+    {
+      "felirat": "M7-02 Adatminta-bekérő (sablon)",
+      "tipus": "Word"
+    },
+    {
+      "felirat": "M7-03 Adatvédelmi ellenőrzőlista (sablon)",
+      "tipus": "Word"
+    }
+  ],
+  "09c-plusz": [
+    {
+      "felirat": "M7 – Magyarázó példa",
+      "tipus": "PDF"
+    }
+  ],
+  "09d": [
+    {
+      "felirat": "M8-01 Priorizáló műhelymunka (sablon)",
+      "tipus": "Word"
+    },
+    {
+      "felirat": "M8-02 MI-rendelet gyorsbesorolás (sablon)",
+      "tipus": "Word"
+    },
+    {
+      "felirat": "M8-03 Portfóliódöntési előterjesztés (sablon)",
+      "tipus": "Word"
+    },
+    {
+      "felirat": "M8-04 ICE-pontozólap (sablon)",
+      "tipus": "Excel"
+    }
+  ],
+  "09d-plusz": [
+    {
+      "felirat": "M8 – Magyarázó példa",
+      "tipus": "PDF"
+    }
+  ],
+  "10a": [
+    {
+      "felirat": "M9-01 Szolgáltatóértékelő lap (sablon)",
+      "tipus": "Excel"
+    },
+    {
+      "felirat": "M9-02 Technológiai elvek – munkalap (sablon)",
+      "tipus": "Word"
+    },
+    {
+      "felirat": "M9-03 Beszerzési ellenőrzőlista (sablon)",
+      "tipus": "Word"
+    }
+  ],
+  "10a-plusz": [
+    {
+      "felirat": "M9 – Magyarázó példa",
+      "tipus": "PDF"
+    }
+  ],
+  "10b": [
+    {
+      "felirat": "M10-01 AI-rendszer- és ágensleltár (sablon)",
+      "tipus": "Excel"
+    },
+    {
+      "felirat": "M10-02 Kockázatnyilvántartás (sablon)",
+      "tipus": "Excel"
+    },
+    {
+      "felirat": "M10-03 Irányítási modell (sablon)",
+      "tipus": "Word"
+    },
+    {
+      "felirat": "M10-04 AI-szabályzat váza (sablon)",
+      "tipus": "Word"
+    },
+    {
+      "felirat": "M10-05 Elfogadható használati szabályzat váza (sablon)",
+      "tipus": "Word"
+    }
+  ],
+  "10c-plusz": [
+    {
+      "felirat": "M10 – Magyarázó példa",
+      "tipus": "PDF"
+    }
+  ],
+  "10d": [
+    {
+      "felirat": "M11-01 Képzési mátrix és részvételi nyilvántartás (sablon)",
+      "tipus": "Excel"
+    },
+    {
+      "felirat": "M11-02 Működési modell és szerepkör-terv (sablon)",
+      "tipus": "Word"
+    },
+    {
+      "felirat": "M11-03 Szerepkör-leírások (sablon)",
+      "tipus": "Word"
+    },
+    {
+      "felirat": "M11-04 Elfogadtatási és kommunikációs terv (sablon)",
+      "tipus": "Word"
+    }
+  ],
+  "10d-plusz": [
+    {
+      "felirat": "M11 – Magyarázó példa",
+      "tipus": "PDF"
+    }
+  ],
+  "10e": [
+    {
+      "felirat": "M12-01 Beszerzési utak összevetése (sablon)",
+      "tipus": "Excel"
+    },
+    {
+      "felirat": "M12-02 Költségirányítási (FinOps) elvek és ellenőrzőlista (sablon)",
+      "tipus": "Word"
+    },
+    {
+      "felirat": "M12-03 Közszféra üzleti indoklás váza (sablon)",
+      "tipus": "Word"
+    }
+  ],
+  "10e-plusz": [
+    {
+      "felirat": "M12 – Magyarázó példa",
+      "tipus": "PDF"
+    }
+  ],
+  "11a": [
+    {
+      "felirat": "M13-01 Az első 90 nap terve (sablon)",
+      "tipus": "Excel"
+    },
+    {
+      "felirat": "M13-02 Döntési kapu ellenőrzőlista és jegyzőkönyv (sablon)",
+      "tipus": "Word"
+    },
+    {
+      "felirat": "M13-03 Stratégiai terv (SP) váza (sablon)",
+      "tipus": "Word"
+    },
+    {
+      "felirat": "M13-04 Vezetői prezentáció váza (sablon)",
+      "tipus": "Word"
+    }
+  ],
+  "11b-plusz": [
+    {
+      "felirat": "M13 – Magyarázó példa",
+      "tipus": "PDF"
+    }
+  ],
+  "12a": [
+    {
+      "felirat": "M14-01 Negyedéves felülvizsgálati jelentés váza (sablon)",
+      "tipus": "Word"
+    },
+    {
+      "felirat": "M14-02 Kivezetési ellenőrzőlista és terv (sablon)",
+      "tipus": "Word"
+    },
+    {
+      "felirat": "M14-03 Éves és rendkívüli felülvizsgálat váza (sablon)",
+      "tipus": "Word"
+    }
+  ],
+  "12a-plusz": [
+    {
+      "felirat": "M14 – Magyarázó példa",
+      "tipus": "PDF"
+    }
+  ]
+}
