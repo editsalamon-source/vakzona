@@ -1,0 +1,103 @@
+WEBVTT
+
+00:00:00.600 --> 00:00:13.824
+Ha leülsz egy fejlesztői megbeszélésre, záporoznak a szavak: kód, commit, teszt, deploy. Ez a sorozat lefordítja neked ezt a világot hétköznapi nyelvre.
+
+00:00:14.174 --> 00:00:23.630
+Az első részben a legalapvetőbb kérdéssel kezdünk: mi a szoftver, és mi az a kód, amin a fejlesztők egész nap dolgoznak?
+
+00:00:25.130 --> 00:00:34.994
+Előbb nézzük meg, hová tartunk. A sorozat tizenkét rövid részből áll, és semmilyen előismeretet nem feltételez.
+
+00:00:35.344 --> 00:00:44.152
+Az első blokkban lerakjuk az alapokat: mi a kód, hogyan készül egy szoftver, és milyen eszközökkel dolgozik egy fejlesztő.
+
+00:00:44.502 --> 00:00:57.438
+A másodikban megnézzük, hogyan dolgoznak együtt biztonságosan: mentési pontok, közös munka, tesztelés, az út az élesig, és mi történik, ha valami elromlik.
+
+00:00:57.788 --> 00:01:08.492
+Végül belép a képbe a mesterséges intelligencia: hogyan működik, mit jelent az MI-ágens, angolul AI agent, és mi ebben a te szereped.
+
+00:01:09.992 --> 00:01:28.904
+Kezdjük két alapszóval. A hardver, angolul hardware, mindaz, amit megfoghatsz: a processzor, a memória, a merevlemez, a képernyő. A képen egy kinyitott laptop-merevlemez látszik: ezen tárolódnak az adatok.
+
+00:01:29.254 --> 00:01:39.286
+A szoftver, angolul software, az, amit nem foghatsz meg: utasítások, amelyek megmondják a hardvernek, mit csináljon.
+
+00:01:39.636 --> 00:01:50.628
+Egy hasonlattal: a hardver a zongora, a szoftver a kotta. A zongora magától néma, a kotta mondja meg, mit szólaltasson meg.
+
+00:01:52.128 --> 00:01:58.824
+Mi a program, angolul program? Leginkább egy receptre hasonlít.
+
+00:01:59.174 --> 00:02:15.350
+A recept lépésről lépésre leírja, mit kell tenni, és a szakács követi. A számítógép is ilyen szakács, csak sokkal szigorúbb: betű szerint végrehajtja, amit leírtak neki, akkor is, ha az hibás.
+
+00:02:15.700 --> 00:02:37.252
+A felhasználóknak szánt programot alkalmazásnak hívjuk, angolul application, röviden app. Ilyen a böngésző vagy egy webshop. Az alkalmazások egy alapprogramon futnak: ez az operációs rendszer, angolul operating system, röviden OS, például a Windows vagy az Android.
+
+00:02:38.752 --> 00:02:48.376
+És mi a kód? Ez egy valódi képernyőkép a GitHub nevű oldalról, ahol a fejlesztők a kódjukat tárolják és megosztják.
+
+00:02:48.726 --> 00:03:04.326
+Amit látsz, az a forráskód, angolul source code: egyszerű szöveg egy fájlban, angolul file. Ember írja, és ember is olvassa, ezért vannak benne angol szavak és magyarázó megjegyzések.
+
+00:03:04.676 --> 00:03:21.596
+Ez a tizennyolc soros program egy ár adóval növelt összegét számolja ki. A lényeg egyetlen sor: az árat megszorozza eggyel, plusz az adókulccsal. Egy nagy rendszer ugyanilyen sorokból áll, csak sok millió van belőlük.
+
+00:03:23.096 --> 00:03:34.760
+Kódot nemcsak a fejlesztők látnak: minden weboldal mögött ott van. Ez a magyar Wikipédia szoftverről szóló szócikke, ahogy a böngésző mutatja.
+
+00:03:35.110 --> 00:03:55.102
+Ez pedig ugyanannak az oldalnak a forrása. Te is megnézheted bármelyik oldalon: jobb egérgomb, majd az oldal forrásának megtekintése. Ami itt látszik, az a HTML, angolul HyperText Markup Language: ez a nyelv írja le, mi legyen a weboldalon.
+
+00:03:56.602 --> 00:04:09.946
+A kódot programozási nyelven írják, angolul programming language. Ahogy az emberi nyelveknek, ezeknek is van nyelvtanuk: ezt szintaxisnak hívjuk, angolul syntax.
+
+00:04:10.296 --> 00:04:37.824
+Sok nyelv van, és mindegyik másban erős. A Python adatelemzésre és mesterséges intelligenciához népszerű: a jobb oldalon a hivatalos oldala látszik. A JavaScript a weboldalak nyelve. A Java és a C# nagy vállalati rendszerek kedvelt nyelvei. Az SQL, angolul Structured Query Language, pedig az adatbázisok kérdezőnyelve.
+
+00:04:38.174 --> 00:04:50.270
+Egyiket sem kell megtanulnod. Elég annyit tudni: ha a fejlesztő azt mondja, Pythonban írjuk, az olyan, mintha azt mondaná, németül írjuk a levelet.
+
+00:04:51.770 --> 00:05:12.002
+De hogyan érti meg mindezt a gép? Valójában sehogy. A számítógép agya, a processzor, angolul CPU, vagyis Central Processing Unit, csak egyesekből és nullákból álló utasításokat ismer. Ez a gépi kód, angolul machine code.
+
+00:05:12.352 --> 00:05:28.552
+Ezért a forráskódot le kell fordítani. Ezt végzi a fordítóprogram, angolul compiler, amely előre lefordítja az egészet, vagy az értelmező, angolul interpreter, amely futás közben, soronként fordít.
+
+00:05:28.902 --> 00:05:39.678
+Amikor a fejlesztő azt mondja, hogy fut a program, angolul run, azt érti rajta, hogy a processzor éppen végrehajtja a lefordított utasításokat.
+
+00:05:41.178 --> 00:05:54.954
+A kód régen szó szerint kézzel fogható volt. Az ötvenes és a hetvenes évek között gyakran minden programsort egy lyukkártyára ütöttek, angolul punched card, és a gép a lyukakat olvasta be.
+
+00:05:55.304 --> 00:06:11.552
+Ezen a híres, 1969-es fényképen Margaret Hamilton áll, aki az Apollo-holdprogram fedélzeti szoftverét fejlesztő csapatot vezette. Mellette a kód kinyomtatott listái, majdnem olyan magasak, mint ő.
+
+00:06:11.902 --> 00:06:25.294
+Ma egy nagy rendszer kódja ennél is sokkal nagyobb. Ezt már nem egyetlen ember írja: csapatok dolgoznak rajta, szigorú szabályok szerint. Erről szól a következő rész.
+
+00:06:26.794 --> 00:06:40.162
+Most nézzük a sorozat közös példáját: egy webshopot. A megrendelő követelménye, angolul requirement, egyszerű: húszezer forinttól tíz százalék kedvezmény jár.
+
+00:06:40.512 --> 00:06:47.880
+A fejlesztő ezt írja a kódba: ha a kosár összege nagyobb, mint húszezer, jár a kedvezmény.
+
+00:06:48.230 --> 00:07:10.070
+Látod a hibát? Aki pontosan húszezer forintért vásárol, nem kap kedvezményt, pedig a követelmény szerint járna. A húszezer forinttól ugyanis azt jelenti: húszezer vagy több. Egyetlen karakter hiányzik a kódból. Az ilyen hibát angolul bugnak hívják.
+
+00:07:10.420 --> 00:07:21.412
+Ezt a kis hibát végigkövetjük a sorozaton: hogyan lesz belőle hibajegy, hogyan javítják, tesztelik és élesítik, végül hogyan oldja meg egy MI-ágens.
+
+00:07:22.912 --> 00:07:30.520
+Foglaljuk össze. A hardver a gép, a szoftver az utasítás, amely működteti.
+
+00:07:30.870 --> 00:07:38.934
+A forráskód ember által írt szöveg, programozási nyelven. A gép csak lefordítva érti.
+
+00:07:39.284 --> 00:07:50.660
+A gép betű szerint követi a kódot, ezért egy apró eltérés a követelménytől is hibát okoz. Itt kezdődik a te munkád is: a pontos követelmény.
+
+00:07:51.010 --> 00:07:59.554
+A következő részben megnézzük, hogyan készül egy szoftver: kik dolgoznak rajta, és hogyan lesz egy ötletből feladat.

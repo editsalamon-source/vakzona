@@ -1,0 +1,91 @@
+WEBVTT
+
+00:00:00.600 --> 00:00:12.144
+Emlékszel, amikor egy számítógépes játékban mentettél egy nehéz pálya előtt? Ha elbuktál, nem az elejéről kezdted, hanem a mentéstől.
+
+00:00:12.494 --> 00:00:32.030
+A fejlesztők pontosan így dolgoznak. Ebben a részben megnézzük, hogyan mentik el a munkájukat lépésről lépésre, és hogyan térnek vissza, ha valami elromlik. Megismered a Gitet, a commitot, és azt is, hogyan látszik, mi változott a kódban.
+
+00:00:33.530 --> 00:00:49.514
+Ismerős ez a kép? Ajánlat végleges, ajánlat végleges kettő, ajánlat végleges javított. Így próbáljuk követni egy dokumentum változatait, és előbb-utóbb senki sem tudja, melyik az igazi.
+
+00:00:49.864 --> 00:01:06.712
+A fejlesztők erre külön rendszert használnak: ez a verziókezelés, angolul version control. Minden változás egy mentési pont, sorban egymás után, és mindegyikről tudjuk, ki, mikor és miért készítette.
+
+00:01:07.062 --> 00:01:20.910
+Így bármikor megnézhetjük, mi változott, és szükség esetén visszaléphetünk egy korábbi, működő állapotra. Olyan ez, mint a játék mentései, csak az egész csapatnak.
+
+00:01:22.410 --> 00:01:32.346
+A legelterjedtebb verziókezelő rendszer a Git. Ez a hivatalos oldala: ingyenes és nyílt forrású, bárki használhatja.
+
+00:01:32.696 --> 00:01:53.576
+A Gitet Linus Torvalds készítette 2005-ben. Ő alkotta meg korábban a Linux operációs rendszer magját is, és a Gitre azért volt szüksége, hogy a Linuxon dolgozó rengeteg fejlesztő munkáját kézben tartsa. A Linux ma rengeteg szerveren és minden androidos telefonban ott fut.
+
+00:01:53.926 --> 00:02:07.558
+A Git elosztott rendszer, angolul distributed: minden fejlesztő gépén ott van a teljes tároló, az összes korábbi változattal együtt. Ha egy gép tönkremegy, a munka nem vész el.
+
+00:02:09.058 --> 00:02:32.674
+A Git mentési pontjának neve commit. Magyarul néha véglegesítésnek hívják, de a fejlesztők szinte mindig angolul mondják: commitolni, vagyis elmenteni a változásokat. Ahogy a játékban, itt is a fejlesztő dönti el, mikor ment: általában akkor, amikor egy kis, önálló lépéssel elkészült.
+
+00:02:33.024 --> 00:02:48.792
+Egy commit nemcsak a módosított fájlokat tartalmazza, hanem azt is, ki készítette és mikor, valamint egy egyedi azonosítót. Ez egy hosszú betű- és számsor, amelynek a gyakorlatban csak az elejét szokták használni.
+
+00:02:49.142 --> 00:03:00.230
+És van egy rövid szöveges leírása is: ez a commit-üzenet, angolul commit message. Ebből tudjuk meg később, miért történt a változás.
+
+00:03:01.730 --> 00:03:07.874
+A jó commit-üzenet aranyat ér. Hasonlítsd össze ezt a kettőt.
+
+00:03:08.224 --> 00:03:17.344
+Az első csak annyit mond: javítás. Fél év múlva senki sem fogja tudni, mit javítottak és miért.
+
+00:03:17.694 --> 00:03:35.454
+A második elmondja, mi változott, és hivatkozik a hibajegy számára is. Ha a csapat így dolgozik, bármelyik követelményről vissza lehet keresni, melyik kódváltozás valósította meg. Elemzőként ez neked is hasznos nyom.
+
+00:03:36.954 --> 00:03:53.730
+A commitok sora adja a projekt előzményeit, angolul history. A fejlesztők a log paranccsal nézik meg, ami angolul naplót jelent. Olyan ez, mint egy hajónapló: minden bejegyzés dátummal és aláírással.
+
+00:03:54.080 --> 00:04:07.832
+Ez maga a Git saját tárolójának előzménye a GitHubon. Minden sor egy commit: fent az üzenete, alatta a szerző és az időpont. A neveket itt elmostuk.
+
+00:04:08.182 --> 00:04:21.574
+Jobb oldalt az azonosító eleje látszik. Ebben a tárolóban 2005-ig visszamenőleg megvan minden változás: húsz év munkája, lépésről lépésre visszakereshetően.
+
+00:04:23.074 --> 00:04:34.714
+És mi változott pontosan egy commitban? Ezt mutatja a különbség, angolul diff. Ez egy valódi commit egy nyilvános Python-tárolóból.
+
+00:04:35.064 --> 00:04:52.944
+A piros sor a régi változat, amelyet kitöröltek, a zöld az új, amely a helyére került. Egyetlen szám változott: tizenháromról tizenkettőre. A sorok előtti számok azt mutatják, hányadik sorról van szó a fájlban.
+
+00:04:53.294 --> 00:05:11.582
+A commit-üzenet szerint ez is határérték-hiba volt: egy ciklus eggyel kevesebbszer futott le, mint kellett volna. Ugyanaz a hibatípus, mint a webshopunké. Az ilyet angolul off-by-one hibának hívják, vagyis eggyel elcsúszott hibának.
+
+00:05:13.082 --> 00:05:20.954
+Mi van, ha egy commit hibát okoz? Ilyenkor jön a visszaállítás, angolul revert.
+
+00:05:21.304 --> 00:05:33.520
+A Git ilyenkor nem radírozza ki a hibás commitot. Ehelyett egy új commitot készít, amely pontosan az ellenkezőjét teszi: visszavonja a hibás változást.
+
+00:05:33.870 --> 00:05:53.670
+Olyan ez, mint a könyvelésben a sztornó: nem tépik ki a lapot, hanem egy új tétellel helyesbítenek. Így az előzmények teljesek maradnak, és később is látszik, mi történt. Ezért nem kell félni a hibától: a mentési pontokból mindig van út visszafelé.
+
+00:05:55.170 --> 00:06:10.938
+És most a webshopunk. A fejlesztő kijavítja a hibás sort: a nagyobb jel mellé egy egyenlőségjel kerül. Így a feltétel már az, hogy nagyobb vagy egyenlő, vagyis húszezer forinttól jár a kedvezmény.
+
+00:06:11.288 --> 00:06:19.688
+A diff pontosan ezt mutatja: piros a régi sor, zöld az új. Egyetlen karakter a különbség.
+
+00:06:20.038 --> 00:06:41.950
+Ezután commitolja a javítást ezzel az üzenettel: Kedvezmény 20 000 forinttól is jár, és mellé a hibajegy számát. Az új mentési pont bekerül az előzmények közé, a lista tetejére. Ha valaki egyszer megkérdezi, mikor és miért változott a kedvezmény szabálya, ez a commit lesz a válasz.
+
+00:06:43.450 --> 00:06:53.890
+Foglaljuk össze. A verziókezelés minden változást mentési pontként őriz meg. A legelterjedtebb eszköze a Git.
+
+00:06:54.240 --> 00:07:03.696
+Egy commit a változásból, a szerzőből, az időpontból és egy üzenetből áll. A jó üzenet elmondja, mi változott és miért.
+
+00:07:04.046 --> 00:07:11.942
+A diff megmutatja, mi változott, a revert pedig nyomtalanítás nélkül visszavonja a hibás változást.
+
+00:07:12.292 --> 00:07:25.828
+A javítás egyelőre csak a fejlesztő gépén van. A következő részben megnézzük, hogyan dolgozik egy csapat közösen ugyanazon a kódon: jön a branch, a merge és a pull request.

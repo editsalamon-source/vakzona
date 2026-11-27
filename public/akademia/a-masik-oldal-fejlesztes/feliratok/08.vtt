@@ -1,0 +1,97 @@
+WEBVTT
+
+00:00:00.600 --> 00:00:10.632
+Eddig arról volt szó, hogyan jut el egy javítás biztonságosan az élesbe. De mi történik, ha egy hiba mégis átcsúszik?
+
+00:00:10.982 --> 00:00:21.470
+Ebben a részben megnézzük, hogyan veszik észre, keresik meg és javítják ki a fejlesztők a hibát, és hogyan tanulnak belőle, hogy ne ismétlődjön meg.
+
+00:00:22.970 --> 00:00:41.570
+Kezdjük egy híres történettel. 1947 szeptemberében a Harvard Egyetem Mark II nevű számítógépe hibásan működött. A kezelők átvizsgálták, és az egyik relében, vagyis egy apró kapcsolóban, egy molylepkét találtak.
+
+00:00:41.920 --> 00:00:53.992
+A lepkét beragasztották a gép naplójába, és mellé írták: ez az első valódi eset, amikor bogarat találtak. Ezt a naplóoldalt ma múzeum őrzi.
+
+00:00:54.342 --> 00:01:18.774
+A történetet Grace Hopper, a számítástechnika egyik úttörője tette híressé. A hiba angol neve, a bug, vagyis bogár, a mérnökök nyelvében már korábban is élt, de azóta a számítógépekhez kötődik. A hiba megkeresése és kijavítása pedig a hibakeresés, angolul debugging: szó szerint bogártalanítás.
+
+00:01:20.274 --> 00:01:31.722
+Két szót érdemes megkülönböztetni. A hiba, angolul bug, a kódban van: valami nem úgy működik, ahogy a követelmény előírja.
+
+00:01:32.072 --> 00:01:52.208
+Az üzemzavar, angolul incident, akkor van, amikor a hiba élesben, a felhasználóknál okoz gondot: lassú az oldal, nem lehet fizetni, vagy rossz az ár. Ilyenkor nem az a kérdés, ki hibázott, hanem az, hogyan áll helyre minél hamarabb a szolgáltatás.
+
+00:01:52.558 --> 00:02:03.886
+Sok cég nyilvánosan is közzéteszi az üzemzavarait. Ez a GitHub állapotoldala: minden sor egy valódi incidens, a kezdetétől a megoldásáig.
+
+00:02:05.386 --> 00:02:21.322
+A hibák nagy része bejelentésből derül ki. Ez egy valódi hibajelentés, angolul bug report, egy nyílt forráskódú vállalatirányítási rendszer GitHub-oldaláról. A címe szerint a kedvezmény nem frissül.
+
+00:02:21.672 --> 00:02:29.520
+A GitHubon a hibajegy neve issue, és címkét kap: ezt a jegyet piros címkével hibának jelölték.
+
+00:02:29.870 --> 00:02:45.302
+Egy jó hibajelentés három kérdésre felel: mit csináltál lépésről lépésre, mit vártál, és mi történt helyette. Ha a BA így írja meg a jegyet, a fejlesztő gyorsan elő tudja idézni a hibát.
+
+00:02:46.802 --> 00:03:02.522
+De honnan tudja a fejlesztő, mi történt pontosan? A programok folyamatosan naplót írnak, angolul log. Olyan ez, mint a hajónapló: minden fontos eseményt időbélyeggel feljegyeznek.
+
+00:03:02.872 --> 00:03:11.224
+Ebben a szemléltető naplóban látszik a webshop hibája: a kosár összege húszezer forint, a kedvezmény mégis nulla.
+
+00:03:11.574 --> 00:03:20.790
+A naplósorok szintet is kapnak: tájékoztató, figyelmeztetés vagy hiba, angolul info, warning és error.
+
+00:03:22.290 --> 00:03:37.266
+A naplót persze nem olvassa folyamatosan senki. Erre való a figyelés, angolul monitoring: programok mérik a rendszer állapotát, például a hibák számát vagy a válaszidőt, és grafikonon mutatják.
+
+00:03:37.616 --> 00:03:56.960
+Olyan ez, mint az autó műszerfala. Amíg minden rendben van, rá se nézel. Ha viszont valami eltér a megszokottól, kigyullad egy lámpa: ez a riasztás, angolul alert, amely azonnal értesíti az ügyeletes fejlesztőt, angolul on-call.
+
+00:03:58.460 --> 00:04:11.252
+Amikor kiderül a hiba, kezdődik a hibakeresés. Az első lépés mindig az, hogy a fejlesztő előidézze: ugyanazokkal a lépésekkel ugyanazt a rossz eredményt kapja.
+
+00:04:11.602 --> 00:04:35.026
+Utána szűkít: melyik fájl, melyik sor? Ehhez hibakereső programot, angolul debugger, használ. A képen a Visual Studio Code dokumentációja látszik: a program egy megjelölt sornál megáll, ez a töréspont, angolul breakpoint, a bal oldalon pedig látszik, mi van éppen a változókban.
+
+00:04:35.376 --> 00:04:41.568
+A cél nem a tünet, hanem a kiváltó ok, angolul root cause megtalálása.
+
+00:04:43.068 --> 00:04:59.508
+Nézzük, mi lett volna, ha a webshop kedvezményhibája nem a tesztelésnél, hanem élesben derül ki. Egy akciós délelőttön több vásárló panaszkodik: pontosan húszezer forintért vásároltak, mégsem kaptak kedvezményt.
+
+00:04:59.858 --> 00:05:15.794
+Az ügyfélszolgálat jelez, a csapat üzemzavart jelent be, és az ügyeletes fejlesztő átveszi. A naplóban meglátja a mintát, és megtalálja a hibás sort: a nagyobb vagy egyenlő helyett csak a nagyobb, mint szerepel.
+
+00:05:16.144 --> 00:05:32.080
+Itt nincs idő a szokásos, hosszabb körre. Gyorsjavítás készül, angolul hotfix: kicsi, célzott módosítás, amely a lehető leggyorsabban kerül élesbe, de átnézés és teszt nélkül ilyenkor sem.
+
+00:05:33.580 --> 00:05:48.772
+Ha a tűz eloltva, jön a legfontosabb rész: az utólagos elemzés, angolul postmortem. A csapat leírja, mi történt, mikor vették észre, mit tettek, és mi volt a kiváltó ok.
+
+00:05:49.122 --> 00:06:06.186
+A jó elemzés hibáztatás nélküli, angolul blameless: nem bűnöst keres, hanem azt, hogyan engedte át a folyamat a hibát. A Google üzemeltetési könyvében, amely nyilvánosan olvasható, egy egész fejezet szól erről.
+
+00:06:06.536 --> 00:06:26.936
+A webshop esetében a válasz: a követelmény húszezer forinttól szólt, de az elfogadási feltételben nem volt példa a pontos határértékre, és teszt sem készült rá. A teendő tehát egy határérték-teszt és egy pontosabb elfogadási feltétel. Ez már a BA asztala is.
+
+00:06:28.436 --> 00:06:44.372
+Végül egy fogalom, amely sok hiba mögött ott van: a technikai adósság, angolul technical debt. Ha a csapat sietségből gyors, de csúnya megoldást választ, az olyan, mint egy hitel: most időt nyer.
+
+00:06:44.722 --> 00:06:52.186
+Később viszont kamatostul kell visszafizetni: minden további módosítás lassabb és kockázatosabb lesz.
+
+00:06:52.536 --> 00:07:07.464
+Egy gyorsjavítás után ezért fontos, hogy a csapat rendbe tegye a kódot, és ezt feladatként a listára is felvegye. Ha a BA érti ezt, könnyebben elfogadja, amikor a csapat időt kér a rendrakásra.
+
+00:07:08.964 --> 00:07:20.772
+Foglaljuk össze. A hiba a kódban van, az üzemzavar a felhasználóknál jelentkezik. Ilyenkor először a szolgáltatást kell helyreállítani.
+
+00:07:21.122 --> 00:07:30.482
+A napló és a figyelés megmutatja, mi történt. A hibakeresés célja a kiváltó ok, nem csak a tünet.
+
+00:07:30.832 --> 00:07:38.320
+Az utólagos elemzés hibáztatás nélkül keresi a tanulságot, és ez gyakran egy pontosabb követelmény.
+
+00:07:38.670 --> 00:07:49.662
+A következő részben belép a képbe a mesterséges intelligencia: megnézzük, hogyan működik egy nagy nyelvi modell, és miért kell ellenőrizni, amit mond.

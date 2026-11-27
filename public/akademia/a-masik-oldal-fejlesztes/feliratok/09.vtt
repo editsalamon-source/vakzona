@@ -1,0 +1,97 @@
+WEBVTT
+
+00:00:00.600 --> 00:00:12.144
+A fejlesztők munkájába az utóbbi években belépett a mesterséges intelligencia, röviden MI. Mielőtt megnéznénk, hogyan használják, értsük meg, hogyan működik.
+
+00:00:12.494 --> 00:00:20.486
+Gondolkodik-e valójában? Vagy csak nagyon jól találja ki, mi legyen a szöveg következő szava?
+
+00:00:21.986 --> 00:00:34.610
+A mai csevegő MI-k mögött egy nagy nyelvi modell áll, angolul large language model, röviden LLM. A képen a magyar Wikipédia erről szóló szócikke látszik.
+
+00:00:34.960 --> 00:01:02.896
+Egyszerűen fogalmazva: olyan program, amelyet óriási mennyiségű szövegen tanítottak, és egyetlen dologban lett nagyon jó: a szöveg folytatásában. Ilyen modell működik például a ChatGPT, a Claude vagy a Gemini mögött. Fontos: a modell nem egy adatbázisban keresi ki a választ, és nem úgy érti a világot, ahogy mi. A szövegekből mintázatokat tanult meg.
+
+00:01:04.396 --> 00:01:14.188
+Hogyan folytatja a szöveget? Ismerős lehet a telefonod billentyűzetéről: gépelés közben felajánlja a következő szót.
+
+00:01:14.538 --> 00:01:31.050
+A nyelvi modell ugyanezt csinálja, csak sokkal ügyesebben. Megnézi az eddigi szöveget, és minden lehetséges folytatáshoz valószínűséget rendel. Ebben a szemléltető példában a kedvezmény szó a legvalószínűbb.
+
+00:01:31.400 --> 00:01:49.616
+Kiválaszt egyet, hozzáfűzi a szöveghez, és kezdi elölről. Így áll össze darabonként a válasz, akár egy teljes program kódja is. Valójában tehát nem úgy gondolkodik, mint egy ember: a megtanult mintázatok alapján jósol.
+
+00:01:51.116 --> 00:02:04.844
+Pontosabban nem is szavakat, hanem szódarabokat jósol a modell. Ezeket tokennek hívjuk, angolul token. A színes dobozok egy szemléltető bontást mutatnak.
+
+00:02:05.194 --> 00:02:15.994
+Egy rövid angol szó gyakran egyetlen token, egy hosszú, toldalékos magyar szó viszont több darabból áll. A modell tehát tokenről tokenre írja a választ.
+
+00:02:16.344 --> 00:02:26.448
+A tokenek azért fontosak, mert ezekben mérik, mennyi szöveget tud egyszerre kezelni a modell, és gyakran a használatot is ebben számolják.
+
+00:02:27.948 --> 00:02:49.668
+Honnan tudja mindezt? A tanítás, angolul training során a modell hatalmas mennyiségű szöveget dolgoz fel: könyveket, weboldalakat, programkódot. Ez adatközpontokban, nagyon sok erős számítógépen történik. A jobb oldalon egy ilyen adatközpont látszik.
+
+00:02:50.018 --> 00:03:00.626
+Közben a modell milliárdnyi belső beállítását, angolul parameters, addig finomítják, amíg egyre jobban el nem találja a következő tokent.
+
+00:03:00.976 --> 00:03:14.176
+Fontos következmény: a modell tudása a tanítás idején lezárul. Ami azóta történt, vagy amit a cégetek belső rendszereiről senki nem írt le, azt magától nem tudhatja.
+
+00:03:15.676 --> 00:03:35.788
+A modellel szövegben beszélünk. Amit írunk neki, az az utasítás, angolul prompt. Egy homályos utasításra általános, felszínes válasz jön. Ha csak annyit írsz, hogy nézd meg ezt a kódot, a modell nem tudja, mit keressen benne.
+
+00:03:36.138 --> 00:03:42.930
+Ha viszont megadod a hátteret, a célt és az elvárt formát, sokkal jobb lesz az eredmény.
+
+00:03:43.280 --> 00:03:56.360
+Ismerős? Ez pontosan olyan, mint egy jó követelmény: minél pontosabb, annál kevesebb a félreértés. Ebben egy üzleti elemző eleve erős.
+
+00:03:57.860 --> 00:04:13.124
+A modell a válaszhoz azt használja, amit a tanítás során megtanult, és azt, amit éppen elé tettél. Az elé tett szöveg a kontextus: a beszélgetés eddigi része, a csatolt fájlok, a kód.
+
+00:04:13.474 --> 00:04:25.546
+Hogy ebből mennyi fér el egyszerre, azt a kontextusablak, angolul context window szabja meg. A képen egy MI-fejlesztő cég dokumentációja magyarázza ezt.
+
+00:04:25.896 --> 00:04:40.896
+Képzeld el úgy, mint egy íróasztalt: ami nem fér rá, azt a modell nem látja. Ezért kell a kérdés mellé odaadni a fontos részleteket: a követelményt, a kódrészletet, a hibaüzenetet.
+
+00:04:42.396 --> 00:05:00.876
+És itt jön a legfontosabb figyelmeztetés. A modell néha magabiztosan állít valamit, ami nem igaz. Ezt hallucinációnak hívjuk, angolul hallucination. A képen az angol Wikipédia erről szóló szócikke látszik.
+
+00:05:01.226 --> 00:05:22.250
+Ez nem ritka véletlen, hanem a működéséből fakad. Miért? Mert a modell hihető folytatást gyárt, nem tényeket ellenőriz. Ha nem tudja a választ, akkor is adhat egy jól hangzó választ: kitalálhat egy hivatkozást, vagy egy függvényt, amely nem is létezik.
+
+00:05:22.600 --> 00:05:27.448
+Ezért az MI válasza nem végeredmény, hanem javaslat.
+
+00:05:28.948 --> 00:05:43.588
+Nézzük a webshop példáját. Megkérdezzük az MI-t: kap-e kedvezményt, aki pontosan húszezer forintért vásárol? A kérdés mellé odaadjuk a követelményt és a kódrészletet.
+
+00:05:43.938 --> 00:05:55.314
+A válasz jó: nem kap, mert a feltétel csak a húszezernél nagyobb összeget engedi át. A javított sort is megírta: nagyobb vagy egyenlő.
+
+00:05:55.664 --> 00:06:13.352
+Ezúttal igaza volt, de ezt honnan tudjuk? Onnan, hogy ellenőrizzük: lefuttatjuk a határérték-tesztet 19 999, 20 000 és 20 001 forintra. Ha a teszt zöld, elhihetjük.
+
+00:06:14.852 --> 00:06:20.492
+Mit jelent ez a gyakorlatban? Négy egyszerű szabályt.
+
+00:06:20.842 --> 00:06:48.970
+Tényt forrással ellenőrizz. Kódot teszttel és emberi átnézéssel. A kérdéshez adj meg minden fontos hátteret, mert amit nem lát, azt kitalálja. És csak olyan adatot adj meg neki, amit a céged szabályai megengednek. Ha pedig egy válasz túl szép, hogy igaz legyen, kérdezz rá: kérd meg, hogy indokolja, vagy mutassa meg, honnan tudja.
+
+00:06:49.320 --> 00:06:57.528
+Az MI tehát nem tévedhetetlen jós, hanem gyors és szorgalmas segítő, akinek a munkáját át kell nézni.
+
+00:06:59.028 --> 00:07:08.772
+Foglaljuk össze. A nagy nyelvi modell a következő tokent jósolja: hihető szöveget gyárt, nem tényeket ellenőriz.
+
+00:07:09.122 --> 00:07:17.642
+A válasz minősége azon múlik, milyen utasítást és kontextust adsz neki, ugyanúgy, mint egy követelménynél.
+
+00:07:17.992 --> 00:07:24.112
+Hallucinálhat, ezért minden választ ellenőrizni kell, a kódot teszttel.
+
+00:07:24.462 --> 00:07:34.470
+A következő részben megnézzük, hogyan segíti az MI a fejlesztőket: a kódkiegészítéstől a csevegésen át az önállóan dolgozó ágensig.

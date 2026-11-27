@@ -1,0 +1,64 @@
+{
+  "leckek": {
+    "10": {
+      "video": "https://vimeo.com/1250730003",
+      "felirat": "10.vtt",
+      "leiras": "Az előző részben láttuk, hogyan működik egy nagy nyelvi modell. Most megnézzük, hogyan dolgoznak vele a fejlesztők a mindennapokban. Végigmegyünk a három szinten, és megnézzük a legismertebb eszközöket is. Három szintet különböztetünk meg: az MI súg, beszélget, vagy önállóan dolgozik.\n\n**Ebben a leckében:**\n- három szint\n- kódkiegészítés\n- csevegő asszisztens\n- MI-ágens\n- ugyanaz a hiba három szinten\n- eszközök: Copilot, Cursor, Claude Code\n- eszközök: Codex, Gemini CLI\n- felületek\n- hogyan fizet érte a cég?"
+    },
+    "11": {
+      "video": "https://vimeo.com/1250730029",
+      "felirat": "11.vtt",
+      "leiras": "Az előző részben megismerted az MI-ágenst: azt a programot, amely nemcsak válaszol, hanem dolgozik is. Most munka közben figyeljük meg. A kérdésünk: mi történik pontosan, amikor egy ágens megkapja a webshop kedvezményhibáját? És hol marad a helye az embernek?\n\n**Ebben a leckében:**\n- az ágensciklus\n- előbb terv: plan mode\n- a betanító leírás: CLAUDE.md\n- valódi demó: a teszt elbukik\n- valódi demó: javítás külön ágon\n- valódi demó: zöld teszt és commit\n- pull request és emberi átnézés\n- engedélyek\n- csatlakozók és párhuzamos munka\n- a webshop-hiba útja"
+    },
+    "12": {
+      "video": "https://vimeo.com/1250730049",
+      "felirat": "12.vtt",
+      "leiras": "Elérkeztünk a sorozat utolsó részéhez. Láttad, hogyan dolgoznak a fejlesztők, és hogyan javított ki egy MI-ágens egy valódi hibát. Most jön a legfontosabb kérdés: ha az ágens kódol, mi marad az embernek? És mit tehet ebben egy üzleti elemző, angolul business analyst, röviden BA?\n\n**Ebben a leckében:**\n- a felelősség az emberé\n- biztonság: titkok és prompt injection\n- minőség: adj neki ellenőrzést\n- a specifikáció mint bemenet\n- amit az ágens nem lát\n- Claude Code az asztali appban\n- a kód megértése, csak olvasásra\n- a teljes út egy ábrán\n- mit tehetett volna a BA?"
+    },
+    "01": {
+      "video": "https://vimeo.com/1250730076",
+      "felirat": "01.vtt",
+      "leiras": "Ha leülsz egy fejlesztői megbeszélésre, záporoznak a szavak: kód, commit, teszt, deploy. Ez a sorozat lefordítja neked ezt a világot hétköznapi nyelvre. Az első részben a legalapvetőbb kérdéssel kezdünk: mi a szoftver, és mi az a kód, amin a fejlesztők egész nap dolgoznak?\n\n**Ebben a leckében:**\n- hardver és szoftver\n- a program olyan, mint a recept\n- így néz ki a kód\n- minden weboldal mögött kód van\n- programozási nyelvek\n- hogyan érti meg a gép?\n- egy kis történelem\n- a sorozat példája: egy webshop"
+    },
+    "02": {
+      "video": "https://vimeo.com/1250730096",
+      "felirat": "02.vtt",
+      "leiras": "Az előző részben láttuk, hogy a szoftver utasítások sora, amelyet emberek írnak. De ki dönti el, mit írjanak? És honnan tudja a fejlesztő, mi a dolga? Ebben a részben megnézzük, hogyan készül egy szoftver: kik dolgoznak rajta, milyen lépésekben, és hogyan lesz egy ötletből vagy egy vásárlói panaszból elvégzendő feladat.\n\n**Ebben a leckében:**\n- kik dolgoznak egy szoftveren?\n- a szoftver életciklusa\n- vízesés vagy agilis?\n- az agilis kiáltvány\n- Scrum: sprint és backlog\n- a feladatok táblája\n- felhasználói történet és elfogadási feltétel\n- egy valódi hibajegy\n- a webshop: panaszból hibajegy"
+    },
+    "03": {
+      "video": "https://vimeo.com/1250730125",
+      "felirat": "03.vtt",
+      "leiras": "Ha egy fejlesztő válla fölött belesel a képernyőbe, először csak színes szöveget és fekete ablakokat látsz. Mi ez mind, és mire jó? Ebben a részben körbenézünk a fejlesztő munkaasztalán: megnézzük a kódszerkesztőt, a parancssort és a tárolót, és azt is, hol fut a szoftver, mielőtt a vásárlókhoz kerül.\n\n**Ebben a leckében:**\n- kódszerkesztő és IDE\n- a VS Code felülete\n- terminál és parancssor\n- mire jó a parancssor?\n- a tároló (repository)\n- saját gép és szerver\n- környezetek\n- a webshop: megvan a hibás sor"
+    },
+    "04": {
+      "video": "https://vimeo.com/1250730169",
+      "felirat": "04.vtt",
+      "leiras": "Emlékszel, amikor egy számítógépes játékban mentettél egy nehéz pálya előtt? Ha elbuktál, nem az elejéről kezdted, hanem a mentéstől. A fejlesztők pontosan így dolgoznak. Ebben a részben megnézzük, hogyan mentik el a munkájukat lépésről lépésre, és hogyan térnek vissza, ha valami elromlik. Megismered a Gitet, a commitot, és azt is, hogyan látszik, mi változott a kódban.\n\n**Ebben a leckében:**\n- verziókezelés\n- a Git\n- a commit\n- a jó commit-üzenet\n- előzmények (history)\n- különbség (diff)\n- visszaállítás (revert)\n- a webshop: a javítás egy commit"
+    },
+    "05": {
+      "video": "https://vimeo.com/1250730194",
+      "felirat": "05.vtt",
+      "leiras": "Az előző részben megismerted a mentési pontot, angolul commit: így őrzi meg a Git a kód minden állapotát. De egy webshopon nem egy ember dolgozik, hanem egy egész csapat. Hogyan tudnak egyszerre ugyanazon a kódon dolgozni úgy, hogy ne írják felül egymás munkáját? Erről szól ez a rész.\n\n**Ebben a leckében:**\n- egy kód, sok kéz\n- a közös tároló és a saját gép\n- az ág (branch)\n- összefésülés (merge)\n- ütközés (merge conflict)\n- módosítási kérelem (pull request)\n- kódátnézés (code review)\n- a sorozat példája: a javítás saját ágon"
+    },
+    "06": {
+      "video": "https://vimeo.com/1250730226",
+      "felirat": "06.vtt",
+      "leiras": "Az előző részben a kolléga jóváhagyta a kedvezmény javítását, de kért valamit: írjon a fejlesztő tesztet a húszezer forintos esetre. Mi az a teszt, és miért ragaszkodnak hozzá ennyire a fejlesztők? Ebben a részben megnézzük, hogyan győződnek meg arról, hogy a kód tényleg azt csinálja, amit kell.\n\n**Ebben a leckében:**\n- mi a teszt?\n- kézi és automatizált teszt\n- a tesztek három szintje\n- így néz ki egy teszt\n- határérték-elemzés\n- a sorozat példája: a teszt elkapja a hibát\n- regresszió és automatikus futás\n- lefedettség, és ami mögötte van"
+    },
+    "07": {
+      "video": "https://vimeo.com/1250730252",
+      "felirat": "07.vtt",
+      "leiras": "A javítás elkészült egy saját ágon, egy kolléga átnézte, és a tesztek is zöldek. A vásárlók mégsem kapják meg a kedvezményt, mert a javítás még csak a tárolóban van, nem a webshopban. Mi kell ahhoz, hogy a kód a fejlesztő gépéről eljusson a felhasználókig? Erről szól ez a rész: az út az élesig.\n\n**Ebben a leckében:**\n- három környezet\n- a futószalag (pipeline)\n- mit jelent a CI/CD?\n- a futószalag receptje\n- egy valódi futás: build és deploy\n- élesítés és visszagörgetés\n- funkciókapcsoló (feature flag)\n- a sorozat példája: a javítás élesbe kerül"
+    },
+    "08": {
+      "video": "https://vimeo.com/1250730279",
+      "felirat": "08.vtt",
+      "leiras": "Eddig arról volt szó, hogyan jut el egy javítás biztonságosan az élesbe. De mi történik, ha egy hiba mégis átcsúszik? Ebben a részben megnézzük, hogyan veszik észre, keresik meg és javítják ki a fejlesztők a hibát, és hogyan tanulnak belőle, hogy ne ismétlődjön meg.\n\n**Ebben a leckében:**\n- az első bogár\n- hiba és üzemzavar\n- hibajelentés\n- a napló (log)\n- figyelés és riasztás\n- hibakeresés\n- a webshop-hiba élesben\n- utólagos elemzés\n- technikai adósság"
+    },
+    "09": {
+      "video": "https://vimeo.com/1250730309",
+      "felirat": "09.vtt",
+      "leiras": "A fejlesztők munkájába az utóbbi években belépett a mesterséges intelligencia, röviden MI. Mielőtt megnéznénk, hogyan használják, értsük meg, hogyan működik. Gondolkodik-e valójában? Vagy csak nagyon jól találja ki, mi legyen a szöveg következő szava?\n\n**Ebben a leckében:**\n- nagy nyelvi modell\n- a következő szó megjóslása\n- token\n- tanítás\n- utasítás (prompt)\n- kontextusablak\n- hallucináció\n- megkérdezzük az MI-t\n- bízz, de ellenőrizz"
+    }
+  }
+}

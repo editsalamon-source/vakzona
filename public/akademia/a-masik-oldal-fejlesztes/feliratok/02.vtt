@@ -1,0 +1,100 @@
+WEBVTT
+
+00:00:00.600 --> 00:00:14.496
+Az előző részben láttuk, hogy a szoftver utasítások sora, amelyet emberek írnak. De ki dönti el, mit írjanak? És honnan tudja a fejlesztő, mi a dolga?
+
+00:00:14.846 --> 00:00:26.750
+Ebben a részben megnézzük, hogyan készül egy szoftver: kik dolgoznak rajta, milyen lépésekben, és hogyan lesz egy ötletből vagy egy vásárlói panaszból elvégzendő feladat.
+
+00:00:28.250 --> 00:00:39.506
+Egy szoftvert ritkán ír egyetlen ember. Olyan ez, mint egy házépítés: van megrendelő, tervező, kivitelező és ellenőr.
+
+00:00:39.856 --> 00:00:58.816
+A termékgazda, angolul product owner, dönti el, mi a legfontosabb, és mi kerül sorra. Az üzleti elemző, angolul business analyst, röviden BA, kideríti, mire van szüksége az üzletnek, és ezt pontos követelménnyé fogalmazza.
+
+00:00:59.166 --> 00:01:15.798
+A UX-tervező megtervezi, hogyan néz ki és hogyan használható a felület. A UX angolul user experience, vagyis felhasználói élmény. A fejlesztő, angolul developer, megírja a kódot.
+
+00:01:16.148 --> 00:01:42.572
+A tesztelő, angolul tester, ellenőrzi, hogy minden úgy működik-e, ahogy kell. Ezt QA-nak is hívják, vagyis quality assurance, magyarul minőségbiztosítás. Végül a DevOps a development és az operations, vagyis a fejlesztés és az üzemeltetés összevonása: ők juttatják el a szoftvert a felhasználókhoz, és felügyelik a működését.
+
+00:01:44.072 --> 00:01:58.616
+Bármilyen módszerrel dolgozik is egy csapat, ugyanazokon a lépéseken megy végig. Ezt hívjuk szoftverfejlesztési életciklusnak, angolul software development life cycle, röviden SDLC.
+
+00:01:58.966 --> 00:02:10.438
+Az elején egy igény áll. Ezt elemzik és követelményekké írják, aztán megtervezik a megoldást. Utána jön a kód megírása, majd a tesztelés.
+
+00:02:10.788 --> 00:02:23.124
+Végül a szoftver élesbe kerül, vagyis a valódi felhasználók elé, és onnantól üzemeltetni, javítani kell. Az új igények pedig újraindítják a kört.
+
+00:02:24.624 --> 00:02:43.440
+A kérdés az, hogy ezeket a lépéseket egyszer végezzük el, nagyban, vagy sokszor, kicsiben. A hagyományos módszer a vízesés, angolul waterfall: minden lépés egyszer jön, az előző lezárása után, ahogy a víz is csak lefelé folyik.
+
+00:02:43.790 --> 00:02:59.894
+Ez olyan, mint egy ház építése: előbb kész a teljes terv, aztán épül a ház. A gond az, hogy a megrendelő gyakran csak a legvégén, hónapok múlva látja az eredményt, és akkor derül ki, hogy mást képzelt el.
+
+00:03:00.244 --> 00:03:13.876
+Az agilis módszer, angolul agile, kis szeletekben halad: néhány hetente elkészül egy működő darab, a megrendelő kipróbálja, és a visszajelzése alapján dől el a következő lépés.
+
+00:03:15.376 --> 00:03:35.152
+Az agilis gondolkodás egy 2001-es nyilatkozatból nőtt ki. Tizenhét szoftverfejlesztő fogalmazta meg az agilis szoftverfejlesztés kiáltványát, angolul Manifesto for Agile Software Development. A képen a magyar fordítása látszik, a hivatalos oldalon.
+
+00:03:35.502 --> 00:03:54.510
+A lényeg négy rövid mondat. Például: többre tartják a működő szoftvert az átfogó dokumentációnál, és a változás iránti készséget a tervek szolgai követésénél. A dokumentáció és a terv is fontos, de a működő eredmény fontosabb.
+
+00:03:56.010 --> 00:04:08.346
+Az agilis módszerek közül a legelterjedtebb a Scrum. A szabályait egy rövid, ingyenes útmutató írja le, a Scrum Guide: ennek az oldala látszik a képen.
+
+00:04:08.696 --> 00:04:20.888
+A munka sprintekben halad, angolul sprint. Ez egy legfeljebb egy hónapos, gyakran kéthetes szakasz, amelynek a végére elkészül egy használható eredmény.
+
+00:04:21.238 --> 00:04:43.126
+Az elvégzendő feladatok rangsorolt listája a termék-teendőlista, angolul product backlog, röviden backlog. Ezt a termékgazda rendezi, és minden sprint elején a csapat innen választja ki, mit vállal. A csapat naponta röviden egyeztet is: ez a napi megbeszélés, angolul Daily Scrum.
+
+00:04:44.626 --> 00:04:59.098
+A sprint munkáját sok csapat egy táblán követi. Ez egy valódi tábla fényképe: balra a felhasználói történetek, mellettük a teendő, a folyamatban lévő és a tesztelés alatti feladatok.
+
+00:04:59.448 --> 00:05:10.464
+Minden cetli egy feladat, és ahogy halad a munka, balról jobbra vándorol. Egy pillantással látszik, mi készül, és mi akadt el.
+
+00:05:10.814 --> 00:05:17.342
+Ma ezt többnyire szoftverben vezetik. A legismertebb ilyen eszköz a Jira.
+
+00:05:18.842 --> 00:05:32.762
+Hogyan kerül egy feladat a backlogba? Gyakran felhasználói történetként, angolul user story. Ez egy egyszerű mondatsablon: ki szeretne mit, és miért.
+
+00:05:33.112 --> 00:05:41.200
+Például: vásárlóként szeretnék kedvezményt kapni a nagyobb rendelésekre, hogy megérje többet vásárolnom.
+
+00:05:41.550 --> 00:06:02.598
+Ehhez tartoznak az elfogadási feltételek, angolul acceptance criteria: ezek mondják meg, mikor kész a feladat. Itt döntő a BA munkája. Ha a feltétel kimondja, hogy pontosan húszezer forintnál is jár a kedvezmény, azt a fejlesztő és a tesztelő is ellenőrizni fogja.
+
+00:06:04.098 --> 00:06:19.242
+Ha valami hibásan működik, abból hibajegy lesz, angolul ticket vagy issue. Ez egy valódi jegy az Apache alapítvány egyik nyílt forrású vállalatirányítási és webáruház-rendszerének nyilvános Jirájából.
+
+00:06:19.592 --> 00:06:33.176
+Látszik rajta a jegy típusa, vagyis hogy hiba, angolul bug. Mellette a prioritása, ami itt alacsony, és az állapota: lezárva, a hibát kijavították.
+
+00:06:33.526 --> 00:06:47.134
+A leírás egyetlen mondat, és érdekes egybeesés: ez is határérték-hiba. Ha a keresett dátum pontosan egy időszak végére esett, a rendszer tévesen kihagyta az időszakot.
+
+00:06:48.634 --> 00:06:58.258
+És most a mi webshopunk. Egy vásárló panaszt ír: pontosan húszezer forintért vásárolt, de nem kapott kedvezményt.
+
+00:06:58.608 --> 00:07:14.856
+Az ügyfélszolgálat továbbítja, és a BA hibajegyet ír belőle, angolul bug ticket. Benne van, hogyan lehet előidézni a hibát, mi a várt és mi a tényleges eredmény, és hivatkozik az eredeti követelményre.
+
+00:07:15.206 --> 00:07:26.414
+A termékgazda magas prioritást ad neki, mert pénzről van szó. A jegy bekerül a backlogba, és a következő sprintben egy fejlesztő elvállalja.
+
+00:07:27.914 --> 00:07:39.650
+Foglaljuk össze. Egy szoftveren csapat dolgozik: termékgazda, üzleti elemző, UX-tervező, fejlesztő, tesztelő és DevOps.
+
+00:07:40.000 --> 00:07:47.056
+Az agilis csapatok rövid sprintekben haladnak, a feladatok a backlogban és a táblán várnak.
+
+00:07:47.406 --> 00:07:59.862
+A jó feladat pontos: felhasználói történet, elfogadási feltétel, és hiba esetén egy jól megírt hibajegy. Ennek nagy része a BA kezében van.
+
+00:08:00.212 --> 00:08:10.484
+A következő részben a fejlesztő asztalához ülünk: megnézzük, milyen eszközökkel dolgozik, és hogyan találja meg a hibás sort a webshop kódjában.

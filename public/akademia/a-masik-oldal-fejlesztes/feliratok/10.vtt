@@ -1,0 +1,103 @@
+WEBVTT
+
+00:00:00.600 --> 00:00:16.776
+Az előző részben láttuk, hogyan működik egy nagy nyelvi modell. Most megnézzük, hogyan dolgoznak vele a fejlesztők a mindennapokban. Végigmegyünk a három szinten, és megnézzük a legismertebb eszközöket is.
+
+00:00:17.126 --> 00:00:24.398
+Három szintet különböztetünk meg: az MI súg, beszélget, vagy önállóan dolgozik.
+
+00:00:25.898 --> 00:00:37.322
+Az első szint a kódkiegészítés: olyan, mint egy súgó, aki befejezi a mondatodat. Ahogy gépelsz, felajánlja a folytatást.
+
+00:00:37.672 --> 00:00:44.680
+A második a csevegő asszisztens: egy szakértő kolléga, akit bármikor megkérdezhetsz.
+
+00:00:45.030 --> 00:00:59.598
+A harmadik az MI-ágens: egy kolléga, akire egy egész feladatot rábízhatsz. Minél feljebb lépünk, annál önállóbb az MI, és annál fontosabb, hogy valaki átnézze a munkáját.
+
+00:01:01.098 --> 00:01:18.786
+Az első szint a kódkiegészítés, angolul code completion vagy autocomplete. Ezt látod a Visual Studio Code dokumentációjának képén: a fejlesztő elkezdett egy függvényt, és az MI szürke betűkkel felajánlotta a teljes folytatását.
+
+00:01:19.136 --> 00:01:26.192
+Egy billentyűvel elfogadhatja, vagy egyszerűen gépel tovább, és a javaslat eltűnik.
+
+00:01:26.542 --> 00:01:40.078
+Gyors és kényelmes, de a kiegészítés nem ismeri a követelményt. Ha a webshop kódjában máshol is a nagyobb, mint jel szerepel, könnyen ugyanazt a hibás mintát ajánlja újra.
+
+00:01:41.578 --> 00:02:02.242
+A második szint a csevegő asszisztens, angolul chat assistant. Itt a fejlesztő kérdez: bemásolja a kódrészletet, és megkérdezi, miért nem kap kedvezményt, aki pontosan húszezer forintért vásárol. Az asszisztens elmagyarázza a hibát, és megírja a javított sort.
+
+00:02:02.592 --> 00:02:12.912
+A munka nagy része viszont a fejlesztőnél marad: neki kell megtalálnia a megfelelő fájlt, átvinnie a javítást, és lefuttatnia a teszteket.
+
+00:02:13.262 --> 00:02:21.710
+Az asszisztens tehát tanácsot ad, de nem nyúl a kódhoz. A döntés és a felelősség a fejlesztőé.
+
+00:02:23.210 --> 00:02:43.226
+A harmadik szint az MI-ágens, angolul AI agent. Az ágens nemcsak beszél, hanem cselekszik is: eszközöket kap, angolul tools. Olvashat fájlokat, módosíthatja a kódot, és parancsokat futtathat, például elindíthatja a teszteket.
+
+00:02:43.576 --> 00:03:00.520
+A munkája egy ismétlődő ciklus, angolul agentic loop: elolvassa a fontos fájlokat, tervet készít, módosít, lefuttatja a teszteket, majd ellenőrzi az eredményt. Ha valami nem sikerült, újrakezdi a kört.
+
+00:03:00.870 --> 00:03:08.958
+Olyan, mint egy új kolléga, aki önállóan dolgozik, de a munkáját a végén valakinek át kell néznie.
+
+00:03:10.458 --> 00:03:21.594
+Nézzük a webshop hibáját mindhárom szinten. Kódkiegészítéssel a fejlesztő maga keresi meg a hibás sort, az MI csak a gépelést gyorsítja.
+
+00:03:21.944 --> 00:03:30.200
+Csevegéssel megkapja a magyarázatot és a javított sort, de a fájlt ő módosítja, és a tesztet is ő futtatja.
+
+00:03:30.550 --> 00:03:55.246
+Az ágensnek elég ennyit mondani: javítsd ki a hibajegyben leírt kedvezményhibát, és írj rá határérték-tesztet. Az ágens megkeresi a fájlt, javít, tesztel, és összefoglalja, mit csinált. Az ember dolga az átnézés. A következő részben egy valódi futtatáson nézzük meg ezt lépésről lépésre.
+
+00:03:56.746 --> 00:04:11.650
+Milyen eszközök vannak? Ezek valódi termékoldalak. A GitHub Copilot a GitHub, vagyis a Microsoft eszköze: a kódkiegészítéstől a csevegésen át az ágensig mindhárom szintet lefedi.
+
+00:04:12.000 --> 00:04:26.352
+A Cursor egy mesterséges intelligenciára épülő kódszerkesztő, amelyben szintén dolgozhat ágens. Kinézetre olyan, mint egy hagyományos kódszerkesztő, de az MI mindenhol ott van benne.
+
+00:04:26.702 --> 00:04:39.590
+A Claude Code az Anthropic cég ágense. A termékoldalán éppen egy hibajavítás látszik: a felhasználó egy dupla terhelés hibáját bízza rá egy webáruház pénztárában.
+
+00:04:41.090 --> 00:04:56.066
+A következő két ágens a terminálban fut. Az OpenAI Codex nevű ágense mögött nyílt forráskódú tároló is áll: a leírása szerint egy könnyű kódoló ágens, amely a terminálban dolgozik.
+
+00:04:56.416 --> 00:05:07.888
+A Gemini CLI a Google nyílt forráskódú ágense. A CLI rövidítés jelentése command-line interface, vagyis parancssoros felület.
+
+00:05:08.238 --> 00:05:19.326
+Az eszközök gyorsan változnak, a nevek és a képességek is. Az alapelv viszont ugyanaz marad: nyelvi modell, eszközök és ciklus.
+
+00:05:20.826 --> 00:05:35.226
+Hol dolgozhatsz ezekkel az eszközökkel? Sokféle felületen. Az egyik a terminál: a parancssor, angolul command line, ahol szöveges utasításokkal vezéreljük a gépet.
+
+00:05:35.576 --> 00:05:50.600
+A másik a kódszerkesztő, ahová bővítményként, angolul extension települ. A fejlett kódszerkesztő neve IDE, vagyis Integrated Development Environment: ez a fejlesztő munkaasztala.
+
+00:05:50.950 --> 00:06:12.694
+Van asztali alkalmazás, angolul desktop app, és webes felület is. A képen a Claude Code termékoldala sorolja fel a felületeit: terminál, web, mobil, kódszerkesztők és csevegőalkalmazás. Az eszköz ugyanaz, csak az ablak más, amelyen át dolgozol vele.
+
+00:06:14.194 --> 00:06:25.066
+Végül: hogyan fizet egy cég ezekért az eszközökért? Konkrét árakat nem mondunk, mert gyorsan változnak, de két fő modell van.
+
+00:06:25.416 --> 00:06:41.520
+Az egyik a felhasználónkénti előfizetés: a cég minden fejlesztőnek vesz egy helyet, angolul seat, céges csomagban. Ez olyan, mint egy bérlet: fix díj, és a cég központilag kezeli a hozzáférést.
+
+00:06:41.870 --> 00:07:02.798
+A másik az API-kulcs, angolul API key. Az API, vagyis application programming interface, az a kapu, amelyen keresztül egy program egy másik programot használhat. Itt a használat után fizet a cég, a feldolgozott tokenek alapján, mint a taxióránál.
+
+00:07:03.148 --> 00:07:11.980
+BA-ként azért érdemes tudni erről, mert a választás azt is befolyásolja, ki és milyen adatokkal használhatja az eszközt.
+
+00:07:13.480 --> 00:07:24.040
+Foglaljuk össze. Az MI három szinten segíti a fejlesztőt: kódkiegészítéssel, csevegő asszisztensként és MI-ágensként.
+
+00:07:24.390 --> 00:07:34.086
+Az ágens eszközöket kap, és ciklusban dolgozik: olvas, tervez, módosít, futtat és ellenőriz.
+
+00:07:34.436 --> 00:07:40.988
+Minél önállóbb az MI, annál fontosabb, hogy egy ember átnézze a munkáját.
+
+00:07:41.338 --> 00:07:50.074
+A következő részben egy ágenst figyelünk meg munka közben, ahogy lépésről lépésre kijavítja a webshop kedvezményhibáját.

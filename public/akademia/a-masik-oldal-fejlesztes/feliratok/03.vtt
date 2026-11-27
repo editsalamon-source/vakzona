@@ -1,0 +1,91 @@
+WEBVTT
+
+00:00:00.600 --> 00:00:11.232
+Ha egy fejlesztő válla fölött belesel a képernyőbe, először csak színes szöveget és fekete ablakokat látsz. Mi ez mind, és mire jó?
+
+00:00:11.582 --> 00:00:24.206
+Ebben a részben körbenézünk a fejlesztő munkaasztalán: megnézzük a kódszerkesztőt, a parancssort és a tárolót, és azt is, hol fut a szoftver, mielőtt a vásárlókhoz kerül.
+
+00:00:25.706 --> 00:00:39.794
+A kódot elvileg bármilyen egyszerű szövegszerkesztőben meg lehet írni. A fejlesztők mégis külön programot használnak, amely sokkal többet tud: ez a kódszerkesztő, angolul code editor.
+
+00:00:40.144 --> 00:00:56.608
+A még többet tudó változat neve integrált fejlesztői környezet, angolul Integrated Development Environment, röviden IDE. Hasonlattal: ha a jegyzettömb egy kés, az IDE egy teljesen felszerelt konyha, ahol minden eszköz kéznél van.
+
+00:00:56.958 --> 00:01:14.670
+A képen az egyik legnépszerűbb ilyen eszköz, a Visual Studio Code, röviden VS Code hivatalos oldala látszik. Ingyenes, és a Microsoft fejleszti. Sok fejlesztő ezt használja, de vannak más népszerű eszközök is.
+
+00:01:16.170 --> 00:01:25.578
+Így néz ki a VS Code munka közben. Ez a hivatalos dokumentáció képe, betűkkel jelölve a fő részeket.
+
+00:01:25.928 --> 00:01:47.960
+Bal oldalt, a B betűnél a projekt fájljai és mappái látszanak, mint egy tartalomjegyzék. Középen, a C betűnél van a szerkesztő: itt nyitják meg és írják a kódot, akár két fájlt egymás mellett. A kód színes, mert a szerkesztő kiemeli a szavakat, így könnyebb olvasni.
+
+00:01:48.310 --> 00:02:02.806
+Alul, a D betűnél egy panel nyílik, benne a terminállal. A legalsó, kék állapotsor, az E betű, például azt mutatja, melyik változaton dolgozik éppen a fejlesztő.
+
+00:02:04.306 --> 00:02:24.922
+Most nézzük a fekete ablakot. Ez a terminál, angolul terminal, más néven parancssor, angolul command line: itt nem kattintunk, hanem begépeljük, mit csináljon a gép. Elsőre régimódinak tűnik, de a gyakorlott kezekben sokkal gyorsabb, mint az egér.
+
+00:02:25.272 --> 00:02:41.880
+Az ilyen szöveges felület neve CLI, vagyis command-line interface. Hasonlattal: a grafikus felület egy étlap, amelyről választasz, a parancssor pedig az, amikor közvetlenül megmondod a szakácsnak, mit kérsz.
+
+00:02:42.230 --> 00:02:56.822
+A képen egy valódi példa a dokumentációból: a fejlesztő létrehoz egy mappát, aztán néhány rövid paranccsal elmenti benne az első változatot. Ezekről a parancsokról a következő részben lesz szó.
+
+00:02:58.322 --> 00:03:09.410
+A fejlesztők rengeteg dolgot a parancssorból intéznek: elindítják a programot, lefuttatják a teszteket, és letöltik a projekthez szükséges kiegészítőket.
+
+00:03:09.760 --> 00:03:19.504
+Ez a felvétel épp ilyet mutat: a terminál sorban letölti a programcsomagokat, angolul packages, amelyekre a projektnek szüksége van.
+
+00:03:19.854 --> 00:03:32.862
+Ami elsőre ijesztő, az a fejlesztőnek gyors, pontos és megismételhető. Ezért dolgoznak a parancssorban az MI-ágensek is, ahogy a sorozat végén látni fogod.
+
+00:03:34.362 --> 00:03:45.978
+A projekt minden fájlja egy tárolóban van, angolul repository, röviden repo. Elsőre képzeld el úgy, mint a projekt közös mappáját.
+
+00:03:46.328 --> 00:04:01.424
+Ez egy valódi tároló a GitHubon: épp a VS Code saját forráskódja, amely bárki számára megtekinthető. Látszanak a mappák és a fájlok, mellettük az utolsó módosításuk rövid leírása.
+
+00:04:01.774 --> 00:04:17.326
+De a tároló több egy mappánál: minden korábbi változatot is megőriz, és azt is, ki mikor mit módosított. A kiemelt szám azt mutatja, hány mentett változás van mögötte: több mint százhetvenezer.
+
+00:04:18.826 --> 00:04:29.866
+Hol fut a kód? Először a fejlesztő saját gépén, angolul local. Itt bármit kipróbálhat, és senkit nem zavar vele.
+
+00:04:30.216 --> 00:04:51.576
+A vásárlók viszont egy szerveren, angolul server, érik el a webshopot. A szerver olyan számítógép, amely másokat szolgál ki: éjjel-nappal üzemel, többnyire egy adatközpontban, sok társával együtt. Amikor megnyitsz egy weboldalt, valójában egy szerver küldi el neked.
+
+00:04:51.926 --> 00:05:02.750
+Ha egy fejlesztő azt mondja, nálam működik, az a saját gépére vonatkozik. Az igazi kérdés az, hogy a szerveren is működik-e.
+
+00:05:04.250 --> 00:05:15.578
+A kód nem egyből a vásárlók elé kerül, hanem több környezeten, angolul environment, megy át. Olyan ez, mint egy színházi előadás.
+
+00:05:15.928 --> 00:05:33.760
+A fejlesztői környezet, angolul development, a próbaterem: itt készül és változik a kód. A teszt környezet, angolul test vagy staging, a főpróba: mindent úgy állítanak be, mint élesben, de valódi vásárlók nélkül.
+
+00:05:34.110 --> 00:05:52.158
+Az éles környezet, angolul production, maga az előadás: itt dolgoznak a valódi vásárlók, a valódi adatokkal. Ide csak az kerülhet, ami átment a főpróbán. Hogyan jut el oda a kód, arról a hetedik részben lesz szó.
+
+00:05:53.658 --> 00:06:05.634
+És most a webshopunk. A fejlesztő elvállalta a hibajegyet. Először letölti a tárolót a saját gépére, és megnyitja a kódszerkesztőben.
+
+00:06:05.984 --> 00:06:18.608
+A követelmény a húszezer forintos határról szól, ezért rákeres arra, hogy húszezer. A szerkesztő egy pillanat alatt megmutatja, hol fordul elő a kódban.
+
+00:06:18.958 --> 00:06:39.430
+Megvan: a kedvezményt számoló fájlban ez a sor dönt. Ha a kosár összege nagyobb, mint húszezer. A fejlesztő a saját gépén kipróbálja, és pontosan húszezer forintnál ő sem kap kedvezményt. A hibát sikerült előidézni, jöhet a javítás.
+
+00:06:40.930 --> 00:06:50.962
+Foglaljuk össze. A fejlesztő fő eszköze a kódszerkesztő vagy IDE, például a VS Code, és mellette a parancssor.
+
+00:06:51.312 --> 00:06:57.744
+A projekt fájljai egy tárolóban vannak, amely minden korábbi változatot is megőriz.
+
+00:06:58.094 --> 00:07:11.342
+A kód a saját gépről a fejlesztői és a teszt környezeten át jut el az élesbe. Ha egy hibáról beszélsz a fejlesztőkkel, mindig kérdezd meg: melyik környezetben jelentkezett?
+
+00:07:11.692 --> 00:07:23.452
+A következő részben megnézzük, hogyan menti el a fejlesztő a munkáját úgy, hogy bármikor vissza tudjon térni egy korábbi állapothoz. Jön a Git és a commit.

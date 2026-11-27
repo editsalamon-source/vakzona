@@ -1,0 +1,106 @@
+WEBVTT
+
+00:00:00.600 --> 00:00:11.928
+Az előző részben megismerted az MI-ágenst: azt a programot, amely nemcsak válaszol, hanem dolgozik is. Most munka közben figyeljük meg.
+
+00:00:12.278 --> 00:00:22.838
+A kérdésünk: mi történik pontosan, amikor egy ágens megkapja a webshop kedvezményhibáját? És hol marad a helye az embernek?
+
+00:00:24.338 --> 00:00:34.298
+A Claude Code hivatalos dokumentációja így írja le az ágens munkáját. Ez az ágensciklus, angolul agentic loop.
+
+00:00:34.648 --> 00:01:01.408
+Három szakasza van. Először információt gyűjt, angolul gather context: fájlokat olvas, keres a kódban. Aztán cselekszik, angolul take action: módosít, parancsot futtat. Végül ellenőriz, angolul verify results: például lefuttatja a teszteket. Ha valami nem stimmel, újrakezdi a kört.
+
+00:01:01.758 --> 00:01:10.614
+És te is része vagy a körnek: bármikor megállíthatod, irányt adhatsz neki, vagy új információval segítheted.
+
+00:01:12.114 --> 00:01:21.114
+Egy jó ágens nem kapkod. Nagyobb feladatnál érdemes tervezés módban, angolul plan mode, indítani.
+
+00:01:21.464 --> 00:01:35.048
+Ilyenkor a Claude Code olvas, parancsokkal körülnéz, és tervet ír, de a forráskódot nem szerkeszti. Alapesetben a szerkesztés addig tiltva marad, amíg jóvá nem hagyod a tervet.
+
+00:01:35.398 --> 00:01:50.638
+Olyan ez, mint amikor a szerelő előbb árajánlatot ad, és csak az igened után nyúl a csőhöz. A webshopnál a terv rövid: a teszttel megkeresi a hibás sort, külön ágon javítja, aztán újra tesztel.
+
+00:01:52.138 --> 00:02:15.658
+Honnan tudja az ágens, mik a csapat szokásai? Egy betanító leírásból. Ez a CLAUDE.md nevű fájl, egy egyszerű szöveges jegyzet a projekt mappájában. A bal oldalon a bemutatónk valódi CLAUDE.md-je látszik: hogyan kell futtatni a teszteket, milyen nevű legyen az ág, és milyen a commit-üzenet.
+
+00:02:16.008 --> 00:02:22.008
+A dokumentáció szerint a Claude minden munkamenet elején elolvassa ezt a fájlt.
+
+00:02:22.358 --> 00:02:32.390
+Üzleti elemzőként képzeld el úgy, mint egy új kolléga eligazítását: amit egyszer leírunk, azt nem kell minden alkalommal újra elmondani.
+
+00:02:33.890 --> 00:02:46.418
+Most jön a valódi munka. Ezeket a parancsokat egy Claude Code-ágens futtatta le egy kis bemutató tárolóban. A képernyőn a szó szerinti kimenet látszik.
+
+00:02:46.768 --> 00:02:59.848
+Első lépésként lefuttatta a meglévő teszteket. Három teszt van, a három határértékre: tizenkilencezer-kilencszázkilencvenkilenc, húszezer és húszezer-egy forint.
+
+00:03:00.198 --> 00:03:13.614
+Kettő átment, egy elbukott. Húszezer forintnál a kód nulla kedvezményt ad, pedig tíz százalék járna. A piros teszt pontosan megmutatja, hol a hiba.
+
+00:03:15.114 --> 00:03:29.562
+Második lépés: az ágens új ágat nyitott, angolul branch, kedvezmény-határérték néven, ahogy a CLAUDE.md előírja. Így a javítás nem keveredik a többi munkával.
+
+00:03:29.912 --> 00:03:44.096
+Aztán egyetlen karaktert módosított. A különbség, angolul diff, mutatja: a piros sor a régi, a zöld az új. A nagyobb jelből nagyobb vagy egyenlő lett.
+
+00:03:45.596 --> 00:03:54.620
+Harmadik lépés: újra lefuttatta a teszteket. Most mindhárom átment, a végén ott áll az OK.
+
+00:03:54.970 --> 00:04:09.514
+Végül mentési pontot készített, angolul commit, ezzel az üzenettel: Kedvezmény húszezer forinttól is jár. Az előzménylistán, angolul log, már három mentési pont látszik.
+
+00:04:09.864 --> 00:04:21.984
+Figyeld meg a sorrendet: előbb a hibát bizonyító teszt, aztán a javítás, végül az ellenőrzés. Egy fegyelmezett fejlesztő is pontosan így dolgozik.
+
+00:04:23.484 --> 00:04:38.148
+A javítás még nincs élesben. A következő lépés a módosítási kérelem, angolul pull request. A dokumentáció szerint elég ezt kérni a Claude Code-tól, és ő elkészíti.
+
+00:04:38.498 --> 00:04:47.354
+Ugyanitt egy tanács is áll: mielőtt beküldöd, nézd át, és kérd meg, hogy emelje ki a lehetséges kockázatokat.
+
+00:04:47.704 --> 00:05:03.376
+Az asztali alkalmazásban, angolul desktop app, fájlonként átnézheted a változást, és egy-egy sorhoz megjegyzést írhatsz. A Claude elolvassa, és javít. A döntés a fejlesztőé.
+
+00:05:04.876 --> 00:05:16.660
+Mennyit tehet meg az ágens kérdés nélkül? Ezt az engedélyek, angolul permissions, döntik el. A tervezés módot már ismered.
+
+00:05:17.010 --> 00:05:34.530
+Kézi módban, angolul Manual, minden fájlmódosítás és parancs előtt rákérdez. A szerkesztések elfogadása módban, angolul Accept edits, a fájlokat kérdezés nélkül módosítja, de más parancsoknál továbbra is kérdez.
+
+00:05:34.880 --> 00:05:50.936
+Automatikus módban, angolul Auto, egy háttérben futó ellenőrző modell vizsgálja a lépéseket, és a kockázatosakat megállítja. Céges környezetben a rendszergazdák korlátozhatják, melyik mód választható.
+
+00:05:52.436 --> 00:06:07.556
+Az ágens a csapat többi eszközéhez is kapcsolódhat. Erre szolgál az MCP, vagyis Model Context Protocol: egy nyílt szabvány, amelyen keresztül a Claude Code például a hibajegykezelőt is eléri.
+
+00:06:07.906 --> 00:06:22.450
+A dokumentáció példája: valósítsd meg a Jira-jegyben leírt funkciót, és nyiss róla pull requestet a GitHubon. Az asztali appban ezeket csatlakozóknak, angolul connectors, hívják.
+
+00:06:22.800 --> 00:06:35.688
+Párhuzamos munkához pedig ott a git worktree: a tároló külön munkapéldánya, saját ággal. Így két ágens dolgozhat egyszerre, anélkül hogy összeakadnának.
+
+00:06:37.188 --> 00:06:45.876
+Tegyük össze a webshop-hiba mai útját. A hibajegyet ember írta, és a tervet is ember hagyta jóvá.
+
+00:06:46.226 --> 00:06:58.178
+A munka közepét az ágens végezte: teszt, javítás külön ágon, újabb teszt, commit és pull request. Ezt a szakaszt önállóan végigvitte.
+
+00:06:58.528 --> 00:07:12.688
+A végén megint ember jön: a fejlesztő átnézi a különbséget, jóváhagyja, és csak ezután kerül élesbe a javítás. Az ágens gyors munkatárs, de a felelősség az emberé.
+
+00:07:14.188 --> 00:07:23.764
+Foglaljuk össze. Az ágens körben dolgozik: információt gyűjt, cselekszik, és ellenőrzi az eredményt.
+
+00:07:24.114 --> 00:07:33.522
+Jó keretek kellenek hozzá: terv, CLAUDE.md, engedélyek, és egy teszt, amely megmondja, kész-e a munka.
+
+00:07:33.872 --> 00:07:38.312
+Az eredményt élesítés előtt mindig ember nézi át.
+
+00:07:38.662 --> 00:07:48.358
+A sorozat utolsó részében arról lesz szó, mi ebben a te szereped: hogyan segítheti egy üzleti elemző, hogy az ágens jól dolgozzon.

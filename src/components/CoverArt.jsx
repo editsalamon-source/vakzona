@@ -743,7 +743,37 @@ function Nagyito() {
   );
 }
 
+// Két oldal: balra a követelmény (dokumentum pipákkal), jobbra a kódszerkesztő ablaka,
+// köztük a narancs, kétirányú híd (a fejlesztés az üzleti elemző oldaláról nézve).
+function KetOldal() {
+  const code = [[0, 70], [16, 54], [16, 40], [32, 46], [16, 30], [0, 24]];
+  return (
+    <>
+      <rect x="34" y="58" width="132" height="184" rx="10" fill={BG} strokeWidth="1.5" />
+      <line x1="54" y1="84" x2="124" y2="84" strokeWidth="2" />
+      {[0, 1, 2, 3].map((i) => {
+        const y = 116 + i * 30;
+        return (
+          <g key={i} opacity="0.7">
+            <path d={`M54 ${y} l4 4 l7 -8`} strokeWidth="1.6" strokeLinejoin="round" />
+            <line x1="76" y1={y} x2={i % 2 ? 128 : 146} y2={y} strokeWidth="1.5" />
+          </g>
+        );
+      })}
+      <rect x="234" y="58" width="132" height="184" rx="10" fill={BG} strokeWidth="1.5" />
+      <line x1="234" y1="82" x2="366" y2="82" strokeWidth="1.5" />
+      {[250, 262, 274].map((x) => <circle key={x} cx={x} cy="70" r="3" strokeWidth="1.2" />)}
+      {code.map(([dx, w], i) => (
+        <line key={i} x1={252 + dx} y1={106 + i * 22} x2={252 + dx + w} y2={106 + i * 22} strokeWidth="1.5" opacity="0.7" />
+      ))}
+      <path d="M182 136 h36 M208 126 l10 10 l-10 10" stroke={A} strokeWidth="3" strokeLinejoin="round" />
+      <path d="M218 168 h-36 M192 158 l-10 10 l10 10" stroke={A} strokeWidth="3" strokeLinejoin="round" />
+    </>
+  );
+}
+
 const MOTIFS = {
+  ketoldal: KetOldal,
   merleg: Merleg,
   lakat: Lakat,
   domino: Domino,

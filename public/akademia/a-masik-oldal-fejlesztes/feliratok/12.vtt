@@ -1,0 +1,100 @@
+WEBVTT
+
+00:00:00.600 --> 00:00:11.928
+Elérkeztünk a sorozat utolsó részéhez. Láttad, hogyan dolgoznak a fejlesztők, és hogyan javított ki egy MI-ágens egy valódi hibát.
+
+00:00:12.278 --> 00:00:24.926
+Most jön a legfontosabb kérdés: ha az ágens kódol, mi marad az embernek? És mit tehet ebben egy üzleti elemző, angolul business analyst, röviden BA?
+
+00:00:26.426 --> 00:00:36.434
+A Claude Code biztonsági leírásában van egy egyszerű mondat: te felelsz azért, hogy jóváhagyás előtt átnézd a javasolt kódot és parancsokat.
+
+00:00:36.784 --> 00:00:50.224
+Ezt hívjuk átnézésnek, angolul review. Az ágens dolgozhat gyorsan és önállóan, de amit élesbe engedünk, azt ember nézte meg, és ember vállal érte felelősséget.
+
+00:00:50.574 --> 00:00:59.766
+A BA itt is ott van: jóváhagyás előtt megkérdezheti, hogy a változás valóban azt teszi-e, amit a követelmény kér.
+
+00:01:01.266 --> 00:01:16.962
+Két biztonsági veszélyt mindenkinek ismernie kell. Az első a titkok, angolul secrets: jelszavak, hozzáférési kulcsok. Ezek nem valók hibajegybe, csevegésbe vagy a kódba.
+
+00:01:17.312 --> 00:01:35.240
+A második az utasításbecsempészés, angolul prompt injection. A dokumentáció szerint ilyenkor egy támadó rosszindulatú szöveggel próbálja felülírni az MI utasításait. Ez a szöveg lapulhat egy weboldalon vagy egy dokumentumban is.
+
+00:01:35.590 --> 00:01:46.438
+A Claude Code engedélyekkel és ellenőrzéssel védekezik, a dokumentáció pedig azt tanácsolja: megbízhatatlan tartalmat ne adj át neki közvetlenül.
+
+00:01:47.938 --> 00:02:02.650
+A minőséghez az ágensnek tudnia kell, mikor kész a munka. A dokumentáció ezt tanácsolja: adj a Claude-nak valamit, amit lefuttathat, és ami egyértelműen sikert vagy kudarcot jelez.
+
+00:02:03.000 --> 00:02:12.432
+Ilyen egy teszt. Az előző részben is ez történt: a piros teszt megmutatta a hibát, a zöld igazolta a javítást.
+
+00:02:12.782 --> 00:02:24.206
+És honnan jön a jó teszt? A jó elfogadási feltételből, angolul acceptance criteria. Ezt pedig gyakran éppen a BA írja.
+
+00:02:25.706 --> 00:02:38.714
+Egyre több csapat dolgozik úgy, hogy az ágens egy írott specifikációból indul. Ezt specifikációvezérelt fejlesztésnek hívják, angolul spec-driven development.
+
+00:02:39.064 --> 00:02:54.208
+A dokumentáció példájában a Claude kérdéseket tesz fel, amíg össze nem áll a specifikáció, és egy SPEC.md nevű fájlba írja. Ebből indul az építés, és később ehhez mérik a kész munkát.
+
+00:02:54.558 --> 00:03:08.118
+Ez a BA hazai terepe: a pontos követelmény, a kivételek, és az, hogy mi nem tartozik a feladatba. Minél jobb a specifikáció, annál jobb az ágens munkája.
+
+00:03:09.618 --> 00:03:21.474
+Van, amit az ágens nem tud kiolvasni a kódból. A dokumentáció fel is sorolja: például egy döntés, amelyet a csapat egy megbeszélésen hozott.
+
+00:03:21.824 --> 00:03:33.008
+Ilyen lehet az is, hogy a kedvezmény a bruttó vagy a nettó összegre jár, vagy hogy egy szabályt miért vezettek be. Ezt a tudást gyakran a BA hordozza.
+
+00:03:33.358 --> 00:03:42.742
+Ha leírod a hibajegybe vagy a specifikációba, az ágens is tudni fogja. Ha nem, találgatni fog.
+
+00:03:44.242 --> 00:03:59.722
+Hol találkozhatsz vele? A Claude Code a terminál mellett asztali alkalmazásban, angolul desktop app, is elérhető, céges előfizetéssel is. A termékoldalon ez a felülete látszik.
+
+00:04:00.072 --> 00:04:11.448
+A bal oldalán a munkamenetek listája, jobbra a beszélgetés: a felhasználó leírja a hibát, a Claude pedig elmondja, mit talált, és mit módosított.
+
+00:04:11.798 --> 00:04:21.086
+Üzleti elemzőként nem kell kódot írnod vele. Arra is használhatod, hogy megértsd, amit a fejlesztők írtak.
+
+00:04:22.586 --> 00:04:32.882
+A dokumentáció külön leírja, hogyan ismerhetsz meg egy ismeretlen kódbázist: kérj áttekintést, aztán kérdezz egyre konkrétabban.
+
+00:04:33.232 --> 00:04:48.496
+Ha biztos akarsz lenni benne, hogy semmi ne változzon, válaszd a tervezés módot: ilyenkor a Claude olvas és magyaráz, de a forráskódot nem szerkeszti. Kézi módban pedig minden módosítás előtt rákérdez.
+
+00:04:48.846 --> 00:05:04.470
+Kérdezhetsz például így: hol számolja a rendszer a kedvezményt? Pontosan húszezer forintnál jár-e? Milyen esetekre van teszt? A válaszokat aztán a fejlesztőkkel együtt ellenőrizd.
+
+00:05:05.970 --> 00:05:17.082
+Nézzük meg egyben a teljes utat, amelyet a sorozatban bejártunk. Az elején a követelmény áll, ebből lesz a hibajegy, vagyis a feladat.
+
+00:05:17.432 --> 00:05:29.240
+A fejlesztő külön ágon dolgozik, a módosítást commitokban rögzíti, majd pull requestben a kollégák átnézik. Közben tesztek ellenőrzik a működést.
+
+00:05:29.590 --> 00:05:50.350
+Élesbe a folyamatos integráció és szállítás, angolul continuous integration és continuous delivery, röviden CI/CD, juttatja. Ezt a láncot ma már egy MI-ágens is végigjárhatja, de a két végén ember áll: a követelménynél és a jóváhagyásnál.
+
+00:05:51.850 --> 00:06:10.090
+És végül: mit tehetett volna a BA, hogy a hiba meg se szülessen? A követelmény így szólt: húszezer forinttól tíz százalék kedvezmény jár. Embernek egyértelműnek tűnik, de a határ pontos értelmét nem mondja ki elég élesen.
+
+00:06:10.440 --> 00:06:21.720
+Egy pontos elfogadási feltétel kimondja: a kedvezmény akkor jár, ha a kosár összege legalább húszezer forint. És példákat is ad a határon.
+
+00:06:22.070 --> 00:06:35.774
+Tizenkilencezer-kilencszázkilencvenkilenc forintnál nincs kedvezmény, húszezernél és húszezer-egynél már jár. Ebből a fejlesztő vagy az ágens rögtön tesztet írhat, és a hiba meg sem születik.
+
+00:06:37.274 --> 00:06:47.642
+Foglaljuk össze. Az ágens gyors és szorgalmas, de a felelősség az emberé: amit élesbe engedünk, azt ember nézi át.
+
+00:06:47.992 --> 00:06:58.912
+Az ágens annyira jó, amennyire pontos a bemenete. A specifikáció és az elfogadási feltétel a BA legerősebb eszköze.
+
+00:06:59.262 --> 00:07:10.062
+A Claude Code-dal a kódot olvasni és érteni is tudod, akkor is, ha nem programozol. Kérdezz bátran, a fejlesztőktől és tőle is.
+
+00:07:10.412 --> 00:07:27.692
+Egy záró gondolat: az MI nem elveszi az elemző munkáját, hanem felértékeli. Aki pontosan meg tudja fogalmazni, mit kell csinálni, annak az ágensek is jobban dolgoznak. Köszönöm, hogy végignézted a sorozatot!

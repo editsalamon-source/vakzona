@@ -1,0 +1,88 @@
+WEBVTT
+
+00:00:00.600 --> 00:00:15.384
+A javítás elkészült egy saját ágon, egy kolléga átnézte, és a tesztek is zöldek. A vásárlók mégsem kapják meg a kedvezményt, mert a javítás még csak a tárolóban van, nem a webshopban.
+
+00:00:15.734 --> 00:00:25.550
+Mi kell ahhoz, hogy a kód a fejlesztő gépéről eljusson a felhasználókig? Erről szól ez a rész: az út az élesig.
+
+00:00:27.050 --> 00:00:45.698
+A harmadik részben láttad: a kód több környezetben fut. A fejlesztői környezet, angolul development, a fejlesztő saját gépe. A tesztkörnyezet, angolul staging, egy próbaterep, amely a lehető leghűbben utánozza a valódit.
+
+00:00:46.048 --> 00:00:58.696
+Az éles környezet, angolul production, az, amit a vásárlók használnak. Olyan, mint egy bolt kirakata: ami ide kerül, azt mindenki látja.
+
+00:00:59.046 --> 00:01:21.078
+A kérdés az, hogyan jut el a kód biztonságosan az egyiktől a másikig. Ezt régen sokszor kézzel csinálták, ellenőrzőlistával, gyakran késő este, amikor kevesebben vásárolnak. Egy elfelejtett lépés is hibát okozhatott. Ma ezt egy automatikus futószalag végzi.
+
+00:01:22.578 --> 00:01:42.042
+A modern fejlesztésben a kód útját egy automatikus futószalag kíséri, angolul pipeline. A kép 1913-ban készült a Ford-gyárban, az egyik első futószalagnál: a munkadarab állomásról állomásra halad, és mindenhol ugyanaz a lépés történik vele.
+
+00:01:42.392 --> 00:01:58.304
+A szoftveres futószalag állomásai: összeállítás, tesztek, telepítés. Az összeállítás, angolul build, a forráskódból futtatható csomagot készít, ahogy a nyomda a kéziratból könyvet.
+
+00:01:58.654 --> 00:02:06.982
+Ha bármelyik állomáson hiba van, például elbukik egy teszt, a szalag megáll, és a hibás kód nem megy tovább.
+
+00:02:08.482 --> 00:02:31.042
+Ennek a futószalagnak a neve CI/CD. A CI, vagyis continuous integration, magyarul folyamatos integráció: minden változtatást azonnal összeállítanak és tesztelnek, nem hetekig gyűjtik. Így a hibák kicsik maradnak, és gyorsan kiderül, melyik változtatás okozta őket.
+
+00:02:31.392 --> 00:02:44.832
+A CD kétféle lehet. Continuous delivery, magyarul folyamatos szállítás: a kód bármikor élesíthető, de az élesítésről ember dönt, egy gombnyomással.
+
+00:02:45.182 --> 00:03:05.534
+Continuous deployment, magyarul folyamatos telepítés: ha minden teszt zöld, a kód emberi beavatkozás nélkül élesbe kerül. Hogy egy cég melyiket választja, az kockázat és szabályozás kérdése. Egy banki rendszer általában óvatosabb, egy kisebb webshop bátrabb lehet.
+
+00:03:07.034 --> 00:03:27.170
+Honnan tudja a futószalag, mit kell csinálnia? Egy egyszerű szövegfájlból. Ez a Flask projekt valódi beállítófájlja. A GitHub saját futószalag-szolgáltatását GitHub Actionsnek hívják, egy ilyen leírást pedig munkafolyamatnak, angolul workflow.
+
+00:03:27.520 --> 00:03:35.344
+Az elején áll, mikor induljon: minden pull requestnél, és amikor valaki feltölt a fő ágra.
+
+00:03:35.694 --> 00:03:54.798
+Alatta a feladatok: itt a tesztek, többféle környezetben. Ezért futott le az előző részben látott tizenkét ellenőrzés. Ha bármelyik elbukik, a pull request mellett piros jelzés jelenik meg, és a fejlesztő azonnal látja, mit kell javítania.
+
+00:03:56.298 --> 00:04:07.722
+És így néz ki egy lefutott futószalag. Ez a GitHub egyik nyilvános weboldalának élesítése: egy változtatás után magától elindult a munkafolyamat.
+
+00:04:08.072 --> 00:04:24.296
+Az első lépés az összeállítás, huszonnégy másodperc alatt. Utána a telepítés, angolul deploy, nyolc másodperc alatt. Alatta ott a weboldal címe: a módosítás élesben van.
+
+00:04:24.646 --> 00:04:43.102
+Az egész kevesebb mint egy perc volt, emberi kéz érintése nélkül. Kézzel ez sokkal tovább tartana, és több hibalehetőséggel járna. A futás minden lépése visszakereshető: ki indította, mikor, és mi történt közben.
+
+00:04:44.602 --> 00:05:05.698
+Két szót érdemes megkülönböztetni. A telepítés, angolul deploy, azt jelenti, hogy a kód felkerül egy környezetbe. A kiadás, angolul release, azt, hogy a felhasználók számára is elérhetővé válik. A kettő nem mindig történik egyszerre.
+
+00:05:06.048 --> 00:05:28.824
+Mi van, ha élesítés után mégis baj van? Ilyenkor jön a visszagörgetés, angolul rollback: visszaállnak az előző, működő változatra. Mivel minden változat megvan, ez akár percek kérdése. Ehhez sem kell kézi munka: a futószalag az előző csomagot telepíti újra.
+
+00:05:30.324 --> 00:05:44.052
+Van egy még finomabb eszköz is: a funkciókapcsoló, angolul feature flag. Olyan, mint egy villanykapcsoló a kódban: az új funkció már élesben van, de ki van kapcsolva.
+
+00:05:44.402 --> 00:06:04.154
+Így be lehet kapcsolni előbb csak a munkatársaknak, aztán például a vásárlók tíz százalékának. Ha baj van, egy kattintással kikapcsolható, új telepítés nélkül. Így egy új funkció kockázata kicsi marad: ha valami nem jól működik, csak kevesen érzik meg.
+
+00:06:04.504 --> 00:06:16.576
+Ez neked is fontos: az élesítés és az üzleti bevezetés szétválik. A kód kész, de hogy mikor és kinek kapcsolják be, az már üzleti döntés.
+
+00:06:18.076 --> 00:06:29.908
+Kövessük végig a webshop javítását. A pull requestet jóváhagyták, és összefésülték a fő ágba. Ez elindítja a futószalagot.
+
+00:06:30.258 --> 00:06:43.482
+Először összeállítás, majd a tesztek: köztük a mi három határérték-tesztünk, mind zöld. Ezután a csomag a tesztkörnyezetbe kerül, ahol egy próbavásárlás is lefut.
+
+00:06:43.832 --> 00:07:03.464
+Végül az élesítés. Aki ezután pontosan húszezer forintért vásárol, megkapja a tíz százalék kedvezményt, kétezer forintot. A javítás a hibajegytől eljutott az élesig. A futószalag minden állomása egy biztonsági háló volt.
+
+00:07:04.964 --> 00:07:15.644
+Foglaljuk össze. Az összeállítás, a tesztek és az élesítés egy automatikus futószalagon zajlik: ez a CI/CD.
+
+00:07:15.994 --> 00:07:26.842
+A kód környezetről környezetre halad: fejlesztői, teszt, éles. Ha bármelyik állomás hibát talál, a szalag megáll.
+
+00:07:27.192 --> 00:07:38.184
+Ha élesben mégis baj van, vissza lehet görgetni. A funkciókapcsolóval pedig az üzlet dönti el, mikor és kinek kapcsol be egy újdonság.
+
+00:07:38.534 --> 00:07:48.662
+De mi történik, ha egy hiba mégis átcsúszik, és élesben derül ki? Erről szól a következő rész: ha valami elromlik.

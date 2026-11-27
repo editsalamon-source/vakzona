@@ -1,0 +1,91 @@
+WEBVTT
+
+00:00:00.600 --> 00:00:08.712
+Az előző részben megismerted a mentési pontot, angolul commit: így őrzi meg a Git a kód minden állapotát.
+
+00:00:09.062 --> 00:00:23.438
+De egy webshopon nem egy ember dolgozik, hanem egy egész csapat. Hogyan tudnak egyszerre ugyanazon a kódon dolgozni úgy, hogy ne írják felül egymás munkáját? Erről szól ez a rész.
+
+00:00:24.938 --> 00:00:39.482
+Képzeld el, hogy öten szerkesztetek egyszerre egy szerződést, mindenki ugyanabban a fájlban. Az egyik átír egy bekezdést, a másik közben kitörli. Pillanatok alatt káosz lesz.
+
+00:00:39.832 --> 00:00:49.120
+A fejlesztők ezért másképp dolgoznak: mindenki a saját példányán módosít, nyugodtan, a többiek zavarása nélkül.
+
+00:00:49.470 --> 00:01:01.110
+Amikor kész, a változtatást egy kolléga átnézi, és csak utána kerül be a közös változatba. Nézzük sorban, milyen eszközök segítik ezt.
+
+00:01:02.610 --> 00:01:15.450
+A kód közös példánya egy tárolóban van, angolul repository. A legismertebb ilyen szolgáltatás a GitHub: olyan, mint egy közös meghajtó, csak a kódra szabva.
+
+00:01:15.800 --> 00:01:28.064
+Minden fejlesztő először lemásolja a teljes tárolót a saját gépére, az összes korábbi mentési ponttal együtt. Ezt klónozásnak hívjuk, angolul clone.
+
+00:01:28.414 --> 00:01:48.718
+Utána a saját gépén dolgozik, és mentési pontokat készít. Amikor meg akarja osztani a munkáját, feltölti a közös tárolóba: ez a feltöltés, angolul push. Ha a többiek munkáját akarja megkapni, letölti: ez a letöltés, angolul pull.
+
+00:01:50.218 --> 00:02:05.794
+Hogy a fejlesztők ne zavarják egymást, ágakat használnak, angolul branch. Gondolj egy fára: a törzs a közös, elfogadott kód. Ezt általában main, vagyis fő ágnak hívják.
+
+00:02:06.144 --> 00:02:25.728
+Aki új feladatba kezd, nyit egy saját ágat. Ez a fő ág pillanatnyi másolata, amelyen szabadon dolgozhat: amit itt csinál, az a fő ágat nem érinti. Egy ág pillanatok alatt elkészül, ezért a fejlesztők általában minden feladathoz újat nyitnak.
+
+00:02:26.078 --> 00:02:40.982
+Ez egy valódi tároló ágainak listája a GitHubon. Felül a fő ág, alatta két munkában lévő ág. Mindkettőhöz tartozik egy módosítási kérelem: erről mindjárt bővebben.
+
+00:02:42.482 --> 00:02:55.514
+Ha a munka elkészült, az ágat vissza kell vezetni a fő ágba. Ezt összefésülésnek hívjuk, angolul merge: a mellékág változtatásai bekerülnek a közös kódba.
+
+00:02:55.864 --> 00:03:08.248
+Ez az ábra a Git hivatalos könyvéből való. A körök mentési pontok. Az alsó ágon két mentési pont készült, közben a fő ág is haladt tovább.
+
+00:03:08.598 --> 00:03:23.550
+Összefésüléskor a Git a két ág változtatásait egyesíti, és létrehoz egy új mentési pontot, amelynek két szülője van. Ha a két ág a kód különböző részeit módosította, ez magától megy.
+
+00:03:25.050 --> 00:03:35.058
+És ha ketten ugyanazt a sort írták át? Ilyenkor a Git nem dönthet helyettük: ütközést jelez, angolul merge conflict.
+
+00:03:35.408 --> 00:03:54.704
+Ezt egy valódi próbán rögzítettük. A javító ágon a határ húszezer forint lett, egyenlőséggel. Közben valaki a fő ágon huszonötezerre írta át ugyanazt a sort. A Git mindkét változatot beírja a fájlba, jelekkel elválasztva.
+
+00:03:55.054 --> 00:04:16.270
+Hogy melyik a helyes, azt ember dönti el. És itt jön a képbe az üzleti elemző: ha a két változat két különböző követelményből jön, az már nem technikai kérdés, hanem üzleti döntés. Ezért fontos, hogy a követelmények egyértelműek legyenek, és ne mondjanak ellent egymásnak.
+
+00:04:17.770 --> 00:04:37.018
+A javítást nem fésülik be csak úgy a fő ágba. A fejlesztő előbb módosítási kérelmet nyit, angolul pull request, röviden PR. Ezzel azt mondja: kész vagyok, kérlek, nézzétek át, és ha rendben van, vegyétek át.
+
+00:04:37.368 --> 00:04:51.048
+Ez egy valódi pull request egy népszerű, nyilvános Python-csomag tárolójából. Fent látszik, melyik ágból melyikbe kerülne a módosítás, alatta a leírás és a beszélgetés.
+
+00:04:51.398 --> 00:05:04.646
+Az átnéző itt változtatást kért: a kódsor mellé írta, mi hiányzik. A szerző javított, újabb mentési pontot töltött fel, és a beszélgetés ott folytatódott.
+
+00:05:06.146 --> 00:05:18.962
+Ezt a folyamatot kódátnézésnek hívjuk, angolul code review. A lényeg a négy szem elve: amit egy ember írt, azt egy másik is megnézi, mielőtt a fő ágba kerül.
+
+00:05:19.312 --> 00:05:30.160
+Az átnéző nemcsak hibát keres. Azt is nézi, érthető-e a kód, megfelel-e a feladatnak, és nem rontja-e el a rendszer más részeit.
+
+00:05:30.510 --> 00:05:52.422
+Ha minden rendben, jóváhagyja, angolul approve. A képen ez a zöld pipa. Ezután a módosítást összefésülik, és bekerül a fő ágba. Ha viszont az átnéző változtatást kér, a kör újraindul: javítás, feltöltés, újabb átnézés.
+
+00:05:53.922 --> 00:06:10.698
+Térjünk vissza a webshophoz. A fejlesztő a javításhoz új ágat nyitott, a nevéből látszik, hogy hibajavítás. Ezen az ágon készült az előző részben látott mentési pont: Kedvezmény húszezer forinttól is jár.
+
+00:06:11.048 --> 00:06:26.432
+Ez egy valódi Git-kimenet. A csillagok a mentési pontok, a vonalak az ágak. Látszik, hogy a fő ágon közben a szállítási díj is elkészült, végül a két ág egy összefésüléssel találkozik.
+
+00:06:26.782 --> 00:06:42.334
+Az összefésülés előtt azonban pull request készült, és egy kolléga átnézte. Jóváhagyta, de kért valamit: írjon a fejlesztő tesztet a húszezer forintos esetre, hogy ez a hiba soha többé ne térjen vissza.
+
+00:06:43.834 --> 00:06:53.866
+Foglaljuk össze. A fejlesztők saját ágon dolgoznak, így nem zavarják egymást, a fő ág pedig mindig működőképes marad.
+
+00:06:54.216 --> 00:07:03.552
+A kész munkát összefésülik. Ha ketten ugyanazt a sort írták át, ütközés keletkezik, és ember dönt.
+
+00:07:03.902 --> 00:07:18.062
+A fő ágba csak átnézett kód kerül: pull request és kódátnézés után. Neked is érdemes ránézned egy-egy pull requestre: a leírásából kiderül, melyik követelményt valósítja meg.
+
+00:07:18.412 --> 00:07:27.532
+A következő részben a tesztelésről lesz szó: hogyan győződnek meg a fejlesztők arról, hogy a kód tényleg azt csinálja, amit kell.
