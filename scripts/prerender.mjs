@@ -1,4 +1,4 @@
-// A `vite build` után minden ismert útvonalhoz saját dist/<út>/index.html készül a helyes
+// A `vite build` után minden ismert útvonalhoz saját dist/<út>.html készül a helyes
 // címmel, leírással és canonical címmel, hogy a keresők már a nyers HTML-ben is ezt lássák
 // (a közös index.html canonicalja különben minden aloldalon a főoldalra mutatna).
 // A `npm run build` automatikusan futtatja.
@@ -58,9 +58,12 @@ function render({ path, title, description }) {
     .replace(/(<meta\s+name="twitter:description"\s+content=")[^"]*"/, `$1${d}"`);
 }
 
+// Útvonalanként <út>.html (nem <út>/index.html): a Cloudflare Pages a mappás változatot perjeles címre
+// irányítaná át, a .html fájlt viszont perjel nélkül szolgálja ki, ahogy a canonical cím is áll.
 for (const page of pages) {
-  const out = page.path === "/" ? dist : join(dist, ...page.path.split("/").filter(Boolean));
-  mkdirSync(out, { recursive: true });
-  writeFileSync(join(out, "index.html"), render(page));
+  const parts = page.path.split("/").filter(Boolean);
+  const file = parts.length ? join(dist, ...parts.slice(0, -1), `${parts.at(-1)}.html`) : join(dist, "index.html");
+  mkdirSync(join(file, ".."), { recursive: true });
+  writeFileSync(file, render(page));
 }
 console.log(`prerender: ${pages.length} oldal`);
