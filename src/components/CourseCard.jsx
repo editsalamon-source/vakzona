@@ -4,6 +4,8 @@ import { formatLength } from "../data/akademia";
 import { readProgress } from "../utils/haladas";
 import CoverArt from "./CoverArt";
 import FreeBadge from "./FreeBadge";
+import CartButton from "./CartButton";
+import CartCSS from "../css/Cart.module.css";
 import CSS from "../css/Academy.module.css";
 
 // Kompakt tanfolyamkártya (Udemy-mintára): kis borító, cím, alcím, adatok, haladás. Az egész kártya link.
@@ -11,7 +13,8 @@ function CourseCard({ course }) {
   const done = readProgress(course);
   const total = course.lessons.length;
   return (
-    <article className={CSS.card}>
+    <article className={CSS.card} style={{ position: "relative" }}>
+      <CartButton course={course} className={CartCSS.cardCart} />
       <Link to={`/akademia/${course.slug}`} className={CSS.cardLink}>
         <span className={CSS.thumb}>
           <span className={CSS.thumbGrid} />

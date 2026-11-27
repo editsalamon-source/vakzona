@@ -7,7 +7,10 @@ import analyses, { getCategories } from "../data/analyses";
 import courses, { AKADEMIA, formatLength, getAcademyCategories } from "../data/akademia";
 import { readProgress } from "../utils/haladas";
 import { FIOK, useAccount, isAdmin } from "../utils/fiok";
+import { FIZETES } from "../data/fizetes";
+import { useCart } from "../utils/kosar";
 import HeaderCSS from "../css/Header.module.css";
+import CartCSS from "../css/Cart.module.css";
 
 const active = (base) => ({ isActive }) => [base, isActive && HeaderCSS.active].filter(Boolean).join(" ");
 
@@ -97,6 +100,23 @@ function AccountLink() {
   );
 }
 
+// Kosár ikon (csak bekapcsolt fizetésnél, src/data/fizetes.js), a tételek számával
+function CartLink() {
+  const items = useCart();
+  const label = items.length ? `Kosár: ${items.length} tanfolyam` : "Kosár";
+  return (
+    <NavLink to="/kosar" className={active(HeaderCSS.account)} aria-label={label} title={label}>
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+        strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+        <path d="M3.5 4.5h2.2l2.1 10.25a1.5 1.5 0 0 0 1.47 1.2h7.6a1.5 1.5 0 0 0 1.46-1.15L19.9 8H6.6" />
+        <circle cx="9.75" cy="19.5" r="1.25" />
+        <circle cx="16.75" cy="19.5" r="1.25" />
+      </svg>
+      {items.length > 0 && <span className={CartCSS.count}>{items.length}</span>}
+    </NavLink>
+  );
+}
+
 // Admin ikon a fiók mellett, csak adminnak (a jogot az adatbázis minden hívásnál ellenőrzi)
 function AdminLink() {
   const { user } = useAccount();
@@ -145,6 +165,7 @@ function Header() {
           <NavLink to="/rolunk" className={active(HeaderCSS.about)}>
             Rólam
           </NavLink>
+          {FIOK && FIZETES && <CartLink />}
           {FIOK && <AccountLink />}
           {FIOK && <AdminLink />}
         </nav>

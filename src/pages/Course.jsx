@@ -10,6 +10,9 @@ import { KAPCSOLAT_EMAIL } from "../data/kapcsolat";
 import VideoPlayer from "../components/VideoPlayer";
 import FreeBadge from "../components/FreeBadge";
 import CourseNotice from "../components/CourseNotice";
+import { ONLINE_FIZETES, ar, forint } from "../data/fizetes";
+import { useCart, addToCart, megveheto } from "../utils/kosar";
+import CartCSS from "../css/Cart.module.css";
 import NotFound from "./NotFound";
 import CSS from "../css/Course.module.css";
 import FormCSS from "../css/ProtectedPdf.module.css";
@@ -64,6 +67,7 @@ function Meta({ course, count = true }) {
 // fiókos belépés: kijelentkezve link a fiókoldalra, bejelentkezve a hozzáférés állapota
 function AccountBox({ course, access, user }) {
   const back = `/fiok?vissza=${encodeURIComponent(`/akademia/${course.slug}`)}`;
+  const buyable = megveheto(course.slug);
   return (
     <div className={CSS.login}>
       <span className={CSS.loginHead}>
@@ -73,8 +77,14 @@ function AccountBox({ course, access, user }) {
       {!user && (
         <>
           <p className={CSS.loginText}>
-            Ha a fiókjához hozzáférést kapott, belépés után a tanfolyam azonnal megnyílik. Hozzáférést regisztráció után az{" "}
-            <a href={`mailto:${KAPCSOLAT_EMAIL}`}>{KAPCSOLAT_EMAIL}</a> címen kérhet.
+            {buyable ? (
+              "Ha már megvásárolta, vagy a fiókjához hozzáférést kapott, belépés után a tanfolyam azonnal megnyílik."
+            ) : (
+              <>
+                Ha a fiókjához hozzáférést kapott, belépés után a tanfolyam azonnal megnyílik. Hozzáférést regisztráció után az{" "}
+                <a href={`mailto:${KAPCSOLAT_EMAIL}`}>{KAPCSOLAT_EMAIL}</a> címen kérhet.
+              </>
+            )}
           </p>
           <Link to={back} className={`btn ${CSS.loginBtn}`}>
             Belépés vagy regisztráció <Arrow size={12} />
@@ -87,6 +97,7 @@ function AccountBox({ course, access, user }) {
           <br />
           {access.status === "stale"
             ? "A tanfolyam frissítése miatt a hozzáférés átmenetileg nem érhető el. Kérjük, nézzen vissza később."
+            : buyable ? "Ehhez a tanfolyamhoz még nincs hozzáférése. A fenti gombbal kosárba teheti."
             : <>
                 Ehhez a tanfolyamhoz még nincs hozzáférése. Hozzáférést az{" "}
                 <a href={`mailto:${KAPCSOLAT_EMAIL}`}>{KAPCSOLAT_EMAIL}</a> címen kérhet. Kérjük, írja meg a
@@ -96,6 +107,33 @@ function AccountBox({ course, access, user }) {
           <Link to="/fiok">Fiókom</Link>
         </p>
       )}
+    </div>
+  );
+}
+
+// ár és „Kosárba” gomb (csak bekapcsolt fizetésnél és megvásárolható tanfolyamnál, src/data/fizetes.js)
+function BuyBox({ course }) {
+  const items = useCart();
+  if (!megveheto(course.slug)) return null;
+  const inCart = items.includes(course.slug);
+  return (
+    <div className={`${CSS.login} ${CartCSS.buy}`}>
+      <span className={CartCSS.buyPrice}>{forint(ar(course.slug))}</span>
+      <p className={CartCSS.buyNote}>
+        {ONLINE_FIZETES
+          ? "Egyszeri díj, a tanfolyam a fizetés után azonnal megnyílik a fiókjában."
+          : "Egyszeri díj. Az online fizetés még kidolgozás alatt van: a kosárból elküldheti vásárlási szándékát, és e-mailben jelentkezünk a részletekkel."}
+      </p>
+      <div className={CartCSS.buyRow}>
+        {inCart ? (
+          <Link to="/kosar" className="btn">A kosárban van: tovább <Arrow size={12} /></Link>
+        ) : (
+          <>
+            <button type="button" className="btn" onClick={() => addToCart(course.slug)}>Kosárba</button>
+            {items.length > 0 && <Link to="/kosar" className="btn btnGhost">Kosár ({items.length})</Link>}
+          </>
+        )}
+      </div>
     </div>
   );
 }
@@ -237,6 +275,7 @@ function CourseLanding({ course, access, account = {} }) {
             <div className={CSS.loginPlaceholder} />
           ) : (
             <>
+              {FIOK && <BuyBox course={course} />}
               {FIOK && <AccountBox course={course} access={access} user={account.user} />}
               {admin && <PasswordForm access={access} alt={FIOK} />}
             </>

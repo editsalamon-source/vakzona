@@ -92,6 +92,35 @@ beállítva, a fiók ki van kapcsolva, és az oldal úgy működik, mint eddig.
       magunknak, majd kiküldés. A kiküldések naplózva vannak (`ertesites_kuldesek`), a választóban „már kiküldve”.
     - A Brevo ingyenes csomagja napi 300 levelet enged: 290 feliratkozó fölött a függvény nem küld.
     - Feliratkozók SQL-lel: `select count(*) from public.ertesites;`
+12. **Kosár és fizetés** (2026-11-27). Két kapcsoló a `src/data/fizetes.js`-ben: `FIZETES` (kosár és árak
+    látszanak) és `ONLINE_FIZETES`. Ár: minden zárt tanfolyam egységesen 6 950 Ft (`EGYSEGAR`, eltérés: `ARAK`).
+    - **Vásárlási szándék** (`ONLINE_FIZETES = false`, így élesítve): a kosár „Vásárlási szándék elküldése” gombja a
+      `vasarlasi_szandek` függvényt hívja (`schema.sql` „Vásárlási szándék” szakasza, egyszer le kell futtatni). Minden
+      admin levelet kap a vásárló címével és a tételekkel (a válasz a vásárlónak megy), a vásárló visszaigazolást.
+      Csak zárt tanfolyam (amelynek kulcsa a `kulcsok` táblában van), felhasználónként naponta legfeljebb 5 beküldés.
+      A hozzáférést a fizetés után az adminoldalon kell kézzel megadni. Beküldések SQL-lel:
+      `select s.letrehozva, u.email, s.tetelek, s.osszeg from public.vasarlasi_szandekok s join auth.users u on u.id = s.user_id order by s.letrehozva desc;`
+    - **Online fizetés** (`ONLINE_FIZETES = true`, MEGÉPÍTVE, KIKAPCSOLVA): több tanfolyam egy fizetésben (Stripe
+      Checkout), a hozzáférést a sikeres fizetés után a Stripe webhookja automatikusan megadja. Kód: `src/data/fizetes.js`, `src/utils/kosar.js` (a kosár a böngészőben), `src/pages/Cart.jsx` (`/kosar`),
+    `api/fizetes-inditas.js` (a szerver számolja az árat, ellenőrzi a belépést), `api/fizetes-webhook.js`
+    (aláírás-ellenőrzés, rögzítés, számla, visszatérítés), `api/_fizetes.js`. Bekapcsolás lépésenként:
+    1. Stripe-fiók (a teszt mód aktiválás és cégadatok nélkül is működik).
+    2. A `schema.sql` „Fizetés” szakaszának lefuttatása az SQL Editorban.
+    3. Vercel → Settings → Environment Variables: `STRIPE_SECRET_KEY` (teszteléshez `sk_test_…`),
+       `SUPABASE_SERVICE_ROLE_KEY` (Supabase → Project Settings → API Keys, a *secret* kulcs). Titkos, a repóba
+       és a chatbe nem kerülhet.
+    4. Stripe → Developers → Webhooks → új végpont: `https://vakzona.com/api/fizetes-webhook`, események:
+       `checkout.session.completed`, `checkout.session.async_payment_succeeded`, `charge.refunded`. Az aláíró kulcsot
+       (`whsec_…`) `STRIPE_WEBHOOK_SECRET` néven a Vercelre.
+    5. `src/data/fizetes.js`: `ONLINE_FIZETES = true`, deploy, majd próbavásárlás a Stripe tesztkártyájával. Éleshez a Stripe-fiók aktiválása és az `sk_live_…` kulcs,
+       új (éles) webhook-kulccsal.
+    - Hátravan bekapcsolás előtt: a számlázó bekötése (`szamlaKiallitas` az `api/_fizetes.js`-ben, Számlázz.hu vagy
+      Billingo), az ÁSZF, a kosár és az adatkezelési tájékoztató `[helykitöltő]`-i (áfa, ÁSZF, megőrzési idő, ezek
+      csak online fizetésnél látszanak), az
+      elállási jogról szóló szöveg jogi átnézése, és a vállalkozási forma.
+    - Visszatérítéskor a hozzáférés megszűnik (`VISSZATERITESKOR_VISSZAVON` a `fizetes.js`-ben), részleges
+      visszatérítésnél nem.
+    - Vásárlások SQL-lel: `select * from public.vasarlasok order by letrehozva desc;`
 
 ## Hozzáférés kezelése
 

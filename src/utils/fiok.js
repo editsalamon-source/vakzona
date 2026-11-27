@@ -112,6 +112,28 @@ export async function accesses() {
   return rows.map((r) => r.tartalom);
 }
 
+// ---------- Fizetés (api/fizetes-inditas.js; kapcsoló: src/data/fizetes.js) ----------
+
+// a kosár tételeinek fizetése: a szerver ellenőrzi a belépést és az árakat, és visszaadja a Stripe fizetőoldalának
+// címét, ahová a böngésző átirányít. consent = a vásárló kérte az azonnali hozzáférést (elállási jog, Cart.jsx)
+export async function startCheckout(slugs, consent) {
+  const { data } = await (await client()).auth.getSession();
+  const token = data.session?.access_token;
+  if (!token) throw Object.assign(new Error("Nincs bejelentkezve."), { code: "nincs_belepve" });
+  const r = await fetch("/api/fizetes-inditas", {
+    method: "POST",
+    headers: { Authorization: `Bearer ${token}`, "Content-Type": "application/json" },
+    body: JSON.stringify({ tetelek: slugs, azonnali: consent }),
+  });
+  const body = await r.json().catch(() => ({}));
+  if (!r.ok || !body.url) throw Object.assign(new Error(body.uzenet || "A fizetés nem indítható."), { code: body.kod, owned: body.megvan });
+  return body.url;
+}
+
+// vásárlási szándék online fizetés helyett (supabase/schema.sql: vasarlasi_szandek): az adminok levelet kapnak a
+// kosár tartalmáról, a vásárló visszaigazolást. tetelek: [{ slug, cim, ar }]
+export const sendPurchaseIntent = (tetelek) => call((c) => c.rpc("vasarlasi_szandek", { p_tetelek: tetelek }));
+
 // ---------- Tanfolyami haladás (supabase/schema.sql: haladas; src/utils/haladas.js) ----------
 
 // a bejelentkezett felhasználó haladása egy tanfolyamon: a kész leckék azonosítói, vagy null, ha még nincs mentve

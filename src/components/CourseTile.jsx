@@ -6,6 +6,10 @@ import Arrow from "./Arrow";
 import Reveal from "./Reveal";
 import VideoPlayer from "./VideoPlayer";
 import FreeBadge from "./FreeBadge";
+import CartButton from "./CartButton";
+import { ar, forint } from "../data/fizetes";
+import { megveheto } from "../utils/kosar";
+import CartCSS from "../css/Cart.module.css";
 import CSS from "../css/Academy.module.css";
 
 // A tanfolyam csempéje: bemutatóvideó (kattintásra indul), leírás, tananyag-adatok, haladás.
@@ -45,9 +49,13 @@ function CourseTile({ course }) {
             <span className="meta">{done} / {total} lecke kész</span>
           </div>
         )}
-        <Link to={`/akademia/${course.slug}`} className={`btn ${CSS.tileBtn}`}>
-          {done > 0 ? "Folytatom" : course.free ? "Megnézem" : "Részletek és belépés"} <Arrow size={12} />
-        </Link>
+        <div className={CartCSS.tileActions}>
+          <Link to={`/akademia/${course.slug}`} className="btn">
+            {done > 0 ? "Folytatom" : course.free ? "Megnézem" : "Részletek és belépés"} <Arrow size={12} />
+          </Link>
+          <CartButton course={course} />
+          {megveheto(course.slug) && <span className={CartCSS.tilePrice}>{forint(ar(course.slug))}</span>}
+        </div>
       </div>
     </Reveal>
   );

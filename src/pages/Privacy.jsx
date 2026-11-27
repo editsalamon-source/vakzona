@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { ERTESITO } from "../data/ertesito";
+import { FIZETES, ONLINE_FIZETES } from "../data/fizetes";
 import PageCSS from "../css/Page.module.css";
 
 // Adatkezelési tájékoztató a Vakzóna-fiókhoz (src/utils/fiok.js, supabase/README.md).
@@ -50,13 +51,28 @@ function Privacy() {
               azt tároljuk, hogy feliratkozott, mikor, és egy véletlenszerű leiratkozó azonosítót.
             </li>
           )}
+          {FIZETES && !ONLINE_FIZETES && (
+            <li>
+              <strong>Vásárlási szándék (csak ha elküldi):</strong> ha a kosár tartalmát elküldi, rögzítjük, mely
+              tanfolyamokat választotta, milyen áron és mikor, és erről e-mailt küldünk Önnek és a Vakzóna
+              adminisztrátorának, az Ön e-mail-címével együtt, hogy válaszolni tudjunk. A kosár maga csak a böngészőjében
+              tárolódik, amíg el nem küldi.
+            </li>
+          )}
+          {FIZETES && ONLINE_FIZETES && (
+            <li>
+              <strong>Vásárlás:</strong> melyik tanfolyamot vette meg, mikor, mennyiért, a fizetés azonosítója és a
+              számla száma. A számlához szükséges nevet és címet a fizetésnél adja meg, ezt a fizetési szolgáltató és
+              a számlázó kezeli. A kártyaadatai a fizetési szolgáltatónál maradnak, azokat mi nem látjuk.
+            </li>
+          )}
           <li>
             <strong>Technikai adatok:</strong> a regisztráció és az utolsó belépés időpontja, valamint a
             szolgáltató biztonsági naplójában rövid ideig a belépéshez használt IP-cím.
           </li>
         </ul>
         <p>
-          Nevet, telefonszámot, címet, fizetési adatot nem kérünk. Nem használunk hirdetési vagy követő sütit, és
+          {FIZETES && ONLINE_FIZETES ? "A fiókhoz nevet, telefonszámot és címet nem kérünk, kártyaadatot egyáltalán nem tárolunk." : "Nevet, telefonszámot, címet, fizetési adatot nem kérünk."} Nem használunk hirdetési vagy követő sütit, és
           az adatokat nem adjuk el, és {ERTESITO ? "a kért értesítő levélen kívül " : ""}nem használjuk marketingcélra.
         </p>
         <p>
@@ -68,6 +84,19 @@ function Privacy() {
           (1) bekezdés f) pont): így látjuk, mely tanfolyamokat és leckéket használják, és hol érdemes a tananyagon
           javítani. Ez ellen bármikor tiltakozhat az <a href="mailto:info@vakzona.com">info@vakzona.com</a> címen.
         </p>
+        {FIZETES && !ONLINE_FIZETES && (
+          <p>
+            A vásárlási szándék adatainak kezelése az Ön kérésére, a szerződés megkötését megelőző lépésekhez szükséges
+            (GDPR 6. cikk (1) bekezdés b) pont).
+          </p>
+        )}
+        {FIZETES && ONLINE_FIZETES && (
+          <p>
+            A vásárlás adatainak kezelése a szerződés teljesítéséhez szükséges (GDPR 6. cikk (1) bekezdés b) pont),
+            a számla és a hozzá tartozó adatok megőrzése pedig jogi kötelezettség (GDPR 6. cikk (1) bekezdés c) pont,
+            [helykitöltő: a számviteli és adójogi megőrzési idő]).
+          </p>
+        )}
         {ERTESITO && (
           <p>
             Az értesítő levél jogalapja az Ön hozzájárulása (GDPR 6. cikk (1) bekezdés a) pont), amelyet bármikor
@@ -91,13 +120,24 @@ function Privacy() {
           </li>
           <li>
             <strong>Brevo (Franciaország):</strong> a megerősítő és a jelszó-visszaállító levelek
-            {ERTESITO ? ", valamint a kért értesítő levelek" : ""} kézbesítése.
+            {ERTESITO ? ", valamint a kért értesítő levelek" : ""}{FIZETES && !ONLINE_FIZETES ? ", a vásárlási szándékról szóló levelek" : ""} kézbesítése.
           </li>
           <li>
             <strong>A Vakzóna adminisztrátora:</strong> a hozzáférések kezeléséhez látja a fiókok e-mail-címét,
             a regisztráció, a megerősítés és az utolsó belépés időpontját, a hozzáféréseket, valamint a tanfolyami
             haladást (hány lecke kész, és mikor változott utoljára).
           </li>
+          {FIZETES && ONLINE_FIZETES && (
+            <>
+              <li>
+                <strong>Stripe:</strong> a fizetés lebonyolítása. A kártyaadatokat csak a Stripe kezeli.
+              </li>
+              <li>
+                <strong>[helykitöltő: a számlázó szolgáltató]:</strong> a számla kiállítása és a NAV felé történő
+                adatszolgáltatás.
+              </li>
+            </>
+          )}
           <li>
             <strong>Vercel Inc.:</strong> a weboldal kiszolgálása.
           </li>
@@ -106,7 +146,7 @@ function Privacy() {
         <h2>Meddig őrizzük az adatokat?</h2>
         <p>
           A fiók adatait a fiók törléséig őrizzük. A fiókot bármikor törölheti a <Link to="/fiok">Fiók</Link> oldalon,
-          ekkor az e-mail-cím, a jelszó lenyomata, a hozzáférések és a fiókhoz mentett haladás véglegesen törlődnek. A meg nem erősített
+          ekkor az e-mail-cím, a jelszó lenyomata, a hozzáférések{FIZETES && !ONLINE_FIZETES ? ", az elküldött vásárlási szándékok" : ""} és a fiókhoz mentett haladás véglegesen törlődnek.{FIZETES && ONLINE_FIZETES ? " A vásárlások és a számlák adatait a fiók törlése után is megőrizzük a jogszabályban előírt ideig, de a fiókhoz már nem kötjük őket." : ""} A meg nem erősített
           regisztrációkat [helykitöltő] nap után töröljük.
         </p>
 

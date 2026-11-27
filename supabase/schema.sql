@@ -489,3 +489,237 @@ $$;
 
 revoke execute on function public.admin_haladas() from public, anon;
 grant execute on function public.admin_haladas() to authenticated;
+
+-- ---------- Fizetés (2026-11-27; kapcsoló: src/data/fizetes.js, supabase/README.md 12. lépés) ----------
+-- A sikeres Stripe-fizetést az api/fizetes-webhook.js rögzíti a Supabase titkos (service_role) kulcsával.
+-- A böngésző ezt a táblát nem olvassa és nem írja. A kártyaadat a Stripe-nál marad, itt nincs.
+
+create table if not exists public.vasarlasok (
+  stripe_session text primary key,          -- a Stripe Checkout munkamenet azonosítója (cs_…)
+  user_id uuid references auth.users (id) on delete set null, -- fióktörlés után a könyveléshez a vásárlás megmarad
+  tetelek text[] not null,                  -- tanfolyamok url-azonosítói
+  osszeg integer not null,                  -- a fizetett összeg (forintban)
+  penznem text not null,
+  payment_intent text unique,               -- a visszatérítés ez alapján keresi vissza
+  szamla text,                              -- a számla száma, ha a számlázó már kiállította
+  statusz text not null default 'fizetve' check (statusz in ('fizetve', 'visszateritve')),
+  letrehozva timestamptz not null default now(),
+  visszateritve timestamptz
+);
+
+alter table public.vasarlasok enable row level security;
+revoke all on public.vasarlasok from anon, authenticated;
+
+-- sikeres fizetés rögzítése és a hozzáférések megadása; true = most rögzítettük, false = már megvolt
+-- (a Stripe ugyanazt az eseményt többször is küldheti, ilyenkor semmi nem történik kétszer)
+create or replace function public.fizetes_rogzites(p_session text, p_user uuid, p_tetelek text[], p_osszeg integer,
+  p_penznem text, p_payment_intent text)
+returns boolean
+language plpgsql
+security definer
+set search_path = ''
+as $$
+declare
+  v_uj int;
+begin
+  insert into public.vasarlasok (stripe_session, user_id, tetelek, osszeg, penznem, payment_intent)
+    values (p_session, p_user, p_tetelek, p_osszeg, p_penznem, p_payment_intent)
+    on conflict (stripe_session) do nothing;
+  get diagnostics v_uj = row_count;
+  if v_uj = 0 then
+    return false;
+  end if;
+  insert into public.hozzaferes (user_id, tartalom)
+    select p_user, 'akademia/' || t from unnest(p_tetelek) t
+    on conflict do nothing;
+  return true;
+end;
+$$;
+
+create or replace function public.fizetes_szamla(p_session text, p_szamla text)
+returns void
+language sql
+security definer
+set search_path = ''
+as $$
+  update public.vasarlasok set szamla = p_szamla where stripe_session = p_session;
+$$;
+
+-- teljes visszatérítés: a vásárlás megjelölése, és ha p_visszavon, a vele kapott hozzáférések visszavonása
+create or replace function public.fizetes_visszateritve(p_payment_intent text, p_visszavon boolean)
+returns void
+language plpgsql
+security definer
+set search_path = ''
+as $$
+declare
+  v public.vasarlasok;
+begin
+  update public.vasarlasok set statusz = 'visszateritve', visszateritve = now()
+    where payment_intent = p_payment_intent and statusz = 'fizetve'
+    returning * into v;
+  if v.stripe_session is not null and p_visszavon and v.user_id is not null then
+    delete from public.hozzaferes
+      where user_id = v.user_id and tartalom in (select 'akademia/' || t from unnest(v.tetelek) t);
+  end if;
+end;
+$$;
+
+-- ezeket csak a webhook hívhatja (service_role), a böngésző nem
+revoke execute on function public.fizetes_rogzites(text, uuid, text[], integer, text, text),
+  public.fizetes_szamla(text, text), public.fizetes_visszateritve(text, boolean) from public, anon, authenticated;
+grant execute on function public.fizetes_rogzites(text, uuid, text[], integer, text, text),
+  public.fizetes_szamla(text, text), public.fizetes_visszateritve(text, boolean) to service_role;
+
+-- ---------- Vásárlási szándék (2026-11-27; src/data/fizetes.js: ONLINE_FIZETES = false) ----------
+-- Amíg nincs online fizetés, a kosár ezzel küldi el a vásárlási szándékot: minden admin levelet kap a vásárló
+-- e-mail-címével és a kosár tartalmával, a vásárló pedig visszaigazolást. A hozzáférést az admin adja meg kézzel
+-- az adminoldalon. Küldés a Brevo API-n át (ugyanaz a Vault-kulcs, mint fent). Felhasználónként naponta legfeljebb
+-- 5 beküldés, hogy a Brevo napi kerete ne fogyjon el. Fióktörléskor a beküldések is törlődnek.
+
+create table if not exists public.vasarlasi_szandekok (
+  id bigint generated always as identity primary key,
+  user_id uuid not null references auth.users (id) on delete cascade,
+  tetelek jsonb not null,                   -- [{ slug, cim, ar }]
+  osszeg integer not null,
+  letrehozva timestamptz not null default now()
+);
+
+alter table public.vasarlasi_szandekok enable row level security;
+revoke all on public.vasarlasi_szandekok from anon, authenticated;
+
+create or replace function public.html_szoveg(p text)
+returns text
+language sql
+immutable
+set search_path = ''
+as $$
+  select replace(replace(replace(replace(coalesce(p, ''), '&', '&amp;'), '<', '&lt;'), '>', '&gt;'), '"', '&quot;');
+$$;
+
+-- 6950 → '6 950'
+create or replace function public.forint_szoveg(p integer)
+returns text
+language sql
+immutable
+set search_path = ''
+as $$
+  select replace(to_char(p, 'FM999G999G999'), ',', ' ');
+$$;
+
+-- p_tetelek: [{ "slug": "ai-act", "cim": "AI Act megfelelés", "ar": 6950 }]; csak zárt tanfolyam lehet benne
+-- (amelynek kulcsa a kulcsok táblában van). Hibakódok az üzenetben: 'nincs_belepve', 'ures', 'tul_sok'.
+create or replace function public.vasarlasi_szandek(p_tetelek jsonb)
+returns void
+language plpgsql
+security definer
+set search_path = ''
+as $$
+declare
+  v_user uuid := auth.uid();
+  v_email text;
+  v_tetelek jsonb;
+  v_osszeg integer;
+  v_html text;
+  v_szoveg text;
+  v_kulcs text;
+  v_admin text;
+begin
+  select email into v_email from auth.users where id = v_user and email_confirmed_at is not null;
+  if v_user is null or v_email is null then
+    raise exception 'nincs_belepve' using errcode = '42501';
+  end if;
+
+  -- csak létező zárt tanfolyam, legfeljebb 20 tétel, mindegyik egyszer; a cím hossza és az ár tartománya korlátozott
+  select coalesce(jsonb_agg(jsonb_build_object('slug', slug, 'cim', cim, 'ar', ar) order by slug), '[]'::jsonb),
+         coalesce(sum(ar), 0)
+    into v_tetelek, v_osszeg
+    from (
+      select distinct on (t->>'slug')
+        t->>'slug' as slug,
+        left(coalesce(nullif(trim(t->>'cim'), ''), t->>'slug'), 200) as cim,
+        least(greatest(coalesce(nullif(t->>'ar', '')::numeric, 0), 0), 1000000)::integer as ar
+      from jsonb_array_elements(case when jsonb_typeof(p_tetelek) = 'array' then p_tetelek else '[]'::jsonb end) t
+      where t->>'slug' ~ '^[a-z0-9-]{1,80}$'
+        and exists (select 1 from public.kulcsok k where k.tartalom = 'akademia/' || (t->>'slug'))
+      limit 20
+    ) x;
+  if jsonb_array_length(v_tetelek) = 0 then
+    raise exception 'ures';
+  end if;
+
+  if (select count(*) from public.vasarlasi_szandekok
+      where user_id = v_user and letrehozva > now() - interval '1 day') >= 5 then
+    raise exception 'tul_sok';
+  end if;
+
+  insert into public.vasarlasi_szandekok (user_id, tetelek, osszeg) values (v_user, v_tetelek, v_osszeg);
+
+  select '<table style="border-collapse:collapse">'
+           || string_agg('<tr><td style="padding:4px 16px 4px 0">' || public.html_szoveg(t->>'cim') || '</td>'
+                || '<td style="padding:4px 0;text-align:right;white-space:nowrap">'
+                || public.forint_szoveg((t->>'ar')::integer) || ' Ft</td></tr>', '')
+           || '<tr><td style="padding:8px 16px 4px 0;border-top:1px solid #e2e8f0"><strong>Összesen</strong></td>'
+           || '<td style="padding:8px 0 4px;border-top:1px solid #e2e8f0;text-align:right;white-space:nowrap"><strong>'
+           || public.forint_szoveg(v_osszeg) || ' Ft</strong></td></tr></table>',
+         string_agg('- ' || (t->>'cim') || ': ' || public.forint_szoveg((t->>'ar')::integer) || ' Ft', E'\n')
+           || E'\nÖsszesen: ' || public.forint_szoveg(v_osszeg) || ' Ft'
+    into v_html, v_szoveg
+    from jsonb_array_elements(v_tetelek) t;
+
+  -- a levélküldés hibája nem akadályozza a rögzítést (a beküldések az SQL-ben is látszanak)
+  begin
+    select decrypted_secret into v_kulcs from vault.decrypted_secrets where name = 'brevo_api_kulcs';
+    if v_kulcs is null then
+      return;
+    end if;
+    for v_admin in
+      select u.email from public.adminok a join auth.users u on u.id = a.user_id where u.email is not null
+    loop
+      perform net.http_post(
+        url := 'https://api.brevo.com/v3/smtp/email',
+        headers := jsonb_build_object('api-key', v_kulcs, 'content-type', 'application/json', 'accept', 'application/json'),
+        body := jsonb_build_object(
+          'sender', jsonb_build_object('name', 'Vakzóna', 'email', 'noreply@vakzona.com'),
+          'to', jsonb_build_array(jsonb_build_object('email', v_admin)),
+          'replyTo', jsonb_build_object('email', v_email),
+          'subject', 'Vásárlási szándék: ' || public.forint_szoveg(v_osszeg) || ' Ft – Vakzóna',
+          'htmlContent', '<p>Vásárlási szándék érkezett a Vakzóna kosarából.</p>'
+            || '<p>Vásárló: <a href="mailto:' || public.html_szoveg(v_email) || '">' || public.html_szoveg(v_email) || '</a></p>'
+            || v_html
+            || '<p>Erre a levélre válaszolva közvetlenül a vásárlónak ír. A fizetés után a hozzáférést az adminoldalon adhatja meg:</p>'
+            || '<p><a href="https://vakzona.com/admin">Hozzáférések kezelése</a></p>',
+          'textContent', E'Vásárlási szándék érkezett a Vakzóna kosarából.\n\nVásárló: ' || v_email
+            || E'\n\n' || v_szoveg
+            || E'\n\nA fizetés után a hozzáférést az adminoldalon adhatja meg: https://vakzona.com/admin'
+        )
+      );
+    end loop;
+    perform net.http_post(
+      url := 'https://api.brevo.com/v3/smtp/email',
+      headers := jsonb_build_object('api-key', v_kulcs, 'content-type', 'application/json', 'accept', 'application/json'),
+      body := jsonb_build_object(
+        'sender', jsonb_build_object('name', 'Vakzóna', 'email', 'noreply@vakzona.com'),
+        'to', jsonb_build_array(jsonb_build_object('email', v_email)),
+        'replyTo', jsonb_build_object('email', 'info@vakzona.com'),
+        'subject', 'Megkaptuk vásárlási szándékát – Vakzóna',
+        'htmlContent', '<p>Köszönjük, megkaptuk vásárlási szándékát az alábbi tanfolyamokra:</p>'
+          || v_html
+          || '<p>Az online fizetés még kidolgozás alatt van, ezért hamarosan e-mailben jelentkezünk a fizetés részleteivel. '
+          || 'A tanfolyamok a fizetés után a Vakzóna-fiókjában nyílnak meg. Ez a levél nem számla, és nem jár fizetési kötelezettséggel.</p>'
+          || '<p>Ha kérdése van, írjon az <a href="mailto:info@vakzona.com">info@vakzona.com</a> címre.</p>'
+          || '<p>Vakzóna<br><a href="https://vakzona.com">vakzona.com</a></p>',
+        'textContent', E'Köszönjük, megkaptuk vásárlási szándékát az alábbi tanfolyamokra:\n\n' || v_szoveg
+          || E'\n\nAz online fizetés még kidolgozás alatt van, ezért hamarosan e-mailben jelentkezünk a fizetés részleteivel. '
+          || E'A tanfolyamok a fizetés után a Vakzóna-fiókjában nyílnak meg. Ez a levél nem számla, és nem jár fizetési kötelezettséggel.'
+          || E'\n\nHa kérdése van, írjon az info@vakzona.com címre.\n\nVakzóna\nhttps://vakzona.com'
+      )
+    );
+  exception when others then
+    raise warning 'vasarlasi_szandek: %', sqlerrm;
+  end;
+end;
+$$;
+
+revoke execute on function public.vasarlasi_szandek(jsonb) from public, anon;
+grant execute on function public.vasarlasi_szandek(jsonb) to authenticated;

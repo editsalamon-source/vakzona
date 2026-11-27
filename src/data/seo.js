@@ -42,6 +42,11 @@ const seo = {
     description: "A Vakzóna-fiókok hozzáféréseinek kezelése.",
     noindex: true,
   },
+  "/kosar": {
+    title: "Kosár – Vakzóna",
+    description: "A kiválasztott Vakzóna-tanfolyamok egy fizetésben.",
+    noindex: true,
+  },
   "/leiratkozas": {
     title: "Leiratkozás – Vakzóna",
     description: "Leiratkozás a Vakzóna értesítő leveleiről.",
