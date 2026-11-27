@@ -24,6 +24,24 @@ function DocIcon({ size = 14 }) {
   );
 }
 
+// a HTML elején álló (külső) idézetblokk a hozzá tartozó záró címkéig, utána a szóközökkel
+function leadingBlockquote(html) {
+  const start = html.match(/^\s*<blockquote>/);
+  if (!start) return "";
+  const re = /<(\/?)blockquote>/g;
+  re.lastIndex = start[0].length;
+  let depth = 1;
+  let m;
+  while ((m = re.exec(html))) {
+    depth += m[1] ? -1 : 1;
+    if (depth === 0) {
+      const end = html.slice(re.lastIndex).match(/^\s*/)[0].length;
+      return html.slice(0, re.lastIndex + end);
+    }
+  }
+  return "";
+}
+
 function Analysis() {
   const { slug } = useParams();
   const analysis = useMemo(() => getAnalysis(slug), [slug]);
@@ -31,8 +49,8 @@ function Analysis() {
   if (!analysis) return <NotFound />;
 
   // a kezdő idézetblokk (összefoglaló) külön dobozba kerül a tartalomjegyzék elé
-  const lead = analysis.html.match(/^\s*<blockquote>[\s\S]*?<\/blockquote>\s*/);
-  const summaryHtml = lead ? lead[0] : "";
+  // (a beágyazott idézetblokk – kiemelt idézet – miatt a nyitó és záró címkéket párosítjuk)
+  const summaryHtml = leadingBlockquote(analysis.html);
   const bodyHtml = analysis.html.slice(summaryHtml.length);
   const hasToc = analysis.toc.length > 2;
 

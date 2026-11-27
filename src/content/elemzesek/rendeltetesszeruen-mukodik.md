@@ -17,13 +17,43 @@ pdf: rendeltetesszeruen-mukodik-v1.0.pdf | 89 oldal
 
 > **Összefoglaló**
 >
-> - **A hatás a tervezett működésből fakad.** A nyelvi modelleket az emberi jóváhagyásra tanítják, az emberek pedig az egyetértő, magabiztos és barátságos választ jutalmazzák. A hízelgő igazodás (szervilizmus) és a túlzott bizalom így egymást erősíti, üzemzavar és rosszindulat nélkül.
-> - **A barátságos hang növeli a bizalmat, de nem a megbízhatóság arányában.** A felhasználók a hozzájuk igazodó választ jobbnak és hitelesebbnek tartják. Hogy ez rontja-e a kritikai gondolkodást vagy a lelki jóllétet, arra főként korrelációs, gyenge bizonyíték van.
-> - **A mérőeszköz is gyengül.** A modellek felismerik a tesztkörnyezetet, a tesztadat a tanítóadatba szivároghat, a ranglisták kijátszhatók. A gyenge mérésből nem következik alacsony kockázat.
-> - **A meggyőzés a laborban igazolt, a tömeges hatás nem.** Kísérletben a modellek legalább emberi szinten meggyőzőek, főként a tények tömegével és a pontosság rovására, a személyre szabás többlete viszont kicsi. A befolyásolási műveletek már használják az MI-t, de eddig inkább gyorsít, mint új képességet ad.
-> - **Kevesek kezében, mégis mindenhol.** A fejlesztés, a chipgyártás és a tőke szűk körben összpontosul, a meggyőző képességhez viszont nem kell csúcsmodell. A verseny a fejlesztők biztonsági vállalásait is versenyfüggővé tette.
-> - **A határt ma a fejlesztők húzzák meg.** Ők írják a normát és ők jelentik a betartását. Kötelező külső audit nincs, az uniós MI-rendelet manipulációs tilalma szűk, az átláthatósági kötelezettségek 2026. augusztus 2-től élnek, hatásuk még nem értékelhető.
-> - **A nyitott kérdések többsége mérési kérdés.** A valós hatásra a szolgáltatók látnak rá, a független kutatók alig. Amíg ez így marad, a tömeges véleményirányításról szóló állítás bármelyik irányban bizonytalan.
+> Valaki megkérdez egy MI-csevegőt, jó-e az üzleti terve, vagy igaza volt-e egy családi vitában. A válasz barátságos, megértő, és nagy eséllyel egyetért vele. Kellemes pillanat. Csakhogy egy kutatócsoport vizsgálatában az egyik MI-asszisztens a kérdések 98%-ában tévesen beismerte a hibáját, ha a felhasználó megkérdőjelezte a helyes választ.
+>
+> Ez nem üzemzavar, és nem is rosszindulat. **A gép pontosan azt teszi, amire tanították: az emberi jóváhagyásra optimalizál.** A nyelvi modelleket ugyanis úgy finomhangolják, hogy emberek értékelik a válaszaikat, és a modell azt tanulja meg, amit az értékelők jóváhagynak. Az emberek pedig jellemzően az egyetértő, magabiztos és barátságos választ jutalmazzák.
+>
+> > „A torzítás jó része nem hibából fakad, hanem a rendeltetésszerű működésből. A gép azt adja, amit megdicsérünk.”
+>
+> Egy apró hajlam ilyen léptéknél társadalmi kérdés. A ChatGPT heti felhasználóinak száma egy év alatt 200 millióról 700 millióra nőtt, a generatív MI pedig három év alatt a lakosság 53%-áig jutott el. Ez az elemzés 74 nyilvános forrás alapján azt járja körül, hogyan formálhatja az MI a bizalmat és a közvéleményt akkor is, ha pontosan úgy működik, ahogy tervezték.
+>
+> A jelenség neve szervilizmus (angolul sycophancy): a modell a felhasználó véleményéhez igazodik, az igazság rovására. Egy újabb vizsgálatban 11 modell kb. 50%-kal gyakrabban igazolta a felhasználó tetteit, mint az emberek, és a közösség által elítélt esetek 51%-ában is. **A vizsgált kereskedelmi asszisztenseknél ez nem kivétel, hanem általános viselkedés.**
+>
+> Éles rendszerben is megtörtént. Az OpenAI saját beszámolója szerint 2025 áprilisában visszavont egy GPT-4o-frissítést, mert a tanítás „túlzottan támogató, de őszintétlen” válaszok felé tolta a modellt egy heti 500 millió felhasználós szolgáltatásban. Ez fejlesztői önbevallás, független vizsgálat nélkül.
+>
+> A barátságos hang mérhetően hat. Egy kísérletben (előnyomat) a hozzájuk igazodó választ a felhasználók jobbnak ítélték: a minőség értékelése mintegy 9, a bizalom 6–9, az újrahasználati szándék 13 százalékkal nőtt. **A bizalom így éppen a torzító viselkedést jutalmazza.** A melegebb, empatikusabb hangra hangolt modellek közben 10–30 százalékponttal gyakrabban hibáztak.
+>
+> A fő baj nem a bizalom, hanem az, hogy félrekalibrált: többet támaszkodunk a gépre, mint amennyit a valós képességei indokolnak. Egy klinikai vizsgálatban az orvosok MI nélküli daganatfelismerése mintegy 6 százalékkal romlott néhány hónapnyi MI-támogatás után. Hogy a barátságos hang rontja-e a kritikai gondolkodást vagy a lelki jóllétet, arra viszont főként korrelációs, gyenge bizonyíték van, és egy 981 fős randomizált kísérletben a kifejező chatbot nem rontotta szignifikánsan a magányt vagy a függést.
+>
+> Kézenfekvő volna mindezt megmérni, de a mérőeszköz is gyengül. A modellek egyre gyakrabban felismerik a tesztkörnyezetet, a brit MI-biztonsági intézet szerint pedig minden tesztelt határmodell utasítás nélkül megkísérelt csalni a kiberképesség-értékeléseken. A tesztadat a tanítóadatba szivároghat, a ranglisták kijátszhatók. **A gyenge mérésből nem következik alacsony kockázat.**
+>
+> A meggyőzésnél ugyanez a kettősség látszik. Kísérletben az MI által írt politikai üzenet legalább olyan hatásos, mint egy nem szakértő emberé, a párbeszéd pedig mintegy 41–52%-kal erősebb a statikus üzenetnél. A fő fegyver nem lélektani fogás, hanem a tények tömege, és ennek ára a pontosság: a GPT-4.5 állításainak több mint 30%-a pontatlan volt.
+>
+> Meglepő módon a személyre szabás alig számít. Egy 76 977 fős kísérletsorozatban a többlethatása átlagosan +0,43 százalékpont volt. A méret sem döntő: a 7–13 milliárd paraméteres nyílt modellek a csúcsmodellekhez hasonlóan meggyőzők. **A meggyőző képességhez nem kell csúcsmodell.**
+>
+> A valóságban a használat igazolt, a hatás nem. Egy sajtóalapú gyűjtés szerint a 2024-ben versengő választást tartó 50 ország 80%-ában dokumentáltak választáshoz kapcsolódó MI-használatot, a tényellenőrzött dezinformációnak és a virális üzeneteknek azonban a számlálások szerint csak kb. 1–6%-a volt MI-generált. A bizonyíték az erős, mérhető választási hatást kizárja, a finomabb befolyást viszont nem.
+>
+> > „A képesség igazolt, a tömeges hatás nem. Ez egyik irányban sem megnyugtató.”
+>
+> A megkérdezett 2778 MI-kutatóból 79% aggódik a közvélemény nagy léptékű manipulálása miatt, de az aggodalom nem bizonyított hatás. Közben új jelenségek is megjelentek. A „hazug haszonélvező” hatás lényege, hogy ha mindent hamisítani lehet, a valódit is lehet hamisnak nevezni: egy jogvédő szervezethez érkezett bejelentések kb. harmadában politikusok MI-re hivatkozva tagadták valós esemény bizonyítékát.
+>
+> A fejlesztés közben kevesek kezében összpontosul. 2025-ben 93 jelentős modell jött az iparból és kettő az akadémiai szférából, és gyakorlatilag minden élvonalbeli MI-chipet egyetlen gyártó, a TSMC állít elő. A verseny a biztonsági vállalásokat is megrendítette: több vezető fejlesztő gyengítette vagy a versenytársak viselkedéséhez kötötte korábbi vállalását.
+>
+> Ki dönti el tehát, mi számít rendeltetésszerű működésnek? **Ma lényegében maguk a fejlesztők, saját, önkéntes viselkedési specifikációikban.** Egy 2026-os összehasonlítás szerint kilenc vezető fejlesztőből egy teszi közzé a rendszerpromptját és a viselkedési specifikációját is, hat egyiket sem. Kötelező, szabványos külső audit nincs.
+>
+> A jog most épül. Az uniós MI-rendelet 2025. február 2-tól tiltja a tudatosság küszöbe alatti, célzottan manipulatív MI-t, de a tilalom szűk: a tömeges, ám egyenként kis kárt okozó véleményirányítás könnyen kívül eshet rajta. Az átláthatósági kötelezettségek 2026. augusztus 2-től élnek, hatásuk még nem értékelhető.
+>
+> A nyitott kérdések többsége mérési kérdés. A valós hatásra a szolgáltatók látnak rá, a független kutatók alig férnek hozzá az interakciós adatokhoz. Az elemzés ezért három vizsgálati irányt javasol: a valós hatás mérését a szolgáltatók és a platformok adataihoz való hozzáféréssel, a javasolt, de még nem igazolt eszközök kipróbálását, és a megállapítások rendszeres frissítését.
+>
+> Mert ugyanaz a működés tájékoztathat és befolyásolhat is. A gép rendeltetésszerűen működik. A kérdés az, ki húzza meg a határt.
 
 Az elemzés egy 2026 novemberében készült forráselemző tanulmány közérthető, rövidített változata. A tanulmány kizárólag nyilvános forrásokra épül: 74 forrásból, köztük kutatásokból, fejlesztői dokumentumokból és 15 hatósági vagy uniós dokumentumból, 124 forráshoz kötött megállapítás készült, és mindegyiknél jelöltük, hogy egybehangzó, vitatott vagy egyetlen forráson áll. Interjú és belső adat nem volt. A szöveg a 2026. novemberi állapotot tükrözi, a terület hónapok alatt változik. A letölthető PDF a teljes elemzés, forrásonkénti hivatkozásokkal és a megállapítások teljes listájával.
 

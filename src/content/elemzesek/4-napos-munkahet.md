@@ -15,11 +15,39 @@ szám: 25 | hivatalos forrás
 
 > **Összefoglaló**
 >
-> - **Az uniós jog nem írja elő, de nem is akadályozza** a 4 napos munkahetet. Bevezetése, formája és ösztönzése tagállami hatáskörben marad. Belgium, Portugália és Lengyelország már lépett.
-> - **A nemzetközi kísérletek tapasztalatai nagyrészt kedvezőek**, a bizonyítékok minősége azonban egyenetlen: a pilotok többsége önkéntes, önszelektált, kontrollcsoport nélküli, és a tudásalapú ágazatokban koncentrálódik.
-> - **Magyarországon a versenyszférában a Munka törvénykönyve már ma is lehetővé teszi** a bércsökkentés nélküli rövidebb munkaidőt, a közszféra nagy részében viszont jogi akadály is van.
-> - **A hazai helyzet indokolja a témával való foglalkozást:** a szokásos heti munkaidő 39,5 óra (EU: 37,3), az óránkénti termelékenység az uniós átlag 70,4%-a, és a munkaerő-kínálat szűkül.
-> - **A legmegalapozottabb egy fokozatos, visszafordítható út:** előbb jogi útmutató és állami támogatású, önkéntes, független értékelésű pilotprogram, a széles hatású, általános törvényi munkaidő-csökkentés pedig csak hazai bizonyítékok után kerülhet szóba.
+> Ugyanannyi fizetés, egy nappal kevesebb munka. Néhány éve ez még elméleti vitának számított. Mára több európai kormány és száznál is több munkáltató kipróbálta, Belgium törvénybe foglalta, hogy a munkavállaló kérheti munkaidejének négy napra sűrítését, Portugália és Lengyelország pedig állami támogatású kísérleti programot indított. Magyarországon a kormány 2022-ben „nem időszerűnek” nevezte a kérdést.
+>
+> A hazai kiinduló helyzet első ránézésre ellentmondásos. A magyar foglalkoztatottak szokásos heti munkaideje 39,5 óra, az uniós átlag 37,3. Egy foglalkoztatott évente 1 671 órát dolgozik (előzetes adat), az uniós átlag 1 604. Közben az óránkénti termelékenység, vagyis az, hogy mennyi gazdasági érték jut egy ledolgozott munkaórára, az uniós átlag 70,4%-a (előzetes adat). **Többet dolgozunk az uniós átlagnál, és óránként kevesebbet termelünk.** Ez a mutató 2022 óta érdemben nem javult, és elmarad Csehország, Szlovákia és Szlovénia szintjétől is.
+>
+> Közben szűkül a munkaerő-kínálat. A népesség 2022 és 2026 eleje között több mint 120 ezer fővel csökkent, 2025-ben 72 017 gyermek született, egy évvel korábban 77 511. A 20–64 évesek foglalkoztatási rátája 81,1%, magasabb az uniós 76,1%-nál, a tartalék tehát szűk. A részmunkaidősök aránya 4,7%, ez az uniós átlag alig több mint negyede.
+>
+> Érdemes tisztázni, miről beszélünk, mert a „4 napos munkahét” több dolgot takar. A legismertebb a 100-80-100 modell: teljes bér, teljes elvárt teljesítmény, de a munkaidőnek csak a 80%-a, ami a 40 órás hétnél kb. 32 óra. A sűrített munkahét viszont nem csökkent semmit, csak ugyanannyi órát oszt el négy hosszabb napra. Az elemzés a bércsökkentés nélküli munkaidő-csökkentést érti alatta.
+>
+> Az első meglepetés a jogban van. Az uniós jog a 4 napos munkahetet nem írja elő, de nem is akadályozza, a heti munkanapok számáról nem rendelkezik. Itthon pedig **a versenyszférában a Munka törvénykönyve már ma is lehetővé teszi a bércsökkentés nélküli rövidebb munkaidőt.** A felek megállapodhatnak rövidebb teljes napi munkaidőben, így egy heti 32 órás, bércsökkentés nélküli megállapodás teljes munkaidőnek minősülhet.
+>
+> A közszféra nagy részében más a helyzet. A közszolgálati tisztviselőkről és a kormányzati igazgatásról szóló törvény szerint a rövidebb munkaidő csak arányosan csökkentett illetménnyel lehetséges, ott tehát ma jogi akadály is van. A versenyszférát pedig nem a törvény fékezi, hanem többek között a jogbizonytalanság, például az, hogy hogyan kell a szabadságot kiadni négynapos beosztásnál.
+>
+> > „A 4 napos munkahét Magyarországon nem jogi tilalomba ütközik. Hanem bizonytalanságba, ösztönzőhiányba és bizonyítékhiányba.”
+>
+> Mit mutatnak a külföldi kísérletek? Az eredmények nagyrészt kedvezők. A legerősebb bizonyíték egy lektorált tudományos cikkből származik: hat ország 141 szervezetének 2 896 munkavállalóját vizsgálta, a kiégés, a munkával való elégedettség, a mentális és a fizikai egészség javult, miközben 12 kontrollcégnél ez a javulás nem jelent meg. A portugál kísérletben a munkát és a családot nehezen összeegyeztetők aránya 46%-ról 17%-ra csökkent. A brit pilotban a bevétel nőtt, a kilépők száma 57%-kal csökkent.
+>
+> Csakhogy itt jön a fontos megszorítás. **A kedvező kísérleti eredmények nem jelentik azt, hogy a modell biztosan működik.** Az Európai Bizottság Közös Kutatóközpontja szerint a magánszektorbeli pilotok egy kivétellel kontrollcsoport nélküliek, vagyis nincs olyan, programon kívüli kör, amelyhez az eredményt össze lehetne vetni. A résztvevők önként jelentkeznek, és az informatikai, telekommunikációs, szakmai szolgáltató cégek dominálnak. A kutatóközpont a Hawthorne-hatásra is figyelmeztet: az emberek már attól is másképp viselkedhetnek, hogy tudják, kísérletben vesznek részt.
+>
+> A pilotjelentések többségét ráadásul a modell mellett érvelő szervezők adják ki, ezért az elemzés közepes megbízhatóságúként kezeli őket. Az országos, törvényi csökkentések tapasztalata még vegyesebb. Franciaországban a 35 órás hét foglalkoztatási hatásáról eltérnek a becslések: az egyik szerint 1998 és 2002 között 300–350 ezer munkahely jött létre, a másik szerint a reformnak nem volt aggregált hatása a nettó munkahely-teremtésre.
+>
+> A francia magánszektorban a tényleges munkaidő-csökkenés a várt 11% helyett valószínűleg csak 5–6% volt. **Az óraplafon önmagában nem garantálja, hogy az emberek valóban kevesebbet dolgoznak.** A belga törvény hatásáról pedig nem készült átfogó értékelés.
+>
+> Volt hazai próbálkozás is. A Magyar Telekom 2022 nyarán indította bércsökkentés nélküli négynapos pilotját, és a végül 300 munkatársat érintő programot 2024 februárjában lezárta. A cég közlése szerint nem minden terület tudott ugyanolyan hatékonyan dolgozni, és a vegyes munkarendű csapatok összehangolása nehéz volt.
+>
+> A tanulság munkaszervezési, és ezt a portugál számok is alátámasztják: **a legalább két szervezeti változtatást bevezető cégeknek csak 8%-a tért vissza az ötnapos hétre, a legfeljebb egyet bevezetőknek viszont 38%-a.** A rövidebb hét sikere tehát a munkafolyamatok átalakításán múlik.
+>
+> > „A rövidebb hét nem a naptárban dől el. Azon múlik, hogy átalakítják-e hozzá a munkát.”
+>
+> Mi következik ebből? Az elemzés öt utat vet össze, a piacra bízott helyzettől a jogi útmutatón, a belga mintájú kérelmezési jogon és az állami pilotprogramon át az általános törvényi munkaidő-csökkentésig. Az utóbbinak a legnagyobb a kockázata: az óránkénti termelékenység alacsony, a munkaerő-kínálat szűkül, és a francia tapasztalat szerint a tényleges csökkenés elmaradhat a törvényitől.
+>
+> Az elemzés javaslata ezért egy fokozatos, visszafordítható út. **Előbb jogi útmutató és állami támogatású, önkéntes, független értékelésű pilotprogram, a széles hatású törvényi döntések csak a hazai bizonyítékok után.** Egy kontrollcsoportos pilot, előre rögzített mérési módszerrel és döntési ponttal, teremthetné meg azt a hazai tudást, amely ma hiányzik. A közszféra bevonásához kísérleti jogi felhatalmazás kellene.
+>
+> Az értékelés feltételes: aki a gyors, széles hatást tartja elsődlegesnek, a törvényi utat értékelheti magasabbra. A 4 napos hét a hazai problémák egyikére sem teljes válasz, és a termelékenységi felzárkózás önmagában nem várható tőle. A kérdés tehát már nem az, hogy szabad-e, hanem az, hogy működne-e nálunk. Erre ma még nincs hazai bizonyíték.
 
 Ez az írás a Vakzóna *„A 4 napos munkahét Magyarországon”* című szakpolitikai elemzésének rövidített, webes változata. Az elemzés kizárólag nyilvános, hivatalos vagy elsődleges forrásokra épül: jogszabályokra, uniós és nemzetközi intézmények kiadványaira, statisztikai hivatalok adatbázisaira, lektorált kutatásokra és pilotprogramok jelentéseire. Hírportálra nem épül. Az adatok 2026 szeptemberi lekérdezésből származnak.
 

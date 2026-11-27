@@ -17,12 +17,39 @@ pdf: vallalati-ai-platform-v1.0.pdf | 94 oldal
 
 > **Összefoglaló**
 >
-> - **A vállalat nem egy MI-terméket vesz, hanem saját MI-belépési pontot hoz létre, ha platformot épít.** Egy Enterprise előfizetésnél a felületet, a funkciókat és a frissítéseket a gyártó szabja meg, a cég csak az admin-beállításokra van korlátozva. A vállalati MI-platform ezzel szemben egy köztes réteg, amelyet a cég maga épít a munkatársak és akár több gyártó modellje közé.
-> - **A jogosultság-öröklés jó elv, de kettős élű.** Mind a négy vizsgált gyártó (OpenAI, Anthropic, Google, Microsoft) azt állítja, hogy az MI-eszköz csak azt éri el, amihez a felhasználó egyébként is hozzáférne. Ha azonban a cég jogosultsági rendje már eleve túl tág volt, az MI ezt a hibát nem javítja ki, hanem felnagyítja – erre maga a Microsoft figyelmeztet.
-> - **A platform legfontosabb ígérete az, hogy a modell a felszín alatt cserélhető.** A cég nem egyetlen gyártóhoz van kötve, és elvben csökkentheti a költségeit, ha a kérdéseket mindig a legalkalmasabb modellhez irányítja – ez a megtakarítás azonban nem automatikus, folyamatos méréssel és hangolással jár.
-> - **A különbség nem éles, hanem fokozatbeli, és gyorsan mozdul.** A négy nagy gyártó Enterprise csomagja ma már konnektorokat, megosztható asszisztenseket és szervezeti szintű „skilleket” is ad – egyre inkább platformszerű funkciókat egy gyártóhoz kötve.
-> - **Sem az előfizetés, sem a saját platform nem tesz önmagában „megfelelővé” egy céget.** A jogi és adatvédelmi felelősség mindig a cégé marad, és az uniós MI-rendelet legszigorúbb szabályai csak a nagy kockázatúnak minősülő MI-rendszerekre vonatkoznak, nem egy általános irodai chat-segédre.
-> - **Magyarországon a vállalatok mérhetően lemaradva állnak az uniós átlaghoz képest**, miközben a dolgozók egyéni, munkára történő MI-használata közel van az uniós szinthez – ez a két szám mást mér, és nyitott kérdés marad, hol és milyen fiókkal használják a dolgozók azokat az eszközöket, amelyekről a saját cégük nem számol be.
+> Egy régi projekt miatt egy munkatársnak még mindig hozzáférése van egy mappához, amelyhez már nem kellene. Senki sem figyel rá. Aztán a cég bevezet egy MI-asszisztenst, és a gép ugyanúgy megtalálja és felhasználja azt a tartalmat, mint bármely más elérhető fájlt.
+>
+> Ez a jelenet a vállalati mesterséges intelligencia (MI) egyik legkevésbé látványos, de legfontosabb kérdése. Egyre több cég és közintézmény ad MI-eszközt a munkatársai kezébe, és a legtöbb vezető előtt elsőre csak egy kérdés látszik: megrendeljenek-e egy kész, fizetős MI-csomagot. **A valódi döntés azonban arról szól, ki dönt: a gyártó vagy a cég.**
+>
+> Az elemzés négy nevesített vállalati, úgynevezett Enterprise előfizetést vizsgált: a ChatGPT Enterprise-t, a Claude Enterprise-t, a Google Workspace-be épített Geminit és a Microsoft 365 Copilotot, a gyártók 2026. október 8-i hivatalos leírása alapján. Árakat nem közöl, és a modelleket nem rangsorolja. Arra keresi a választ, mit kap egy cég egy ilyen előfizetéssel, és mit tesz hozzá egy saját vállalati MI-platform.
+>
+> Az előfizetés a legegyszerűbb belépési pont: a cég megrendeli egy gyártó kész chat-felületét, és munkatársanként fizet. A felületet, a funkciókat és a frissítéseket a gyártó szabja meg, a cég mozgástere az admin-beállításokra korlátozódik. A platform ezzel szemben egy köztes réteg, amelyet a cég maga épít a munkatársak és egy vagy több gyártó modellje közé. **Ilyenkor a cég nem egy MI-terméket vesz, hanem saját MI-belépési pontot hoz létre.**
+>
+> > „Nem az a kérdés, melyik gyártó felületét vesszük meg. Hanem az, hogy ki dönt arról, mi történik a cég adataival.”
+>
+> A platform legnagyobb ígérete, hogy a modell a felszín alatt cserélhető. A háttérben egy modellkapu dönti el, melyik kérdés melyik modellhez kerüljön, olyan ez, mint egy telefonközpont: a hívó egy számot tárcsáz, a központ a háttérben dönt. A modellek közötti automatikus választást (routingot) vizsgáló kutatás szerint egy erősebb és egy gyengébb modell közötti dinamikus választással „a válaszminőség feláldozása nélkül több mint kétszeresére” lehet csökkenteni a költségeket, egy adott esetben akár 3,66-szoros megtakarítást mértek.
+>
+> A kutatók azonban maguk figyelmeztetnek: ezek nyilvános teszteken mért eredmények, a valós alkalmazások jelentősen eltérhetnek tőlük. **A megtakarítás tehát nem automatikus, folyamatos méréssel és hangolással jár.** Egy saját platform ráadásul nem egyszeri beruházás. Egy évtizede megjelent kutatás szerint egy gépi tanulási rendszernek csak kis része maga a modell, a körülvevő infrastruktúra „hatalmas és összetett”.
+>
+> És itt jön vissza a nyitó jelenet. Mind a négy vizsgált gyártó azt állítja, hogy az MI-eszköz csak azt éri el, amihez a felhasználó egyébként is hozzáférne. Ez a jogosultság-öröklés jó elv. A Microsoft forrása azonban – egyedüliként a négy közül – az árnyoldalra is figyelmeztet: alapértelmezés szerint a SharePoint a legengedékenyebb megosztási beállítást állítja be, ami a „véletlen túlosztás” (oversharing) kockázatát hordozza.
+>
+> > „Az MI nem javítja ki a rosszul beállított jogosultságokat. Örökli, és ugyanolyan könnyen felhasználja őket.”
+>
+> **A jogosultság-öröklés önmagában nem biztonsági garancia, csak annyit jelent, hogy az MI-eszköz nem ad több hozzáférést a meglévőnél.** Az elemzés ezért azt javasolja, hogy a bevezetés előtt a cég vizsgálja át a meglévő jogosultsági rendjét, függetlenül attól, hogy előfizetést vagy platformot választ.
+>
+> A határvonal a két út között egyre halványabb. A gyártók Enterprise csomagjai ma már konnektorokat, megosztható asszisztenseket és szervezeti szintű „skilleket” is adnak. A skill egy mappa, amelyben utasítás és esetleg szkriptek, sablonok vannak, és amely a cég „hogyan csináljuk nálunk” tudását rögzíti. **A különbség tehát nem fekete-fehér, hanem fokozatbeli, és gyorsan mozdul.**
+>
+> Minél több platformszerű funkciót ad egy előfizetés, annál kisebb az indok egy teljesen saját platformra. Csakhogy mindez egyetlen gyártó rendszerében épül fel, és ha a cég később másik gyártóra váltana, a felépített asszisztenseket, a jogosultsági logikát és a naplózási integrációkat jellemzően újra kellene építeni.
+>
+> Van egy tévhit, amelyet az elemzés határozottan eloszlat. **Sem az előfizetés, sem a saját platform nem tesz önmagában „megfelelővé” egy céget.** A jogi és adatvédelmi felelősség mindig a cégé marad. Az uniós MI-rendelet 26. cikkének részletes kötelezettségei csak a nagy kockázatúnak minősülő rendszerek alkalmazóira vonatkoznak, egy általános irodai chat-asszisztens önmagában nem tartozik ide.
+>
+> Azt is érdemes tudni, hogy „nem tanítanak az adatainkon” és „senki nem látja az adatainkat” két különböző állítás. A négy gyártó mindegyike azt állítja, hogy alapértelmezésben nem tanítja a modelljét a céges beszélgetéseken, de az admin jellemzően naplót, beszélgetéstörténetet láthat.
+>
+> És hol tart Magyarország? Az Eurostat 2025-ös felmérése szerint a legalább 10 fős magyar vállalkozások 10,37%-a használt valamilyen MI-technológiát, az uniós átlag 19,95%. **A magyar vállalatok az uniós átlag nagyjából felén állnak.** A dolgozókat kérdező másik felmérés viszont más képet mutat: a munkájukhoz generatív MI-t használók aránya Magyarországon 14,86%, az unióban 15,36%.
+>
+> A két szám mást mér és más alapsokaságot kérdez, ezért egyszerűen nem vethető össze. Az elemzés kérdést fogalmaz meg, nem tényt: ha a dolgozók közel uniós szinten használják az MI-t munkára, miközben a cégeik jelentősen elmaradnak, hol és milyen fiókkal használják ezeket az eszközöket? A „saját fiókos” használat lehetőségét a források nem bizonyítják, csak jelzik. Ha pedig valaki céges adatot másol egy személyes fiókba, arra a vállalati csomagok garanciái nem vonatkoznak.
+>
+> Mit érdemes tenni? Az elemzés javaslata szerint elsőként azt kell tisztázni, hány gyártó modelljére van szükség, és mennyire érzékeny a kezelt adat. Szabályozott ágazatban a technikai döntés előtt jogi minősítés kell, egy saját platform mérlegelésekor pedig az üzemeltetési kapacitást legalább annyira számba kell venni, mint az előnyöket. Az MI ugyanis nem rendet rak a cégben, hanem azzal dolgozik, amit ott talál.
 
 Ez az írás a Vakzóna arról szóló elemzésének rövidített, webes változata, hogy miben különbözik egy MI-modellt gyártó cég vállalati (Enterprise) előfizetése egy saját vállalati MI-platformtól, és melyik szervezetnek mire van szüksége. Az elemzés négy nevesített Enterprise előfizetést vizsgál (ChatGPT Enterprise, Claude Enterprise, a Google Workspace-be épített Gemini, Microsoft 365 Copilot) a gyártók hivatalos, 2026. október 8-i állapotot tükröző leírása alapján, a platform egységeit pedig gyártósemlegesen, szabványokra és szakmai forrásokra épülve. Az elemzés nem termékajánlás, nem rangsorolja a gyártók modelljeinek képességét, és árakat nem közöl. Készítése során MI-eszközöket használtunk, emberi forrásellenőrzéssel.
 

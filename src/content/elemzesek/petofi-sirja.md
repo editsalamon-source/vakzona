@@ -16,23 +16,43 @@ pdf: petofi-sirja-v1.0.pdf | 72 oldal
 
 > **Összefoglaló**
 >
-> Petőfi Sándor 1849. július 31-én, a segesvári ütközetben tűnt el
-> nyomtalanul: neve egyetlen hivatalos veszteséglistán sem szerepel. Ez az
-> elemzés azt mutatja be, hol tart ma a 177 éve zajló kutatás a halál
-> körülményeiről és a feltételezett sírhelyről. A hagyományosan elfogadott
-> helyszín, a Fehéregyháza és Héjjasfalva közti útszakasz, csak
-> valószínűsített, nem bizonyított sírhely, a halál pontos körülményeiről
-> szóló szemtanú-beszámolók megbízhatósága pedig korlátozott. A sírhely
-> tizenegy, egymással versengő jelöltje közül egyiket sem sikerült
-> régészetileg megerősíteni, az egyetlen dokumentált próbaásatás pedig
-> eredménytelen maradt. A barguzini („szibériai”) elméletet a tudomány
-> több, egymást követő vizsgálatban, módszertanilag megalapozottan
-> elutasította. A nemzetközi példák, például III. Richárd vagy a
-> Romanov-gyerekek azonosítása, azt mutatják, mi hiányzik még a lezáráshoz: jól
-> behatárolt sírhely, megbízható referenciaminta és több, egymástól
-> független bizonyítéktípus együttes, nyilvános alkalmazása. Az elemzés
-> végén óvatos, feltételes kutatási javaslat is szerepel, amelynek sikere
-> nem garantált.
+> 1849. július 31-én, egy nyári délután a segesvári csatamezőn felbomlott Bem József serege. A katonák Keresztúr felé menekültek, nyomukban az üldöző kozákokkal és lengyel dzsidásokkal. Valahol ebben a zűrzavarban eltűnt Petőfi Sándor, és azóta sem tudjuk biztosan, mi történt vele.
+>
+> A neve nem szerepel sem az elesettek, sem a sebesültek, sem a fogságba esettek hivatalos listáján. **Ez a hiány 177 éve táplálja a találgatásokat.** Hol van eltemetve? És biztos-e egyáltalán, hogy a csatatéren halt meg? Ez az elemzés azt mutatja be, hol tart ma a kutatás, és mi kellene ahhoz, hogy a kérdés egyszer lezáruljon.
+>
+> Az ütközet maga jól rekonstruálható. Bem mintegy 3100–3300 fővel, létszámban háromszoros, tüzérségben kétszeres túlerővel szemben kényszerült csatára. A magyar veszteség közel 1000 fő volt halottakban, sebesültekben és foglyokban együtt, a bevetett erők mintegy 30 százaléka. A ma elfogadott, de vitatott rekonstrukció szerint Petőfi a Fehéregyháza és Héjjasfalva közti útszakaszon tűnt el.
+>
+> Petőfi utolsó óráiról viszont meglepően kevés megbízható adat van. A legtöbb szemtanú nem a csata napján, hanem egy-két évtizeddel később, emlékezetből írta le, amit látott. Egy osztrák őrnagy, August von Heydte azt állította, hogy látta Petőfi holttestét, de az állítólag mellette talált dokumentumok soha nem kerültek elő. Az is felmerült, hogy a szemtanúk Bem hadsegédével, Anton Kurzzal keverhették össze a költőt.
+>
+> Hermann Róbert hadtörténész 2012-es tanulmánya hat máig megválaszolatlan kérdést sorol fel, a beszámolók hitelességétől a sebesült fogságba esés lehetőségéig. **Ezek nem apró részletek, hanem a halál helyét, idejét és módját érintik.** Hermann szerint hat évtizeddel az 1958-as, akkor véglegesnek hitt rekonstrukció után „a kérdőjelek száma nem csökkent, sőt, növekedett”.
+>
+> A sír kérdése még ennél is homályosabb. Az elesetteket a csata után jellemzően közös sírokba temették, ezért a sír helye önmagában senkit sem azonosít. 1956-ban Dienes András emléktáblát állíttatott az országút mentén, de ez egy valószínűsített, nem egy bizonyított helyszínt jelöl.
+>
+> > „Petőfi emléktáblája egy feltételezést jelöl, nem egy megtalált sírt.”
+>
+> Kovács László régész 2011-ben összesen 11 feltételezett sír- vagy halálhelyet vett számba Fehéregyháza környékén, nagyon eltérő forrásértékkel. **A tizenegy jelölt közül egyiket sem sikerült régészetileg megerősíteni.** Az egyetlen dokumentált próbaásatás 1956-ban, a héjjasfalvi Csonta-kertben eredménytelen maradt.
+>
+> És akkor ott van Szibéria. A legenda, hogy Petőfi orosz hadifogságba esett, és évtizedekig élt még, szinte egyidős az eltűnéssel: Erdélyi János már 1850-ben azt írta, hogy „még mindig beszélik, hogy Petőfi S. él”. 1989-ben Morvai Ferenc vállalkozó expedíciója bejelentette, hogy megtalálta a költő sírját a burjátföldi Barguzinban.
+>
+> A fordulat gyorsan jött. Igazságügyi orvosszakértők és régészek már 1990 tavaszán megállapították, hogy a feltárt csontváz női. Ezt az amerikai AFIP intézet és a Pennsylvaniai Egyetem 1994-es, majd 1996-os DNS-vizsgálata is megerősítette, és 1990 és 2001 között négy akadémiai szakbizottság jutott ugyanerre. **A tudomány a barguzini elméletet több, egymást követő vizsgálatban elutasította.**
+>
+> Az elmélet már az alapjainál is inog. Hermann Róbert 2015-ben a bécsi levéltárak releváns iratanyagát szisztematikusan átnézte, és nem talált nyomot kihurcolt hadifoglyokra. Az MTA ugyanebben az évben közölte, hogy nincs adat arról, hogy a cári csapatok akár egyetlen hadifoglyot is az orosz birodalom területére szállítottak volna.
+>
+> 2015-ben mégis új bejelentés érkezett. Egy sanghaji intézet mitokondriális DNS-vizsgálata – ez a csak anyai ágon öröklődő genetikai anyag – 99,2–99,9 százalékos „hasonlóságot” mutatott ki két, ma élő Petőfi-rokonnal. A szám lenyűgözőnek hangzik, de az MTA Archeogenetikai Laboratóriuma szerint a vizsgálat csak a mitokondriális DNS két, úgynevezett hipervariábilis régióját nézte, a kapott mintázat pedig egy németországi adatbázisban ezres nagyságrendben fordult elő, mert nagyon gyakori az európai népességekben.
+>
+> > „Az ilyen DNS-vizsgálat legfeljebb kizárni tud, azonosítani nem. A magas százalék a háttéradatok nélkül félrevezető.”
+>
+> **Egy mitokondriális DNS-egyezés önmagában nem bizonyít rokonságot.** A 2015. július 17-i budapesti temetés után a csontok sorsa is ködbe veszett: a csontjegyzék közöletlen maradt, és a maradványok pontos helye ma is tisztázatlan.
+>
+> Hogyan néz ki egy sikeres azonosítás? III. Richárd angol király esetében a sírhelyet levéltári és topográfiai úton néhány méteres pontossággal behatárolták, a genetika csak a végén erősített meg. A kutatók régészeti, antropológiai, radiokarbon- és genetikai bizonyítékot összesítettek, és az eredmény minden kétséget kizáróan igazolta az azonosítást. A Romanov-gyerekeknél három független genetikai rendszert használtak, bizonyított élő rokonok mintáival.
+>
+> A nemzetközi esetekből három feltétel rajzolódik ki: jól behatárolt sír, megbízható referenciaminta és több, egymástól független bizonyítéktípus nyilvános, ellenőrizhető értékelése. **A Petőfi-ügyben jelenleg mindhárom feltétel hiányzik vagy bizonytalan.** Még a legjobb körülmények sem garantálnak sikert: az első világháborús fromelles-i tömegsírban 250 katonából 144-et sikerült névvel azonosítani.
+>
+> A 2018–19-es régészeti csatatérkutatás sem sírkeresés volt, hanem az ütközet rekonstrukciója. Előbb 19, majd további 344, a harcokhoz köthető tárgy került elő, és légi lézeres felmérés (LiDAR) is készült, de ennek eredménye nem ismert. Kovács László javasolta a legígéretesebb pontok földradaros, ásatás nélküli vizsgálatát, ám ez mindmáig nem valósult meg, egy korábbi tervet a finanszírozás hiánya akasztott meg.
+>
+> Az elemzés végén a Vakzóna saját, óvatos javaslatot tesz. Először a már meglévő adatokat kellene összevetni a régi térképekkel és Kovács koordinátáival, aztán célzott, roncsolásmentes vizsgálat jöhetne a három kiemelt ponton, román partnerekkel. Ásatásra csak konkrét jelzés esetén, előre rögzített azonosítási szabályok mellett kerülne sor. A javaslat sikere nem garantált.
+>
+> **A halál körülményei ma kevésbé tisztázottak, mint 1958-ban, amikor a rejtélyt megoldottnak hitték.** Hogy ez valaha megváltozik-e, az nem csak a tudományon múlik, hanem a pénzen és a tartós magyar–román együttműködésen is.
 
 Ez az írás a Vakzóna Petőfi Sándor halálának és sírjának kutatásáról szóló elemzésének rövidített, webes változata, a teljes elemzés PDF-ben letölthető. Az elemzés kizárólag nyilvánosan hozzáférhető, ellenőrizhető forrásokra épül: lektorált hadtörténeti tanulmányokra, a Magyar Tudományos Akadémia állásfoglalására, intézményi kutatási beszámolóra, nemzetközi szakfolyóiratok cikkeire és hivatalos jogszabályszövegre. A barguzini elmélet képviselőinek álláspontját a saját honlapjukról idézzük, és mindenhol így jelöljük. A Vakzóna saját kérdésfelvetései és kutatási javaslata egyértelműen el vannak választva a forrásokban rögzített tényektől.
 

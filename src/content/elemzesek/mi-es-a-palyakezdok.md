@@ -17,12 +17,41 @@ pdf: mi-es-a-palyakezdok-v1.0.pdf | 55 oldal
 
 > **Összefoglaló**
 >
-> - **A vita túl szűken kérdez, amikor csak az elbocsátásra figyel.** A mesterséges intelligencia (MI) legalább háromféleképpen hathat a munkára: elbocsátáson, elmaradó felvételen és a meglévő munkakörök tanulási tartalmának kiürülésén keresztül. A pályakezdőket elsősorban a második, nehezen látható csatorna érinti.
-> - **Valószínűnek tekinthető, hogy a pályakezdői felvétel visszamaradt az erősen MI-nek kitett szakmákban – legalább két, egymástól független országban.** Az Egyesült Államokban a 22–25 évesek foglalkoztatása a legkitettebb szakmákban 19 százalékkal marad el attól, amit a kevésbé kitett korosztálytársaik ütemében elérne, és ez a rés egy éven belül 15-ről 19 százalékra szélesedett. Egy dán, nyilvántartási adatokat felméréssel összekapcsoló kutatás szerint hasonló mintázat ott is megfigyelhető.
-> - **Vitatott, hogy ezt tényleg az MI okozza-e, és hogy tartós vagy átmeneti jelenség-e.** A dán kutatók szerint saját méréseik alapján a csökkenést nem a vállalati MI-bevezetés hajtja, bár alternatív okot nem neveznek meg. Az sem dönthető el, hogy a hatás elválasztható-e a 2022–2026-os gazdasági ciklustól.
-> - **A „tapasztalati létra” kiürülésének kockázata elméletileg megalapozott, de van rá egy fontos ellenbizonyíték is.** Egy elméleti modell szerint a piac magától is túl sokat automatizál a belépő szintű feladatokból. Egy lektorált, nagy mintás tanulmány ezzel szemben azt mutatja, hogy egy MI-eszköz a kezdő dolgozók termelékenységét 34 százalékkal növelte – azaz felgyorsította, nem akadályozta a tanulást.
-> - **Magyarországra nincs közvetlen bizonyíték, és az összesített hazai adat nem mutat országos pályakezdő-válságot** – de ennek legfőbb oka, hogy a jelenlegi hazai statisztika egyszerűen nem alkalmas a kérdés megválaszolására, mert hiányzik a korcsoportra bontott foglalkozási adat.
-> - **A javaslatok három csoportba rendezhetők**: jobb mérés, oktatási és állami lépések, valamint vállalati gyakorlat – ezek jó része saját, elemzői javaslat, nem a forrásokban külön dokumentált gyakorlat.
+> Van egy pályakezdő, akiről semmilyen statisztika nem szól. Nem bocsátották el, nem lett munkanélküli, egyszerűen nem vették fel, mert azt a pozíciót, amelyre korábban jelentkezhetett volna, idén már meg sem hirdették. Ő a mesterséges intelligencia (MI) korának egyik legnehezebben látható szereplője.
+>
+> 2022 végén megjelent a ChatGPT, és azóta a generatív MI, vagyis a szöveget, képet, kódot előállító rendszerek rohamosan terjednek az irodai munkában. A nyilvános vita szinte mindig ugyanazt kérdezi: hányan veszítik el miatta az állásukat? **Ez az elemzés amellett érvel, hogy a vita túl szűken kérdez, amikor csak az elbocsátásra figyel.**
+>
+> > „Aki sosem kap állást, az elbocsátottként sem jelenik meg semmilyen statisztikában.”
+>
+> Az MI legalább háromféleképpen hathat a munkára. Az első az elbocsátás, ez a legkönnyebben látható. A második az elmaradó felvétel, amikor egy állás egyszerűen nem jön létre. A harmadik a legcsendesebb: a munkakör megmarad, de kiürülnek belőle azok a rutinfeladatok, amelyeken a kezdők hagyományosan tanultak. **A pályakezdőket elsősorban a második, nehezen látható csatorna érinti.**
+>
+> Miért baj ez? A válasz az elemzés címében van: ki lesz a senior, ha nincs junior? A tapasztalt szakemberek nem a semmiből lesznek. Egy „tapasztalati létrán” jutnak fel, gyakorlófeladatokon, tapasztalt kollégák mellett. A tudás egy része ráadásul hallgatólagos, vagyis olyan gyakorlati fogás, amelyet nem lehet leírni, csak a mester mellett dolgozva ellesni.
+>
+> Mit mutatnak az adatok? A legrészletesebb képet a Stanford Digital Economy Lab kutatóinak folyamatosan frissített munkaanyaga adja, amely több millió amerikai munkavállaló bérszámfejtési adataira épül, 2026 júniusáig. Eszerint a 22–25 évesek foglalkoztatása az MI-nek kitett szakmákban 19 százalékkal marad el attól, amit akkor érne el, ha a kevésbé kitett korosztálytársaik tempójában nőtt volna. **A rés 2025 júliusában még 15 százalék volt, egy éven belül tehát tovább szélesedett.**
+>
+> A tapasztaltabb dolgozóknál nincs hasonló rés. A csökkenés elsősorban abból adódik, hogy kevesebb fiatalt vesznek fel, nem abból, hogy többen távoznak. És ott koncentrálódik, ahol az MI helyettesíti az emberi feladatokat, nem ott, ahol kiegészíti.
+>
+> Egy dán, nyilvántartási adatokat felméréssel összekapcsoló kutatás szerint a csökkenő pályakezdői foglalkoztatás mintázata Dániában is megfigyelhető. **Valószínűnek tekinthető tehát, hogy a pályakezdői felvétel visszamaradt az erősen kitett szakmákban, legalább két, egymástól független országban.**
+>
+> Itt viszont kezdődnek a nehéz kérdések. A dán kutatók szerint a saját méréseik alapján a csökkenést nem a cégek MI-chatbot-bevezetése hajtja, bár alternatív okot nem neveznek meg, és maguk is jelzik, hogy mérésük alulbecslést eredményezhetett. A Yale Budget Lab az összesített amerikai munkaerőpiacon eddig nem talált egyértelmű, MI-hez köthető lábnyomot, ami nem feltétlenül ellentmondás, hiszen egy átlag elfedheti egy szűkebb csoport bajait. A 2022–2026-os évek ráadásul egy sajátos gazdasági ciklus évei is voltak, és a két hatást egyik módszer sem tudja megkérdőjelezhetetlenül szétválasztani. Mindhárom kutatás munkaanyag vagy frissülő jegyzet, nem lezárt, lektorált cikk.
+>
+> **Vitatott tehát, hogy ezt tényleg az MI okozza-e, és nem tudjuk, hogy tartós vagy átmeneti jelenségről van-e szó.**
+>
+> A tapasztalati létra veszélyére elméleti érv is van. Enrique Ide közgazdász modellje szerint a cégek a belépő szintű automatizálásról a saját rövid távú nyereségük alapján döntenek, miközben a tudásátadás haszna szétoszlik a gazdaságban. Ebből a modell szerint társadalmilag túlzott mértékű automatizálás következik. Ez azonban elméleti modell és munkaanyag, nem valós adatokon végzett becslés.
+>
+> Az ellenérv viszont erős, és lektorált. Egy 5179 ügyfélszolgálati dolgozó adatait vizsgáló tanulmány szerint egy MI-asszisztens átlagosan 14 százalékkal növelte a termelékenységet, **a kezdőknél viszont 34 százalékkal, vagyis felgyorsította, nem akadályozta a tanulásukat.** A korlát: egyetlen vállalat adatairól van szó, és arról, mi történik a felvételekkel, a tanulmány nem mond semmit.
+>
+> A két eredmény összefér. Ha az MI átveszi a kezdő feladatát, a kezdő nem tanul. Ha mellette dolgozik eszközként, gyorsabban tanul. Lehet, hogy a munkahelyen belül gyorsul a betanulás, miközben a munkahelyre bejutni egyre nehezebb.
+>
+> > „A gép nem dönti el, hogy tanít vagy kiszorít. Ezt az dönti el, hogy a cég kinek a kezébe adja.”
+>
+> És Magyarország? Az Eurostat szerint 2025-ben a hazai vállalatok 10,37 százaléka használt MI-t, az uniós átlag 19,95 százalék volt, a magyar arány tehát kb. a fele az uniósnak. A KSH szerint a 15–24 évesek foglalkoztatási rátája 2024–2025-ben 26,94 százalékról 25,52 százalékra csökkent, de ennek számos más oka lehet, és a forrás maga sem állít MI-összefüggést. A friss diplomások foglalkoztatási rátája 2025-ben 93,2 százalék volt, jóval az uniós 86,9 százalék felett.
+>
+> **Magyarországra nincs közvetlen bizonyíték, és az összesített hazai adat nem mutat országos pályakezdő-válságot.** Ennek legfőbb oka azonban az, hogy a jelenlegi hazai statisztika egyszerűen nem alkalmas a kérdés megválaszolására. Hiányzik a korcsoport és foglalkozás szerinti bontás, nincs adatsor a junior álláshirdetésekről, a Diplomás Pályakövetési Rendszer adatai pedig nem érhetők el letölthető, országos összesítésben.
+>
+> Mit lehet tenni? Az elemzés három irányt javasol, jórészt saját, elemzői javaslatként, nem a forrásokban dokumentált gyakorlatként: jobb mérést, oktatási és állami lépéseket, valamint vállalati gyakorlatot. A cégeknek azt javasolja, hogy a junior felvételt hosszú távú utánpótlás-kérdésként kezeljék, ne csak költségként, tartsák meg a mentorálást, és hagyjanak gyakorlófeladatot a kezdőknek akkor is, ha az MI elvégezné.
+>
+> A kockázat nem bizonyított tény, de nem is alaptalan feltételezés. Az a kérdés, hogy ki lesz a holnap seniorja, ma dől el, és itthon egyelőre azt sem mérjük, hányan maradnak le a létra első fokáról.
 
 Ez az írás a Vakzóna arról szóló elemzésének rövidített, webes változata, hogy a generatív mesterséges intelligencia hogyan hat a pályakezdők munkaerőpiaci helyzetére, a teljes elemzés PDF-ben letölthető. Az elemzés kizárólag nyilvánosan hozzáférhető, hivatalos és tudományos forrásokra épül – hazai, uniós és nemzetközi körben –, és MI-eszközök segítségével készült, emberi forrásellenőrzéssel.
 
