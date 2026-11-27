@@ -1,0 +1,35 @@
+{
+  "leckek": {
+    "01": {
+      "video": "https://vimeo.com/1250550277",
+      "felirat": "01.vtt",
+      "fejezetek": [
+        {
+          "ido": "0:00",
+          "cim": "Mi az AI Act?"
+        },
+        {
+          "ido": "0:32",
+          "cim": "Mire és kikre vonatkozik?"
+        },
+        {
+          "ido": "1:24",
+          "cim": "Négy kockázati szint"
+        },
+        {
+          "ido": "1:52",
+          "cim": "Mit követel?"
+        },
+        {
+          "ido": "4:44",
+          "cim": "Menetrend és bírság"
+        },
+        {
+          "ido": "5:38",
+          "cim": "Útiterv és összefoglalás"
+        }
+      ],
+      "leiras": "Hét percben az AI Act-ről, az Európai Unió mesterséges intelligencia rendeletéről: mi ez, kikre vonatkozik, mit követel, mikortól, és hogyan kezdjünk hozzá a megfeleléshez.\n\n**Fejezetek:**\n- **0:00** Mi az AI Act? Uniós rendelet, kockázatalapú, termékbiztonsági logikával.\n- **0:32** Mire és kikre vonatkozik? Mi számít MI-rendszernek, mi a kivétel, és mi a különbség a szolgáltató és az alkalmazó szerepe között.\n- **1:24** Négy kockázati szint: a kockázati piramis, és külön az általános célú modellek.\n- **1:52** Mit követel? A tiltott gyakorlatok, mikor nagy kockázatú egy rendszer, a szolgáltató és az alkalmazó feladatai, az átláthatóság és az MI-jártasság.\n- **4:44** Menetrend és bírság: a határidők a Digital Omnibus után, a bírságok felső határa és a felügyelet.\n- **5:38** Útiterv és összefoglalás: hét lépés az MI-leltártól a folyamatos felülvizsgálatig."
+    }
+  }
+}

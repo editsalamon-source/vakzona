@@ -7,7 +7,7 @@ import Cursor from "./components/Cursor";
 import ScrollReset from "./components/ScrollReset";
 import useSeo from "./utils/useSeo";
 import KATEGORIAK from "./data/kategoriak";
-import AKADEMIA from "./data/akademiaNev";
+import { AKADEMIA_KATEGORIAK } from "./data/akademiaNev";
 
 const Landing = lazy(() => import("./pages/Landing"));
 const Analyses = lazy(() => import("./pages/Analyses"));
@@ -45,7 +45,7 @@ const App = () => (
             <Route key={k.slug} path={`/${k.slug}`} element={<Analyses category={k} />} />
           ))}
           <Route path="/akademia" element={<Academy />} />
-          {KATEGORIAK.filter((k) => AKADEMIA.kategoriak.includes(k.slug)).map((k) => (
+          {AKADEMIA_KATEGORIAK.map((k) => (
             <Route key={k.slug} path={`/akademia/${k.slug}`} element={<Academy category={k} />} />
           ))}
           <Route path="/akademia/:slug" element={<Course />} />

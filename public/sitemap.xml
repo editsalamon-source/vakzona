@@ -51,6 +51,11 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://vakzona.com/akademia/szabalyzat</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://vakzona.com/rolunk</loc>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
@@ -58,6 +63,12 @@
   <url>
     <loc>https://vakzona.com/akademia/agenstervezes-claude-code</loc>
     <lastmod>2026-11-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://vakzona.com/akademia/ai-act-zero-to-hero</loc>
+    <lastmod>2026-11-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -110,6 +121,18 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://vakzona.com/akademia/data-act-zero-to-hero</loc>
+    <lastmod>2026-11-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://vakzona.com/akademia/gdpr-zero-to-hero</loc>
+    <lastmod>2026-11-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://vakzona.com/akademia/mi-adatvedelem</loc>
     <lastmod>2026-11-01</lastmod>
     <changefreq>monthly</changefreq>
@@ -118,6 +141,12 @@
   <url>
     <loc>https://vakzona.com/akademia/mi-tortenete</loc>
     <lastmod>2026-11-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://vakzona.com/akademia/nis2-zero-to-hero</loc>
+    <lastmod>2026-11-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>

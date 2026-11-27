@@ -185,7 +185,29 @@ function Mi() {
   );
 }
 
-const ART = { gazdasag: Gazdasag, tarsadalom: Tarsadalom, kultura: Kultura, tudomany: Tudomany, mi: Mi };
+// Szabályzat (csak az Akadémia témaköre): két lap, az elsőn paragrafusjel és sorok, narancs pecsét pipával.
+function Szabalyzat() {
+  const lines = [0, 1, 2, 3, 4, 5];
+  return (
+    <>
+      <rect x="132" y="38" width="176" height="222" rx="10" fill="currentColor" fillOpacity="0.03" strokeWidth="1.5" opacity="0.45" />
+      <rect x="104" y="54" width="176" height="222" rx="10" fill="var(--art-bg, #fff)" strokeWidth="1.5" />
+      <text x="124" y="104" fontSize="40" fontWeight="600" fill="currentColor" stroke="none" fontFamily="Inter, sans-serif">§</text>
+      <line x1="160" y1="90" x2="256" y2="90" strokeWidth="1.5" />
+      {lines.map((i) => (
+        <line key={i} className={M.glint} style={{ "--i": i }} x1="124" y1={130 + i * 20} x2={i % 3 === 2 ? 210 : 258} y2={130 + i * 20}
+          strokeWidth="1.5" opacity="0.5" />
+      ))}
+      <g className={M.pulse}>
+        <circle cx="282" cy="240" r="34" fill={A} fillOpacity="0.14" stroke={A} strokeWidth="2" />
+        <circle cx="282" cy="240" r="26" stroke={A} strokeWidth="1" strokeDasharray="3 4" />
+        <path d="M268 241l10 10 19-21" stroke={A} strokeWidth="3" strokeLinejoin="round" />
+      </g>
+    </>
+  );
+}
+
+const ART = { gazdasag: Gazdasag, tarsadalom: Tarsadalom, kultura: Kultura, tudomany: Tudomany, mi: Mi, szabalyzat: Szabalyzat };
 
 function CategoryArt({ slug, className, animated = false }) {
   const Art = ART[slug];

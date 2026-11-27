@@ -1,0 +1,31 @@
+{
+  "leckek": {
+    "01": {
+      "video": "https://vimeo.com/1250550349",
+      "felirat": "01.vtt",
+      "fejezetek": [
+        {
+          "ido": "0:00",
+          "cim": "Mi az adatrendelet?"
+        },
+        {
+          "ido": "1:37",
+          "cim": "Kire és mire vonatkozik?"
+        },
+        {
+          "ido": "2:56",
+          "cim": "Minek kell megfelelni?"
+        },
+        {
+          "ido": "4:29",
+          "cim": "Ütemterv, ellenőrzés, tét"
+        },
+        {
+          "ido": "5:19",
+          "cim": "Nyolc lépés és összefoglalás"
+        }
+      ],
+      "leiras": "Hét percben a Data Act-ről, az Európai Unió adatrendeletéről ((EU) 2023/2854): mi ez, kire vonatkozik, mit követel, mikortól, és hogyan kezdjünk hozzá a megfeleléshez.\n\n**Fejezetek:**\n- **0:00** Mi az adatrendelet? A két probléma, amelyre választ ad, és hat fogalom, amelyet tudni kell.\n- **1:37** Kire és mire vonatkozik? Az érintettek köre, a kis- és mikrovállalkozások kímélete, és a rendelet nyolc fejezete.\n- **2:56** Minek kell megfelelni? A gyártó és az adatbirtokos öt feladata, a felhőváltás szabályai és a tisztességtelen szerződési feltételek.\n- **4:29** Ütemterv, ellenőrzés, tét: a határidők, a hatóságok és a szankciók.\n- **5:19** Nyolc lépés és összefoglalás: a mandátumtól és a leltártól a folyamatos megfelelésig."
+    }
+  }
+}

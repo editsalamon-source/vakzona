@@ -1,0 +1,130 @@
+WEBVTT
+
+00:00:00.600 --> 00:00:10.608
+Néhány perc múlva tudni fogod, mi a GDPR, kire és mire vonatkozik, mit vár el tőled, és hogyan kezdj hozzá a megfeleléshez.
+
+00:00:10.958 --> 00:00:15.950
+Zero to hero: a nulláról a magabiztos alapokig.
+
+00:00:17.450 --> 00:00:23.642
+A GDPR angol rövidítés: General Data Protection Regulation.
+
+00:00:23.992 --> 00:00:36.784
+Magyarul általános adatvédelmi rendelet. Uniós rendelet, 2018 májusa óta kell alkalmazni, minden tagállamban közvetlenül, Magyarországon is.
+
+00:00:37.134 --> 00:00:43.950
+A célja az emberek védelme: az adatvédelem az Unióban alapjog, nem papírmunka.
+
+00:00:45.450 --> 00:00:59.970
+Az első kulcsfogalom a személyes adat, angolul personal data: minden információ, amely egy élő emberhez köthető. A név mellett az e-mail-cím, az IP-cím vagy egy fotó is.
+
+00:01:00.320 --> 00:01:08.624
+Az egészségügyi, vallási vagy biometrikus adat különleges adat: ezeket csak szűk kivételekkel szabad kezelni.
+
+00:01:08.974 --> 00:01:22.846
+A második az adatkezelés, angolul processing: bármilyen művelet az adattal, a gyűjtéstől a törlésig. Ha egy táblázatban tárolod az ügyfeleid nevét, már adatot kezelsz.
+
+00:01:24.346 --> 00:01:35.602
+Kikre vonatkozik? Szinte mindenkire, aki személyes adatot kezel, a webshoptól az önkormányzatig. A méret nem számít.
+
+00:01:35.952 --> 00:01:46.200
+Az Unióban működő szervezetekre mindenképp, de egy Unión kívüli cégre is, ha uniós embereknek árul, vagy figyeli a viselkedésüket.
+
+00:01:46.550 --> 00:01:52.670
+Kivétel a tisztán magáncélú adatkezelés, például a családi fotóalbumod.
+
+00:01:54.170 --> 00:02:02.210
+Az első szereplő az érintett, angolul data subject: az ember, akinek az adatairól szó van.
+
+00:02:02.560 --> 00:02:11.848
+Az adatkezelő, angolul controller: ő dönti el, mire és hogyan használja az adatot, ezért elsősorban ő felel.
+
+00:02:12.198 --> 00:02:24.894
+Az adatfeldolgozó, angolul processor, az adatkezelő megbízásából dolgozik, például a külső könyvelő vagy a felhőszolgáltató. Vele szerződést kell kötni.
+
+00:02:25.244 --> 00:02:33.572
+És a hatóság: Magyarországon a Nemzeti Adatvédelmi és Információszabadság Hatóság, röviden NAIH.
+
+00:02:35.072 --> 00:02:47.408
+A GDPR szíve hét alapelv. Az első a jogszerűség, a tisztesség és az átláthatóság: legyen jogalapod, és mondd el nyíltan, mit csinálsz.
+
+00:02:47.758 --> 00:02:58.294
+A célhoz kötöttség: csak arra használd, amire gyűjtötted. Az adattakarékosság: csak annyit kérj, amennyi kell.
+
+00:02:58.644 --> 00:03:04.572
+Aztán a pontosság, a korlátozott tárolhatóság és az adatbiztonság.
+
+00:03:04.922 --> 00:03:16.370
+A hetedik a legfontosabb: az elszámoltathatóság, angolul accountability. Nem elég betartani a szabályokat, bizonyítanod is kell.
+
+00:03:17.870 --> 00:03:30.326
+Minden adatkezelési célhoz kell egy jogalap a hat közül. A hozzájárulás csak az egyik: önkéntes, és bármikor visszavonható, például egy hírlevélnél.
+
+00:03:30.676 --> 00:03:39.676
+Gyakran a szerződés, például a szállítási cím egy rendeléshez, vagy a jogi kötelezettség, például a számlák megőrzése.
+
+00:03:40.026 --> 00:03:44.922
+Ritkább a létfontosságú érdek és a közérdekű feladat.
+
+00:03:45.272 --> 00:03:55.208
+Végül a jogos érdek, angolul legitimate interest, például a csalásmegelőzés. Ehhez érdekmérlegelés kell.
+
+00:03:56.708 --> 00:04:04.292
+Az érintettnek jogai vannak: tudni, mi történik az adataival, és másolatot kérni róluk.
+
+00:04:04.642 --> 00:04:16.234
+Kérheti a helyesbítést, a törlést, a korlátozást, az adatai átvitelét, tiltakozhat, és jelentős kérdésben nem dönthet róla kizárólag egy gép.
+
+00:04:16.584 --> 00:04:23.976
+A kérelemre egy hónapon belül kell válaszolnod, ami indokolt esetben két hónappal hosszabbítható.
+
+00:04:25.476 --> 00:04:33.468
+Az első fő kötelezettség a nyilvántartás: milyen adatot, milyen célból, meddig és kinek adsz át.
+
+00:04:33.818 --> 00:04:42.602
+A második a megfelelő adatbiztonság: erős jelszavak, titkosítás, szűk hozzáférés, mentések.
+
+00:04:42.952 --> 00:04:56.704
+A harmadik az incidenskezelés: ha adat szivárog ki vagy vész el, és ez kockázatos, 72 órán belül be kell jelenteni a hatóságnak, magas kockázatnál az érintetteket is értesíteni kell.
+
+00:04:57.054 --> 00:05:12.102
+Magas kockázatú adatkezelés előtt hatásvizsgálat, angolul DPIA kell. Közfeladatnál, vagy ha ilyen kockázatos adatkezelés a fő tevékenységed, adatvédelmi tisztviselőt is ki kell jelölnöd.
+
+00:05:13.602 --> 00:05:25.386
+És hogyan kezdj hozzá? Hat lépésben. Először készíts adattérképet: milyen adatot gyűjtesz, hol tárolod, kinek adod át.
+
+00:05:25.736 --> 00:05:30.968
+Másodszor minden célhoz rendelj jogalapot és megőrzési időt.
+
+00:05:31.318 --> 00:05:36.310
+Harmadszor írj közérthető adatkezelési tájékoztatót.
+
+00:05:36.660 --> 00:05:46.068
+Negyedszer köss adatfeldolgozói szerződéseket, és nézd meg, kerül-e adat az Unión kívülre, mert ahhoz külön garancia kell.
+
+00:05:46.418 --> 00:05:53.498
+Ötödször építsd ki a biztonságot, és a kérelmek meg az incidensek kezelésének folyamatát.
+
+00:05:53.848 --> 00:06:01.432
+Végül képezd a munkatársaidat, és évente nézd át az egészet: a megfelelés nem egyszeri projekt.
+
+00:06:02.932 --> 00:06:15.556
+Mi a tét? A bírság felső határa 20 millió euró, vagy a vállalkozás előző évi, teljes világpiaci forgalmának négy százaléka, amelyik magasabb.
+
+00:06:15.906 --> 00:06:19.890
+Az érintettek kártérítést is követelhetnek.
+
+00:06:20.240 --> 00:06:23.912
+A legnagyobb veszteség pedig gyakran a bizalom.
+
+00:06:25.412 --> 00:06:33.620
+A GDPR minden szervezetre vonatkozik, amely személyes adatot kezel, a multitól a sportegyesületig.
+
+00:06:33.970 --> 00:06:40.426
+Hét alapelv, minden célhoz egy jogalap, és az érintettek jogainak tisztelete.
+
+00:06:40.776 --> 00:06:50.712
+A gyakorlatban: adattérkép, tájékoztató, szerződések, biztonság, folyamatok, és mindent dokumentálj.
+
+00:06:51.062 --> 00:06:57.710
+Ha mélyebbre mennél, a tanfolyam harmincnyolc videója mindezt részletesen végigveszi.

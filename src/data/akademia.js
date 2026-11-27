@@ -1,8 +1,7 @@
 import { Marked } from "marked";
-import KATEGORIAK, { getKategoria } from "./kategoriak.js";
 import { parseCimkek } from "./cimkek.js";
 
-import AKADEMIA_NEV from "./akademiaNev.js";
+import AKADEMIA_NEV, { AKADEMIA_KATEGORIAK, getAkademiaKategoria } from "./akademiaNev.js";
 
 export { AKADEMIA_NEV as AKADEMIA };
 
@@ -82,7 +81,7 @@ const courses = Object.entries(files)
       title: meta["cím"] || slug,
       subtitle: meta["alcím"] || "",
       date: meta["dátum"] || "",
-      category: getKategoria(meta["kategória"]),
+      category: getAkademiaKategoria(meta["kategória"]),
       level: meta["szint"] || "",
       tags: parseCimkek(meta["címkék"], `${slug}.md`),
       intro: meta["bemutató"] || "",
@@ -106,10 +105,7 @@ const courses = Object.entries(files)
 
 // az Akadémia témakörei (AKADEMIA.kategoriak) a hozzájuk tartozó tanfolyamok számával; az üres is („hamarosan”)
 export function getAcademyCategories() {
-  return AKADEMIA_NEV.kategoriak
-    .map((slug) => KATEGORIAK.find((k) => k.slug === slug))
-    .filter(Boolean)
-    .map((k) => ({ ...k, count: courses.filter((c) => c.category?.slug === k.slug).length, lead: AKADEMIA_NEV.leirasok[k.slug] }));
+  return AKADEMIA_KATEGORIAK.map((k) => ({ ...k, count: courses.filter((c) => c.category?.slug === k.slug).length, lead: AKADEMIA_NEV.leirasok[k.slug] }));
 }
 
 export function getCourse(slug) {

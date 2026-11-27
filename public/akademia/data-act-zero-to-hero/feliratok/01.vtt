@@ -1,0 +1,244 @@
+WEBVTT
+
+00:00:00.400 --> 00:00:01.424
+Üdvözöllek!
+
+00:00:01.424 --> 00:00:08.688
+Nulláról indulunk: a végére tudni fogod, mi az adatrendelet, angolul Data Act,
+
+00:00:08.688 --> 00:00:13.530
+kire vonatkozik, mit követel, és hogyan kezdj hozzá.
+
+00:00:14.728 --> 00:00:19.125
+Az autód vagy egy ipari gép folyamatosan adatot termel,
+
+00:00:19.125 --> 00:00:21.923
+de sokszor csak a gyártó fér hozzá.
+
+00:00:21.923 --> 00:00:27.998
+A felhőből pedig nehéz és drága kiköltözni: ez a bezártság, angolul lock-in.
+
+00:00:28.648 --> 00:00:30.673
+A válasz az adatrendelet.
+
+00:00:30.673 --> 00:00:34.236
+Uniós rendeletként közvetlenül alkalmazandó,
+
+00:00:34.236 --> 00:00:38.042
+kétezer-huszonöt szeptember tizenkettedike óta,
+
+00:00:38.042 --> 00:00:41.038
+személyes és nem személyes adatra is.
+
+00:00:41.688 --> 00:00:47.608
+A célja: az adat hasznából az is részesüljön, aki előállítja.
+
+00:00:48.812 --> 00:00:49.951
+Hat fogalom.
+
+00:00:49.951 --> 00:00:57.262
+Az összekapcsolt termék, angolul connected product, adatot gyűjt és továbbít.
+
+00:00:57.912 --> 00:01:02.406
+A kapcsolódó szolgáltatás, angolul related service,
+
+00:01:02.406 --> 00:01:05.402
+például a vezérlő mobilalkalmazás.
+
+00:01:06.052 --> 00:01:12.142
+A felhasználó, angolul user, birtokolja vagy bérli a terméket.
+
+00:01:12.792 --> 00:01:18.702
+Az adatbirtokos, angolul data holder, jellemzően a gyártó.
+
+00:01:19.352 --> 00:01:26.080
+Az adatátvevő, angolul data recipient, a felhasználó kérésére kapja meg az adatot,
+
+00:01:26.080 --> 00:01:28.542
+például egy független szerviz.
+
+00:01:29.192 --> 00:01:34.657
+Az adatkezelési szolgáltatás, angolul data processing service,
+
+00:01:34.657 --> 00:01:36.772
+pedig a felhő és a SaaS.
+
+00:01:37.974 --> 00:01:39.541
+Kire vonatkozik?
+
+00:01:39.541 --> 00:01:46.494
+A gyártókra, ha a termékük az uniós piacon van, bárhol is a székhelyük.
+
+00:01:47.144 --> 00:01:51.444
+A felhasználókra, akik főleg jogokat kapnak.
+
+00:01:52.094 --> 00:01:57.444
+Az adatbirtokosokra, amelyek adatátvevőknek adnak adatot.
+
+00:01:58.094 --> 00:02:03.304
+A közszférára, amely rendkívüli igény esetén adatot kérhet.
+
+00:02:03.954 --> 00:02:07.574
+És a felhő- és SaaS-szolgáltatókra.
+
+00:02:08.224 --> 00:02:13.762
+A mikro- és kisvállalkozások termékeire viszont nem vonatkozik a II.
+
+00:02:13.762 --> 00:02:14.414
+fejezet.
+
+00:02:15.616 --> 00:02:17.423
+Mire vonatkozik?
+
+00:02:17.423 --> 00:02:22.506
+Nyolc fejezetre: a felhasználói hozzáférésre,
+
+00:02:23.156 --> 00:02:28.646
+az adatbirtokos kötelezettségeire, angolul FRAND-feltételekre,
+
+00:02:29.296 --> 00:02:33.216
+a tisztességtelen szerződési feltételekre,
+
+00:02:33.866 --> 00:02:37.606
+a közszféra rendkívüli adatigényére,
+
+00:02:38.256 --> 00:02:42.506
+a szolgáltatóváltásra, angolul switching,
+
+00:02:43.156 --> 00:02:47.446
+a harmadik országbeli kormányzati hozzáférésre,
+
+00:02:48.096 --> 00:02:50.936
+az interoperabilitásra,
+
+00:02:51.586 --> 00:02:55.586
+és végül a hatóságokra és a szankciókra.
+
+00:02:56.790 --> 00:02:59.040
+Minek kell megfelelni?
+
+00:02:59.040 --> 00:03:00.779
+A szereptől függ.
+
+00:03:00.779 --> 00:03:05.790
+A gyártónak hozzáférhetővé kell tennie az adatot.
+
+00:03:06.440 --> 00:03:11.070
+A felhőszolgáltatónak lehetővé kell tennie a váltást.
+
+00:03:11.720 --> 00:03:16.980
+Minden vállalkozásnak pedig tisztességes adatszerződést kell kötnie.
+
+00:03:18.178 --> 00:03:20.302
+A gyártó öt feladata.
+
+00:03:20.302 --> 00:03:26.268
+Egy: az új termékeknél az adat alapból hozzáférhető legyen.
+
+00:03:26.918 --> 00:03:33.008
+Kettő: vásárlás előtt tájékoztatni kell, milyen adat keletkezik.
+
+00:03:33.658 --> 00:03:39.538
+Három: kérelemre késedelem nélkül és díjmentesen kell adatot adni.
+
+00:03:40.188 --> 00:03:46.409
+Négy: a felhasználó kérésére az adatátvevőnek is, de a kapuőröknek,
+
+00:03:46.409 --> 00:03:48.638
+angolul gatekeeper, nem.
+
+00:03:49.288 --> 00:03:55.648
+Öt: az üzleti titok védhető, kivételesen meg is tagadható az átadás.
+
+00:03:56.850 --> 00:04:03.165
+A felhőben legfeljebb két hónap a felmondási idő, általában harminc nap az átállás,
+
+00:04:03.165 --> 00:04:08.947
+az adatok exportálhatók, és kétezer-huszonhét január tizenkettedikétől nincs
+
+00:04:08.947 --> 00:04:09.860
+váltási díj.
+
+00:04:10.510 --> 00:04:16.762
+A szerződésekben az egyoldalúan kikötött, tisztességtelen feltétel nem köt.
+
+00:04:16.762 --> 00:04:23.180
+Van feketelista és szürkelista, és a Bizottság mintafeltételeket is ajánlott.
+
+00:04:23.830 --> 00:04:28.770
+Addig is csak a költséget nem meghaladó váltási díj kérhető.
+
+00:04:29.974 --> 00:04:35.594
+Az ütemterv: a rendelet zöme kétezer-huszonöt szeptember óta köt.
+
+00:04:36.244 --> 00:04:41.284
+Kétezer-huszonhat szeptembertől él a tervezési kötelezettség.
+
+00:04:41.934 --> 00:04:46.154
+Kétezer-huszonhét januártól nincs váltási díj,
+
+00:04:46.804 --> 00:04:51.871
+szeptembertől pedig a régebbi szerződésekre is vonatkozik a IV.
+
+00:04:51.871 --> 00:04:52.514
+fejezet.
+
+00:04:53.716 --> 00:05:00.810
+Az ellenőrzést tagállami hatóság végzi, személyes adatnál az adatvédelmi hatóság.
+
+00:05:00.810 --> 00:05:04.226
+Magyarországon a kijelölés még nyitott.
+
+00:05:04.876 --> 00:05:11.786
+A bírságot a tagállam szabja meg, személyes adatnál a GDPR szerinti bírság is jöhet.
+
+00:05:12.436 --> 00:05:18.396
+És figyeld a Digital Omnibus javaslatot, mert módosíthatja a rendeletet.
+
+00:05:19.592 --> 00:05:20.987
+És hogyan?
+
+00:05:20.987 --> 00:05:23.079
+Nyolc lépésben.
+
+00:05:23.079 --> 00:05:27.682
+Egy: vezetői mandátum és felelős.
+
+00:05:28.332 --> 00:05:34.302
+Kettő: leltár a termékekről, adatokról és szerződésekről.
+
+00:05:34.952 --> 00:05:38.582
+Három: milyen szerepben vagyunk?
+
+00:05:39.232 --> 00:05:42.712
+Négy: kötelezettségtérkép.
+
+00:05:43.362 --> 00:05:49.432
+Öt: réselemzés, angolul gap analysis, és ütemterv.
+
+00:05:50.082 --> 00:05:53.322
+Hat: megvalósítás.
+
+00:05:53.972 --> 00:05:59.992
+Hét: kiadás előtti ellenőrzés minden új termékre és szerződésre.
+
+00:06:00.642 --> 00:06:06.122
+Nyolc: folyamatos megfelelés, naplóval és audittal.
+
+00:06:07.318 --> 00:06:13.008
+Összefoglalva: az adatrendelet a termék- és a felhőadatokról szól,
+
+00:06:13.658 --> 00:06:20.548
+gyártókat, adatbirtokosokat, felhőszolgáltatókat és szerződő feleket érint,
+
+00:06:21.198 --> 00:06:27.918
+hozzáférést, továbbítást, váltást és tisztességes szerződést követel,
+
+00:06:28.568 --> 00:06:33.608
+és a határidők kétezer-huszonhat szeptembertől sorra jönnek.
+
+00:06:34.258 --> 00:06:38.093
+A megfelelés a leltárral kezdődik.
+
+00:06:38.093 --> 00:06:39.898
+Kezdd el még ma!

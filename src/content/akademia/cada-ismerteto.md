@@ -2,7 +2,7 @@
 cím: A CADA tíz percben
 alcím: Az EU felhőszolgáltatásokról és MI-fejlesztésről szóló rendeletjavaslata (COM(2026) 502), közérthetően
 dátum: 2026-11-15
-kategória: MI
+kategória: Szabályzat
 címkék: Jog és adatvédelem, Alapok
 borító: stopper
 szabad hozzáférés: igen
@@ -33,4 +33,4 @@ Részletesebben a tizenkilenc részes [CADA: felhő és MI](/akademia/cada) tanf
 
 ## Hogyan működik?
 
-A tanfolyam szabadon hozzáférhető, nem kell hozzá jelszó, fiók vagy regisztráció. A videóhoz magyar felirat tartozik. A megnézett lecke kipipálódik, a haladás ebben a böngészőben megmarad. A szabadon hozzáférhető tanfolyamhoz oklevél nem jár.
+A tanfolyam szabadon hozzáférhető, nem kell hozzá jelszó, fiók vagy regisztráció. A videóhoz magyar felirat tartozik. A megnézett lecke kipipálódik, a haladás ebben a böngészőben megmarad. A videó megnézése után oklevél tölthető le.

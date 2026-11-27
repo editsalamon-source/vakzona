@@ -38,4 +38,4 @@ A tanfolyam 7 leckéből áll, egy-egy lecke hét-kilenc perc. A vezérfonal há
 
 ## Hogyan működik?
 
-A tanfolyam szabadon hozzáférhető, nem kell hozzá jelszó, fiók vagy regisztráció. A videókhoz magyar felirat tartozik. A megnézett leckék kipipálódnak, a haladás ebben a böngészőben megmarad. A szabadon hozzáférhető tanfolyamhoz oklevél nem jár.
+A tanfolyam szabadon hozzáférhető, nem kell hozzá jelszó, fiók vagy regisztráció. A videókhoz magyar felirat tartozik. A megnézett leckék kipipálódnak, a haladás ebben a böngészőben megmarad. Ha minden lecke megvan, oklevél tölthető le.

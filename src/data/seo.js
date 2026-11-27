@@ -1,5 +1,5 @@
 import KATEGORIAK from "./kategoriak.js";
-import AKADEMIA from "./akademiaNev.js";
+import AKADEMIA, { AKADEMIA_KATEGORIAK } from "./akademiaNev.js";
 
 export const SITE_URL = "https://vakzona.com";
 export const SITE_NAME = "Vakzóna";
@@ -24,7 +24,7 @@ const seo = {
     description: AKADEMIA.description,
   },
   ...Object.fromEntries(
-    KATEGORIAK.filter((k) => AKADEMIA.kategoriak.includes(k.slug)).map((k) => [
+    AKADEMIA_KATEGORIAK.map((k) => [
       `/akademia/${k.slug}`,
       { title: `${k.name} tanfolyamok – ${AKADEMIA.name}`, description: AKADEMIA.leirasok[k.slug] },
     ]),

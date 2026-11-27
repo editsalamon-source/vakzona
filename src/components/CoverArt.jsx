@@ -622,7 +622,108 @@ function Mero() {
   );
 }
 
+// Mérleg (AI Act zero to hero): a kockázatalapú szabályozás; a könnyebbik serpenyőben narancs chip.
+function Merleg() {
+  return (
+    <>
+      <line x1="200" y1="62" x2="200" y2="252" strokeWidth="2" />
+      <line x1="168" y1="252" x2="232" y2="252" strokeWidth="1.5" />
+      <line x1="140" y1="266" x2="260" y2="266" strokeWidth="2" />
+      <line x1="84" y1="86" x2="316" y2="66" strokeWidth="2" />
+      <circle cx="200" cy="76" r="7" fill={BG} strokeWidth="1.5" />
+      <path d="M84 86L54 166M84 86l30 80" strokeWidth="1" opacity="0.6" />
+      <path d="M44 166q40 34 80 0z" fill="currentColor" fillOpacity="0.06" strokeWidth="1.5" />
+      {[0, 1, 2].map((i) => (
+        <rect key={i} x={62 + i * 2} y={154 - i * 12} width={40 - i * 4} height="10" rx="2" fill="currentColor" fillOpacity="0.1" strokeWidth="1.2" />
+      ))}
+      <path d="M316 66l-30 76M316 66l30 76" strokeWidth="1" opacity="0.6" />
+      <path d="M276 142q40 34 80 0z" fill={A} fillOpacity="0.12" stroke={A} strokeWidth="1.5" />
+      <rect x="302" y="116" width="28" height="24" rx="3" fill={A} stroke="none" />
+      {[0, 1, 2].map((i) => (
+        <g key={i}>
+          <line x1={308 + i * 8} y1="110" x2={308 + i * 8} y2="116" stroke={A} strokeWidth="1.5" />
+        </g>
+      ))}
+    </>
+  );
+}
+
+// Lakat (GDPR zero to hero): a lakat testében narancs emberalak, körülötte szétszórt adatpontok.
+function Lakat() {
+  const dots = [[60, 90], [86, 150], [54, 210], [340, 96], [318, 160], [348, 214]];
+  return (
+    <>
+      {dots.map(([x, y], i) => (
+        <g key={i} opacity="0.5">
+          <rect x={x - 9} y={y - 9} width="18" height="18" rx="4" fill="currentColor" fillOpacity="0.06" strokeWidth="1.2" />
+          <line x1={x < 200 ? x + 12 : x - 12} y1={y} x2={x < 200 ? 104 : 296} y2={y < 150 ? 170 : 200} strokeWidth="1" strokeDasharray="3 5" />
+        </g>
+      ))}
+      <path d="M144 132V102a56 56 0 0 1 112 0v30" strokeWidth="1.5" />
+      <path d="M164 132V102a36 36 0 0 1 72 0v30" strokeWidth="1.5" />
+      <rect x="110" y="132" width="180" height="136" rx="16" fill={BG} strokeWidth="1.5" />
+      <rect x="110" y="132" width="180" height="136" rx="16" fill="currentColor" fillOpacity="0.04" stroke="none" />
+      <circle cx="200" cy="184" r="17" fill={A} fillOpacity="0.16" stroke={A} strokeWidth="2" />
+      <path d="M166 246a34 30 0 0 1 68 0" fill={A} fillOpacity="0.16" stroke={A} strokeWidth="2" />
+    </>
+  );
+}
+
+// Dominó (NIS2 zero to hero): egyetlen támadás láncreakciót indít; az első, narancs dominó dönti a többit.
+function Domino() {
+  const tilt = [40, 28, 16, 6, 0, 0];
+  return (
+    <>
+      <line x1="30" y1="232" x2="370" y2="232" strokeWidth="1.5" />
+      {tilt.map((t, i) => {
+        const x = 60 + i * 50;
+        const first = i === 0;
+        return (
+          <g key={i} transform={`rotate(${t} ${x + 24} 232)`}>
+            <rect x={x} y="132" width="24" height="100" rx="4" fill={first ? A : BG} fillOpacity={first ? 0.9 : 1}
+              stroke={first ? A : "currentColor"} strokeWidth="1.5" />
+            <line x1={x + 4} y1="182" x2={x + 20} y2="182" stroke={first ? BG : "currentColor"} strokeWidth="1.2" />
+            <circle cx={x + 12} cy="157" r="3" fill={first ? BG : "currentColor"} stroke="none" />
+            <circle cx={x + 12} cy="207" r="3" fill={first ? BG : "currentColor"} stroke="none" />
+          </g>
+        );
+      })}
+      <path d="M44 120a30 30 0 0 1 20-26M30 128a46 46 0 0 1 30-44" stroke={A} strokeWidth="1.5" opacity="0.8" />
+      <path d="M300 70l20 8v22c0 14-9 24-20 28-11-4-20-14-20-28V78z" strokeWidth="1.5" strokeDasharray="4 4" opacity="0.6" />
+    </>
+  );
+}
+
+// Eszköz és adat (Data Act zero to hero): az összekapcsolt eszköz adata a felhasználóhoz (narancs) és egy szervizhez jut.
+function Eszkozadat() {
+  return (
+    <>
+      <rect x="48" y="104" width="104" height="124" rx="14" fill="currentColor" fillOpacity="0.04" strokeWidth="1.5" />
+      <circle cx="100" cy="174" r="32" fill={BG} strokeWidth="1.5" />
+      <circle cx="100" cy="174" r="20" strokeWidth="1" opacity="0.5" />
+      <line x1="66" y1="124" x2="96" y2="124" strokeWidth="1.5" opacity="0.6" />
+      <circle cx="132" cy="124" r="4" fill="currentColor" stroke="none" />
+      {[16, 30, 44].map((r, i) => (
+        <path key={r} d={`M${100 - r * 0.7} ${86 - i * 2} a${r} ${r} 0 0 1 ${r * 1.4} 0`} strokeWidth="1.5" opacity={1 - i * 0.25} />
+      ))}
+      <path d="M156 150C210 150 220 104 268 104" stroke={A} strokeWidth="1.8" strokeDasharray="5 6" />
+      <path d="M156 196C210 196 220 220 268 220" strokeWidth="1.5" strokeDasharray="5 6" opacity="0.6" />
+      <circle cx="306" cy="88" r="15" fill={A} fillOpacity="0.16" stroke={A} strokeWidth="2" />
+      <path d="M278 140a28 26 0 0 1 56 0" fill={A} fillOpacity="0.16" stroke={A} strokeWidth="2" />
+      <rect x="272" y="192" width="68" height="56" rx="8" fill={BG} strokeWidth="1.5" />
+      <path d="M292 232l20-20m-4-6a8 8 0 1 0 10 10" strokeWidth="1.5" />
+      {[[196, 136], [228, 112]].map(([x, y]) => (
+        <rect key={x} x={x - 5} y={y - 5} width="10" height="10" rx="2" fill={A} stroke="none" />
+      ))}
+    </>
+  );
+}
+
 const MOTIFS = {
+  merleg: Merleg,
+  lakat: Lakat,
+  domino: Domino,
+  eszkozadat: Eszkozadat,
   mero: Mero,
   marionett: Marionett,
   spiral: Spiral,

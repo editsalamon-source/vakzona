@@ -1,0 +1,35 @@
+{
+  "leckek": {
+    "01": {
+      "video": "https://vimeo.com/1250550392",
+      "felirat": "01.vtt",
+      "fejezetek": [
+        {
+          "ido": "0:00",
+          "cim": "Mi a GDPR?"
+        },
+        {
+          "ido": "1:23",
+          "cim": "Kikre vonatkozik, és kik a szereplők?"
+        },
+        {
+          "ido": "2:34",
+          "cim": "Alapelvek és jogalapok"
+        },
+        {
+          "ido": "3:56",
+          "cim": "Jogok és kötelezettségek"
+        },
+        {
+          "ido": "5:13",
+          "cim": "Hogyan kezdj hozzá?"
+        },
+        {
+          "ido": "6:02",
+          "cim": "Mi a tét? Összefoglalás"
+        }
+      ],
+      "leiras": "Hét percben a GDPR-ról, az Európai Unió általános adatvédelmi rendeletéről: mi ez, kire vonatkozik, mit vár el, és hogyan kezdjünk hozzá a megfeleléshez.\n\n**Fejezetek:**\n- **0:00** Mi a GDPR? A rendelet, a személyes adat és az adatkezelés fogalma.\n- **1:23** Kikre vonatkozik, és kik a szereplők? A hatály, az érintett, az adatkezelő, az adatfeldolgozó és a hatóság.\n- **2:34** Alapelvek és jogalapok: a hét alapelv és a hat jogalap.\n- **3:56** Jogok és kötelezettségek: az érintettek jogai, a nyilvántartás, az adatbiztonság, az incidenskezelés és a hatásvizsgálat.\n- **5:13** Hogyan kezdj hozzá? Hat lépés az adattérképtől az éves felülvizsgálatig.\n- **6:02** Mi a tét? Összefoglalás: bírság, kártérítés, bizalom, és amit érdemes megjegyezni."
+    }
+  }
+}

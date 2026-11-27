@@ -1,0 +1,31 @@
+{
+  "leckek": {
+    "01": {
+      "video": "https://vimeo.com/1250550306",
+      "felirat": "01.vtt",
+      "fejezetek": [
+        {
+          "ido": "0:00",
+          "cim": "Miért kell, és mi a NIS2?"
+        },
+        {
+          "ido": "1:14",
+          "cim": "Kikre vonatkozik?"
+        },
+        {
+          "ido": "2:56",
+          "cim": "Mit követel?"
+        },
+        {
+          "ido": "5:13",
+          "cim": "Hogyan működik Magyarországon?"
+        },
+        {
+          "ido": "5:48",
+          "cim": "Útiterv és összefoglalás"
+        }
+      ],
+      "leiras": "Hét percben a NIS2-ről, az Európai Unió kiberbiztonsági irányelvéről és a magyar szabályozásról: mi ez, kikre vonatkozik, mit követel, és hogyan lehet megfelelni neki.\n\n**Fejezetek:**\n- **0:00** Miért kell, és mi a NIS2? A láncreakció veszélye, a NIS1 tanulságai, az irányelv és a magyar törvény.\n- **1:14** Kikre vonatkozik? A 18 ágazat, a méret mint második szűrő, alapvető és fontos szervezet.\n- **2:56** Mit követel? A vezetői felelősség, a 21. cikk tíz minimumintézkedése, az incidensjelentés lépcsői és a bírságok.\n- **5:13** Hogyan működik Magyarországon? Regisztráció, audit, biztonsági osztályba sorolás és incidensjelentés.\n- **5:48** Útiterv és összefoglalás: hét lépés az érintettség felmérésétől a folyamatos fejlesztésig."
+    }
+  }
+}
