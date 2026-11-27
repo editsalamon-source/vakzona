@@ -6,6 +6,8 @@ kategória: MI
 címkék: Módszertan, Vállalati bevezetés
 borító: spiral
 bemutató: https://vimeo.com/1248747488
+ízelítő: 01 | https://vimeo.com/1248740356
+ízelítő: 32 | https://vimeo.com/1248739839
 logó: logo.svg
 logó felirat: AI-projektmenedzsment
 modul: 1. rész · Alapok

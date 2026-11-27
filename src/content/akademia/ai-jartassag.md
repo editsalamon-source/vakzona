@@ -6,6 +6,8 @@ kategória: MI
 címkék: Alapok, Biztonság és kockázat
 borító: jartassag
 bemutató: https://vimeo.com/1241965649
+ízelítő: 03 | https://vimeo.com/1241965799
+ízelítő: 05 | https://vimeo.com/1241965956
 logó: logo.svg
 logó felirat: AI-jártasság
 modul: Alapszint · minden munkatársnak

@@ -6,6 +6,8 @@ kategória: MI
 címkék: Ágensek és technológia, Módszertan, Biztonság és kockázat
 borító: tervrajz
 bemutató: https://vimeo.com/1245259743
+ízelítő: 04 | https://vimeo.com/1245259849
+ízelítő: 22 | https://vimeo.com/1245259330
 logó: logo.svg
 logó felirat: Ágenstervezés Claude Code-ban
 modul: 1. rész · Gondolkodásmód

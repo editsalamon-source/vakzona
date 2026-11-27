@@ -37,6 +37,14 @@ function CheckIcon({ size = 12 }) {
   );
 }
 
+function PlaySmall({ size = 12 }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M8 5.5v13a1 1 0 0 0 1.5.86l10.5-6.5a1 1 0 0 0 0-1.72L9.5 4.64A1 1 0 0 0 8 5.5z" fill="currentColor" />
+    </svg>
+  );
+}
+
 function DownloadIcon({ size = 16 }) {
   return (
     <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -239,7 +247,7 @@ function Curriculum({ course, progress = null, current = null, onPick = null }) 
 
 // Tematika vásárlás előtt: a részletes leírás, a leckék listája, és leckénként a letölthető anyagok neve és típusa
 // (src/content/akademia/anyagok/<url-azonosító>.json, scripts/anyaglista.mjs). Maguk az anyagok csak hozzáféréssel nyílnak.
-function Syllabus({ course }) {
+function Syllabus({ course, onPreview }) {
   const count = course.materialCount;
   return (
     <section className={CSS.syllabus} aria-labelledby="tematika">
@@ -265,11 +273,23 @@ function Syllabus({ course }) {
               {m.lessons.map((l) => (
                 <li key={l.id} className={CSS.syllabusLesson}>
                   <div className={CSS.lesson}>
-                    <span className={CSS.lockMark}><LockIcon size={13} /></span>
-                    <span className={CSS.lessonBtn}>
-                      <span>{l.title}</span>
-                      {l.length && <span className={CSS.length}>{l.length}</span>}
-                    </span>
+                    {l.preview && onPreview ? (
+                      <>
+                        <span className={`${CSS.lockMark} ${CSS.previewMark}`}><PlaySmall /></span>
+                        <button type="button" className={CSS.lessonBtn} onClick={() => onPreview(l.id)}>
+                          <span>{l.title} <span className={CSS.previewTag}>Ízelítő</span></span>
+                          {l.length && <span className={CSS.length}>{l.length}</span>}
+                        </button>
+                      </>
+                    ) : (
+                      <>
+                        <span className={CSS.lockMark}><LockIcon size={13} /></span>
+                        <span className={CSS.lessonBtn}>
+                          <span>{l.title}</span>
+                          {l.length && <span className={CSS.length}>{l.length}</span>}
+                        </span>
+                      </>
+                    )}
                   </div>
                   {l.materials.length > 0 && (
                     <ul className={CSS.materials} aria-label={`${l.title}: letölthető anyagok`}>
@@ -295,9 +315,72 @@ function Syllabus({ course }) {
   );
 }
 
+// A bemutató és az ízelítő leckék (`ízelítő:` sorok a .md-ben) léptethető sora, hogy vásárlás előtt bele lehessen nézni
+// a tanfolyamba. Egy videónál csak a lejátszó látszik.
+function previewItems(course) {
+  return [
+    { id: "", url: course.intro, subtitles: course.introSubtitles, kicker: "Bemutató", title: "A tanfolyam bemutatója" },
+    ...course.previews.map((p) => ({ ...p, kicker: p.length ? `Ízelítő · ${p.length}` : "Ízelítő" })),
+  ];
+}
+
+function PreviewReel({ course, items, index, setIndex }) {
+  const item = items[index];
+  const player = (
+    <VideoPlayer url={item.url} subtitles={item.subtitles} title={index ? item.title : "Bemutató"} poster
+      category={course.category} cover={course.cover} badge={{ src: course.logo, text: course.logoText }} />
+  );
+  if (items.length < 2) return player;
+  const step = (d) => setIndex((index + d + items.length) % items.length);
+  return (
+    <section className={CSS.reel} aria-label="Belenézhet a tanfolyamba">
+      {player}
+      <div className={CSS.reelHead}>
+        <div>
+          <span className={CSS.reelKicker}>Nézzen bele a tanfolyamba</span>
+          <p className={CSS.reelNote}>A bemutató mellett {items.length - 1} teljes lecke is megnézhető vásárlás előtt.</p>
+        </div>
+        <div className={CSS.reelNav}>
+          <span className={CSS.reelCount} aria-live="polite">{index + 1} / {items.length}</span>
+          <button type="button" className={`${CSS.reelArrow} ${CSS.reelPrev}`} onClick={() => step(-1)} aria-label="Előző videó">
+            <Arrow size={14} />
+          </button>
+          <button type="button" className={CSS.reelArrow} onClick={() => step(1)} aria-label="Következő videó">
+            <Arrow size={14} />
+          </button>
+        </div>
+      </div>
+      <ol className={CSS.reelList}>
+        {items.map((it, i) => (
+          <li key={it.id || "bemutato"}>
+            <button type="button" className={`${CSS.reelItem} ${i === index ? CSS.reelOn : ""}`}
+              onClick={() => setIndex(i)} aria-current={i === index ? "true" : undefined}>
+              <span className={CSS.reelNum}>{i + 1}</span>
+              <span className={CSS.reelText}>
+                <span className={CSS.reelItemKicker}>{it.kicker}</span>
+                <span className={CSS.reelTitle}>{it.title}</span>
+              </span>
+            </button>
+          </li>
+        ))}
+      </ol>
+    </section>
+  );
+}
+
 // Felül a cím teljes szélességben; alatta bal oldalt a bemutató és a bevezető, jobb oldalt
 // (széles képernyőn ragadósan) a tanfolyam adatai és a belépés.
 function CourseLanding({ course, access, account = {} }) {
+  const items = useMemo(() => previewItems(course), [course]);
+  const [reelIndex, setReelIndex] = useState(0);
+  const reelRef = useRef(null);
+  // a tematikában az ízelítő leckéből a lejátszóhoz ugrik
+  const showPreview = (id) => {
+    const i = items.findIndex((it) => it.id === id);
+    if (i < 0) return;
+    setReelIndex(i);
+    reelRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
   // a közös jelszó mezője csak adminnak látszik, mindenki más fiókkal lép be
   const admin = useIsAdmin();
   const facts = [
@@ -316,10 +399,11 @@ function CourseLanding({ course, access, account = {} }) {
       </header>
       <div className={CSS.hero}>
         <div className={CSS.heroMain}>
-          <VideoPlayer url={course.intro} subtitles={course.introSubtitles} title="Bemutató" poster category={course.category}
-        cover={course.cover} badge={{ src: course.logo, text: course.logoText }} />
+          <div ref={reelRef} className={CSS.reelAnchor}>
+            <PreviewReel course={course} items={items} index={reelIndex} setIndex={setReelIndex} />
+          </div>
           {course.introHtml && <div className={CSS.intro} dangerouslySetInnerHTML={{ __html: course.introHtml }} />}
-          <Syllabus course={course} />
+          <Syllabus course={course} onPreview={showPreview} />
           <CourseNotice compact title="Mielőtt elkezdi" />
         </div>
         <aside className={CSS.heroSide}>

@@ -6,6 +6,8 @@ kategória: Üzlet
 címkék: Üzleti elemzés
 borító: nagyito
 bemutató: https://vimeo.com/1250617181
+ízelítő: 19 | https://vimeo.com/1250616178
+ízelítő: 24 | https://vimeo.com/1250616401
 logó: logo.svg
 logó felirat: Üzleti elemzés
 modul: 1. rész · Alapok

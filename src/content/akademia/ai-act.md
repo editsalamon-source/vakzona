@@ -6,6 +6,8 @@ kategória: MI
 címkék: Jog és adatvédelem, Módszertan
 borító: piramis
 bemutató: https://vimeo.com/1243166629
+ízelítő: 04 | https://vimeo.com/1243166862
+ízelítő: 10-plusz | https://vimeo.com/1243167973
 logó: logo.svg
 logó felirat: AI Act megfelelés
 modul: 1. rész · Alapok

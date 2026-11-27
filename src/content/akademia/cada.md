@@ -6,6 +6,8 @@ kategória: MI
 címkék: Jog és adatvédelem, Biztonság és kockázat
 borító: felho
 bemutató: https://vimeo.com/1246536360
+ízelítő: 07 | https://vimeo.com/1246536724
+ízelítő: 10-plusz | https://vimeo.com/1246536968
 logó: logo.svg
 logó felirat: CADA: felhő és MI
 modul: 1. rész · Alapozás

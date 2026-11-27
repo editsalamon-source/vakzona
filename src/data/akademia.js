@@ -8,6 +8,7 @@ export { AKADEMIA_NEV as AKADEMIA };
 // Minden tanfolyam egy Markdown fájl: src/content/akademia/<url-azonosító>.md
 // Fejléc `kulcs: érték` sorokkal --- között: cím, alcím (rövid leírás, a keresőknek is), dátum, kategória
 // (opcionális, a borító ábrája és az Akadémia témaköre), címkék (lásd cimkek.js), szint, bemutató (a nyilvános bemutatóvideó URL-je), bemutató felirat (WebVTT),
+// ízelítő (ismételhető, `ízelítő: lecke-azonosító | videó URL-je`: nyilvánosan megnézhető lecke a tanfolyamoldalon, a bemutató mellett),
 // logó + logó felirat (a tanfolyam logója a public/akademia/<url-azonosító>/ mappában; az oklevélen), piszkozat, valamint a
 // tananyag sorrendben: `modul: Név`, alatta `lecke: azonosító | Cím | időtartam (pp:mm)`. A törzs a tanfolyam leírása:
 // az első `##` előtti rész a nyilvános bevezető (belépés előtt is látszik), a többi csak belépés után.
@@ -43,6 +44,7 @@ function parse(raw) {
   const match = raw.match(/^---\r?\n([\s\S]*?)\r?\n---\r?\n?/);
   const meta = {};
   const modules = [];
+  const samples = [];
   if (match) {
     match[1].split(/\r?\n/).forEach((line) => {
       const i = line.indexOf(":");
@@ -55,12 +57,15 @@ function parse(raw) {
         const [id, title = id, length = ""] = value.split("|").map((s) => s.trim());
         if (!modules.length) modules.push({ title: "", lessons: [] });
         modules[modules.length - 1].lessons.push({ id, title, length, seconds: toSeconds(length) });
+      } else if (key === "ízelítő") {
+        const [id, url = ""] = value.split("|").map((s) => s.trim());
+        if (id && url) samples.push({ id, url });
       } else {
         meta[key] = value;
       }
     });
   }
-  return { meta, modules, body: match ? raw.slice(match[0].length) : raw };
+  return { meta, modules, samples, body: match ? raw.slice(match[0].length) : raw };
 }
 
 // a tanfolyam saját nyilvános fájlja: fájlnév → /akademia/<url-azonosító>/fájlnév; a „/”-rel vagy http-vel kezdődő változatlan
@@ -76,10 +81,19 @@ function splitBody(body) {
 const courses = Object.entries(files)
   .map(([path, raw]) => {
     const slug = path.split("/").pop().replace(/\.md$/, "");
-    const { meta, modules, body } = parse(raw);
+    const { meta, modules, samples, body } = parse(raw);
     const materials = materialFiles[`../content/akademia/anyagok/${slug}.json`] || {};
     modules.forEach((m) => m.lessons.forEach((l) => (l.materials = materials[l.id] || [])));
     const lessons = modules.flatMap((m) => m.lessons);
+    // ízelítő leckék (a tanfolyamoldalon a bemutató mellett, vásárlás előtt): cím, hossz, rész a leckelistából
+    const previews = samples
+      .map((s) => {
+        const mi = modules.findIndex((m) => m.lessons.some((l) => l.id === s.id));
+        const lesson = mi < 0 ? null : modules[mi].lessons.find((l) => l.id === s.id);
+        return lesson && { ...s, title: lesson.title, length: lesson.length, module: modules[mi].title };
+      })
+      .filter(Boolean);
+    previews.forEach((p) => (lessons.find((l) => l.id === p.id).preview = true));
     return {
       slug,
       title: meta["cím"] || slug,
@@ -90,6 +104,7 @@ const courses = Object.entries(files)
       tags: parseCimkek(meta["címkék"], `${slug}.md`),
       intro: meta["bemutató"] || "",
       introSubtitles: asset(meta["bemutató felirat"], slug),
+      previews,
       cover: meta["borító"] || "",
       logo: asset(meta["logó"], slug),
       logoText: meta["logó felirat"] || "",

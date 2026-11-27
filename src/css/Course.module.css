@@ -269,3 +269,46 @@ button.lessonBtn { cursor: pointer; }
   color: var(--muted);
 }
 .syllabusNote { margin: 16px 0 0; font-size: .85rem; color: var(--muted); }
+
+/* ---------- ízelítő: a bemutató és a megnézhető leckék léptetője (CourseLanding → PreviewReel) ---------- */
+.reelAnchor { scroll-margin-top: 110px; }
+.reelHead { display: flex; align-items: flex-end; justify-content: space-between; gap: 16px; margin: 20px 0 12px; }
+.reelKicker { display: block; line-height: 1.4; font-size: .7rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--accent); }
+.reelNote { margin: 4px 0 0; font-size: .9rem; color: var(--muted); line-height: 1.5; }
+.reelNav { flex: none; display: flex; align-items: center; gap: 8px; }
+.reelCount { margin-right: 4px; font-size: .82rem; font-weight: 600; color: var(--muted); font-variant-numeric: tabular-nums; }
+.reelArrow {
+  display: grid; place-items: center; width: 40px; height: 40px; padding: 0;
+  border: 1px solid var(--line); border-radius: 999px; background: #fff; color: var(--ink); cursor: pointer;
+  transition: border-color .2s, color .2s, transform .2s;
+}
+.reelArrow:hover { border-color: var(--accent); color: var(--accent); }
+.reelArrow:active { transform: scale(.94); }
+.reelPrev svg { transform: scaleX(-1); }
+.reelList { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 10px; }
+.reelItem {
+  display: flex; align-items: flex-start; gap: 10px; width: 100%; height: 100%; padding: 12px 14px;
+  border: 1px solid var(--line); border-radius: 16px; background: var(--bg-soft);
+  font: inherit; text-align: left; color: var(--ink); cursor: pointer; transition: border-color .2s, background .2s;
+}
+.reelItem:hover { border-color: #fdba74; }
+.reelOn { background: var(--accent-soft); border-color: var(--accent); }
+.reelNum {
+  flex: none; display: grid; place-items: center; width: 24px; height: 24px; border-radius: 999px;
+  background: #fff; border: 1px solid var(--line); font-size: .75rem; font-weight: 700; color: var(--muted);
+}
+.reelOn .reelNum { background: var(--accent); border-color: var(--accent); color: #fff; }
+.reelText { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 3px; }
+.reelItemKicker { font-size: .66rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--faint); overflow-wrap: anywhere; }
+.reelTitle { font-size: .88rem; font-weight: 600; line-height: 1.35; }
+@media (max-width: 720px) {
+
+  .reelNote { display: none; }
+}
+
+/* a tematikában a megnézhető ízelítő lecke */
+.previewMark { color: var(--accent); }
+.previewTag {
+  display: inline-block; margin-left: 6px; padding: 2px 8px; border-radius: 999px; vertical-align: 1px;
+  background: var(--accent-soft); color: var(--accent-dark); font-size: .68rem; font-weight: 700; letter-spacing: .04em;
+}

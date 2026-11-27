@@ -6,6 +6,8 @@ kategória: MI
 címkék: Módszertan, Vállalati bevezetés
 borító: utiterv
 bemutató: https://vimeo.com/1241804992
+ízelítő: 03a | https://vimeo.com/1241805086
+ízelítő: 09a-plusz | https://vimeo.com/1241808916
 logó: logo.svg
 logó felirat: AI stratégia
 modul: 1. rész · Alapok

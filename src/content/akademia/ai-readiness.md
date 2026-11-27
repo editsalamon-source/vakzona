@@ -6,6 +6,8 @@ kategória: MI
 címkék: Vállalati bevezetés, Módszertan
 borító: mero
 bemutató: https://vimeo.com/1250137042
+ízelítő: 03 | https://vimeo.com/1250137123
+ízelítő: 26 | https://vimeo.com/1250136974
 logó: logo.svg
 logó felirat: AI-felkészültség
 modul: 1. rész · Bevezetés

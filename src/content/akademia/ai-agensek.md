@@ -6,6 +6,8 @@ kategória: MI
 címkék: Ágensek és technológia, Biztonság és kockázat, Vállalati bevezetés
 borító: cselekves
 bemutató: https://vimeo.com/1241811719
+ízelítő: 08 | https://vimeo.com/1241811849
+ízelítő: 18 | https://vimeo.com/1241811584
 logó: logo.svg
 logó felirat: AI-ágensek
 modul: I. fejezet · Nagy kép
