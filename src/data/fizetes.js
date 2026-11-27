@@ -18,7 +18,9 @@ export const PENZNEM = "huf";
 export const EGYSEGAR = 6950;
 
 // eltérő ár tanfolyamonként: url-azonosító → forint
-export const ARAK = {};
+export const ARAK = {
+  "ai-jartassag": 1950, // AI-jártasság (a felhasználó döntése, 2026-11-27)
+};
 
 export const ar = (slug) => (Object.prototype.hasOwnProperty.call(ARAK, slug) ? ARAK[slug] : EGYSEGAR);
 
